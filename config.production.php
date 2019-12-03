@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'baseUrl' => 'https://jigsaw-blog-netlify-netlifycms-template.netlify.com',
+    'baseUrl' => 'https://www.daguilar.dev',
     'production' => true,
 ];
