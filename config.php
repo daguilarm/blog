@@ -3,14 +3,14 @@
 return [
     'baseUrl' => '',
     'production' => false,
-    'siteName' => 'Blog Starter Template',
-    'siteDescription' => 'Generate an elegant blog with Jigsaw',
-    'siteAuthor' => 'Author Name',
+    'siteName' => 'Blog de Damián Aguilar',
+    'siteDescription' => 'Blog sobre programación: php, javascript, vuejs, phyton, java... y mucho más.',
+    'siteAuthor' => 'Damián Aguilar',
 
     // collections
     'collections' => [
         'posts' => [
-            'author' => 'Author Name', // Default author, if not provided in a post
+            'author' => 'Damián Aguilar', // Default author, if not provided in a post
             'sort' => '-date',
             'path' => 'blog/{filename}',
         ],

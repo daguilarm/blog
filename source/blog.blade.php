@@ -9,7 +9,7 @@ pagination:
     <meta property="og:title" content="{{ $page->siteName }} Blog" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="{{ $page->getUrl() }}"/>
-    <meta property="og:description" content="The list of blog posts for {{ $page->siteName }}" />
+    <meta property="og:description" content="Listado de artículos y entradas del {{ $page->siteName }}" />
 @endpush
 
 @section('body')

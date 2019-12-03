@@ -1,10 +1,10 @@
 @extends('_layouts.master')
 
 @push('meta')
-    <meta property="og:title" content="Contact {{ $page->siteName }}" />
+    <meta property="og:title" content="Contacto - {{ $page->siteName }}" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="{{ $page->getUrl() }}"/>
-    <meta property="og:description" content="Get in touch with {{ $page->siteName }}" />
+    <meta property="og:description" content="Contacte con {{ $page->siteName }}" />
     <style>
         .email:before {
             content: attr(data-website) "\0040" attr(data-user);
