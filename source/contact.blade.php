@@ -7,7 +7,9 @@
     <meta property="og:description" content="Get in touch with {{ $page->siteName }}" />
     <style>
         .email:before {
-            content: "\006a\0068\006f\006e\0040\0067\006d\0061\0069\006c\002e\0063\006f\006d";
+            content: attr(data-website) "\0040" attr(data-user);
+            unicode-bidi: bidi-override;
+            direction: rtl;
         }
     </style>
 @endpush
@@ -19,7 +21,7 @@
     Puedes contactar conmigo mediante:
     <ul>
         <li>Twitter: <a href="https://twitter.com/daguilarm" target="_black">@daguilarm</a></li>
-        <li>Email: <span class="email">damian.aguilarm@gmail.com</span></li>
+        <li>Email: <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;%64%61%6D%69%61%6E%2E%61%67%75%69%6C%61%72%6D%40%67%6D%61%69%6C%2E%63%6F%6D"><span class="email" data-user="mraliuga.naimad" data-website="moc.liamg"></span></a></li>
     </ul>
 </p>
 @stop
