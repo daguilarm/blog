@@ -7,6 +7,21 @@ return [
     'siteDescription' => 'Blog sobre programación: php, javascript, vuejs, phyton, java... y mucho más.',
     'siteAuthor' => 'Damián Aguilar',
 
+    // // Categories
+    // 'allCategories' => function ($page, $posts) {
+    //     return $posts->pluck('categories')->flatten()->unique();
+    // },
+    // 'countPostsInCategory' => function ($page, $posts, $category) {
+    //     return $posts->reduce(function ($carry, $post) use ($category) {
+    //         return $carry + collect($post->categories)->contains($category);
+    //     });
+    // },
+    // 'getPostsWithCategory' => function ($page, $posts, $category) {
+    //     return $posts->filter(function ($post) use ($category) {
+    //         return collect($post->categories)->contains($category);
+    //     });
+    // },
+
     // collections
     'collections' => [
         'posts' => [
