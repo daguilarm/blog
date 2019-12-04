@@ -31,7 +31,7 @@ if (! function_exists('userId')) {
 
 Ahora es cuando podemos elegir entre las diferentes opciones para poder tener acceso a los *helpers*.
 
-##a) Mediante el archivo `composer.json`
+####a) Mediante el archivo `composer.json`
 
 Añadimos el campo `files`, con la ruta hacia nuestro archivo.
 
@@ -56,7 +56,7 @@ Ahora solo nos falta actualizar `composer`, y ya estaría:
 composer dump
 ```
 
-##b) Mediante un *Service Provider*
+####b) Mediante un *Service Provider*
 
 Crea un nuevo *Services Provider*, usando `artisan`:
 
