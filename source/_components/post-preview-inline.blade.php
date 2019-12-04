@@ -1,6 +1,6 @@
 <div class="flex flex-col mb-4">
     <p class="text-grey-darker font-medium my-2">
-        {{ $post->getDate()->format('F j, Y') }}
+        {{ $post->getDate()->format('d/m/Y') }}
     </p>
 
     <h2 class="text-3xl mt-0">
