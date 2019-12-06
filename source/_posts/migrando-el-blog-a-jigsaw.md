@@ -23,4 +23,4 @@ Fue hace unos meses, cuando empecé a trastear con frameworks de desarrollo de s
 Para mí, es perfecto, eso si, si lo que buscas es un **CMS** con panel de administrador, **Jigsaw** no es para tí... supongo que las mejores opciones a día de hoy (si buscas un gestor completo), son: 
 
 - [Wink](https://wink.themsaid.com/){.target-blank} 
-- [wordpress](https://es.wordpress.com/){.target-blank}
+- [Wordpress](https://es.wordpress.com/){.target-blank}
