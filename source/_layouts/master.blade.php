@@ -78,8 +78,8 @@
         <script src="{{ mix('js/main.js', 'assets/build') }}"></script>
         @stack('scripts')
         <script>
-            document.addEventListener('DOMContentLoaded', function(){
-                var linksTargetBlank = document.querySelectorAll('.target-blank');
+            document.addEventListener('DOMContentLoaded', function() {
+                var linksTargetBlank = document.querySelectorAll('.link-out');
                 for (var i = 0; i < linksTargetBlank.length; i++) {
                     linksTargetBlank[i].target = "_blank";
                 }
