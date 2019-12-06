@@ -87,4 +87,4 @@ Debemos añadir el nuevo *Service Provider* a la lista:
 App\Providers\HelpersServiceProvider::class,
 ```
 
-Estos son dos delas mejores opciones, personalmente, prefiero la segunda.
+De estas dos opciones, personalmente, prefiero la segunda, aunque ambas son igualmente válidas.
