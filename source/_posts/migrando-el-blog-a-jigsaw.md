@@ -1,10 +1,10 @@
 ---
 extends: _layouts.post
 section: content
-title: Migrando el blog a Jigsaw
+title: Creando enlaces externos con Javascript de forma dinámica
 date: 2019-11-07
 description: Actualizando el blog a Jigsaw, el framework para desarrollo de sitios estáticos 
-categories: [php, frameworks, blade]
+categories: [blade, frameworks, php]
 ---
 
 En 2015, empecé mi primer blog sobre programación. Fue en otro dominio, y con un **CMS**, que en aquel momento, me parecía una buena opción: [AnchorCMS](https://anchorcms.com/){.link-out}. No tardé mucho en cansarme de sus limitaciones, y empecé a modificarlo, y modificarlo, y terminó siendo algo totalmente distinto, y durante algún tiempo funcionó. 
