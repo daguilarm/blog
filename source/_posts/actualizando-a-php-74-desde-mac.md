@@ -18,11 +18,11 @@ $nums = array_map(fn($n) => $n * $factor, [1, 2, 3, 4]);
 // $nums = array(10, 20, 30, 40);
 ```
 
-Podrás encontrar más informacion sobre las novedades, aquí: [php.net](https://www.php.net/manual/es/migration74.new-features.php)
+Podrás encontrar más informacion sobre las novedades, aquí: [php.net](https://www.php.net/manual/es/migration74.new-features.php){.link-out}
 
 En cualquier caso, la idea de este post era la de exponer mi experiencia al actualizar mi Mac, y explicar como lo he hecho, y sobre todo, que problemas he encontrado.
 
-Partimos de la base, de que la gestión de mi servidor local la realizo a través de [Laravel valet](https://laravel.com/), y por tanto, solo he tenido que hacer esto:
+Partimos de la base, de que la gestión de mi servidor local la realizo a través de [Laravel valet](https://laravel.com/){.link-out}, y por tanto, solo he tenido que hacer esto:
 
 ```bash 
 valet use php@7.4
@@ -47,7 +47,7 @@ Importante, no olvidar actualizar `valet` antes:
 composer global update && valet install
 ```
 
-Otros usuarios, se han encontrado otros problemas, por ejemplo, [Jeffrey Way](https://laracasts.com/), ha tenido problemas con `ngix` y `dnsmasq`, y ha recomendado actualizarlos:
+Otros usuarios, se han encontrado otros problemas, por ejemplo, [Jeffrey Way](https://laracasts.com/){.link-out}, ha tenido problemas con `ngix` y `dnsmasq`, y ha recomendado actualizarlos:
 
 ```bash 
 brew upgrade nginx && brew upgrade dnsmasq
