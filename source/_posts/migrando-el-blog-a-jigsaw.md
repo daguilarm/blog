@@ -13,7 +13,7 @@ Fue entonces cuando descubrí [Laravel](https://laravel.com){.target-blank}, y d
 
 No fue hasta hace unos meses, cuando empecé a trastear con *frameworks* de desarrollo para sitios estáticos. 
 
-Mi primer encuentro con el mundo estático, fue con Vuepress, y la verdad es que no me gustó nada... ultimamente, cada vez me gusta menos [Vuejs](https://vuejs.org/){.target-blank}, y después de este, probé algún que otro *frameworks* mas, pero ninguno de ellos terminaron por convencerme demasiado. 
+Mi primer encuentro con el mundo estático, fue con [Vuepress](https://vuepress.vuejs.org/){.target-blank}, y la verdad es que no me gustó nada... ultimamente, cada vez me gusta menos [Vuejs](https://vuejs.org/){.target-blank}, y después de este, probé algún que otro *frameworks* mas, pero ninguno de ellos terminaron por convencerme demasiado. 
 
 Había desistido, hasta que un artículo sobre [Jigsaw](https://jigsaw.tighten.co/){.target-blank}, cayó en mis manos, y me decidí a probarlo... pasé una mañana de Sábado realizando las primeras pruebas, y aquello me gusto, era exáctamente lo que estaba buscando, sobre todo porque:
 

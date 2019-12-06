@@ -78,5 +78,12 @@
         <script src="{{ mix('js/main.js', 'assets/build') }}"></script>
 
         @stack('scripts')
+        <script>
+            document.addEventListener('click', function (event) {
+                if (!event.target.matches('.target-blank')) return;
+                event.preventDefault();
+                event.target.target = "_blank";
+            }, false);
+        </script>
     </body>
 </html>
