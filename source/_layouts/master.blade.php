@@ -82,7 +82,7 @@
             document.addEventListener('click', function (event) {
                 if (!event.target.matches('.target-blank')) return;
                 event.preventDefault();
-                event.target.target = "_blank";
+                window.open(event.target.href,"","titlebar=no");
             }, false);
         </script>
     </body>
