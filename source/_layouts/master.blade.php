@@ -76,13 +76,13 @@
         </footer>
 
         <script src="{{ mix('js/main.js', 'assets/build') }}"></script>
-
         @stack('scripts')
         <script>
-            document.addEventListener('click', function (event) {
-                if (!event.target.matches('.target-blank')) return;
-                event.preventDefault();
-                window.open(event.target.href,"","titlebar=no");
+            document.addEventListener('DOMContentLoaded', function(){
+                var linksTargetBlank = document.querySelectorAll('.target-blank');
+                for (var i = 0; i < linksTargetBlank.length; i++) {
+                    linksTargetBlank[i].target = "_blank";
+                }
             }, false);
         </script>
     </body>
