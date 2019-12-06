@@ -23,6 +23,7 @@ Había desistido, hasta que un artículo sobre [Jigsaw](https://jigsaw.tighten.c
 - Compatible con [Netlify](https://www.netlify.com/){.target-blank}, permitiendo *deploy* en tiempo real, desde [Github](https://github.com/){.target-blank}.
 - *Markdown* como formato de archivos.
 - Busqueda con [Angolia](https://www.algolia.com/){.target-blank} integrada.
+- Desarrollo muy rápido.
 
 Para mí, es perfecto, eso si, si lo que buscas es un **CMS** con panel de administrador, **Jigsaw** no es para tí... supongo que las mejores opciones a día de hoy (si buscas un gestor completo), son: 
 
