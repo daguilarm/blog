@@ -44,35 +44,25 @@
 
     <body class="flex flex-col justify-between min-h-screen bg-gray-100 text-gray-800 leading-normal font-sans">
         <header id="header" class="flex items-center h-32 shadow-lg" role="banner">
+            {{-- Montains --}}
+            @include('_layouts.components.montains')
+            {{-- header container --}}
             <div class="container flex items-center max-w-8xl mx-auto px-4 lg:px-8">
-                @include('_layouts.sky')
-                <a href="/" title="{{ $page->siteName }}" class="z-20">
-                    <div class="text-xl text-gray-600 p-2">El blog de</div>
-                    <div class="text-2xl text-blue-600 p-2 -mt-4">Damián Aguilar</div>
-                </a>
+                {{-- Logo --}}
+                <div class="z-20">
+                    <a href="/" title="{{ $page->siteName }}">
+                        <div class="text-xl text-gray-600 p-2">El blog de</div>
+                        <div class="text-2xl text-blue-600 p-2 -mt-4">Damián Aguilar</div>
+                    </a>
+                </div>
+                {{-- Sky --}}
+                @include('_layouts.components.sky')
                 <div id="vue-search" class="flex flex-1 justify-end items-center">
                     <search></search>
-
                     @include('_nav.menu')
-
                     @include('_nav.menu-toggle')
                 </div>
             </div>
-            <svg class="h-32" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
-                <polygon id="gradient-2" points="0,0 15,100 33,21 45,100 50,75 55,100 72,20 85,100 95,50 100,80 100,100 0,100" />
-            </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
-                <polygon id="gradient-1" points="0,0 30,100 65,21 90,100 100,75 100,100 0,100"/>
-                <linearGradient id="polygon-gradient-1">
-                    <stop offset="0" stop-color="#a0aec0"/>
-                    <stop offset="1" stop-color="#718096"/>
-                </linearGradient>
-                <linearGradient id="polygon-gradient-2">
-                    <stop offset="0" stop-color="#cbd5e0"/>
-                    <stop offset="1" stop-color="#4a5568"/>
-                    <stop offset="2" stop-color="#a0aec0"/>
-                </linearGradient>
-            </svg>
         </header>
 
         @include('_nav.menu-responsive')

@@ -1,0 +1,15 @@
+// Montains
+#montains > svg {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+}
+
+#montains > svg > #gradient-1 {
+    fill: url(#polygon-gradient-1);
+}
+
+#montains > svg > #gradient-2 {
+    fill: url(#polygon-gradient-2);
+}
