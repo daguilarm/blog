@@ -45,7 +45,7 @@
     <body class="flex flex-col justify-between min-h-screen bg-gray-100 text-gray-800 leading-normal font-sans">
         <header id="header" class="flex items-center h-32 shadow-lg" role="banner">
             <div class="container flex items-center max-w-8xl mx-auto px-4 lg:px-8">
-                <div class="sun">
+                <div class="hidden lg:flex sun">
                     <div class="ray_box">
                         <div class="ray ray1"></div>
                         <div class="ray ray2"></div>
@@ -60,8 +60,8 @@
                     </div>
                 </div>
                 <a href="/" title="{{ $page->siteName }}">
-                    <div class="text-xl text-grey-dark p-2 w-40">El blog de</div>
-                    <div class="text-2xl text-blue-dark p-2 w-40 -mt-2">Damián Aguilar</div>
+                    <div class="text-xl text-gray-600 p-2">El blog de</div>
+                    <div class="text-2xl text-blue-600 p-2 -mt-2">Damián Aguilar</div>
                 </a>
                 <div id="vue-search" class="flex flex-1 justify-end items-center">
                     <search></search>
@@ -90,7 +90,7 @@
 
         @include('_nav.menu-responsive')
 
-        <main role="main" class="flex-auto w-full container max-w-xl mx-auto py-16 px-6">
+        <main role="main" class="flex-auto w-full container mx-auto py-16 px-6">
             @yield('body')
         </main>
 
