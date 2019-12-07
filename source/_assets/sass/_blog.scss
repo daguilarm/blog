@@ -25,7 +25,7 @@
     top:0;
     bottom: 0;
     left:0;
-    right:15%;
+    right:10%;
     margin: auto;
     width:70px;
     height:70px;
@@ -138,4 +138,15 @@
 @-webkit-keyframes ray_anim {
     0% { -webkit-transform: rotate(0deg); transform: rotate(0deg);}
     100% { -webkit-transform: rotate(360deg); transform: rotate(360deg);}
+}
+
+#cloud-circle {
+    width: 500px;
+    height: 275px;
+    border-radius: 50%;
+    filter: url(#filter);
+    box-shadow: 400px 400px 60px 0px #fff;
+    position: absolute;
+    top: -320px;
+    left: -320px;
 }
