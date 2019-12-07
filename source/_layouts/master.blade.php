@@ -49,16 +49,17 @@
             {{-- header container --}}
             <div class="container flex items-center max-w-8xl mx-auto px-4 lg:px-8">
                 {{-- Logo --}}
-                <div class="z-20">
+                <div class="z-20 -mt-20 sm:mt-0">
                     <a href="/" title="{{ $page->siteName }}">
-                        <div class="text-xl text-gray-600 p-2">El blog de</div>
-                        <div class="text-2xl text-blue-600 p-2 -mt-4">Damián Aguilar</div>
+                        <div class="text-sm sm:text-xl text-gray-600 p-2">El blog de</div>
+                        <div class="text-md sm:text-2xl text-blue-600 p-2 -mt-4">Damián Aguilar</div>
                     </a>
                 </div>
                 {{-- Sky --}}
                 @include('_layouts.components.sky')
+                {{-- Search --}}
                 <div id="vue-search" class="flex flex-1 justify-end items-center">
-                    <search></search>
+                    <search class="z-50"></search>
                     @include('_nav.menu')
                     @include('_nav.menu-toggle')
                 </div>
