@@ -44,21 +44,21 @@
 
     <body class="flex flex-col justify-between min-h-screen bg-grey-lightest text-grey-darkest leading-normal font-sans">
         <header id="header" class="flex items-center h-32 shadow-lg" role="banner">
-            <div class="sun">
-                <div class="ray_box">
-                    <div class="ray ray1"></div>
-                    <div class="ray ray2"></div>
-                    <div class="ray ray3"></div>
-                    <div class="ray ray4"></div>
-                    <div class="ray ray5"></div>
-                    <div class="ray ray6"></div>
-                    <div class="ray ray7"></div>
-                    <div class="ray ray8"></div>
-                    <div class="ray ray9"></div>
-                    <div class="ray ray10"></div>
+            <div class="container flex items-center max-w-8xl mx-auto px-4 lg:px-8">
+                <div class="sun">
+                    <div class="ray_box">
+                        <div class="ray ray1"></div>
+                        <div class="ray ray2"></div>
+                        <div class="ray ray3"></div>
+                        <div class="ray ray4"></div>
+                        <div class="ray ray5"></div>
+                        <div class="ray ray6"></div>
+                        <div class="ray ray7"></div>
+                        <div class="ray ray8"></div>
+                        <div class="ray ray9"></div>
+                        <div class="ray ray10"></div>
+                    </div>
                 </div>
-            </div>
-            <div class="container flex items-center max-w-4xl mx-auto px-4 mb-20 z-20">
                 <a href="/" title="{{ $page->siteName }}">
                     <div class="text-xl text-grey-dark p-2 w-40">El blog de</div>
                     <div class="text-2xl text-blue-dark p-2 w-40 -mt-2">Damián Aguilar</div>
