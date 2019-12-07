@@ -43,14 +43,26 @@
     </head>
 
     <body class="flex flex-col justify-between min-h-screen bg-grey-lightest text-grey-darkest leading-normal font-sans">
-        <header class="flex items-center shadow bg-white border-b h-24 py-4" role="banner">
-            <div class="container flex items-center max-w-4xl mx-auto px-4 lg:px-8">
-                <div class="flex items-center">
-                    <a href="/" title="{{ $page->siteName }} home" class="inline-flex items-center">
-                        <h1 class="text-lg md:text-2xl text-blue-darkest font-semibold hover:text-blue-dark my-0">{{ $page->siteName }}</h1>
-                    </a>
+        <header id="header" class="flex items-center h-32 shadow-lg" role="banner">
+            <div class="sun">
+                <div class="ray_box">
+                    <div class="ray ray1"></div>
+                    <div class="ray ray2"></div>
+                    <div class="ray ray3"></div>
+                    <div class="ray ray4"></div>
+                    <div class="ray ray5"></div>
+                    <div class="ray ray6"></div>
+                    <div class="ray ray7"></div>
+                    <div class="ray ray8"></div>
+                    <div class="ray ray9"></div>
+                    <div class="ray ray10"></div>
                 </div>
-
+            </div>
+            <div class="container flex items-center max-w-4xl mx-auto px-4 mb-20 z-20">
+                <a href="/" title="{{ $page->siteName }}">
+                    <div class="text-xl text-grey-dark p-2 w-40">El blog de</div>
+                    <div class="text-2xl text-blue-dark p-2 w-40 -mt-2">Damián Aguilar</div>
+                </a>
                 <div id="vue-search" class="flex flex-1 justify-end items-center">
                     <search></search>
 
@@ -59,6 +71,21 @@
                     @include('_nav.menu-toggle')
                 </div>
             </div>
+            <svg class="h-32" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <polygon id="gradient-2" points="0,0 15,100 33,21 45,100 50,75 55,100 72,20 85,100 95,50 100,80 100,100 0,100" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <polygon id="gradient-1" points="0,0 30,100 65,21 90,100 100,75 100,100 0,100"/>
+                <linearGradient id="polygon-gradient-1">
+                    <stop offset="0" stop-color="#a0aec0"/>
+                    <stop offset="1" stop-color="#718096"/>
+                </linearGradient>
+                <linearGradient id="polygon-gradient-2">
+                    <stop offset="0" stop-color="#cbd5e0"/>
+                    <stop offset="1" stop-color="#4a5568"/>
+                    <stop offset="2" stop-color="#a0aec0"/>
+                </linearGradient>
+            </svg>
         </header>
 
         @include('_nav.menu-responsive')

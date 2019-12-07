@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "07cacddcc0a2079afee2aa426df33b5b",
+    "content-hash": "0567b3a3d6c84f64b244779f002190ea",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -1584,23 +1584,23 @@
         },
         {
             "name": "tightenco/jigsaw",
-            "version": "v1.3.6",
+            "version": "v1.3.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tightenco/jigsaw.git",
-                "reference": "fb9cd18e36ec78a77d6151b37bbc41a6c12f4418"
+                "reference": "1bc3f79d872445b6a1e258391d58f5b84a7d63bf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tightenco/jigsaw/zipball/fb9cd18e36ec78a77d6151b37bbc41a6c12f4418",
-                "reference": "fb9cd18e36ec78a77d6151b37bbc41a6c12f4418",
+                "url": "https://api.github.com/repos/tightenco/jigsaw/zipball/1bc3f79d872445b6a1e258391d58f5b84a7d63bf",
+                "reference": "1bc3f79d872445b6a1e258391d58f5b84a7d63bf",
                 "shasum": ""
             },
             "require": {
                 "erusev/parsedown-extra": "^0.7.1",
-                "illuminate/container": "^5.6",
-                "illuminate/support": "^5.6",
-                "illuminate/view": "^5.6",
+                "illuminate/container": "^5.7",
+                "illuminate/support": "^5.7",
+                "illuminate/view": "^5.7",
                 "mnapoli/front-yaml": "^1.5",
                 "mockery/mockery": "^1.0.0",
                 "symfony/console": "~3.0|^4.0",
@@ -1644,7 +1644,7 @@
                 "site",
                 "static"
             ],
-            "time": "2019-02-05T14:14:15+00:00"
+            "time": "2019-02-26T14:25:57+00:00"
         },
         {
             "name": "tightenco/jigsaw-blog-template",
