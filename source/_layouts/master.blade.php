@@ -4,15 +4,12 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>{{ $page->siteName }}{{ $page->title ? ' | ' . $page->title : '' }}</title>
         <meta name="description" content="{{ $page->meta_description ?? $page->siteDescription }}">
-
         <meta property="og:title" content="{{ $page->title ?  $page->title . ' | ' : '' }}{{ $page->siteName }}"/>
         <meta property="og:type" content="website" />
         <meta property="og:url" content="{{ $page->getUrl() }}"/>
         <meta property="og:description" content="{{ $page->siteDescription }}" />
-
-        <title>{{ $page->siteName }}{{ $page->title ? ' | ' . $page->title : '' }}</title>
-
         <link rel="home" href="{{ $page->baseUrl }}">
         <link href="/blog/feed.atom" type="application/atom+xml" rel="alternate" title="{{ $page->siteName }} Atom Feed">
         <link rel="apple-touch-icon" sizes="57x57" href="{{ $page->baseUrl }}/assets/img/favicon/apple-icon-57x57.png">
@@ -34,9 +31,9 @@
         <meta name="theme-color" content="#ffffff">
         @stack('meta')
 
-        @if ($page->production)
-            <!-- Insert analytics code here -->
-        @endif
+{{--         @if ($page->production)
+            //
+        @endif --}}
 
         <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i,800,800i" rel="stylesheet">
         <link rel="stylesheet" href="{{ mix('css/main.css', 'assets/build') }}">
@@ -50,15 +47,16 @@
             <div class="container flex items-center max-w-8xl mx-auto px-4 lg:px-8">
                 {{-- Logo --}}
                 <div class="z-20 -mt-20 sm:mt-0">
-                    <a href="/" title="{{ $page->siteName }}">
-                        <div class="text-sm sm:text-xl text-gray-600 p-2">El blog de</div>
-                        <div class="text-md sm:text-2xl text-blue-600 p-2 -mt-4">Damián Aguilar</div>
+                    <a href="/" title="{{ $page->siteName }}" class="block sm:hidden absolute top-0 mt-4">El blog de Damián Aguilar</a>
+                    <a href="/" title="{{ $page->siteName }}" class="hidden sm:block">
+                        <div class="text-md text-gray-600 p-2">El blog de</div>
+                        <div class="text-xl text-blue-600 p-2 -mt-4">Damián Aguilar</div>
                     </a>
                 </div>
                 {{-- Sky --}}
                 @include('_layouts.components.sky')
                 {{-- Search --}}
-                <div id="vue-search" class="flex flex-1 justify-end items-center">
+                <div id="vue-search" class="flex flex-1 justify-end items-center relative">
                     <search class="z-50"></search>
                     @include('_nav.menu')
                     @include('_nav.menu-toggle')
