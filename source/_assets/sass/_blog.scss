@@ -1,6 +1,6 @@
 // Your custom blog styles here
 #header {
-    position: relative;
+    @apply relative;
     height: 250px;
     background-image: linear-gradient(to left, #a0aec0, #e2e8f0);
 }
@@ -9,4 +9,22 @@
     #header {
         height: 140px;
     }
+}
+
+main ul,
+main ol {
+    @apply ml-10;
+}
+
+main ul li,
+main ol li {
+    @apply my-2;
+}
+
+main ul li {
+    @apply list-disc;
+}
+
+main ol li {
+    @apply list-decimal;
 }

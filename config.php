@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'baseUrl' => 'https://www.daguilar.dev',
+    'baseUrl' => '',
     'production' => false,
     'siteName' => 'Blog de Damián Aguilar',
     'siteDescription' => 'Blog sobre programación: php, javascript, vuejs, phyton, java... y mucho más.',

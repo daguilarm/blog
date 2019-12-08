@@ -9,15 +9,14 @@ description: Alojamiento gratuito para sitios estáticos en Netlify
 
 [Netlify](https://www.netlify.com/){.link-out}, es una plataforma que va más allá de ser un simple servicio de alojamiento estático para sitios web. Nos permite vincular nuestro repositorio (por ejemplo, de Github o Gitlab), de forma que nos permite una integración continua. 
 
-Es decir, cada vez que actualizamos nuestro repositorio, automáticamente, se actualiza nuestro proyecto alojado en [Netlify](https://www.netlify.com/){.link-out}.
+Es decir, cada vez que actualizamos nuestro repositorio, automáticamente, se actualiza nuestro proyecto alojado en [Netlify](https://www.netlify.com/).
 
 Ofrece un servicio gratuito, para sitios pequeños (y estáticos), incluyendo:
 
-* Dominio propio.
-* Gestión de DNS.
-* HTTPS.
-* Rollbacks.
-...
++ Dominio propio.
++ Gestión de DNS.
++ HTTPS.
++ Rollbacks.
 
 Si necesitamos bases de datos, formularios, etc... entonces vamos a tener que optar por otras soluciones.
 
