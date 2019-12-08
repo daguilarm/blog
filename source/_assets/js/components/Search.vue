@@ -9,7 +9,7 @@
                 id="search"
                 v-model="query"
                 ref="search"
-                class="transition-fast relative block h-10 w-full mr-12 -ml-4 sm:-mr-2 sm:w-2/3 lg:w-1/3 lg:focus:w-3/4 bg-gray-100 border border-gray-500 focus:border-blue-400 outline-none cursor-pointer text-gray-700 px-4 pb-0 pt-px"
+                class="transition-fast relative block h-10 w-full mr-12 -ml-4 sm:mr-0 sm:w-2/3 lg:w-1/3 lg:focus:w-3/4 bg-gray-100 border border-gray-500 focus:border-blue-400 outline-none cursor-pointer text-gray-700 px-4 pb-0 pt-px"
                 :class="{ 'transition-border': query }"
                 autocomplete="off"
                 name="search"
