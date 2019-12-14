@@ -47,7 +47,7 @@ pagination:
                 <a
                     href="{{ $next }}"
                     title="Next Page"
-                    class="bg-gray-200 hover:bg-gray-400 rounded mr-3 px-5 py-3"
+                    class="bg-blue-100 hover:bg-blue-300 rounded mr-3 px-5 py-3"
                 >&RightArrow;</a>
             @endif
         </nav>
