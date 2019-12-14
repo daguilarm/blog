@@ -7,7 +7,7 @@
                 <img src="{{ $featuredPost->cover_image }}" alt="{{ $featuredPost->title }} cover image" class="mb-6">
             @endif
 
-            <p class="text-gray-500 font-medium my-2">
+            <p class="text-gray-600 font-medium my-2">
                 {{ $featuredPost->getDate()->format('F j, Y') }}
             </p>
 
