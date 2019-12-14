@@ -16,7 +16,7 @@
 
     <h1 class="leading-none mb-6 text-blue-800 text-3xl md:text-4xl lg:text-5xl">{{ $page->title }}</h1>
 
-    <p class="text-gray-700 text-xl md:mt-0">{{ $page->author }}  •  {{ date('d/m/Y', $page->date) }}</p>
+    <p class="text-gray-500 text-xl md:mt-0">{{ $page->author }}  •  {{ date('d/m/Y', $page->date) }}</p>
 
     @if ($page->categories)
         @foreach ($page->categories as $i => $category)
