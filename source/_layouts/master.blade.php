@@ -73,8 +73,9 @@
 
         <footer class="bg-white text-center text-sm mt-12 py-4" role="contentinfo">
             <ul class="flex flex-col md:flex-row justify-center list-reset">
-                <li class="md:mr-2">
-                    &copy; Damián Aguilar {{ date('Y') }} - <a href="https://github.com/daguilarm"><img src="../../../assets/img/github.png" alt="Mis proyectos en GitHub"></a>.
+                <li class="flex content-center items-center">
+                    <div class="flex-1 w-64 text-right mr-4">&copy; Damián Aguilar {{ date('Y') }}</div>
+                    <div class="flex-1 w-64 text-left"><a href="https://github.com/daguilarm"><img src="../../../assets/img/github.png" alt="Mis proyectos en GitHub"></a></div>
                 </li>
             </ul>
         </footer>
