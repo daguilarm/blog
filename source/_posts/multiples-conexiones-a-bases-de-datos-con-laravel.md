@@ -207,6 +207,6 @@ class UserController extends Controller
 
 Referencias:
 
-- [Fideloper](https://fideloper.com/laravel-multiple-database-connections){.link-out}
-- [Laracast](https://laracasts.com/discuss/channels/eloquent/laravel-5-multiple-database-connection){.link-out}
-- [Laraveldaily](https://laraveldaily.com/multiple-database-connections-in-the-same-laravel-project/){.link-out}
++ [Fideloper](https://fideloper.com/laravel-multiple-database-connections){.link-out}
++ [Laracast](https://laracasts.com/discuss/channels/eloquent/laravel-5-multiple-database-connection){.link-out}
++ [Laraveldaily](https://laraveldaily.com/multiple-database-connections-in-the-same-laravel-project/){.link-out}
