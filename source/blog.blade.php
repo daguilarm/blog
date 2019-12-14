@@ -13,7 +13,7 @@ pagination:
 @endpush
 
 @section('body')
-    <h1>Últimos artículos</h1>
+    <h1 class="text-blue-800 text-3xl md:text-4xl lg:text-5xl">Últimos artículos</h1>
 
     <hr class="border-b my-6">
 

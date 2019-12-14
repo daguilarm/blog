@@ -8,7 +8,7 @@
 @endpush
 
 @section('body')
-    <h1>Acerca de mi</h1>
+    <h1 class="text-blue-800 text-3xl md:text-4xl lg:text-5xl">Acerca de mi</h1>
 
     <img src="/assets/img/damian-aguilar.jpeg"
         alt="Damián Aguilar"

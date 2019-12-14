@@ -15,7 +15,7 @@
 @endpush
 
 @section('body')
-<h1>Contacto</h1>
+<h1 class="text-blue-800 text-3xl md:text-4xl lg:text-5xl">Contacto</h1>
 
 <p class="mb-8">
     Puedes contactar conmigo mediante:
