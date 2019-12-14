@@ -52,7 +52,6 @@
                     <a href="/" title="{{ $page->siteName }}" class="hidden sm:block">
                         <div class="text-lg text-gray-700 p-2">El blog de</div>
                         <div class="text-2xl font-bold text-blue-600 p-2 -mt-4">Damián Aguilar</div>
-                        <a href="https://github.com/daguilarm" class="block lg:hidden z-50" aria-label="Mis proyectos en GitHub"><img src="../../../assets/img/github.png"></a>
                     </a>
                 </div>
                 {{-- Sky --}}
@@ -75,7 +74,7 @@
         <footer class="bg-white text-center text-sm mt-12 py-4" role="contentinfo">
             <ul class="flex flex-col md:flex-row justify-center list-reset">
                 <li class="md:mr-2">
-                    &copy; Damián Aguilar {{ date('Y') }}.
+                    &copy; Damián Aguilar {{ date('Y') }} - <a href="https://github.com/daguilarm"><img src="../../../assets/img/github.png" alt="Mis proyectos en GitHub"></a>.
                 </li>
             </ul>
         </footer>
