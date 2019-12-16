@@ -15,7 +15,13 @@ Debemos entrar en nuestro repositorio, ir a `settings` y pulsar en *webhooks*. B
 
     https://github.com/github-username/my-repository-name/settings/hooks
 
-Si ya existe un *webhook* hacia **Packagist** lo editamos, y si no lo creamos. Y rellenamos los campos:
+Si ya existe un *webhook* hacia **Packagist** lo editamos, y si no, lo creamos.
+
+![Github webhooks](../../../assets/img/posts/github-webhooks-1.webp){.thumbnail}
+
+Debemos rellenar los campos como se describe a continuación:
+
+![Github webhooks](../../../assets/img/posts/github-webhooks-2.webp){.thumbnail}
 
 + **Payload URL**: https://packagist.org/api/update-package?username=USERNAME (usando el USERNAME de **Packagist**).
 + **Content type**: seleccionamos *application/json*.

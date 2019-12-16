@@ -29,3 +29,7 @@ main ul li {
 main ol li {
     @apply list-decimal;
 }
+
+img.thumbnail {
+    @apply mx-auto my-12 shadow-lg rounded-lg;
+}
