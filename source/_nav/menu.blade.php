@@ -9,6 +9,11 @@
         Sobre mi
     </a>
 
+    <a title="Proyectos: {{ $page->siteName }}" href="/projects"
+        class="ml-6 text-white hover:text-blue-600 {{ $page->isActive('/projects') ? 'active text-blue-600' : '' }}">
+        Proyectos
+    </a>
+
     <a title="Contacto: {{ $page->siteName }}" href="/contact"
         class="ml-6 text-white hover:text-blue-600 {{ $page->isActive('/contact') ? 'active text-blue-600' : '' }}">
         Contacto
