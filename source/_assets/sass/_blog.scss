@@ -34,6 +34,14 @@ img.thumbnail {
     @apply mx-auto my-12 shadow-lg rounded-lg;
 }
 
-@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
-@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
-@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+.z-60 {
+    z-index: 60;
+}
+
+.z-100 {
+    z-index: 100;
+}
+
+.z-full {
+    z-index: 9999;
+}
