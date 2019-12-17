@@ -87,6 +87,7 @@
                 var linksTargetBlank = document.querySelectorAll('.link-out');
                 for (var i = 0; i < linksTargetBlank.length; i++) {
                     linksTargetBlank[i].target = "_blank";
+                    linksTargetBlank[i].rel = "noopener";
                 }
             }, false);
         </script>
