@@ -1,6 +1,10 @@
 @extends('_layouts.master')
 
 @push('meta')
+    @php
+        $page->title = 'Proyectos en los que estoy trabajando';
+        $page->description = 'Listado de proyectos desarrollados por Damián Aguilar en la actualidad.';
+    @endphp
     <meta property="og:title" content="Proyectos en los que estoy trabajando - {{ $page->siteName }}" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="{{ $page->getUrl() }}"/>

@@ -6,6 +6,10 @@ pagination:
 @extends('_layouts.master')
 
 @push('meta')
+    @php
+        $page->title = 'Listado de artículos sobre programación y diseño web';
+        $page->description = 'Artículos sobre diseño web y programación. Centrado en php, laravel, javascript, vuejs, html5, css,...';
+    @endphp
     <meta property="og:title" content="{{ $page->siteName }} Blog" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="{{ $page->getUrl() }}"/>
