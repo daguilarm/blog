@@ -1,0 +1,11 @@
+#cloud-circle {
+    width: 500px;
+    height: 275px;
+    border-radius: 50%;
+    filter: url(#filter);
+    box-shadow: 400px 400px 60px 0px #999;
+    top: -320px;
+    left: -320px;
+    @apply opacity-75 absolute;
+    z-index: 1 !important;
+}

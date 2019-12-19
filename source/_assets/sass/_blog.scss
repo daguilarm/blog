@@ -53,3 +53,14 @@ img.thumbnail {
 .w-80 {
     width: 26rem;
 }
+
+@media (min-width: 640px) {
+    .active {
+        @apply bg-orange-500 shadow;
+    }
+
+    .active:hover {
+        background-color: #ED8936 !important;
+        color: white !important;
+    }
+}

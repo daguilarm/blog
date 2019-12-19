@@ -1,11 +1,4 @@
 <div class="hidden lg:flex">
-    <div id="cloud-circle"></div>
-    <svg width="0" height="0">
-        <filter id="filter">
-          <feTurbulence type="fractalNoise" baseFrequency=".01" numOctaves="10" />
-          <feDisplacementMap in="SourceGraphic" scale="180" />
-        </filter>
-    </svg>
     <div class="sun">
         <div class="ray_box">
             <div class="ray ray1"></div>
