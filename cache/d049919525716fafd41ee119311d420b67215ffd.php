@@ -1,0 +1,1 @@
+<?php /**PATH /Users/daguilarm/Sites/blog/source/cookies.blade.php ENDPATH**/ ?>
