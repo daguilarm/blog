@@ -5,13 +5,13 @@
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
         <polygon id="gradient-1" points="0,0 30,100 65,21 90,100 100,75 100,100 0,100"/>
         <linearGradient id="polygon-gradient-1">
-            <stop offset="0" stop-color="#a0aec0"/>
-            <stop offset="1" stop-color="#718096"/>
+            <stop offset="0" stop-color="#ed8936"/>
+            <stop offset="1" stop-color="#2F2E3C"/>
         </linearGradient>
         <linearGradient id="polygon-gradient-2">
-            <stop offset="0" stop-color="#cbd5e0"/>
+            <stop offset="0" stop-color="#ed8936"/>
             <stop offset="1" stop-color="#4a5568"/>
-            <stop offset="2" stop-color="#a0aec0"/>
+            <stop offset="2" stop-color="#ed8936"/>
         </linearGradient>
     </svg>
 

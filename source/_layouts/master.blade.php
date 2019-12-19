@@ -48,10 +48,10 @@
             <div class="container flex items-center max-w-8xl mx-auto px-4 lg:px-8">
                 {{-- Logo --}}
                 <div class="z-20 -mt-20 sm:mt-0">
-                    <a href="/" title="{{ $page->siteName }}" class="block sm:hidden absolute top-0 mt-3">El blog de Damián Aguilar</a>
+                    <a href="/" title="{{ $page->siteName }}" class="block sm:hidden absolute top-0 mt-3 text-gray-600">El blog de Damián Aguilar</a>
                     <a href="/" title="{{ $page->siteName }}" class="hidden sm:block">
                         <div class="text-lg text-gray-700 p-2">El blog de</div>
-                        <div class="text-2xl font-bold text-blue-600 p-2 -mt-4">Damián Aguilar</div>
+                        <div class="text-2xl font-bold text-orange-600 p-2 -mt-4">Damián Aguilar</div>
                     </a>
                 </div>
                 {{-- Sky --}}
@@ -71,13 +71,16 @@
             @yield('body')
         </main>
 
-        <footer class="bg-white text-center text-sm mt-12 py-4" role="contentinfo">
-            <ul class="flex flex-col md:flex-row justify-center list-reset">
-                <li class="flex content-center items-center">
-                    <div class="flex-1 w-64 text-right mr-4">&copy; Damián Aguilar {{ date('Y') }}</div>
-                    <div class="flex-1 w-64 text-left"><a href="https://github.com/daguilarm" target="_blank"><img src="../../../assets/img/github.png" alt="Mis proyectos en GitHub"></a></div>
-                </li>
-            </ul>
+        <footer class="w-full flex items-center h-24 bg-white sm:bg-gray-600 sm:text-gray-100 text-center text-sm mt-12 py-4" role="contentinfo">
+            <div class="flex-1">
+                &copy; Damián Aguilar {{ date('Y') }} -
+                <a href="https://github.com/daguilarm" class="sm:text-gray-100 hover:text-gray-300">
+                    Github
+                </a> -
+                <a href="https://belich.dev" class="sm:text-gray-100 hover:text-gray-300">
+                    Belich admin
+                </a>
+            </div>
         </footer>
 
         <script src="{{ mix('js/main.js', 'assets/build') }}"></script>
