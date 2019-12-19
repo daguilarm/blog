@@ -51,7 +51,7 @@
                     <a href="/" title="{{ $page->siteName }}" class="block sm:hidden absolute top-0 mt-3 text-gray-600">El blog de Damián Aguilar</a>
                     <a href="/" title="{{ $page->siteName }}" class="hidden sm:block">
                         <div class="text-lg text-gray-700 p-2">El blog de</div>
-                        <div class="text-2xl font-bold text-orange-600 p-2 -mt-4">Damián Aguilar</div>
+                        <div class="text-2xl font-bold text-orange-500 p-2 -mt-4">Damián Aguilar</div>
                     </a>
                 </div>
                 {{-- Sky --}}
