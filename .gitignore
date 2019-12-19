@@ -5,3 +5,4 @@
 /vendor/
 .DS_Store
 source/assets/build
+info.text
