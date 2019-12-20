@@ -4,7 +4,7 @@ section: content
 title: Creando una plantilla HTML5 avanzada
 date: 2019-12-20
 description: Diseño y componentes avanzados para una plantilla HTML
-categories: [html5]
+categories: [html]
 ---
 
 Una plantilla básica HTML5, tendría el siguiente aspecto
