@@ -4,4 +4,4 @@ title: Artículos sobre packagist
 description: Artículos sobre packagist y su gestión.
 ---
 
-Artículos sobre Packagist y gestión de repositorios.
+Artículos sobre **Packagist** y gestión de repositorios.
