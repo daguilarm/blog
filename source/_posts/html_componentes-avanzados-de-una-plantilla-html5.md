@@ -171,7 +171,7 @@ Idiquemos que no se soportan navegadores prehistóricos:
 
 ```html
 <!--[if IE]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+    <p style="padding:5px; margin: 5px; border: 1px solid red;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
 <![endif]-->
 ```
 
@@ -282,7 +282,7 @@ Poniendo todo lo anterior junto:
 
   <body>
     <!--[if IE]>
-        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <p style="padding:5px; margin: 5px; border: 1px solid red;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
     <![endif]-->
     <header>
         <!-- My header code -->
