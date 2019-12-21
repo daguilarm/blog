@@ -64,3 +64,19 @@ img.thumbnail {
         color: white !important;
     }
 }
+
+table {
+    @apply w-full mb-4;
+
+    tr > th {
+        @apply bg-gray-300 border border-gray-400 p-2 text-center;
+    }
+
+    tr > td {
+        @apply border border-gray-400 p-2 text-center;
+    }
+}
+
+h3 {
+    @apply text-blue-700 mt-12;
+}

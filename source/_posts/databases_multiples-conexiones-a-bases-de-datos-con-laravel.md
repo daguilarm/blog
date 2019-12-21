@@ -4,7 +4,7 @@ section: content
 title: Múltiples conexiones a bases de datos con Laravel
 date: 2019-12-14
 description: Conexiones múltiples a bases de datos utilizando Laravel 6.0
-categories: [php, laravel, eloquent]
+categories: [servidores]
 ---
 
 **Laravel** permite realizar múltiples conexiones a bases de datos, independientemente del tipo de base de datos que sea (siempre que esté soportada por Laravel). 
