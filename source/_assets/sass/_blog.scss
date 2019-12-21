@@ -69,6 +69,7 @@ table {
     @apply w-full mb-4;
 
     tr > th {
+        background-color: #EFEFEF !important;
         @apply bg-gray-300 border border-gray-400 p-2 text-center;
     }
 
