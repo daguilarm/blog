@@ -68,11 +68,11 @@ img.thumbnail {
 table {
     @apply w-full mb-4;
 
-    th {
+    thead > tr > th {
         @apply bg-gray-300 border border-gray-400 p-2 text-center;
     }
 
-    td {
+    tbody > tr > td {
         @apply border border-gray-400 p-2 text-center;
     }
 }
