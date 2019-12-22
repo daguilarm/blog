@@ -56,4 +56,6 @@ Los servicios analizados (22/12/2019) son:
 
 (*)Digitalocean
 
->Si conoces y has utilizado más servicios para la gestión de servidores, ves algún error, o falta algo... hazmelo saber!
+<div class="border border-blue-300 rounded bg-blue-100 shadow-lg p-4">
+    Si conoces y has utilizado más servicios para la gestión de servidores, ves algún error, o falta algo... hazmelo saber!
+</div>
