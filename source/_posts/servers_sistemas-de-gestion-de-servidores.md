@@ -9,37 +9,51 @@ description: Listado de los principales sistemas de gestión de servidores.
 
 El objectivo de este artículo es el de mantener una lista (actualizada) de los principales sistemas de gestión de servidores. 
 
-Los servicios analizados son:
+Los servicios analizados (22/12/2019) son:
 
 + [Laravel forge](https://forge.laravel.com/){.link-out}
 + [Moss](https://moss.sh/){.link-out}
++ [Runcloud](https://runcloud.io/){.link-out}
++ [ServerPilot](https://serverpilot.io/){.link-out}
 
 ### Sus características
 
-|       | SSL gratis | Bases datos   | Workers | Supervisor | Redis |
-|:---- :|:----------:|:-------------:|:-------:|:----------:|:-----:|
-| Forge | Si         | Si            | Si      | Si         | Si    |
-| Moss  | Si         | Si            | Si      | Si         | Si    |
+|          | SSL gratis | Bases datos   | Workers | Supervisor | Redis |
+|:------- :|:----------:|:-------------:|:-------:|:----------:|:-----:|
+| Forge    | Si         | Si            | Si      | Si         | Si    |
+| Moss     | Si         | Si            | Si      | Si         | Si    |
+| Runcloud | Si         | Si            | --      | Si         | Si    |
+| ServerP  | Si         | Si            | --      | --         | --    |
 
 ### Tipo de plan
 
-|       | Plan grauito   | Planes de pago  |
-| ----- | -------------- | --------------- |
-| Forge | 5 días prueba  | 9$  - 19$ - 49$ |
-| Moss  | Si             | 12$ - 19$ - 39$ |
+|            | Plan grauito   | Planes de pago (mes)  |
+|:--------- :| -------------- | -------------------   |
+| Forge      | 5 días prueba  | 9$    - 19$   - 49$   |
+| Moss       | Si             | 12$   - 19$   - 39$   |
+| Runcloud   | Si             | 6.67$ - 12.5$ - 37.5$ |
+| ServerP(*) | Modo de prueba | 5$    - 10$   - 20$   |
+
+(*) Tienen un coste adicional por cada aplicación configurada.
 
 ### Servicios de deploy 
 
-|       | Github | Bitbucket | GitLab | Custom Git |
-|:---- :|:----- :|:---------:|:------:|:----------:|
-| Forge | Si     | Si        | Si     | Si         |
-| Moss  | Si     | Si        | Si     | Si         |
+|          | Github | Bitbucket | GitLab | Custom Git |
+|:------- :|:----- :|:---------:|:------:|:----------:|
+| Forge    | Si     | Si        | Si     | Si         |
+| Moss     | Si     | Si        | Si     | Si         |
+| Runcloud | Si     | Si        | Si     | Si         |
+| ServerP  | --     | --        | --     | --         |
 
 ### Servidores soportados
 
-|       | Digitalocean | Linode | Amazon | Vultr | Upcloud | Google | Custom |
-|:-----:|:------------:|:------:|:------:|:-----:|:-------:|:-----::|:------:|
-| Forge | Si           | Si     | Si     | Si    |-        |-       |Si      |
-| Moss  | Si           | -      | Si     | Si    |Si       |Si      |Si      |
+|          | Digital(*) | Linode | Amazon | Vultr | Upcloud | Google | Custom |
+|:------- :|:----------:|:------:|:------:|:-----:|:-------:|:-----::|:------:|
+| Forge    | Si         | Si     | Si     | Si    |--       |--      |Si      |
+| Moss     | Si         | --     | Si     | Si    |Si       |Si      |Si      |
+| Runcloud | Si         | Si     | --     | --    |--       |--      |--      |
+| ServerP  | Si         | Si     | Si     | Si    |--       |--      |Si      |
 
-Si conoces y has utilizado más servicios para la gestión de servidores, hazmelo saber!
+(*)Digitalocean
+
+>Si conoces y has utilizado más servicios para la gestión de servidores, ves algún error, o falta algo... hazmelo saber!
