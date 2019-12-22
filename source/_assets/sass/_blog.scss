@@ -65,19 +65,6 @@ img.thumbnail {
     }
 }
 
-table {
-    @apply w-full mb-4;
-}
-
-table thead tr th,
-table tbody tr td {
-    padding: 1rem 0.50rem !important;
-}
-
-table tbody tr:nth-child(even) {
-    background-color: #efefef !important;
-}
-
 h3 {
     @apply text-blue-700 mt-12;
 }
