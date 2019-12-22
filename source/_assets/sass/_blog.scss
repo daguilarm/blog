@@ -70,6 +70,7 @@ table {
 }
     table > thead > tr > th {
         @apply bg-gray-300 border border-gray-400 p-2 text-center;
+        background-color: #ccc !important;
     }
 
     table > tbody > tr > td {
