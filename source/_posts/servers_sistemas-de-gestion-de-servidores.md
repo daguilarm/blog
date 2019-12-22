@@ -18,8 +18,8 @@ Los servicios analizados (22/12/2019) son:
 
 ### Sus características
 
-|          | SSL gratis | Bases datos   | Workers | Supervisor | Redis |
-|:------- :|:----------:|:-------------:|:-------:|:----------:|:-----:|
+| Servicio | SSL gratis | Bases datos   | Workers | Supervisor | Redis |
+|:---      |:---        |:---           |:---     |:---        |:---   |
 | Forge    | Si         | Si            | Si      | Si         | Si    |
 | Moss     | Si         | Si            | Si      | Si         | Si    |
 | Runcloud | Si         | Si            | --      | Si         | Si    |
@@ -27,8 +27,8 @@ Los servicios analizados (22/12/2019) son:
 
 ### Tipo de plan
 
-|            | Plan grauito   | Planes de pago (mes)  |
-|:--------- :| -------------- | -------------------   |
+| Servicio   | Plan grauito   | Planes de pago (mes)  |
+|:---        | :---           | :---                  |
 | Forge      | 5 días prueba  | 9$    - 19$   - 49$   |
 | Moss       | Si             | 12$   - 19$   - 39$   |
 | Runcloud   | Si             | 6.67$ - 12.5$ - 37.5$ |
@@ -38,8 +38,8 @@ Los servicios analizados (22/12/2019) son:
 
 ### Servicios de deploy 
 
-|          | Github | Bitbucket | GitLab | Custom Git |
-|:------- :|:----- :|:---------:|:------:|:----------:|
+| Servicio | Github | Bitbucket | GitLab | Custom Git |
+|:---      |:---    |:---       |:---    |:---        |
 | Forge    | Si     | Si        | Si     | Si         |
 | Moss     | Si     | Si        | Si     | Si         |
 | Runcloud | Si     | Si        | Si     | Si         |
@@ -47,8 +47,8 @@ Los servicios analizados (22/12/2019) son:
 
 ### Servidores soportados
 
-|          | Digital(*) | Linode | Amazon | Vultr | Upcloud | Google | Custom |
-|:------- :|:----------:|:------:|:------:|:-----:|:-------:|:-----::|:------:|
+| Servicio | Digital(*) | Linode | Amazon | Vultr | Upcloud | Google | Custom |
+|:---      |:---        |:---    |:---    |:---   |:---     |:---    |:---    |
 | Forge    | Si         | Si     | Si     | Si    |--       |--      |Si      |
 | Moss     | Si         | --     | Si     | Si    |Si       |Si      |Si      |
 | Runcloud | Si         | Si     | --     | --    |--       |--      |--      |
