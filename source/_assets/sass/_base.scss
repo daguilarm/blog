@@ -23,8 +23,8 @@ blockquote {
     @apply .text-lg;
 }
 
-code {
-    @apply .bg-gray-400;
+code:not(.hljs) {
+    @apply .bg-blue-100 shadow;
     @apply .px-2;
     @apply .py-px;
     @apply .rounded;
