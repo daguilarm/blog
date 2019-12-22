@@ -68,13 +68,13 @@ img.thumbnail {
 table {
     @apply w-full mb-4 shadow;
 }
-    table > thead > tr > th {
+    table thead tr th {
         // @apply bg-gray-300 border border-gray-400 p-2 text-center;
         background-color: black !important;
         color: white;
     }
 
-    table > tbody > tr > td {
+    table tbody tr td {
         @apply border border-gray-400 p-2 text-center;
     }
 
