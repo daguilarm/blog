@@ -2,7 +2,7 @@
 extends: _layouts.post
 section: content
 title: Patrones de diseño y uso de Pipelines con Laravel
-date: 2019-01-03
+date: 2020-01-03
 description: Utilización del patrón de diseño Pipelines, incluido en Laravel por defecto.
 categories: [laravel, php]
 ---
