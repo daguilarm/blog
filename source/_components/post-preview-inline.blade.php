@@ -7,7 +7,7 @@
         <a
             href="{{ $post->getUrl() }}"
             title="Read more - {{ $post->title }}"
-            class="{{ $loop->even ? 'text-blue-600' : 'text-gray-600' }} font-extrabold"
+            class="{{ $loop->even ? 'text-gray-600' : 'text-gray-700' }} font-extrabold"
         >{{ $post->title }}</a>
     </h2>
 
