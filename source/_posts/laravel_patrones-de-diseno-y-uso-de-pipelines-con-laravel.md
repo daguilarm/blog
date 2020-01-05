@@ -64,21 +64,7 @@ $pipeline = app(Pipeline::class)
 3. El método `through()`, nos permite definir un *array* con toda la lista de clases que queremos que se ejecuten.
 4. Finalmente, ejecutamos una acción final.
 
-Disponemos de otros métodos, por ejemplo, si al final simplemente queremos devolver el valor de `$level`, una vez ha pasado por todos los filtros, podemos usar:
-
-```php
-$pipeline = app(Pipeline::class)
-    ->send($level)
-    ->through([
-        \MyNamespace\Invitado::class,
-        \MyNamespace\Usuario::class,
-        \MyNamespace\Editor::class,
-        \MyNamespace\Administrador::class,
-    ])
-    ->thenReturn();
-```
-
-Nuestra clase principal, quedará así:
+Disponemos de otros métodos, por ejemplo, si al final simplemente queremos devolver el valor de `$level`, una vez ha pasado por todos los filtros, podemos usar el método: `thenReturn()` en vez de `then`, y nuestra clase principal, quedará así:
 
 ```php
 <?php 
@@ -105,7 +91,7 @@ final class Roles
 }
 ```
 
-Lo que hemos hecho, ha sido enviar el valor `$level`, a través de una serie de clases, que cada una, va a realizar una única función. Veamos, a modo de ejemplo, como quedaría la primera clase:
+Lo que hemos hecho, ha sido enviar el valor `$level` a través de una serie de clases o filtros, realizando cada una de ellas, una función específica. Veamos, a modo de ejemplo, como quedaría la primera de estas clases:
 
 ```php
 <?php 
@@ -127,7 +113,7 @@ final class Invitado
 }
 ```
 
-Si os fijais, tiene la estructura de un middleware de Laravel. Y por tanto, el método: `handle()`, es obligatorio y debe de incluir una `Closure`. Lo que hacemos con esto, devolver el resultado si se cumple la condición, y si no, enviamos la variable a la clase siguiente.
+Si os fijais, tiene la estructura clásica de un *middleware* de **Laravel**. Y por tanto, el método: `handle()`, es obligatorio y debe de incluir una `Closure`. Lo que hacemos con esto, es devolver el resultado si se cumple la condición, y si no, enviamos la variable a la clase siguiente.
 
 Si por cualquier motivo queremos cambiar el método `handle()` por otro que nos interese más, disponemos del método `via('myNewMethod')` para hacerlo:
 
