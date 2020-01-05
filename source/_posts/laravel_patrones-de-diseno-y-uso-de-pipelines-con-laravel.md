@@ -9,11 +9,11 @@ categories: [laravel, php]
 
 Las *Pipelines* de [Laravel](https://laravel.com){.link-out}, nos van a permitir enviar un objeto a través de una serie de clases de forma sencilla y ordenada, simplificando considerablemente nuestro código.
 
-Realmente, es un *patrón de diseño* utilizado por **Laravel** de forma interna, pero que no vas a encontrar en su documentación. En cualquier caso, lo puedes implementar en tu proyecto sin ningún problema.
+Realmente, es un *patrón de diseño* utilizado por **Laravel** de forma interna, pero que no vas a encontrar en su documentación, y la verdad es que no se por qué... En cualquier caso, lo puedes implementar en tu proyecto sin ningún problema.
 
-Personalmente, suelo utilizarlo bastante para hacer un *refactoring* del código, consiguiendo simplificarlo considerablemente, y sobre todo, ordenándolo, que últimamente, se está conviertiendo en una obsesión...
+Personalmente, suelo utilizarlo bastante para hacer un *refactoring* del código, consiguiendo simplificarlo considerablemente, y sobre todo, ordenándolo, algo que últimamente se está conviertiendo en una obsesión...
 
-La mejor forma de comprender su funcionamiento, y cómo puede ayudarnos a simplificar nuestro código, es con un ejemplo. Imaginemos la siguiente clase:
+La mejor forma de comprender el funcionamiento de las *Pipelines*, y cómo esta puede ayudarnos a simplificar nuestro código, es con un ejemplo. Imaginemos la siguiente clase:
 
 ```php
 <?php 
@@ -43,7 +43,42 @@ final class Roles
 }
 ```
 
-Estoy seguro que te has encontrado con clases con muchos más condicionales, y que al final, se convierten en una interminable lista de condiciones... Usemos las *Pipelines* para simplificarlo. Nuestra clase principal, quedará así:
+Estoy seguro que te has encontrado con clases con muchos más condicionales, y que al final, se convierten en una interminable lista de condiciones... Usemos las *Pipelines* para simplificarlo. La estructura básica es la siguiente: 
+
+```php
+$pipeline = app(Pipeline::class)
+    ->send($level)
+    ->through([
+        \MyNamespace\Invitado::class,
+        \MyNamespace\Usuario::class,
+        \MyNamespace\Editor::class,
+        \MyNamespace\Administrador::class,
+    ])
+    ->then(function ($content) {
+        return 'Tu nivel de acceso es: ' . $level;
+    });
+```
+
+1. Instanciamos a la clase *Pipeline*: `Illuminate\Pipeline\Pipeline`.
+2. Definimos la variable que queremos enviar a través de la *Pipeline*, y que por tanto, será accesible a todas las clases de forma automática, a través del método `send()`.
+3. El método `through()`, nos permite definir un *array* con toda la lista de clases que queremos que se ejecuten.
+4. Finalmente, ejecutamos una acción final.
+
+Disponemos de otros métodos, por ejemplo, si al final simplemente queremos devolver el valor de `$level`, una vez ha pasado por todos los filtros, podemos usar:
+
+```php
+$pipeline = app(Pipeline::class)
+    ->send($level)
+    ->through([
+        \MyNamespace\Invitado::class,
+        \MyNamespace\Usuario::class,
+        \MyNamespace\Editor::class,
+        \MyNamespace\Administrador::class,
+    ])
+    ->thenReturn();
+```
+
+Nuestra clase principal, quedará así:
 
 ```php
 <?php 
@@ -92,11 +127,25 @@ final class Invitado
 }
 ```
 
-El método, es obligatorio que se llame `handle()`, y debe de incluir una `Closure`. 
+Si os fijais, tiene la estructura de un middleware de Laravel. Y por tanto, el método: `handle()`, es obligatorio y debe de incluir una `Closure`. Lo que hacemos con esto, devolver el resultado si se cumple la condición, y si no, enviamos la variable a la clase siguiente.
 
-Lo que hacemos es devolver el resultado si se cumple la condición, y si no, enviamos la variable a la clase siguiente.
+Si por cualquier motivo queremos cambiar el método `handle()` por otro que nos interese más, disponemos del método `via('myNewMethod')` para hacerlo:
 
-Generando una estructura de directorios, similar a esta:
+```php
+// Add filters to the pipeline
+return app(Pipeline::class)
+    ->send($level)
+    ->via('nuevoMetodo')
+    ->through([
+        \MyNamespace\Invitado::class,
+        \MyNamespace\Usuario::class,
+        \MyNamespace\Editor::class,
+        \MyNamespace\Administrador::class,
+    ])
+    ->thenReturn();
+```
+
+En el ejemplo anterior, hemos generando una estructura de directorios, similar a esta:
 
 ```bash
 ./Roles.php 
@@ -105,6 +154,11 @@ Generando una estructura de directorios, similar a esta:
 ./Filters/Editor.php
 ./Filters/Administrador.php
 ```
-Un ejemplo de esta implementación, pero bastante más compleja, lo podeis encontrar aquí:
 
-https://github.com/daguilarm/belich/blob/master/src/Fields/Resolves/Handler/Index/Values.php
+Permitiéndonos ordenar el código. Un ejemplo más avanzado de esta implementación, lo podeis encontrar aquí:
+
+[https://github.com/daguilarm/belich/blob/master/src/Fields/Resolves/Handler/Index/Values.php](https://github.com/daguilarm/belich/blob/master/src/Fields/Resolves/Handler/Index/Values.php){.link-out}
+
+Y todas la información y métodos disponibles aquí:
+
+[https://laravel.com/api/6.x/Illuminate/Pipeline/Pipeline.html](https://laravel.com/api/6.x/Illuminate/Pipeline/Pipeline.html){.link-out}
