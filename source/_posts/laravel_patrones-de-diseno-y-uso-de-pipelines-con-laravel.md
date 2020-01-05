@@ -64,7 +64,7 @@ $pipeline = app(Pipeline::class)
 3. El método `through()`, nos permite definir un *array* con toda la lista de clases que queremos que se ejecuten.
 4. Finalmente, ejecutamos una acción final.
 
-Disponemos de otros métodos, por ejemplo, si al final simplemente queremos devolver el valor de `$level`, una vez ha pasado por todos los filtros, podemos usar el método: `thenReturn()` en vez de `then`, y nuestra clase principal, quedará así:
+Disponemos de otros métodos, por ejemplo, si al final simplemente queremos devolver el valor de `$level`, una vez ha pasado por todos los filtros, podemos usar el método: `thenReturn()` en vez de `then()`, y nuestra clase principal, quedará así:
 
 ```php
 <?php 
