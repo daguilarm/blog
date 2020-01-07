@@ -10,6 +10,7 @@
         <meta property="og:type" content="website" />
         <meta property="og:url" content="{{ $page->getUrl() }}"/>
         <meta property="og:description" content="{{ $page->siteDescription }}" />
+        <meta name="msvalidate.01" content="7EBAF0830896AD1D4A27E93C37552EDA" />
         <link rel="home" href="{{ $page->baseUrl }}">
         <link href="/blog/feed.atom" type="application/atom+xml" rel="alternate" title="{{ $page->siteName }} Atom Feed">
         <link rel="apple-touch-icon" sizes="57x57" href="{{ $page->baseUrl }}/assets/img/favicon/apple-icon-57x57.png">
