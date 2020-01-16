@@ -57,3 +57,6 @@ En cualquier caso, la idea de esta entrada del blog, es un listado con los *pack
 + Documentación: [https://github.com/rap2hpoutre/laravel-log-viewer/blob/master/README.md](https://github.com/rap2hpoutre/laravel-log-viewer/blob/master/README.md){.link-out}
 + Descripción: Completo gestor de Logs para Laravel.
 
+Y ya para terminar, un *package* propio:
+
+[https://github.com/daguilarm/belich](https://github.com/daguilarm/belich)
