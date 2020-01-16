@@ -2,7 +2,7 @@
 extends: _layouts.post
 section: content
 title: Packages imprescindibles para Laravel
-date: 2019-11-15
+date: 2020-01-15
 description: Lista de Packages básicos para el Framework php Laravel
 categories: [packages, laravel, php]
 ---
