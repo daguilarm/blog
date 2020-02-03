@@ -103,8 +103,7 @@ final class ServiceProvider extends Provider
      */
     public function boot(): void
     {
-        //Include the package classmap autoloader
-        require_once __DIR__ . '/../vendor/autoload.php';
+        //
     }
 
     /**
@@ -169,9 +168,6 @@ final class ServiceProvider extends Provider
      */
     public function boot(): void
     {
-        //Include the package classmap autoloader
-        require_once __DIR__ . '/../vendor/autoload.php';
-
         //Routes 
         $this->registerRoutes();
     }
@@ -208,9 +204,6 @@ final class ServiceProvider extends Provider
      */
     public function boot(): void
     {
-        //Include the package classmap autoloader
-        require_once __DIR__ . '/../vendor/autoload.php';
-
         //Routes 
         $this->registerRoutes();
 
@@ -285,8 +278,6 @@ final class ServiceProvider extends Provider
      */
     public function boot(): void
     {
-        //Include the package classmap autoloader
-        require_once __DIR__ . '/../vendor/autoload.php';
 
         //Routes 
         $this->registerRoutes();
@@ -345,9 +336,6 @@ final class ServiceProvider extends Provider
      */
     public function boot(): void
     {
-        //Include the package classmap autoloader
-        require_once __DIR__ . '/../vendor/autoload.php';
-
         //Routes 
         $this->registerRoutes();
 
