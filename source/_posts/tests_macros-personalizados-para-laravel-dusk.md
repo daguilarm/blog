@@ -2,7 +2,7 @@
 extends: _layouts.post
 section: content
 title: Macros personalizados para Laravel Dusk
-date: 2020-01-08
+date: 2020-01-03
 description: Listado de macros para Laravel dusk que pueden ser de utilidad.
 categories: [laravel, php, tests]
 ---
