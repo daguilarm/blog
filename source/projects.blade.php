@@ -17,7 +17,7 @@
     <section id="belich" class="mt-8 p-6">
         <h3 class="text-xl">a) Belich: panel de administración para Laravel.</h3>
         <p>
-            Belich es un panel de administración completo, desarrollado como un <i>package</i> de <a href="https://laravel.com" target="_blank" rel="noopener">Laravel</a>,
+            Belich es un panel de administración desarrollado con la intención de mejorar como programador, por lo tanto no debe utilizarse para producción. Ha sido desarrollado como un <i>package</i> de <a href="https://laravel.com" target="_blank" rel="noopener">Laravel</a>,
             entre otras funcionalidades, ofrece:
         </p>
         <div class="sm:flex">

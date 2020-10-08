@@ -9,7 +9,7 @@
     },
     "devDependencies": {
         "axios": "^0.18.1",
-        "browser-sync": "^2.26.7",
+        "browser-sync": "^2.26.12",
         "browser-sync-webpack-plugin": "^2.0.1",
         "cross-env": "^3.2.3",
         "extra-watch-webpack-plugin": "^1.0.3",
@@ -24,6 +24,6 @@
         "tailwindcss": "^1.0.4",
         "vue": "^2.6.10",
         "vue-template-compiler": "^2.6.10",
-        "yargs": "^4.6.0"
+        "yargs": "^16.0.3"
     }
 }
