@@ -1,7 +1,7 @@
 ---
 extends: _layouts.post
 section: content
-title: Algunos consejos sobre diseño responsable (responsive design)
+title: Algunas ideas sobre diseño responsable (responsive design)
 date: 2020-10-08
 description: Diseño de una web adaptable a los diferentes dispositivos
 categories: [html]
