@@ -22,34 +22,36 @@ Y nos generará dos archivos, uno ubicado en la carpeta `app\Http\Livewire\Searc
     <!-- Campo de búsqueda -->
     <input 
         type="text" 
-        x-on:keydown="showInput = true" 
+        x-on:keydown="iconReset = true" 
         wire:model="search" 
         placeholder="Introduzca el término a buscar..."
     >
     <!-- Icono para borrar el campo de búsqueda -->
-    <svg 
-        class="h-5 w-5 mt-1 cursor-pointer" 
-        x-on:click="showTableSearch = false" 
-        wire:click="clearSearch" 
-        xmlns="http://www.w3.org/2000/svg" 
-        fill="none" 
-        viewBox="0 0 24 24" 
-        stroke="currentColor"
-    >
-        <path 
-            stroke-linecap="round" 
-            stroke-linejoin="round" 
-            stroke-width="2" 
-            d="M6 18L18 6M6 6l12 12"
+    <div x-show="iconReset">
+        <svg 
+            class="h-5 w-5 mt-1 cursor-pointer" 
+            x-on:click="iconReset = false" 
+            wire:click="clearSearch" 
+            xmlns="http://www.w3.org/2000/svg" 
+            fill="none" 
+            viewBox="0 0 24 24" 
+            stroke="currentColor"
         >
-        </path>
-    </svg>
+            <path 
+                stroke-linecap="round" 
+                stroke-linejoin="round" 
+                stroke-width="2" 
+                d="M6 18L18 6M6 6l12 12"
+            >
+            </path>
+        </svg>
+    </div>
 </div>
 
 <script>
     function navbarImputSearch() {
         return {
-            showInput: false,
+            iconReset: false,
             search: '',
         }
     }
