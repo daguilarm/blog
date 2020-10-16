@@ -18,7 +18,7 @@ php artisan make:livewire search
 Y nos generará dos archivos, uno ubicado en la carpeta `app\Http\Livewire\Search.php` y el otro (con las vistas) en la carpeta `resources/views/livewire/search.blade.php`. Ya tenemos todo listo para empezar (siempre que tengamos Livewire y AlpineJS configurados en nuestro proyecto). Empezaremos por el archivo de las vistas:
 
 ```html
-<div x-data="inputSearch()">
+<div style="position: relative" x-data="inputSearch()">
     <!-- Campo de búsqueda -->
     <input 
         type="text" 
@@ -26,8 +26,8 @@ Y nos generará dos archivos, uno ubicado en la carpeta `app\Http\Livewire\Searc
         wire:model="search" 
         placeholder="Introduzca el término a buscar..."
     >
-    <!-- Icono para borrar el campo de búsqueda -->
-    <div x-show="iconReset">
+    <!-- Icono para borrar el campo de búsqueda (ajústalo con tu css) -->
+    <div style="position: absolute" x-show="iconReset">
         <svg 
             class="h-5 w-5 mt-1 cursor-pointer" 
             x-on:click="iconReset = false" 
@@ -49,7 +49,7 @@ Y nos generará dos archivos, uno ubicado en la carpeta `app\Http\Livewire\Searc
 </div>
 
 <script>
-    function navbarImputSearch() {
+    function inputSearch() {
         return {
             iconReset: false,
             search: '',
@@ -72,7 +72,7 @@ Y el código JavaScript quedaría así:
     <script>
         function inputSearch() {
             return {
-                showInput: false,
+                iconReset: false,
                 search: '',
             }
         }
@@ -150,32 +150,34 @@ Ahora nos quedaría añadir a nuestra vista, los resultados:
 
 ```html
 <!-- Buscador -->
-<div x-data="inputSearch()">
+<div style="position: relative" x-data="inputSearch()">
     <!-- Campo de búsqueda -->
     <input 
         type="text" 
-        x-on:keydown="showInput = true" 
+        x-on:keydown="iconReset = true" 
         wire:model="search" 
         placeholder="Introduzca el término a buscar..."
     >
-    <!-- Icono para borrar el campo de búsqueda -->
-    <svg 
-        class="h-5 w-5 mt-1 cursor-pointer" 
-        x-on:click="showTableSearch = false" 
-        wire:click="clearSearch" 
-        xmlns="http://www.w3.org/2000/svg" 
-        fill="none" 
-        viewBox="0 0 24 24" 
-        stroke="currentColor"
-    >
-        <path 
-            stroke-linecap="round" 
-            stroke-linejoin="round" 
-            stroke-width="2" 
-            d="M6 18L18 6M6 6l12 12"
+    <!-- Icono para borrar el campo de búsqueda (ajústalo con tu css) -->
+    <div style="position: absolute" x-show="iconReset">
+        <svg 
+            class="h-5 w-5 mt-1 cursor-pointer" 
+            x-on:click="iconReset = false" 
+            wire:click="clearSearch" 
+            xmlns="http://www.w3.org/2000/svg" 
+            fill="none" 
+            viewBox="0 0 24 24" 
+            stroke="currentColor"
         >
-        </path>
-    </svg>
+            <path 
+                stroke-linecap="round" 
+                stroke-linejoin="round" 
+                stroke-width="2" 
+                d="M6 18L18 6M6 6l12 12"
+            >
+            </path>
+        </svg>
+    </div>
 </div>
 
 <!-- Resultados -->
@@ -192,9 +194,9 @@ Ahora nos quedaría añadir a nuestra vista, los resultados:
 
 <!-- Código JavaScript -->
 <script>
-    function navbarImputSearch() {
+    function inputSearch() {
         return {
-            showInput: false,
+            iconReset: false,
             search: '',
         }
     }
