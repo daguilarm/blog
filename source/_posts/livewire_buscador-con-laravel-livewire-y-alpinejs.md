@@ -181,7 +181,6 @@ Ahora nos quedaría añadir a nuestra vista, los resultados:
 </div>
 
 <!-- Resultados -->
-{{-- Results --}}
 @isset($results)
     <ul>
         @foreach($results as $item)
