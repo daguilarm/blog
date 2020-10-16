@@ -204,6 +204,5 @@ Ahora nos quedaría añadir a nuestra vista los resultados:
 
 Básicamente sería así... Más información aquí:
 
-[https://laravel-livewire.com/docs/2.x/making-components](https://laravel-livewire.com/docs/2.x/making-components){.link-out}
-
-[https://laravel-livewire.com/docs/2.x/query-string](https://laravel-livewire.com/docs/2.x/query-string){.link-out}
+- [https://laravel-livewire.com/docs/2.x/making-components](https://laravel-livewire.com/docs/2.x/making-components){.link-out}
+- [https://laravel-livewire.com/docs/2.x/query-string](https://laravel-livewire.com/docs/2.x/query-string){.link-out}
