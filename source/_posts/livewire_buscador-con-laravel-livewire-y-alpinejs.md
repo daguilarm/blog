@@ -2,7 +2,7 @@
 extends: _layouts.post
 section: content
 title: Buscador con Laravel Livewire y AlpineJS
-date: 2020-10-09
+date: 2020-10-15
 description: Buscador desarrollado con el framework Laravel, el package Livewire y el framework para JavaScript AlpineJS
 categories: [laravel, livewire, alpinejs]
 ---
