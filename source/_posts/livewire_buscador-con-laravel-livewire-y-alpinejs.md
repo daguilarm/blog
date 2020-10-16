@@ -18,7 +18,7 @@ php artisan make:livewire search
 Y nos generará dos archivos, uno ubicado en la carpeta `app\Http\Livewire\Search.php` y el otro (con las vistas) en la carpeta `resources/views/livewire/search.blade.php`. Ya tenemos todo listo para empezar (siempre que tengamos Livewire y AlpineJS configurados en nuestro proyecto). Empezaremos por el archivo de las vistas:
 
 ```html
-<div style="position: relative" x-data="inputSearch()">
+<div style="position:relative" x-data="inputSearch()">
     <!-- Campo de búsqueda -->
     <input 
         type="text" 
@@ -80,7 +80,7 @@ Y el código JavaScript quedaría así:
 @endpush
 ```
 
-Pero esto ya depende de cada uno, y de cómo organice su proyecto. Vamos con el archivo `app\Http\Livewire\Search.php`:
+Pero esto ya depende de cada uno, y de cómo organice su proyecto. Continuemos con el archivo `app\Http\Livewire\Search.php`:
 
 ```php
 <?php
@@ -146,7 +146,7 @@ class NavbarInputSearch extends Component
 }
 ```
 
-Ahora nos quedaría añadir a nuestra vista, los resultados:
+Ahora nos quedaría añadir a nuestra vista los resultados:
 
 ```html
 <!-- Buscador -->
