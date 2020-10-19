@@ -238,6 +238,6 @@ Aqui es donde viene lo raro, en el componente que se carga (según el ejemplo an
 </div>
 ```
 
-Sinceramente, estoy desconcertado... sigue dando error pero ahora funciona correctamente, y si nos olvidamos del mensaje en la consola de `JavaScript` es como si no pasara nada.
+Sinceramente, estoy desconcertado... sigue dando error pero ahora funciona correctamente, y si nos olvidamos del mensaje en la consola de `JavaScript es como si no pasara nada.
 
 Seguiré investigando...
