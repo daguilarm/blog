@@ -203,13 +203,13 @@ Y lo curioso es que funciona, pero da un error de JavaScript:
 Uncaught (in promise) TypeError: Cannot read property 'fingerprint' of null
 ```
 
-Por lo visto este error es debido a que hay un problema con las `keys` que genera `Livewire` y por algún motivo que no he podido ver hasta el momento se repiten de alguna forma... 
+Por lo visto este error es debido a que hay un problema con las `keys` que genera `Livewire` y por algún motivo, no he sido capaz de ver donde se han generado claves repeditas...
 
 + [https://github.com/livewire/livewire/issues/1686
 ](https://github.com/livewire/livewire/issues/1686
 ){.link-out}
 
-## Actualización 19/10/2020
+### Actualización 19/10/2020
 
 Bien, he encontrado una solución pero que parece un parche... y tengo la sensación que es un `bug` en `alplineJS`. Consiste en reiniciarlizar `x-data` y recargar el componente `Livewire`.
 
@@ -220,11 +220,11 @@ Bien, he encontrado una solución pero que parece un parche... y tengo la sensac
         ...
     </div>
     <div id="rootContainer">
-        @if($container === 1)
-            <div x-data="{}" x-init="window.Livewire.rescan($el)">
+        <div x-data="{}" x-init="window.Livewire.rescan($el)">
+            @if($container === 1)
                 <livewire:component1 />
-            </div>>
-        @endif
+            @endif
+        </div>>
         ...
     </div>
 </span>
@@ -238,6 +238,6 @@ Aqui es donde viene lo raro, en el componente que se carga (según el ejemplo an
 </div>
 ```
 
-Sinceramente, estoy desconcertado... sigue dando error pero ahora funciona correctamente, y si nos olvidamos del mensaje en la consola de JavaScript es como si no pasara nada.
+Sinceramente, estoy desconcertado... sigue dando error pero ahora funciona correctamente, y si nos olvidamos del mensaje en la consola de `JavaScript` es como si no pasara nada.
 
 Seguiré investigando...
