@@ -89,6 +89,12 @@ Para finalizar, creo que hay que tener en cuenta algunas cuestiones sobre el tem
 - Eliminar de la versión para tablet todas aquellas partes que sea prescindibles, tenemos menos espacio y hay que mostrar solo lo necesario.
 - El tamaño de fuentes, y sobre todo **iconos**, debe de ser mayor en la versión para tablet. **Es muy importante que los iconos sean grandes** para evitar al usuario tenga que pasar media hora intentando entrar en una sección.
 
+### Actualización 19/10/2020 
+
+He encontrado este artículo sobre como gestionar imágenes en *responsive design*, la verdad es que es muy interesante. Habla de como mostrar imágenes de diferentes tamaños en función del dispositivo que se está utilizando, y sobre todo, de como hacerlo de forma dinámica mediante `PHP`:
+
++ [https://stitcher.io/blog/responsive-images-done-right](https://stitcher.io/blog/responsive-images-done-right){.link-out}
+
 Mas información:
 
 + https://developer.mozilla.org/es/docs/CSS/Media_queries
