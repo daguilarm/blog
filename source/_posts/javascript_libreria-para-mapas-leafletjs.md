@@ -4,7 +4,7 @@ section: content
 title: Librería para mapas LeafletJS
 date: 2020-10-20
 description: Utilización de la librería JavaScript LeafletJS para la creación de mapas a través de servicios WMS.
-categories: [javascript]
+categories: [javascript, livewire, alpinejs]
 ---
 
 Según wikipedia<sup>1</sup> un servicio WMS produce mapas de datos referenciados espacialmente, de forma dinámica a partir de información geográfica. Es decir, estamos hablando de servicios como GoogleMaps, OpenStreetMap o similares. Es decir, capas de información que se muestran superpuestas y en forma de mapa.
