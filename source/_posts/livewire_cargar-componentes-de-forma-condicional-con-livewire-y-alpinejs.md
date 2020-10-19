@@ -125,7 +125,7 @@ Y proponía una solución parecida a esta:
 </span>
 ```
 
-Esta técnica, lo que hace es reiniciar cada elemento Livewire, y al hacer esto, los elementos se van visualizando conforme hacemos *click* en cada enlace, realmente es lo que estaba buscando. 
+Esta técnica, lo que hace es reiniciar cada elemento `Livewire`, y al hacer esto, los elementos se van visualizando conforme hacemos *click* en cada enlace, realmente es lo que estaba buscando. 
 
 En este punto, me puse a revisar el código `HTML` y efectivamente, todo el código se había eliminado del `DOM`... el problema lo encontré al revisar las consultas a la base de datos: seguían siendo 87. 
 
@@ -224,7 +224,7 @@ Bien, he encontrado una solución pero que parece un parche... y tengo la sensac
             @if($container === 1)
                 <livewire:component1 />
             @endif
-        </div>>
+        </div>
         ...
     </div>
 </span>
