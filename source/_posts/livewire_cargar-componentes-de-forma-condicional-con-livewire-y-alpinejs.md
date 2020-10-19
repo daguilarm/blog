@@ -29,15 +29,15 @@ El planteamiento era más o menos así:
         <a href="#" x-click="load = 3">Cargar contenido 3</a>
     </div>
     <div id="rootContainer">
-        <div x-if="load === 1">
+        <template x-if="load === 1">
             <livewire:component1 />
-        </div>
-        <div x-if="load === 2">
+        </template>
+        <template x-if="load === 2">
             <livewire:component2 />
-        </div>
-        <div x-if="load === 3">
+        </template>
+        <template x-if="load === 3">
             <livewire:component3 />
-        </div>
+        </template>
     </div>
 </span>
 ```
