@@ -167,6 +167,10 @@ public function test_radio_field()
 
 Fuente: [https://www.5balloons.info/using-browser-macros-in-laravel-dusk/](https://www.5balloons.info/using-browser-macros-in-laravel-dusk/){.link-out}
 
+### Actualización 20/10/2020
+
+Este macro ya no es necesario. Laravel dusk ya dispone de `waitForReload()` de forma nativa.
+
 5. waitForReload
 
 Permite esperar a que la página actual se recargue, por ejemplo, después de una llamada `Ajax`:
