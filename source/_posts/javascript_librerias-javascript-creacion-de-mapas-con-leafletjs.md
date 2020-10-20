@@ -35,7 +35,7 @@ var zoom = '12';
 var map;
 ```
 
-Tenemos que definir la latitud y la longitud donde queremos que se centre el mapa que vamos a generar. Y luego el *zoom* máximo que vamos a permitir (y que permite el sistema WMS) y el *zoom* por defecto que se mostrará al cargar el mapa, y por supuesto, hay que definir la variable donde se creará el mapa. Lo siguiente es crear el mapa:
+Tenemos que definir la latitud y la longitud donde queremos que se centre el mapa que vamos a generar. Continuamos con el *zoom* máximo que vamos a permitir (y que permite el sistema WMS) y con el *zoom* por defecto que se mostrará al cargar el mapa. Por último, hay que definir la variable donde se creará el mapa. Ahora ya podemos crear el mapa:
 
 ```javascript
 this.map = L.map('mapContainer').setView([lat, lng], this.zoom);
@@ -51,13 +51,21 @@ L.tileLayer.wms( '//www.ign.es/wms-inspire/pnoa-ma', {
 }).addTo( this.map );
 ```
 
-En principio ya estaría, ahora tenemos que crear un `div` con con el identificador `mapContainer` donde se mostrará el mapa:
+En principio ya estaría terminado, ahora tenemos que crear un `div` con el identificador `mapContainer` (por ejemplo) donde se mostrará el mapa:
 
 ```html
 <div id="mapContainer" style="width: 400px; height: 400px;"></div>
 ```
 
-Es importante definir el ancho y el alto, o no se mostrará nada. Pues ya estaría. Ahora podemos refinarlo on poco:
+Obviamente, pudes poner el nombre que quieras al contenedor:
+
+```javascript
+this.map = L.map('elNombreQueQuieras').setView([lat, lng], this.zoom);
+```
+
+Es importante definir el ancho y el alto del contenedor, o no se mostrará nada, ya que si no indicamos nada nos creará un contenedor de ancho 0 y alto 0. 
+
+Ahora podemos refinarlo on poco:
 
 ```javascript
 var lat = '37.7634109';
@@ -106,7 +114,7 @@ var marker = L.marker( new L.LatLng( this.lat, this.lng ) ).addTo( this.map );
 
 En este caso estoy indicando que use las mismas coordenadas de latitud y longitud, pero se puden poner otras... o incluso varias. Para esto tendremos que añadir un marcador por cada punto.
 
-Un último consejo, sobre todo si vamos a incluir el mapa con librerías reactivas tipo VueJS o AplineJS. En estos casos es preferible añadir una recarga del mapa una vez cargada la página... por si acaso:
+Un último consejo, sobre todo si vamos a incluir el mapa con librerías reactivas tipo VueJS o AplineJS. En estos casos es preferible añadir una recarga del mapa una vez generada la página... por si acaso:
 
 ```javascript
 function reloadMap() {
