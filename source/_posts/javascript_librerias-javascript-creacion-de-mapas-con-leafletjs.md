@@ -101,7 +101,7 @@ Los campos que deben indicarse para conectar con el servicio WMS son:
 - **format**: el formato de visualización del mapa. En el servicio *GetCapabilities* se encuentran todos los que están disponibles.
 - **transparent**: si queremos que la capa sea transparente. A veces puede interesarnos.
 - **versión**: es la versión del servicio WMS. También se puede ver en *GetCapabilities*.
-- **crs**: es el Sistema de referencia de coordenadas. También se puede ver los disponibles en *GetCapabilities*. Este tema es complejo, y sinceramente, si solo buscas mostrar un mapa tampoco te compliques demasiado la vida y selecciona uno al azar... aunque el EPSG4326 es una buena elección.
+- **crs**: es el Sistema de referencia de coordenadas. También se puede ver los disponibles en *GetCapabilities*. Este tema es complejo, y sinceramente, si solo buscas mostrar un mapa tampoco te compliques demasiado la vida y selecciona uno al azar... aunque el EPSG4326 es una buena elección, ya que es la equivalencia en EPSG del sistema WGS84<sup>3</sup> que es un estándar utilizado en cartografía, geodesia y navegación.
 - **maxZoom**: el *zoom* máximo que vamos a permitir. Sin olvidar que el servicio WMS también tendrá un máximo y no podremos sobrepasarlo.
 
 ¿Y si queremos añadir un marcador al mapa indicando el punto exacto de las coordenadas?
@@ -166,3 +166,4 @@ En la web oficial de `Leaflet` vas a encontrar muchos ejemplos:
 
 1. https://es.wikipedia.org/wiki/Web_Map_Service
 2. http://www.ign.es/web/ign/portal
+3. https://ingecivilcusco.blogspot.com/2009/09/sistema-geodesico-mundial-1984-wgs84.html
