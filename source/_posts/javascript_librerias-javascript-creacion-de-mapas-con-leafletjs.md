@@ -1,7 +1,7 @@
 ---
 extends: _layouts.post
 section: content
-title: Librería para mapas LeafletJS
+title: Librerías JavaScript - creación de mapas con LeafletJS
 date: 2020-10-20
 description: Utilización de la librería JavaScript LeafletJS para la creación de mapas a través de servicios WMS.
 categories: [javascript, livewire, alpinejs]
