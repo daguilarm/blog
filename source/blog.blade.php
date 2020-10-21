@@ -18,7 +18,7 @@ pagination:
 
 @section('body')
     <h1 class="text-blue-800 text-3xl md:text-4xl lg:text-5xl">Últimos artículos</h1>
-    <p>Aquí vas a encontrar artículos sobre situaciones que me voy encontrando en mi día a día con la programación, por lo que cuantos más problemas me encuentre más artículos iré añadiendo...</p>
+    <p>Aquí vas a encontrar artículos sobre situaciones que me voy encontrando en mi día a día con la programación, así que cuantos más problemas me encuentre, más artículos iré añadiendo...</p>
 
     <hr class="border-b my-6">
 
