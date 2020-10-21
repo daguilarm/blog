@@ -69,7 +69,8 @@ class DateFormat implements CastsAttributes
     /**
      * private @var format
      */
-    private string $dateFormat = 'd/m/Y';
+    private string $getFormat = 'd/m/Y';
+    private string $setFormat = 'Y-m-d';
 
     /**
      * Cast the given value.
@@ -99,7 +100,7 @@ class DateFormat implements CastsAttributes
     public function set($model, $key, $value, $attributes)
     {
         return strlen($value)
-            ? Carbon::createFromFormat($this->dateFormat, $value)
+            ? Carbon::parse($value)->format($this->setFormat)
             : null;
     }
 }
@@ -118,68 +119,4 @@ protected $casts = [
 ];
 ```
 
-Esto en principio funciona, pero tiene una pega. Si los datos que enviamos a la base de datos no están en formato europeo va a dar error... por lo general, somos nostros quienes controlamos el formato de los datos, pero a veces al utilizar librerías de terceros o una API se puede complicar... y no quiero estar comprobando formatos continuamente, así que la mejor opción es mejorar el código para que lo haga directamente él.
-
-```php
-<?
-namespace App\Models\_Casts;
-
-use Illuminate\Contracts\Database\Eloquent\CastsAttributes;
-use Carbon\Carbon;
-
-class DateFormat implements CastsAttributes
-{
-    private string $getFormat = 'd/m/Y';
-    private string $setFormat = 'Y-m-d';
-
-    /**
-     * Cast the given value.
-     *
-     * @param  \Illuminate\Database\Eloquent\Model  $model
-     * @param  string  $key
-     * @param  mixed  $value
-     * @param  array  $attributes
-     * @return array
-     */
-    public function get($model, $key, $value, $attributes)
-    {
-        return strlen($value)
-            ? Carbon::parse($value)->format($this->getFormat)
-            : null;
-    }
-
-    /**
-     * Prepare the given value for storage.
-     *
-     * @param  \Illuminate\Database\Eloquent\Model  $model
-     * @param  string  $key
-     * @param  array  $value
-     * @param  array  $attributes
-     * @return string
-     */
-    public function set($model, $key, $value, $attributes)
-    {
-        // The field has the database format
-        if($this->checkDate($value)) {
-            return $value;
-        }
-
-        // The field has not the database format
-        return strlen($value)
-            ? Carbon::createFromFormat($this->getFormat, $value)
-            : null;
-    }
-
-    /**
-     * Evaluate the format in order to store in the database
-     */
-    private function checkDate(?string $date): bool
-    {
-        return Carbon::createFromFormat($this->setFormat, $date)->format($this->setFormat) === $date;
-    }
-}
-```
-
-Lo que hemos hecho es añadir el método `heckDate()`, cuya función es la de verificar si la fecha está en formato `timestamp`. Si es el caso, se envia la fecha a la base de datos tal cual está. 
-
-Se podría hacer lo mismo con el formato estadounidense, pero de momento no me he visto en la situación de tener que hacerlo...
+Espero que sea útil.
