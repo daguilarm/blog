@@ -115,7 +115,7 @@ Y la utilización en el modelo sería:
  * @var array
  */
 protected $casts = [
-    'fertilization_date' => \App\Models\Casts\DateFormat::class,
+    'my_date' => \App\Models\Casts\DateFormat::class,
 ];
 ```
 
