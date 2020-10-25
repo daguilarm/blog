@@ -58,7 +58,7 @@ $browser
     ->assertSee('10/10/2020')
 ```
 
-Sigue sin funcionar, pero ahora la fecha si se muestra correctamente. Tercer intento:
+Sigue sin funcionar, pero ahora la fecha si se muestra correctamente. Tercer intento y definitivo:
 
 ```php
 $browser
@@ -74,7 +74,7 @@ $browser
     ->assertSee('10/10/2020')
 ```
 
-Ahora funciona. Haciendo pruebas, parece que añadiendo una pausa de `200` funciona. Es el menor tiempo para que funcione. Cosas curiosas que pasan.
+Haciendo pruebas, parece que añadiendo una pausa de `200` es el menor espacio de tiempo para que funcione. Cosas curiosas que pasan.
 
 Otro truco que he empezado a utilizar por todas partes en mis pruebas, es la de la utilización de los elementos `wait`, sobre todo estos cuatro:
 
@@ -83,7 +83,9 @@ Otro truco que he empezado a utilizar por todas partes en mis pruebas, es la de 
 - waitForText()
 - waitUntilMissingText()
 
-Principalmente porque al añadir efectos de transición y eventos mediante `Livewire` y `AlpineJS`, si utilizamos `pause()` puede hacer que nuestras pruebas sean bastante más lentas (o tarden un tiempo innecesario). Por ejemplo, esta es una prueba real de un proyecto anterior (básicamente es una plataforma para la gestión agrícola):
+Principalmente porque al añadir efectos de transición y eventos mediante `Livewire` y `AlpineJS`, la utilización de `pause()` puede hacer que nuestras pruebas sean bastante más lentas (o tarden un tiempo innecesario). 
+
+Por ejemplo, esta es una prueba real de un proyecto anterior (básicamente es una plataforma para la gestión agrícola):
 
 ```php
 $browser
@@ -117,7 +119,7 @@ $browser
     ->pause(500);
 ```
 
-El primer código es más rápido. En cuanto a ganar velocidad en las pruebas, un truco es el de utilizar multiples instancias de `$browser`. Por ejemplo:
+El primer código es más rápido. En cuanto a ganar velocidad en las pruebas con `Laravel Dusk`, un truco que me funciona es el de utilizar multiples instancias de `$browser` a la vez. Por ejemplo:
 
 ```php
 $this->browse(function ($browser) {
@@ -150,4 +152,4 @@ $this->browse(function ($browser1, $browser2) {
 });
 ```
 
-El incremento de velocidad es considerable, o al menos, a mi me está funcionando.
+El incremento de velocidad es considerable, o al menos, a mi me lo está pareciendo...
