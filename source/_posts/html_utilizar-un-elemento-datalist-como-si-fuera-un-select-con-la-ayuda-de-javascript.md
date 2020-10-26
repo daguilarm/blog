@@ -152,7 +152,7 @@ El resultado ha sido este:
 
 En mi caso como esto va a ser un componente de `Laravel` y no quiero lios al añadir varios en una página, he optado por añadir una clave única a las variables. Primero he creado la clave:
 
-```php
+```blade
 // Por ejemplo...
 @php 
   $key = md5(Str::random());
