@@ -161,7 +161,7 @@ En mi caso como esto va a ser un componente de `Laravel` y no quiero lios al añ
 
 Y después he cambiado el código así:
 
-```html5
+```html
 <input
   list="datalist-example-{{ $key }}"
   id="visible-example-{{ $key }}"
