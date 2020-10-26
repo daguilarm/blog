@@ -137,7 +137,7 @@ $this->browse(function ($browser) {
 });
 ```
 
-Si quermeos que la prueba sea más rápida, debemos hacerla así:
+Si queremos que la prueba sea más rápida, debemos hacerla así:
 
 ```php
 $this->browse(function ($browser1, $browser2) {
