@@ -12,7 +12,7 @@
         <meta property="og:description" content="{{ $page->siteDescription }}" />
         <meta name="msvalidate.01" content="7EBAF0830896AD1D4A27E93C37552EDA" />
         <link rel="home" href="{{ $page->baseUrl }}">
-        <link href="/blog/feed.atom" type="application/atom+xml" rel="alternate" title="{{ $page->siteName }} Atom Feed">
+        <link rel="alternate" type="application/rss+xml" title="{{ $page->siteName }}" href="{{ $page->baseUrl.'/rss.xml' }}" />
         <link rel="apple-touch-icon" sizes="57x57" href="{{ $page->baseUrl }}/assets/img/favicon/apple-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="60x60" href="{{ $page->baseUrl }}/assets/img/favicon/apple-icon-60x60.png">
         <link rel="apple-touch-icon" sizes="72x72" href="{{ $page->baseUrl }}/assets/img/favicon/apple-icon-72x72.png">
@@ -82,6 +82,9 @@
                 </a> -
                 <a href="https://belich.dev" class="sm:text-gray-100 hover:text-gray-300">
                     Belich admin
+                </a> -
+                <a href="https://belich.dev/blog/rss.xml" class="sm:text-gray-100 hover:text-gray-300">
+                    Feed
                 </a>
             </div>
         </footer>
