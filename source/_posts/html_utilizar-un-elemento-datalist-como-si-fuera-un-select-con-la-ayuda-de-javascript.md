@@ -202,4 +202,16 @@ Y después he cambiado el código así:
 </script>
 ```
 
-Imagino que esto es mejorable... pero por el momento funciona perfectamente.
+Imagino que esto es mejorable... pero por el momento funciona perfectamente. También quiero comentar, que utilizo esto para cuando los campos `select` tienen muchas opciones. Lo que hago es crear dos componentes en `Laravel`, uno para los campos `select` y otro para los campos `datalist`, y entonces creo un tercer componente llamado `selector`, que tiene el siguiente código:
+
+```php
+@isset($options)
+    @if(count($options) >= 12)
+        @include('components.fields.datalist')
+    @else
+        @include('components.fields.select')
+    @endif
+@endisset
+```
+
+Lo que hace es contar los resultados a mostrar y en función de estos, muestra el resultado como si fuera un `select` o un `datalist`.
