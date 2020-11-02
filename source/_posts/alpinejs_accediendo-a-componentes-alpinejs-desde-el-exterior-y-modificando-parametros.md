@@ -22,12 +22,37 @@ Me he encontrado en la situación de tener que cambiar un componente `AlpineJS`d
 Y el código `JavaScript`:
 
 ```javascript 
+function component_1() {
+    return {
+        text_1: 'texto 1',
+    }
+}
+
+function component_2() {
+    return {
+        text_2: text_1 + ' junto con texto 2',
+    }
+}
+```
+
+Todo junto:
+
+```html 
+<div x-data="component_1()" id="component_1">
+    <div x-text="text_1"></div>
+</div>   
+
+<div x-data="component_2()" id="component_2">
+    <div x-text="text_2"></div>
+</div> 
+
 <script>
     function component_1() {
         return {
             text_1: 'texto 1',
         }
     }
+
     function component_2() {
         return {
             text_2: text_1 + ' junto con texto 2',
@@ -35,7 +60,6 @@ Y el código `JavaScript`:
     }
 </script> 
 ```
-
 Para acceder a la información de un componente de `AlpineJS`, se puede hacer así:
 
 ```javascript 
