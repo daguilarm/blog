@@ -7,7 +7,7 @@ description: En este artículo se muestra como acceder a componentes AlpineJS de
 categories: [javascript, alpinejs]
 ---
 
-Me he encontrado en la situación de tener que cambiar un componente `AlpineJS desde otro componente, veamos un ejemplo de la situación:
+Me he encontrado en la situación de tener que cambiar un componente `AlpineJS`desde otro componente, veamos un ejemplo de la situación:
 
 ```html 
 <div x-data="component_1()" id="component_1">
@@ -17,7 +17,11 @@ Me he encontrado en la situación de tener que cambiar un componente `AlpineJS d
 <div x-data="component_2()" id="component_2">
     <div x-text="text_2"></div>
 </div>  
+```
 
+Y el código `JavaScript`:
+
+```javascript 
 <script>
     function component_1() {
         return {
