@@ -76,4 +76,4 @@ Si por otro lado, lo que queremos es acceder a los datos y poder modificarlos, d
     component_1.__x.$data.text_1 = 'nuevo texto...';
 ```
 
-Me he pasado un par de horas investigando en el código de `AlpineJS` y aunque ha sido un poco denso..., he aprendido algunas cosas sobre como funciona el código interno de `AlpineJS`. Por si teneis curiosidad, básicamente he estado detrás de un componente basado en `datalist` de `HTML5`, pero con la flexibilidad de `AlpineJS`, porque vamos a ser francos, los elementos `datalist` son una mierda.
+Me he pasado un par de horas investigando en el código de `AlpineJS` y aunque ha sido un poco denso..., he aprendido algunas cosas sobre como funciona el código interno de `AlpineJS`. Por si teneis curiosidad, básicamente he estado detrás de un componente basado en el elmento `datalist` de `HTML5`, pero con la flexibilidad de `AlpineJS`, porque vamos a ser francos, los elementos `datalist` son una mierda, y aunque a primera vista dan muy buena impresión, cuando te pones a trabajar con ellos, son todo problemas.
