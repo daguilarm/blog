@@ -16,7 +16,7 @@
 
     <h1 class="leading-none mb-6 text-blue-800 text-3xl md:text-4xl lg:text-5xl">{{ $page->title }}</h1>
 
-    <p class="text-gray-600 text-xl md:mt-0">{{ $page->author }}  •  {{ date('d/m/Y', $page->date) }} • <a href="https://twitter.com/daguilarm" target="_black"><img src="/assets/img/twitter.png" alt="twitter" class="opacity-75 hover:opacity-100"></a></p>
+    <p class="text-gray-600 text-xl md:mt-0">{{ $page->author }} <a href="https://twitter.com/daguilarm" target="_black"><img src="/assets/img/twitter.png" alt="twitter" class="opacity-75 hover:opacity-100 h-4 w-4"></a>  •  {{ date('d/m/Y', $page->date) }}</p>
 
     @if ($page->categories)
         @foreach ($page->categories as $i => $category)
