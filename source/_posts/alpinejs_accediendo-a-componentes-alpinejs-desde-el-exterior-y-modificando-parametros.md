@@ -67,13 +67,21 @@ Para acceder a la información de un componente de `AlpineJS`, se puede hacer as
     console.log(component_1.__x.getUnobservedData().text_1)
 ```
 
-Mediante `component_1.__x.getUnobservedData()` accedemos a todos los datos del componente 1. Esto es debido a que toda la información se guarda en el `DOM` y por tanto se puede acceder a ella en cualquier momento.
+Mediante `__x.getUnobservedData()` accedemos a todos los datos del componente 1. Esto es debido a que toda la información se guarda en los `DOM nodes` y por tanto se puede acceder a ella en cualquier momento mediante la propiedad `__x.$data` a la cual puedemos acceder mediante el método `getUnobservedData()`.
 
-Si por otro lado, lo que queremos es acceder a los datos y poder modificarlos, debemos hacerlo así:
+Si por otro lado, lo que queremos es acceder a los datos y poder modificarlos, debemos hacerlo directamente mediante `__x.$data`:
 
 ```javascript 
     var component_1 = document.getElementById('component_1');
     component_1.__x.$data.text_1 = 'nuevo texto...';
 ```
 
-Me he pasado un par de horas investigando en el código de `AlpineJS` y aunque ha sido un poco denso..., he aprendido algunas cosas sobre como funciona el código interno de `AlpineJS`. Por si teneis curiosidad, básicamente he estado detrás de un componente basado en el elmento `datalist` de `HTML5`, pero con la flexibilidad de `AlpineJS`, porque vamos a ser francos, los elementos `datalist` son una mierda, y aunque a primera vista dan muy buena impresión, cuando te pones a trabajar con ellos, son todo problemas.
+Al final he llegado a este este artículo:
+
++ [https://codewithhugo.com/alpinejs-inspect-component-data-from-js/](https://codewithhugo.com/alpinejs-inspect-component-data-from-js/){.link-out}
+
+A partir de este artículo, he sentido curiosidad y me he ido al código fuente de `AlpineJS`, donde me he pasado un buen rato dándole vueltas y viendo como funciona. Ha sido bastante denso, creo que ha merecido la pena ver su funcionamiento interno (o intuirlo, porque me he perdido en muchas ocasiones).
+
+En el artículo también me he encontrado con una herramienta para desarrolladores para trabajar con `AlpineJS` y que se integra tanto en `Chrome` como en `Firefox`:
+
++ [https://github.com/amaelftah/alpinejs-devtools](https://github.com/amaelftah/alpinejs-devtools){.link-out}
