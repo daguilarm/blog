@@ -173,6 +173,6 @@ public function test_can_create_a_post()
 });
 ```
 
-Cuando más complicado es el `test` más beneficios se obtienen de esta técnica. Otra técnica que utilizo para reutilizar aún más el código es extraer todo los métodos repetidos en todas las acciones `CRUD` que he creado a un `Trait`, de forma que se optimiza aún más. 
+Cuando más complicado es el `test` más beneficios se obtienen de esta técnica. Otra técnica que utilizo para reutilizar aún más el código, es extraer todo los métodos repetidos en todas las acciones `CRUD` que he creado a un `trait`. Así solo tengo que ir llamando al `trait` si el `test` lo necesita.
 
-Por ejemplo, el método `selectDate()` se puede utilizar en las páginas `Create` y `Update`, por lo que extraerlo a un `Trait` va a evitar que repitamos código. 
+Por ejemplo, el método `selectDate()` se puede utilizar en las páginas `Create` y `Update`, por lo que extraerlo a un `trait` va a evitar que repitamos código. 
