@@ -2,7 +2,7 @@
 extends: _layouts.post
 section: content
 title: Mis problemas con JavaScript
-date: 2020-09-11
+date: 2020-11-10
 description: Historia de mi relación amor / odio con JavaScript
 categories: [javascript, markdown]
 ---
