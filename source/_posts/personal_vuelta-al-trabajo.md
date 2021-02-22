@@ -17,4 +17,4 @@ Y por último llegó la defensa... que no resultó ser tan terrible como suponí
 
 Al final, he obtenido el Doctorado en **Recursos y Tecnologías Agrarias, Agroambientales y Alimentarias**, en fin, que aunque me dedique a la programación, esa parte de ingeniero agrícola sigue presente...
 
-Tal vez desarrolle mi Tesis y haga algún tipo de *software* para agricultura... ¿quién sabe?.
+Y pensando en el futuro, tal vez desarrolle mi Tesis y haga algún tipo de *software* para agricultura... ¿quién sabe?.
