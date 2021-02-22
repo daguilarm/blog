@@ -4,7 +4,7 @@ section: content
 title: Mis problemas con JavaScript
 date: 2020-11-09
 description: Historia de mi relación amor / odio con JavaScript
-categories: [javascript, markdown]
+categories: [javascript, markdown, personal]
 ---
 
 Nunca me ha gustado `JavaScript`, siempre lo he encontrado un lenguaje de programación *"mágico"*, es decir, a veces funcionaba y otras no... se que esto ha sido siempre culpa mía, principalmente por no llegar a comprender realmente su funcionamiento, situación que al final me ha llevado por el camino de ir esquivando `JavaScript` cada vez que he podido hacerlo. De hecho, no entendía como a alguien podía gustarle programar en ese entorno.
