@@ -30,7 +30,6 @@
         <div><strong><i>Designing of an Enterprise Resource Planning for the Optimal Management of Agricultural Plots Regarding Quality and Environmental Requirements</i></strong></div>
         <div><strong>Revista</strong>: Agronomy</div>
         <div><strong>Editorial</strong>: MDPI</div>
-        <div><a href="https://www.mdpi.com/2073-4395/10/9/1352" target="_blank">https://www.mdpi.com/2073-4395/10/9/1352</a></div>
+        <div><strong>URL</strong>: <a href="https://www.mdpi.com/2073-4395/10/9/1352" target="_blank">https://www.mdpi.com/2073-4395/10/9/1352</a></div>
     </div>
-    <hr>
 @endsection
