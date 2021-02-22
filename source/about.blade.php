@@ -26,8 +26,8 @@
 
     <h1 class="text-blue-800 text-3xl md:text-4xl lg:text-5xl">Publicaciones</h1>
 
-    <p>Designing of an Enterprise Resource Planning for the Optimal Management of Agricultural Plots Regarding Quality and Environmental Requirements</p>
-    <p>Revista: Agronomy</p>
-    <p>Editorial: MDPI</p>
+    <p><strong><i>Designing of an Enterprise Resource Planning for the Optimal Management of Agricultural Plots Regarding Quality and Environmental Requirements</i></strong></p>
+    <p><strong>Revista</strong>: Agronomy</p>
+    <p><strong>Editorial</strong>: MDPI</p>
     <p><a href="https://www.mdpi.com/2073-4395/10/9/1352">https://www.mdpi.com/2073-4395/10/9/1352</a></p>
 @endsection
