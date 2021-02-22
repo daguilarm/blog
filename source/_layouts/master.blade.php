@@ -76,7 +76,7 @@
 
         <footer class="w-full flex items-center h-24 bg-white sm:bg-gray-600 sm:text-gray-100 text-center text-sm mt-12 py-4" role="contentinfo">
             <div class="flex-1">
-                &copy; Damián Aguilar {{ date('Y') }} -
+                &copy; Damián Aguilar 2019-{{ date('Y') }} -
                 <a href="https://github.com/daguilarm" class="sm:text-gray-100 hover:text-gray-300">
                     Github
                 </a> -
