@@ -24,4 +24,10 @@
     <p>Los últimos años, he estado trabajado en la Universidad Miguel Hernández como investigador, desarrollando aplicaciones (basadas en Laravel), para la mejora y optimización agraria. Esto me lleva a mi formación académica, ya que aunque siempre he trabajado como programador, soy <strong>Graduado en Ingeniería Agroalimentaria</strong>, y tengo un <strong>Doctorado en Recursos y Tecnologías Agrarias, Agroambientales y Alimentarias</strong>.</p>
     <p>En estos momentos, trabajo como <i>Freelance</i> desarrollando aplicaciones basadas en <strong>Laravel</strong>, <strong>Livewire</strong>, <strong>VueJS</strong> y <strong>AlpineJS</strong>.</p>
 
+    <h1 class="text-blue-800 text-3xl md:text-4xl lg:text-5xl">Publicaciones</h1>
+
+    <p>Designing of an Enterprise Resource Planning for the Optimal Management of Agricultural Plots Regarding Quality and Environmental Requirements</p>
+    <p>Revista: Agronomy</p>
+    <p>Editorial: MDPI</p>
+    <p><a href="https://www.mdpi.com/2073-4395/10/9/1352">https://www.mdpi.com/2073-4395/10/9/1352</a></p>
 @endsection
