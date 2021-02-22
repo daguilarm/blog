@@ -21,7 +21,7 @@
 
     <p>Hola!</p>
     <p>Me llamo <strong>Damián Aguilar</strong> y te doy la bienvenida a mi blog sobre <code>php</code>, <code>laravel</code>, <code>alpinejs</code>, <code>livewire</code> ... y programación en general. Me inicié en la programación en el año 2002, empezando a programar con php. Desde entonces otros lenguajes como <code>java</code>, <code>javascript</code>, o <code>phyton</code>, se han cruzado en mi camino.</p>
-    <p>Los últimos años, he estado trabajado en la Universidad Miguel Hernández como investigador, desarrollando aplicaciones (basadas en Laravel), para la mejora y optimización agraria. Esto me lleva a mi formación académica, ya que aunque siempre he trabajado como programador, soy Graduado en Ingeniería Agroalimentaria, y tengo un doctorado en <strong>Recursos y Tecnologías Agrarias, Agroambientales y Alimentarias</strong>.</p>
+    <p>Los últimos años, he estado trabajado en la Universidad Miguel Hernández como investigador, desarrollando aplicaciones (basadas en Laravel), para la mejora y optimización agraria. Esto me lleva a mi formación académica, ya que aunque siempre he trabajado como programador, soy <strong>Graduado en Ingeniería Agroalimentaria</strong>, y tengo un doctorado en <strong>Recursos y Tecnologías Agrarias, Agroambientales y Alimentarias</strong>.</p>
     <p>En estos momentos, trabajo como <i>Freelance</i> desarrollando aplicaciones basadas en <strong>Laravel</strong>, <strong>Livewire</strong>, <strong>VueJS</strong> y <strong>AlpineJS</strong>.</p>
 
 @endsection
