@@ -216,4 +216,6 @@ private function urlPath() {
 
 El objetivo aquí era que el código fuese más legible, y por ello, me ha dado igual que aumentasen las líneas de código. Personalmente, me parece una mejora. 
 
-Al final lo que busco en el código es que cuando vuelva a él dentro de unos meses, sea capaz de seguirlo sin problemas. Un saludo.
+Al final, lo que busco en el código, es que cuando vuelva a él dentro de unos meses, sea capaz de seguirlo sin problemas. 
+
+Un saludo y espero que sirva de algo.
