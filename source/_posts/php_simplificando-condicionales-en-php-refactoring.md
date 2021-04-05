@@ -37,7 +37,7 @@ function users($usuarios) {
 }
 ```
 
-El mismo código, pero más sencillo. Veamos un ejemplo más compejo:
+El mismo código, pero más complejo. Veamos el ejemplo:
 
 ```php
 function users($usuarios, $edad) {
@@ -57,50 +57,49 @@ A simple vista, podemos usar la técnica anterior para optimizar un poco esto:
 
 ```php
 function users($usuarios, $edad) {
-    if($usuarios > 10 && $edad > 18) {
-        return 'Son muchos usuarios.';
+    if($usuarios >= 10 && $edad >= 18) {
+        return 'Son muchos usuarios. Son mayores de edad.';
     } 
 
-    if($usuarios > 10 && $edad <= 18) {
+    if($usuarios >= 10 && $edad < 18) {
         return 'Son muchos usuarios. Son menores de edad.';
     } 
 
-    if($usuarios < 10 && $edad <= 18) {
-        return 'Son pocos usuarios. Son menores de edad.';
+    if($usuarios < 10 && $edad >= 18) {
+        return 'Son pocos usuarios. Son mayores de edad.';
     } 
 
     return 'Son pocos usuarios.';
 }
 ```
 
-Eliminamos los `elseif` y los `else`, que desde mi punto de vista, solo complican la legibilidad del código. Lo siguiente que podemos hacer es dividir el código en más funciones.
+Eliminamos los `elseif` y los `else` del código, los cuales, desde mi punto de vista solo complican la legibilidad del código. Lo siguiente que podemos hacer es dividir el código en más funciones y **darle a estas funciones un nombre descriptivo, el cual indique que hace la función exactamente**. Esto último es algo importante, porque luego perdemos demasiado tiempo investigando que hace cada función.
 
 ```php
 function usersAndAge($usuarios, $edad) {
-    sprintf('%s %s', users($usuarios), age($edad));
+    sprintf('%s %s', totalUsers($usuarios), isUserAdult($edad));
 }
 
-function users($usuarios) {
-    if($usuarios > 10) {
+function totalUsers($usuarios) {
+    if($usuarios >= 10) {
         return 'Son muchos usuarios.';
     } 
 
     return 'Son pocos usuarios.';
 }
 
-function age($edad) {
-    if($edad > 18) {
-        return 'Son menores de edad.';
+function isUserAdult($edad) {
+    if($edad >= 18) {
+        return 'Son mayores de edad.';
     } 
 
     return 'Son menores de edad.';
 }
 ```
 
-La idea es simplificar el código en unidades más pequeñas y con una sola responsabilidad. Así conseguiremos un código más sencillo, entendible y práctico. 
+La idea es simplificar el código en unidades más pequeñas y con una sola responsabilidad, así cada función hace solo una cosa. Con esto conseguiremos un código más sencillo, entendible y práctico. 
 
 El siguiente ejemplo, es el resultado de plantear condiciones sin pararse a pensar un minuto:
-
 
 ```php
 public function example1()  
@@ -136,86 +135,123 @@ public function example1()
 }
 ```
 
-Un ejemplo más complejo:
+**A veces, el problema del código es que no se ha pensado lo suficiente, y termina por ser redundante**.
+
+Un ejemplo más complejo, un `middleware` para **Laravel**:
 
 ```php
-/**
- * Handle an incoming request.
- */
-public function handle(Request $request, Closure $next)
-{
-    /** @var Response $response */
-    $response = $next($request);
+<?php
 
-    if (config('option.enable') && $this->isHtml($response)) {
-        //Filter by exclusionary action
-        if (in_array($this->action(), $this->exceptedActions())) {
+namespace App\Http\Middleware;
+
+use Closure;
+use Illuminate\Http\Request;
+
+class MinifyHtml
+{
+    /**
+     * Handle an incoming request.
+     */
+    public function handle(Request $request, Closure $next)
+    {
+        /** @var Response $response */
+        $response = $next($request);
+
+        if (config('option.enable') && $this->isHtml($response)) {
+            //Filter by exclusionary action
+            if (in_array($this->action(), $this->exceptedActions())) {
+                return $response;
+            }
+            //Filter by url path
+            if (in_array(trim($request->path(), '/'), config('option.except.paths'))) {
+                return $response;
+            }
+
+            //Minify
+            $response->setContent($this->html($response->getContent()));
+        }
+
+        return $response;
+    }
+}
+```
+
+Es un `middleware` para minimizar el código `HTML`. Después de pensarlo un poco, ha quedado así:
+
+
+```php
+<?php
+
+namespace App\Http\Middleware;
+
+use Closure;
+use Illuminate\Http\Request;
+
+class MinifyHtml
+{
+    /**
+     * Handle an incoming request.
+     */
+    public function handle(Request $request, Closure $next): Request
+    {
+        /** @var Response $response */
+        $response = $next($request);
+
+        // If the minify is disabled
+        if (! config('option.enable')) {
             return $response;
         }
+
+        // If the headers are incorrents
+        if (! $this->isHtml($response)) {
+            return $response;
+        }
+
+        // If the current action is excluded
+        if ($this->filterByActionExcluded()) {
+            return $response;
+        }
+
         //Filter by url path
-        if (in_array(trim($request->path(), '/'), config('option.except.paths'))) {
+        if ($this->filterByUrl()) {
             return $response;
         }
 
         //Minify
-        $response->setContent($this->html($response->getContent()));
+        return $response->setContent(
+            $this->html($response->getContent())
+        );
     }
 
-    return $response;
+    private function filterByActionExcluded() 
+    {
+        return in_array(
+            $this->action(), 
+            $this->exceptedActions()
+        );
+    }
+
+    private function filterByUrl(Request $request) 
+    {
+        return in_array(
+            $this->requestUrl($request), 
+            config('option.except.paths')
+        );
+    }
+
+    private function requestUrl(Request $request) 
+    {
+        return trim($request->path(), '/');
+    }
 }
 ```
 
-Es un `middleware` para minimizar código `HTML`. Después de pensarlo un poco, ha quedado así:
+El objetivo aquí era que el código fuese más legible, y por ello, no me ha importado demasiado que aumentasen las líneas de código. Personalmente, me parece una mejora, ya que se entiende muy facilmente, y se han evitado condicionales complejos y todo parece más fluido y simplificado. 
 
+Al final, esto es lo que busco en el código que genero. Básicamente lo que quiero es que cuando vuelva a este código dentro de unos meses, sea capaz de seguirlo sin problemas, y sin tener que perder demasiado tiempo en descrifrar la lógica del código. 
 
-```php
-/**
- * Handle an incoming request.
- */
-public function handle(Request $request, Closure $next): Illuminate\Http\Request
-{
-    /** @var Response $response */
-    $response = $next($request);
+Aquí tienes un vídeo (en inglés), de Freek Van der Herten (todo un referente en la comunidad **Laravel** y **PHP**) sobre como mejorar el diseño de condicionales complejos.
 
-    // If the minify is disabled
-    if (! config('option.enable')) {
-        return $response;
-    }
-
-    // If the headers are incorrents
-    if (! $this->isHtml($response)) {
-        return $response;
-    }
-
-    // If the current action is excluded
-    if ($this->actionExcluded()) {
-        return $response;
-    }
-
-    //Filter by url path
-    if ($this->urlPath()) {
-        return $response;
-    }
-
-    //Minify
-    return $response->setContent(
-        $this->html($response->getContent())
-    );
-}
-
-private function actionExcluded() {
-    return in_array($this->action(), $this->exceptedActions());
-}
-
-private function urlPath() {
-    $request = trim($request->path(), '/');
-
-    return in_array($request, config('option.except.paths'));
-}
-```
-
-El objetivo aquí era que el código fuese más legible, y por ello, me ha dado igual que aumentasen las líneas de código. Personalmente, me parece una mejora. 
-
-Al final, lo que busco en el código, es que cuando vuelva a él dentro de unos meses, sea capaz de seguirlo sin problemas. 
+[How to refactor complex if statements](https://freek.dev/1578-how-to-refactor-complex-if-statements){.link-out}
 
 Un saludo y espero que sirva de algo.
