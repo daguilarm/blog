@@ -250,12 +250,12 @@ El objetivo aquí era que el código fuese más legible, y por ello, no me ha im
 
 Al final, esto es lo que busco en el código que genero. Básicamente lo que quiero es que cuando vuelva a este código dentro de unos meses, sea capaz de seguirlo sin problemas, y sin tener que perder demasiado tiempo en descrifrar la lógica del código. 
 
-Para profundizar más en el tema, aquí tienes un vídeo (en inglés), de [Freek Van der Herten](https://freek.dev){.link-out} (todo un referente en la comunidad **Laravel** y **PHP**) sobre como mejorar el diseño de condicionales complejos.
+Para profundizar más en el tema, aquí tienes un vídeo (en inglés), de [Freek Van der Herten](https://freek.dev){.link-out} (todo un referente en la comunidad **Laravel** y **PHP**) sobre como mejorar el diseño de condicionales complejos: 
 
-[How to refactor complex if statements](https://freek.dev/1578-how-to-refactor-complex-if-statements){.link-out}
+- [How to refactor complex if statements](https://freek.dev/1578-how-to-refactor-complex-if-statements){.link-out}
 
 También os dejo un artículo que escribí hace tiempo, en el que explico como usar las `Pipelines` de **Laravel** para simplificar los condicionales utilizando este patrón de diseño.
 
-[https://daguilar.dev/blog/laravel_patrones-de-diseno-y-uso-de-pipelines-con-laravel/](https://daguilar.dev/blog/laravel_patrones-de-diseno-y-uso-de-pipelines-con-laravel/)
+- [https://daguilar.dev/blog/laravel_patrones-de-diseno-y-uso-de-pipelines-con-laravel/](https://daguilar.dev/blog/laravel_patrones-de-diseno-y-uso-de-pipelines-con-laravel/)
 
 Un saludo y espero que sirva de algo.
