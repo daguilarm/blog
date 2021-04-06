@@ -256,6 +256,6 @@ Para profundizar más en el tema, aquí tienes un vídeo (en inglés), de [Freek
 
 También os dejo un artículo que escribí hace tiempo, en el que explico como usar las `Pipelines` de **Laravel** para simplificar los condicionales utilizando este patrón de diseño.
 
-- [https://daguilar.dev/blog/laravel_patrones-de-diseno-y-uso-de-pipelines-con-laravel/](https://daguilar.dev/blog/laravel_patrones-de-diseno-y-uso-de-pipelines-con-laravel/)
+- [Patrones de diseño y uso de Pipelines con Laravel](https://daguilar.dev/blog/laravel_patrones-de-diseno-y-uso-de-pipelines-con-laravel/)
 
 Un saludo y espero que sirva de algo.
