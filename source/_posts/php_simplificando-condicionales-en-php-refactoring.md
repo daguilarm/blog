@@ -254,7 +254,7 @@ Para profundizar más en el tema, aquí tienes un vídeo (en inglés), de [Freek
 
 - [How to refactor complex if statements](https://freek.dev/1578-how-to-refactor-complex-if-statements){.link-out}
 
-También os dejo un artículo que escribí hace tiempo, en el que explico como usar las `Pipelines` de **Laravel** para simplificar los condicionales utilizando este patrón de diseño.
+También os dejo un artículo que escribí hace tiempo, en el que explico como usar las `Pipelines` de **Laravel** para simplificar los condicionales utilizando este patrón de diseño:
 
 - [Patrones de diseño y uso de Pipelines con Laravel](https://daguilar.dev/blog/laravel_patrones-de-diseno-y-uso-de-pipelines-con-laravel/)
 
