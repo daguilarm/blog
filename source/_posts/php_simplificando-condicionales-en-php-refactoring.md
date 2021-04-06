@@ -41,12 +41,12 @@ El mismo código, pero más complejo. Veamos el ejemplo:
 
 ```php
 function users($usuarios, $edad) {
-    if($usuarios > 10 && $edad > 18) {
-        return 'Son muchos usuarios.';
-    } elseif($usuarios > 10 && $edad <= 18) {
+    if($usuarios > 10 && $edad >= 18) {
+        return 'Son muchos usuarios. Son mayores de edad.';
+    } elseif($usuarios > 10 && $edad < 18) {
         return 'Son muchos usuarios. Son menores de edad';
-    } elseif($usuarios < 10 && $edad <= 18) {
-        return 'Son pocos usuarios. Son menores de edad';
+    } elseif($usuarios < 10 && $edad >= 18) {
+        return 'Son pocos usuarios. Son mayores de edad';
     } else {
         return 'Son pocos usuarios.';
     }
@@ -253,5 +253,9 @@ Al final, esto es lo que busco en el código que genero. Básicamente lo que qui
 Para profundizar más en el tema, aquí tienes un vídeo (en inglés), de [Freek Van der Herten](https://freek.dev){.link-out} (todo un referente en la comunidad **Laravel** y **PHP**) sobre como mejorar el diseño de condicionales complejos.
 
 [How to refactor complex if statements](https://freek.dev/1578-how-to-refactor-complex-if-statements){.link-out}
+
+También os dejo un artículo que escribí hace tiempo, en el que explico como usar las `Pipelines` de **Laravel** para simplificar los condicionales utilizando este patrón de diseño.
+
+[https://daguilar.dev/blog/laravel_patrones-de-diseno-y-uso-de-pipelines-con-laravel/](https://daguilar.dev/blog/laravel_patrones-de-diseno-y-uso-de-pipelines-con-laravel/)
 
 Un saludo y espero que sirva de algo.
