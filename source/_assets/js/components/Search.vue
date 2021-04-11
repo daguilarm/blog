@@ -47,7 +47,7 @@
                             v-if="! results.length"
                             class="bg-white w-full hover:bg-blue-100 border-b border-blue-400 rounded-b-lg shadow cursor-pointer p-4"
                         >
-                            <p class="my-0">No results for <strong>{{ query }}</strong></p>
+                            <p class="my-0">No hay resultados para <strong>{{ query }}</strong></p>
                         </div>
                     </div>
                 </div>
