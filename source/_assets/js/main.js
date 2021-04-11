@@ -1,9 +1,7 @@
-window.axios = require('axios');
-window.fuse = require('fuse.js');
-window.Vue = require('vue');
-
+indow.axios = require('axios');
+import Vue from 'vue';
 import Search from './components/Search.vue';
-import hljs from 'highlight.js/lib/highlight';
+import hljs from 'highlight.js/lib/core';
 
 // Syntax highlighting
 hljs.registerLanguage('bash', require('highlight.js/lib/languages/bash'));
@@ -13,8 +11,8 @@ hljs.registerLanguage('javascript', require('highlight.js/lib/languages/javascri
 hljs.registerLanguage('json', require('highlight.js/lib/languages/json'));
 hljs.registerLanguage('markdown', require('highlight.js/lib/languages/markdown'));
 hljs.registerLanguage('php', require('highlight.js/lib/languages/php'));
-// hljs.registerLanguage('scss', require('highlight.js/lib/languages/scss'));
-// hljs.registerLanguage('yaml', require('highlight.js/lib/languages/yaml'));
+hljs.registerLanguage('scss', require('highlight.js/lib/languages/scss'));
+hljs.registerLanguage('yaml', require('highlight.js/lib/languages/yaml'));
 
 document.querySelectorAll('pre code').forEach((block) => {
     hljs.highlightBlock(block);
