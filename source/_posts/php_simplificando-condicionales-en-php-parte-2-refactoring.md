@@ -9,7 +9,7 @@ categories: [php]
 
     En este artículo, se van a ver diversas técnicas de reducción de condicionales y simplificación de código, para versiones de **php8**.
 
-Este artículo es continuación del ya publicado [Simplificando condicionales con PHP (parte I)](https://daguilar.dev/blog/php_simplificando-condicionales-en-php-refactoring/). Aquí veremos otras técnicas de simplificación de condicionales, utilizando **php** en su versión 8.
+Este artículo es continuación del ya publicado [Simplificando condicionales con PHP (parte I)](https://daguilar.dev/blog/php_simplificando-condicionales-en-php-parte-1-refactoring/). Aquí veremos otras técnicas de simplificación de condicionales, utilizando **php** en su versión 8.
 
 Empecemos con la nueva función `match()`, que nos permite simplificar los `switch` de forma muy importante. Veamos un ejemplo de como se hacía antes:
 
