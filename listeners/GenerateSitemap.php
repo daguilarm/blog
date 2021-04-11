@@ -37,6 +37,6 @@ class GenerateSitemap
 
     public function isExcluded($path)
     {
-        return str_is($this->exclude, $path);
+        return \Illuminate\Support\Str::is($this->exclude, $path);
     }
 }
