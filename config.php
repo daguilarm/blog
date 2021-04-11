@@ -61,6 +61,6 @@ return [
             : $cleaned;
     },
     'isActive' => function ($page, $path) {
-        return ends_with(trimPath($page->getPath()), trimPath($path));
+        return str_ends_with(trimPath($page->getPath()), trimPath($path));
     },
 ];
