@@ -1,4 +1,4 @@
-indow.axios = require('axios');
+window.axios = require('axios');
 import Vue from 'vue';
 import Search from './components/Search.vue';
 import hljs from 'highlight.js/lib/core';
