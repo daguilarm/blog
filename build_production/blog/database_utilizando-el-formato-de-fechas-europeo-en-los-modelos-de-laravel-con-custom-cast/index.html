@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Utilizando el formato de fechas europeo en los Modelos de Laravel | Blog de Damián Aguilar</title>
+        <meta name="description" content="Creación de un &lt;Custom Cast&gt; en el Modelo para la gestión del formato de fechas en Laravel de forma automática.">
+        <meta property="og:title" content="Utilizando el formato de fechas europeo en los Modelos de Laravel | Blog de Damián Aguilar"/>
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://daguilar.dev/blog/database_utilizando-el-formato-de-fechas-europeo-en-los-modelos-de-laravel-con-custom-cast"/>
+        <meta property="og:description" content="Blog sobre programación de Damián Aguilar: php, javascript, vuejs, phyton, java... y mucho más." />
+        <meta name="msvalidate.01" content="7EBAF0830896AD1D4A27E93C37552EDA" />
+        <link rel="home" href="https://daguilar.dev">
+        <link rel="alternate" type="application/rss+xml" title="Blog de Damián Aguilar" href="https://daguilar.dev/rss.xml" />
+        <link rel="apple-touch-icon" sizes="57x57" href="https://daguilar.dev/assets/img/favicon/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="https://daguilar.dev/assets/img/favicon/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="https://daguilar.dev/assets/img/favicon/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="https://daguilar.dev/assets/img/favicon/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="https://daguilar.dev/assets/img/favicon/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="https://daguilar.dev/assets/img/favicon/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="https://daguilar.dev/assets/img/favicon/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="https://daguilar.dev/assets/img/favicon/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="https://daguilar.dev/assets/img/favicon/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="https://daguilar.dev/assets/img/favicon/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="https://daguilar.dev/assets/img/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="https://daguilar.dev/assets/img/favicon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="https://daguilar.dev/assets/img/favicon/favicon-16x16.png">
+        <link rel="manifest" href="https://daguilar.dev/assets/img/favicon/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+            <meta property="og:title" content="Utilizando el formato de fechas europeo en los Modelos de Laravel" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://daguilar.dev/blog/database_utilizando-el-formato-de-fechas-europeo-en-los-modelos-de-laravel-con-custom-cast"/>
+    <meta property="og:description" content="Creación de un &lt;Custom Cast&gt; en el Modelo para la gestión del formato de fechas en Laravel de forma automática." />
+
+
+
+        <link rel="dns-prefetch" href="//fonts.googleapis.com">
+        <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i,800,800i" rel="stylesheet">
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=5e9ed1fa22768a6768c3">
+    </head>
+
+    <body class="flex flex-col justify-between min-h-screen bg-gray-100 text-gray-800 leading-normal font-sans">
+        <a href="https://github.com/daguilarm" rel="noopener" target="_blank" class="hidden lg:block float-right z-50 github-corner" aria-label="Mis proyectos en GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#4a5568; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes  octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+        <header class="flex items-center h-32 shadow-xl bg-blue-700" role="banner">
+            
+            
+            
+            <div class="container flex items-center max-w-8xl mx-auto px-4 lg:px-8">
+                
+                <div class="z-20 -mt-20 sm:mt-0">
+                    <a href="/" title="Blog de Damián Aguilar" class="block sm:hidden absolute top-0 mt-3 text-yellow-400">El blog de Damián Aguilar</a>
+                    <a href="/" title="Blog de Damián Aguilar" class="hidden sm:block">
+                        <div class="text-lg text-yellow-400 p-2">El blog de</div>
+                        <div class="text-2xl font-bold text-white p-2 -mt-4">Damián Aguilar</div>
+                    </a>
+                </div>
+                
+                <div class="hidden lg:flex">
+    <div class="sun">
+        <div class="ray_box">
+            <div class="ray ray1"></div>
+            <div class="ray ray2"></div>
+            <div class="ray ray3"></div>
+            <div class="ray ray4"></div>
+            <div class="ray ray5"></div>
+            <div class="ray ray6"></div>
+            <div class="ray ray7"></div>
+            <div class="ray ray8"></div>
+            <div class="ray ray9"></div>
+            <div class="ray ray10"></div>
+        </div>
+    </div>
+
+</div>
+                
+                <div id="vue-search" class="flex flex-1 justify-end items-center relative">
+                    <search class="z-50"></search>
+                    <nav class="hidden lg:flex items-center justify-end text-lg z-20">
+    <a title="Blog de Damián Aguilar" href="/blog"
+        class="ml-6 text-white hover:text-blue-700 hover:bg-blue-100 hover:shadow rounded py-1 px-3 ">
+        Blog
+    </a>
+
+    <a title="Sobre mi: Blog de Damián Aguilar" href="/about"
+        class="ml-6 text-white hover:text-blue-700 hover:bg-blue-100 hover:shadow rounded py-1 px-3 ">
+        Sobre mi
+    </a>
+
+    <a title="Proyectos: Blog de Damián Aguilar" href="/projects"
+        class="ml-6 text-white hover:text-blue-700 hover:bg-blue-100 hover:shadow rounded py-1 px-3 ">
+        Proyectos
+    </a>
+
+    <a title="Contacto: Blog de Damián Aguilar" href="/contact"
+        class="ml-6 text-white hover:text-blue-700 hover:bg-blue-100 hover:shadow rounded py-1 px-3 ">
+        Contacto
+    </a>
+</nav>
+                    <button onclick="navMenu.toggle()" class="flex justify-center items-center bg-blue-500 border border-blue-500 h-10 px-5 rounded-full lg:hidden focus:outline-none z-60">
+    <svg id="js-nav-menu-show" xmlns="http://www.w3.org/2000/svg"
+        class="fill-current text-white h-9 w-4" viewBox="0 0 32 32"
+    >
+        <path d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"/>
+    </svg>
+
+    <svg id="js-nav-menu-hide" xmlns="http://www.w3.org/2000/svg"
+        class="hidden fill-current text-white h-9 w-4" viewBox="0 0 36 30"
+    >
+        <polygon points="32.8,4.4 28.6,0.2 18,10.8 7.4,0.2 3.2,4.4 13.8,15 3.2,25.6 7.4,29.8 18,19.2 28.6,29.8 32.8,25.6 22.2,15 "/>
+    </svg>
+</button>
+
+                </div>
+            </div>
+        </header>
+
+        <nav id="js-nav-menu" class="nav-menu hidden lg:hidden">
+    <ul class="my-0">
+        <li class="pl-4">
+            <a
+                title="Blog de Damián Aguilar"
+                href="/blog"
+                class="nav-menu__item hover:text-blue-600 "
+            >Blog</a>
+        </li>
+        <li class="pl-4">
+            <a
+                title="Sobre mi: Blog de Damián Aguilar"
+                href="/about"
+                class="nav-menu__item hover:text-blue-600 "
+            >Sobre mi</a>
+        </li>
+        <li class="pl-4">
+            <a
+                title="Contacto: Blog de Damián Aguilar"
+                href="/contact"
+                class="nav-menu__item hover:text-blue-600 "
+            >Contacto</a>
+        </li>
+    </ul>
+</nav>
+
+        <main role="main" class="flex-auto w-full container mx-auto py-16 px-6 z-20">
+                
+    <h1 class="leading-none mb-6 text-blue-800 text-3xl md:text-4xl lg:text-5xl">Utilizando el formato de fechas europeo en los Modelos de Laravel</h1>
+
+    <p class="flex justify-start text-gray-600 text-xl md:mt-0"><span>Damián Aguilar</span><a href="https://twitter.com/daguilarm" target="_black" class="mx-2"><img src="/assets/img/twitter.png" alt="twitter" class="opacity-75 hover:opacity-100 h-8 w-8 bg-white rounded-full"></a><span> - 21/10/2020</span></p>
+
+                        <a
+                href="/blog/categories/database"
+                title="View posts in database"
+                class="inline-block bg-blue-200 hover:bg-blue-400 leading-loose tracking-wide text-blue-600 hover:text-white uppercase text-xs font-semibold rounded mr-4 px-3 pt-px"
+            >database</a>
+                    <a
+                href="/blog/categories/laravel"
+                title="View posts in laravel"
+                class="inline-block bg-blue-200 hover:bg-blue-400 leading-loose tracking-wide text-blue-600 hover:text-white uppercase text-xs font-semibold rounded mr-4 px-3 pt-px"
+            >laravel</a>
+            
+    <div class="border-b border-blue-200 mb-10 pb-4" v-pre>
+        <p>La gestión de las fechas con <code>Laravel</code> puede ser un poco complicado, sobre todo, porque el formato de fechas en Europa es diferente al formato estadounidense y diferente al formato utilizado por las bases de datos.</p>
+
+<p>Por ejemplo en Europa utilizados el formato <code>d/m/Y</code>, en Estados Unidos utilizan el formato <code>m/d/Y</code> y las bases de datos utilizan el formato <code>Y-m-d</code>...</p>
+
+<p>Por defecto <code>Laravel</code> va a utilizar el formato de la base de datos (<code>timestamp</code>), es decir el formato <code>Y-m-d H:i:s</code>, por lo que tendremos que adaptarlo si queremos que en nuestro proyecto se muestren en formato europeo.</p>
+
+<p>Para ello tenemos varias opciones. La primera sería mediante <code>Accessors</code> y <code>Mutators</code>, los cuales tenemos que añadir en el modelo:</p>
+
+<pre><code class="language-php">/**
+ * Fecha en formato europeo
+ *
+ * @param  string  $value
+ * @return string
+ */
+public function getDateAttribute($value)
+{
+    return $value-&gt;format('d/m/Y');
+}
+
+/**
+ * Fecha en formato base de datos
+ *
+ * @param  string  $value
+ * @return string
+ */
+public function setDateAttribute($value)
+{
+    $this-&gt;attributes['date'] = $value-&gt;format('Y-m-d');
+}
+</code></pre>
+
+<p>Así saldríamos del paso, pero tendríamos que hacer esto en cada modelo... no es una solución práctica para un proyecto medio.</p>
+
+<p>Lo ideal será utilizar un <code>CAST</code> personalizado, como los que vienen por defecto en <code>Laravel</code>:</p>
+
+<pre><code class="language-php">/**
+ * The attributes that should be cast.
+ *
+ * @var array
+ */
+protected $casts = [
+    'is_admin' =&gt; 'boolean',
+];
+</code></pre>
+
+<p>Y automáticamente <code>Laravel</code> gestionará el campo como boleano. Ahora se trata de hacer lo mismo pero para fechas, y lo primero será crear una clase nueva (yo las guardo en la carpeta <code>App\Models\Casts</code>):</p>
+
+<pre><code class="language-php">&lt;?php
+
+namespace App\Models\Casts;
+
+use Illuminate\Contracts\Database\Eloquent\CastsAttributes;
+use Carbon\Carbon;
+
+class DateFormat implements CastsAttributes
+{
+    /**
+     * private @var format
+     */
+    private string $getFormat = 'd/m/Y';
+    private string $setFormat = 'Y-m-d';
+
+    /**
+     * Cast the given value.
+     *
+     * @param  \Illuminate\Database\Eloquent\Model  $model
+     * @param  string  $key
+     * @param  mixed  $value
+     * @param  array  $attributes
+     * @return array
+     */
+    public function get($model, $key, $value, $attributes)
+    {
+        return strlen($value)
+            ? Carbon::parse($value)-&gt;format($this-&gt;dateFormat)
+            : null;
+    }
+
+    /**
+     * Prepare the given value for storage.
+     *
+     * @param  \Illuminate\Database\Eloquent\Model  $model
+     * @param  string  $key
+     * @param  array  $value
+     * @param  array  $attributes
+     * @return string
+     */
+    public function set($model, $key, $value, $attributes)
+    {
+        return strlen($value)
+            ? Carbon::parse($value)-&gt;format($this-&gt;setFormat)
+            : null;
+    }
+}
+</code></pre>
+
+<p>Y la utilización en el modelo sería:</p>
+
+<pre><code class="language-php">/**
+ * The attributes that should be cast.
+ *
+ * @var array
+ */
+protected $casts = [
+    'my_date' =&gt; \App\Models\Casts\DateFormat::class,
+];
+</code></pre>
+
+<p>Espero que sea útil.</p>
+    </div>
+
+    <nav class="flex justify-between text-sm md:text-base">
+        <div>
+                            <a href="https://daguilar.dev/blog/javascript_librerias-javascript-creacion-de-mapas-con-leafletjs" title="Older Post: Librerías JavaScript - creación de mapas con LeafletJS">
+                    &LeftArrow; Librerías JavaScript - creación de mapas con LeafletJS
+                </a>
+                    </div>
+
+        <div>
+                            <a href="https://daguilar.dev/blog/tests_trucos-consejos-y-situaciones-extranas-con-laravel-dusk" title="Newer Post: Trucos, consejos y sitaciones extrañas con Laravel Dusk">
+                    Trucos, consejos y sitaciones extrañas con Laravel Dusk &RightArrow;
+                </a>
+                    </div>
+    </nav>
+        </main>
+
+        <footer class="w-full flex items-center h-24 bg-white sm:bg-gray-600 sm:text-gray-100 text-center text-sm mt-12 py-4" role="contentinfo">
+            <div class="flex-1">
+                &copy; Damián Aguilar 2019-2021 -
+                <a href="https://github.com/daguilarm" class="sm:text-gray-100 hover:text-gray-300">
+                    Github
+                </a> -
+                <a href="https://belich.dev" class="sm:text-gray-100 hover:text-gray-300">
+                    Belich admin
+                </a> -
+                <a href="https://daguilar.dev/blog/rss.xml" class="sm:text-gray-100 hover:text-gray-300">
+                    RSS
+                </a>
+            </div>
+        </footer>
+
+        <script src="/assets/build/js/main.js?id=b27eb7cb9dc80f03577f"></script>
+        <script>
+    const navMenu = {
+        toggle() {
+            const menu = document.getElementById('js-nav-menu');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('lg:block');
+            document.getElementById('js-nav-menu-hide').classList.toggle('hidden');
+            document.getElementById('js-nav-menu-show').classList.toggle('hidden');
+        },
+    }
+</script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var linksTargetBlank = document.querySelectorAll('.link-out');
+                for (var i = 0; i < linksTargetBlank.length; i++) {
+                    linksTargetBlank[i].target = "_blank";
+                    linksTargetBlank[i].rel = "noopener";
+                }
+            }, false);
+        </script>
+
+
+    </body>
+</html>
