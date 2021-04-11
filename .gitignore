@@ -1,8 +1,10 @@
+.DS_Store
+/_tmp/
+/cache/
 /build_local/
-/build_staging/
-/build_production/
 /node_modules/
 /vendor/
-.DS_Store
-source/assets/build
+.phpunit.result.cache
+.php_cs.cache
+.idea
 info.text
