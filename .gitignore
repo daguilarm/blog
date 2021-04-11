@@ -4,6 +4,7 @@
 /build_local/
 /node_modules/
 /vendor/
+/source/_next_posts/
 .phpunit.result.cache
 .php_cs.cache
 .idea

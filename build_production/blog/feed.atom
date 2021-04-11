@@ -3,7 +3,7 @@
     <title>Blog de Damián Aguilar</title>
     <link href="https://daguilar.dev" />
     <link type="application/atom+xml" rel="self" href="https://daguilar.dev/blog/feed.atom" />
-    <updated>2021-04-11T10:01:27+00:00</updated>
+    <updated>2021-04-11T10:12:29+00:00</updated>
     <id>https://daguilar.dev/blog/feed.atom</id>
     <author>
         <name>Damián Aguilar</name>
@@ -23,7 +23,7 @@ Este artículo es continuación del ya publicado Simplificando condicionales con
     <content type="html"><![CDATA[
         <p>En este artículo, se van a ver diversas técnicas de reducción de condicionales y simplificación de código, para versiones de <strong>php8</strong>.</p>
 
-<p>Este artículo es continuación del ya publicado <a href="https://daguilar.dev/blog/php_simplificando-condicionales-en-php-refactoring/">Simplificando condicionales con PHP (parte I)</a>. Aquí veremos otras técnicas de simplificación de condicionales, utilizando <strong>php</strong> en su versión 8.</p>
+<p>Este artículo es continuación del ya publicado <a href="https://daguilar.dev/blog/php_simplificando-condicionales-en-php-parte-1-refactoring/">Simplificando condicionales con PHP (parte I)</a>. Aquí veremos otras técnicas de simplificación de condicionales, utilizando <strong>php</strong> en su versión 8.</p>
 
 <p>Empecemos con la nueva función <code>match()</code>, que nos permite simplificar los <code>switch</code> de forma muy importante. Veamos un ejemplo de como se hacía antes:</p>
 
@@ -374,21 +374,6 @@ class MinifyHtml
     ]]></content>
 </entry>
             <entry>
-    <id>https://daguilar.dev/blog/###laravel_cambiando-a-uuid-identificador-unico-universal</id>
-    <link type="text/html" rel="alternate" href="https://daguilar.dev/blog/###laravel_cambiando-a-uuid-identificador-unico-universal" />
-    <title>Cambiando al sistema UUID (Identificador Único Universal)</title>
-    <published>2021-02-22T00:00:00+00:00</published>
-    <updated>2021-02-22T00:00:00+00:00</updated>
-    <author>
-        <name>Damián Aguilar</name>
-    </author>
-    <summary type="html">Antes de empezar con el artícu
-...</summary>
-    <content type="html"><![CDATA[
-        <p>Antes de empezar con el artícu</p>
-    ]]></content>
-</entry>
-            <entry>
     <id>https://daguilar.dev/blog/personal_vuelta-al-trabajo</id>
     <link type="text/html" rel="alternate" href="https://daguilar.dev/blog/personal_vuelta-al-trabajo" />
     <title>Vuelta al trabajo, terminé la Tesis Doctoral</title>
@@ -615,32 +600,6 @@ public function test_can_create_a_post()
 <p>Cuando más complicado es el <code>test</code> más beneficios se obtienen de esta técnica. Otra técnica que utilizo para reutilizar aún más el código, es extraer todo los métodos repetidos en todas las acciones <code>CRUD</code> que he creado a un <code>trait</code>. Así solo tengo que ir llamando al <code>trait</code> si el <code>test</code> lo necesita.</p>
 
 <p>Por ejemplo, el método <code>selectDate()</code> se puede utilizar en las páginas <code>Create</code> y <code>Update</code>, por lo que extraerlo a un <code>trait</code> va a evitar que repitamos código.</p>
-    ]]></content>
-</entry>
-            <entry>
-    <id>https://daguilar.dev/blog/###laravel_gestionando-las-excepciones-con-laravel</id>
-    <link type="text/html" rel="alternate" href="https://daguilar.dev/blog/###laravel_gestionando-las-excepciones-con-laravel" />
-    <title>Gestionando excepciones con Laravel</title>
-    <published>2020-11-04T00:00:00+00:00</published>
-    <updated>2020-11-04T00:00:00+00:00</updated>
-    <author>
-        <name>Damián Aguilar</name>
-    </author>
-    <summary type="html">
-...</summary>
-    <content type="html"><![CDATA[
-        <pre><code class="language-php">/**
- * Register the exception handling callbacks for the application.
- *
- * @return void
- */
-public function register()
-{
-    $this-&gt;renderable(function (TokenMismatchException $e, $request) {
-        return redirect()-&gt;route('login');
-    });
-}
-</code></pre>
     ]]></content>
 </entry>
             <entry>

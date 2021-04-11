@@ -15,7 +15,7 @@
                 <description><![CDATA[Refactoring condicionales con PHP. Simplificando condicionales y bucles con PHP]]></description>
                 <content:encoded><![CDATA[<p>En este artículo, se van a ver diversas técnicas de reducción de condicionales y simplificación de código, para versiones de <strong>php8</strong>.</p>
 
-<p>Este artículo es continuación del ya publicado <a href="https://daguilar.dev/blog/php_simplificando-condicionales-en-php-refactoring/">Simplificando condicionales con PHP (parte I)</a>. Aquí veremos otras técnicas de simplificación de condicionales, utilizando <strong>php</strong> en su versión 8.</p>
+<p>Este artículo es continuación del ya publicado <a href="https://daguilar.dev/blog/php_simplificando-condicionales-en-php-parte-1-refactoring/">Simplificando condicionales con PHP (parte I)</a>. Aquí veremos otras técnicas de simplificación de condicionales, utilizando <strong>php</strong> en su versión 8.</p>
 
 <p>Empecemos con la nueva función <code>match()</code>, que nos permite simplificar los <code>switch</code> de forma muy importante. Veamos un ejemplo de como se hacía antes:</p>
 
@@ -364,17 +364,6 @@ class MinifyHtml
 
                             </item>
                     <item>
-                <title><![CDATA[Cambiando al sistema UUID (Identificador Único Universal)]]></title>
-                <link>https://daguilar.dev/blog/###laravel_cambiando-a-uuid-identificador-unico-universal</link>
-                <guid isPermaLink="true">https://daguilar.dev/blog/###laravel_cambiando-a-uuid-identificador-unico-universal</guid>
-                <description><![CDATA[Por qué he cambiado mi proyecto a este sistema, y qué ventajas tiene frente al sistema tradicional de la ID]]></description>
-                <content:encoded><![CDATA[<p>Antes de empezar con el artícu</p>
-]]></content:encoded>
-                <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Mon, 22 Feb 2021 00:00:00 +0000</pubDate>
-
-                            </item>
-                    <item>
                 <title><![CDATA[Vuelta al trabajo, terminé la Tesis Doctoral]]></title>
                 <link>https://daguilar.dev/blog/personal_vuelta-al-trabajo</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/personal_vuelta-al-trabajo</guid>
@@ -588,28 +577,6 @@ public function test_can_create_a_post()
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
                 <pubDate>Sun, 08 Nov 2020 00:00:00 +0000</pubDate>
-
-                            </item>
-                    <item>
-                <title><![CDATA[Gestionando excepciones con Laravel]]></title>
-                <link>https://daguilar.dev/blog/###laravel_gestionando-las-excepciones-con-laravel</link>
-                <guid isPermaLink="true">https://daguilar.dev/blog/###laravel_gestionando-las-excepciones-con-laravel</guid>
-                <description><![CDATA[Algunos ejemplos prácticos del uso de excepciones con Laravel]]></description>
-                <content:encoded><![CDATA[<pre><code class="language-php">/**
- * Register the exception handling callbacks for the application.
- *
- * @return void
- */
-public function register()
-{
-    $this-&gt;renderable(function (TokenMismatchException $e, $request) {
-        return redirect()-&gt;route('login');
-    });
-}
-</code></pre>
-]]></content:encoded>
-                <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Wed, 04 Nov 2020 00:00:00 +0000</pubDate>
 
                             </item>
                     <item>
