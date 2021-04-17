@@ -17,7 +17,7 @@ Después de aquello, me planteé hacer una segunda versión del proyecto, pero b
 
 Cuento todo esto, porque ya se puede utilizar el primer `package` que he desarrollado. Se llama: **Livewire Tables**.
 
-![Livewire tables](../../..../assets/img/projects/livewire-tables.png)
+![Livewire tables](/assets/img/projects/livewire-tables.png)
 
 Todo empezó cuando decidí empezar a desarrollar el sistema de *tablas de datos*, emulando a [datatables](https://datatables.net/){.link-out}, y en el camino me encontré un package que a primera vista funcionaba muy bien:
 
