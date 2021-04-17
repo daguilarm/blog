@@ -30,6 +30,7 @@
                 <li>Paginación de resultados.</li>
                 <li>Selección de columnas mediante checkboxes.</li>
                 <li>Mensajes y modals preconfigurados.</li>
+                <li>Totalmente reconfigurado para TailwindCSS</li>
                 <li>Completa customización del package.</li>
                 <li>Y mucho mas...</li>
             </ul>
