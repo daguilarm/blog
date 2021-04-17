@@ -20,7 +20,7 @@
             Es un componente dinámico de Laravel Livewire para tablas de datos. Es como el famoso datatables basado en Jquery, pero utilizando Livewire, AlpineJS y TailwindCSS.
         </p>
         <p>
-            El package está basado en el desarrollado por <a href="https://github.com/rappasoft/laravel-livewire-tables" target="_blank">rappasoft</a>, pero con bastantes mejoras y desarrollos.
+            El package está basado en el desarrollado por <a href="https://github.com/rappasoft/laravel-livewire-tables" target="_blank">rappasoft</a>, pero con bastantes mejoras y desarrollos:
         </p>
         <div class="sm:flex">
             <ul class="w-full sm:flex-1">
@@ -28,6 +28,8 @@
                 <li>Descarga de recursos en formato: EXCEL y CSV</li>
                 <li>Botones de acciones.</li>
                 <li>Paginación de resultados.</li>
+                <li>Selección de columnas mediante checkboxes.</li>
+                <li>Mensajes y modals preconfigurados.</li>
                 <li>Completa customización del package.</li>
                 <li>Y mucho mas...</li>
             </ul>
