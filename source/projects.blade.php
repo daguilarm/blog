@@ -15,7 +15,7 @@
     <h1 class="text-blue-800 text-3xl md:text-4xl lg:text-5xl">Proyectos</h1>
     <h2 class="text-xl font-normal">Actualmente estoy desarrollando las siguientes proyectos:</h2>
     <section id="belich" class="mt-8 p-6">
-        <h3 class="text-xl">a) Livewire Tables.</h3>
+        <h3 class="text-xl">Livewire Tables.</h3>
         <p>
             Es un componente dinámico de Laravel Livewire para tablas de datos. Es como el famoso datatables basado en Jquery, pero utilizando Livewire, AlpineJS y TailwindCSS.
         </p>
