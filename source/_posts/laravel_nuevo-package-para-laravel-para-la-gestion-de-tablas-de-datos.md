@@ -25,7 +25,7 @@ Todo empezó cuando decidí empezar a desarrollar el sistema de *tablas de datos
 
 La verdad es que ofrecía una estructura básica muy interesante, pero vi en seguida sus limitaciones, y tras indagar un poco, vi que no había mucho interés por parte del creador por evolucionar y mejorar el `package`, por lo que procedí a crear un **fork** en `github` y empecé a añadir mejoras:
 
-- Lo primero fue dar soporte para `TailwindCSS`, ya que estaba diseñado para `Bootstrap.
+- Lo primero fue dar soporte para `TailwindCSS`, ya que estaba diseñado para `Bootstrap`.
 - Integrar un sistema de mensajes, utilizando la funcionalidad de *flash messages* the `Livewire`.
 - Añadir los campos de accion a la tabla, de forma que se pudieran: *editar, mostrar y eliminar los campos*.
 - Permitir filtrar los resultados por columnas, utilizando un sistema similar a **Laravel Nova**.
