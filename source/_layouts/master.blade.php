@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta charset="UTF-8">
         <title>{{ $page->title }} | {{ $page->siteName }}</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="{{ $page->meta_description ?? $page->description ?? $page->siteDescription }}">
         <meta property="og:title" content="{{ $page->title ?  $page->title . ' | ' : '' }}{{ $page->siteName }}"/>
         <meta property="og:type" content="website" />
@@ -30,6 +30,11 @@
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+        <meta name="twitter:site" content="@daguilarm">
+        <meta name="twitter:creator" content="@daguilarm">
+        <meta name="twitter:title" content="{{ $page->title }} | {{ $page->siteName }}">
+        <meta name="twitter:description" content="{{ $page->meta_description ?? $page->description ?? $page->siteDescription }}">
         @stack('meta')
 
 {{--         @if ($page->production)
