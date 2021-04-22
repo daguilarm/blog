@@ -20,19 +20,19 @@
             Es un componente dinámico de Laravel Livewire para tablas de datos. Es como el famoso datatables basado en Jquery, pero utilizando Livewire, AlpineJS y TailwindCSS.
         </p>
         <p>
-            El package está inspirado en el desarrollado por <a href="https://github.com/rappasoft/laravel-livewire-tables" target="_blank">rappasoft</a>, pero con bastantes mejoras y desarrollos:
+            El package está inspirado en el desarrollado por <a href="https://github.com/rappasoft/laravel-livewire-tables" target="_blank">rappasoft</a>, al que se le han añadido bastantes mejoras:
         </p>
         <div class="sm:flex">
             <ul class="w-full sm:flex-1">
+                <li>Practicamente todo el código ha sido refactorizado y replanteado desde 0.</li>
                 <li>Filtros personalizados para cada columna.</li>
-                <li>Descarga de recursos en formato: EXCEL y CSV</li>
+                <li>Añadir nuevos recursos a la base de datos.</li>
                 <li>Botones de acciones.</li>
                 <li>Paginación de resultados.</li>
                 <li>Selección de columnas mediante checkboxes.</li>
                 <li>Mensajes y modals preconfigurados.</li>
                 <li>Totalmente reconfigurado para TailwindCSS</li>
                 <li>Completa customización del package.</li>
-                <li>Practicamente todo el código ha sido refactorizado y replanteado.</li>
                 <li>Y mucho mas...</li>
             </ul>
             <div class="mt-12 w-full sm:flex-1 sm:mt-8">
@@ -44,6 +44,7 @@
         </div>
         <div class="w-full mt-12 sm:mt-0">
             <p><strong>Proyecto en Github:</strong> <a href="https://github.com/daguilarm/belich-tables">https://github.com/daguilarm/belich-tables</a></p>
+            <p><strong>Documentación:</strong> <a href="https://daguilarm.github.io/belich-tables">https://daguilarm.github.io/belich-tables</a></p>
         </div>
     </section>
 @endsection
