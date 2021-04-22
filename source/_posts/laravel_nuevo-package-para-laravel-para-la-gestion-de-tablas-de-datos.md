@@ -25,16 +25,23 @@ Todo empezó cuando decidí empezar a desarrollar el sistema de *tablas de datos
 
 La verdad es que ofrecía una estructura básica muy interesante, pero vi que puediera llegar hasta donde yo necesitaba para poder integrarlo en el proyecto, por lo que procedí a crear un **fork** en `github` y empecé a añadir mejoras:
 
-- Lo primero fue dar soporte para `TailwindCSS`, ya que estaba diseñado para `Bootstrap`.
-- Integrar un sistema de mensajes, utilizando la funcionalidad de *flash messages* the `Livewire`.
-- Añadir los campos de accion a la tabla, de forma que se pudieran: *editar, mostrar y eliminar los campos*.
-- Permitir filtrar los resultados por columnas, utilizando un sistema similar a **Laravel Nova**.
-- Cambiar la paginación por una paginación simple.
-- Añadir `checkboxes` para seleccionar filas y realizar acciones masivas con los elementos seleccionados.
-- Habilitar un sistema que permita configurar estas acciones masivas.
+- El código se ha rediseñado desde prácticamente 0, mejorando la estructura y el rendimiento.
+- Se ha dado soporte para `TailwindCSS`, ya que estaba diseñado para ser utilizado con `Bootstrap`.
+- Se ha integrado un sistema de mensajes, utilizando la funcionalidad de *flash messages* the `Livewire`.
+- Implementación de los campos de accion en la tabla, de forma que se pudieran: *editar, mostrar y eliminar campos*.
+- Filtrado de resultados por columnas, utilizando un sistema similar a **Laravel Nova**.
+- Se ha cambiado la paginación por una paginación simple.
+- Se han añadido `checkboxes` para seleccionar filas y realizar acciones masivas sobre los elementos seleccionados.
+- Se ha habilitado un sistema que permite configurar y personalizar estas acciones masivas.
+- Se ha mejorado la personalización y adaptabilidad del `package` a cualquier proyecto.
+- Se ha desarrollado una documentación completa sobre su funcionamiento.
 
-Y muchas más funcionalidades menores, que han añadido al `package` mucha mayor flexibilidad.
+Y muchas más funcionalidades menores, que han añadido al `package` mucha mayor flexibilidad y adaptabilidad.
 
 Puedes ver el `package` en: 
 
 - [https://github.com/daguilarm/belich-tables](https://github.com/daguilarm/belich-tables){.link-out}
+
+Y su documentación en:
+
+- [https://daguilarm.github.io/belich-tables/](https://daguilarm.github.io/belich-tables/){.link-out}
