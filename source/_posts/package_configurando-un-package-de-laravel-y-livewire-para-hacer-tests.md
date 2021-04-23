@@ -131,8 +131,8 @@ class TestCase extends BaseTestCase
 ```
 Antes de empezar tengo que aclarar que he tenido dos fuentes principales de información hasta llegar aquí:
 
-- https://github.com/spatie/laravel-permission/blob/master/tests/TestCase.php
-- https://github.com/livewire/livewire/blob/master/tests/Unit/TestCase.php
+- [https://github.com/spatie/laravel-permission/blob/master/tests/TestCase.php](https://github.com/spatie/laravel-permission/blob/master/tests/TestCase.php){.link-out}
+- [https://github.com/livewire/livewire/blob/master/tests/Unit/TestCase.php](https://github.com/livewire/livewire/blob/master/tests/Unit/TestCase.php){.link-out}
 
 La clave para conseguir que funcionara, ha estado aqui:
 
@@ -155,7 +155,7 @@ El problema era que cada vez que hacía un test, me daba el mismo error:
 
 La solución la encontré aqui:
 
-- https://laracasts.com/discuss/channels/livewire/package-development-target-class-livewire-does-not-exist
+- [https://laracasts.com/discuss/channels/livewire/package-development-target-class-livewire-does-not-exist](https://laracasts.com/discuss/channels/livewire/package-development-target-class-livewire-does-not-exist){.link-out}
 
 Al principio sólo incluía el **Service Provider** de `BelichTablesServiceProvider::class` hasta que he decubierto que había que incluir también el de `LivewireServiceProvider::class`. Esto me ha llevado casi una hora delante del ordenador... 
 
