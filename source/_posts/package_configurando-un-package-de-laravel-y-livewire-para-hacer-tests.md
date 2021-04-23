@@ -149,7 +149,15 @@ protected function getPackageProviders($app)
 }
 ```
 
-Al principio sólo incluía el **Service Provider** de `BelichTablesServiceProvider::class` hasta que he comprendido que había que incluir también el de `LivewireServiceProvider::class`. Esto me ha llevado casi una hora delante del ordenador...
+El problema era que cada vez que hacía un test, me daba el mismo error:
+
+    Illuminate\Contracts\Container\BindingResolutionException: Target class [livewire] does not exist.
+
+La solución la encontré aqui:
+
+- https://laracasts.com/discuss/channels/livewire/package-development-target-class-livewire-does-not-exist
+
+Al principio sólo incluía el **Service Provider** de `BelichTablesServiceProvider::class` hasta que he decubierto que había que incluir también el de `LivewireServiceProvider::class`. Esto me ha llevado casi una hora delante del ordenador... 
 
 Por último, el **Trait** `TestSeed::class`, solo sirve para rellenar la base de datos:
 
