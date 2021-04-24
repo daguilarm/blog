@@ -101,7 +101,7 @@ class TestCase extends BaseTestCase
      */
     protected function resolveApplicationHttpKernel($app)
     {
-        $app->singleton('Illuminate\Contracts\Http\Kernel', 'Tests\HttpKernel');
+        $app->singleton('Illuminate\Contracts\Http\Kernel', 'Daguilarm\BelichTables\Tests\HttpKernel');
     }
 
     /**
@@ -159,7 +159,7 @@ La solución la encontré aqui:
 
 Al principio sólo incluía el **Service Provider** de `BelichTablesServiceProvider::class` hasta que he decubierto que había que incluir también el de `LivewireServiceProvider::class`. Esto me ha llevado casi una hora delante del ordenador... 
 
-Por último, el **Trait** `TestSeed::class`, solo sirve para rellenar la base de datos:
+Sin olvidar el **Trait** `TestSeed::class`, que solo sirve para rellenar la base de datos:
 
 ```php
 <?php
@@ -198,3 +198,104 @@ trait TestSeed
     }
 }
 ```
+
+Otro aspecto importante si quieres utilizar los test que tiene **Livewire** disponibles, es tener en cuenta que hay que añadir todo el `middleware`, tal y como indicamos en el método `resolveApplicationHttpKernel($app)`:
+
+```php 
+/**
+ * Swap HTTP Kernel for application bootstrap
+ */
+protected function resolveApplicationHttpKernel($app)
+{
+    $app->singleton('Illuminate\Contracts\Http\Kernel', 'Daguilarm\BelichTables\Tests\HttpKernel');
+}
+```
+
+Recuerdo que en nuestro `TestCase` hemos incluido este archivo, asi que tenemos que crearlo en la ruta que hemos especificado en el `singleton`. El archivo lo podemos encontrar en:
+
+- [https://github.com/livewire/livewire/blob/master/tests/HttpKernel.php](https://github.com/livewire/livewire/blob/master/tests/HttpKernel.php){.link-out}
+
+Y en caso que cambie de ubicación, lo copio aquí:
+
+```php 
+<?php
+
+namespace Daguilarm\BelichTables\Tests;
+
+use Illuminate\Foundation\Http\Kernel;
+
+class HttpKernel extends Kernel
+{
+    /**
+     * The application's global HTTP middleware stack.
+     *
+     * These middleware are run during every request to your application.
+     *
+     * @var array
+     */
+    protected $middleware = [
+        \Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode::class,
+        \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
+        \Illuminate\Foundation\Http\Middleware\TrimStrings::class,
+        \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
+    ];
+
+    /**
+     * The application's route middleware groups.
+     *
+     * @var array
+     */
+    protected $middlewareGroups = [
+        'web' => [
+            \Illuminate\Cookie\Middleware\EncryptCookies::class,
+            \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
+            \Illuminate\Session\Middleware\StartSession::class,
+            \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+            \Illuminate\Foundation\Http\Middleware\VerifyCsrfToken::class,
+            \Illuminate\Routing\Middleware\SubstituteBindings::class,
+        ],
+
+        'api' => [
+            'throttle:60,1',
+            'bindings',
+        ],
+    ];
+
+    /**
+     * The application's route middleware.
+     *
+     * These middleware may be assigned to groups or used individually.
+     *
+     * @var array
+     */
+    protected $routeMiddleware = [
+        'auth' => \Illuminate\Auth\Middleware\Authenticate::class,
+        'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
+        'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
+        'cache.headers' => \Illuminate\Http\Middleware\SetCacheHeaders::class,
+        'can' => \Illuminate\Auth\Middleware\Authorize::class,
+        'guest' => \Orchestra\Testbench\Http\Middleware\RedirectIfAuthenticated::class,
+        'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
+        'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+    ];
+
+    /**
+     * The priority-sorted list of middleware.
+     *
+     * This forces non-global middleware to always be in the given order.
+     *
+     * @var array
+     */
+    protected $middlewarePriority = [
+        \Illuminate\Session\Middleware\StartSession::class,
+        \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+        \Illuminate\Auth\Middleware\Authenticate::class,
+        \Illuminate\Session\Middleware\AuthenticateSession::class,
+        \Illuminate\Routing\Middleware\SubstituteBindings::class,
+        \Illuminate\Auth\Middleware\Authorize::class,
+    ];
+}
+```
+
+Como recordatorio... no olvides cambiar los `namespaces` y adaptarlos a tu proyecto.
