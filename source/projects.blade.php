@@ -14,8 +14,8 @@
 @section('body')
     <h1 class="text-blue-800 text-3xl md:text-4xl lg:text-5xl">Proyectos</h1>
     <h2 class="text-xl font-normal">Actualmente estoy desarrollando las siguientes proyectos:</h2>
-    <section id="belich" class="mt-8 p-6 border-b border-gray-400">
-        <h3 class="text-xl underline">a) Laravel Livewire multi select (combobox).</h3>
+    <section id="belich" class="mt-8 p-6 border-b border-blue-800">
+        <h3 class="text-xl">a) Laravel Livewire multi select (combobox).</h3>
         <p>
             Es un componente dinámico de Laravel Livewire para gestionar campos <code>select</code> dependientes entre ellos.
         </p>
@@ -36,8 +36,8 @@
             <p><strong>Proyecto y documentación en Github:</strong> <a href="https://github.com/daguilarm/livewire-combobox">https://github.com/daguilarm/livewire-combobox</a></p>
         </div>
     </section>
-    <section id="belich" class="mt-8 p-6 border-b border-gray-400">
-        <h3 class="text-xl underline">b) Belich Tables.</h3>
+    <section id="belich" class="mt-8 p-6 border-b border-blue-800">
+        <h3 class="text-xl">b) Belich Tables.</h3>
         <p>
             Es un componente dinámico de Laravel Livewire para tablas de datos. Es como el famoso datatables basado en Jquery, pero utilizando Livewire, AlpineJS y TailwindCSS.
         </p>
