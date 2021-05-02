@@ -32,14 +32,6 @@ class TestCase extends BaseTestCase
      */
     protected function setUp(): void
     {
-        // Clean up the test
-        $this->afterApplicationCreated(function () {
-            $this->makeACleanSlate();
-        });
-
-        $this->beforeApplicationDestroyed(function () {
-            $this->makeACleanSlate();
-        });
 
         parent::setUp();
 
@@ -84,48 +76,11 @@ class TestCase extends BaseTestCase
     }
 
     /**
-     * Clean up for the test
-     */
-    public function makeACleanSlate()
-    {
-        Artisan::call('view:clear');
-
-        File::deleteDirectory($this->livewireViewsPath());
-        File::deleteDirectory($this->livewireClassesPath());
-        File::deleteDirectory($this->livewireTestsPath());
-        File::delete(app()->bootstrapPath('cache/livewire-components.php'));
-    }
-
-    /**
      * Swap HTTP Kernel for application bootstrap
      */
     protected function resolveApplicationHttpKernel($app)
     {
         $app->singleton('Illuminate\Contracts\Http\Kernel', 'Daguilarm\BelichTables\Tests\HttpKernel');
-    }
-
-    /**
-     * Set the path for the livewire classes
-     */
-    protected function livewireClassesPath($path = '')
-    {
-        return app_path('Http/Livewire'.($path ? '/'.$path : ''));
-    }
-
-    /**
-     * Set the path for the livewire views
-     */
-    protected function livewireViewsPath($path = '')
-    {
-        return resource_path('views').'/livewire'.($path ? '/'.$path : '');
-    }
-
-    /**
-     * Set the path for the livewire tests
-     */
-    protected function livewireTestsPath($path = '')
-    {
-        return base_path('tests/Feature/Livewire'.($path ? '/'.$path : ''));
     }
 }
 ```
