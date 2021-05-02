@@ -7,7 +7,7 @@ description: Por qué he cambiado mi proyecto a este sistema, y qué ventajas ti
 categories: [laravel, livewire, packages, tests]
 ---
 
-Me he visto por primera vez ante la situación de tener que testear un *package* para **Laravel** que además estaba basado en **Livewire**. No ha sido fácil, y me ha llevado algo de tiempo tenerlo todo preparado.
+Me he visto por primera vez ante la situación de tener que testear un *package* para **Laravel** que además estaba basado en **Livewire**. No ha sido fácil, y me ha llevado algo de tiempo tenerlo todo preparado, sobre todo porque no hay mucha información al respecto.
 
 Lo primero ha sido crear el archivo `TestCase.php` en la carpeta `./tests`. Dejo el archivo completo (que es del package [Belich Tables](https://github.com/daguilarm/belich-tables){.link-out}):
 
