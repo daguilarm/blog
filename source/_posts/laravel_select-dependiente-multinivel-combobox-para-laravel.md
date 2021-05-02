@@ -7,13 +7,13 @@ description: Package para la gestión de selects dependientes multinivel para La
 categories: [laravel, Livewire, packages, packagist, php]
 ---
 
-Estoy trabajando en nu nuevo proyecto y necesitaba un sistema de `selects` dependientes y con niveles de dependencia infinitos. Revisando `packages` para **Laravel** ya desarrollados me he encontrado con herramientas parecidas a [https://select2.org/](https://select2.org/){.link-out}, que son geniales, pero me sobraban gran parte de las funcionalidades que tenían, además, quería que estuviera basado en `back-end` en vez de en `front-end`.
+Estoy trabajando en un nuevo proyecto y necesitaba un sistema de `selects` dependientes y con niveles de dependencia infinitos. Revisando `packages` para **Laravel** ya desarrollados me he encontrado con herramientas parecidas a [https://select2.org/](https://select2.org/){.link-out}, que son geniales, pero me sobraban gran parte de las funcionalidades que tenían, además, quería que estuviera basado en `back-end` en vez de en `front-end`.
 
-Encontré soluciones, pero supongo que soy un maniático con el código y quería que además fuese fluido y fácilmente entendible, utilizando métodos encadenados. Al final me puse a desarrollar el `package`:
+Encontré soluciones, pero supongo que soy un maniático con el código y quería que además fuese fluido y fácilmente entendible, utilizando métodos encadenados. Al final me puse a desarrollar mi propio `package`, porque no encontraba nada que me gustase:
 
 - [https://github.com/daguilarm/livewire-combobox](https://github.com/daguilarm/livewire-combobox){.link-out}
 
-Básicamente, tenemos que crear un componente Livewire, como el siguiente:
+Básicamente, tenemos que crear un componente **Livewire**, como el siguiente:
 
 ```php
 <?php
@@ -58,7 +58,7 @@ class ComboboxCars extends ComboboxLivewireComponent implements Combobox
 }
 ```
 
-Y añadir el componente a la vista:
+Y añadir el componente a la vista, tal y como se muestra a continuación:
 
 ```html 
 <div>
@@ -66,4 +66,4 @@ Y añadir el componente a la vista:
 </div>
 ```
 
-Y automáticamente tendremos 3 campos `select` dependientes unos de otros.
+Y automáticamente tendremos 3 campos `select` dependientes unos de otros, sin tener que hacer nada mas. Y desde mi punto de vista, de forma clara, fluida y con métodos encadenados, tal y como a mi me gusta.
