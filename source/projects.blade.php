@@ -40,6 +40,7 @@
         </div>
         <div class="w-full mt-12 sm:mt-0">
             <p><strong>Proyecto y documentación en Github:</strong> <a href="https://github.com/daguilarm/livewire-combobox">https://github.com/daguilarm/livewire-combobox</a></p>
+            <p><strong>Artículo:</strong> <a href="https://daguilar.dev/blog/laravel_select-dependiente-multinivel-combobox-para-laravel/">Artículo sobre Laravel Livewire Combobox</a></p>
         </div>
     </section>
     <section id="belich" class="mt-8 p-6 border-b border-blue-400">
@@ -73,6 +74,7 @@
         <div class="w-full mt-12 sm:mt-0">
             <p><strong>Proyecto en Github:</strong> <a href="https://github.com/daguilarm/belich-tables">https://github.com/daguilarm/belich-tables</a></p>
             <p><strong>Documentación:</strong> <a href="https://daguilarm.github.io/belich-tables">https://daguilarm.github.io/belich-tables</a></p>
+            <p><strong>Artículo:</strong> <a href="https://daguilar.dev/blog/laravel_nuevo-package-para-laravel-para-la-gestion-de-tablas-de-datos/">Artículo sobre Belich Tables</a></p>
         </div>
     </section>
 @endsection
