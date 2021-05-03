@@ -13,6 +13,8 @@ Encontré soluciones, pero supongo que soy un maniático con el código y querí
 
 - [https://github.com/daguilarm/livewire-combobox](https://github.com/daguilarm/livewire-combobox){.link-out}
 
+![Laravel Livewire combobox - selects dependientes](/assets/img/projects/liveware-combobox.gif)
+
 Básicamente, tenemos que crear un componente **Livewire**, como el siguiente:
 
 ```php
