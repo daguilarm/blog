@@ -31,6 +31,12 @@
                 <li>Funciona con Laravel Livewire y TailwindCSS</li>
                 <li>Y mucho mas...</li>
             </ul>
+            <div class="mt-12 w-full sm:flex-1 sm:mt-8">
+                <img src="/assets/img/projects/liveware-combobox.gif"
+                    alt="Laravel Livewire combobox - selects dependientes"
+                    class="rounded shadow-lg"
+                >
+            </div>
         </div>
         <div class="w-full mt-12 sm:mt-0">
             <p><strong>Proyecto y documentación en Github:</strong> <a href="https://github.com/daguilarm/livewire-combobox">https://github.com/daguilarm/livewire-combobox</a></p>
