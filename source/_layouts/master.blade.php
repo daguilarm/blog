@@ -1,8 +1,8 @@
 <?php
     if ($page->title) {
-        $title = sprintf('%s - %s', $page->title, $page->siteName);
+        $title = sprintf('%s. %s', $page->title, $page->siteName);
     } else {
-        $title = sprintf('%s - Php, Javascript, Laravel y diseño web.', $page->siteName);
+        $title = sprintf('%s. Php, Javascript, Laravel y diseño web.', $page->siteName);
     }
 ?>
 <!DOCTYPE html>
