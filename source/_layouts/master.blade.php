@@ -40,7 +40,7 @@
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
         <meta name="twitter:site" content="@daguilarm">
         <meta name="twitter:creator" content="@daguilarm">
-        <meta name="twitter:title" content="{{ $page->title }} | {{ $page->siteName }}">
+        <meta name="twitter:title" content="{{ $title }}">
         <meta name="twitter:description" content="{{ $page->meta_description ?? $page->description ?? $page->siteDescription }}">
         @stack('meta')
 
