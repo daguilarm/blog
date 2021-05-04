@@ -85,3 +85,10 @@ A partir de este artículo, he sentido curiosidad y me he ido al código fuente 
 En el artículo también me he encontrado con una herramienta para desarrolladores para trabajar con `AlpineJS` y que se integra tanto en `Chrome` como en `Firefox`:
 
 + [https://github.com/amaelftah/alpinejs-devtools](https://github.com/amaelftah/alpinejs-devtools){.link-out}
+
+Existe una librería que nos permite añadir esta funcionalidad a `AlpineJS`:
+
++ [https://github.com/alpine-collective/alpine-magic-helpers](https://github.com/alpine-collective/alpine-magic-helpers){.link-out}
+
+En cualquier caso, parece que la próxima versión de `AlpineJS` (versión 3), incluirá esta característica. Esperemos que sea así.
+

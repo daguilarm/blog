@@ -7,7 +7,7 @@ description: Vuelta al trabajo después de meses volcado en la Tesis Doctoral
 categories: [personal]
 ---
 
-Llevo bastante tiempo sin subir nada nuevo aquí, y ha sido principalmente por la Tesis Doctoral. La empecé en el curso 2015-2016 y después de cinco años por fin realicé la defensa pública la semana pasada.
+**Llevo bastante tiempo sin subir nada nuevo aquí, y ha sido principalmente por la Tesis Doctoral**. La empecé en el curso 2015-2016 y después de cinco años por fin realicé la defensa pública la semana pasada.
 
 En los últimos seis meses, mi vida a girado al 100% en torno a la Tesis. Primero tuve que publicar un artículo científico en la revista [Agronomy](https://www.mdpi.com/2073-4395/10/9/1352){.link-out} que fue todo un reto, a parte de un requisito para terminar la Tesis. 
 

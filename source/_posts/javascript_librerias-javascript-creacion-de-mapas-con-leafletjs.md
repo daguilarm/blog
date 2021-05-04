@@ -7,7 +7,7 @@ description: Utilización de la librería JavaScript LeafletJS para la creación
 categories: [javascript, livewire, alpinejs]
 ---
 
-Según wikipedia<sup>1</sup> un servicio WMS produce mapas de datos referenciados espacialmente, de forma dinámica a partir de información geográfica. Es decir, estamos hablando de servicios como GoogleMaps, OpenStreetMap o similares. Es decir, capas de información que se muestran superpuestas y en forma de mapa.
+Según wikipedia<sup>1</sup> un servicio WMS produce mapas de datos referenciados espacialmente, de forma dinámica a partir de información geográfica. Es decir, estamos hablando de servicios como GoogleMaps, OpenStreetMap o similares. **Se trata entonces de capas de información que se muestran superpuestas y en forma de mapa**.
 
 Podemos integrar estos servicios en nuestro proyecto web, mediante la librería [LeafletJS](https://leafletjs.com/){.link-out}
 
@@ -35,7 +35,7 @@ var zoom = '12';
 var map;
 ```
 
-Tenemos que definir la latitud y la longitud donde queremos que se centre el mapa que vamos a generar. Continuamos con el *zoom* máximo que vamos a permitir (y que permite el sistema WMS) y con el *zoom* por defecto que se mostrará al cargar el mapa. Por último, hay que definir la variable donde se creará el mapa. Ahora ya podemos crear el mapa:
+Tenemos que definir la latitud y la longitud donde queremos que se centre el mapa que vamos a generar. Continuamos con el *zoom* máximo que vamos a permitir (y que permite el sistema WMS) y con el *zoom* por defecto que se mostrará al cargar el mapa. Por último, hay que definir la variable donde se creará el mapa. **Ahora ya podemos crear el mapa**:
 
 ```javascript
 this.map = L.map('mapContainer').setView([lat, lng], this.zoom);
@@ -91,7 +91,7 @@ function createMap(mapID) {
 }
 ```
 
-Vale, expliquemos un poco el código. Lo primero es buscar un servicio WMS gratuito, en este caso es del Instituto Geográfico Nacional<sup>2</sup> de España, pero existen cientos... ya es cuestión de que busques el que más te interesa. En mi caso, suelo utilizar este WMS para mostrar mapas de España. 
+**Vale, expliquemos un poco el código**. Lo primero es buscar un servicio WMS gratuito, en este caso es del Instituto Geográfico Nacional<sup>2</sup> de España, pero existen cientos... ya es cuestión de que busques el que más te interesa. En mi caso, suelo utilizar este WMS para mostrar mapas de España. 
 
 Los campos que deben indicarse para conectar con el servicio WMS son:
 
@@ -104,7 +104,7 @@ Los campos que deben indicarse para conectar con el servicio WMS son:
 - **crs**: es el Sistema de referencia de coordenadas. También se puede ver los disponibles en *GetCapabilities*. Este tema es complejo, y sinceramente, si solo buscas mostrar un mapa tampoco te compliques demasiado la vida y selecciona uno al azar... aunque el EPSG4326 es una buena elección, ya que es la equivalencia en EPSG del sistema WGS84<sup>3</sup> que es un estándar utilizado en cartografía, geodesia y navegación.
 - **maxZoom**: el *zoom* máximo que vamos a permitir. Sin olvidar que el servicio WMS también tendrá un máximo y no podremos sobrepasarlo.
 
-¿Y si queremos añadir un marcador al mapa indicando el punto exacto de las coordenadas?
+**¿Y si queremos añadir un marcador al mapa indicando el punto exacto de las coordenadas?**
 
 Pues creamos un marcador y lo añadimos al mapa:
 
@@ -156,7 +156,7 @@ function reloadMap() {
 }
 ```
 
-Esto último es básico si (como es mi caso) el proyecto utiliza `Livewire` y `AlpineJS`... y por experiencia os digo que pasa lo mismo con `Laravel Nova` y `VueJS`.
+Esto último método `reloadMap()`, es básico si el proyecto utiliza `Livewire`, `AlpineJS`, `Laravel Nova`, `VueJS`...
 
 En la web oficial de `Leaflet` vas a encontrar muchos ejemplos:
 

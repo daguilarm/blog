@@ -11,7 +11,7 @@ categories: [php]
 
 Es fácil dejarse llevar por un grupo de condicionales anidados y complicar el código muy facilmente, convirtiéndolo en algo complejo y dificil de seguir.
 
-La idea, no es solo simplificarlo, sino también conseguir que sea fácil de seguir con facilidad, por lo tanto, no se trata sólo de reducir el código a la mínima expresión, también hay que conseguir que el código sea simple de entender, aunque esto implique no reducirlo al máximo.
+La idea, no es solo simplificarlo, sino también conseguir que sea fácil de seguir con facilidad, por lo tanto, **no se trata sólo de reducir el código a la mínima expresión, también hay que conseguir que el código sea simple de entender, aunque esto implique no reducirlo al máximo**.
 
 Desde mi punto de vista, el código primero tiene que ser muy sencillo de interpretar, y después, conseguir reducirlo a la mínima expresión.
 

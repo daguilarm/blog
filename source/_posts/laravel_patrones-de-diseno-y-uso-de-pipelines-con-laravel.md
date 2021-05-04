@@ -7,7 +7,7 @@ description: Utilización del patrón de diseño Pipelines, incluido en Laravel 
 categories: [laravel, php]
 ---
 
-Las *Pipelines* de [Laravel](https://laravel.com){.link-out}, nos van a permitir enviar un objeto a través de una serie de clases de forma sencilla y ordenada, simplificando considerablemente nuestro código.
+Las *Pipelines* de [Laravel](https://laravel.com){.link-out}, nos van a permitir enviar un objeto a través de una serie de clases de forma sencilla y ordenada, simplificando considerablemente el código.
 
 Realmente, es un *patrón de diseño* utilizado por **Laravel** de forma interna, pero que no vas a encontrar en su documentación, y la verdad es que no se por qué... En cualquier caso, lo puedes implementar en tu proyecto sin ningún problema.
 
@@ -141,10 +141,6 @@ En el ejemplo anterior, hemos generando una estructura de directorios, similar a
 ./Filters/Administrador.php
 ```
 
-Permitiéndonos ordenar el código. Un ejemplo más avanzado de esta implementación, lo podeis encontrar aquí:
-
-[https://github.com/daguilarm/belich/blob/master/src/Fields/Resolves/Handler/Index/Values.php](https://github.com/daguilarm/belich/blob/master/src/Fields/Resolves/Handler/Index/Values.php){.link-out}
-
-Y todas la información y métodos disponibles aquí:
+Toda la información y los métodos disponibles se encuentran aquí:
 
 [https://laravel.com/api/6.x/Illuminate/Pipeline/Pipeline.html](https://laravel.com/api/6.x/Illuminate/Pipeline/Pipeline.html){.link-out}

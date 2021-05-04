@@ -150,7 +150,7 @@ El resultado ha sido este:
 </script>
 ```
 
-En mi caso como esto va a ser un componente de `Laravel` y no quiero lios al añadir varios en una página, he optado por añadir una clave única a las variables. Primero he creado la clave:
+En mi caso como esto va a ser un componente de `Laravel` y como no quiero lios al añadir varios en una página, he optado por añadir una clave única a las variables. Primero he creado la clave:
 
 ```blade
 // Por ejemplo...
@@ -202,7 +202,9 @@ Y después he cambiado el código así:
 </script>
 ```
 
-Imagino que esto es mejorable... pero por el momento funciona perfectamente. También quiero comentar, que utilizo esto para cuando los campos `select` tienen muchas opciones. Lo que hago es crear dos componentes en `Laravel`, uno para los campos `select` y otro para los campos `datalist`, y entonces creo un tercer componente llamado `selector`, que tiene el siguiente código:
+Imagino que esto es mejorable... pero por el momento funciona perfectamente. También quiero comentar que utilizo esto sólo cuando los campos `select` tienen muchas opciones, y es más práctico buscar que listar. 
+
+Lo que hago es crear dos componentes en `Laravel`, uno para los campos `select` y otro para los campos `datalist`, y entonces creo un tercer componente llamado `selector`, que tiene el siguiente código:
 
 ```php
 @isset($options)

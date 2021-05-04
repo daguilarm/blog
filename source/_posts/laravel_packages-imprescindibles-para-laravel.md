@@ -7,9 +7,9 @@ description: Lista de Packages básicos para el Framework php Laravel
 categories: [packages, laravel, php]
 ---
 
-Los *packages* para **Laravel**, son sin lugar a dudas, un forma rápida de solucionar un reto de programación, que ya ha sido pensado, planteado y desarrollado por otro programador, y que en la mayoría de los casos, cuenta con el respaldo de la comunidad de **Laravel**. 
+Los *packages* para **Laravel** son sin lugar a dudas, un forma rápida de solucionar un problema de programación que ya ha sido pensado, planteado y solucionado por otro programador, y que en la mayoría de los casos, cuenta con el respaldo de la comunidad de **Laravel**. 
 
-En cualquier caso, la idea de esta entrada del blog, es un listado con los *packages* que suelo utilizar en mis proyectos, y que son imprescindibles para mi. Eso si, sin incluir los *packages* oficionales de **Laravel**:
+La idea de esta entrada del blog, es un listado con los *packages* que suelo utilizar en mis proyectos, y que son imprescindibles para mi. Eso si, sin incluir los *packages* oficionales de **Laravel**:
 
 ### Laravel permission
 
@@ -57,6 +57,7 @@ En cualquier caso, la idea de esta entrada del blog, es un listado con los *pack
 + Documentación: [https://github.com/rap2hpoutre/laravel-log-viewer/blob/master/README.md](https://github.com/rap2hpoutre/laravel-log-viewer/blob/master/README.md){.link-out}
 + Descripción: Completo gestor de Logs para Laravel.
 
-Y ya para terminar, un *package* propio:
+Y ya para terminar, algunos *packages* propios:
 
-[https://github.com/daguilarm/belich](https://github.com/daguilarm/belich)
++ [https://github.com/daguilarm/belich-tables](https://github.com/daguilarm/belich-tables)
++ [https://github.com/daguilarm/livewire-combobox](https://github.com/daguilarm/livewire-combobox)

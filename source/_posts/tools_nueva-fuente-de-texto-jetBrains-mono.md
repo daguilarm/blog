@@ -20,7 +20,7 @@ Esta nueva tipografía es **gratuita y de código libre** (bajo licencia Apache 
 - La utilización de **ligaduras de texto**. 
 - Y muchas otras opciones que simplifican la visualización del código...
 
-El objetivo principal de la tipografía ha sido la de simplificar las formas al máximo, para simplificar al ojo su interpretación, permitiendo simplificar este proceso y aumentar la capacidad del cerebro para procesarlas.
+**El objetivo principal de la tipografía ha sido la de simplificar las formas al máximo**, para simplificar al ojo su interpretación, permitiendo simplificar este proceso y aumentar la capacidad del cerebro para procesarlas.
 
 Yo personalmente, he optado por esta nueva tipografía y estoy bastante contento con ella, y por el momento, me quedo con ella.
 

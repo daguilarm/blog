@@ -7,7 +7,7 @@ description: Package para la gestión de Tablas de Datos usando Laravel, Livewir
 categories: [alpinejs, laravel, Livewire, packages, packagist, php]
 ---
 
-Hace algún tiempo, me plantee el reto de desarrollar un sistema de administración igual que **Laravel Nova**, pero sin usar `Vuejs`, lo llamé **Belich**. 
+Hace algún tiempo, me plantee el reto de desarrollar un sistema de administración igual que **Laravel Nova**, pero sin usar `Vuejs`, una autentica locura de la que aprendí muchísimo.
 
 Esta idea loca, se debía a dos situaciones diferentes: por un lado, buscaba mejorar mis habilidades como programador sumergiéndome en un proyecto de este calibre, y por otro lado, por aquel entonces odiaba (de forma inexplicable) `vueJS`, y necesitaba una alternativa que no utilizara este `framework`. La solución fue escribir todo utilizando solo *vanilla `javascript`*.
 

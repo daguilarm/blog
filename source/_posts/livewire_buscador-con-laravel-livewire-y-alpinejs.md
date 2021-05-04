@@ -7,7 +7,7 @@ description: Buscador desarrollado con el framework Laravel, el package Livewire
 categories: [laravel, livewire, alpinejs]
 ---
 
-El objetivo de este artículo es explicar cómo desarrollar un buscador con Livewire y complementado con AlpineJS, mi nuevo framework favorito para JavaScript.
+**El objetivo de este artículo es explicar cómo desarrollar un buscador con Livewire y complementado con AlpineJS**, mi nuevo framework favorito para JavaScript.
 
 Lo primero es crear el componente para Livewire:
 

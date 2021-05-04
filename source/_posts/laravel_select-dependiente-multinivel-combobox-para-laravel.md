@@ -9,7 +9,7 @@ categories: [laravel, Livewire, packages, packagist, php]
 
 Estoy trabajando en un nuevo proyecto y necesitaba un sistema de `selects` dependientes y con niveles de dependencia infinitos. Revisando `packages` para **Laravel** ya desarrollados me he encontrado con herramientas parecidas a [https://select2.org/](https://select2.org/){.link-out}, que son geniales, pero me sobraban gran parte de las funcionalidades que tenían, además, quería que estuviera basado en `back-end` en vez de en `front-end`.
 
-Encontré soluciones, pero supongo que soy un maniático con el código y quería que además fuese fluido y fácilmente entendible, utilizando métodos encadenados. Al final me puse a desarrollar mi propio `package`, porque no encontraba nada que me gustase:
+Encontré soluciones, pero supongo que soy un maniático con el código y quería que además fuese fluido y fácilmente entendible, utilizando métodos encadenados. **Al final me puse a desarrollar mi propio `package`, porque no encontraba nada que me gustase**:
 
 - [https://github.com/daguilarm/livewire-combobox](https://github.com/daguilarm/livewire-combobox){.link-out}
 

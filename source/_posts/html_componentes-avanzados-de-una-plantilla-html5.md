@@ -7,7 +7,7 @@ description: Diseño y componentes avanzados para una plantilla HTML
 categories: [html]
 ---
 
-Una plantilla básica HTML5, tendría el siguiente aspecto
+Una plantilla básica de **HTML5** tendría el siguiente aspecto:
 
 ```html
 <!DOCTYPE html>
@@ -31,7 +31,7 @@ Una plantilla básica HTML5, tendría el siguiente aspecto
 
 ## Meta-etiquetas 
 
-Lo primero será añadir las meta-etiquetas *description* y *keywords* en el `<head>` del documento `HTML`:
+Para mejorarla, lo primero será añadir las meta-etiquetas *description* y *keywords* en el `<head>` del documento `HTML5`:
 
 ```html
 <meta name="description" content="">
@@ -100,7 +100,7 @@ Las etiquetas para dispositivos *Apple*:
 <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="grey">
 ```
 
-Las etiquetas de microsoft 
+Las etiquetas de *Microsoft*:
 
 ```html
 <!-- Microsoft -->
@@ -108,7 +108,7 @@ Las etiquetas de microsoft
 <meta name="msapplication-config" content="/favicons/browserconfig.xml">
 ```
 
-Un ejemplo del `browserconfig.xml`:
+Un ejemplo del `browserconfig.xml` anteriormente descrito:
 
 ```bash
 <? xml version = "1.0" encoding = "utf-8" ?>
@@ -122,7 +122,7 @@ Un ejemplo del `browserconfig.xml`:
   </browserconfig>
 ```
 
-Incluye un `manifest` y la etiqueta `application-name` entre tus metatags:
+Es importante añadir un `manifest` y la etiqueta `application-name` entre tus metatags:
 
 ```html
 <link rel="manifest" href="site.webmanifest">
@@ -157,8 +157,8 @@ Un ejemplo del `site.webmanifest`:
 Si vamos a utilizar [Google fonts](https://fonts.google.com){.link-out} o librerías externas **CSS**, es buena idea utilizar:
 
 ```html
-<link rel="dns-prefetch" href="//fonts.googleapis.com">
-<link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,800,800i,900,900i" rel="stylesheet" media="all">
 ```
 
@@ -167,7 +167,7 @@ Si vamos a utilizar [Google fonts](https://fonts.google.com){.link-out} o librer
 
 ## Body 
 
-Idiquemos que no se soportan navegadores prehistóricos:
+Idiquemos que no se soportan navegadores *prehistóricos*:
 
 ```html
 <!--[if IE]>
@@ -175,7 +175,7 @@ Idiquemos que no se soportan navegadores prehistóricos:
 <![endif]-->
 ```
 
-Añadamos las etiquetas básicas para crear el cuerpo de nuestra plantilla:
+Añadamos las etiquetas básicas para crear el cuerpo de nuestra plantilla **HTML5**:
 
 ```html
 <header>
@@ -199,6 +199,8 @@ Pongamos el código `javascript` al final del código, y si vamos a utilizar lib
 <link rel="preconnect" href="//code.jquery.com" crossorigin>
 <script src="https://code.jquery.com/jquery-{{JQUERY_VERSION}}.min.js" integrity="{{JQUERY_SRI_HASH}}" crossorigin="anonymous"></script>
 ```
+
+>También es importante utilizar `async` o `defer` cuando sea posible.
 
 Si queremos usar el código de google-analytics:
 

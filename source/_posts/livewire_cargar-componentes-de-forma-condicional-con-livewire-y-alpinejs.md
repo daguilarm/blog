@@ -7,7 +7,7 @@ description: Código para cargar componentes de Laravel Livewire de forma dinám
 categories: [laravel, livewire, alpinejs]
 ---
 
-Me he encontrado en la situación de querer cargar componentes de Laravel Livewire de forma condicional, y todo ello, en función de un campo `select` o de un simple *click* en un enlace (en mi caso se trataba de un sistema de pestañas y contenedores). 
+Me he encontrado en la situación de querer cargar componentes de **Laravel Livewire** de forma condicional, y todo ello, en función de un campo `select` o de un simple *click* en un enlace (en mi caso se trataba de un sistema de pestañas y contenedores). 
 
 La idea era no cargar nada de inicio y en función de la selección, ir cargando de forma dinámica un componente determinado tal y como se hubiera hecho con `Jquery`. Terminando con la carga del resultado de la consulta `AJAX` en un contenedor `div`:
 
@@ -203,7 +203,7 @@ Y lo curioso es que funciona, pero da un error de JavaScript:
 Uncaught (in promise) TypeError: Cannot read property 'fingerprint' of null
 ```
 
-Por lo visto este error es debido a que hay un problema con las `keys` que genera `Livewire` y por algún motivo, no he sido capaz de ver donde se han generado claves repeditas...
+Por lo visto este error es debido a que hay un problema con las `keys` que genera `Livewire` y por algún motivo, no he sido capaz de ver donde se han generado claves repetidas...
 
 + [https://github.com/livewire/livewire/issues/1686
 ](https://github.com/livewire/livewire/issues/1686

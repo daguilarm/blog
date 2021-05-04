@@ -16,7 +16,7 @@ En este artículo, vamos a centrarnos en el segundo, el utilizado por [Laravel D
 
 Laravel dusk, al igual que otras partes del código de Laravel, incluyen el `trait Macroable`, el cual nos permite crear métodos personalizados para **Dusk**.
 
-Este `trait`, nos permitirá hacer cosas como esta:
+Este `Trait`, nos permitirá hacer cosas como esta:
 
 ```php
 Response::macro('lower', function ($value) {
@@ -29,7 +29,7 @@ Que podremos utilizar así:
 return response()->lower('foo');
 ```
 
-Nuestros `traits`, debemos añadirlos al método `boot()` the un `ServiceProvider`, por lo que lo mejor, es crear nuestro própio `ServiceProvider`, por ejemplo:
+Nuestros `Traits`, debemos añadirlos al método `boot()` the un `ServiceProvider`, por lo que lo mejor, es crear nuestro própio `ServiceProvider`, por ejemplo:
 
 ```php
 //app\Providers\DuskServiceProvider.php
@@ -169,7 +169,7 @@ Fuente: [https://www.5balloons.info/using-browser-macros-in-laravel-dusk/](https
 
 ### Actualización 20/10/2020
 
-Este macro ya no es necesario. Laravel dusk ya dispone de `waitForReload()` de forma nativa.
+**Este macro ya no es necesario. Laravel dusk ya dispone de `waitForReload()` de forma nativa.**
 
 5. waitForReload
 

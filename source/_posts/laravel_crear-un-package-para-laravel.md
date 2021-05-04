@@ -385,4 +385,8 @@ protected function registerConsole(): void
 
 Si quieres saber como configurar el *package* para que se pueda utilizar desde **Packagist**:
 
-https://daguilar.dev/blog/packages_configurar-github-webhooks-para-packagist/
+[https://daguilar.dev/blog/packages_configurar-github-webhooks-para-packagist/](https://daguilar.dev/blog/packages_configurar-github-webhooks-para-packagist/)
+
+Y si quieres hacer tests a un package:
+
+[https://daguilar.dev/blog/package_configurando-un-package-de-laravel-y-livewire-para-hacer-tests/](https://daguilar.dev/blog/package_configurando-un-package-de-laravel-y-livewire-para-hacer-tests/)

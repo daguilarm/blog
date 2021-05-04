@@ -11,11 +11,11 @@ En 2015, empecé mi primer blog sobre programación. Fue en otro dominio, y con 
 
 Fue entonces cuando descubrí [Laravel](https://laravel.com){.link-out}, y decidí crear mi propio CMS. Durante los años, llegué a realizar dos desarrollos diferentes del blog, y al final, terminé por cansarme.
 
-No fue hasta hace unos meses, cuando empecé a trastear con *frameworks* de desarrollo para sitios estáticos. 
+No fue hasta hace unos meses cuando empecé a tabajar con *frameworks* de desarrollo, para sitios web estáticos. 
 
 Mi primer encuentro con el mundo estático, fue con [Vuepress](https://vuepress.vuejs.org/){.link-out}, y la verdad es que no me gustó nada... ultimamente, cada vez me gusta menos [Vuejs](https://vuejs.org/){.link-out}, y después de este, probé algún que otro *frameworks* mas, pero ninguno de ellos terminaron por convencerme demasiado. 
 
-Había desistido, hasta que un artículo sobre [Jigsaw](https://jigsaw.tighten.co/){.link-out}, cayó en mis manos, y me decidí a probarlo... pasé una mañana de Sábado realizando las primeras pruebas, y aquello me gusto, era exáctamente lo que estaba buscando, y empecé a trabajar en el nuevo blog.
+Había desistido, hasta que un artículo sobre [Jigsaw](https://jigsaw.tighten.co/){.link-out}, cayó en mis manos, y me decidí a probarlo... pasé una mañana entera realizando las primeras pruebas, y aquello me gusto, era exáctamente lo que estaba buscando, y empecé a trabajar en el nuevo blog.
 
 **A favor**:
 
