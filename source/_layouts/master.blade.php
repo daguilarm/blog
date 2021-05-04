@@ -1,8 +1,15 @@
+<?php
+    if ($pate->title) {
+        $title = sprintf('%s - %s', $page->title, $page->siteName);
+    } else {
+        $title = sprintf('%s - Php, Javascript, Laravel y diseño web.', $page->siteName);
+    }
+?>
 <!DOCTYPE html>
 <html lang="es">
     <head>
         <meta charset="UTF-8">
-        <title>{{ $page->title }} | {{ $page->siteName }}</title>
+        <title>{{ $title }}</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="{{ $page->meta_description ?? $page->description ?? $page->siteDescription }}">
