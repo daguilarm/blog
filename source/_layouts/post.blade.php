@@ -23,7 +23,7 @@
         <span>{{ $page->author }}</span>
         <a href="https://twitter.com/daguilarm" target="_black" class="mx-2"><img src="/assets/img/twitter.png" alt="twitter" class="opacity-75 hover:opacity-100 h-8 w-8 bg-white rounded-full"></a>
         <span> - {{ date('d/m/Y', $page->date) }}</span>
-        <span> - Tiempo aproximado de lectura: <strong>{{ $page->readDuration() }}</strong> minuto(s)</span>
+        <span> - Tiempo aproximado de lectura: <strong>{{ $page->readDuration() }} minuto(s)</strong></span>
     </p>
 
     @if ($page->categories)
