@@ -40,6 +40,12 @@ return [
     ],
 
     // helpers
+    'readDuration' => function ($page) {
+        $totalWords = str_word_count(implode(' ', $page->getContent()));
+        $minutesToRead = round($totalWords / 200);
+
+        return (int)max(1, $minutesToRead);
+    },
     'getDate' => function ($page) {
         return Datetime::createFromFormat('U', $page->date);
     },

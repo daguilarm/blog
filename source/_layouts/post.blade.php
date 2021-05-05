@@ -5,6 +5,9 @@
     <meta property="og:type" content="article" />
     <meta property="og:url" content="{{ $page->getUrl() }}"/>
     <meta property="og:description" content="{{ $page->description }}" />
+    @if ($page->cover_image)
+        <meta property="og:image" content="{{ $page->cover_image }}" />
+    @endif
 @endpush
 
 @section('body')
@@ -29,6 +32,7 @@
     @endif
 
     <div class="border-b border-blue-200 mb-10 pb-4" v-pre>
+        <p>Tiempo aproximado de lectura: {{ $page->readDuration() }} minutos</p>
         @yield('content')
     </div>
 
