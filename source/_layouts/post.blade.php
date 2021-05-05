@@ -19,7 +19,7 @@
 
     <h1 class="leading-none mb-6 text-blue-800 text-3xl md:text-4xl lg:text-5xl">{{ $page->title }}</h1>
 
-    <p class="flex justify-start text-gray-600 text-xl md:mt-0"><span>{{ $page->author }}</span><a href="https://twitter.com/daguilarm" target="_black" class="mx-2"><img src="/assets/img/twitter.png" alt="twitter" class="opacity-75 hover:opacity-100 h-8 w-8 bg-white rounded-full"></a><span> - {{ date('d/m/Y', $page->date) }}</span></p>
+    <p class="flex justify-start text-gray-600 text-xl md:mt-0"><span>{{ $page->author }}</span><a href="https://twitter.com/daguilarm" target="_black" class="mx-2"><img src="/assets/img/twitter.png" alt="twitter" class="opacity-75 hover:opacity-100 h-8 w-8 bg-white rounded-full"></a><span> - {{ date('d/m/Y', $page->date) }}</span> - <span>Tiempo aproximado de lectura: {{ $page->readDuration() }} minuto(s)</span></p>
 
     @if ($page->categories)
         @foreach ($page->categories as $i => $category)
@@ -32,7 +32,6 @@
     @endif
 
     <div class="border-b border-blue-200 mb-10 pb-4" v-pre>
-        <p>Tiempo aproximado de lectura: {{ $page->readDuration() }} minutos</p>
         @yield('content')
     </div>
 
