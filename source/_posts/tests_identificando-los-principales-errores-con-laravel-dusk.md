@@ -43,7 +43,7 @@ Otro error que suele suceder cuando estamos utilizando **orchestral/testbench-du
 Illuminate\Contracts\Container\BindingResolutionException: Target class [livewire] does not exist.
 ```
 
-En este caso el error ocurre al no encontrar la clase **Livewire**, pero puede suceder con cualquier clase que se nos olvide añadir. Sucede debido a que en la clase *TestCase*, nos ha faltado añadir el *Service Provider* para la **Livewire**:
+En este caso el error ocurre al no encontrar la clase **Livewire**, pero puede suceder con cualquier clase que se nos olvide añadir. Sucede debido a que en la clase *TestCase*, nos ha faltado añadir el *Service Provider* para la clase **Livewire**:
 
 ```php
 /**
