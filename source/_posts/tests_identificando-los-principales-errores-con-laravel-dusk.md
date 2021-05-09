@@ -25,13 +25,13 @@ Failed to connect to localhost port 9515: Connection refused
 
 En función de si estamos trabajando directamente con **Laravel Dusk**, o si estamos creando un *package* para **Laravel**, tenemos las siguiente soluciones:
 
-### Con **Laravel Dusk**:
+#### Con **Laravel Dusk**:
 
 ```bash
 php artisan dusk:chrome-driver
 ```
 
-### Con **orchestral/testbench-dusk**:
+#### Con **orchestral/testbench-dusk**:
 
 ```bash
 ./vendor/bin/dusk-updater update
