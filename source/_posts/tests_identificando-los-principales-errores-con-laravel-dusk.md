@@ -78,9 +78,9 @@ Otro problema que sucede a veces, es que no se defina correctamente el archivo `
 
 ### Referencias:
 
-+ https://github.com/orchestral/testbench-dusk
-+ https://github.com/livewire/livewire/blob/master/tests/Unit/TestCase.php
-+ https://github.com/livewire/livewire/blob/master/tests/Browser/TestCase.php
-+ https://github.com/laravel/dusk/issues/649
-+ https://barryvanveen.nl/blog/61-how-to-fix-common-laravel-dusk-problems
-+ https://laravel.com/docs/8.x/dusk#introduction
++ [https://github.com/orchestral/testbench-dusk](https://github.com/orchestral/testbench-dusk){.link-out}
++ [https://github.com/livewire/livewire/blob/master/tests/Unit/TestCase.php](https://github.com/livewire/livewire/blob/master/tests/Unit/TestCase.php){.link-out}
++ [https://github.com/livewire/livewire/blob/master/tests/Browser/TestCase.php](https://github.com/livewire/livewire/blob/master/tests/Browser/TestCase.php){.link-out}
++ [https://github.com/laravel/dusk/issues/649](https://github.com/laravel/dusk/issues/649){.link-out}
++ [https://barryvanveen.nl/blog/61-how-to-fix-common-laravel-dusk-problems](https://barryvanveen.nl/blog/61-how-to-fix-common-laravel-dusk-problems)
++ [https://laravel.com/docs/8.x/dusk#introduction](https://laravel.com/docs/8.x/dusk#introduction){.link-out}
