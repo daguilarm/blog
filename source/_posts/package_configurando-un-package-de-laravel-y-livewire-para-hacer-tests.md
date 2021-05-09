@@ -30,7 +30,7 @@ class TestCase extends BaseTestCase
     /**
      * Setup the test environment.
      */
-    protected function setUp(): void
+    public function setUp(): void
     {
 
         parent::setUp();
@@ -43,7 +43,7 @@ class TestCase extends BaseTestCase
     /**
      * Load the service providers
      */
-    protected function getPackageProviders($app)
+    public function getPackageProviders($app)
     {
         return [
             BelichTablesServiceProvider::class,
@@ -78,7 +78,7 @@ class TestCase extends BaseTestCase
     /**
      * Swap HTTP Kernel for application bootstrap
      */
-    protected function resolveApplicationHttpKernel($app)
+    public function resolveApplicationHttpKernel($app)
     {
         $app->singleton('Illuminate\Contracts\Http\Kernel', 'Daguilarm\BelichTables\Tests\HttpKernel');
     }
