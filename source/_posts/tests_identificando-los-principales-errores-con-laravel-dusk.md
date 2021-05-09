@@ -11,11 +11,17 @@ Este artículo, es al final un pequeño recordatorio para cuando me pongo a hace
 
 He intentado recopilar los principales errores que me he encontrado, y como los he terminado por solucionar. Empecemos por los errores generados por el *driver* de **Chrome**:
 
-    Facebook\WebDriver\Exception\SessionNotCreatedException: session not created: Chrome version must be between 70 and 73
+```
+Facebook\WebDriver\Exception\SessionNotCreatedException: session not created: Chrome version must be between 70 and 73
+```
 
-    Facebook\WebDriver\Exception\WebDriverCurlException: Curl error thrown for http POST to /session with params: {"capabilities":{"firstMatch":[{"browserName":"chrome","goog:chromeOptions":{"w3c":false}}]},"desiredCapabilities":{"browserName":"chrome","platform":"ANY","chromeOptions":{"w3c":false}}}
+```
+Facebook\WebDriver\Exception\WebDriverCurlException: Curl error thrown for http POST to /session with params: {"capabilities":{"firstMatch":[{"browserName":"chrome","goog:chromeOptions":{"w3c":false}}]},"desiredCapabilities":{"browserName":"chrome","platform":"ANY","chromeOptions":{"w3c":false}}}
+```
 
-    Failed to connect to localhost port 9515: Connection refused
+```
+Failed to connect to localhost port 9515: Connection refused
+```
 
 En función de si estamos trabajando directamente con **Laravel Dusk**, o si estamos creando un *package* para **Laravel**, tenemos las siguiente soluciones:
 
