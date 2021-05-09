@@ -62,7 +62,7 @@ No hay que olvidar el *Service Provider* del propio *package* que estamos proban
 
 Otro problema que sucede a veces, es que no se defina correctamente el archivo `phpunit.xml.dist`, por lo que no se debe olvidar añadir los diferentes directorios utilizados para las pruebas:
 
-```xml
+```html
 <testsuites>
     <testsuite name="Browser">
         <directory suffix="Test.php">./tests/Browser</directory>
