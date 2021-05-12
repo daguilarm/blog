@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <meta charset="utf-8">
+        <meta charset="UTF-8">
+        <title>Proyectos en los que estoy trabajando. Blog de Damián Aguilar</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Proyectos en los que estoy trabajando | Blog de Damián Aguilar</title>
         <meta name="description" content="Listado de proyectos desarrollados por Damián Aguilar en la actualidad.">
         <meta property="og:title" content="Proyectos en los que estoy trabajando | Blog de Damián Aguilar"/>
         <meta property="og:type" content="website" />
@@ -30,6 +30,11 @@
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+        <meta name="twitter:site" content="@daguilarm">
+        <meta name="twitter:creator" content="@daguilarm">
+        <meta name="twitter:title" content="Proyectos en los que estoy trabajando. Blog de Damián Aguilar">
+        <meta name="twitter:description" content="Listado de proyectos desarrollados por Damián Aguilar en la actualidad.">
                 <meta property="og:title" content="Proyectos en los que estoy trabajando - Blog de Damián Aguilar" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://daguilar.dev/projects"/>
@@ -40,7 +45,7 @@
         <link rel="dns-prefetch" href="//fonts.googleapis.com">
         <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
         <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i,800,800i" rel="stylesheet">
-        <link rel="stylesheet" href="/assets/build/css/main.css?id=5e9ed1fa22768a6768c3">
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=2f5e8a7cb1c57b08765a">
     </head>
 
     <body class="flex flex-col justify-between min-h-screen bg-gray-100 text-gray-800 leading-normal font-sans">
@@ -147,39 +152,67 @@
         <main role="main" class="flex-auto w-full container mx-auto py-16 px-6 z-20">
                 <h1 class="text-blue-800 text-3xl md:text-4xl lg:text-5xl">Proyectos</h1>
     <h2 class="text-xl font-normal">Actualmente estoy desarrollando las siguientes proyectos:</h2>
-    <section id="belich" class="mt-8 p-6">
-        <h3 class="text-xl">a) Belich: panel de administración para Laravel.</h3>
+    <section id="belich" class="mt-8 p-6 border-b border-blue-400">
+        <h3 class="text-xl">a) Laravel Livewire multi select (combobox).</h3>
         <p>
-            Belich es un panel de administración desarrollado con la intención de mejorar como programador, por lo tanto no debe utilizarse para producción. Ha sido desarrollado como un <i>package</i> de <a href="https://laravel.com" target="_blank" rel="noopener">Laravel</a>,
-            entre otras funcionalidades, ofrece:
+            Es un componente dinámico de Laravel Livewire para gestionar campos <code>select</code> dependientes entre ellos.
+        </p>
+        <p>
+            Tiene las siguientes características:
         </p>
         <div class="sm:flex">
             <ul class="w-full sm:flex-1">
-                <li>Barra superior o lateral totalmente configurable.</li>
-                <li>Descarga de recursos en formato: EXCEL y CSV</li>
-                <li>Gestión nativa de políticas y autorización.</li>
-                <li>Completa customización del package.</li>
-                <li>Configuración de botones de acciones.</li>
-                <li>Gestión de breadcrumbs.</li>
-                <li>Dashboard configurable.</li>
-                <li>Tabs, panels, cards, gráficas,...</li>
-                <li>Campos de formulario predeterminados y opción de crear campos propios.</li>
-                <li>Campos de formulario condicionales.</li>
-                <li>Campos relacionales.</li>
-                <li>Busqueda en tiempo real.</li>
+                <li>Infinitos niveles de dependencia entre los elementos.</li>
+                <li>Componentes totalmente configurables.</li>
+                <li>Estilos css, totalmente configurables.</li>
+                <li>Sin necesidad de modificar código del <i>package</i>.</li>
+                <li>Funciona con Laravel Livewire y TailwindCSS</li>
                 <li>Y mucho mas...</li>
             </ul>
             <div class="mt-12 w-full sm:flex-1 sm:mt-8">
-                <img src="/assets/img/projects/belich.jpg"
-                    alt="Belich: panel de administración para Laravel"
+                <img src="/assets/img/projects/liveware-combobox.gif"
+                    alt="Laravel Livewire combobox - selects dependientes"
                     class="rounded shadow-lg"
                 >
             </div>
         </div>
         <div class="w-full mt-12 sm:mt-0">
-            <p><strong>Proyecto en Github:</strong> <a href="https://github.com/daguilarm/belich">https://github.com/daguilarm/belich</a></p>
-            <p><strong>Documentación:</strong> <a href="https://belich.dev">https://belich.dev</a></p>
-            <p><strong>Ejemplo:</strong> <a href="https://github.com/daguilarm/belich-dashboard">https://github.com/daguilarm/belich-dashboard</a></p>
+            <p><strong>Proyecto y documentación en Github:</strong> <a href="https://github.com/daguilarm/livewire-combobox">https://github.com/daguilarm/livewire-combobox</a></p>
+            <p><strong>Artículo:</strong> <a href="https://daguilar.dev/blog/laravel_select-dependiente-multinivel-combobox-para-laravel/">Artículo sobre Laravel Livewire Combobox</a></p>
+        </div>
+    </section>
+    <section id="belich" class="mt-8 p-6 border-b border-blue-400">
+        <h3 class="text-xl">b) Belich Tables.</h3>
+        <p>
+            Es un componente dinámico de Laravel Livewire para tablas de datos. Es como el famoso datatables basado en Jquery, pero utilizando Livewire, AlpineJS y TailwindCSS.
+        </p>
+        <p>
+            El package está inspirado en el desarrollado por <a href="https://github.com/rappasoft/laravel-livewire-tables" target="_blank">rappasoft</a>, al que se le han añadido bastantes mejoras:
+        </p>
+        <div class="sm:flex">
+            <ul class="w-full sm:flex-1">
+                <li>Practicamente todo el código ha sido refactorizado y replanteado desde 0.</li>
+                <li>Filtros personalizados para cada columna.</li>
+                <li>Añadir nuevos recursos a la base de datos.</li>
+                <li>Botones de acciones.</li>
+                <li>Paginación de resultados.</li>
+                <li>Selección de columnas mediante checkboxes.</li>
+                <li>Mensajes y modals preconfigurados.</li>
+                <li>Totalmente reconfigurado para TailwindCSS</li>
+                <li>Completa customización del package.</li>
+                <li>Y mucho mas...</li>
+            </ul>
+            <div class="mt-12 w-full sm:flex-1 sm:mt-8">
+                <img src="/assets/img/projects/belich-tables.png"
+                    alt="Laravel Livewire para tablas de datos"
+                    class="rounded shadow-lg"
+                >
+            </div>
+        </div>
+        <div class="w-full mt-12 sm:mt-0">
+            <p><strong>Proyecto en Github:</strong> <a href="https://github.com/daguilarm/belich-tables">https://github.com/daguilarm/belich-tables</a></p>
+            <p><strong>Documentación:</strong> <a href="https://daguilarm.github.io/belich-tables">https://daguilarm.github.io/belich-tables</a></p>
+            <p><strong>Artículo:</strong> <a href="https://daguilar.dev/blog/laravel_nuevo-package-para-laravel-para-la-gestion-de-tablas-de-datos/">Artículo sobre Belich Tables</a></p>
         </div>
     </section>
         </main>
@@ -199,7 +232,7 @@
             </div>
         </footer>
 
-        <script src="/assets/build/js/main.js?id=b27eb7cb9dc80f03577f"></script>
+        <script src="/assets/build/js/main.js?id=0777ca318e2698d5f3aa"></script>
         <script>
     const navMenu = {
         toggle() {
@@ -220,7 +253,5 @@
                 }
             }, false);
         </script>
-
-
     </body>
 </html>

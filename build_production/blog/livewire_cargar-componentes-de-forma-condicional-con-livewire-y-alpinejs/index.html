@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <meta charset="utf-8">
+        <meta charset="UTF-8">
+        <title>Cargar componentes de forma dinámica y condicional con Laravel Livewire y AlpineJS - Fracasos y éxitos. Blog de Damián Aguilar</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Cargar componentes de forma dinámica y condicional con Laravel Livewire y AlpineJS - Fracasos y éxitos | Blog de Damián Aguilar</title>
         <meta name="description" content="Código para cargar componentes de Laravel Livewire de forma dinámica mediante AlpineJS, y todo ello, de forma condicional con window.Livewire.rescan()">
         <meta property="og:title" content="Cargar componentes de forma dinámica y condicional con Laravel Livewire y AlpineJS - Fracasos y éxitos | Blog de Damián Aguilar"/>
         <meta property="og:type" content="website" />
@@ -30,17 +30,27 @@
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+        <meta name="twitter:site" content="@daguilarm">
+        <meta name="twitter:creator" content="@daguilarm">
+        <meta name="twitter:title" content="Cargar componentes de forma dinámica y condicional con Laravel Livewire y AlpineJS - Fracasos y éxitos. Blog de Damián Aguilar">
+        <meta name="twitter:description" content="Código para cargar componentes de Laravel Livewire de forma dinámica mediante AlpineJS, y todo ello, de forma condicional con window.Livewire.rescan()">
             <meta property="og:title" content="Cargar componentes de forma dinámica y condicional con Laravel Livewire y AlpineJS - Fracasos y éxitos" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://daguilar.dev/blog/livewire_cargar-componentes-de-forma-condicional-con-livewire-y-alpinejs"/>
     <meta property="og:description" content="Código para cargar componentes de Laravel Livewire de forma dinámica mediante AlpineJS, y todo ello, de forma condicional con window.Livewire.rescan()" />
-
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:site_name" content="El blog de Damián Aguilar">
+    <meta name="twitter:url" content="https://daguilar.dev/blog/livewire_cargar-componentes-de-forma-condicional-con-livewire-y-alpinejs">
+            <meta property="og:image" content="/assets/img/og-img.jpeg" />
+        <meta name="twitter:image" content="/assets/img/og-img.jpeg">
+    
 
 
         <link rel="dns-prefetch" href="//fonts.googleapis.com">
         <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
         <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i,800,800i" rel="stylesheet">
-        <link rel="stylesheet" href="/assets/build/css/main.css?id=5e9ed1fa22768a6768c3">
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=2f5e8a7cb1c57b08765a">
     </head>
 
     <body class="flex flex-col justify-between min-h-screen bg-gray-100 text-gray-800 leading-normal font-sans">
@@ -148,7 +158,11 @@
                 
     <h1 class="leading-none mb-6 text-blue-800 text-3xl md:text-4xl lg:text-5xl">Cargar componentes de forma dinámica y condicional con Laravel Livewire y AlpineJS - Fracasos y éxitos</h1>
 
-    <p class="flex justify-start text-gray-600 text-xl md:mt-0"><span>Damián Aguilar</span><a href="https://twitter.com/daguilarm" target="_black" class="mx-2"><img src="/assets/img/twitter.png" alt="twitter" class="opacity-75 hover:opacity-100 h-8 w-8 bg-white rounded-full"></a><span> - 18/10/2020</span></p>
+    <p class="flex justify-start text-gray-600 text-xl md:mt-0">
+        <span>Damián Aguilar</span>
+        <a href="https://twitter.com/daguilarm" target="_black" class="mx-2"><img src="/assets/img/twitter.png" alt="twitter" class="opacity-75 hover:opacity-100 h-8 w-8 bg-white rounded-full"></a>
+        <span> - 18/10/2020</span>
+    </p>
 
                         <a
                 href="/blog/categories/laravel"
@@ -167,7 +181,7 @@
             >alpinejs</a>
             
     <div class="border-b border-blue-200 mb-10 pb-4" v-pre>
-        <p>Me he encontrado en la situación de querer cargar componentes de Laravel Livewire de forma condicional, y todo ello, en función de un campo <code>select</code> o de un simple <em>click</em> en un enlace (en mi caso se trataba de un sistema de pestañas y contenedores).</p>
+        <p>Me he encontrado en la situación de querer cargar componentes de <strong>Laravel Livewire</strong> de forma condicional, y todo ello, en función de un campo <code>select</code> o de un simple <em>click</em> en un enlace (en mi caso se trataba de un sistema de pestañas y contenedores).</p>
 
 <p>La idea era no cargar nada de inicio y en función de la selección, ir cargando de forma dinámica un componente determinado tal y como se hubiera hecho con <code>Jquery</code>. Terminando con la carga del resultado de la consulta <code>AJAX</code> en un contenedor <code>div</code>:</p>
 
@@ -354,7 +368,7 @@ class Tabs extends Component
 <pre><code class="language-javascript">Uncaught (in promise) TypeError: Cannot read property 'fingerprint' of null
 </code></pre>
 
-<p>Por lo visto este error es debido a que hay un problema con las <code>keys</code> que genera <code>Livewire</code> y por algún motivo, no he sido capaz de ver donde se han generado claves repeditas...</p>
+<p>Por lo visto este error es debido a que hay un problema con las <code>keys</code> que genera <code>Livewire</code> y por algún motivo, no he sido capaz de ver donde se han generado claves repetidas...</p>
 
 <ul>
 <li><a href="https://github.com/livewire/livewire/issues/1686" title="" class="link-out">https://github.com/livewire/livewire/issues/1686
@@ -423,7 +437,7 @@ class Tabs extends Component
             </div>
         </footer>
 
-        <script src="/assets/build/js/main.js?id=b27eb7cb9dc80f03577f"></script>
+        <script src="/assets/build/js/main.js?id=0777ca318e2698d5f3aa"></script>
         <script>
     const navMenu = {
         toggle() {
@@ -444,7 +458,5 @@ class Tabs extends Component
                 }
             }, false);
         </script>
-
-
     </body>
 </html>

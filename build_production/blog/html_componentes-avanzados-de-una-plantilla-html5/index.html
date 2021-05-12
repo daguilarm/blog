@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <meta charset="utf-8">
+        <meta charset="UTF-8">
+        <title>Creando una plantilla HTML5 avanzada. Blog de Damián Aguilar</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Creando una plantilla HTML5 avanzada | Blog de Damián Aguilar</title>
         <meta name="description" content="Diseño y componentes avanzados para una plantilla HTML">
         <meta property="og:title" content="Creando una plantilla HTML5 avanzada | Blog de Damián Aguilar"/>
         <meta property="og:type" content="website" />
@@ -30,17 +30,27 @@
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+        <meta name="twitter:site" content="@daguilarm">
+        <meta name="twitter:creator" content="@daguilarm">
+        <meta name="twitter:title" content="Creando una plantilla HTML5 avanzada. Blog de Damián Aguilar">
+        <meta name="twitter:description" content="Diseño y componentes avanzados para una plantilla HTML">
             <meta property="og:title" content="Creando una plantilla HTML5 avanzada" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://daguilar.dev/blog/html_componentes-avanzados-de-una-plantilla-html5"/>
     <meta property="og:description" content="Diseño y componentes avanzados para una plantilla HTML" />
-
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:site_name" content="El blog de Damián Aguilar">
+    <meta name="twitter:url" content="https://daguilar.dev/blog/html_componentes-avanzados-de-una-plantilla-html5">
+            <meta property="og:image" content="/assets/img/og-img.jpeg" />
+        <meta name="twitter:image" content="/assets/img/og-img.jpeg">
+    
 
 
         <link rel="dns-prefetch" href="//fonts.googleapis.com">
         <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
         <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i,800,800i" rel="stylesheet">
-        <link rel="stylesheet" href="/assets/build/css/main.css?id=5e9ed1fa22768a6768c3">
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=2f5e8a7cb1c57b08765a">
     </head>
 
     <body class="flex flex-col justify-between min-h-screen bg-gray-100 text-gray-800 leading-normal font-sans">
@@ -148,7 +158,11 @@
                 
     <h1 class="leading-none mb-6 text-blue-800 text-3xl md:text-4xl lg:text-5xl">Creando una plantilla HTML5 avanzada</h1>
 
-    <p class="flex justify-start text-gray-600 text-xl md:mt-0"><span>Damián Aguilar</span><a href="https://twitter.com/daguilarm" target="_black" class="mx-2"><img src="/assets/img/twitter.png" alt="twitter" class="opacity-75 hover:opacity-100 h-8 w-8 bg-white rounded-full"></a><span> - 20/12/2019</span></p>
+    <p class="flex justify-start text-gray-600 text-xl md:mt-0">
+        <span>Damián Aguilar</span>
+        <a href="https://twitter.com/daguilarm" target="_black" class="mx-2"><img src="/assets/img/twitter.png" alt="twitter" class="opacity-75 hover:opacity-100 h-8 w-8 bg-white rounded-full"></a>
+        <span> - 20/12/2019</span>
+    </p>
 
                         <a
                 href="/blog/categories/html"
@@ -157,7 +171,7 @@
             >html</a>
             
     <div class="border-b border-blue-200 mb-10 pb-4" v-pre>
-        <p>Una plantilla básica HTML5, tendría el siguiente aspecto</p>
+        <p>Una plantilla básica de <strong>HTML5</strong> tendría el siguiente aspecto:</p>
 
 <pre><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html lang="es"&gt;
@@ -180,7 +194,7 @@
 
 <h2>Meta-etiquetas</h2>
 
-<p>Lo primero será añadir las meta-etiquetas <em>description</em> y <em>keywords</em> en el <code>&lt;head&gt;</code> del documento <code>HTML</code>:</p>
+<p>Para mejorarla, lo primero será añadir las meta-etiquetas <em>description</em> y <em>keywords</em> en el <code>&lt;head&gt;</code> del documento <code>HTML5</code>:</p>
 
 <pre><code class="language-html">&lt;meta name="description" content=""&gt;
 &lt;meta name="keywords" content=""&gt;
@@ -242,14 +256,14 @@
 &lt;link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="grey"&gt;
 </code></pre>
 
-<p>Las etiquetas de microsoft</p>
+<p>Las etiquetas de <em>Microsoft</em>:</p>
 
 <pre><code class="language-html">&lt;!-- Microsoft --&gt;
 &lt;meta name="msapplication-TileColor" content="grey"&gt;
 &lt;meta name="msapplication-config" content="/favicons/browserconfig.xml"&gt;
 </code></pre>
 
-<p>Un ejemplo del <code>browserconfig.xml</code>:</p>
+<p>Un ejemplo del <code>browserconfig.xml</code> anteriormente descrito:</p>
 
 <pre><code class="language-bash">&lt;? xml version = "1.0" encoding = "utf-8" ?&gt;
   &lt;browserconfig&gt;
@@ -262,7 +276,7 @@
   &lt;/browserconfig&gt;
 </code></pre>
 
-<p>Incluye un <code>manifest</code> y la etiqueta <code>application-name</code> entre tus metatags:</p>
+<p>Es importante añadir un <code>manifest</code> y la etiqueta <code>application-name</code> entre tus metatags:</p>
 
 <pre><code class="language-html">&lt;link rel="manifest" href="site.webmanifest"&gt;
 &lt;meta name="application-name" content="My Site"&gt;
@@ -294,8 +308,8 @@
 
 <p>Si vamos a utilizar <a href="https://fonts.google.com" title="" class="link-out">Google fonts</a> o librerías externas <strong>CSS</strong>, es buena idea utilizar:</p>
 
-<pre><code class="language-html">&lt;link rel="dns-prefetch" href="//fonts.googleapis.com"&gt;
-&lt;link rel="preconnect" href="//fonts.googleapis.com" crossorigin&gt;
+<pre><code class="language-html">&lt;link rel="dns-prefetch" href="https://fonts.googleapis.com"&gt;
+&lt;link rel="preconnect" href="https://fonts.googleapis.com" crossorigin&gt;
 &lt;link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,800,800i,900,900i" rel="stylesheet" media="all"&gt;
 </code></pre>
 
@@ -306,14 +320,14 @@
 
 <h2>Body</h2>
 
-<p>Idiquemos que no se soportan navegadores prehistóricos:</p>
+<p>Idiquemos que no se soportan navegadores <em>prehistóricos</em>:</p>
 
 <pre><code class="language-html">&lt;!--[if IE]&gt;
     &lt;p style="padding:5px; margin: 5px; border: 1px solid red;"&gt;You are using an &lt;strong&gt;outdated&lt;/strong&gt; browser. Please &lt;a href="https://browsehappy.com/"&gt;upgrade your browser&lt;/a&gt; to improve your experience and security.&lt;/p&gt;
 &lt;![endif]--&gt;
 </code></pre>
 
-<p>Añadamos las etiquetas básicas para crear el cuerpo de nuestra plantilla:</p>
+<p>Añadamos las etiquetas básicas para crear el cuerpo de nuestra plantilla <strong>HTML5</strong>:</p>
 
 <pre><code class="language-html">&lt;header&gt;
     &lt;!-- My header code --&gt;
@@ -335,6 +349,10 @@
 &lt;link rel="preconnect" href="//code.jquery.com" crossorigin&gt;
 &lt;script src="https://code.jquery.com/jquery-{{JQUERY_VERSION}}.min.js" integrity="{{JQUERY_SRI_HASH}}" crossorigin="anonymous"&gt;&lt;/script&gt;
 </code></pre>
+
+<blockquote>
+  <p>También es importante utilizar <code>async</code> o <code>defer</code> cuando sea posible.</p>
+</blockquote>
 
 <p>Si queremos usar el código de google-analytics:</p>
 
@@ -487,7 +505,7 @@ ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', '
             </div>
         </footer>
 
-        <script src="/assets/build/js/main.js?id=b27eb7cb9dc80f03577f"></script>
+        <script src="/assets/build/js/main.js?id=0777ca318e2698d5f3aa"></script>
         <script>
     const navMenu = {
         toggle() {
@@ -508,7 +526,5 @@ ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', '
                 }
             }, false);
         </script>
-
-
     </body>
 </html>

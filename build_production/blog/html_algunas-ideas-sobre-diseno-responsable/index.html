@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <meta charset="utf-8">
+        <meta charset="UTF-8">
+        <title>Algunas ideas sobre diseño responsable (responsive design). Blog de Damián Aguilar</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Algunas ideas sobre diseño responsable (responsive design) | Blog de Damián Aguilar</title>
         <meta name="description" content="Diseño de una web adaptable a los diferentes dispositivos">
         <meta property="og:title" content="Algunas ideas sobre diseño responsable (responsive design) | Blog de Damián Aguilar"/>
         <meta property="og:type" content="website" />
@@ -30,17 +30,27 @@
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+        <meta name="twitter:site" content="@daguilarm">
+        <meta name="twitter:creator" content="@daguilarm">
+        <meta name="twitter:title" content="Algunas ideas sobre diseño responsable (responsive design). Blog de Damián Aguilar">
+        <meta name="twitter:description" content="Diseño de una web adaptable a los diferentes dispositivos">
             <meta property="og:title" content="Algunas ideas sobre diseño responsable (responsive design)" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://daguilar.dev/blog/html_algunas-ideas-sobre-diseno-responsable"/>
     <meta property="og:description" content="Diseño de una web adaptable a los diferentes dispositivos" />
-
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:site_name" content="El blog de Damián Aguilar">
+    <meta name="twitter:url" content="https://daguilar.dev/blog/html_algunas-ideas-sobre-diseno-responsable">
+            <meta property="og:image" content="/assets/img/og-img.jpeg" />
+        <meta name="twitter:image" content="/assets/img/og-img.jpeg">
+    
 
 
         <link rel="dns-prefetch" href="//fonts.googleapis.com">
         <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
         <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i,800,800i" rel="stylesheet">
-        <link rel="stylesheet" href="/assets/build/css/main.css?id=5e9ed1fa22768a6768c3">
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=2f5e8a7cb1c57b08765a">
     </head>
 
     <body class="flex flex-col justify-between min-h-screen bg-gray-100 text-gray-800 leading-normal font-sans">
@@ -148,7 +158,11 @@
                 
     <h1 class="leading-none mb-6 text-blue-800 text-3xl md:text-4xl lg:text-5xl">Algunas ideas sobre diseño responsable (responsive design)</h1>
 
-    <p class="flex justify-start text-gray-600 text-xl md:mt-0"><span>Damián Aguilar</span><a href="https://twitter.com/daguilarm" target="_black" class="mx-2"><img src="/assets/img/twitter.png" alt="twitter" class="opacity-75 hover:opacity-100 h-8 w-8 bg-white rounded-full"></a><span> - 08/10/2020</span></p>
+    <p class="flex justify-start text-gray-600 text-xl md:mt-0">
+        <span>Damián Aguilar</span>
+        <a href="https://twitter.com/daguilarm" target="_black" class="mx-2"><img src="/assets/img/twitter.png" alt="twitter" class="opacity-75 hover:opacity-100 h-8 w-8 bg-white rounded-full"></a>
+        <span> - 08/10/2020</span>
+    </p>
 
                         <a
                 href="/blog/categories/html"
@@ -157,17 +171,19 @@
             >html</a>
             
     <div class="border-b border-blue-200 mb-10 pb-4" v-pre>
-        <p>Cuando se empieza un proyecto hay siempre que tener en cuenta dos aspectos: la usabilidad y el diseño responsable adaptado a todos los dispositivos. Esto en general es lo correcto, pero también puede llegar a convertirse en una pesadilla, sobre todo conel diseño responsable.</p>
+        <p>Cuando se empieza un proyecto hay siempre que tener en cuenta dos aspectos: la usabilidad y el diseño responsable adaptado a todos los dispositivos. Esto en general es lo correcto, pero también puede llegar a convertirse en una pesadilla, sobre todo con el diseño responsable.</p>
 
 <p>Desde mi punto de vista, y seguramente estoy equivocado, creo que la mejor estrategia para afrontar un desarrollo web es centrando el proyecto en dos componentes diferenciados, por un lado el diseño de una app para teléfono móvil y por el otro, el diseño de una web responsable que se adapte al resto de dispositivos.</p>
 
-<p>Creo que la idea de que un web sirva para móviles, tablets, portátiles y ordenadores de sobremesa es una locura y que termina absorviendo demasiado tiempo (a veces inútil). Mi planteamiento es simple, consiste en centrarse en los dispositivos de un tamaño aceptable y que permiten la experiencia completa de una web, como son el: tablet, el portatil y ordenador de sobremesa. Y para el teléfono móvil, centrarnos en el desarrollo de una aplicación para móvil o directamente una web pensada exclusivamente para las limitaciones de espacio de este dispositivo, es decir, hay que hacer un desarrollo exclusivo para móviles.</p>
+<p>Creo que la idea de que un web sirva para móviles, tablets, portátiles y ordenadores de sobremesa es una locura y que termina absorviendo demasiado tiempo (a veces inútil).</p>
 
-<p>Vamos a ver, ya que hay que ponerse a desarrollar estilos propios para un teléfono móvil, y que seguramente esto va a terminar convirtiéndose una hoja de estilos independiente, lo mejor es hacerlo bien y en vez de adaptar el proyecto al dispositivo, centrarse en desarrollar un poryecto propio para el dispositivo. Al final se va a tardar lo mismo y el resultado va a ser mucho mejor.</p>
+<p>Mi planteamiento es simple, consiste en centrarse en los dispositivos de un tamaño aceptable y que permiten la experiencia completa de una web, como son el: <strong>tablet, el portatil y ordenador de sobremesa</strong>. Y para el <strong>teléfono móvil</strong>, centrarnos en el desarrollo de una aplicación para móvil o directamente una web pensada exclusivamente para las limitaciones de espacio de este dispositivo, en otras palabras: <strong>hacer un desarrollo exclusivo para móviles</strong>.</p>
+
+<p>Vamos a ver, ya que hay que ponerse a desarrollar hojas de estilo específicas para un teléfono móvil, y que seguramente esto va a terminar convirtiéndose una hoja de estilos independiente, lo mejor es hacerlo bien y en vez de adaptar el proyecto al dispositivo, centrarse en desarrollar un poryecto exclusivo para este dispositivo. <strong>Vamos a terminar tardando lo mismo y el resultado va a ser mucho mejor</strong>.</p>
 
 <p>Personalmente, para el desarrollo de aplicaciones estoy utilizando <a href="https://www.electronjs.org/" title="" class="link-out">ElectronJS</a>, pero supongo que existen varias alternativas para el desarrollo de apps multi-dispositivo. En internet vas a encontrar muchos tutoriales y cursos sobre el tema.</p>
 
-<p>Respecto a la web multidispositivo... el primer problema que te vas a encontrar es el tema de los comportamientos ante eventos como por ejemplo cuando en tu código HTML introduces un evento CSS tipo <code>:hover</code>. Esto es un problema serio, ya que un tablet no dispone de esta opción, y por tanto, si nuestro menú de navegación funciona así, el usuario va a tener un problema importante. Veamos un ejemplo:</p>
+<p>Respecto a la web multidispositivo... el primer problema que te vas a encontrar es el de la gestión de los eventos. Por ejemplo, cuando en tu código HTML introduces un evento CSS tipo <code>:hover</code>, se genera un problema serio, ya que un tablet no dispone de esta opción, y por tanto, si nuestro menú de navegación funciona así, el usuario va a tener una limitación importante. Veamos un ejemplo:</p>
 
 <pre><code class="language-html">&lt;style&gt;
   .dropdown {
@@ -195,9 +211,11 @@
 &lt;/div&gt;
 </code></pre>
 
-<p>La solución a este problema es bastante sencilla, pero me llevó bastante tiempo dar con la solución correcta (al menos para mi). Mi idea era buscar una opción que no me obligara a ir duplicando el código CSS para tablets (este ha sido el motivo principal para dividir el proyecto en una web y una app), y para ello encontré un artículo de Mezo Istvan sobre el tema <a href="https://medium.com/@mezoistvan/finally-a-css-only-solution-to-hover-on-touchscreens-c498af39c31c" title="" class="link-out">Finally, a CSS only solution to :hover on touchscreens</a></p>
+<p><strong>La solución a este problema es bastante sencilla, pero me llevó un tiempo dar con la solución correcta (al menos para mi)</strong>.Mi idea era buscar una opción que no me obligara a ir duplicando el código CSS para tablets (este ha sido el motivo principal para dividir el proyecto en una web y una app), y para ello encontré un artículo de <strong>Mezo Istvan</strong> sobre el tema <a href="https://medium.com/@mezoistvan/finally-a-css-only-solution-to-hover-on-touchscreens-c498af39c31c" title="" class="link-out">Finally, a CSS only solution to :hover on touchscreens</a></p>
 
-<p>En él plantea la idea de utilizar los <em>media queries</em> para no tener que repetir código. Partamos del código del ejemplo anterior y uticemos los <em>media queries</em> para hacerlo funcionar en un tablet:</p>
+<p>En él plantea la idea de utilizar los <em>media queries</em> para no tener que repetir código.</p>
+
+<p>Partamos del código del ejemplo anterior y uticemos los <em>media queries</em> para hacerlo funcionar en un tablet:</p>
 
 <pre><code class="language-html">&lt;style&gt;
   .dropdown {
@@ -227,12 +245,14 @@
 &lt;/div&gt;
 </code></pre>
 
-<p>Ahora cuando un tablet haga click sobre un evento <code>:hover</code>, funcionará sin problemas. Tiene la limitación de que si utilizamos sistemas como <a href="https://getbootstrap.com/" title="" class="link-out">Bootstrap</a> o <a href="https://tailwindcss.com/" title="" class="link-out">Tailwind</a> vamos a tener que hacer nuestra propia hoja de estilos, pero en cualquier caso a mi me parece una buena solución.</p>
+<p>Ahora cuando un tablet haga <em>click</em> sobre un evento <code>:hover</code>, funcionará sin problemas.</p>
+
+<p>Tiene la limitación de que si utilizamos sistemas como <a href="https://getbootstrap.com/" title="" class="link-out">Bootstrap</a> o <a href="https://tailwindcss.com/" title="" class="link-out">Tailwind</a> vamos a tener que crear nuestros propios estilos, pero en cualquier caso a mi me parece una buena solución.</p>
 
 <p>Para finalizar, creo que hay que tener en cuenta algunas cuestiones sobre el tema:</p>
 
 <ul>
-<li>Evitar los eventos <code>:hover</code> en lo posible en el web. Yo personalmente me limito a la barra de navegación y utilizo esta técnica.</li>
+<li>Evitar los eventos <code>:hover</code> en lo posible en el web. Yo personalmente me limito a la barra de navegación y utilizo esta técnica descrita arriba.</li>
 <li>Si utilizamos enlaces para el efecto <code>:hover</code> hay que evitar que tengan respuesta, es decir, un enlace <code>&lt;a href="#"&gt;enlace&lt;/a&gt;</code> no funcionará con la técnica de los <em>media queries</em>, tendríamos que cambiarlo por esto otro <code>&lt;a href="javascript:void(0)"&gt;enlace&lt;/a&gt;</code>.</li>
 <li>Eliminar de la versión para tablet todas aquellas partes que sea prescindibles, tenemos menos espacio y hay que mostrar solo lo necesario.</li>
 <li>El tamaño de fuentes, y sobre todo <strong>iconos</strong>, debe de ser mayor en la versión para tablet. <strong>Es muy importante que los iconos sean grandes</strong> para evitar al usuario tenga que pasar media hora intentando entrar en una sección.</li>
@@ -283,7 +303,7 @@
             </div>
         </footer>
 
-        <script src="/assets/build/js/main.js?id=b27eb7cb9dc80f03577f"></script>
+        <script src="/assets/build/js/main.js?id=0777ca318e2698d5f3aa"></script>
         <script>
     const navMenu = {
         toggle() {
@@ -304,7 +324,5 @@
                 }
             }, false);
         </script>
-
-
     </body>
 </html>

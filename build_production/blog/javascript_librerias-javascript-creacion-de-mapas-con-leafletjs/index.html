@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <meta charset="utf-8">
+        <meta charset="UTF-8">
+        <title>Librerías JavaScript - creación de mapas con LeafletJS. Blog de Damián Aguilar</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Librerías JavaScript - creación de mapas con LeafletJS | Blog de Damián Aguilar</title>
         <meta name="description" content="Utilización de la librería JavaScript LeafletJS para la creación de mapas a través de servicios WMS.">
         <meta property="og:title" content="Librerías JavaScript - creación de mapas con LeafletJS | Blog de Damián Aguilar"/>
         <meta property="og:type" content="website" />
@@ -30,17 +30,27 @@
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+        <meta name="twitter:site" content="@daguilarm">
+        <meta name="twitter:creator" content="@daguilarm">
+        <meta name="twitter:title" content="Librerías JavaScript - creación de mapas con LeafletJS. Blog de Damián Aguilar">
+        <meta name="twitter:description" content="Utilización de la librería JavaScript LeafletJS para la creación de mapas a través de servicios WMS.">
             <meta property="og:title" content="Librerías JavaScript - creación de mapas con LeafletJS" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://daguilar.dev/blog/javascript_librerias-javascript-creacion-de-mapas-con-leafletjs"/>
     <meta property="og:description" content="Utilización de la librería JavaScript LeafletJS para la creación de mapas a través de servicios WMS." />
-
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:site_name" content="El blog de Damián Aguilar">
+    <meta name="twitter:url" content="https://daguilar.dev/blog/javascript_librerias-javascript-creacion-de-mapas-con-leafletjs">
+            <meta property="og:image" content="/assets/img/og-img.jpeg" />
+        <meta name="twitter:image" content="/assets/img/og-img.jpeg">
+    
 
 
         <link rel="dns-prefetch" href="//fonts.googleapis.com">
         <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
         <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i,800,800i" rel="stylesheet">
-        <link rel="stylesheet" href="/assets/build/css/main.css?id=5e9ed1fa22768a6768c3">
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=2f5e8a7cb1c57b08765a">
     </head>
 
     <body class="flex flex-col justify-between min-h-screen bg-gray-100 text-gray-800 leading-normal font-sans">
@@ -148,7 +158,11 @@
                 
     <h1 class="leading-none mb-6 text-blue-800 text-3xl md:text-4xl lg:text-5xl">Librerías JavaScript - creación de mapas con LeafletJS</h1>
 
-    <p class="flex justify-start text-gray-600 text-xl md:mt-0"><span>Damián Aguilar</span><a href="https://twitter.com/daguilarm" target="_black" class="mx-2"><img src="/assets/img/twitter.png" alt="twitter" class="opacity-75 hover:opacity-100 h-8 w-8 bg-white rounded-full"></a><span> - 20/10/2020</span></p>
+    <p class="flex justify-start text-gray-600 text-xl md:mt-0">
+        <span>Damián Aguilar</span>
+        <a href="https://twitter.com/daguilarm" target="_black" class="mx-2"><img src="/assets/img/twitter.png" alt="twitter" class="opacity-75 hover:opacity-100 h-8 w-8 bg-white rounded-full"></a>
+        <span> - 20/10/2020</span>
+    </p>
 
                         <a
                 href="/blog/categories/javascript"
@@ -167,7 +181,7 @@
             >alpinejs</a>
             
     <div class="border-b border-blue-200 mb-10 pb-4" v-pre>
-        <p>Según wikipedia<sup>1</sup> un servicio WMS produce mapas de datos referenciados espacialmente, de forma dinámica a partir de información geográfica. Es decir, estamos hablando de servicios como GoogleMaps, OpenStreetMap o similares. Es decir, capas de información que se muestran superpuestas y en forma de mapa.</p>
+        <p>Según wikipedia<sup>1</sup> un servicio WMS produce mapas de datos referenciados espacialmente, de forma dinámica a partir de información geográfica. Es decir, estamos hablando de servicios como GoogleMaps, OpenStreetMap o similares. <strong>Se trata entonces de capas de información que se muestran superpuestas y en forma de mapa</strong>.</p>
 
 <p>Podemos integrar estos servicios en nuestro proyecto web, mediante la librería <a href="https://leafletjs.com/" title="" class="link-out">LeafletJS</a></p>
 
@@ -193,7 +207,7 @@ var zoom = '12';
 var map;
 </code></pre>
 
-<p>Tenemos que definir la latitud y la longitud donde queremos que se centre el mapa que vamos a generar. Continuamos con el <em>zoom</em> máximo que vamos a permitir (y que permite el sistema WMS) y con el <em>zoom</em> por defecto que se mostrará al cargar el mapa. Por último, hay que definir la variable donde se creará el mapa. Ahora ya podemos crear el mapa:</p>
+<p>Tenemos que definir la latitud y la longitud donde queremos que se centre el mapa que vamos a generar. Continuamos con el <em>zoom</em> máximo que vamos a permitir (y que permite el sistema WMS) y con el <em>zoom</em> por defecto que se mostrará al cargar el mapa. Por último, hay que definir la variable donde se creará el mapa. <strong>Ahora ya podemos crear el mapa</strong>:</p>
 
 <pre><code class="language-javascript">this.map = L.map('mapContainer').setView([lat, lng], this.zoom);
 
@@ -245,7 +259,7 @@ function createMap(mapID) {
 }
 </code></pre>
 
-<p>Vale, expliquemos un poco el código. Lo primero es buscar un servicio WMS gratuito, en este caso es del Instituto Geográfico Nacional<sup>2</sup> de España, pero existen cientos... ya es cuestión de que busques el que más te interesa. En mi caso, suelo utilizar este WMS para mostrar mapas de España.</p>
+<p><strong>Vale, expliquemos un poco el código</strong>. Lo primero es buscar un servicio WMS gratuito, en este caso es del Instituto Geográfico Nacional<sup>2</sup> de España, pero existen cientos... ya es cuestión de que busques el que más te interesa. En mi caso, suelo utilizar este WMS para mostrar mapas de España.</p>
 
 <p>Los campos que deben indicarse para conectar con el servicio WMS son:</p>
 
@@ -263,7 +277,7 @@ function createMap(mapID) {
 <li><strong>maxZoom</strong>: el <em>zoom</em> máximo que vamos a permitir. Sin olvidar que el servicio WMS también tendrá un máximo y no podremos sobrepasarlo.</li>
 </ul>
 
-<p>¿Y si queremos añadir un marcador al mapa indicando el punto exacto de las coordenadas?</p>
+<p><strong>¿Y si queremos añadir un marcador al mapa indicando el punto exacto de las coordenadas?</strong></p>
 
 <p>Pues creamos un marcador y lo añadimos al mapa:</p>
 
@@ -312,7 +326,7 @@ function reloadMap() {
 }
 </code></pre>
 
-<p>Esto último es básico si (como es mi caso) el proyecto utiliza <code>Livewire</code> y <code>AlpineJS</code>... y por experiencia os digo que pasa lo mismo con <code>Laravel Nova</code> y <code>VueJS</code>.</p>
+<p>Esto último método <code>reloadMap()</code>, es básico si el proyecto utiliza <code>Livewire</code>, <code>AlpineJS</code>, <code>Laravel Nova</code>, <code>VueJS</code>...</p>
 
 <p>En la web oficial de <code>Leaflet</code> vas a encontrar muchos ejemplos:</p>
 
@@ -359,7 +373,7 @@ function reloadMap() {
             </div>
         </footer>
 
-        <script src="/assets/build/js/main.js?id=b27eb7cb9dc80f03577f"></script>
+        <script src="/assets/build/js/main.js?id=0777ca318e2698d5f3aa"></script>
         <script>
     const navMenu = {
         toggle() {
@@ -380,7 +394,5 @@ function reloadMap() {
                 }
             }, false);
         </script>
-
-
     </body>
 </html>

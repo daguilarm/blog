@@ -3,12 +3,497 @@
     <title>Blog de Damián Aguilar</title>
     <link href="https://daguilar.dev" />
     <link type="application/atom+xml" rel="self" href="https://daguilar.dev/blog/feed.atom" />
-    <updated>2021-04-11T10:12:29+00:00</updated>
+    <updated>2021-05-12T08:02:59+00:00</updated>
     <id>https://daguilar.dev/blog/feed.atom</id>
     <author>
         <name>Damián Aguilar</name>
     </author>
                 <entry>
+    <id>https://daguilar.dev/blog/tests_identificando-los-principales-errores-con-laravel-dusk</id>
+    <link type="text/html" rel="alternate" href="https://daguilar.dev/blog/tests_identificando-los-principales-errores-con-laravel-dusk" />
+    <title>Cómo solucionar los principales errores con Laravel Dusk y orchestral/testbench-dusk.</title>
+    <published>2021-05-09T00:00:00+00:00</published>
+    <updated>2021-05-09T00:00:00+00:00</updated>
+    <author>
+        <name>Damián Aguilar</name>
+    </author>
+    <summary type="html">Este artículo, es al final un pequeño recordatorio para cuando me pongo a hacer tests con Laravel Dusk y empiezan a surgir los errores al hacer las pruebas.
+
+He intentado recopilar los principales errores que me he encontrado, y como los he terminado......</summary>
+    <content type="html"><![CDATA[
+        <p>Este artículo, es al final un pequeño recordatorio para cuando me pongo a hacer tests con <strong>Laravel Dusk</strong> y empiezan a surgir los errores al hacer las pruebas.</p>
+
+<p>He intentado recopilar los principales errores que me he encontrado, y como los he terminado por solucionar. Empecemos por los errores generados por el <em>driver</em> de <strong>Chrome</strong>:</p>
+
+<pre><code>Facebook\WebDriver\Exception\SessionNotCreatedException: session not created: Chrome version must be between 70 and 73
+</code></pre>
+
+<pre><code>Facebook\WebDriver\Exception\WebDriverCurlException: Curl error thrown for http POST to /session with params: {"capabilities":{"firstMatch":[{"browserName":"chrome","goog:chromeOptions":{"w3c":false}}]},"desiredCapabilities":{"browserName":"chrome","platform":"ANY","chromeOptions":{"w3c":false}}}
+</code></pre>
+
+<pre><code>Failed to connect to localhost port 9515: Connection refused
+</code></pre>
+
+<p>En función de si estamos trabajando directamente con <strong>Laravel Dusk</strong>, o si estamos creando un <em>package</em> para <strong>Laravel</strong>, tenemos las siguiente soluciones:</p>
+
+<h4> Con <strong>Laravel Dusk</strong>:</h4>
+
+<pre><code class="language-bash">php artisan dusk:chrome-driver
+</code></pre>
+
+<h4>Con <strong>orchestral/testbench-dusk</strong>:</h4>
+
+<pre><code class="language-bash">./vendor/bin/dusk-updater update
+</code></pre>
+
+<p>Otro error que suele suceder cuando estamos utilizando <strong>orchestral/testbench-dusk</strong>, es el siguiente:</p>
+
+<pre><code>Illuminate\Contracts\Container\BindingResolutionException: Target class [livewire] does not exist.
+</code></pre>
+
+<p>En este caso el error ocurre al no encontrar la clase <strong>Livewire</strong>, pero puede suceder con cualquier clase que se nos olvide añadir. Sucede debido a que en la clase <em>TestCase</em>, nos ha faltado añadir el <em>Service Provider</em> para la clase <strong>Livewire</strong>:</p>
+
+<pre><code class="language-php">/**
+ * Load the service providers.
+ */
+protected function getPackageProviders($app)
+{
+    return [
+        LivewireServiceProvider::class,
+        ExcelServiceProvider::class,
+    ];
+}
+</code></pre>
+
+<p>No hay que olvidar el <em>Service Provider</em> del propio <em>package</em> que estamos probando (en el ejemplo anterior no lo he incluido).</p>
+
+<p>Otro problema que sucede a veces, es que no se defina correctamente el archivo <code>phpunit.xml.dist</code>, por lo que no se debe olvidar añadir los diferentes directorios utilizados para las pruebas:</p>
+
+<pre><code class="language-html">&lt;testsuites&gt;
+    &lt;testsuite name="Browser"&gt;
+        &lt;directory suffix="Test.php"&gt;./tests/Browser&lt;/directory&gt;
+    &lt;/testsuite&gt;
+    &lt;testsuite name="Feature"&gt;
+        &lt;directory suffix="Test.php"&gt;./tests/Feature&lt;/directory&gt;
+    &lt;/testsuite&gt;
+    &lt;testsuite name="Unit"&gt;
+        &lt;directory suffix="Test.php"&gt;./tests/Unit&lt;/directory&gt;
+    &lt;/testsuite&gt;
+&lt;/testsuites&gt;
+</code></pre>
+
+<h3> Referencias:</h3>
+
+<ul>
+<li><a href="https://github.com/orchestral/testbench-dusk" title="" class="link-out">https://github.com/orchestral/testbench-dusk</a></li>
+<li><a href="https://github.com/livewire/livewire/blob/master/tests/Unit/TestCase.php" title="" class="link-out">https://github.com/livewire/livewire/blob/master/tests/Unit/TestCase.php</a></li>
+<li><a href="https://github.com/livewire/livewire/blob/master/tests/Browser/TestCase.php" title="" class="link-out">https://github.com/livewire/livewire/blob/master/tests/Browser/TestCase.php</a></li>
+<li><a href="https://github.com/laravel/dusk/issues/649" title="" class="link-out">https://github.com/laravel/dusk/issues/649</a></li>
+<li><a href="https://barryvanveen.nl/blog/61-how-to-fix-common-laravel-dusk-problems">https://barryvanveen.nl/blog/61-how-to-fix-common-laravel-dusk-problems</a></li>
+<li><a href="https://laravel.com/docs/8.x/dusk#introduction" title="" class="link-out">https://laravel.com/docs/8.x/dusk#introduction</a></li>
+</ul>
+    ]]></content>
+</entry>
+            <entry>
+    <id>https://daguilar.dev/blog/laravel_select-dependiente-multinivel-combobox-para-laravel</id>
+    <link type="text/html" rel="alternate" href="https://daguilar.dev/blog/laravel_select-dependiente-multinivel-combobox-para-laravel" />
+    <title>Nuevo package para Laravel para selects dependientes multinivel (combobox)</title>
+    <published>2021-05-02T00:00:00+00:00</published>
+    <updated>2021-05-02T00:00:00+00:00</updated>
+    <author>
+        <name>Damián Aguilar</name>
+    </author>
+    <summary type="html">Estoy trabajando en un nuevo proyecto y necesitaba un sistema de &lt;code&gt;selects&lt;/code&gt; dependientes y con niveles de dependencia infinitos. Revisando &lt;code&gt;packages&lt;/code&gt; para Laravel ya desarrollados me he encontrado con herramientas parecidas a......</summary>
+    <content type="html"><![CDATA[
+        <p>Estoy trabajando en un nuevo proyecto y necesitaba un sistema de <code>selects</code> dependientes y con niveles de dependencia infinitos. Revisando <code>packages</code> para <strong>Laravel</strong> ya desarrollados me he encontrado con herramientas parecidas a <a href="https://select2.org/" title="" class="link-out">https://select2.org/</a>, que son geniales, pero me sobraban gran parte de las funcionalidades que tenían, además, quería que estuviera basado en <code>back-end</code> en vez de en <code>front-end</code>.</p>
+
+<p>Encontré soluciones, pero supongo que soy un maniático con el código y quería que además fuese fluido y fácilmente entendible, utilizando métodos encadenados. <strong>Al final me puse a desarrollar mi propio <code>package</code>, porque no encontraba nada que me gustase</strong>:</p>
+
+<ul>
+<li><a href="https://github.com/daguilarm/livewire-combobox" title="" class="link-out">https://github.com/daguilarm/livewire-combobox</a></li>
+</ul>
+
+<p><img src="/assets/img/projects/liveware-combobox.gif" alt="Laravel Livewire combobox - selects dependientes" /></p>
+
+<p>Básicamente, tenemos que crear un componente <strong>Livewire</strong>, como el siguiente:</p>
+
+<pre><code class="language-php">&lt;?php
+
+declare(strict_types=1);
+
+namespace App\Http\Livewire;
+
+use App\Models\Car;
+use App\Models\Extra;
+use App\Models\Option;
+use Daguilarm\LivewireCombobox\Components\ComboboxLivewireComponent;
+use Daguilarm\LivewireCombobox\Components\Fields\Select;
+use Daguilarm\LivewireCombobox\Contracts\Combobox;
+
+class ComboboxCars extends ComboboxLivewireComponent implements Combobox
+{
+    public function elements(): array
+    {
+        return [
+            Select::make('Vehículos', Car::class)
+                -&gt;uriKey('key-for-car')
+                -&gt;options(function($model) {
+                    return $model
+                        -&gt;pluck('name', 'id')
+                        -&gt;toArray();
+                }),
+            Select::make('Opciones de vehículos', Option::class)
+                -&gt;uriKey('key-for-options')
+                -&gt;dependOn('key-for-car')
+                -&gt;foreignKey('car_id')
+                -&gt;selectRows('id', 'option')
+                -&gt;hideOnEmpty(),
+            Select::make('Extras de vehículos', Extra::class)
+                -&gt;uriKey('key-for-extras')
+                -&gt;dependOn('key-for-options')
+                -&gt;foreignKey('option_id')
+                -&gt;selectRows('id', 'extra')
+                -&gt;hideOnEmpty(),
+        ];
+    }
+}
+</code></pre>
+
+<p>Y añadir el componente a la vista, tal y como se muestra a continuación:</p>
+
+<pre><code class="language-html">&lt;div&gt;
+    &lt;livewire::combobox-cars /&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>Y automáticamente tendremos 3 campos <code>select</code> dependientes unos de otros, sin tener que hacer nada mas. Y desde mi punto de vista, de forma clara, fluida y con métodos encadenados, tal y como a mi me gusta.</p>
+    ]]></content>
+</entry>
+            <entry>
+    <id>https://daguilar.dev/blog/package_configurando-un-package-de-laravel-y-livewire-para-hacer-tests</id>
+    <link type="text/html" rel="alternate" href="https://daguilar.dev/blog/package_configurando-un-package-de-laravel-y-livewire-para-hacer-tests" />
+    <title>Configurando un package de Laravel y Livewire para hacer tests.</title>
+    <published>2021-04-23T00:00:00+00:00</published>
+    <updated>2021-04-23T00:00:00+00:00</updated>
+    <author>
+        <name>Damián Aguilar</name>
+    </author>
+    <summary type="html">Me he visto por primera vez ante la situación de tener que testear un package para Laravel que además estaba basado en Livewire. No ha sido fácil, y me ha llevado algo de tiempo tenerlo todo preparado, sobre todo porque no hay mucha información al......</summary>
+    <content type="html"><![CDATA[
+        <p>Me he visto por primera vez ante la situación de tener que testear un <em>package</em> para <strong>Laravel</strong> que además estaba basado en <strong>Livewire</strong>. No ha sido fácil, y me ha llevado algo de tiempo tenerlo todo preparado, sobre todo porque no hay mucha información al respecto.</p>
+
+<p>Lo primero ha sido crear el archivo <code>TestCase.php</code> en la carpeta <code>./tests</code>. Dejo el archivo completo (que es del package <a href="https://github.com/daguilarm/belich-tables" title="" class="link-out">Belich Tables</a>):</p>
+
+<pre><code class="language-php">&lt;?php
+
+namespace Daguilarm\BelichTables\Tests;
+
+use Daguilarm\BelichTables\BelichTablesServiceProvider;
+use Daguilarm\BelichTables\Tests\TestSeed;
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\File;
+use Livewire\LivewireServiceProvider;
+use Orchestra\Testbench\TestCase as BaseTestCase;
+
+class TestCase extends BaseTestCase
+{
+    use TestSeed;
+
+    /**
+     * Setup the test environment.
+     */
+    public function setUp(): void
+    {
+
+        parent::setUp();
+
+        // Seed the database
+        $this-&gt;seedUsers();
+        $this-&gt;seedProfiles();
+    }
+
+    /**
+     * Load the service providers
+     */
+    public function getPackageProviders($app)
+    {
+        return [
+            BelichTablesServiceProvider::class,
+            LivewireServiceProvider::class,
+        ];
+    }
+
+    /**
+     * Setup the testing environment
+     */
+    public function getEnvironmentSetUp($app)
+    {
+        // Setup the application
+        $app['config']-&gt;set('view.paths', [
+            __DIR__.'/views',
+            resource_path('views'),
+        ]);
+        $app['config']-&gt;set('auth.providers.users.model', User::class);
+        $app['config']-&gt;set('app.key', 'base64:Hupx3yAySikrM2/edkZQNQHslgDWYfiBfCuSThJ5SK8=');
+        $app['config']-&gt;set('database.default', 'testbench');
+        $app['config']-&gt;set('database.connections.testbench', [
+            'driver'   =&gt; 'sqlite',
+            'database' =&gt; ':memory:',
+            'prefix'   =&gt; '',
+        ]);
+
+        // Populate the DB
+        include_once __DIR__.'/../database/migrations/create_test_tables.php.stub';
+        (new \CreateTestTables())-&gt;up();
+    }
+
+    /**
+     * Swap HTTP Kernel for application bootstrap
+     */
+    public function resolveApplicationHttpKernel($app)
+    {
+        $app-&gt;singleton('Illuminate\Contracts\Http\Kernel', 'Daguilarm\BelichTables\Tests\HttpKernel');
+    }
+}
+</code></pre>
+
+<p>Antes de empezar tengo que aclarar que he tenido dos fuentes principales de información hasta llegar aquí:</p>
+
+<ul>
+<li><a href="https://github.com/spatie/laravel-permission/blob/master/tests/TestCase.php" title="" class="link-out">https://github.com/spatie/laravel-permission/blob/master/tests/TestCase.php</a></li>
+<li><a href="https://github.com/livewire/livewire/blob/master/tests/Unit/TestCase.php" title="" class="link-out">https://github.com/livewire/livewire/blob/master/tests/Unit/TestCase.php</a></li>
+</ul>
+
+<p>La clave para conseguir que funcionara, ha estado aqui:</p>
+
+<pre><code class="language-php">/**
+ * Load the service providers
+ */
+protected function getPackageProviders($app)
+{
+    return [
+        BelichTablesServiceProvider::class,
+        LivewireServiceProvider::class,
+    ];
+}
+</code></pre>
+
+<p>El problema era que cada vez que hacía un test, me daba el mismo error:</p>
+
+<pre><code>Illuminate\Contracts\Container\BindingResolutionException: Target class [livewire] does not exist.
+</code></pre>
+
+<p>La solución la encontré aqui:</p>
+
+<ul>
+<li><a href="https://laracasts.com/discuss/channels/livewire/package-development-target-class-livewire-does-not-exist" title="" class="link-out">https://laracasts.com/discuss/channels/livewire/package-development-target-class-livewire-does-not-exist</a></li>
+</ul>
+
+<p>Al principio sólo incluía el <strong>Service Provider</strong> de <code>BelichTablesServiceProvider::class</code> hasta que he decubierto que había que incluir también el de <code>LivewireServiceProvider::class</code>. Esto me ha llevado casi una hora delante del ordenador...</p>
+
+<p>Sin olvidar el <strong>Trait</strong> <code>TestSeed::class</code>, que solo sirve para rellenar la base de datos:</p>
+
+<pre><code class="language-php">&lt;?php
+
+namespace Daguilarm\BelichTables\Tests;
+
+use Daguilarm\BelichTables\Tests\Models\Profile;
+use Daguilarm\BelichTables\Tests\Models\User;
+
+trait TestSeed
+{
+    protected function seedUsers()
+    {
+        return User::insert([
+            [ 
+                'id' =&gt; 1, 
+                'name' =&gt; 'Damián Aguilar', 
+                'email' =&gt; 'damian.aguilar@email.com', 
+                'active' =&gt; 1, 
+                'date' =&gt; '2021-04-22 00:00:01'
+            ],
+            [/* ... */],
+        ]);
+    }
+
+    protected function seedProfiles()
+    {
+        return Profile::insert([
+            [
+                'id' =&gt; 1, 
+                'user_id' =&gt; 1, 
+                'profile_telephone' =&gt; '000000001'
+            ],
+            [/* ... */],
+        ]);
+    }
+}
+</code></pre>
+
+<p>Otro aspecto importante si quieres utilizar los test que tiene <strong>Livewire</strong> disponibles, es tener en cuenta que hay que añadir todo el <code>middleware</code>, tal y como indicamos en el método <code>resolveApplicationHttpKernel($app)</code>:</p>
+
+<pre><code class="language-php">/**
+ * Swap HTTP Kernel for application bootstrap
+ */
+protected function resolveApplicationHttpKernel($app)
+{
+    $app-&gt;singleton('Illuminate\Contracts\Http\Kernel', 'Daguilarm\BelichTables\Tests\HttpKernel');
+}
+</code></pre>
+
+<p>Recuerdo que en nuestro <code>TestCase</code> hemos incluido este archivo, asi que tenemos que crearlo en la ruta que hemos especificado en el <code>singleton</code>. El archivo lo podemos encontrar en:</p>
+
+<ul>
+<li><a href="https://github.com/livewire/livewire/blob/master/tests/HttpKernel.php" title="" class="link-out">https://github.com/livewire/livewire/blob/master/tests/HttpKernel.php</a></li>
+</ul>
+
+<p>Y en caso que cambie de ubicación, lo copio aquí:</p>
+
+<pre><code class="language-php">&lt;?php
+
+namespace Daguilarm\BelichTables\Tests;
+
+use Illuminate\Foundation\Http\Kernel;
+
+class HttpKernel extends Kernel
+{
+    /**
+     * The application's global HTTP middleware stack.
+     *
+     * These middleware are run during every request to your application.
+     *
+     * @var array
+     */
+    protected $middleware = [
+        \Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode::class,
+        \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
+        \Illuminate\Foundation\Http\Middleware\TrimStrings::class,
+        \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
+    ];
+
+    /**
+     * The application's route middleware groups.
+     *
+     * @var array
+     */
+    protected $middlewareGroups = [
+        'web' =&gt; [
+            \Illuminate\Cookie\Middleware\EncryptCookies::class,
+            \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
+            \Illuminate\Session\Middleware\StartSession::class,
+            \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+            \Illuminate\Foundation\Http\Middleware\VerifyCsrfToken::class,
+            \Illuminate\Routing\Middleware\SubstituteBindings::class,
+        ],
+
+        'api' =&gt; [
+            'throttle:60,1',
+            'bindings',
+        ],
+    ];
+
+    /**
+     * The application's route middleware.
+     *
+     * These middleware may be assigned to groups or used individually.
+     *
+     * @var array
+     */
+    protected $routeMiddleware = [
+        'auth' =&gt; \Illuminate\Auth\Middleware\Authenticate::class,
+        'auth.basic' =&gt; \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
+        'bindings' =&gt; \Illuminate\Routing\Middleware\SubstituteBindings::class,
+        'cache.headers' =&gt; \Illuminate\Http\Middleware\SetCacheHeaders::class,
+        'can' =&gt; \Illuminate\Auth\Middleware\Authorize::class,
+        'guest' =&gt; \Orchestra\Testbench\Http\Middleware\RedirectIfAuthenticated::class,
+        'signed' =&gt; \Illuminate\Routing\Middleware\ValidateSignature::class,
+        'throttle' =&gt; \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        'verified' =&gt; \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+    ];
+
+    /**
+     * The priority-sorted list of middleware.
+     *
+     * This forces non-global middleware to always be in the given order.
+     *
+     * @var array
+     */
+    protected $middlewarePriority = [
+        \Illuminate\Session\Middleware\StartSession::class,
+        \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+        \Illuminate\Auth\Middleware\Authenticate::class,
+        \Illuminate\Session\Middleware\AuthenticateSession::class,
+        \Illuminate\Routing\Middleware\SubstituteBindings::class,
+        \Illuminate\Auth\Middleware\Authorize::class,
+    ];
+}
+</code></pre>
+
+<p>Como recordatorio... no olvides cambiar los <code>namespaces</code> y adaptarlos a tu proyecto.</p>
+    ]]></content>
+</entry>
+            <entry>
+    <id>https://daguilar.dev/blog/laravel_nuevo-package-para-laravel-para-la-gestion-de-tablas-de-datos</id>
+    <link type="text/html" rel="alternate" href="https://daguilar.dev/blog/laravel_nuevo-package-para-laravel-para-la-gestion-de-tablas-de-datos" />
+    <title>Nuevo package para Laravel, para la gestión de Tablas de Datos</title>
+    <published>2021-04-17T00:00:00+00:00</published>
+    <updated>2021-04-17T00:00:00+00:00</updated>
+    <author>
+        <name>Damián Aguilar</name>
+    </author>
+    <summary type="html">Hace algún tiempo, me plantee el reto de desarrollar un sistema de administración igual que Laravel Nova, pero sin usar &lt;code&gt;Vuejs&lt;/code&gt;, una autentica locura de la que aprendí muchísimo.
+
+Esta idea loca, se debía a dos situaciones diferentes: por......</summary>
+    <content type="html"><![CDATA[
+        <p>Hace algún tiempo, me plantee el reto de desarrollar un sistema de administración igual que <strong>Laravel Nova</strong>, pero sin usar <code>Vuejs</code>, una autentica locura de la que aprendí muchísimo.</p>
+
+<p>Esta idea loca, se debía a dos situaciones diferentes: por un lado, buscaba mejorar mis habilidades como programador sumergiéndome en un proyecto de este calibre, y por otro lado, por aquel entonces odiaba (de forma inexplicable) <code>vueJS</code>, y necesitaba una alternativa que no utilizara este <code>framework</code>. La solución fue escribir todo utilizando solo <em>vanilla <code>javascript</code></em>.</p>
+
+<p>Esta experiencia me llevó a entender mejor el funcionamiento de <code>javascript</code> como lenguaje y a <a href="https://daguilar.dev/blog/javascript_mis-problemas-con-javascript/">terminar por apreciarlo</a>.</p>
+
+<p>Después de aquello, me planteé hacer una segunda versión del proyecto, pero basado en <code>Livewire</code>, <code>AlpineJS</code> y <code>TailwindCSS</code>, y después de varias semanas trabajando en él, me di cuenta que tal vez sería más interesante dividir el proyecto en varios packages independientes, y que <strong>Belich</strong>, fuera más bien un entorno de desarrollo donde se utilizaban en conjunto todos estos packages.</p>
+
+<p>Cuento todo esto, porque ya se puede utilizar el primer <code>package</code> que he desarrollado. Se llama: <strong>Belich Tables</strong>.</p>
+
+<p><img src="/assets/img/projects/belich-tables.png" alt="Belich Tables desarrollado con Livewire" /></p>
+
+<p>Todo empezó cuando decidí empezar a desarrollar el sistema de <em>tablas de datos</em>, emulando a <a href="https://datatables.net/" title="" class="link-out">datatables</a>, y en el camino me encontré un package que a primera vista funcionaba muy bien:</p>
+
+<ul>
+<li><a href="https://github.com/rappasoft/laravel-livewire-tables" title="" class="link-out">https://github.com/rappasoft/laravel-livewire-tables</a></li>
+</ul>
+
+<p>La verdad es que ofrecía una estructura básica muy interesante, pero vi que puediera llegar hasta donde yo necesitaba para poder integrarlo en el proyecto, por lo que procedí a crear un <strong>fork</strong> en <code>github</code> y empecé a añadir mejoras:</p>
+
+<ul>
+<li>El código se ha rediseñado desde prácticamente 0, mejorando la estructura y el rendimiento.</li>
+<li>Se ha dado soporte para <code>TailwindCSS</code>, ya que estaba diseñado para ser utilizado con <code>Bootstrap</code>.</li>
+<li>Se ha integrado un sistema de mensajes, utilizando la funcionalidad de <em>flash messages</em> the <code>Livewire</code>.</li>
+<li>Implementación de los campos de accion en la tabla, de forma que se pudieran: <em>editar, mostrar y eliminar campos</em>.</li>
+<li>Filtrado de resultados por columnas, utilizando un sistema similar a <strong>Laravel Nova</strong>.</li>
+<li>Se ha cambiado la paginación por una paginación simple.</li>
+<li>Se han añadido <code>checkboxes</code> para seleccionar filas y realizar acciones masivas sobre los elementos seleccionados.</li>
+<li>Se ha habilitado un sistema que permite configurar y personalizar estas acciones masivas.</li>
+<li>Se ha mejorado la personalización y adaptabilidad del <code>package</code> a cualquier proyecto.</li>
+<li>Se ha desarrollado una documentación completa sobre su funcionamiento.</li>
+</ul>
+
+<p>Y muchas más funcionalidades menores, que han añadido al <code>package</code> mucha mayor flexibilidad y adaptabilidad.</p>
+
+<p>Puedes ver el <code>package</code> en:</p>
+
+<ul>
+<li><a href="https://github.com/daguilarm/belich-tables" title="" class="link-out">https://github.com/daguilarm/belich-tables</a></li>
+</ul>
+
+<p>Y su documentación en:</p>
+
+<ul>
+<li><a href="https://daguilarm.github.io/belich-tables/" title="" class="link-out">https://daguilarm.github.io/belich-tables/</a></li>
+</ul>
+    ]]></content>
+</entry>
+            <entry>
     <id>https://daguilar.dev/blog/php_simplificando-condicionales-en-php-parte-2-refactoring</id>
     <link type="text/html" rel="alternate" href="https://daguilar.dev/blog/php_simplificando-condicionales-en-php-parte-2-refactoring" />
     <title>Simplificando condicionales con PHP (parte II) - Refactoring conditionals</title>
@@ -127,7 +612,7 @@ Es fácil dejarse llevar por un grupo de condicionales anidados y complicar el c
 
 <p>Es fácil dejarse llevar por un grupo de condicionales anidados y complicar el código muy facilmente, convirtiéndolo en algo complejo y dificil de seguir.</p>
 
-<p>La idea, no es solo simplificarlo, sino también conseguir que sea fácil de seguir con facilidad, por lo tanto, no se trata sólo de reducir el código a la mínima expresión, también hay que conseguir que el código sea simple de entender, aunque esto implique no reducirlo al máximo.</p>
+<p>La idea, no es solo simplificarlo, sino también conseguir que sea fácil de seguir con facilidad, por lo tanto, <strong>no se trata sólo de reducir el código a la mínima expresión, también hay que conseguir que el código sea simple de entender, aunque esto implique no reducirlo al máximo</strong>.</p>
 
 <p>Desde mi punto de vista, el código primero tiene que ser muy sencillo de interpretar, y después, conseguir reducirlo a la mínima expresión.</p>
 
@@ -386,7 +871,7 @@ class MinifyHtml
 
 En los últimos seis meses, mi vida a......</summary>
     <content type="html"><![CDATA[
-        <p>Llevo bastante tiempo sin subir nada nuevo aquí, y ha sido principalmente por la Tesis Doctoral. La empecé en el curso 2015-2016 y después de cinco años por fin realicé la defensa pública la semana pasada.</p>
+        <p><strong>Llevo bastante tiempo sin subir nada nuevo aquí, y ha sido principalmente por la Tesis Doctoral</strong>. La empecé en el curso 2015-2016 y después de cinco años por fin realicé la defensa pública la semana pasada.</p>
 
 <p>En los últimos seis meses, mi vida a girado al 100% en torno a la Tesis. Primero tuve que publicar un artículo científico en la revista <a href="https://www.mdpi.com/2073-4395/10/9/1352" title="" class="link-out">Agronomy</a> que fue todo un reto, a parte de un requisito para terminar la Tesis.</p>
 
@@ -408,19 +893,21 @@ En los últimos seis meses, mi vida a......</summary>
     <author>
         <name>Damián Aguilar</name>
     </author>
-    <summary type="html">Nunca me ha gustado &lt;code&gt;JavaScript&lt;/code&gt;, siempre lo he encontrado un lenguaje de programación &quot;mágico&quot;, es decir, a veces funcionaba y otras no... se que esto ha sido siempre culpa mía, principalmente por no llegar a comprender realmente su......</summary>
+    <summary type="html">Nunca me ha gustado &lt;code&gt;JavaScript&lt;/code&gt;, ya que siempre lo he encontrado un lenguaje de programación &quot;mágico&quot;, es decir, siempre he tenido la sensación que a veces funcionaba y otras veces no... se que esto ha sido siempre culpa mía,......</summary>
     <content type="html"><![CDATA[
-        <p>Nunca me ha gustado <code>JavaScript</code>, siempre lo he encontrado un lenguaje de programación <em>"mágico"</em>, es decir, a veces funcionaba y otras no... se que esto ha sido siempre culpa mía, principalmente por no llegar a comprender realmente su funcionamiento, situación que al final me ha llevado por el camino de ir esquivando <code>JavaScript</code> cada vez que he podido hacerlo. De hecho, no entendía como a alguien podía gustarle programar en ese entorno.</p>
+        <p>Nunca me ha gustado <code>JavaScript</code>, ya que siempre lo he encontrado un lenguaje de programación <em>"mágico"</em>, es decir, siempre he tenido la sensación que a veces funcionaba y otras veces no... se que esto ha sido siempre culpa mía, principalmente por no llegar a comprender realmente el funcionamiento del lenguaje.</p>
 
-<p>Volviendo la vista a cuando empecé a programar con <code>JavaScript</code>, creo que tal vez el problema fue empezar directamente con <code>Jquery</code>, obviando <code>JavaScript</code>, y por tanto aprendiendo de la peor manera posible. En el aquel momento pensaba que si sabía <code>Jquery</code> sabía <code>JavaScript</code>... que iluso era...</p>
+<p>Esta situación al final me ha llevado siempre por el camino de ir esquivando <code>JavaScript</code> cada vez que he tenido la opción de hacerlo. De hecho, no entendía como a alguien podía gustarle programar con este lenguaje.</p>
 
-<p>Entonces llega <code>NodeJS</code> y todas las librerias que surgieron a partir de entonces: <code>AngularJS</code>, <code>VueJS</code>, <code>ReactJS</code>,... y lo cambiaron todo. En mi caso, ya que programaba con <code>Laravel</code> terminé utilizando <code>VueJS</code>. Admito que al principio estaba totalmente perdido, y entonces, me ví involucrado en un proyecto basado en <code>VueJS</code> y lo pasé muy mal, sobre todo porque este proyecto era mi <em>Tesis Doctoral</em>... el caso es que tuve que ponerme las pilas y aprender a marchas forzadas, y fue aquí cuando empecé a no odiar a <code>JavaScript</code>, lo cual fue un paso importante en mi proceso de aceptación de <code>JavaScript</code>.</p>
+<p>Volviendo la vista a cuando empecé a programar con <code>JavaScript</code>, creo que tal vez el problema fue empezar directamente con <code>Jquery</code>, obviando <code>JavaScript</code>, y por tanto aprendiendo de la peor manera posible. En el aquel momento pensaba que si sabía <code>Jquery</code> sabía <code>JavaScript</code>... que equivocado estaba...</p>
+
+<p>Entonces llega <code>NodeJS</code> y todas las librerias que surgieron a partir de él: <code>AngularJS</code>, <code>VueJS</code>, <code>ReactJS</code>,... y lo cambiaron todo. En mi caso, ya que programaba con <code>Laravel</code> terminé utilizando <code>VueJS</code>. Admito que al principio estaba totalmente perdido, y entonces, me ví involucrado en un proyecto basado en <code>VueJS</code> y lo pasé muy mal (realmente mal), sobre todo porque este proyecto era mi <em>Tesis Doctoral</em>... el caso es que tuve que ponerme las pilas y aprender a marchas forzadas a programar, y fue aquí cuando empecé a no odiar <code>JavaScript</code>, lo cual fue un paso importante en mi proceso de aceptación del lenguaje.</p>
 
 <p>Simultáneamente a la <em>Tesis</em>, empecé otro proyecto en el que intenté hacer un panel de administrador completo utilizando sólo puro y duro <code>JavaScript</code>, y fué aquí donde por primera vez empecé a apreciar el lenguaje, sin utilizar librerías y enfrentándome directamente a él. Fue lo mejor que pude hacer en aquel momento.</p>
 
 <p>Admito que ahora con la llegada de <code>Livewire</code> y <code>AlpineJS</code> estoy totalmente volcado en el desarrollo con <code>JavaScript</code>, y en este punto, puedo decir que ahora si que disfruto programando con este lenguaje, algo que hace unos años me hubiera parecido ciencia ficción.</p>
 
-<p>En definitiva, la intención de este <em>post</em> no es otra que la de exponer mi fracaso al intentar aprender un lenguaje de programación empezando por el final... el camino correcto es siempre empezar por lo básico y después ir a lo específico, o si quereis arriesgaros, podeis cometer los mismos errores que yo.</p>
+<p>En definitiva, la intención de este <em>post</em> no es otra que la de exponer mi fracaso al intentar aprender un lenguaje de programación empezando por el final... <strong>el camino correcto es siempre empezar por lo básico y después ir a lo específico</strong>, o si quereis arriesgaros, vais a cometer los mismos errores que yo.</p>
     ]]></content>
 </entry>
             <entry>
@@ -703,6 +1190,14 @@ function component_2() {
 <ul>
 <li><a href="https://github.com/amaelftah/alpinejs-devtools" title="" class="link-out">https://github.com/amaelftah/alpinejs-devtools</a></li>
 </ul>
+
+<p>Existe una librería que nos permite añadir esta funcionalidad a <code>AlpineJS</code>:</p>
+
+<ul>
+<li><a href="https://github.com/alpine-collective/alpine-magic-helpers" title="" class="link-out">https://github.com/alpine-collective/alpine-magic-helpers</a></li>
+</ul>
+
+<p>En cualquier caso, parece que la próxima versión de <code>AlpineJS</code> (versión 3), incluirá esta característica. Esperemos que sea así.</p>
     ]]></content>
 </entry>
             <entry>
@@ -863,7 +1358,7 @@ El problema es que no va a......</summary>
 &lt;/script&gt;
 </code></pre>
 
-<p>En mi caso como esto va a ser un componente de <code>Laravel</code> y no quiero lios al añadir varios en una página, he optado por añadir una clave única a las variables. Primero he creado la clave:</p>
+<p>En mi caso como esto va a ser un componente de <code>Laravel</code> y como no quiero lios al añadir varios en una página, he optado por añadir una clave única a las variables. Primero he creado la clave:</p>
 
 <pre><code class="language-blade">// Por ejemplo...
 @php 
@@ -913,7 +1408,9 @@ El problema es que no va a......</summary>
 &lt;/script&gt;
 </code></pre>
 
-<p>Imagino que esto es mejorable... pero por el momento funciona perfectamente. También quiero comentar, que utilizo esto para cuando los campos <code>select</code> tienen muchas opciones. Lo que hago es crear dos componentes en <code>Laravel</code>, uno para los campos <code>select</code> y otro para los campos <code>datalist</code>, y entonces creo un tercer componente llamado <code>selector</code>, que tiene el siguiente código:</p>
+<p>Imagino que esto es mejorable... pero por el momento funciona perfectamente. También quiero comentar que utilizo esto sólo cuando los campos <code>select</code> tienen muchas opciones, y es más práctico buscar que listar.</p>
+
+<p>Lo que hago es crear dos componentes en <code>Laravel</code>, uno para los campos <code>select</code> y otro para los campos <code>datalist</code>, y entonces creo un tercer componente llamado <code>selector</code>, que tiene el siguiente código:</p>
 
 <pre><code class="language-php">@isset($options)
     @if(count($options) &gt;= 12)
@@ -1215,9 +1712,9 @@ protected $casts = [
     <author>
         <name>Damián Aguilar</name>
     </author>
-    <summary type="html">Según wikipedia1 un servicio WMS produce mapas de datos referenciados espacialmente, de forma dinámica a partir de información geográfica. Es decir, estamos hablando de servicios como GoogleMaps, OpenStreetMap o similares. Es decir, capas de......</summary>
+    <summary type="html">Según wikipedia1 un servicio WMS produce mapas de datos referenciados espacialmente, de forma dinámica a partir de información geográfica. Es decir, estamos hablando de servicios como GoogleMaps, OpenStreetMap o similares. Se trata entonces de capas......</summary>
     <content type="html"><![CDATA[
-        <p>Según wikipedia<sup>1</sup> un servicio WMS produce mapas de datos referenciados espacialmente, de forma dinámica a partir de información geográfica. Es decir, estamos hablando de servicios como GoogleMaps, OpenStreetMap o similares. Es decir, capas de información que se muestran superpuestas y en forma de mapa.</p>
+        <p>Según wikipedia<sup>1</sup> un servicio WMS produce mapas de datos referenciados espacialmente, de forma dinámica a partir de información geográfica. Es decir, estamos hablando de servicios como GoogleMaps, OpenStreetMap o similares. <strong>Se trata entonces de capas de información que se muestran superpuestas y en forma de mapa</strong>.</p>
 
 <p>Podemos integrar estos servicios en nuestro proyecto web, mediante la librería <a href="https://leafletjs.com/" title="" class="link-out">LeafletJS</a></p>
 
@@ -1243,7 +1740,7 @@ var zoom = '12';
 var map;
 </code></pre>
 
-<p>Tenemos que definir la latitud y la longitud donde queremos que se centre el mapa que vamos a generar. Continuamos con el <em>zoom</em> máximo que vamos a permitir (y que permite el sistema WMS) y con el <em>zoom</em> por defecto que se mostrará al cargar el mapa. Por último, hay que definir la variable donde se creará el mapa. Ahora ya podemos crear el mapa:</p>
+<p>Tenemos que definir la latitud y la longitud donde queremos que se centre el mapa que vamos a generar. Continuamos con el <em>zoom</em> máximo que vamos a permitir (y que permite el sistema WMS) y con el <em>zoom</em> por defecto que se mostrará al cargar el mapa. Por último, hay que definir la variable donde se creará el mapa. <strong>Ahora ya podemos crear el mapa</strong>:</p>
 
 <pre><code class="language-javascript">this.map = L.map('mapContainer').setView([lat, lng], this.zoom);
 
@@ -1295,7 +1792,7 @@ function createMap(mapID) {
 }
 </code></pre>
 
-<p>Vale, expliquemos un poco el código. Lo primero es buscar un servicio WMS gratuito, en este caso es del Instituto Geográfico Nacional<sup>2</sup> de España, pero existen cientos... ya es cuestión de que busques el que más te interesa. En mi caso, suelo utilizar este WMS para mostrar mapas de España.</p>
+<p><strong>Vale, expliquemos un poco el código</strong>. Lo primero es buscar un servicio WMS gratuito, en este caso es del Instituto Geográfico Nacional<sup>2</sup> de España, pero existen cientos... ya es cuestión de que busques el que más te interesa. En mi caso, suelo utilizar este WMS para mostrar mapas de España.</p>
 
 <p>Los campos que deben indicarse para conectar con el servicio WMS son:</p>
 
@@ -1313,7 +1810,7 @@ function createMap(mapID) {
 <li><strong>maxZoom</strong>: el <em>zoom</em> máximo que vamos a permitir. Sin olvidar que el servicio WMS también tendrá un máximo y no podremos sobrepasarlo.</li>
 </ul>
 
-<p>¿Y si queremos añadir un marcador al mapa indicando el punto exacto de las coordenadas?</p>
+<p><strong>¿Y si queremos añadir un marcador al mapa indicando el punto exacto de las coordenadas?</strong></p>
 
 <p>Pues creamos un marcador y lo añadimos al mapa:</p>
 
@@ -1362,7 +1859,7 @@ function reloadMap() {
 }
 </code></pre>
 
-<p>Esto último es básico si (como es mi caso) el proyecto utiliza <code>Livewire</code> y <code>AlpineJS</code>... y por experiencia os digo que pasa lo mismo con <code>Laravel Nova</code> y <code>VueJS</code>.</p>
+<p>Esto último método <code>reloadMap()</code>, es básico si el proyecto utiliza <code>Livewire</code>, <code>AlpineJS</code>, <code>Laravel Nova</code>, <code>VueJS</code>...</p>
 
 <p>En la web oficial de <code>Leaflet</code> vas a encontrar muchos ejemplos:</p>
 
@@ -1390,7 +1887,7 @@ function reloadMap() {
     </author>
     <summary type="html">Me he encontrado en la situación de querer cargar componentes de Laravel Livewire de forma condicional, y todo ello, en función de un campo &lt;code&gt;select&lt;/code&gt; o de un simple click en un enlace (en mi caso se trataba de un sistema de pestañas y......</summary>
     <content type="html"><![CDATA[
-        <p>Me he encontrado en la situación de querer cargar componentes de Laravel Livewire de forma condicional, y todo ello, en función de un campo <code>select</code> o de un simple <em>click</em> en un enlace (en mi caso se trataba de un sistema de pestañas y contenedores).</p>
+        <p>Me he encontrado en la situación de querer cargar componentes de <strong>Laravel Livewire</strong> de forma condicional, y todo ello, en función de un campo <code>select</code> o de un simple <em>click</em> en un enlace (en mi caso se trataba de un sistema de pestañas y contenedores).</p>
 
 <p>La idea era no cargar nada de inicio y en función de la selección, ir cargando de forma dinámica un componente determinado tal y como se hubiera hecho con <code>Jquery</code>. Terminando con la carga del resultado de la consulta <code>AJAX</code> en un contenedor <code>div</code>:</p>
 
@@ -1577,7 +2074,7 @@ class Tabs extends Component
 <pre><code class="language-javascript">Uncaught (in promise) TypeError: Cannot read property 'fingerprint' of null
 </code></pre>
 
-<p>Por lo visto este error es debido a que hay un problema con las <code>keys</code> que genera <code>Livewire</code> y por algún motivo, no he sido capaz de ver donde se han generado claves repeditas...</p>
+<p>Por lo visto este error es debido a que hay un problema con las <code>keys</code> que genera <code>Livewire</code> y por algún motivo, no he sido capaz de ver donde se han generado claves repetidas...</p>
 
 <ul>
 <li><a href="https://github.com/livewire/livewire/issues/1686" title="" class="link-out">https://github.com/livewire/livewire/issues/1686
@@ -1633,7 +2130,7 @@ Lo primero es crear el componente para Livewire:
 
 Y nos generará dos archivos, uno ubicado......</summary>
     <content type="html"><![CDATA[
-        <p>El objetivo de este artículo es explicar cómo desarrollar un buscador con Livewire y complementado con AlpineJS, mi nuevo framework favorito para JavaScript.</p>
+        <p><strong>El objetivo de este artículo es explicar cómo desarrollar un buscador con Livewire y complementado con AlpineJS</strong>, mi nuevo framework favorito para JavaScript.</p>
 
 <p>Lo primero es crear el componente para Livewire:</p>
 
@@ -1840,17 +2337,19 @@ class NavbarInputSearch extends Component
     </author>
     <summary type="html">Cuando se empieza un proyecto hay siempre que tener en cuenta dos aspectos: la usabilidad y el diseño responsable adaptado a todos los dispositivos. Esto en general es lo correcto, pero también puede llegar a convertirse en una pesadilla, sobre todo......</summary>
     <content type="html"><![CDATA[
-        <p>Cuando se empieza un proyecto hay siempre que tener en cuenta dos aspectos: la usabilidad y el diseño responsable adaptado a todos los dispositivos. Esto en general es lo correcto, pero también puede llegar a convertirse en una pesadilla, sobre todo conel diseño responsable.</p>
+        <p>Cuando se empieza un proyecto hay siempre que tener en cuenta dos aspectos: la usabilidad y el diseño responsable adaptado a todos los dispositivos. Esto en general es lo correcto, pero también puede llegar a convertirse en una pesadilla, sobre todo con el diseño responsable.</p>
 
 <p>Desde mi punto de vista, y seguramente estoy equivocado, creo que la mejor estrategia para afrontar un desarrollo web es centrando el proyecto en dos componentes diferenciados, por un lado el diseño de una app para teléfono móvil y por el otro, el diseño de una web responsable que se adapte al resto de dispositivos.</p>
 
-<p>Creo que la idea de que un web sirva para móviles, tablets, portátiles y ordenadores de sobremesa es una locura y que termina absorviendo demasiado tiempo (a veces inútil). Mi planteamiento es simple, consiste en centrarse en los dispositivos de un tamaño aceptable y que permiten la experiencia completa de una web, como son el: tablet, el portatil y ordenador de sobremesa. Y para el teléfono móvil, centrarnos en el desarrollo de una aplicación para móvil o directamente una web pensada exclusivamente para las limitaciones de espacio de este dispositivo, es decir, hay que hacer un desarrollo exclusivo para móviles.</p>
+<p>Creo que la idea de que un web sirva para móviles, tablets, portátiles y ordenadores de sobremesa es una locura y que termina absorviendo demasiado tiempo (a veces inútil).</p>
 
-<p>Vamos a ver, ya que hay que ponerse a desarrollar estilos propios para un teléfono móvil, y que seguramente esto va a terminar convirtiéndose una hoja de estilos independiente, lo mejor es hacerlo bien y en vez de adaptar el proyecto al dispositivo, centrarse en desarrollar un poryecto propio para el dispositivo. Al final se va a tardar lo mismo y el resultado va a ser mucho mejor.</p>
+<p>Mi planteamiento es simple, consiste en centrarse en los dispositivos de un tamaño aceptable y que permiten la experiencia completa de una web, como son el: <strong>tablet, el portatil y ordenador de sobremesa</strong>. Y para el <strong>teléfono móvil</strong>, centrarnos en el desarrollo de una aplicación para móvil o directamente una web pensada exclusivamente para las limitaciones de espacio de este dispositivo, en otras palabras: <strong>hacer un desarrollo exclusivo para móviles</strong>.</p>
+
+<p>Vamos a ver, ya que hay que ponerse a desarrollar hojas de estilo específicas para un teléfono móvil, y que seguramente esto va a terminar convirtiéndose una hoja de estilos independiente, lo mejor es hacerlo bien y en vez de adaptar el proyecto al dispositivo, centrarse en desarrollar un poryecto exclusivo para este dispositivo. <strong>Vamos a terminar tardando lo mismo y el resultado va a ser mucho mejor</strong>.</p>
 
 <p>Personalmente, para el desarrollo de aplicaciones estoy utilizando <a href="https://www.electronjs.org/" title="" class="link-out">ElectronJS</a>, pero supongo que existen varias alternativas para el desarrollo de apps multi-dispositivo. En internet vas a encontrar muchos tutoriales y cursos sobre el tema.</p>
 
-<p>Respecto a la web multidispositivo... el primer problema que te vas a encontrar es el tema de los comportamientos ante eventos como por ejemplo cuando en tu código HTML introduces un evento CSS tipo <code>:hover</code>. Esto es un problema serio, ya que un tablet no dispone de esta opción, y por tanto, si nuestro menú de navegación funciona así, el usuario va a tener un problema importante. Veamos un ejemplo:</p>
+<p>Respecto a la web multidispositivo... el primer problema que te vas a encontrar es el de la gestión de los eventos. Por ejemplo, cuando en tu código HTML introduces un evento CSS tipo <code>:hover</code>, se genera un problema serio, ya que un tablet no dispone de esta opción, y por tanto, si nuestro menú de navegación funciona así, el usuario va a tener una limitación importante. Veamos un ejemplo:</p>
 
 <pre><code class="language-html">&lt;style&gt;
   .dropdown {
@@ -1878,9 +2377,11 @@ class NavbarInputSearch extends Component
 &lt;/div&gt;
 </code></pre>
 
-<p>La solución a este problema es bastante sencilla, pero me llevó bastante tiempo dar con la solución correcta (al menos para mi). Mi idea era buscar una opción que no me obligara a ir duplicando el código CSS para tablets (este ha sido el motivo principal para dividir el proyecto en una web y una app), y para ello encontré un artículo de Mezo Istvan sobre el tema <a href="https://medium.com/@mezoistvan/finally-a-css-only-solution-to-hover-on-touchscreens-c498af39c31c" title="" class="link-out">Finally, a CSS only solution to :hover on touchscreens</a></p>
+<p><strong>La solución a este problema es bastante sencilla, pero me llevó un tiempo dar con la solución correcta (al menos para mi)</strong>.Mi idea era buscar una opción que no me obligara a ir duplicando el código CSS para tablets (este ha sido el motivo principal para dividir el proyecto en una web y una app), y para ello encontré un artículo de <strong>Mezo Istvan</strong> sobre el tema <a href="https://medium.com/@mezoistvan/finally-a-css-only-solution-to-hover-on-touchscreens-c498af39c31c" title="" class="link-out">Finally, a CSS only solution to :hover on touchscreens</a></p>
 
-<p>En él plantea la idea de utilizar los <em>media queries</em> para no tener que repetir código. Partamos del código del ejemplo anterior y uticemos los <em>media queries</em> para hacerlo funcionar en un tablet:</p>
+<p>En él plantea la idea de utilizar los <em>media queries</em> para no tener que repetir código.</p>
+
+<p>Partamos del código del ejemplo anterior y uticemos los <em>media queries</em> para hacerlo funcionar en un tablet:</p>
 
 <pre><code class="language-html">&lt;style&gt;
   .dropdown {
@@ -1910,12 +2411,14 @@ class NavbarInputSearch extends Component
 &lt;/div&gt;
 </code></pre>
 
-<p>Ahora cuando un tablet haga click sobre un evento <code>:hover</code>, funcionará sin problemas. Tiene la limitación de que si utilizamos sistemas como <a href="https://getbootstrap.com/" title="" class="link-out">Bootstrap</a> o <a href="https://tailwindcss.com/" title="" class="link-out">Tailwind</a> vamos a tener que hacer nuestra propia hoja de estilos, pero en cualquier caso a mi me parece una buena solución.</p>
+<p>Ahora cuando un tablet haga <em>click</em> sobre un evento <code>:hover</code>, funcionará sin problemas.</p>
+
+<p>Tiene la limitación de que si utilizamos sistemas como <a href="https://getbootstrap.com/" title="" class="link-out">Bootstrap</a> o <a href="https://tailwindcss.com/" title="" class="link-out">Tailwind</a> vamos a tener que crear nuestros propios estilos, pero en cualquier caso a mi me parece una buena solución.</p>
 
 <p>Para finalizar, creo que hay que tener en cuenta algunas cuestiones sobre el tema:</p>
 
 <ul>
-<li>Evitar los eventos <code>:hover</code> en lo posible en el web. Yo personalmente me limito a la barra de navegación y utilizo esta técnica.</li>
+<li>Evitar los eventos <code>:hover</code> en lo posible en el web. Yo personalmente me limito a la barra de navegación y utilizo esta técnica descrita arriba.</li>
 <li>Si utilizamos enlaces para el efecto <code>:hover</code> hay que evitar que tengan respuesta, es decir, un enlace <code>&lt;a href="#"&gt;enlace&lt;/a&gt;</code> no funcionará con la técnica de los <em>media queries</em>, tendríamos que cambiarlo por esto otro <code>&lt;a href="javascript:void(0)"&gt;enlace&lt;/a&gt;</code>.</li>
 <li>Eliminar de la versión para tablet todas aquellas partes que sea prescindibles, tenemos menos espacio y hay que mostrar solo lo necesario.</li>
 <li>El tamaño de fuentes, y sobre todo <strong>iconos</strong>, debe de ser mayor en la versión para tablet. <strong>Es muy importante que los iconos sean grandes</strong> para evitar al usuario tenga que pasar media hora intentando entrar en una sección.</li>
@@ -1962,7 +2465,7 @@ Browser tests (basados en......</summary>
 
 <p>Laravel dusk, al igual que otras partes del código de Laravel, incluyen el <code>trait Macroable</code>, el cual nos permite crear métodos personalizados para <strong>Dusk</strong>.</p>
 
-<p>Este <code>trait</code>, nos permitirá hacer cosas como esta:</p>
+<p>Este <code>Trait</code>, nos permitirá hacer cosas como esta:</p>
 
 <pre><code class="language-php">Response::macro('lower', function ($value) {
   return Response::make(strtoupper($value));
@@ -1974,7 +2477,7 @@ Browser tests (basados en......</summary>
 <pre><code class="language-php">return response()-&gt;lower('foo');
 </code></pre>
 
-<p>Nuestros <code>traits</code>, debemos añadirlos al método <code>boot()</code> the un <code>ServiceProvider</code>, por lo que lo mejor, es crear nuestro própio <code>ServiceProvider</code>, por ejemplo:</p>
+<p>Nuestros <code>Traits</code>, debemos añadirlos al método <code>boot()</code> the un <code>ServiceProvider</code>, por lo que lo mejor, es crear nuestro própio <code>ServiceProvider</code>, por ejemplo:</p>
 
 <pre><code class="language-php">//app\Providers\DuskServiceProvider.php
 namespace App\Providers;
@@ -2117,7 +2620,7 @@ public function test_select_field()
 
 <h3>Actualización 20/10/2020</h3>
 
-<p>Este macro ya no es necesario. Laravel dusk ya dispone de <code>waitForReload()</code> de forma nativa.</p>
+<p><strong>Este macro ya no es necesario. Laravel dusk ya dispone de <code>waitForReload()</code> de forma nativa.</strong></p>
 
 <ol start="5">
 <li>waitForReload</li>
@@ -2172,7 +2675,7 @@ Esta nueva tipografía es......</summary>
 <li>Y muchas otras opciones que simplifican la visualización del código...</li>
 </ul>
 
-<p>El objetivo principal de la tipografía ha sido la de simplificar las formas al máximo, para simplificar al ojo su interpretación, permitiendo simplificar este proceso y aumentar la capacidad del cerebro para procesarlas.</p>
+<p><strong>El objetivo principal de la tipografía ha sido la de simplificar las formas al máximo</strong>, para simplificar al ojo su interpretación, permitiendo simplificar este proceso y aumentar la capacidad del cerebro para procesarlas.</p>
 
 <p>Yo personalmente, he optado por esta nueva tipografía y estoy bastante contento con ella, y por el momento, me quedo con ella.</p>
 
@@ -2563,7 +3066,11 @@ protected function registerConsole(): void
 
 <p>Si quieres saber como configurar el <em>package</em> para que se pueda utilizar desde <strong>Packagist</strong>:</p>
 
-<p>https://daguilar.dev/blog/packages_configurar-github-webhooks-para-packagist/</p>
+<p><a href="https://daguilar.dev/blog/packages_configurar-github-webhooks-para-packagist/">https://daguilar.dev/blog/packages_configurar-github-webhooks-para-packagist/</a></p>
+
+<p>Y si quieres hacer tests a un package:</p>
+
+<p><a href="https://daguilar.dev/blog/package_configurando-un-package-de-laravel-y-livewire-para-hacer-tests/">https://daguilar.dev/blog/package_configurando-un-package-de-laravel-y-livewire-para-hacer-tests/</a></p>
     ]]></content>
 </entry>
             <entry>
@@ -2575,11 +3082,11 @@ protected function registerConsole(): void
     <author>
         <name>Damián Aguilar</name>
     </author>
-    <summary type="html">Los packages para Laravel, son sin lugar a dudas, un forma rápida de solucionar un reto de programación, que ya ha sido pensado, planteado y desarrollado por otro programador, y que en la mayoría de los casos, cuenta con el respaldo de la comunidad de......</summary>
+    <summary type="html">Los packages para Laravel son sin lugar a dudas, un forma rápida de solucionar un problema de programación que ya ha sido pensado, planteado y solucionado por otro programador, y que en la mayoría de los casos, cuenta con el respaldo de la comunidad......</summary>
     <content type="html"><![CDATA[
-        <p>Los <em>packages</em> para <strong>Laravel</strong>, son sin lugar a dudas, un forma rápida de solucionar un reto de programación, que ya ha sido pensado, planteado y desarrollado por otro programador, y que en la mayoría de los casos, cuenta con el respaldo de la comunidad de <strong>Laravel</strong>.</p>
+        <p>Los <em>packages</em> para <strong>Laravel</strong> son sin lugar a dudas, un forma rápida de solucionar un problema de programación que ya ha sido pensado, planteado y solucionado por otro programador, y que en la mayoría de los casos, cuenta con el respaldo de la comunidad de <strong>Laravel</strong>.</p>
 
-<p>En cualquier caso, la idea de esta entrada del blog, es un listado con los <em>packages</em> que suelo utilizar en mis proyectos, y que son imprescindibles para mi. Eso si, sin incluir los <em>packages</em> oficionales de <strong>Laravel</strong>:</p>
+<p>La idea de esta entrada del blog, es un listado con los <em>packages</em> que suelo utilizar en mis proyectos, y que son imprescindibles para mi. Eso si, sin incluir los <em>packages</em> oficionales de <strong>Laravel</strong>:</p>
 
 <h3>Laravel permission</h3>
 
@@ -2645,9 +3152,12 @@ protected function registerConsole(): void
 <li>Descripción: Completo gestor de Logs para Laravel.</li>
 </ul>
 
-<p>Y ya para terminar, un <em>package</em> propio:</p>
+<p>Y ya para terminar, algunos <em>packages</em> propios:</p>
 
-<p><a href="https://github.com/daguilarm/belich">https://github.com/daguilarm/belich</a></p>
+<ul>
+<li><a href="https://github.com/daguilarm/belich-tables">https://github.com/daguilarm/belich-tables</a></li>
+<li><a href="https://github.com/daguilarm/livewire-combobox">https://github.com/daguilarm/livewire-combobox</a></li>
+</ul>
     ]]></content>
 </entry>
             <entry>
@@ -2659,11 +3169,11 @@ protected function registerConsole(): void
     <author>
         <name>Damián Aguilar</name>
     </author>
-    <summary type="html">Las Pipelines de Laravel, nos van a permitir enviar un objeto a través de una serie de clases de forma sencilla y ordenada, simplificando considerablemente nuestro código.
+    <summary type="html">Las Pipelines de Laravel, nos van a permitir enviar un objeto a través de una serie de clases de forma sencilla y ordenada, simplificando considerablemente el código.
 
-Realmente, es un patrón de diseño utilizado por Laravel de forma interna,......</summary>
+Realmente, es un patrón de diseño utilizado por Laravel de forma interna, pero que......</summary>
     <content type="html"><![CDATA[
-        <p>Las <em>Pipelines</em> de <a href="https://laravel.com" title="" class="link-out">Laravel</a>, nos van a permitir enviar un objeto a través de una serie de clases de forma sencilla y ordenada, simplificando considerablemente nuestro código.</p>
+        <p>Las <em>Pipelines</em> de <a href="https://laravel.com" title="" class="link-out">Laravel</a>, nos van a permitir enviar un objeto a través de una serie de clases de forma sencilla y ordenada, simplificando considerablemente el código.</p>
 
 <p>Realmente, es un <em>patrón de diseño</em> utilizado por <strong>Laravel</strong> de forma interna, pero que no vas a encontrar en su documentación, y la verdad es que no se por qué... En cualquier caso, lo puedes implementar en tu proyecto sin ningún problema.</p>
 
@@ -2793,11 +3303,7 @@ return app(Pipeline::class)
 ./Filters/Administrador.php
 </code></pre>
 
-<p>Permitiéndonos ordenar el código. Un ejemplo más avanzado de esta implementación, lo podeis encontrar aquí:</p>
-
-<p><a href="https://github.com/daguilarm/belich/blob/master/src/Fields/Resolves/Handler/Index/Values.php" title="" class="link-out">https://github.com/daguilarm/belich/blob/master/src/Fields/Resolves/Handler/Index/Values.php</a></p>
-
-<p>Y todas la información y métodos disponibles aquí:</p>
+<p>Toda la información y los métodos disponibles se encuentran aquí:</p>
 
 <p><a href="https://laravel.com/api/6.x/Illuminate/Pipeline/Pipeline.html" title="" class="link-out">https://laravel.com/api/6.x/Illuminate/Pipeline/Pipeline.html</a></p>
     ]]></content>
@@ -3046,19 +3552,19 @@ ServerPilot
     <author>
         <name>Damián Aguilar</name>
     </author>
-    <summary type="html">Una plantilla básica HTML5, tendría el siguiente aspecto
+    <summary type="html">Una plantilla básica de HTML5 tendría el siguiente aspecto:
 
 
 
 
 
-Lo primero será añadir las meta-etiquetas description y keywords en el &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; del documento &lt;code&gt;HTML&lt;/code&gt;:
+Para mejorarla, lo primero será añadir las meta-etiquetas description y keywords en el &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; del documento &lt;code&gt;HTML5&lt;/code&gt;:
 
 
 
-Seguido de la etiqueta theme-color, utilizada por los......</summary>
+Seguido de la etiqueta theme-color,......</summary>
     <content type="html"><![CDATA[
-        <p>Una plantilla básica HTML5, tendría el siguiente aspecto</p>
+        <p>Una plantilla básica de <strong>HTML5</strong> tendría el siguiente aspecto:</p>
 
 <pre><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html lang="es"&gt;
@@ -3081,7 +3587,7 @@ Seguido de la etiqueta theme-color, utilizada por los......</summary>
 
 <h2>Meta-etiquetas</h2>
 
-<p>Lo primero será añadir las meta-etiquetas <em>description</em> y <em>keywords</em> en el <code>&lt;head&gt;</code> del documento <code>HTML</code>:</p>
+<p>Para mejorarla, lo primero será añadir las meta-etiquetas <em>description</em> y <em>keywords</em> en el <code>&lt;head&gt;</code> del documento <code>HTML5</code>:</p>
 
 <pre><code class="language-html">&lt;meta name="description" content=""&gt;
 &lt;meta name="keywords" content=""&gt;
@@ -3143,14 +3649,14 @@ Seguido de la etiqueta theme-color, utilizada por los......</summary>
 &lt;link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="grey"&gt;
 </code></pre>
 
-<p>Las etiquetas de microsoft</p>
+<p>Las etiquetas de <em>Microsoft</em>:</p>
 
 <pre><code class="language-html">&lt;!-- Microsoft --&gt;
 &lt;meta name="msapplication-TileColor" content="grey"&gt;
 &lt;meta name="msapplication-config" content="/favicons/browserconfig.xml"&gt;
 </code></pre>
 
-<p>Un ejemplo del <code>browserconfig.xml</code>:</p>
+<p>Un ejemplo del <code>browserconfig.xml</code> anteriormente descrito:</p>
 
 <pre><code class="language-bash">&lt;? xml version = "1.0" encoding = "utf-8" ?&gt;
   &lt;browserconfig&gt;
@@ -3163,7 +3669,7 @@ Seguido de la etiqueta theme-color, utilizada por los......</summary>
   &lt;/browserconfig&gt;
 </code></pre>
 
-<p>Incluye un <code>manifest</code> y la etiqueta <code>application-name</code> entre tus metatags:</p>
+<p>Es importante añadir un <code>manifest</code> y la etiqueta <code>application-name</code> entre tus metatags:</p>
 
 <pre><code class="language-html">&lt;link rel="manifest" href="site.webmanifest"&gt;
 &lt;meta name="application-name" content="My Site"&gt;
@@ -3195,8 +3701,8 @@ Seguido de la etiqueta theme-color, utilizada por los......</summary>
 
 <p>Si vamos a utilizar <a href="https://fonts.google.com" title="" class="link-out">Google fonts</a> o librerías externas <strong>CSS</strong>, es buena idea utilizar:</p>
 
-<pre><code class="language-html">&lt;link rel="dns-prefetch" href="//fonts.googleapis.com"&gt;
-&lt;link rel="preconnect" href="//fonts.googleapis.com" crossorigin&gt;
+<pre><code class="language-html">&lt;link rel="dns-prefetch" href="https://fonts.googleapis.com"&gt;
+&lt;link rel="preconnect" href="https://fonts.googleapis.com" crossorigin&gt;
 &lt;link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,800,800i,900,900i" rel="stylesheet" media="all"&gt;
 </code></pre>
 
@@ -3207,14 +3713,14 @@ Seguido de la etiqueta theme-color, utilizada por los......</summary>
 
 <h2>Body</h2>
 
-<p>Idiquemos que no se soportan navegadores prehistóricos:</p>
+<p>Idiquemos que no se soportan navegadores <em>prehistóricos</em>:</p>
 
 <pre><code class="language-html">&lt;!--[if IE]&gt;
     &lt;p style="padding:5px; margin: 5px; border: 1px solid red;"&gt;You are using an &lt;strong&gt;outdated&lt;/strong&gt; browser. Please &lt;a href="https://browsehappy.com/"&gt;upgrade your browser&lt;/a&gt; to improve your experience and security.&lt;/p&gt;
 &lt;![endif]--&gt;
 </code></pre>
 
-<p>Añadamos las etiquetas básicas para crear el cuerpo de nuestra plantilla:</p>
+<p>Añadamos las etiquetas básicas para crear el cuerpo de nuestra plantilla <strong>HTML5</strong>:</p>
 
 <pre><code class="language-html">&lt;header&gt;
     &lt;!-- My header code --&gt;
@@ -3236,6 +3742,10 @@ Seguido de la etiqueta theme-color, utilizada por los......</summary>
 &lt;link rel="preconnect" href="//code.jquery.com" crossorigin&gt;
 &lt;script src="https://code.jquery.com/jquery-{{JQUERY_VERSION}}.min.js" integrity="{{JQUERY_SRI_HASH}}" crossorigin="anonymous"&gt;&lt;/script&gt;
 </code></pre>
+
+<blockquote>
+  <p>También es importante utilizar <code>async</code> o <code>defer</code> cuando sea posible.</p>
+</blockquote>
 
 <p>Si queremos usar el código de google-analytics:</p>
 
@@ -3612,8 +4122,8 @@ class UserController extends Controller
     ]]></content>
 </entry>
             <entry>
-    <id>https://daguilar.dev/blog/servers_alojando-sitios-estáticos-en-netlify</id>
-    <link type="text/html" rel="alternate" href="https://daguilar.dev/blog/servers_alojando-sitios-estáticos-en-netlify" />
+    <id>https://daguilar.dev/blog/servers_alojando-sitios-estaticos-en-netlify</id>
+    <link type="text/html" rel="alternate" href="https://daguilar.dev/blog/servers_alojando-sitios-estaticos-en-netlify" />
     <title>Alojando sitios estáticos en Netlify</title>
     <published>2019-12-08T00:00:00+00:00</published>
     <updated>2019-12-08T00:00:00+00:00</updated>
@@ -3857,11 +4367,11 @@ if (! function_exists('userId')) {
 
 <p>Fue entonces cuando descubrí <a href="https://laravel.com" title="" class="link-out">Laravel</a>, y decidí crear mi propio CMS. Durante los años, llegué a realizar dos desarrollos diferentes del blog, y al final, terminé por cansarme.</p>
 
-<p>No fue hasta hace unos meses, cuando empecé a trastear con <em>frameworks</em> de desarrollo para sitios estáticos.</p>
+<p>No fue hasta hace unos meses cuando empecé a tabajar con <em>frameworks</em> de desarrollo, para sitios web estáticos.</p>
 
 <p>Mi primer encuentro con el mundo estático, fue con <a href="https://vuepress.vuejs.org/" title="" class="link-out">Vuepress</a>, y la verdad es que no me gustó nada... ultimamente, cada vez me gusta menos <a href="https://vuejs.org/" title="" class="link-out">Vuejs</a>, y después de este, probé algún que otro <em>frameworks</em> mas, pero ninguno de ellos terminaron por convencerme demasiado.</p>
 
-<p>Había desistido, hasta que un artículo sobre <a href="https://jigsaw.tighten.co/" title="" class="link-out">Jigsaw</a>, cayó en mis manos, y me decidí a probarlo... pasé una mañana de Sábado realizando las primeras pruebas, y aquello me gusto, era exáctamente lo que estaba buscando, y empecé a trabajar en el nuevo blog.</p>
+<p>Había desistido, hasta que un artículo sobre <a href="https://jigsaw.tighten.co/" title="" class="link-out">Jigsaw</a>, cayó en mis manos, y me decidí a probarlo... pasé una mañana entera realizando las primeras pruebas, y aquello me gusto, era exáctamente lo que estaba buscando, y empecé a trabajar en el nuevo blog.</p>
 
 <p><strong>A favor</strong>:</p>
 

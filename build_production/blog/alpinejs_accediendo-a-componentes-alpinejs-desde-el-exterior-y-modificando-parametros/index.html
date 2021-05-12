@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <meta charset="utf-8">
+        <meta charset="UTF-8">
+        <title>Accediendo a componentes AlpineJS desde el exterior de estos, mientras modificamos sus atributos y propiedades. Blog de Damián Aguilar</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Accediendo a componentes AlpineJS desde el exterior de estos, mientras modificamos sus atributos y propiedades | Blog de Damián Aguilar</title>
         <meta name="description" content="En este artículo se muestra como acceder a componentes AlpineJS desde fuera de ellos, a la vez que se es capaz de modificar sus propiedades desde fuera">
         <meta property="og:title" content="Accediendo a componentes AlpineJS desde el exterior de estos, mientras modificamos sus atributos y propiedades | Blog de Damián Aguilar"/>
         <meta property="og:type" content="website" />
@@ -30,17 +30,27 @@
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+        <meta name="twitter:site" content="@daguilarm">
+        <meta name="twitter:creator" content="@daguilarm">
+        <meta name="twitter:title" content="Accediendo a componentes AlpineJS desde el exterior de estos, mientras modificamos sus atributos y propiedades. Blog de Damián Aguilar">
+        <meta name="twitter:description" content="En este artículo se muestra como acceder a componentes AlpineJS desde fuera de ellos, a la vez que se es capaz de modificar sus propiedades desde fuera">
             <meta property="og:title" content="Accediendo a componentes AlpineJS desde el exterior de estos, mientras modificamos sus atributos y propiedades" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://daguilar.dev/blog/alpinejs_accediendo-a-componentes-alpinejs-desde-el-exterior-y-modificando-parametros"/>
     <meta property="og:description" content="En este artículo se muestra como acceder a componentes AlpineJS desde fuera de ellos, a la vez que se es capaz de modificar sus propiedades desde fuera" />
-
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:site_name" content="El blog de Damián Aguilar">
+    <meta name="twitter:url" content="https://daguilar.dev/blog/alpinejs_accediendo-a-componentes-alpinejs-desde-el-exterior-y-modificando-parametros">
+            <meta property="og:image" content="/assets/img/og-img.jpeg" />
+        <meta name="twitter:image" content="/assets/img/og-img.jpeg">
+    
 
 
         <link rel="dns-prefetch" href="//fonts.googleapis.com">
         <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
         <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i,800,800i" rel="stylesheet">
-        <link rel="stylesheet" href="/assets/build/css/main.css?id=5e9ed1fa22768a6768c3">
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=2f5e8a7cb1c57b08765a">
     </head>
 
     <body class="flex flex-col justify-between min-h-screen bg-gray-100 text-gray-800 leading-normal font-sans">
@@ -148,7 +158,11 @@
                 
     <h1 class="leading-none mb-6 text-blue-800 text-3xl md:text-4xl lg:text-5xl">Accediendo a componentes AlpineJS desde el exterior de estos, mientras modificamos sus atributos y propiedades</h1>
 
-    <p class="flex justify-start text-gray-600 text-xl md:mt-0"><span>Damián Aguilar</span><a href="https://twitter.com/daguilarm" target="_black" class="mx-2"><img src="/assets/img/twitter.png" alt="twitter" class="opacity-75 hover:opacity-100 h-8 w-8 bg-white rounded-full"></a><span> - 02/11/2020</span></p>
+    <p class="flex justify-start text-gray-600 text-xl md:mt-0">
+        <span>Damián Aguilar</span>
+        <a href="https://twitter.com/daguilarm" target="_black" class="mx-2"><img src="/assets/img/twitter.png" alt="twitter" class="opacity-75 hover:opacity-100 h-8 w-8 bg-white rounded-full"></a>
+        <span> - 02/11/2020</span>
+    </p>
 
                         <a
                 href="/blog/categories/javascript"
@@ -240,6 +254,14 @@ function component_2() {
 <ul>
 <li><a href="https://github.com/amaelftah/alpinejs-devtools" title="" class="link-out">https://github.com/amaelftah/alpinejs-devtools</a></li>
 </ul>
+
+<p>Existe una librería que nos permite añadir esta funcionalidad a <code>AlpineJS</code>:</p>
+
+<ul>
+<li><a href="https://github.com/alpine-collective/alpine-magic-helpers" title="" class="link-out">https://github.com/alpine-collective/alpine-magic-helpers</a></li>
+</ul>
+
+<p>En cualquier caso, parece que la próxima versión de <code>AlpineJS</code> (versión 3), incluirá esta característica. Esperemos que sea así.</p>
     </div>
 
     <nav class="flex justify-between text-sm md:text-base">
@@ -272,7 +294,7 @@ function component_2() {
             </div>
         </footer>
 
-        <script src="/assets/build/js/main.js?id=b27eb7cb9dc80f03577f"></script>
+        <script src="/assets/build/js/main.js?id=0777ca318e2698d5f3aa"></script>
         <script>
     const navMenu = {
         toggle() {
@@ -293,7 +315,5 @@ function component_2() {
                 }
             }, false);
         </script>
-
-
     </body>
 </html>

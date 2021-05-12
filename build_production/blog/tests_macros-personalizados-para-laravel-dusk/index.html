@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <meta charset="utf-8">
+        <meta charset="UTF-8">
+        <title>Macros personalizados para Laravel Dusk. Blog de Damián Aguilar</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Macros personalizados para Laravel Dusk | Blog de Damián Aguilar</title>
         <meta name="description" content="Listado de macros para Laravel dusk que pueden ser de utilidad.">
         <meta property="og:title" content="Macros personalizados para Laravel Dusk | Blog de Damián Aguilar"/>
         <meta property="og:type" content="website" />
@@ -30,17 +30,27 @@
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+        <meta name="twitter:site" content="@daguilarm">
+        <meta name="twitter:creator" content="@daguilarm">
+        <meta name="twitter:title" content="Macros personalizados para Laravel Dusk. Blog de Damián Aguilar">
+        <meta name="twitter:description" content="Listado de macros para Laravel dusk que pueden ser de utilidad.">
             <meta property="og:title" content="Macros personalizados para Laravel Dusk" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://daguilar.dev/blog/tests_macros-personalizados-para-laravel-dusk"/>
     <meta property="og:description" content="Listado de macros para Laravel dusk que pueden ser de utilidad." />
-
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:site_name" content="El blog de Damián Aguilar">
+    <meta name="twitter:url" content="https://daguilar.dev/blog/tests_macros-personalizados-para-laravel-dusk">
+            <meta property="og:image" content="/assets/img/og-img.jpeg" />
+        <meta name="twitter:image" content="/assets/img/og-img.jpeg">
+    
 
 
         <link rel="dns-prefetch" href="//fonts.googleapis.com">
         <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
         <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i,800,800i" rel="stylesheet">
-        <link rel="stylesheet" href="/assets/build/css/main.css?id=5e9ed1fa22768a6768c3">
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=2f5e8a7cb1c57b08765a">
     </head>
 
     <body class="flex flex-col justify-between min-h-screen bg-gray-100 text-gray-800 leading-normal font-sans">
@@ -148,7 +158,11 @@
                 
     <h1 class="leading-none mb-6 text-blue-800 text-3xl md:text-4xl lg:text-5xl">Macros personalizados para Laravel Dusk</h1>
 
-    <p class="flex justify-start text-gray-600 text-xl md:mt-0"><span>Damián Aguilar</span><a href="https://twitter.com/daguilarm" target="_black" class="mx-2"><img src="/assets/img/twitter.png" alt="twitter" class="opacity-75 hover:opacity-100 h-8 w-8 bg-white rounded-full"></a><span> - 03/02/2020</span></p>
+    <p class="flex justify-start text-gray-600 text-xl md:mt-0">
+        <span>Damián Aguilar</span>
+        <a href="https://twitter.com/daguilarm" target="_black" class="mx-2"><img src="/assets/img/twitter.png" alt="twitter" class="opacity-75 hover:opacity-100 h-8 w-8 bg-white rounded-full"></a>
+        <span> - 03/02/2020</span>
+    </p>
 
                         <a
                 href="/blog/categories/laravel"
@@ -178,7 +192,7 @@
 
 <p>Laravel dusk, al igual que otras partes del código de Laravel, incluyen el <code>trait Macroable</code>, el cual nos permite crear métodos personalizados para <strong>Dusk</strong>.</p>
 
-<p>Este <code>trait</code>, nos permitirá hacer cosas como esta:</p>
+<p>Este <code>Trait</code>, nos permitirá hacer cosas como esta:</p>
 
 <pre><code class="language-php">Response::macro('lower', function ($value) {
   return Response::make(strtoupper($value));
@@ -190,7 +204,7 @@
 <pre><code class="language-php">return response()-&gt;lower('foo');
 </code></pre>
 
-<p>Nuestros <code>traits</code>, debemos añadirlos al método <code>boot()</code> the un <code>ServiceProvider</code>, por lo que lo mejor, es crear nuestro própio <code>ServiceProvider</code>, por ejemplo:</p>
+<p>Nuestros <code>Traits</code>, debemos añadirlos al método <code>boot()</code> the un <code>ServiceProvider</code>, por lo que lo mejor, es crear nuestro própio <code>ServiceProvider</code>, por ejemplo:</p>
 
 <pre><code class="language-php">//app\Providers\DuskServiceProvider.php
 namespace App\Providers;
@@ -333,7 +347,7 @@ public function test_select_field()
 
 <h3>Actualización 20/10/2020</h3>
 
-<p>Este macro ya no es necesario. Laravel dusk ya dispone de <code>waitForReload()</code> de forma nativa.</p>
+<p><strong>Este macro ya no es necesario. Laravel dusk ya dispone de <code>waitForReload()</code> de forma nativa.</strong></p>
 
 <ol start="5">
 <li>waitForReload</li>
@@ -386,7 +400,7 @@ public function test_select_field()
             </div>
         </footer>
 
-        <script src="/assets/build/js/main.js?id=b27eb7cb9dc80f03577f"></script>
+        <script src="/assets/build/js/main.js?id=0777ca318e2698d5f3aa"></script>
         <script>
     const navMenu = {
         toggle() {
@@ -407,7 +421,5 @@ public function test_select_field()
                 }
             }, false);
         </script>
-
-
     </body>
 </html>
