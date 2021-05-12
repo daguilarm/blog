@@ -3,8 +3,10 @@ extends: _layouts.post
 section: content
 title: Cómo solucionar los principales errores con Laravel Dusk y orchestral/testbench-dusk.
 date: 2021-05-09
+update: 2021-05-12
 description: Algunos ejemplos prácticos del como solucionar los más recurrentes errores con Laravel Dusk y orchestral/testbench-dusk.
 categories: [laravel, tests, packages, php]
+cover_image: laravel-dusk-errors.jpg
 ---
 
 Este artículo, es al final un pequeño recordatorio para cuando me pongo a hacer tests con **Laravel Dusk** y empiezan a surgir los errores al hacer las pruebas. 

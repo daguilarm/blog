@@ -24,8 +24,8 @@
         <meta property="og:description" content="{{ $page->description }}" />
         <meta property="og:locale" content="es_ES">
         <meta property="og:site_name" content="{{ $page->siteName }}">
-        <meta property="og:image:width" content="1270" />
-        <meta property="og:image:height" content="223" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         <meta property="og:image" content="{{ $og_image }}" />
         {{-- Twitter OG --}}
         <meta name="twitter:site" content="@daguilarm">
