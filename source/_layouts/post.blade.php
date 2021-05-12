@@ -13,7 +13,7 @@
         <meta name="twitter:image" content="{{ $page->cover_image }}">
     @else
         <meta property="og:image" content="https://daguilar.dev/assets/img/og-image.jpg" />
-        <meta name="twitter:image" content="https://daguilar.dev/assets/img/og-image.jpg">
+        <meta name="twitter:image" content="https://daguilar.dev/assets/img/og-twitter.jpg">
     @endif
 @endpush
 
