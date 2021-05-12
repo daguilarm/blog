@@ -1,3 +1,7 @@
+---
+title: Acerca de Damián Aguilar
+description: Información, formación y trayectoria del programador e ingeniero agrícola: Damián Aguilar
+---
 @extends('_layouts.master')
 
 @section('body')

@@ -1,3 +1,7 @@
+---
+title: Información de contacto
+description: Contacte con Damián Aguilar a través de email, twitter, github,...
+---
 @extends('_layouts.master')
 
 @push('meta')
