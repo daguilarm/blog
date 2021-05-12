@@ -1,5 +1,14 @@
 @extends('_layouts.master')
 
+@push('metatags')
+    @if ($page->categories)
+        @foreach ($page->categories as $i => $category)
+            <meta property="article:tag" content="{{ $category }}">
+        @endforeach
+    @endif
+    <meta property="article:published_time" content="{{ date('c', $page->date) }}">
+@endpush
+
 @section('body')
     @if ($page->cover_image)
         <div class="w-full flex justify-center">

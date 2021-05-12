@@ -30,8 +30,16 @@
         <meta name="twitter:title" content="{{ $title }}">
         <meta name="twitter:description" content="{{ $page->meta_description ?? $page->description ?? $page->siteDescription }}">
         <meta name="twitter:url" content="{{ $page->getUrl() }}">
-        <meta name="twitter:image" content="https://daguilar.dev/assets/img/og-twitter.jpg">
-        {{-- Others --}}
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:image" content="https://daguilar.dev/assets/img/og-image.jpg">
+        {{-- Meta tags --}}
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+        {{-- Custom metatags --}}
+        @stack('metatags')
+        {{-- Links --}}
         <link rel="home" href="{{ $page->baseUrl }}">
         <link rel="alternate" type="application/rss+xml" title="{{ $page->siteName }}" href="{{ $page->baseUrl.'/rss.xml' }}" />
         <link rel="apple-touch-icon" sizes="57x57" href="{{ $page->baseUrl }}/assets/img/favicon/apple-icon-57x57.png">
@@ -48,20 +56,12 @@
         <link rel="icon" type="image/png" sizes="96x96" href="{{ $page->baseUrl }}/assets/img/favicon/favicon-96x96.png">
         <link rel="icon" type="image/png" sizes="16x16" href="{{ $page->baseUrl }}/assets/img/favicon/favicon-16x16.png">
         <link rel="manifest" href="{{ $page->baseUrl }}/assets/img/favicon/manifest.json">
-        <meta name="msapplication-TileColor" content="#ffffff">
-        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-        <meta name="theme-color" content="#ffffff">
-        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-{{--         @if ($page->production)
-            //
-        @endif --}}
-
         <link rel="dns-prefetch" href="//fonts.googleapis.com">
         <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
         <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i,800,800i" rel="stylesheet">
         <link rel="stylesheet" href="{{ mix('css/main.css', 'assets/build') }}">
-
-        @stack('meta')
+        {{-- Custom css --}}
+        @stack('custom-css')
     </head>
 
     <body class="flex flex-col justify-between min-h-screen bg-gray-100 text-gray-800 leading-normal font-sans">

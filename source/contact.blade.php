@@ -4,7 +4,7 @@ description: Contacte con Damián Aguilar a través de email, twitter, github,..
 ---
 @extends('_layouts.master')
 
-@push('meta')
+@push('custom-css')
     <style>
         .email:before {
             content: attr(data-website) "\0040" attr(data-user);
