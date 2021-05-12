@@ -74,26 +74,30 @@ Y toda una seríe de configuraciones por defecto:
 
 Las etiquetas de **open graph**:
 
-<meta property="og:title" content="Page title" />
+```html
+<meta property="og:title" content="Creando una plantilla HTML5 avanzada" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://your-url.com"/>
-<meta property="og:description" content="Page description" />
+<meta property="og:url" content="https://daguilar.dev"/>
+<meta property="og:description" content="Diseño y componentes avanzados para una plantilla HTML" />
 <meta property="og:locale" content="es_ES">
-<meta property="og:site_name" content="https://sitemap.php">
+<meta property="og:site_name" content="https://daguilar.dev">
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image" content="https://your-url.com/img/3423423.jpg" />
+<meta property="og:image" content="https://daguilar.dev/blog/html_componentes-avanzados-de-una-plantilla-html5" />
 <meta property="og:image:alt" content="Image alt description" />
+```
 
 Las etiquetas de **open graph** para **twitter**:
 
+```html
 <meta name="twitter:site" content="@daguilarm">
 <meta name="twitter:creator" content="@daguilarm">
-<meta name="twitter:title" content="Page title">
-<meta name="twitter:description" content="Page description">
-<meta name="twitter:url" content="https://your-url.com/">
+<meta name="twitter:title" content="Creando una plantilla HTML5 avanzada">
+<meta name="twitter:description" content="Diseño y componentes avanzados para una plantilla HTML">
+<meta name="twitter:url" content="https://daguilar.dev/">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://your-url.com/img/3423423.jpg">
+<meta name="twitter:image" content="https://daguilar.dev/blog/html_componentes-avanzados-de-una-plantilla-html5">
+```
 
 También podemos añadir etiquetas personalizadas de algunos servicios:
 
@@ -271,24 +275,24 @@ Poniendo todo lo anterior junto:
     <meta http-equiv="Cache-Control" content="no-cache">
     <meta name="revised" content="Sunday, July 18th, 2010, 5:15 pm" />
 
-    <meta property="og:title" content="Page title" />
+    <meta property="og:title" content="Creando una plantilla HTML5 avanzada" />
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://your-url.com"/>
-    <meta property="og:description" content="Page description" />
+    <meta property="og:url" content="https://daguilar.dev"/>
+    <meta property="og:description" content="Diseño y componentes avanzados para una plantilla HTML" />
     <meta property="og:locale" content="es_ES">
     <meta property="og:site_name" content="https://sitemap.php">
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image" content="https://your-url.com/img/3423423.jpg" />
-    <meta property="og:image:alt" content="Image alt description" />
+    <meta property="og:image" content="https://daguilar.dev/blog/html_componentes-avanzados-de-una-plantilla-html5" />
+    <meta property="og:image:alt" content="Diseño y componentes avanzados para una plantilla HTML" />
 
     <meta name="twitter:site" content="@daguilarm">
     <meta name="twitter:creator" content="@daguilarm">
-    <meta name="twitter:title" content="Page title">
-    <meta name="twitter:description" content="Page description">
-    <meta name="twitter:url" content="https://your-url.com/">
+    <meta name="twitter:title" content="Creando una plantilla HTML5 avanzada">
+    <meta name="twitter:description" content="Diseño y componentes avanzados para una plantilla HTML">
+    <meta name="twitter:url" content="https://daguilar.dev/">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://your-url.com/img/3423423.jpg">
+    <meta name="twitter:image" content="https://daguilar.dev/blog/html_componentes-avanzados-de-una-plantilla-html5">
 
     <!-- Icons -->
     <link rel="shortcut icon" href="/favicons/favicon.ico">
