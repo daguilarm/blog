@@ -1,9 +1,11 @@
 <?php
-    if ($page->title) {
-        $title = sprintf('%s. %s', $page->title, $page->siteName);
-    } else {
-        $title = sprintf('%s. Php, Javascript, Laravel y diseño web.', $page->siteName);
-    }
+    $title = $page->title
+        ? sprintf('%s. %s', $page->title, $page->siteName)
+        : sprintf('%s. Php, Javascript, Laravel y diseño web.', $page->siteName);
+
+    $og_image = $page->cover_image
+        ? 'https://daguilar.dev/assets/img/og/'.$page->cover_image
+        : 'https://daguilar.dev/assets/img/og-image.jpg';
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -24,7 +26,7 @@
         <meta property="og:site_name" content="{{ $page->siteName }}">
         <meta property="og:image:width" content="1270" />
         <meta property="og:image:height" content="223" />
-        <meta property="og:image" content="https://daguilar.dev/assets/img/og-image.jpg" />
+        <meta property="og:image" content="{{ $og_image }}" />
         {{-- Twitter OG --}}
         <meta name="twitter:site" content="@daguilarm">
         <meta name="twitter:creator" content="@daguilarm">
@@ -32,7 +34,7 @@
         <meta name="twitter:description" content="{{ $page->meta_description ?? $page->description ?? $page->siteDescription }}">
         <meta name="twitter:url" content="{{ $page->getUrl() }}">
         <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:image" content="https://daguilar.dev/assets/img/og-image.jpg">
+        <meta name="twitter:image" content="{{ $og_image }}">
         {{-- Meta tags --}}
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
