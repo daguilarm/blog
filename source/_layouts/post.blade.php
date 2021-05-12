@@ -11,12 +11,6 @@
 @endpush
 
 @section('body')
-    @if ($page->cover_image)
-        <div class="w-full flex justify-center">
-            <img src="{{ $page->cover_image }}" alt="{{ $page->title }} cover image" class="mb-2">
-        </div>
-    @endif
-
     <h1 class="leading-none mb-6 text-blue-800 text-3xl md:text-4xl lg:text-5xl">{{ $page->title }}</h1>
 
     <p class="flex justify-start text-gray-600 text-xl md:mt-0">
