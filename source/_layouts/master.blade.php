@@ -27,6 +27,7 @@
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image" content="{{ $og_image }}" />
+        <meta property="og:image:alt" content="{{ $page->title }}" />
         {{-- Twitter OG --}}
         <meta name="twitter:site" content="@daguilarm">
         <meta name="twitter:creator" content="@daguilarm">

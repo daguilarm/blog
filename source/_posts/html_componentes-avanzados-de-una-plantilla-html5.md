@@ -3,8 +3,10 @@ extends: _layouts.post
 section: content
 title: Creando una plantilla HTML5 avanzada
 date: 2019-12-20
+update: 2021-05-13
 description: Diseño y componentes avanzados para una plantilla HTML
 categories: [html]
+cover_image: html5-template.jpg
 ---
 
 Una plantilla básica de **HTML5** tendría el siguiente aspecto:
@@ -69,6 +71,29 @@ Y toda una seríe de configuraciones por defecto:
 <meta http-equiv="Cache-Control" content="no-cache">
 <meta name="revised" content="Sunday, July 18th, 2010, 5:15 pm" />
 ```
+
+Las etiquetas de **open graph**:
+
+<meta property="og:title" content="Page title" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://your-url.com"/>
+<meta property="og:description" content="Page description" />
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="https://sitemap.php">
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image" content="https://your-url.com/img/3423423.jpg" />
+<meta property="og:image:alt" content="Image alt description" />
+
+Las etiquetas de **open graph** para **twitter**:
+
+<meta name="twitter:site" content="@daguilarm">
+<meta name="twitter:creator" content="@daguilarm">
+<meta name="twitter:title" content="Page title">
+<meta name="twitter:description" content="Page description">
+<meta name="twitter:url" content="https://your-url.com/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://your-url.com/img/3423423.jpg">
 
 También podemos añadir etiquetas personalizadas de algunos servicios:
 
@@ -246,6 +271,25 @@ Poniendo todo lo anterior junto:
     <meta http-equiv="Cache-Control" content="no-cache">
     <meta name="revised" content="Sunday, July 18th, 2010, 5:15 pm" />
 
+    <meta property="og:title" content="Page title" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://your-url.com"/>
+    <meta property="og:description" content="Page description" />
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:site_name" content="https://sitemap.php">
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image" content="https://your-url.com/img/3423423.jpg" />
+    <meta property="og:image:alt" content="Image alt description" />
+
+    <meta name="twitter:site" content="@daguilarm">
+    <meta name="twitter:creator" content="@daguilarm">
+    <meta name="twitter:title" content="Page title">
+    <meta name="twitter:description" content="Page description">
+    <meta name="twitter:url" content="https://your-url.com/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://your-url.com/img/3423423.jpg">
+
     <!-- Icons -->
     <link rel="shortcut icon" href="/favicons/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
@@ -286,12 +330,20 @@ Poniendo todo lo anterior junto:
     <!--[if IE]>
         <p style="padding:5px; margin: 5px; border: 1px solid red;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
     <![endif]-->
+
+    <!-- My header code -->
     <header>
-        <!-- My header code -->
+        <!-- Navigation -->
+        <nav></nav>
     </header>
 
-        <div id="app">
-            <!-- My application code -->
+        <!-- Main code -->
+        <div id="blog">
+              <article>
+                <section id="introduction"></section>      
+                <section id="content"></section>
+                <section id="summary"></section>
+              </article>    
         </div>
 
     <footer>
@@ -316,8 +368,9 @@ Poniendo todo lo anterior junto:
 
 Mas información:
 
-+ https://html5boilerplate.com/
-+ http://www.initializr.com/
-+ https://developers.google.com/web/fundamentals/performance/resource-prioritization?hl=es
-+ https://developers.google.com/web/updates/2015/08/using-manifest-to-set-sitewide-theme-color
-+ https://www.chromium.org/developers/design-documents/dns-prefetching
++ [https://html5boilerplate.com/](https://html5boilerplate.com/){.link-out}
++ [https://initializr.com/](http://www.initializr.com/){.link-out}
++ [https://developers.google.com/web/fundamentals/performance/resource-prioritization?hl=es](https://developers.google.com/web/fundamentals/performance/resource-prioritization?hl=es){.link-out}
++ [https://developers.google.com/web/updates/2015/08/using-manifest-to-set-sitewide-theme-color](https://developers.google.com/web/updates/2015/08/using-manifest-to-set-sitewide-theme-color){.link-out}
++ [https://www.chromium.org/developers/design-documents/dns-prefetching](https://www.chromium.org/developers/design-documents/dns-prefetching){.link-out}
++ [https://ogp.me/](https://ogp.me/){.link-out}
