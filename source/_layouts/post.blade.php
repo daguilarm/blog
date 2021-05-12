@@ -12,8 +12,8 @@
         <meta property="og:image" content="{{ $page->cover_image }}" />
         <meta name="twitter:image" content="{{ $page->cover_image }}">
     @else
-        <meta property="og:image" content="/assets/img/og-img.jpeg" />
-        <meta name="twitter:image" content="/assets/img/og-img.jpeg">
+        <meta property="og:image" content="/assets/img/og-image.jpg" />
+        <meta name="twitter:image" content="/assets/img/og-image.jpg">
     @endif
 @endpush
 
