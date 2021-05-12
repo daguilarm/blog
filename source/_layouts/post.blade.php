@@ -1,19 +1,5 @@
 @extends('_layouts.master')
 
-@push('meta')
-    <meta property="og:title" content="{{ $page->title }}" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="{{ $page->getUrl() }}"/>
-    <meta property="og:description" content="{{ $page->description }}" />
-    <meta property="og:locale" content="es_ES">
-    <meta property="og:site_name" content="El blog de Damián Aguilar">
-    <meta property="og:image:width" content="1270" />
-    <meta property="og:image:height" content="223" />
-    <meta name="twitter:url" content="{{ $page->getUrl() }}">
-    <meta property="og:image" content="https://daguilar.dev/assets/img/og-image.jpg" />
-    <meta name="twitter:image" content="https://daguilar.dev/assets/img/og-twitter.jpg">
-@endpush
-
 @section('body')
     @if ($page->cover_image)
         <div class="w-full flex justify-center">

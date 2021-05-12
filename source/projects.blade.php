@@ -1,16 +1,5 @@
 @extends('_layouts.master')
 
-@push('meta')
-    @php
-        $page->title = 'Proyectos en los que estoy trabajando';
-        $page->description = 'Listado de proyectos desarrollados por Damián Aguilar en la actualidad.';
-    @endphp
-    <meta property="og:title" content="Proyectos en los que estoy trabajando - {{ $page->siteName }}" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="{{ $page->getUrl() }}"/>
-    <meta property="og:description" content="Proyectos - Damián Aguilar - Programador y desarrollador web. Programando con Laravel y Vuejs. Graduado en Ingeniería Agroalimentaria y Agroambiental" />
-@endpush
-
 @section('body')
     <h1 class="text-blue-800 text-3xl md:text-4xl lg:text-5xl">Proyectos</h1>
     <h2 class="text-xl font-normal">Actualmente estoy desarrollando las siguientes proyectos:</h2>

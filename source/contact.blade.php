@@ -1,14 +1,6 @@
 @extends('_layouts.master')
 
 @push('meta')
-    @php
-        $page->title = 'Contacto';
-        $page->description = 'Contacte con Damián Aguilar a través de email, twitter, github,...';
-    @endphp
-    <meta property="og:title" content="Contacto - {{ $page->siteName }}" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="{{ $page->getUrl() }}"/>
-    <meta property="og:description" content="Contacte con {{ $page->siteName }}" />
     <style>
         .email:before {
             content: attr(data-website) "\0040" attr(data-user);

@@ -1,16 +1,5 @@
 @extends('_layouts.master')
 
-@push('meta')
-    @php
-        $page->title = 'Acerca de mi';
-        $page->description = 'Información, formación y trayectoria del programador e ingeniero agrícola: Damián Aguilar';
-    @endphp
-    <meta property="og:title" content="Sobre mi - {{ $page->siteName }}" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="{{ $page->getUrl() }}"/>
-    <meta property="og:description" content="Damián Aguilar - Programador y desarrollador web. Programando con Laravel y Vuejs. Graduado en Ingeniería Agroalimentaria y Agroambiental" />
-@endpush
-
 @section('body')
     <h1 class="text-blue-800 text-3xl md:text-4xl lg:text-5xl">Acerca de mi</h1>
 

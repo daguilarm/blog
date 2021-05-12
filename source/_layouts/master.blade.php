@@ -13,15 +13,25 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="{{ $page->meta_description ?? $page->description ?? $page->siteDescription }}">
-        <meta property="og:title" content="{{ $page->title ?  $page->title . ' | ' : '' }}{{ $page->siteName }}"/>
-        <meta property="og:type" content="website" />
+        <meta name="msvalidate.01" content="7EBAF0830896AD1D4A27E93C37552EDA" />
+        {{-- OG --}}
+        <meta property="og:title" content="{{ $page->title }}" />
+        <meta property="og:type" content="article" />
         <meta property="og:url" content="{{ $page->getUrl() }}"/>
-        <meta property="og:description" content="{{ $page->siteDescription }}" />
+        <meta property="og:description" content="{{ $page->description }}" />
+        <meta property="og:locale" content="es_ES">
+        <meta property="og:site_name" content="{{ $page->siteName }}">
+        <meta property="og:image:width" content="1270" />
+        <meta property="og:image:height" content="223" />
+        <meta property="og:image" content="https://daguilar.dev/assets/img/og-image.jpg" />
+        {{-- Twitter OG --}}
         <meta name="twitter:site" content="@daguilarm">
         <meta name="twitter:creator" content="@daguilarm">
         <meta name="twitter:title" content="{{ $title }}">
         <meta name="twitter:description" content="{{ $page->meta_description ?? $page->description ?? $page->siteDescription }}">
-        <meta name="msvalidate.01" content="7EBAF0830896AD1D4A27E93C37552EDA" />
+        <meta name="twitter:url" content="{{ $page->getUrl() }}">
+        <meta name="twitter:image" content="https://daguilar.dev/assets/img/og-twitter.jpg">
+        {{-- Others --}}
         <link rel="home" href="{{ $page->baseUrl }}">
         <link rel="alternate" type="application/rss+xml" title="{{ $page->siteName }}" href="{{ $page->baseUrl.'/rss.xml' }}" />
         <link rel="apple-touch-icon" sizes="57x57" href="{{ $page->baseUrl }}/assets/img/favicon/apple-icon-57x57.png">
@@ -42,8 +52,6 @@
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-        @stack('meta')
-
 {{--         @if ($page->production)
             //
         @endif --}}
@@ -52,6 +60,8 @@
         <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
         <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i,800,800i" rel="stylesheet">
         <link rel="stylesheet" href="{{ mix('css/main.css', 'assets/build') }}">
+
+        @stack('meta')
     </head>
 
     <body class="flex flex-col justify-between min-h-screen bg-gray-100 text-gray-800 leading-normal font-sans">
