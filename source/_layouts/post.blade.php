@@ -7,6 +7,7 @@
         @endforeach
     @endif
     <meta property="article:published_time" content="{{ date('c', $page->date) }}">
+    <meta property="article:updated_time" content="{{ date('c', $page->update ?? $page->date) }}">
 @endpush
 
 @section('body')
