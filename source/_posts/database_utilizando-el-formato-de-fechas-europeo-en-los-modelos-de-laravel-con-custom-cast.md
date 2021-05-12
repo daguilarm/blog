@@ -3,8 +3,10 @@ extends: _layouts.post
 section: content
 title: Utilizando el formato de fechas europeo en los Modelos de Laravel
 date: 2020-10-21
+update: 2021-05-10
 description: Creación de un <Custom Cast> en el Modelo para la gestión del formato de fechas en Laravel de forma automática.
 categories: [database, laravel]
+cover_image: laravel-date-format.jpg
 ---
 
 La gestión de las fechas con `Laravel` puede ser un poco complicado, sobre todo, porque el formato de fechas en Europa es diferente al formato estadounidense y diferente al formato utilizado por las bases de datos.
