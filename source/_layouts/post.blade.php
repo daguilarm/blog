@@ -5,8 +5,15 @@
     <meta property="og:type" content="article" />
     <meta property="og:url" content="{{ $page->getUrl() }}"/>
     <meta property="og:description" content="{{ $page->description }}" />
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:site_name" content="El blog de Damián Aguilar">
+    <meta name="twitter:url" content="{{ $page->getUrl() }}">
     @if ($page->cover_image)
         <meta property="og:image" content="{{ $page->cover_image }}" />
+        <meta name="twitter:image" content="{{ $page->cover_image }}">
+    @else
+        <meta property="og:image" content="/assets/img/og-img.jpeg" />
+        <meta name="twitter:image" content="/assets/img/og-img.jpeg">
     @endif
 @endpush
 
