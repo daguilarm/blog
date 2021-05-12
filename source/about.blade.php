@@ -16,7 +16,7 @@
 
     <img src="/assets/img/damian-aguilar.jpeg"
         alt="Damián Aguilar"
-        class="flex rounded-full h-64 w-64 bg-contain mx-auto md:float-right my-6 md:ml-10"
+        class="flex rounded-full h-40 w-40 shadow-md bg-contain mx-auto md:float-right my-6 md:ml-10"
     >
 
     <p>Hola!</p>
