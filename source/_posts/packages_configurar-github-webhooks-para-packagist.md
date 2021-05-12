@@ -3,8 +3,10 @@ extends: _layouts.post
 section: content
 title: Configurar Github webhooks con Packagist
 date: 2019-12-16
+update: 2021-05-12
 description: Configurar los webhooks de Github para que se sincronicen con Packagist
 categories: [packages, github, packagist]
+cover_image: github-webhooks-config.jpg
 ---
 
 Crear un package con **[Laravel](https://laravel.com/){.link-out}**, subirlo a **[Github](https://github.com/){.link-out}** y publicarlo en **[Packagist](https://packagist.org/){.link-out}**, es bastante sencillo, el problema suele venir cuando intentamos que que se sincronicen entre ellos.
