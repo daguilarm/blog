@@ -17,6 +17,10 @@
         <meta property="og:type" content="website" />
         <meta property="og:url" content="{{ $page->getUrl() }}"/>
         <meta property="og:description" content="{{ $page->siteDescription }}" />
+        <meta name="twitter:site" content="@daguilarm">
+        <meta name="twitter:creator" content="@daguilarm">
+        <meta name="twitter:title" content="{{ $title }}">
+        <meta name="twitter:description" content="{{ $page->meta_description ?? $page->description ?? $page->siteDescription }}">
         <meta name="msvalidate.01" content="7EBAF0830896AD1D4A27E93C37552EDA" />
         <link rel="home" href="{{ $page->baseUrl }}">
         <link rel="alternate" type="application/rss+xml" title="{{ $page->siteName }}" href="{{ $page->baseUrl.'/rss.xml' }}" />
@@ -38,10 +42,6 @@
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-        <meta name="twitter:site" content="@daguilarm">
-        <meta name="twitter:creator" content="@daguilarm">
-        <meta name="twitter:title" content="{{ $title }}">
-        <meta name="twitter:description" content="{{ $page->meta_description ?? $page->description ?? $page->siteDescription }}">
         @stack('meta')
 
 {{--         @if ($page->production)
