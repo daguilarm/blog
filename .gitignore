@@ -1,5 +1,6 @@
 .DS_Store
 /_tmp/
+/tools/
 /cache/
 /build_local/
 /build_production/
