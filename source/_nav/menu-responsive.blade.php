@@ -5,7 +5,7 @@
                 title="{{ $page->siteName }}"
                 href="/blog"
                 class="nav-menu__item hover:text-blue-600 {{ $page->isActive('/blog') ? 'active text-blue-600' : '' }}"
-            >Blog</a>
+            >Artículos</a>
         </li>
         <li class="pl-4">
             <a
