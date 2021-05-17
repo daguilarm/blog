@@ -17,7 +17,7 @@ $this->assertDatabaseHas('users', [
 ]);
 ```
 
-Esta sería una forma de hacerlo, pero me parece que es mejor hacerlo en base a los resultados mostrados en pantalla. Por ejemplo, podemos buscar directamente si el email se muestra en pantalla, o por ejemplo, si mostramos los resultados de la base de datos mediante una tabla, lo que podríamos comprobar es si el resultado se muestra en la fila adecuada, es decir, podemos buscar en la fila X a ver si encontramos el email Y.
+Esta sería una forma de hacerlo, pero me parece que es mejor hacerlo en base a los resultados mostrados en pantalla. Por ejemplo, podemos buscar directamente si el email se muestra en pantalla, o por ejemplo, si mostramos los resultados de la base de datos mediante una tabla, lo que podríamos comprobar es si el resultado se muestra en la fila adecuada, es decir, podemos buscar en la fila X a ver si encontramos el email Y. En este caso, vamos a buscar en la fila **3** el email **email@example.com**.
 
 ```php 
 $browser->with('.table', function ($table) {
@@ -28,9 +28,7 @@ $browser->with('.table', function ($table) {
 });
 ```
 
-En el caso anterior vamos a buscar en la fila **3** el email **email@example.com**.
-
-Otro caso que se nos puede presentar es verificar el número total de resultados que se obtienen. Por ejemplo, **si hacemos una busqueda y esperamos 5 resultados, lo que podemos hacer es contar las filas de la tabla, y ver que efectivamente son 5 filas**. Podemos hacerlo de la siguiente forma:
+Otra situación que se nos puede presentar es verificar el número total de resultados que se obtienen en el navegador. Por ejemplo, **si hacemos una busqueda y esperamos 5 resultados, lo que podemos hacer es contar las filas de la tabla, y ver que efectivamente son 5 filas**. Podemos hacerlo de la siguiente forma:
 
 ```php 
 $totalResults = $browser
@@ -40,4 +38,4 @@ $totalResults = $browser
 $this->assertEquals($totalResults, 5);
 ```
 
-Principalmente utilizo estas técnicas cuando tengo que probar una aplicación basada en `Datatables`, y necesito testear las búsquedas, filtros, paginación, etc...
+Básicamente utilizo estas técnicas cuando tengo que probar una aplicación basada en `Datatables`, y necesito testear las búsquedas, filtros, paginación, etc...
