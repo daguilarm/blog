@@ -3,7 +3,7 @@
 /tools/
 /cache/
 /build_local/
-/build_production/
+#/build_production/
 /node_modules/
 /vendor/
 /source/_next_posts/
