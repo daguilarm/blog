@@ -44,8 +44,12 @@ Para más información sobre *cookies*:
 
 La web utiliza sólo las cookies necesarias por el lenguaje de programación PHP para poder funcionar correctamente. Estas son cookies técnicas, como las de inicio de sesión, etc.
 
+Para la gestión del consentimiento de cookies, se utiliza la cookie: **gdprCookieNotice**, que almacena la configuración del consentimiento del usuario.
+
 **Cookies de terceros**
-Actualmente se utilizan cookies de Amazon, cuya información puede encontrarse en [Aviso Cookies](https://www.amazon.es/gp/help/customer/display.html?ie=UTF8&nodeId=201890250&ref_=a20m_us_fnav_l_cook_es).
+Actualmente se utilizan **cookies de Amazon**, pudiendo encontrar información adicional sobre la politica de cookies de AMAZON en [Aviso Cookies](https://www.amazon.es/gp/help/customer/display.html?nodeId=200545460). La PLATAFORMA participa en el programa de asociados de AMAZON, mostrando banners y productos de esta. 
+
+Esta operación, instala diversas cookies por parte de AMAZON vinculadas al dominio *amazon-adsystem.com*, entre otras: *ad-privacy* y *ad-id*. 
 
 **Aceptación de la política de cookies**
 
