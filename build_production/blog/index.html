@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Blog de Damián Aguilar. Php, Javascript, Laravel y diseño web.</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Blog sobre programación de Damián Aguilar: php, javascript, vuejs, phyton, java... y mucho más.">
+        <meta name="msvalidate.01" content="7EBAF0830896AD1D4A27E93C37552EDA" />
+        
+        <meta property="og:title" content="" />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="https://daguilar.dev/blog"/>
+        <meta property="og:description" content="" />
+        <meta property="og:locale" content="es_ES">
+        <meta property="og:site_name" content="Blog de Damián Aguilar">
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image" content="https://daguilar.dev/assets/img/og-image.jpg" />
+        <meta property="og:image:alt" content="" />
+        
+        <meta name="twitter:site" content="@daguilarm">
+        <meta name="twitter:creator" content="@daguilarm">
+        <meta name="twitter:title" content="Blog de Damián Aguilar. Php, Javascript, Laravel y diseño web.">
+        <meta name="twitter:description" content="Blog sobre programación de Damián Aguilar: php, javascript, vuejs, phyton, java... y mucho más.">
+        <meta name="twitter:url" content="https://daguilar.dev/blog">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:image" content="https://daguilar.dev/assets/img/og-image.jpg">
+        
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+        
+                
+        <link rel="home" href="https://daguilar.dev">
+        <link rel="alternate" type="application/rss+xml" title="Blog de Damián Aguilar" href="https://daguilar.dev/rss.xml" />
+        <link rel="apple-touch-icon" sizes="57x57" href="https://daguilar.dev/assets/img/favicon/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="https://daguilar.dev/assets/img/favicon/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="https://daguilar.dev/assets/img/favicon/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="https://daguilar.dev/assets/img/favicon/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="https://daguilar.dev/assets/img/favicon/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="https://daguilar.dev/assets/img/favicon/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="https://daguilar.dev/assets/img/favicon/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="https://daguilar.dev/assets/img/favicon/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="https://daguilar.dev/assets/img/favicon/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="https://daguilar.dev/assets/img/favicon/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="https://daguilar.dev/assets/img/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="https://daguilar.dev/assets/img/favicon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="https://daguilar.dev/assets/img/favicon/favicon-16x16.png">
+        <link rel="manifest" href="https://daguilar.dev/assets/img/favicon/manifest.json">
+        <link rel="dns-prefetch" href="//fonts.googleapis.com">
+        <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i,800,800i" rel="stylesheet">
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=751923700a70689e7dea1434fc304142">
+        
+        
+        
+        <script type="text/javascript" src="../../assets/gdpr/gdpr.js"></script>
+        <script type="text/javascript" src="../../assets/gdpr/es.js"></script>
+    </head>
+
+    <body class="flex flex-col justify-between min-h-screen bg-gray-100 text-gray-800 leading-normal font-sans">
+        <a href="https://github.com/daguilarm" rel="noopener noreferrer" target="_blank" class="hidden lg:block float-right z-50 github-corner" aria-label="Mis proyectos en GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#4a5568; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes  octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+        <header class="flex items-center h-32 shadow-xl bg-blue-700" role="banner">
+            
+            
+            
+            <div class="container flex items-center max-w-8xl mx-auto px-4 lg:px-8">
+                
+                <div class="z-20 -mt-20 sm:mt-0">
+                    <a href="/" title="Blog de Damián Aguilar" class="block sm:hidden absolute top-0 mt-3 text-yellow-400">El blog de Damián Aguilar</a>
+                    <a href="/" title="Blog de Damián Aguilar" class="hidden sm:block">
+                        <div class="text-lg text-yellow-400 p-2">El blog de</div>
+                        <div class="text-2xl font-bold text-white p-2 -mt-4">Damián Aguilar</div>
+                    </a>
+                </div>
+                
+                <div class="hidden lg:flex">
+    <div class="sun">
+        <div class="ray_box">
+            <div class="ray ray1"></div>
+            <div class="ray ray2"></div>
+            <div class="ray ray3"></div>
+            <div class="ray ray4"></div>
+            <div class="ray ray5"></div>
+            <div class="ray ray6"></div>
+            <div class="ray ray7"></div>
+            <div class="ray ray8"></div>
+            <div class="ray ray9"></div>
+            <div class="ray ray10"></div>
+        </div>
+    </div>
+
+</div>
+                
+                <div id="vue-search" class="flex flex-1 justify-end items-center relative">
+                    <search class="z-50"></search>
+                    <nav class="hidden lg:flex items-center justify-end text-lg z-20">
+    <a title="Blog de Damián Aguilar" href="/blog"
+        class="ml-6 text-white hover:text-blue-700 hover:bg-blue-100 hover:shadow rounded py-1 px-3 active">
+        Artículos
+    </a>
+
+    <a title="Sobre mi: Blog de Damián Aguilar" href="/about"
+        class="ml-6 text-white hover:text-blue-700 hover:bg-blue-100 hover:shadow rounded py-1 px-3 ">
+        Sobre mi
+    </a>
+
+    <a title="Proyectos: Blog de Damián Aguilar" href="/projects"
+        class="ml-6 text-white hover:text-blue-700 hover:bg-blue-100 hover:shadow rounded py-1 px-3 ">
+        Proyectos
+    </a>
+
+    <a title="Contacto: Blog de Damián Aguilar" href="/contact"
+        class="ml-6 text-white hover:text-blue-700 hover:bg-blue-100 hover:shadow rounded py-1 px-3 ">
+        Contacto
+    </a>
+</nav>
+                    <button onclick="navMenu.toggle()" class="flex justify-center items-center bg-blue-500 border border-blue-500 h-10 px-5 rounded-full lg:hidden focus:outline-none z-60">
+    <svg id="js-nav-menu-show" xmlns="http://www.w3.org/2000/svg"
+        class="fill-current text-white h-9 w-4" viewBox="0 0 32 32"
+    >
+        <path d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"/>
+    </svg>
+
+    <svg id="js-nav-menu-hide" xmlns="http://www.w3.org/2000/svg"
+        class="hidden fill-current text-white h-9 w-4" viewBox="0 0 36 30"
+    >
+        <polygon points="32.8,4.4 28.6,0.2 18,10.8 7.4,0.2 3.2,4.4 13.8,15 3.2,25.6 7.4,29.8 18,19.2 28.6,29.8 32.8,25.6 22.2,15 "/>
+    </svg>
+</button>
+
+                </div>
+            </div>
+        </header>
+
+        <nav id="js-nav-menu" class="nav-menu hidden lg:hidden">
+    <ul class="my-0">
+        <li class="pl-4">
+            <a
+                title="Blog de Damián Aguilar"
+                href="/blog"
+                class="nav-menu__item hover:text-blue-600 active text-blue-600"
+            >Artículos</a>
+        </li>
+        <li class="pl-4">
+            <a
+                title="Sobre mi: Blog de Damián Aguilar"
+                href="/about"
+                class="nav-menu__item hover:text-blue-600 "
+            >Sobre mi</a>
+        </li>
+        <li class="pl-4">
+            <a
+                title="Contacto: Blog de Damián Aguilar"
+                href="/contact"
+                class="nav-menu__item hover:text-blue-600 "
+            >Contacto</a>
+        </li>
+    </ul>
+</nav>
+
+        <main role="main" class="flex-auto w-full container mx-auto py-16 px-6 z-20">
+
+            <div class="flex justify-center w-full">
+    <iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?o=30&p=48&l=ur1&category=primeday&banner=0CJQFH890BEJ2EREPQR2&f=ifr&linkID=0dee11051e921f2ae16f919c6515de3b&t=ofertiacom-21&tracking_id=ofertiacom-21" width="728" height="90" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
+</div>
+                <h1 class="text-blue-800 text-3xl md:text-4xl lg:text-5xl">Últimos artículos</h1>
+    <p>Aquí vas a encontrar artículos sobre situaciones que me voy encontrando en mi día a día con la programación, así que cuantos más problemas me encuentre, más artículos iré añadiendo...</p>
+
+    <hr class="border-b my-6">
+
+            <div class="flex flex-col mb-4">
+    <p class="text-gray-600 font-medium my-2">
+        17/05/2021
+    </p>
+
+    <h2 class="text-3xl mt-0">
+        <a
+            href="https://daguilar.dev/blog/test_validando-resultados-con-laravel-dusk-sin-consultar-la-base-de-datos"
+            title="Read more - Verificar resultados con Laravel Dusk utilizando los resultados que se muestran en el navegador"
+            class="text-gray-700 font-extrabold"
+        >Verificar resultados con Laravel Dusk utilizando los resultados que se muestran en el navegador</a>
+    </h2>
+
+    <p class="mb-4 mt-0">Laravel dusk nos ofrece la opción de verificar si los cambios se han realizado en la base de datos después de realizar el test. El primer paso, sería realizar el test y con ello, los cambios en la...</p>
+
+    <a
+        href="https://daguilar.dev/blog/test_validando-resultados-con-laravel-dusk-sin-consultar-la-base-de-datos"
+        title="Read more - Verificar resultados con Laravel Dusk utilizando los resultados que se muestran en el navegador"
+        class="uppercase font-semibold tracking-wide mb-2 sm:text-orange-600"
+    >Leer mas...</a>
+</div>
+
+                    <hr class="border-b my-6">
+                    <div class="flex flex-col mb-4">
+    <p class="text-gray-600 font-medium my-2">
+        13/05/2021
+    </p>
+
+    <h2 class="text-3xl mt-0">
+        <a
+            href="https://daguilar.dev/blog/programacion_lenguajes-de-bajo-nivel-frente-a-los-lenguajes-de-alto-nivel"
+            title="Read more - Diferencias entre los lenguajes de programación de bajo nivel VS lenguajes de alto nivel"
+            class="text-gray-600 font-extrabold"
+        >Diferencias entre los lenguajes de programación de bajo nivel VS lenguajes de alto nivel</a>
+    </h2>
+
+    <p class="mb-4 mt-0">Los lenguajes de programación pueden clasificarse en función de si son lenguajes de programación de bajo nivel o de alto nivel. Aunque también se puede establecer una opción intermedia,...</p>
+
+    <a
+        href="https://daguilar.dev/blog/programacion_lenguajes-de-bajo-nivel-frente-a-los-lenguajes-de-alto-nivel"
+        title="Read more - Diferencias entre los lenguajes de programación de bajo nivel VS lenguajes de alto nivel"
+        class="uppercase font-semibold tracking-wide mb-2 sm:text-orange-600"
+    >Leer mas...</a>
+</div>
+
+                    <hr class="border-b my-6">
+                    <div class="flex flex-col mb-4">
+    <p class="text-gray-600 font-medium my-2">
+        09/05/2021
+    </p>
+
+    <h2 class="text-3xl mt-0">
+        <a
+            href="https://daguilar.dev/blog/tests_identificando-los-principales-errores-con-laravel-dusk"
+            title="Read more - Cómo solucionar los principales errores con Laravel Dusk y orchestral/testbench-dusk."
+            class="text-gray-700 font-extrabold"
+        >Cómo solucionar los principales errores con Laravel Dusk y orchestral/testbench-dusk.</a>
+    </h2>
+
+    <p class="mb-4 mt-0">Este artículo, es al final un pequeño recordatorio para cuando me pongo a hacer tests con Laravel Dusk y empiezan a surgir los errores al hacer las pruebas.
+
+He intentado recopilar los principales...</p>
+
+    <a
+        href="https://daguilar.dev/blog/tests_identificando-los-principales-errores-con-laravel-dusk"
+        title="Read more - Cómo solucionar los principales errores con Laravel Dusk y orchestral/testbench-dusk."
+        class="uppercase font-semibold tracking-wide mb-2 sm:text-orange-600"
+    >Leer mas...</a>
+</div>
+
+                    <hr class="border-b my-6">
+                    <div class="flex flex-col mb-4">
+    <p class="text-gray-600 font-medium my-2">
+        02/05/2021
+    </p>
+
+    <h2 class="text-3xl mt-0">
+        <a
+            href="https://daguilar.dev/blog/laravel_select-dependiente-multinivel-combobox-para-laravel"
+            title="Read more - Nuevo package para Laravel para selects dependientes multinivel (combobox)"
+            class="text-gray-600 font-extrabold"
+        >Nuevo package para Laravel para selects dependientes multinivel (combobox)</a>
+    </h2>
+
+    <p class="mb-4 mt-0">Estoy trabajando en un nuevo proyecto y necesitaba un sistema de <code>selects</code> dependientes y con niveles de dependencia infinitos. Revisando <code>packages</code> para Laravel ya...</p>
+
+    <a
+        href="https://daguilar.dev/blog/laravel_select-dependiente-multinivel-combobox-para-laravel"
+        title="Read more - Nuevo package para Laravel para selects dependientes multinivel (combobox)"
+        class="uppercase font-semibold tracking-wide mb-2 sm:text-orange-600"
+    >Leer mas...</a>
+</div>
+
+            
+            <nav class="flex text-base my-8">
+            
+                            <a
+                    href="/blog"
+                    title="Go to Page 1"
+                    class="bg-gray-200 hover:bg-gray-400 text-blue-darker rounded mr-3 px-5 py-3 text-blue-dark"
+                >1</a>
+                            <a
+                    href="/blog/2"
+                    title="Go to Page 2"
+                    class="bg-gray-200 hover:bg-gray-400 text-blue-darker rounded mr-3 px-5 py-3 "
+                >2</a>
+                            <a
+                    href="/blog/3"
+                    title="Go to Page 3"
+                    class="bg-gray-200 hover:bg-gray-400 text-blue-darker rounded mr-3 px-5 py-3 "
+                >3</a>
+                            <a
+                    href="/blog/4"
+                    title="Go to Page 4"
+                    class="bg-gray-200 hover:bg-gray-400 text-blue-darker rounded mr-3 px-5 py-3 "
+                >4</a>
+                            <a
+                    href="/blog/5"
+                    title="Go to Page 5"
+                    class="bg-gray-200 hover:bg-gray-400 text-blue-darker rounded mr-3 px-5 py-3 "
+                >5</a>
+                            <a
+                    href="/blog/6"
+                    title="Go to Page 6"
+                    class="bg-gray-200 hover:bg-gray-400 text-blue-darker rounded mr-3 px-5 py-3 "
+                >6</a>
+                            <a
+                    href="/blog/7"
+                    title="Go to Page 7"
+                    class="bg-gray-200 hover:bg-gray-400 text-blue-darker rounded mr-3 px-5 py-3 "
+                >7</a>
+                            <a
+                    href="/blog/8"
+                    title="Go to Page 8"
+                    class="bg-gray-200 hover:bg-gray-400 text-blue-darker rounded mr-3 px-5 py-3 "
+                >8</a>
+                            <a
+                    href="/blog/9"
+                    title="Go to Page 9"
+                    class="bg-gray-200 hover:bg-gray-400 text-blue-darker rounded mr-3 px-5 py-3 "
+                >9</a>
+            
+                            <a
+                    href="/blog/2"
+                    title="Next Page"
+                    class="bg-gray-200 hover:bg-gray-400 rounded mr-3 px-5 py-3"
+                >&RightArrow;</a>
+                    </nav>
+            </main>
+
+        <footer class="w-full flex items-center h-24 bg-white sm:bg-gray-600 sm:text-gray-100 text-center text-sm mt-12 py-4" role="contentinfo">
+            <div class="flex-1">
+                &copy; Damián Aguilar 2019-2022 -
+                <a href="https://github.com/daguilarm" class="sm:text-gray-100 hover:text-gray-300">
+                    Github
+                </a> -
+                <a href="https://daguilar.dev/blog/rss.xml" class="sm:text-gray-100 hover:text-gray-300">
+                    RSS
+                </a> -
+                <a href="https://belich.dev/blog/legal/cookies" class="sm:text-gray-100 hover:text-gray-300">
+                    Política de cookies
+                </a> -
+                <a href="https://belich.dev/blog/legal/legal" class="sm:text-gray-100 hover:text-gray-300">
+                    Política legal
+                </a> -
+                <a href="https://belich.dev/blog/legal/privacity" class="sm:text-gray-100 hover:text-gray-300">
+                    Política privacidad
+                </a>
+            </div>
+        </footer>
+
+        <script src="/assets/build/js/main.js?id=db882802154f764159b559e4347422e8"></script>
+
+        <script>
+    const navMenu = {
+        toggle() {
+            const menu = document.getElementById('js-nav-menu');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('lg:block');
+            document.getElementById('js-nav-menu-hide').classList.toggle('hidden');
+            document.getElementById('js-nav-menu-show').classList.toggle('hidden');
+        },
+    }
+</script>
+        <script>
+
+            gdprCookieNotice({
+                    locale: 'es', // si lo cambias debes tener un archivo como el de arriba es.js
+                    timeout: 1500, // tiempo de espera
+                    expiration: 30, // días de duración de la cookie
+                    domain: window.location.hostname, // dominio
+                    implicit: false, // debe se false, porque de lo contrario no cumples
+                    statement: '/legal/cookies', // url a la política de cookies / legal
+                    analytics: [], // aquí el grupo analitica pero hay más en opciones
+                    marketing: ['ad-privacy', 'add-id']
+            });
+
+            document.addEventListener('DOMContentLoaded', function() {
+                var linksTargetBlank = document.querySelectorAll('.link-out');
+                for (var i = 0; i < linksTargetBlank.length; i++) {
+                    linksTargetBlank[i].target = "_blank";
+                    linksTargetBlank[i].rel = "noopener";
+                }
+            }, false);
+
+            document.addEventListener('gdprCookiesEnabled', function (e) {
+                if(e.detail.marketing) { //checks if marketing cookies are enabled
+                //facebook pixel code
+                }
+            });
+        </script>
+    </body>
+</html>
