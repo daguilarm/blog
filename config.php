@@ -37,6 +37,9 @@ return [
                 });
             },
         ],
+        'legals' => [
+            'path' => '/legal/{title}'
+        ]
     ],
 
     // helpers

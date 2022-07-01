@@ -137,3 +137,10 @@ pre {
     @apply .bg-blue-500;
     @apply .text-white;
     }
+
+
+.email:before {
+    content: attr(data-website) "\0040" attr(data-user);
+    unicode-bidi: bidi-override;
+    direction: rtl;
+}

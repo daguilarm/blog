@@ -65,6 +65,10 @@
         <link rel="stylesheet" href="{{ mix('css/main.css', 'assets/build') }}">
         {{-- Custom css --}}
         @stack('custom-css')
+
+        {{-- GDPR --}}
+        <script type="text/javascript" src="../../assets/gdpr/gdpr.js"></script>
+        <script type="text/javascript" src="../../assets/gdpr/es.js"></script>
     </head>
 
     <body class="flex flex-col justify-between min-h-screen bg-gray-100 text-gray-800 leading-normal font-sans">
@@ -96,6 +100,9 @@
         @include('_nav.menu-responsive')
 
         <main role="main" class="flex-auto w-full container mx-auto py-16 px-6 z-20">
+
+            @include('_components.banner')
+
             @yield('body')
         </main>
 
@@ -105,18 +112,36 @@
                 <a href="https://github.com/daguilarm" class="sm:text-gray-100 hover:text-gray-300">
                     Github
                 </a> -
-                <a href="https://belich.dev" class="sm:text-gray-100 hover:text-gray-300">
-                    Belich admin
-                </a> -
                 <a href="https://daguilar.dev/blog/rss.xml" class="sm:text-gray-100 hover:text-gray-300">
                     RSS
+                </a> -
+                <a href="https://belich.dev/legal/cookies" class="sm:text-gray-100 hover:text-gray-300">
+                    Política de cookies
+                </a> -
+                <a href="https://belich.dev/legal/legal" class="sm:text-gray-100 hover:text-gray-300">
+                    Política legal
+                </a> -
+                <a href="https://belich.dev/legal/privacity" class="sm:text-gray-100 hover:text-gray-300">
+                    Política privacidad
                 </a>
             </div>
         </footer>
 
         <script src="{{ mix('js/main.js', 'assets/build') }}"></script>
+
         @stack('scripts')
         <script>
+
+            gdprCookieNotice({
+                    locale: 'es', // si lo cambias debes tener un archivo como el de arriba es.js
+                    timeout: 1500, // tiempo de espera
+                    expiration: 30, // días de duración de la cookie
+                    domain: window.location.hostname, // dominio
+                    implicit: false, // debe se false, porque de lo contrario no cumples
+                    statement: '/legal/cookies', // url a la política de cookies / legal
+                    analytics: [] // aquí el grupo analitica pero hay más en opciones
+            });
+
             document.addEventListener('DOMContentLoaded', function() {
                 var linksTargetBlank = document.querySelectorAll('.link-out');
                 for (var i = 0; i < linksTargetBlank.length; i++) {
@@ -124,6 +149,12 @@
                     linksTargetBlank[i].rel = "noopener";
                 }
             }, false);
+
+            document.addEventListener('gdprCookiesEnabled', function (e) {
+                if(e.detail.marketing) { //checks if marketing cookies are enabled
+                //facebook pixel code
+                }
+            });
         </script>
     </body>
 </html>
