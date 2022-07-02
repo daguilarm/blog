@@ -9,6 +9,8 @@ categories: [programacion, php, python, angular, java]
 
 Toda mi carrera como programador, la he basado en el **desarrollo con PHP**, centrándome en los últimos años en el **desarrollo con Laravel**. En este artículo voy a hablar de como ha sido la experiencia de salirse de la zona de confort y enfrentarse a nuevos retos, con nuevos lenguajes de programación.
 
+## Python
+
 Hace cosa de un año, necesité integrar un pequeño script en **Phyton** en un proyecto Laravel. Decidí que era un buen momento para aprender a programar en **Python**, y decidí tomarme dos semanas de tiempo para sumergirme en la experiencia. La verdad es que solo puedo hablar cosas buenas de **Phyton**. Me pareció un lenguaje muy intuitivo y sencillo, sobre todo si ya dispones de una buena base de programación orientada a objetos. En cualquier caso, es un lenguaje al que mantengo vigilado y al que espero poder volver pronto.
 
 Después de aquello, surgió la oportunidad de trabajar en una empresa multinacional del mundo de la programación. Una de esas empresas que aparecen en las primeras posiciones en los rankings de empresas en las que trabajar. Me pareció una experiencia muy interesante, y encima me ofrecieron la opción de participar en dos Bootcamps, uno basado en **Java** y otro en **Angular**. No había trabajado nunca con estos lenguajes, y me ofrecieron formación durante la jornada laboral... lo cual me parecío genial.

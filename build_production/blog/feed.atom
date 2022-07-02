@@ -3,7 +3,7 @@
     <title>Blog de Damián Aguilar</title>
     <link href="https://daguilar.dev" />
     <link type="application/atom+xml" rel="self" href="https://daguilar.dev/blog/feed.atom" />
-    <updated>2022-07-02T14:28:29+00:00</updated>
+    <updated>2022-07-02T14:29:29+00:00</updated>
     <id>https://daguilar.dev/blog/feed.atom</id>
     <author>
         <name>Damián Aguilar</name>
@@ -20,6 +20,8 @@
     <summary type="html">Toda mi carrera como programador, la he basado en el desarrollo con PHP, centrándome en los últimos años en el desarrollo con Laravel. En este artículo voy a hablar de como ha sido la experiencia de salirse de la zona de confort y enfrentarse a......</summary>
     <content type="html"><![CDATA[
         <p>Toda mi carrera como programador, la he basado en el <strong>desarrollo con PHP</strong>, centrándome en los últimos años en el <strong>desarrollo con Laravel</strong>. En este artículo voy a hablar de como ha sido la experiencia de salirse de la zona de confort y enfrentarse a nuevos retos, con nuevos lenguajes de programación.</p>
+
+<h2>Python</h2>
 
 <p>Hace cosa de un año, necesité integrar un pequeño script en <strong>Phyton</strong> en un proyecto Laravel. Decidí que era un buen momento para aprender a programar en <strong>Python</strong>, y decidí tomarme dos semanas de tiempo para sumergirme en la experiencia. La verdad es que solo puedo hablar cosas buenas de <strong>Phyton</strong>. Me pareció un lenguaje muy intuitivo y sencillo, sobre todo si ya dispones de una buena base de programación orientada a objetos. En cualquier caso, es un lenguaje al que mantengo vigilado y al que espero poder volver pronto.</p>
 
