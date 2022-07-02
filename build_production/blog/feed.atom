@@ -3,12 +3,46 @@
     <title>Blog de Damián Aguilar</title>
     <link href="https://daguilar.dev" />
     <link type="application/atom+xml" rel="self" href="https://daguilar.dev/blog/feed.atom" />
-    <updated>2022-07-02T13:09:05+00:00</updated>
+    <updated>2022-07-02T14:28:29+00:00</updated>
     <id>https://daguilar.dev/blog/feed.atom</id>
     <author>
         <name>Damián Aguilar</name>
     </author>
                 <entry>
+    <id>https://daguilar.dev/blog/programacion_programando_con_pyton_java_y_angular</id>
+    <link type="text/html" rel="alternate" href="https://daguilar.dev/blog/programacion_programando_con_pyton_java_y_angular" />
+    <title>Saliendo de la zona de confort, y programando con Python, Java y Angular.</title>
+    <published>2022-05-22T00:00:00+00:00</published>
+    <updated>2022-05-22T00:00:00+00:00</updated>
+    <author>
+        <name>Damián Aguilar</name>
+    </author>
+    <summary type="html">Toda mi carrera como programador, la he basado en el desarrollo con PHP, centrándome en los últimos años en el desarrollo con Laravel. En este artículo voy a hablar de como ha sido la experiencia de salirse de la zona de confort y enfrentarse a......</summary>
+    <content type="html"><![CDATA[
+        <p>Toda mi carrera como programador, la he basado en el <strong>desarrollo con PHP</strong>, centrándome en los últimos años en el <strong>desarrollo con Laravel</strong>. En este artículo voy a hablar de como ha sido la experiencia de salirse de la zona de confort y enfrentarse a nuevos retos, con nuevos lenguajes de programación.</p>
+
+<p>Hace cosa de un año, necesité integrar un pequeño script en <strong>Phyton</strong> en un proyecto Laravel. Decidí que era un buen momento para aprender a programar en <strong>Python</strong>, y decidí tomarme dos semanas de tiempo para sumergirme en la experiencia. La verdad es que solo puedo hablar cosas buenas de <strong>Phyton</strong>. Me pareció un lenguaje muy intuitivo y sencillo, sobre todo si ya dispones de una buena base de programación orientada a objetos. En cualquier caso, es un lenguaje al que mantengo vigilado y al que espero poder volver pronto.</p>
+
+<p>Después de aquello, surgió la oportunidad de trabajar en una empresa multinacional del mundo de la programación. Una de esas empresas que aparecen en las primeras posiciones en los rankings de empresas en las que trabajar. Me pareció una experiencia muy interesante, y encima me ofrecieron la opción de participar en dos Bootcamps, uno basado en <strong>Java</strong> y otro en <strong>Angular</strong>. No había trabajado nunca con estos lenguajes, y me ofrecieron formación durante la jornada laboral... lo cual me parecío genial.</p>
+
+<h2>Java</h2>
+
+<p>Empecemos por <strong>Java</strong>... no se ha convertido en mi lenguaje favorito. Quizas el problema es que el ecosistema de desarrollo, en este caso <strong>Spring</strong> y <strong>Spring boot</strong>, no eran demasiado intuitivos. Tengo la impresión de que al venir de <strong>Laravel</strong>, cualquier otro <em>framework</em> siempre va a parecer más complejo y sobre todo, poco claro. Parecía interminable la cantidad de cosas que había que configurar, que si archivos XML, que si las librerías, las anotaciones, los getter y setters, y lo complejo que es todo el tema de gestión de modelos y bases de datos...</p>
+
+<p>En resumen, he aprendido a gestionar el <em>backend</em> de un servicio mediante <strong>Java</strong>, pero no es algo que escogería de forma voluntaria como primera opción para un proyecto. A modo de anécdota, pregunté en la empresa por qué se optaba siempre por <strong>Java</strong> para el <em>backend</em>, y al final la respuesta era: <em>"es lo que pide el cliente"</em>...</p>
+
+<h2>Angular</h2>
+
+<p>Angular me pareció más interesante. Venía de trabajar con <strong>VueJS</strong>, y al fin de cuentas, para mi fue más asequible que <strong>Java</strong>. Lo primero que me llamó la atención fue que utilizara <strong>TypScript</strong>. Nunca lo había usado, y admito que fue un gran descubrimiento. Una vez termine el Bootcamp me pasé cerca de cuatro meses desarrollando una libería en <strong>TypeScript</strong> desde cero, para utilizarla con <strong>Angular</strong>, y admito que fue una experiencia genial, y sobre todo, aprendí muchísimo.</p>
+
+<p>En cuanto a <strong>Angular</strong>, no terminó de gustarme del todo, sobre todo por lo encorsetado que está... intentar generar estructuras dependientes unas de otras, era una pesadilla, y básicamente se limitaba a clase padre y clase hijo, y como vincularlas entre sí. Cuando querías hacer algo más complejo, tenías que buscarte la vida para implementar algo parecido a lo que tenías en mente... pero sin terminar de conseguirlo...</p>
+
+<p>En general, es un buen <strong>framework</strong>, pero creo que <strong>React</strong> es mucho mejor, incluso <strong>VueJS</strong> es mucho mejor si sólo tenemos que gestionar el <em>front-end</em>.</p>
+
+<p>Como punto final, decir que la experiencia de haber trabajado en una empresa importate del sector, ha sido en general muy positiva, y me he llevado muchas enseñanzas importantes, sobre todo, en cuanto a trabajo en equipo, y lo complejo que es a veces gestionar un proyecto. Por ejemplo, en uno de los proyectos que trabajé, mi equipo sólo trabajaba con <strong>Angular</strong> (si, yo trabajando toda la vida en <em>back-end</em>, termine en <em>front-end</em>), y no teníamos acceso al <em>back-end</em>, por lo que a veces era casi más complicado intentar adivinar como funcionaba un sistema que añadir la funcionalidad que había pedido el cliente...En fin, cosas que pasan cuando se divide el trabajo en equipos.</p>
+    ]]></content>
+</entry>
+            <entry>
     <id>https://daguilar.dev/blog/laravel_novedades-en-laravel-9</id>
     <link type="text/html" rel="alternate" href="https://daguilar.dev/blog/laravel_novedades-en-laravel-9" />
     <title>Novedades en Laravel 9</title>
