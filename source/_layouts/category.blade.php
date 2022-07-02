@@ -13,5 +13,9 @@
         @if (! $loop->last)
             <hr class="w-full border-b mt-2 mb-6">
         @endif
+
+        @if ($loop->iteration == 50)
+            @break
+        @endif
     @endforeach
 @stop
