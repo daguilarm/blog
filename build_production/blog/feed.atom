@@ -3,12 +3,120 @@
     <title>Blog de Damián Aguilar</title>
     <link href="https://daguilar.dev" />
     <link type="application/atom+xml" rel="self" href="https://daguilar.dev/blog/feed.atom" />
-    <updated>2022-07-02T14:33:04+00:00</updated>
+    <updated>2022-07-02T16:16:17+00:00</updated>
     <id>https://daguilar.dev/blog/feed.atom</id>
     <author>
         <name>Damián Aguilar</name>
     </author>
                 <entry>
+    <id>https://daguilar.dev/blog/php_novedades_de_php_81</id>
+    <link type="text/html" rel="alternate" href="https://daguilar.dev/blog/php_novedades_de_php_81" />
+    <title>Novedades de PHP 8.1</title>
+    <published>2022-06-11T00:00:00+00:00</published>
+    <updated>2022-06-11T00:00:00+00:00</updated>
+    <author>
+        <name>Damián Aguilar</name>
+    </author>
+    <summary type="html">Soy consciente de que llego un poco tarde, sobre todo porque en pocos meses sale la versión 8.2, pero más vale tarde que nunca.
+
+1) Lo primero de todo, se han producido mejoras en opchache que han generado una ligera mejora en el rendimiento, respecto......</summary>
+    <content type="html"><![CDATA[
+        <p>Soy consciente de que llego un poco tarde, sobre todo porque en pocos meses sale la versión 8.2, pero más vale tarde que nunca.</p>
+
+<p>1) Lo primero de todo, se han producido mejoras en <em>opchache</em> que han generado una <strong>ligera mejora en el rendimiento</strong>, respecto a la versión de PHP 7.4.</p>
+
+<p>2) <strong>Una de las funcionalidades más esperadas eran las de <em>Emumns</em></strong>, que <em>frameworks</em> como <strong>Laravel</strong> ya han integrado en su última versión (la 9). Veamos un ejemplo:</p>
+
+<pre><code class="language-php">enum Status {
+  case Pending;
+  case Active;
+  case Archived;
+}
+
+function cambioDeEstado(Status $status): void {
+    ...
+}
+</code></pre>
+
+<p>3) El tipo <em>never</em> para los métodos. Nos permite definir un retorno tipo <em>void</em>, pero cuando queremos que el programa no continue más. Por ejemplo, puede ser útil para las redirecciones o para métodos que interrumpan la ejecuación:</p>
+
+<pre><code class="language-php">function stop(): never
+{    
+    // Detenemos los procesos
+
+    exit;
+}
+</code></pre>
+
+<p>4) <strong>Fibers</strong>. Consiste en gestionar los threads o hilos en PHP. Creo que es algo que no voy a utilizar mucho, por lo que he leido, algunos frameworks o sistemas complejos son los principales beneficiarios de esta funcionalidad.</p>
+
+<p>5) <strong>Propiedad readonly</strong>. Algo que he utilizado mucho con <strong>TypeSCript</strong>, y que <strong>PHP</strong> aún no había implementado. Básicamente, inicializas una propiedad, y una vez hecho esta, su valor no puede cambiar:</p>
+
+<pre><code class="language-php">class MyClass {
+    public readonly string $attribute;
+
+    public function __construct(string $attribute) {
+        $this-&gt;attribute = $attribute;
+    }
+}
+</code></pre>
+
+<p>6) Lo mismo con las <strong>constantes finales</strong>:</p>
+
+<pre><code class="language-php">class MyClass1 {
+    final public const VALUE = 'hello';
+}
+
+// Dará error... no se puede cambiar
+class MyClass2 extends MyClass1 {
+    final public const VALUE = 'hello world';
+}
+</code></pre>
+
+<p>7) <strong>Mejora en la unión de arrays</strong>, facilitando las operaciones entre <em>arrays</em>. Desde ahora, el funcionamiento del "<em>array unpacking</em>" es parecido al de <strong>array_merge()</strong>:</p>
+
+<pre><code class="language-php">$array_1 = ['elemento 1', 'elemento 2'];
+$array_2 = ['elemento 3', 'elemento 4'];
+</code></pre>
+
+<p>Lo normal para unir esto arrays, y añadirle otro más, sería usar array_merge():</p>
+
+<pre><code class="language-php">$array_3 = array_merge($array_1, $array_2, ['elemento 5']);
+var_dump($array_3)
+
+// Devolvería 
+// ['elemento 1', 'elemento 2', 'elemento 3', 'elemento 4', 'elemento 5']
+</code></pre>
+
+<p>Ahora, podemos hacerlo directamente:</p>
+
+<pre><code class="language-php">$array_4 = [...$array_1, ...$array_2, ...['elemento 5']];
+var_dump($array_4)
+
+// Devolvería 
+// ['elemento 1', 'elemento 2', 'elemento 3', 'elemento 4', 'elemento 5']
+</code></pre>
+
+<p><strong>Desde PHP 7.4 está implmentada esta funcionalidad</strong>, pero solo funcionaba con números.</p>
+
+<p>8) <strong>Nuevos algoritmos de Hashing</strong>. Desde ahora se da soporte para xxHash y MurMurHash3. Parecen ser algoritmos muchos más rápidos y seguros...</p>
+
+<p>9) <strong>Nueva función array_is_list()</strong>. Sirve para determinar si un array es una lista perfecta, incluyendo claves y valores. Es decir, si usamos sólo claves, determinará si la sucesión es correcta. Veamos algunos ejemplos:</p>
+
+<pre><code class="language-php">array_is_list([1, 2, 3]); // Es correcto, se sigue el orden correlativo, y no importa que no empiece por 0, ya que son valores.
+array_is_list([1 =&gt; 1, 2 =&gt; 2, 3 =&gt; 3]); // En este caso daría FALSE, porque la clave debe empezar en 0, y no en 1.
+array_is_list([0 =&gt; 1, 1 =&gt; 2, 2 =&gt; 'hello']); // Es correcto, las claves son correlativas y empiezan en 0, los valores da igual... son valores.
+array_is_list(['a', 1 =&gt; 'b', 'c']); // Solo hay una clave, en segunda posición y con el valor 1, que es correcto, por lo que todo correcto.
+</code></pre>
+
+<p>Existen muchas más novedades que pueden consultarlas aquí:</p>
+
+<ul>
+<li><a href="https://www.php.net/releases/8.1/es.php" class="link-out">Nuevo en php</a></li>
+</ul>
+    ]]></content>
+</entry>
+            <entry>
     <id>https://daguilar.dev/blog/programacion_programando_con_pyton_java_y_angular</id>
     <link type="text/html" rel="alternate" href="https://daguilar.dev/blog/programacion_programando_con_pyton_java_y_angular" />
     <title>Saliendo de la zona de confort, y programando con Python, Java y Angular.</title>
