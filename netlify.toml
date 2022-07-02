@@ -2,5 +2,9 @@
 
 command = "npm run production"
 publish = "build_production"
-environment = { PHP_VERSION = "7.4", NODE_VERSION = "12.16.1" }
+environment = { 
+    PHP_VERSION = "7.4", 
+    NODE_VERSION = "12.16.1", 
+    YARN_VERSION="1.13.0" 
+}
 
