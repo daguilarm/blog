@@ -4,7 +4,7 @@ section: content
 title: Patrones de diseño y uso de Pipelines con Laravel
 date: 2020-01-03
 description: Utilización del patrón de diseño Pipelines, incluido en Laravel por defecto.
-categories: [laravel, php]
+categories: [laravel, php, frameworks]
 ---
 
 Las *Pipelines* de [Laravel](https://laravel.com){.link-out}, nos van a permitir enviar un objeto a través de una serie de clases de forma sencilla y ordenada, simplificando considerablemente el código.

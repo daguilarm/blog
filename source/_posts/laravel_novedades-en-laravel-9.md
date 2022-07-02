@@ -4,7 +4,7 @@ section: content
 title: Novedades en Laravel 9
 date: 2022-03-15
 description: Novedades del framework php Laravel, en su versión 9. Todo lo nuevo que viene en el Framework.
-categories: [laravel, php]
+categories: [laravel, php, frameworks]
 ---
 
 **Laravel** es probablemente el **Framework PHP** más utilizado del momento, y cada vez que sale una nueva versión, revoluciona un poco a la comunidad de desarrolladores, y no es para menos, ya que las decisiones que se tomen en torno a su desarrollo, va a afectar directamente a todos los que desarrollamos proyectos mediante este Framework. 

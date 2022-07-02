@@ -4,7 +4,7 @@ section: content
 title: Crear un package para Laravel
 date: 2020-01-20
 description: Creación de un package para Laravel desde cero.
-categories: [laravel, packages, php]
+categories: [laravel, packages, php, frameworks]
 ---
 
 Una buena forma de ordenar y reutilizar nuestro código de **Laravel**, es mediante el uso de *packages*. En este artículo, vamos a centrarnos en la creación y desarrollo de *packages* propios, pero si estás interesado en *packages* de terceros, aquí tienes una lista con los imprescindibles (por lo menos para mi...):

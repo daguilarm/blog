@@ -4,7 +4,7 @@ section: content
 title: Configurar helpers en Laravel
 date: 2019-11-15
 description: Helpers en Laravel con composer y service providers.
-categories: [composer, laravel, php]
+categories: [composer, laravel, php, frameworks]
 ---
 
 En ocasiones, podemos necesitar acceder a funciones (*helpers*), desde cualquier parte de nuestro código.
