@@ -3,7 +3,7 @@
     <title>Blog de Damián Aguilar</title>
     <link href="https://daguilar.dev" />
     <link type="application/atom+xml" rel="self" href="https://daguilar.dev/blog/feed.atom" />
-    <updated>2022-07-02T14:29:29+00:00</updated>
+    <updated>2022-07-02T14:33:04+00:00</updated>
     <id>https://daguilar.dev/blog/feed.atom</id>
     <author>
         <name>Damián Aguilar</name>
@@ -25,7 +25,7 @@
 
 <p>Hace cosa de un año, necesité integrar un pequeño script en <strong>Phyton</strong> en un proyecto Laravel. Decidí que era un buen momento para aprender a programar en <strong>Python</strong>, y decidí tomarme dos semanas de tiempo para sumergirme en la experiencia. La verdad es que solo puedo hablar cosas buenas de <strong>Phyton</strong>. Me pareció un lenguaje muy intuitivo y sencillo, sobre todo si ya dispones de una buena base de programación orientada a objetos. En cualquier caso, es un lenguaje al que mantengo vigilado y al que espero poder volver pronto.</p>
 
-<p>Después de aquello, surgió la oportunidad de trabajar en una empresa multinacional del mundo de la programación. Una de esas empresas que aparecen en las primeras posiciones en los rankings de empresas en las que trabajar. Me pareció una experiencia muy interesante, y encima me ofrecieron la opción de participar en dos Bootcamps, uno basado en <strong>Java</strong> y otro en <strong>Angular</strong>. No había trabajado nunca con estos lenguajes, y me ofrecieron formación durante la jornada laboral... lo cual me parecío genial.</p>
+<p>Después de aquello, surgió la oportunidad de trabajar en una empresa multinacional del mundo de la programación. Una de esas empresas que aparecen en las primeras posiciones en los rankings de empresas en las que trabajar. Me pareció una experiencia muy interesante, y encima me ofrecieron la opción de participar en dos <em>Bootcamps</em>, uno basado en <strong>Java</strong> y otro en <strong>Angular</strong>. No había trabajado nunca con estos lenguajes, y me ofrecieron formación durante la jornada laboral... lo cual me parecío genial.</p>
 
 <h2>Java</h2>
 
@@ -35,13 +35,13 @@
 
 <h2>Angular</h2>
 
-<p>Angular me pareció más interesante. Venía de trabajar con <strong>VueJS</strong>, y al fin de cuentas, para mi fue más asequible que <strong>Java</strong>. Lo primero que me llamó la atención fue que utilizara <strong>TypScript</strong>. Nunca lo había usado, y admito que fue un gran descubrimiento. Una vez termine el Bootcamp me pasé cerca de cuatro meses desarrollando una libería en <strong>TypeScript</strong> desde cero, para utilizarla con <strong>Angular</strong>, y admito que fue una experiencia genial, y sobre todo, aprendí muchísimo.</p>
+<p>Angular me pareció más interesante. Venía de trabajar con <strong>VueJS</strong>, y al fin de cuentas, para mi fue más asequible que <strong>Java</strong>. Lo primero que me llamó la atención fue que utilizara <strong>TypScript</strong>. Nunca lo había usado, y admito que fue un gran descubrimiento. Una vez termine el <em>Bootcamp</em> me pasé cerca de cuatro meses desarrollando una libería en <strong>TypeScript</strong> desde cero, para utilizarla con <strong>Angular</strong>, y admito que fue una experiencia genial, y sobre todo, aprendí muchísimo.</p>
 
 <p>En cuanto a <strong>Angular</strong>, no terminó de gustarme del todo, sobre todo por lo encorsetado que está... intentar generar estructuras dependientes unas de otras, era una pesadilla, y básicamente se limitaba a clase padre y clase hijo, y como vincularlas entre sí. Cuando querías hacer algo más complejo, tenías que buscarte la vida para implementar algo parecido a lo que tenías en mente... pero sin terminar de conseguirlo...</p>
 
 <p>En general, es un buen <strong>framework</strong>, pero creo que <strong>React</strong> es mucho mejor, incluso <strong>VueJS</strong> es mucho mejor si sólo tenemos que gestionar el <em>front-end</em>.</p>
 
-<p>Como punto final, decir que la experiencia de haber trabajado en una empresa importate del sector, ha sido en general muy positiva, y me he llevado muchas enseñanzas importantes, sobre todo, en cuanto a trabajo en equipo, y lo complejo que es a veces gestionar un proyecto. Por ejemplo, en uno de los proyectos que trabajé, mi equipo sólo trabajaba con <strong>Angular</strong> (si, yo trabajando toda la vida en <em>back-end</em>, termine en <em>front-end</em>), y no teníamos acceso al <em>back-end</em>, por lo que a veces era casi más complicado intentar adivinar como funcionaba un sistema que añadir la funcionalidad que había pedido el cliente...En fin, cosas que pasan cuando se divide el trabajo en equipos.</p>
+<p>Como punto final, decir que la experiencia de haber trabajado en una empresa importate del sector, ha sido en general muy positiva, y me he llevado muchas enseñanzas importantes, sobre todo, en cuanto a trabajo en equipo, y lo complejo que es a veces gestionar un proyecto. Por ejemplo, en uno de los proyectos que trabajé, mi equipo sólo trabajaba con <strong>Angular</strong> (si, yo trabajando toda la vida en <em>back-end</em>, termine en <em>front-end</em>), y no teníamos acceso al <em>back-end</em>, por lo que a veces era casi más complicado intentar adivinar como funcionaba un sistema que añadir la funcionalidad que había pedido el cliente... En fin, cosas que pasan cuando se divide el trabajo en equipos.</p>
     ]]></content>
 </entry>
             <entry>
