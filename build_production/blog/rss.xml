@@ -16,11 +16,11 @@
                 <content:encoded><![CDATA[<p>Una de las principales herramientas para hacer código de mayor calidad, más fácil de mantener, y sobre todo, que te permita crecer como programador, es la de implementar en nuestro código los principios SOLID:</p>
 
 <ul>
-<li>S. Single responsibility principle: Principio de responsabilidad única.</li>
-<li>O. Open-Closed principle: Principio abierto-cerrado.</li>
-<li>L. Liskov substitution principle: Principio de sustitución de Liskov.</li>
-<li>I. Interface segregation principle: Principio de segregación de interfaces.</li>
-<li>D. Dependency Inversion Principle: Principio de inversión de dependiencia.</li>
+<li><strong>S</strong>. <em>Single responsibility principle</em>: Principio de responsabilidad única.</li>
+<li><strong>O</strong>. <em>Open-Closed principle</em>: Principio abierto-cerrado.</li>
+<li><strong>L</strong>. <em>Liskov substitution principle</em>: Principio de sustitución de Liskov.</li>
+<li><strong>I</strong>. <em>Interface segregation principle</em>: Principio de segregación de interfaces.</li>
+<li><strong>D</strong>. <em>Dependency Inversion Principle</em>: Principio de inversión de dependiencia.</li>
 </ul>
 
 <p>Antes de empezar, es importante indicar que los ejemplos que se van a utilizar, están basados en PHP y LARAVEL. Veamos estos principios uno a uno, y con ejemplos:</p>
