@@ -512,7 +512,7 @@ class Pajaro implements ComportamientoAereo
 }
 </code></pre>
 
-<p>Y ahora la clase que los llama, en este caso a Paypal:</p>
+<p>Y ahora la clase que los llama, en este caso a la clase <code>Paypal()</code>:</p>
 
 <pre><code class="language-php">class Pago
 {
@@ -539,7 +539,7 @@ class Pajaro implements ComportamientoAereo
 $operation-&gt;pagar();
 </code></pre>
 
-<p>El problema radica en que la clase <code>Pago()</code> no tiene por qué saber que método de pago vamos a usar, y por tanto, debe de funcionar con cualquiera. Es aquí donde vienen en nuestra ayuda las <code>interfaces</code>, permitiendo que podamos utilizar abstracciones. Lo primero es crear la <code>interface</code>:</p>
+<p>El problema radica en que la clase <code>Pago()</code> no tiene por qué saber que método de pago vamos a usar, y por tanto, debe de funcionar con cualquiera. Es aquí donde vienen en nuestra ayuda las <code>interfaces</code>, permitiendo que podamos utilizar abstracciones. Lo primero será crear la <code>interface</code> para hacer el pago:</p>
 
 <pre><code class="language-php">interface MetodoDePagoInterface
 {
@@ -566,7 +566,7 @@ class CreditCard implements MetodoDePagoInterface
 }
 </code></pre>
 
-<p>Y ahora hacemos que la clase <code>Pago()</code> llame directamente a la <code>interface</code>:</p>
+<p>Y por último hacemos que la clase <code>Pago()</code> llame directamente a la <code>interface</code> en vez de al método de pago:</p>
 
 <pre><code class="language-php">class Pago
 {
@@ -602,7 +602,7 @@ $operation-&gt;pagar();
 $operation-&gt;pagar();
 </code></pre>
 
-<p>Implementando todo esto en tu código vas a conseguir proyectos más optimizados, sencillos de mantener y de ampliar. Y tal y como he comentado antes... <strong>un mejor programador</strong>.</p>
+<p>Implementando todo esto en tu código vas a conseguir proyectos más optimizados, sencillos de mantener y facil de ampliar. Y tal y como he comentado antes, serás <strong>un mejor programador</strong>.</p>
     </div>
 
     <nav class="flex justify-between text-sm md:text-base">
@@ -615,7 +615,10 @@ $operation-&gt;pagar();
         <div>
                     </div>
     </nav>
-        </main>
+
+            <div class="flex justify-center w-full">
+    <iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?o=30&p=48&l=ur1&category=primeday&banner=0CJQFH890BEJ2EREPQR2&f=ifr&linkID=0dee11051e921f2ae16f919c6515de3b&t=ofertiacom-21&tracking_id=ofertiacom-21" width="728" height="90" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
+</div>        </main>
 
         <footer class="w-full flex items-center h-24 bg-white sm:bg-gray-600 sm:text-gray-100 text-center text-sm mt-12 py-4" role="contentinfo">
             <div class="flex-1">

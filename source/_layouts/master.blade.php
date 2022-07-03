@@ -104,6 +104,8 @@
             @include('_components.banner')
 
             @yield('body')
+
+            @include('_components.banner')
         </main>
 
         <footer class="w-full flex items-center h-24 bg-white sm:bg-gray-600 sm:text-gray-100 text-center text-sm mt-12 py-4" role="contentinfo">
