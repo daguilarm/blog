@@ -5,7 +5,7 @@
         <link>https://daguilar.dev</link>
         <description><![CDATA[Blog sobre programación de Damián Aguilar: php, javascript, vuejs, phyton, java... y mucho más.]]></description>
         <atom:link href="https://daguilar.dev/blog/rss.xml" rel="self" type="application/rss+xml" />
-        <language></language>
+        <language>es</language>
         <lastBuildDate>Sat, 25 Jun 2022 00:00:00 +0000</lastBuildDate>
 
                     <item>
