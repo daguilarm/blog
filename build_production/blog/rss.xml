@@ -424,7 +424,7 @@ $operation-&gt;pagar();
 
 <p>1) Lo primero de todo, se han producido mejoras en <em>opchache</em> que han generado una <strong>ligera mejora en el rendimiento</strong>, respecto a la versión de PHP 7.4.</p>
 
-<p>2) <strong>Una de las funcionalidades más esperadas eran las de <em>Emumns</em></strong>, que <em>frameworks</em> como <strong>Laravel</strong> ya han integrado en su última versión (la 9). Veamos un ejemplo:</p>
+<p>2) <strong>Una de las funcionalidades más esperadas eran las de <code>Emumns</code>, que <code>frameworks</code> como **Laravel</strong> ya han integrado en su última versión (la 9). Veamos un ejemplo:</p>
 
 <pre><code class="language-php">enum Status {
   case Pending;
@@ -437,7 +437,7 @@ function cambioDeEstado(Status $status): void {
 }
 </code></pre>
 
-<p>3) El tipo <em>never</em> para los métodos. Nos permite definir un retorno tipo <em>void</em>, pero cuando queremos que el programa no continue más. Por ejemplo, puede ser útil para las redirecciones o para métodos que interrumpan la ejecuación:</p>
+<p>3) El tipo <em>never</em> para los métodos. Nos permite definir un retorno tipo <code>void</code>, pero cuando queremos que el programa no continue más. Por ejemplo, puede ser útil para las redirecciones o para métodos que interrumpan la ejecuación:</p>
 
 <pre><code class="language-php">function stop(): never
 {    
@@ -472,13 +472,13 @@ class MyClass2 extends MyClass1 {
 }
 </code></pre>
 
-<p>7) <strong>Mejora en la unión de arrays</strong>, facilitando las operaciones entre <em>arrays</em>. Desde ahora, el funcionamiento del "<em>array unpacking</em>" es parecido al de <strong>array_merge()</strong>:</p>
+<p>7) <strong>Mejora en la unión de arrays</strong>, facilitando las operaciones entre <code>arrays</code>. Desde ahora, el funcionamiento del "<em>array unpacking</em>" es parecido al de <code>array_merge()</code>:</p>
 
 <pre><code class="language-php">$array_1 = ['elemento 1', 'elemento 2'];
 $array_2 = ['elemento 3', 'elemento 4'];
 </code></pre>
 
-<p>Lo normal para unir esto arrays, y añadirle otro más, sería usar array_merge():</p>
+<p>Lo normal para unir esto arrays, y añadirle otro más, sería usar <code>array_merge()</code>:</p>
 
 <pre><code class="language-php">$array_3 = array_merge($array_1, $array_2, ['elemento 5']);
 var_dump($array_3)
@@ -498,9 +498,9 @@ var_dump($array_4)
 
 <p><strong>Desde PHP 7.4 está implmentada esta funcionalidad</strong>, pero solo funcionaba con números.</p>
 
-<p>8) <strong>Nuevos algoritmos de Hashing</strong>. Desde ahora se da soporte para xxHash y MurMurHash3. Parecen ser algoritmos muchos más rápidos y seguros...</p>
+<p>8) <strong>Nuevos algoritmos de Hashing</strong>. Desde ahora se da soporte para <code>xxHash</code> y <code>MurMurHash3</code>. Parecen ser algoritmos muchos más rápidos y seguros...</p>
 
-<p>9) <strong>Nueva función array_is_list()</strong>. Sirve para determinar si un array es una lista perfecta, incluyendo claves y valores. Es decir, si usamos sólo claves, determinará si la sucesión es correcta. Veamos algunos ejemplos:</p>
+<p>9) <strong>Nueva función <code>array_is_list()</code></strong>. Sirve para determinar si un array es una lista perfecta, incluyendo claves y valores. Es decir, si usamos sólo claves, determinará si la sucesión es correcta. Veamos algunos ejemplos:</p>
 
 <pre><code class="language-php">array_is_list([1, 2, 3]); // Es correcto, se sigue el orden correlativo, y no importa que no empiece por 0, ya que son valores.
 array_is_list([1 =&gt; 1, 2 =&gt; 2, 3 =&gt; 3]); // En este caso daría FALSE, porque la clave debe empezar en 0, y no en 1.
@@ -533,7 +533,7 @@ array_is_list(['a', 1 =&gt; 'b', 'c']); // Solo hay una clave, en segunda posici
 
 <h2>Java</h2>
 
-<p>Empecemos por <strong>Java</strong>... no se ha convertido en mi lenguaje favorito. Quizas el problema es que el ecosistema de desarrollo, en este caso <strong>Spring</strong> y <strong>Spring boot</strong>, no eran demasiado intuitivos. Tengo la impresión de que al venir de <strong>Laravel</strong>, cualquier otro <em>framework</em> siempre va a parecer más complejo y sobre todo, poco claro. Parecía interminable la cantidad de cosas que había que configurar, que si archivos XML, que si las librerías, las anotaciones, los getter y setters, y lo complejo que es todo el tema de gestión de modelos y bases de datos...</p>
+<p>Empecemos por <strong>Java</strong>... no se ha convertido en mi lenguaje favorito. Quizas el problema es que el ecosistema de desarrollo, en este caso <strong>Spring</strong> y <strong>Spring boot</strong>, no eran demasiado intuitivos. Tengo la impresión de que al venir de <strong>Laravel</strong>, cualquier otro <em>framework</em> siempre va a parecer más complejo y sobre todo, poco claro. Parecía interminable la cantidad de cosas que había que configurar, que si archivos <code>XML</code>, que si las librerías, las anotaciones, los <code>getter</code> y <code>setters</code>, y lo complejo que es todo el tema de gestión de modelos y bases de datos...</p>
 
 <p>En resumen, he aprendido a gestionar el <em>backend</em> de un servicio mediante <strong>Java</strong>, pero no es algo que escogería de forma voluntaria como primera opción para un proyecto. A modo de anécdota, pregunté en la empresa por qué se optaba siempre por <strong>Java</strong> para el <em>backend</em>, y al final la respuesta era: <em>"es lo que pide el cliente"</em>...</p>
 

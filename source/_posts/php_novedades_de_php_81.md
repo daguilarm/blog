@@ -3,6 +3,7 @@ extends: _layouts.post
 section: content
 title: Novedades de PHP 8.1
 date: 2022-06-11
+update: 2022-07-03
 description: Actualizando php 8.1. Novedades y actualizaciones del lenguaje de programación.
 categories: [php]
 ---
@@ -11,7 +12,7 @@ Soy consciente de que llego un poco tarde, sobre todo porque en pocos meses sale
 
 1) Lo primero de todo, se han producido mejoras en *opchache* que han generado una **ligera mejora en el rendimiento**, respecto a la versión de PHP 7.4.
 
-2) **Una de las funcionalidades más esperadas eran las de *Emumns***, que *frameworks* como **Laravel** ya han integrado en su última versión (la 9). Veamos un ejemplo:
+2) **Una de las funcionalidades más esperadas eran las de `Emumns`, que `frameworks` como **Laravel** ya han integrado en su última versión (la 9). Veamos un ejemplo:
 
 ```php 
 enum Status {
@@ -25,7 +26,7 @@ function cambioDeEstado(Status $status): void {
 }
 ```
 
-3) El tipo *never* para los métodos. Nos permite definir un retorno tipo *void*, pero cuando queremos que el programa no continue más. Por ejemplo, puede ser útil para las redirecciones o para métodos que interrumpan la ejecuación:
+3) El tipo *never* para los métodos. Nos permite definir un retorno tipo `void`, pero cuando queremos que el programa no continue más. Por ejemplo, puede ser útil para las redirecciones o para métodos que interrumpan la ejecuación:
 
 ```php
 function stop(): never
@@ -63,14 +64,14 @@ class MyClass2 extends MyClass1 {
 }
 ```
 
-7) **Mejora en la unión de arrays**, facilitando las operaciones entre *arrays*. Desde ahora, el funcionamiento del "*array unpacking*" es parecido al de **array_merge()**:
+7) **Mejora en la unión de arrays**, facilitando las operaciones entre `arrays`. Desde ahora, el funcionamiento del "*array unpacking*" es parecido al de `array_merge()`:
 
 ```php 
 $array_1 = ['elemento 1', 'elemento 2'];
 $array_2 = ['elemento 3', 'elemento 4'];
 ```
 
-Lo normal para unir esto arrays, y añadirle otro más, sería usar array_merge():
+Lo normal para unir esto arrays, y añadirle otro más, sería usar `array_merge()`:
 
 ```php 
 $array_3 = array_merge($array_1, $array_2, ['elemento 5']);
@@ -92,9 +93,9 @@ var_dump($array_4)
 
 **Desde PHP 7.4 está implmentada esta funcionalidad**, pero solo funcionaba con números.
 
-8) **Nuevos algoritmos de Hashing**. Desde ahora se da soporte para xxHash y MurMurHash3. Parecen ser algoritmos muchos más rápidos y seguros...
+8) **Nuevos algoritmos de Hashing**. Desde ahora se da soporte para `xxHash` y `MurMurHash3`. Parecen ser algoritmos muchos más rápidos y seguros...
 
-9) **Nueva función array_is_list()**. Sirve para determinar si un array es una lista perfecta, incluyendo claves y valores. Es decir, si usamos sólo claves, determinará si la sucesión es correcta. Veamos algunos ejemplos:
+9) **Nueva función `array_is_list()`**. Sirve para determinar si un array es una lista perfecta, incluyendo claves y valores. Es decir, si usamos sólo claves, determinará si la sucesión es correcta. Veamos algunos ejemplos:
 
 ```php 
 array_is_list([1, 2, 3]); // Es correcto, se sigue el orden correlativo, y no importa que no empiece por 0, ya que son valores.

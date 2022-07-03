@@ -3,6 +3,7 @@ extends: _layouts.post
 section: content
 title: Saliendo de la zona de confort, y programando con Python, Java y Angular.
 date: 2022-05-22
+update: 2022-07-03
 description: Me siento cómodo trabajando con PHP y Laravel, ahora es el momento de enfrentarse a Java, Python y Angular
 categories: [programacion, php, python, angular, java]
 ---
@@ -17,7 +18,7 @@ Después de aquello, surgió la oportunidad de trabajar en una empresa multinaci
 
 ## Java
 
-Empecemos por **Java**... no se ha convertido en mi lenguaje favorito. Quizas el problema es que el ecosistema de desarrollo, en este caso **Spring** y **Spring boot**, no eran demasiado intuitivos. Tengo la impresión de que al venir de **Laravel**, cualquier otro *framework* siempre va a parecer más complejo y sobre todo, poco claro. Parecía interminable la cantidad de cosas que había que configurar, que si archivos XML, que si las librerías, las anotaciones, los getter y setters, y lo complejo que es todo el tema de gestión de modelos y bases de datos... 
+Empecemos por **Java**... no se ha convertido en mi lenguaje favorito. Quizas el problema es que el ecosistema de desarrollo, en este caso **Spring** y **Spring boot**, no eran demasiado intuitivos. Tengo la impresión de que al venir de **Laravel**, cualquier otro *framework* siempre va a parecer más complejo y sobre todo, poco claro. Parecía interminable la cantidad de cosas que había que configurar, que si archivos `XML`, que si las librerías, las anotaciones, los `getter` y `setters`, y lo complejo que es todo el tema de gestión de modelos y bases de datos... 
 
 En resumen, he aprendido a gestionar el *backend* de un servicio mediante **Java**, pero no es algo que escogería de forma voluntaria como primera opción para un proyecto. A modo de anécdota, pregunté en la empresa por qué se optaba siempre por **Java** para el *backend*, y al final la respuesta era: *"es lo que pide el cliente"*...
 
