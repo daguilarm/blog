@@ -143,7 +143,7 @@
                     implicit: false, // debe se false, porque de lo contrario no cumples
                     statement: '/legal/cookies', // url a la política de cookies / legal
                     analytics: [], // aquí el grupo analitica pero hay más en opciones
-                    marketing: ['ad-privacy', 'add-id']
+                    marketing: ['ad-privacy', 'ad-id']
             });
 
             document.addEventListener('DOMContentLoaded', function() {
