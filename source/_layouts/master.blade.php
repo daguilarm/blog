@@ -70,6 +70,14 @@
         {{-- GDPR --}}
         <script type="text/javascript" src="../../assets/gdpr/gdpr.js"></script>
         <script type="text/javascript" src="../../assets/gdpr/es.js"></script>
+
+        <script>
+            document.addEventListener('gdprCookiesEnabled', function (e) {
+                if(e.detail.marketing) { //checks if marketing cookies are enabled
+                    document.getElementById('banner').innerHTML='<iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?o=30&p=48&l=ur1&category=primeday&banner=0CJQFH890BEJ2EREPQR2&f=ifr&linkID=0dee11051e921f2ae16f919c6515de3b&t=ofertiacom-21&tracking_id=ofertiacom-21" width="728" height="90" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>';
+                }
+            });
+        </script>
     </head>
 
     <body class="flex flex-col justify-between min-h-screen bg-gray-100 text-gray-800 leading-normal font-sans">
@@ -106,7 +114,7 @@
 
             @yield('body')
 
-            @include('_components.banner')
+            {{-- @include('_components.banner') --}}
         </main>
 
         <footer class="w-full flex items-center h-24 bg-white sm:bg-gray-600 sm:text-gray-100 text-center text-sm mt-12 py-4" role="contentinfo">
@@ -139,7 +147,7 @@
                     locale: 'es', // si lo cambias debes tener un archivo como el de arriba es.js
                     timeout: 1500, // tiempo de espera
                     expiration: 30, // días de duración de la cookie
-                    domain: 'daguilar.dev', // dominio
+                    domain: window.location.hostname, // dominio
                     implicit: false, // debe se false, porque de lo contrario no cumples
                     statement: '/legal/cookies', // url a la política de cookies / legal
                     analytics: [], // aquí el grupo analitica pero hay más en opciones
@@ -153,12 +161,6 @@
                     linksTargetBlank[i].rel = "noopener";
                 }
             }, false);
-
-            document.addEventListener('gdprCookiesEnabled', function (e) {
-                if(e.detail.marketing) { //checks if marketing cookies are enabled
-                //facebook pixel code
-                }
-            });
         </script>
     </body>
 </html>
