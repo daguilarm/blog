@@ -17,7 +17,9 @@ Una de las principales herramientas para hacer código de mayor calidad, más f�
 
 Antes de empezar, es importante indicar que los ejemplos que se van a utilizar, están basados en PHP y LARAVEL. Veamos estos principios uno a uno, y con ejemplos:
 
-## 1) **Single responsibility**. Cada clase debe de tener una sola función o responsabilidad. Veamos un simple controlador de **Laravel**:
+## 1) **Single responsibility**. 
+
+Cada clase debe de tener una sola función o responsabilidad. Veamos un simple controlador de **Laravel**:
 
 ```php
 class PostController extends Controller
@@ -62,7 +64,9 @@ class Post extends Models
 
 Podemos imaginar que un controlador puede llegar a complicarse mucho más, por ejemplo, con validación. En este caso, sería necesario extraerla a un `FormRequest` dejando toda la operación fuera del controlador (por ejemplo).
 
-## 2) **Open-closed principle**. Los objetos deben de estar abiertos a extensión pero cerrados a modificación. Es decir, si queremos añadir funcionalidades nuevas a una clase, debemos hacerlo añadiendo métodos y no modificando la clase. La clase solo debería modificarse para solucionar errores.
+## 2) **Open-closed principle**. 
+
+Los objetos deben de estar abiertos a extensión pero cerrados a modificación. Es decir, si queremos añadir funcionalidades nuevas a una clase, debemos hacerlo añadiendo métodos y no modificando la clase. La clase solo debería modificarse para solucionar errores.
 
 En este principio introducimos el concepto de `interface`, ya que nos va a ayudar a generar una estructura homogenea. El ejemplo típico que se suele utilizar aquí es el del cálculo de las áreas, de diferentes figuras geométicas. Veamos un ejemplo de como no debería hacerse:
 
@@ -182,7 +186,9 @@ class CalculoDelArea {
 }
 ```
 
-## 3) **Liskov Substitution Principle**. El principio, dice algo así: *"Let q(x) be a property provable about objects x of type T. Then q(y) should be provable for objects y of type S, where S is a subtype of T"*, que básicamente viene a decir: *"Cada clase que hereda de otra puede usarse como su padre sin necesidad de conocer las diferencias entre ellas"* [wikipedia](https://es.wikipedia.org/wiki/Principio_de_sustituci%C3%B3n_de_Liskov){.link-out}. Básicamente, podemos decir que al extender una clase padre desde un hijo, nos sobran métodos, o hay métodos que no funcionan con nuestra clase hija. Este principio fue propuesto por [Barbara Liskov](https://es.wikipedia.org/wiki/Barbara_Liskov)[.link-out]
+## 3) **Liskov Substitution Principle**. 
+
+El principio, dice algo así: *"Let q(x) be a property provable about objects x of type T. Then q(y) should be provable for objects y of type S, where S is a subtype of T"*, que básicamente viene a decir: *"Cada clase que hereda de otra puede usarse como su padre sin necesidad de conocer las diferencias entre ellas"* [wikipedia](https://es.wikipedia.org/wiki/Principio_de_sustituci%C3%B3n_de_Liskov){.link-out}. Básicamente, podemos decir que al extender una clase padre desde un hijo, nos sobran métodos, o hay métodos que no funcionan con nuestra clase hija. Este principio fue propuesto por [Barbara Liskov](https://es.wikipedia.org/wiki/Barbara_Liskov)[.link-out]
 
 Volvamos al ejemplo de antes: la clase para calcular el area, y le añadimos un método nuevo:
 
@@ -255,7 +261,9 @@ class Resultado {
 
 **El principio de sustitución de Liskov**, dice que si lo hemos hecho bien, daría igual que usásemos la clase `CalculoDelArea` o su clase hija `CalculoDelVolumen`, es decir, cualquier clase hija debería poder ser sustituida por la clase padre. Si se producen errores, entonces no se cumple el **principio de sustitución de Liskov**.
 
-## 4) **Interface segretation principle**. Una clase nunca debe ser forzada a implementar una `interface` que no usa, o emplear métodos que no tiene por qué usar. Veamos el típico ejemplo sobre pájaros y perros. Lo primero es crear una `interface` con las acciones que pueden hacer:
+## 4) **Interface segretation principle**. 
+
+Una clase nunca debe ser forzada a implementar una `interface` que no usa, o emplear métodos que no tiene por qué usar. Veamos el típico ejemplo sobre pájaros y perros. Lo primero es crear una `interface` con las acciones que pueden hacer:
 
 ```php 
 interface Comportamiento
@@ -313,7 +321,9 @@ class Pajaro implements ComportamientoAereo
 }
 ```
 
-## 5) **Dependency inversion principle**. Los módulos de alto nivel no deberían depender de los de bajo nivel. Ambos deberían depender de abstracciones. Las abstracciones no deberían depender de los detalles. Son los detalles los que deberían depender de abstracciones. [Robert C. Martin](https://es.wikipedia.org/wiki/Robert_C._Martin)[.link-out].
+## 5) **Dependency inversion principle**. 
+
+Los módulos de alto nivel no deberían depender de los de bajo nivel. Ambos deberían depender de abstracciones. Las abstracciones no deberían depender de los detalles. Son los detalles los que deberían depender de abstracciones. [Robert C. Martin](https://es.wikipedia.org/wiki/Robert_C._Martin)[.link-out].
 
 El ejemplo que suele ponerse es el de un proceso de pago, donde se pueden utilizar diversos métodos de pago, pero vayamos paso por paso. Primero vamos a hacerlo directamente, definiendo un método de pago:
 
