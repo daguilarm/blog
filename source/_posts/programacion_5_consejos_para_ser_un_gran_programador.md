@@ -336,7 +336,7 @@ class PayPal
 }
 ```
 
-Y ahora la clase que los llama, en este caso a Paypal:
+Y ahora la clase que los llama, en este caso a la clase `Paypal()`:
 
 ```php
 class Pago
@@ -365,7 +365,7 @@ $operacion = new Pago(
 $operation->pagar();
 ```
 
-El problema radica en que la clase `Pago()` no tiene por qué saber que método de pago vamos a usar, y por tanto, debe de funcionar con cualquiera. Es aquí donde vienen en nuestra ayuda las `interfaces`, permitiendo que podamos utilizar abstracciones. Lo primero es crear la `interface`:
+El problema radica en que la clase `Pago()` no tiene por qué saber que método de pago vamos a usar, y por tanto, debe de funcionar con cualquiera. Es aquí donde vienen en nuestra ayuda las `interfaces`, permitiendo que podamos utilizar abstracciones. Lo primero será crear la `interface` para hacer el pago:
 
 ```php
 interface MetodoDePagoInterface
@@ -395,7 +395,7 @@ class CreditCard implements MetodoDePagoInterface
 }
 ```
 
-Y ahora hacemos que la clase `Pago()` llame directamente a la `interface`:
+Y por último hacemos que la clase `Pago()` llame directamente a la `interface` en vez de al método de pago:
 
 ```php
 class Pago
@@ -434,4 +434,4 @@ $operacion = new Pago(
 $operation->pagar();
 ```
 
-Implementando todo esto en tu código vas a conseguir proyectos más optimizados, sencillos de mantener y de ampliar. Y tal y como he comentado antes... **un mejor programador**.
+Implementando todo esto en tu código vas a conseguir proyectos más optimizados, sencillos de mantener y facil de ampliar. Y tal y como he comentado antes, serás **un mejor programador**.
