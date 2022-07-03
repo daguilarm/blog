@@ -6,8 +6,415 @@
         <description><![CDATA[Blog sobre programación de Damián Aguilar: php, javascript, vuejs, phyton, java... y mucho más.]]></description>
         <atom:link href="https://daguilar.dev/blog/rss.xml" rel="self" type="application/rss+xml" />
         <language></language>
-        <lastBuildDate>Sat, 11 Jun 2022 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Sat, 25 Jun 2022 00:00:00 +0000</lastBuildDate>
 
+                    <item>
+                <title><![CDATA[Las cinco claves para ser un gran programador. Principios SOLID.]]></title>
+                <link>https://daguilar.dev/blog/programacion_5_consejos_para_ser_un_gran_programador</link>
+                <guid isPermaLink="true">https://daguilar.dev/blog/programacion_5_consejos_para_ser_un_gran_programador</guid>
+                <description><![CDATA[Principales consejos para ser un gran programador. Todo ello aplicando los principios SOLID, consiguiendo código más eficaz, sencillo de mantener y facil de ampliar.]]></description>
+                <content:encoded><![CDATA[<p>Una de las principales herramientas para hacer código de mayor calidad, más fácil de mantener, y sobre todo, que te permita crecer como programador, es la de implementar en nuestro código los principios SOLID:</p>
+
+<ul>
+<li>S. Single responsibility principle: Principio de responsabilidad única.</li>
+<li>O. Open-Closed principle: Principio abierto-cerrado.</li>
+<li>L. Liskov substitution principle: Principio de sustitución de Liskov.</li>
+<li>I. Interface segregation principle: Principio de segregación de interfaces.</li>
+<li>D. Dependency Inversion Principle: Principio de inversión de dependiencia.</li>
+</ul>
+
+<p>Antes de empezar, es importante indicar que los ejemplos que se van a utilizar, están basados en PHP y LARAVEL. Veamos estos principios uno a uno, y con ejemplos:</p>
+
+<p>1) <strong>Single responsibility</strong>. Cada clase debe de tener una sola función o responsabilidad. Veamos un simple controlador de <strong>Laravel</strong>:</p>
+
+<pre><code class="language-php">class PostController extends Controller
+{
+    public function index() {
+        // Cargamos los posts de la base de datos
+        $posts = DB::table('posts')
+            -&gt;latest()
+            -&gt;get();
+
+        // Renderizamos la vista y enviamos los posts a ella
+        return view('dashboard.posts', compact('posts'));
+    }
+}
+</code></pre>
+
+<p>En este caso, estamos llamando por un lado a la base de datos y por otro lado, generando la vista. Esta clase tiene dos responsabilidades. Lo normal sería que la llamada a la base de datos se hiciera en otra clase, por ejemplo desde el modelo, de forma que nuestra clase quedaría así:</p>
+
+<pre><code class="language-php">class PostController extends Controller
+{
+    public function index() {
+        // Renderizamos la vista y enviamos los posts a ella
+        return view('dashboard.posts')
+            -&gt;withPosts(Post::allThePosts());
+    }
+}
+</code></pre>
+
+<p>Y nuestro modelo quedaría así:</p>
+
+<pre><code class="language-php">class Post extends Models
+{
+    public function scopeAllThePosts($query) {
+        return $query
+            -&gt;latest()
+            -&gt;get();
+    }
+}
+</code></pre>
+
+<p>Podemos imaginar que un controlador puede llegar a complicarse mucho más, por ejemplo, con validación. En este caso, sería necesario extraerla a un <code>FormRequest</code> dejando toda la operación fuera del controlador (por ejemplo).</p>
+
+<p>2) <strong>Open-closed principle</strong>. Los objetos deben de estar abiertos a extensión pero cerrados a modificación. Es decir, si queremos añadir funcionalidades nuevas a una clase, debemos hacerlo añadiendo métodos y no modificando la clase. La clase solo debería modificarse para solucionar errores.</p>
+
+<p>En este principio introducimos el concepto de <code>interface</code>, ya que nos va a ayudar a generar una estructura homogenea. El ejemplo típico que se suele utilizar aquí es el del cálculo de las áreas, de diferentes figuras geométicas. Veamos un ejemplo de como no debería hacerse:</p>
+
+<p>Lo que queremos hacer es calcular el area total de una serie de rectángulos. Para ello, definimos la clase rectángulo:</p>
+
+<pre><code class="language-php">class Rectangulo
+{
+    private $ancho;
+    private $alto;
+
+    public function __construct($ancho, $alto) {
+        $this-&gt;ancho = $ancho;
+        $this-&gt;alto = $alto;
+    }
+}
+</code></pre>
+
+<p>Ahora necesitamos una clase que calcule la suma del area de todos los rectángulos:</p>
+
+<pre><code class="language-php">class CalculoDelArea
+{
+    public area = 0;
+
+    public function areaTotal(array $rectangulos) {
+        foreach($rectangulos as $rectangulo) {
+            $this-&gt;area += $rectangulo-&gt;ancho * $rectangulo-&gt;largo;
+        }
+
+        return $this-&gt;area;
+    }
+}
+</code></pre>
+
+<p>Pues ya estaría, tenemos una clase que calcula el area total de nuestros rectángulos. El problema biene cuando queremos añadir nuevas figuras geométricas, como cuadrados o circulos... ahora tendríamos que añadir a nuestra clase CalculoDelArea cada uno de estos casos, mediante condicionales:</p>
+
+<pre><code class="language-php">class CalculoDelArea
+{
+    public area = 0;
+
+    public function areaTotal(array $figuras) {
+        foreach($figuras as $figura) {
+            // Llegan los condicionales 
+            if($figura instanceof Rectangulo) {
+                $this-&gt;area += $rectangulo-&gt;ancho * $rectangulo-&gt;largo;
+            }
+
+            // Añadimos condicionales para otras formas....
+        }
+
+        return $this-&gt;area;
+    }
+}
+</code></pre>
+
+<p>Esto es un desastre si tenemos que empezar a añadir modificaciones cada vez que nos surge una necesidad nueva. Para solucionarlo, vamos a utilizar las <code>interfaces</code>, y cumplir el <strong>Open-closed principle</strong>:</p>
+
+<pre><code class="language-php">// Lo primero es crear una interface, que obligue a las clases a tener un método área
+interface Operaciones {
+    public function area();
+}
+
+// Ahora generamos una clase para cada figura geomética, y que debe implementar la interface
+class Rectangulo implements Operaciones
+{
+    private $ancho;
+    private $alto;
+
+    public function __construct($ancho, $alto) {
+        $this-&gt;ancho = $ancho;
+        $this-&gt;alto = $alto;
+    }
+
+    public function area() {
+        return $this-&gt;ancho * $this-&gt;alto;
+    }
+}
+
+// Ahora generamos una para un cuadrado 
+class Cuadrado implements Operaciones {
+
+    private $lado;
+
+    public function __construct($lado) {
+        $this-&gt;lado = $lado;
+    }
+
+    public function area() {
+        return $this-&gt;lado * $this-&gt;lado;
+    }
+}
+</code></pre>
+
+<p>Con esta estructura, cada clase de cada figura es la que se ocupa de realizar el cálculo del area, y la clase que realiza la suma, no tiene por qué saber como se realiza dicha operación:</p>
+
+<pre><code class="language-php">class CalculoDelArea {
+
+    protected $figuras;
+
+    public function __construct($figuras = array()) {
+        $this-&gt;figuras = $figuras;
+    }
+
+    public function sum() {
+        $area = [];
+
+        foreach($this-&gt;figuras as $figura) {
+            $area[] = $figura-&gt;area();
+        }
+
+        return array_sum($area);
+    }
+}
+</code></pre>
+
+<p>3) <strong>Liskov Substitution Principle</strong>. El principio, dice algo así: <em>"Let q(x) be a property provable about objects x of type T. Then q(y) should be provable for objects y of type S, where S is a subtype of T"</em>, que básicamente viene a decir: <em>"Cada clase que hereda de otra puede usarse como su padre sin necesidad de conocer las diferencias entre ellas"</em> <a href="https://es.wikipedia.org/wiki/Principio_de_sustituci%C3%B3n_de_Liskov" class="link-out">wikipedia</a>. Básicamente, podemos decir que al extender una clase padre desde un hijo, nos sobran métodos, o hay métodos que no funcionan con nuestra clase hija. Este principio fue propuesto por <a href="https://es.wikipedia.org/wiki/Barbara_Liskov">Barbara Liskov</a>[.link-out]</p>
+
+<p>Volvamos al ejemplo de antes: la clase para calcular el area, y le añadimos un método nuevo:</p>
+
+<pre><code class="language-php">class CalculoDelArea
+{
+    protected $figuras;
+
+    public function __construct($figuras = array()) {
+        $this-&gt;figuras = $figuras;
+    }
+
+    public function sum() {
+        $area = [];
+
+        foreach($this-&gt;figuras as $figura) {
+            $area[] = $figura-&gt;area();
+        }
+
+        return array_sum($area);
+    }
+
+    public function output()
+    {
+        return 'La suma total es: ' . $this-&gt;sum();
+    }
+</code></pre>
+
+<p>Ahora añadimos una nueva clase para calcular el volumen, y para ello vamos a extender la case del <code>CalculoDelArea</code>:</p>
+
+<pre><code class="language-php">class CalculoDelVolumen extends CalculoDelArea
+{
+    public function __construct($shapes = array())
+    {
+        parent::__construct($shapes);
+    }
+
+    public function sum()
+    {
+        // Calculoa el volumen... da igual como lo haga
+        return $volumen;
+    }
+}
+</code></pre>
+
+<p>Ahora imaginemos que creamos una clase para impimir el resultado:</p>
+
+<pre><code class="language-php">class Resultado {
+
+    protected $operacion;
+
+    // Si cumpliesemo el principio de sustitución de Liskov, daría igual si en vez de CalculoDelVolumen, usamos CalculoDelArea
+    public function __construct(CalculoDelVolumen $operacion)
+    {
+        $this-&gt;operacion = $operacion;
+    }
+
+    public function toJson()
+    {
+        $data = array (
+          'sum' =&gt; $this-&gt;operacion-&gt;sum()
+        );
+
+        return json_encode($data);
+    }
+}
+</code></pre>
+
+<p><strong>El principio de sustitución de Liskov</strong>, dice que si lo hemos hecho bien, daría igual que usásemos la clase <code>CalculoDelArea</code> o su clase hija <code>CalculoDelVolumen</code>, es decir, cualquier clase hija debería poder ser sustituida por la clase padre. Si se producen errores, entonces no se cumple el <strong>principio de sustitución de Liskov</strong>.</p>
+
+<p>4) <strong>Interface segretation principle</strong>. Una clase nunca debe ser forzada a implementar una <code>interface</code> que no usa, o emplear métodos que no tiene por qué usar. Veamos el típico ejemplo sobre pájaros y perros. Lo primero es crear una <code>interface</code> con las acciones que pueden hacer:</p>
+
+<pre><code class="language-php">interface Comportamiento
+{
+    public function correr();
+    public function volar();
+}
+</code></pre>
+
+<p>Ahora creemos nuestras clases <code>Perro</code> y <code>Pájaro</code>:</p>
+
+<pre><code class="language-php">class Perro implements Comportamiento
+{
+    public function correr()
+    {
+        return 'perro corriendo';
+    }
+
+    public function volar()
+    {
+        null;
+    }
+}
+</code></pre>
+
+<p>El método <code>volar()</code>, están rompiendo el principio actual, ya que está obligando a la clase Perro a tener un método que no usa o necesita. La solución es separar las <code>interfaces</code>:</p>
+
+<pre><code class="language-php">interface ComportamientoTerrestre
+{
+    public function correr();
+}
+
+interface ComportamientoAereo
+{
+    public function volar();
+}
+
+class Perro implements ComportamientoTerrestre
+{
+    public function correr()
+    {
+        return 'perro corriendo';
+    }
+}
+
+class Pajaro implements ComportamientoAereo
+{
+    public function volar()
+    {
+        return 'pajaro volando';
+    }
+}
+</code></pre>
+
+<p>5) <strong>Dependency inversion principle</strong>. Los módulos de alto nivel no deberían depender de los de bajo nivel. Ambos deberían depender de abstracciones. Las abstracciones no deberían depender de los detalles. Son los detalles los que deberían depender de abstracciones. <a href="https://es.wikipedia.org/wiki/Robert_C._Martin">Robert C. Martin</a>[.link-out].</p>
+
+<p>El ejemplo que suele ponerse es el de un proceso de pago, donde se pueden utilizar diversos métodos de pago, pero vayamos paso por paso. Primero vamos a hacerlo directamente, definiendo un método de pago:</p>
+
+<pre><code class="language-php">class PayPal 
+{
+    public function hacerPago()
+    {
+        return 'hacemos el pago con paypal...';
+    }
+}
+</code></pre>
+
+<p>Y ahora la clase que los llama, en este caso a Paypal:</p>
+
+<pre><code class="language-php">class Pago
+{
+    protected $metodoDePago;
+
+    public function __construct(Paypal $paypal)
+    {
+        $this-&gt;metodoDePago = $paypal;
+    }
+
+    public function pagar()
+    {
+        $this-&gt;metodoDePago-&gt;hacerPago();
+    }
+}
+</code></pre>
+
+<p>Y ahora realizamos el pago:</p>
+
+<pre><code class="language-php">$operacion = new Pago(
+    new Paypal();
+);
+
+$operation-&gt;pagar();
+</code></pre>
+
+<p>El problema radica en que la clase <code>Pago()</code> no tiene por qué saber que método de pago vamos a usar, y por tanto, debe de funcionar con cualquiera. Es aquí donde vienen en nuestra ayuda las <code>interfaces</code>, permitiendo que podamos utilizar abstracciones. Lo primero es crear la <code>interface</code>:</p>
+
+<pre><code class="language-php">interface MetodoDePagoInterface
+{
+    public function hacerPago();
+}
+</code></pre>
+
+<p>Ahora los métodos de pago deben implementarla:</p>
+
+<pre><code class="language-php">class PayPal implements MetodoDePagoInterface
+{
+    public function hacerPago()
+    {
+        return 'hacemos el pago con paypal...';
+    }
+}
+
+class CreditCard implements MetodoDePagoInterface
+{
+    public function hacerPago()
+    {
+        return 'hacemos el pago con tarjeta de crédito...';
+    }
+}
+</code></pre>
+
+<p>Y ahora hacemos que la clase <code>Pago()</code> llame directamente a la <code>interface</code>:</p>
+
+<pre><code class="language-php">class Pago
+{
+    protected $metodoDePago;
+
+    public function __construct(MetodoDePagoInterface $metodo)
+    {
+        $this-&gt;metodoDePago = $metodo;
+    }
+
+    public function pagar()
+    {
+        $this-&gt;metodoDePago-&gt;hacerPago();
+    }
+}
+</code></pre>
+
+<p>Y ahora ejecutamos el código:</p>
+
+<pre><code class="language-php">$operacion = new Pago(
+    new Paypal();
+);
+
+$operation-&gt;pagar();
+</code></pre>
+
+<p>Y podemos cambiar el sistema de pago:</p>
+
+<pre><code class="language-php">$operacion = new Pago(
+    new CreditCard();
+);
+
+$operation-&gt;pagar();
+</code></pre>
+
+<p>Implementando todo esto en tu código vas a conseguir proyectos más optimizados, sencillos de mantener y de ampliar. Y tal y como he comentado antes... <strong>un mejor programador</strong>.</p>
+]]></content:encoded>
+                <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
+                <pubDate>Sat, 25 Jun 2022 00:00:00 +0000</pubDate>
+
+                            </item>
                     <item>
                 <title><![CDATA[Novedades de PHP 8.1]]></title>
                 <link>https://daguilar.dev/blog/php_novedades_de_php_81</link>
