@@ -269,7 +269,7 @@ class Cuadrado implements Operaciones {
 }
 </code></pre>
 
-<p>Ahora creemos nuestras clases <code>Perro</code> y <code>Pájaro</code>:</p>
+<p>Ahora creemos la clase <code>Perro()</code>:</p>
 
 <pre><code class="language-php">class Perro implements Comportamiento
 {
@@ -285,7 +285,7 @@ class Cuadrado implements Operaciones {
 }
 </code></pre>
 
-<p>El método <code>volar()</code>, están rompiendo el principio actual, ya que está obligando a la clase Perro a tener un método que no usa o necesita. La solución es separar las <code>interfaces</code>:</p>
+<p>El método <code>volar()</code>, están rompiendo el principio actual, ya que está obligando a la clase <code>Perro()</code> a tener un método que no usa o necesita. La solución es separar las <code>interfaces</code>:</p>
 
 <pre><code class="language-php">interface ComportamientoTerrestre
 {
