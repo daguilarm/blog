@@ -3,7 +3,7 @@ extends: _layouts.post
 section: content
 title: Las cinco claves para ser un gran programador. Principios SOLID.
 date: 2022-06-25
-description: Principales consejos para ser un gran programador. Todo ello aplicando los principios SOLID, consiguiendo código más eficaz, sencillo de mantener y facil de ampliar.
+description: Principales consejos para ser un gran programador. Todo ello aplicando los principios SOLID, consiguiendo código más eficaz, sencillo de mantener y fácil de ampliar.
 categories: [programacion, php, laravel]
 ---
 

@@ -12,7 +12,7 @@
                 <title><![CDATA[Las cinco claves para ser un gran programador. Principios SOLID.]]></title>
                 <link>https://daguilar.dev/blog/programacion_5_consejos_para_ser_un_gran_programador</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/programacion_5_consejos_para_ser_un_gran_programador</guid>
-                <description><![CDATA[Principales consejos para ser un gran programador. Todo ello aplicando los principios SOLID, consiguiendo código más eficaz, sencillo de mantener y facil de ampliar.]]></description>
+                <description><![CDATA[Principales consejos para ser un gran programador. Todo ello aplicando los principios SOLID, consiguiendo código más eficaz, sencillo de mantener y fácil de ampliar.]]></description>
                 <content:encoded><![CDATA[<p>Una de las principales herramientas para hacer código de mayor calidad, más fácil de mantener, y sobre todo, que te permita crecer como programador, es la de implementar en nuestro código los principios SOLID:</p>
 
 <ul>
@@ -532,7 +532,7 @@ array_is_list(['a', 1 =&gt; 'b', 'c']); // Solo hay una clave, en segunda posici
                 <title><![CDATA[Saliendo de la zona de confort, y programando con Python, Java y Angular.]]></title>
                 <link>https://daguilar.dev/blog/programacion_programando_con_pyton_java_y_angular</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/programacion_programando_con_pyton_java_y_angular</guid>
-                <description><![CDATA[Me siento cómodo trabajando con PHP y Laravel, ahora es el momento de enfrentarse a Java, Python y Angular]]></description>
+                <description><![CDATA[Me siento cómodo trabajando con PHP y Laravel, ahora es el momento de enfrentarse a Java, Python y Angular. Mi experiencia empezando con estos lenguajes de programación.]]></description>
                 <content:encoded><![CDATA[<p>Toda mi carrera como programador, la he basado en el <strong>desarrollo con PHP</strong>, centrándome en los últimos años en el <strong>desarrollo con Laravel</strong>. En este artículo voy a hablar de como ha sido la experiencia de salirse de la zona de confort y enfrentarse a nuevos retos, con nuevos lenguajes de programación.</p>
 
 <h2>Python</h2>
