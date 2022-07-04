@@ -188,7 +188,7 @@ class CalculoDelArea {
 
 ## 3) **Liskov Substitution Principle**. 
 
-El principio, dice algo así: *"Let q(x) be a property provable about objects x of type T. Then q(y) should be provable for objects y of type S, where S is a subtype of T"*, que básicamente viene a decir: *"Cada clase que hereda de otra puede usarse como su padre sin necesidad de conocer las diferencias entre ellas"* [wikipedia](https://es.wikipedia.org/wiki/Principio_de_sustituci%C3%B3n_de_Liskov){.link-out}. Básicamente, podemos decir que al extender una clase padre desde un hijo, nos sobran métodos, o hay métodos que no funcionan con nuestra clase hija. Este principio fue propuesto por [Barbara Liskov](https://es.wikipedia.org/wiki/Barbara_Liskov)[.link-out]
+El principio, dice algo así: *"Let q(x) be a property provable about objects x of type T. Then q(y) should be provable for objects y of type S, where S is a subtype of T"*, que básicamente viene a decir: *"Cada clase que hereda de otra puede usarse como su padre sin necesidad de conocer las diferencias entre ellas"* [wikipedia](https://es.wikipedia.org/wiki/Principio_de_sustituci%C3%B3n_de_Liskov){.link-out}. Básicamente, podemos decir que al extender una clase padre desde un hijo, nos sobran métodos, o hay métodos que no funcionan con nuestra clase hija. Este principio fue propuesto por [Barbara Liskov](https://es.wikipedia.org/wiki/Barbara_Liskov){.link-out}
 
 Volvamos al ejemplo de antes: la clase para calcular el area, y le añadimos un método nuevo:
 
