@@ -7,7 +7,7 @@ description: Principales consejos para ser un gran programador. Todo ello aplica
 categories: [programacion, php, laravel]
 ---
 
-Una de las principales herramientas para hacer código de mayor calidad, más fácil de mantener, y sobre todo, que te permita crecer como programador, es la de implementar en nuestro código los principios SOLID:
+Una de las principales herramientas para hacer código de mayor calidad, más fácil de mantener, y sobre todo, que te permita crecer como programador, es la de **implementar en nuestro código los principios SOLID**:
 
 - **S**. *Single responsibility principle*: Principio de responsabilidad única.
 - **O**. *Open-Closed principle*: Principio abierto-cerrado.
