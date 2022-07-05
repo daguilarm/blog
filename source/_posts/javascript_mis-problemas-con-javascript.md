@@ -3,11 +3,12 @@ extends: _layouts.post
 section: content
 title: Mis problemas con JavaScript
 date: 2020-11-09
-description: Historia de mi relación amor / odio con JavaScript
+updated: 2022-07-05
+description: Historia de mi relación amor / odio con JavaScript, y como gracias a NodeJS y las librerías que surgiero bajo su sombra, como VueJS, Angular, AlpineJS o React.
 categories: [javascript, markdown, personal]
 ---
 
-Nunca me ha gustado `JavaScript`, ya que siempre lo he encontrado un lenguaje de programación *"mágico"*, es decir, siempre he tenido la sensación que a veces funcionaba y otras veces no... se que esto ha sido siempre culpa mía, principalmente por no llegar a comprender realmente el funcionamiento del lenguaje. 
+**Nunca me ha gustado `JavaScript`**, ya que siempre lo he encontrado un lenguaje de programación *"mágico"*, es decir, siempre he tenido la sensación que a veces funcionaba y otras veces no... **se que esto ha sido siempre culpa mía, principalmente por no llegar a comprender realmente el funcionamiento del lenguaje**. 
 
 Esta situación al final me ha llevado siempre por el camino de ir esquivando `JavaScript` cada vez que he tenido la opción de hacerlo. De hecho, no entendía como a alguien podía gustarle programar con este lenguaje.
 
@@ -18,6 +19,8 @@ Entonces llega `NodeJS` y todas las librerias que surgieron a partir de él: `An
 Simultáneamente a la *Tesis*, empecé otro proyecto en el que intenté hacer un panel de administrador completo utilizando sólo puro y duro `JavaScript`, y fué aquí donde por primera vez empecé a apreciar el lenguaje, sin utilizar librerías y enfrentándome directamente a él. Fue lo mejor que pude hacer en aquel momento. 
 
 Admito que ahora con la llegada de `Livewire` y `AlpineJS` estoy totalmente volcado en el desarrollo con `JavaScript`, y en este punto, puedo decir que ahora si que disfruto programando con este lenguaje, algo que hace unos años me hubiera parecido ciencia ficción.
+
+Y entonces llegó **Angular** y **TypeScript**, y entonces me planteé por primera vez en mi vida la opción de trabajar como programador `front-end`, y lo hice... una gran experiencia.
 
 En definitiva, la intención de este *post* no es otra que la de exponer mi fracaso al intentar aprender un lenguaje de programación empezando por el final... **el camino correcto es siempre empezar por lo básico y después ir a lo específico**, o si quereis arriesgaros, vais a cometer los mismos errores que yo.
 

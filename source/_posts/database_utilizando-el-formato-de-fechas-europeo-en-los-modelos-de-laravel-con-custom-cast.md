@@ -4,7 +4,7 @@ section: content
 title: Utilizando el formato de fechas europeo en Laravel
 date: 2020-10-21
 update: 2021-05-10
-description: Creación de un <Custom Cast> en el Modelo para la gestión del formato de fechas en Laravel de forma automática.
+description: Para la gestión de fechas automáticas con Laravel, utilizaremos un CAST personalizado desde el modelo, para utilizar tanto el formato de fechas europeo, como el formato de fechas de la base de datos.
 categories: [database, laravel]
 cover_image: laravel-date-format.jpg
 ---

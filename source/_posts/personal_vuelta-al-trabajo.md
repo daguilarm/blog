@@ -3,7 +3,7 @@ extends: _layouts.post
 section: content
 title: Vuelta al trabajo, terminé la Tesis Doctoral
 date: 2021-02-22
-description: Vuelta al trabajo después de meses volcado en la Tesis Doctoral
+description: Por fin vuelvo al trabajo después de muchos meses volcado en la finalización de la Tesis Doctoral... algo que parecía que no iba a terminar nunca. Mi experiencia trabajando en la Tesis Doctoral.
 categories: [personal]
 ---
 

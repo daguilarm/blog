@@ -3,7 +3,7 @@ extends: _layouts.post
 section: content
 title: Configurando un package para hacer tests.
 date: 2021-04-23
-description: Configurando un package de Laravel y Livewire para poder hacer test en él
+description: Configurando un package de Laravel, que utiliza la librería Livewire, para poder realizar en él pruebas y tests.
 categories: [laravel, livewire, packages, tests]
 ---
 

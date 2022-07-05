@@ -3,7 +3,7 @@
     <title>Blog de Damián Aguilar</title>
     <link href="https://daguilar.dev" />
     <link type="application/atom+xml" rel="self" href="https://daguilar.dev/blog/feed.atom" />
-    <updated>2022-07-05T16:44:08+00:00</updated>
+    <updated>2022-07-05T17:39:53+00:00</updated>
     <id>https://daguilar.dev/blog/feed.atom</id>
     <author>
         <name>Damián Aguilar</name>
@@ -594,7 +594,7 @@ array_is_list(['a', 1 =&gt; 'b', 'c']); // Solo hay una clave, en segunda posici
 
 <p>1) <strong>Laravel ahora requiere php 8</strong> como versión mínima para funcionar, modernizando considerablemente el funcionamiento interno del framework, utilizando las nuevas características como la compilación JIT, o la nueva sistaxis de los constructores,...</p>
 
-<p>2) Se ha sustituido Swift Mailer (la librería usada para enviar emails por parte de Laravel desde los primeros tiempos), por symfony Mailer.</p>
+<p>2) Se ha sustituido <strong>Swift Mailer</strong> (la librería usada para enviar emails por parte de Laravel desde los primeros tiempos), por <strong>Symfony Mailer</strong>.</p>
 
 <p>3) Migraciones anónimas. A partir de ahora (realmente desde la versión 8.37) Laravel puede realizar migraciones anónimas, evitando así el problema de migraciones con el mismo nombre, que puedan colisionar entre sí:</p>
 
@@ -1873,7 +1873,7 @@ En los últimos seis meses, mi vida a......</summary>
     </author>
     <summary type="html">Nunca me ha gustado &lt;code&gt;JavaScript&lt;/code&gt;, ya que siempre lo he encontrado un lenguaje de programación &quot;mágico&quot;, es decir, siempre he tenido la sensación que a veces funcionaba y otras veces no... se que esto ha sido siempre culpa mía,......</summary>
     <content type="html"><![CDATA[
-        <p>Nunca me ha gustado <code>JavaScript</code>, ya que siempre lo he encontrado un lenguaje de programación <em>"mágico"</em>, es decir, siempre he tenido la sensación que a veces funcionaba y otras veces no... se que esto ha sido siempre culpa mía, principalmente por no llegar a comprender realmente el funcionamiento del lenguaje.</p>
+        <p><strong>Nunca me ha gustado <code>JavaScript</code></strong>, ya que siempre lo he encontrado un lenguaje de programación <em>"mágico"</em>, es decir, siempre he tenido la sensación que a veces funcionaba y otras veces no... <strong>se que esto ha sido siempre culpa mía, principalmente por no llegar a comprender realmente el funcionamiento del lenguaje</strong>.</p>
 
 <p>Esta situación al final me ha llevado siempre por el camino de ir esquivando <code>JavaScript</code> cada vez que he tenido la opción de hacerlo. De hecho, no entendía como a alguien podía gustarle programar con este lenguaje.</p>
 
@@ -1884,6 +1884,8 @@ En los últimos seis meses, mi vida a......</summary>
 <p>Simultáneamente a la <em>Tesis</em>, empecé otro proyecto en el que intenté hacer un panel de administrador completo utilizando sólo puro y duro <code>JavaScript</code>, y fué aquí donde por primera vez empecé a apreciar el lenguaje, sin utilizar librerías y enfrentándome directamente a él. Fue lo mejor que pude hacer en aquel momento.</p>
 
 <p>Admito que ahora con la llegada de <code>Livewire</code> y <code>AlpineJS</code> estoy totalmente volcado en el desarrollo con <code>JavaScript</code>, y en este punto, puedo decir que ahora si que disfruto programando con este lenguaje, algo que hace unos años me hubiera parecido ciencia ficción.</p>
+
+<p>Y entonces llegó <strong>Angular</strong> y <strong>TypeScript</strong>, y entonces me planteé por primera vez en mi vida la opción de trabajar como programador <code>front-end</code>, y lo hice... una gran experiencia.</p>
 
 <p>En definitiva, la intención de este <em>post</em> no es otra que la de exponer mi fracaso al intentar aprender un lenguaje de programación empezando por el final... <strong>el camino correcto es siempre empezar por lo básico y después ir a lo específico</strong>, o si quereis arriesgaros, vais a cometer los mismos errores que yo.</p>
     ]]></content>

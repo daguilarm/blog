@@ -3,7 +3,7 @@ extends: _layouts.post
 section: content
 title: Patrones de diseño y uso de Pipelines con Laravel
 date: 2020-01-03
-description: Utilización del patrón de diseño Pipelines, incluido en Laravel por defecto.
+description: Utilización del patrón de diseño Pipelines, incluido en Laravel por defecto. Es un patrón bastante desconocido y que puede ser muy útil para simplicar código y refactorizarlo.
 categories: [laravel, php, frameworks]
 ---
 

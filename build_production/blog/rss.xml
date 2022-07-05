@@ -429,7 +429,7 @@ $operation-&gt;pagar();
                 <title><![CDATA[Novedades de PHP 8.1]]></title>
                 <link>https://daguilar.dev/blog/php_novedades_de_php_81</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/php_novedades_de_php_81</guid>
-                <description><![CDATA[Actualizando php 8.1. Novedades y actualizaciones del lenguaje de programación.]]></description>
+                <description><![CDATA[Actualizando a PHP 8.1. Con todas las novedades y mejoras del mejor lenguaje de programación del momento.]]></description>
                 <content:encoded><![CDATA[<p>Soy consciente de que llego un poco tarde, sobre todo porque en pocos meses sale la versión 8.2, pero más vale tarde que nunca.</p>
 
 <p>1) Lo primero de todo, se han producido mejoras en <em>opchache</em> que han generado una <strong>ligera mejora en el rendimiento</strong>, respecto a la versión de PHP 7.4.</p>
@@ -565,7 +565,7 @@ array_is_list(['a', 1 =&gt; 'b', 'c']); // Solo hay una clave, en segunda posici
                 <title><![CDATA[Novedades en Laravel 9]]></title>
                 <link>https://daguilar.dev/blog/laravel_novedades-en-laravel-9</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/laravel_novedades-en-laravel-9</guid>
-                <description><![CDATA[Novedades del framework php Laravel, en su versión 9. Todo lo nuevo que viene en el Framework.]]></description>
+                <description><![CDATA[Todas las novedades del framework Laravel, en la nueva versión 9. Todo lo nuevo que viene en el Framework PHP, explicado en profundidad y con muchísimas nuevas características.]]></description>
                 <content:encoded><![CDATA[<p><strong>Laravel</strong> es probablemente el <strong>Framework PHP</strong> más utilizado del momento, y cada vez que sale una nueva versión, revoluciona un poco a la comunidad de desarrolladores, y no es para menos, ya que las decisiones que se tomen en torno a su desarrollo, va a afectar directamente a todos los que desarrollamos proyectos mediante este Framework.</p>
 
 <p>Actualmente, <strong>Laravel</strong> sigue un ciclo de actualizaciones anual (en cuanto a versiones principales), por lo que es previsible que cada año, <strong>en torno a Febrero, se libere una nueva versión</strong>. En cuanto a versiones menores, lo normal es que se actualice cada semana, corrigiendo errores, actualizando packages, etc...</p>
@@ -574,7 +574,7 @@ array_is_list(['a', 1 =&gt; 'b', 'c']); // Solo hay una clave, en segunda posici
 
 <p>1) <strong>Laravel ahora requiere php 8</strong> como versión mínima para funcionar, modernizando considerablemente el funcionamiento interno del framework, utilizando las nuevas características como la compilación JIT, o la nueva sistaxis de los constructores,...</p>
 
-<p>2) Se ha sustituido Swift Mailer (la librería usada para enviar emails por parte de Laravel desde los primeros tiempos), por symfony Mailer.</p>
+<p>2) Se ha sustituido <strong>Swift Mailer</strong> (la librería usada para enviar emails por parte de Laravel desde los primeros tiempos), por <strong>Symfony Mailer</strong>.</p>
 
 <p>3) Migraciones anónimas. A partir de ahora (realmente desde la versión 8.37) Laravel puede realizar migraciones anónimas, evitando así el problema de migraciones con el mismo nombre, que puedan colisionar entre sí:</p>
 
@@ -1138,7 +1138,7 @@ class ComboboxCars extends ComboboxLivewireComponent implements Combobox
                 <title><![CDATA[Configurando un package para hacer tests.]]></title>
                 <link>https://daguilar.dev/blog/package_configurando-un-package-de-laravel-y-livewire-para-hacer-tests</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/package_configurando-un-package-de-laravel-y-livewire-para-hacer-tests</guid>
-                <description><![CDATA[Configurando un package de Laravel y Livewire para poder hacer test en él]]></description>
+                <description><![CDATA[Configurando un package de Laravel, que utiliza la librería Livewire, para poder realizar en él pruebas y tests.]]></description>
                 <content:encoded><![CDATA[<p>Me he visto por primera vez ante la situación de tener que testear un <em>package</em> para <strong>Laravel</strong> que además estaba basado en <strong>Livewire</strong>. No ha sido fácil, y me ha llevado algo de tiempo tenerlo todo preparado, sobre todo porque no hay mucha información al respecto.</p>
 
 <p>Lo primero ha sido crear el archivo <code>TestCase.php</code> en la carpeta <code>./tests</code>. Dejo el archivo completo (que es del package <a href="https://github.com/daguilarm/belich-tables" class="link-out">Belich Tables</a>):</p>
@@ -1398,7 +1398,7 @@ class HttpKernel extends Kernel
                 <title><![CDATA[Package para Laravel, para la gestión de Tablas de Datos]]></title>
                 <link>https://daguilar.dev/blog/laravel_nuevo-package-para-laravel-para-la-gestion-de-tablas-de-datos</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/laravel_nuevo-package-para-laravel-para-la-gestion-de-tablas-de-datos</guid>
-                <description><![CDATA[Package para la gestión de Tablas de Datos usando Laravel, Livewire, AlpinJS y TailwindCSS.]]></description>
+                <description><![CDATA[Nuevo package para la gestión de Tablas de Datos (Tipo DataTables) usando Laravel, Livewire, AlpinJS y TailwindCSS. Una versión del famoso DataTables usando librerías más modernas y mucho más ligero.]]></description>
                 <content:encoded><![CDATA[<p>Hace algún tiempo, me plantee el reto de desarrollar un sistema de administración igual que <strong>Laravel Nova</strong>, pero sin usar <code>Vuejs</code>, una autentica locura de la que aprendí muchísimo.</p>
 
 <p>Esta idea loca, se debía a dos situaciones diferentes: por un lado, buscaba mejorar mis habilidades como programador sumergiéndome en un proyecto de este calibre, y por otro lado, por aquel entonces odiaba (de forma inexplicable) <code>vueJS</code>, y necesitaba una alternativa que no utilizara este <code>framework</code>. La solución fue escribir todo utilizando solo <em>vanilla <code>javascript</code></em>.</p>
@@ -1454,7 +1454,7 @@ class HttpKernel extends Kernel
                 <title><![CDATA[Refactorizando condicionales con PHP]]></title>
                 <link>https://daguilar.dev/blog/php_simplificando-condicionales-en-php-parte-2-refactoring</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/php_simplificando-condicionales-en-php-parte-2-refactoring</guid>
-                <description><![CDATA[Refactoring condicionales con PHP. Simplificando condicionales y bucles con PHP]]></description>
+                <description><![CDATA[Refactoring condicionales con PHP. Simplificando condicionales y bucles con PHP, buscando un código más legible, procesional y claro]]></description>
                 <content:encoded><![CDATA[<p>En este artículo, se van a ver diversas técnicas de reducción de condicionales y simplificación de código, para versiones de <strong>php8</strong>.</p>
 
 <p>Este artículo es continuación del ya publicado <a href="https://daguilar.dev/blog/php_simplificando-condicionales-en-php-parte-1-refactoring/">Simplificando condicionales con PHP (parte I)</a>. Aquí veremos otras técnicas de simplificación de condicionales, utilizando <strong>php</strong> en su versión 8.</p>
@@ -1551,7 +1551,7 @@ if ($session !== null) {
                 <title><![CDATA[Simplificando condicionales con PHP]]></title>
                 <link>https://daguilar.dev/blog/php_simplificando-condicionales-en-php-parte-1-refactoring</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/php_simplificando-condicionales-en-php-parte-1-refactoring</guid>
-                <description><![CDATA[Refactoring condicionales con PHP. Simplificando condicionales y bucles con PHP]]></description>
+                <description><![CDATA[Refactoring condicionales con PHP. Simplificando condicionales y bucles con PHP utilizando diversas técnicas para reducir la complejidad del código]]></description>
                 <content:encoded><![CDATA[<p>En este artículo, se van a ver diversas técnicas de reducción de condicionales y simplificación de código, para versiones de <strong>php7</strong>.</p>
 
 <p>Es fácil dejarse llevar por un grupo de condicionales anidados y complicar el código muy facilmente, convirtiéndolo en algo complejo y dificil de seguir.</p>
@@ -1809,7 +1809,7 @@ class MinifyHtml
                 <title><![CDATA[Vuelta al trabajo, terminé la Tesis Doctoral]]></title>
                 <link>https://daguilar.dev/blog/personal_vuelta-al-trabajo</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/personal_vuelta-al-trabajo</guid>
-                <description><![CDATA[Vuelta al trabajo después de meses volcado en la Tesis Doctoral]]></description>
+                <description><![CDATA[Por fin vuelvo al trabajo después de muchos meses volcado en la finalización de la Tesis Doctoral... algo que parecía que no iba a terminar nunca. Mi experiencia trabajando en la Tesis Doctoral.]]></description>
                 <content:encoded><![CDATA[<p><strong>Llevo bastante tiempo sin subir nada nuevo aquí, y ha sido principalmente por la Tesis Doctoral</strong>. La empecé en el curso 2015-2016 y después de cinco años por fin realicé la defensa pública la semana pasada.</p>
 
 <p>En los últimos seis meses, mi vida a girado al 100% en torno a la Tesis. Primero tuve que publicar un artículo científico en la revista <a href="https://www.mdpi.com/2073-4395/10/9/1352" class="link-out">Agronomy</a> que fue todo un reto, a parte de un requisito para terminar la Tesis.</p>
@@ -1830,8 +1830,8 @@ class MinifyHtml
                 <title><![CDATA[Mis problemas con JavaScript]]></title>
                 <link>https://daguilar.dev/blog/javascript_mis-problemas-con-javascript</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/javascript_mis-problemas-con-javascript</guid>
-                <description><![CDATA[Historia de mi relación amor / odio con JavaScript]]></description>
-                <content:encoded><![CDATA[<p>Nunca me ha gustado <code>JavaScript</code>, ya que siempre lo he encontrado un lenguaje de programación <em>"mágico"</em>, es decir, siempre he tenido la sensación que a veces funcionaba y otras veces no... se que esto ha sido siempre culpa mía, principalmente por no llegar a comprender realmente el funcionamiento del lenguaje.</p>
+                <description><![CDATA[Historia de mi relación amor / odio con JavaScript, y como gracias a NodeJS y las librerías que surgiero bajo su sombra, como VueJS, Angular, AlpineJS o React.]]></description>
+                <content:encoded><![CDATA[<p><strong>Nunca me ha gustado <code>JavaScript</code></strong>, ya que siempre lo he encontrado un lenguaje de programación <em>"mágico"</em>, es decir, siempre he tenido la sensación que a veces funcionaba y otras veces no... <strong>se que esto ha sido siempre culpa mía, principalmente por no llegar a comprender realmente el funcionamiento del lenguaje</strong>.</p>
 
 <p>Esta situación al final me ha llevado siempre por el camino de ir esquivando <code>JavaScript</code> cada vez que he tenido la opción de hacerlo. De hecho, no entendía como a alguien podía gustarle programar con este lenguaje.</p>
 
@@ -1842,6 +1842,8 @@ class MinifyHtml
 <p>Simultáneamente a la <em>Tesis</em>, empecé otro proyecto en el que intenté hacer un panel de administrador completo utilizando sólo puro y duro <code>JavaScript</code>, y fué aquí donde por primera vez empecé a apreciar el lenguaje, sin utilizar librerías y enfrentándome directamente a él. Fue lo mejor que pude hacer en aquel momento.</p>
 
 <p>Admito que ahora con la llegada de <code>Livewire</code> y <code>AlpineJS</code> estoy totalmente volcado en el desarrollo con <code>JavaScript</code>, y en este punto, puedo decir que ahora si que disfruto programando con este lenguaje, algo que hace unos años me hubiera parecido ciencia ficción.</p>
+
+<p>Y entonces llegó <strong>Angular</strong> y <strong>TypeScript</strong>, y entonces me planteé por primera vez en mi vida la opción de trabajar como programador <code>front-end</code>, y lo hice... una gran experiencia.</p>
 
 <p>En definitiva, la intención de este <em>post</em> no es otra que la de exponer mi fracaso al intentar aprender un lenguaje de programación empezando por el final... <strong>el camino correcto es siempre empezar por lo básico y después ir a lo específico</strong>, o si quereis arriesgaros, vais a cometer los mismos errores que yo.</p>
 ]]></content:encoded>
@@ -2123,7 +2125,7 @@ function component_2() {
                 <title><![CDATA[Usar elemento datalist como select mediante JavaScript]]></title>
                 <link>https://daguilar.dev/blog/html_utilizar-un-elemento-datalist-como-si-fuera-un-select-con-la-ayuda-de-javascript</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/html_utilizar-un-elemento-datalist-como-si-fuera-un-select-con-la-ayuda-de-javascript</guid>
-                <description><![CDATA[Convertir un elemento datalist (y su sistema de búsqueda) en un elemento select avanzado]]></description>
+                <description><![CDATA[Convertir un elemento datalist en un elemento select avanzado, es decir, añadiendo valores y claves, permitiendo lo mejor de ambos elementos html.]]></description>
                 <content:encoded><![CDATA[<p>Un elemento <code>datalist</code> tiene el siguiente aspecto:</p>
 
 <pre><code class="language-html">&lt;input
@@ -2488,7 +2490,7 @@ $this-&gt;browse(function ($browser) {
                 <title><![CDATA[Utilizando el formato de fechas europeo en Laravel]]></title>
                 <link>https://daguilar.dev/blog/database_utilizando-el-formato-de-fechas-europeo-en-los-modelos-de-laravel-con-custom-cast</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/database_utilizando-el-formato-de-fechas-europeo-en-los-modelos-de-laravel-con-custom-cast</guid>
-                <description><![CDATA[Creación de un <Custom Cast> en el Modelo para la gestión del formato de fechas en Laravel de forma automática.]]></description>
+                <description><![CDATA[Para la gestión de fechas automáticas con Laravel, utilizaremos un CAST personalizado desde el modelo, para utilizar tanto el formato de fechas europeo, como el formato de fechas de la base de datos.]]></description>
                 <content:encoded><![CDATA[<p>La gestión de las fechas con <code>Laravel</code> puede ser un poco complicado, sobre todo, porque el formato de fechas en Europa es diferente al formato estadounidense y diferente al formato utilizado por las bases de datos.</p>
 
 <p>Por ejemplo en Europa utilizados el formato <code>d/m/Y</code>, en Estados Unidos utilizan el formato <code>m/d/Y</code> y las bases de datos utilizan el formato <code>Y-m-d</code>...</p>
@@ -4030,7 +4032,7 @@ protected function registerConsole(): void
                 <title><![CDATA[Patrones de diseño y uso de Pipelines con Laravel]]></title>
                 <link>https://daguilar.dev/blog/laravel_patrones-de-diseno-y-uso-de-pipelines-con-laravel</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/laravel_patrones-de-diseno-y-uso-de-pipelines-con-laravel</guid>
-                <description><![CDATA[Utilización del patrón de diseño Pipelines, incluido en Laravel por defecto.]]></description>
+                <description><![CDATA[Utilización del patrón de diseño Pipelines, incluido en Laravel por defecto. Es un patrón bastante desconocido y que puede ser muy útil para simplicar código y refactorizarlo.]]></description>
                 <content:encoded><![CDATA[<p>Las <em>Pipelines</em> de <a href="https://laravel.com" class="link-out">Laravel</a>, nos van a permitir enviar un objeto a través de una serie de clases de forma sencilla y ordenada, simplificando considerablemente el código.</p>
 
 <p>Realmente, es un <em>patrón de diseño</em> utilizado por <strong>Laravel</strong> de forma interna, pero que no vas a encontrar en su documentación, y la verdad es que no se por qué... En cualquier caso, lo puedes implementar en tu proyecto sin ningún problema.</p>

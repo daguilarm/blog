@@ -3,7 +3,8 @@ extends: _layouts.post
 section: content
 title: Novedades en Laravel 9
 date: 2022-03-15
-description: Novedades del framework php Laravel, en su versión 9. Todo lo nuevo que viene en el Framework.
+updated: 2022-07-05
+description: Todas las novedades del framework Laravel, en la nueva versión 9. Todo lo nuevo que viene en el Framework PHP, explicado en profundidad y con muchísimas nuevas características.
 categories: [laravel, php, frameworks]
 ---
 
@@ -15,7 +16,7 @@ Empecemos por las novedades de esta nueva actualización:
 
 1) **Laravel ahora requiere php 8** como versión mínima para funcionar, modernizando considerablemente el funcionamiento interno del framework, utilizando las nuevas características como la compilación JIT, o la nueva sistaxis de los constructores,...
 
-2) Se ha sustituido Swift Mailer (la librería usada para enviar emails por parte de Laravel desde los primeros tiempos), por symfony Mailer.
+2) Se ha sustituido **Swift Mailer** (la librería usada para enviar emails por parte de Laravel desde los primeros tiempos), por **Symfony Mailer**.
 
 3) Migraciones anónimas. A partir de ahora (realmente desde la versión 8.37) Laravel puede realizar migraciones anónimas, evitando así el problema de migraciones con el mismo nombre, que puedan colisionar entre sí:
 

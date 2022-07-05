@@ -1,6 +1,9 @@
 ---
 extends: _layouts.legal
-title: Politica de cookies
+title: Política de cookies
+description: Política de cookies del Blog de Damián Aguilar, blog sobre programación php, javascript, vuejs, phyton, java... y mucho más
+date: 2019-01-11
+updated: 2022-07-01
 ---
 
 # Política de cookies

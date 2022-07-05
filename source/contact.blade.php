@@ -1,6 +1,6 @@
 ---
 title: Información de contacto
-description: Contacte con Damián Aguilar a través de email, twitter, github,...
+description: Información de contacto del programador e ingeniero Damián Aguilar a través de diferentes medios como email, twitter, github,...
 ---
 @extends('_layouts.master')
 

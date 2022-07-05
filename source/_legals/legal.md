@@ -1,6 +1,9 @@
 ---
 extends: _layouts.legal
 title: Aviso legal y cumplimiento legal
+description: Aviso legal y cumplimiento legal del Blog de Damián Aguilar, blog sobre programación php, javascript, vuejs, phyton, java... y mucho más
+date: 2019-01-11
+updated: 2022-07-01
 ---
 
 

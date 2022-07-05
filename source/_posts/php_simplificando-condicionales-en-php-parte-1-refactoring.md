@@ -3,7 +3,7 @@ extends: _layouts.post
 section: content
 title: Simplificando condicionales con PHP
 date: 2021-03-24
-description: Refactoring condicionales con PHP. Simplificando condicionales y bucles con PHP
+description: Refactoring condicionales con PHP. Simplificando condicionales y bucles con PHP utilizando diversas técnicas para reducir la complejidad del código
 categories: [php]
 ---
 

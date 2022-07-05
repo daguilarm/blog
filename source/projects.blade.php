@@ -1,6 +1,6 @@
 ---
-title: Proyectos en los que estoy trabajando
-description: Listado de proyectos desarrollados por Damián Aguilar en la actualidad.
+title: Proyectos en los que estoy trabajando actualmente
+description: Listado de proyectos desarrollados por el programador e ingeniero Damián Aguilar. Actualmente estoy trabajando en todos estos proyectos.
 ---
 @extends('_layouts.master')
 
