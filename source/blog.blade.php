@@ -10,14 +10,8 @@ pagination:
     <h1 class="text-blue-800 text-3xl md:text-4xl lg:text-5xl">Últimos artículos sobre programación web, SEO y marketing</h1>
     <p>Aquí vas a encontrar artículos sobre situaciones que me voy encontrando en mi día a día con la programación, así que cuantos más problemas me encuentre, más artículos iré añadiendo...</p>
 
-    <hr class="border-b my-6">
-
     @foreach ($pagination->items as $post)
         @include('_components.post-preview-inline')
-
-        @if ($post != $pagination->items->last())
-            <hr class="border-b my-6">
-        @endif
     @endforeach
 
     @if ($pagination->pages->count() > 1)
