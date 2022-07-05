@@ -8,6 +8,7 @@
     @endif
     <meta property="article:published_time" content="{{ date('c', $page->date) }}">
     <meta property="article:updated_time" content="{{ date('c', $page->update ?? $page->date) }}">
+    <link rel="canonical" href="https://daguilar.dev/blog/{{ $page->getFilename() }}/">
 @endpush
 
 @section('body')
@@ -33,7 +34,7 @@
         @yield('content')
     </div>
 
-    <nav class="flex justify-between text-sm md:text-base">
+    {{-- <nav class="flex justify-between text-sm md:text-base">
         <div>
             @if ($next = $page->getNext())
                 <a href="{{ $next->getUrl() }}" title="Older Post: {{ $next->title }}">
@@ -49,5 +50,5 @@
                 </a>
             @endif
         </div>
-    </nav>
+    </nav> --}}
 @endsection
