@@ -1,6 +1,6 @@
 ---
 extends: _layouts.category
-title: Laravel Livewire el framework para desarrollo de aplicaciones
+title: Laravel Livewire el framework de desarrollo de aplicaciones
 description: Artículos sobre el package Laravel Livewire, que permiten realizar comportamiento dinámicos sin utilizar javascript, realizado toda la programación desde el backend.
 category: livewire
 ---

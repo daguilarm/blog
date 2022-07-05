@@ -1,4 +1,7 @@
-@extends('_layouts.master')
+---
+extends: _layouts.master
+title: El blog de programación de Damián Aguilar
+---
 
 @section('body')
 

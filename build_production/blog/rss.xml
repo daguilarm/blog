@@ -805,7 +805,7 @@ public function boot()
 
                             </item>
                     <item>
-                <title><![CDATA[Verificar resultados con Laravel Dusk utilizando los resultados que se muestran en el navegador]]></title>
+                <title><![CDATA[Verificar resultados con Laravel Dusk y el navegador]]></title>
                 <link>https://daguilar.dev/blog/test_validando-resultados-con-laravel-dusk-sin-consultar-la-base-de-datos</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/test_validando-resultados-con-laravel-dusk-sin-consultar-la-base-de-datos</guid>
                 <description><![CDATA[Verificar resultados con Laravel Dusk utilizando técnicas basadas en los resultados que se muestran en el navegador]]></description>

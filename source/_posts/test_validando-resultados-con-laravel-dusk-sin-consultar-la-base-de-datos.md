@@ -1,7 +1,7 @@
 ---
 extends: _layouts.post
 section: content
-title: Verificar resultados con Laravel Dusk utilizando los resultados que se muestran en el navegador
+title: Verificar resultados con Laravel Dusk y el navegador
 date: 2021-05-17
 description: Verificar resultados con Laravel Dusk utilizando técnicas basadas en los resultados que se muestran en el navegador
 categories: [laravel, php, tests]
