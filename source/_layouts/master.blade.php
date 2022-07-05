@@ -130,13 +130,13 @@
                 <a href="https://daguilar.dev/blog/rss.xml" class="sm:text-gray-100 hover:text-gray-300">
                     RSS
                 </a> -
-                <a href="https://daguilar.dev/blog/legal/cookies" class="sm:text-gray-100 hover:text-gray-300">
+                <a href="https://daguilar.dev/blog/legal/cookies/" class="sm:text-gray-100 hover:text-gray-300">
                     Política de cookies
                 </a> -
-                <a href="https://daguilar.dev/blog/legal/legal" class="sm:text-gray-100 hover:text-gray-300">
+                <a href="https://daguilar.dev/blog/legal/legal/" class="sm:text-gray-100 hover:text-gray-300">
                     Datos legales
                 </a> -
-                <a href="https://daguilar.dev/blog/legal/privacity" class="sm:text-gray-100 hover:text-gray-300">
+                <a href="https://daguilar.dev/blog/legal/privacity/" class="sm:text-gray-100 hover:text-gray-300">
                     Aviso de privacidad
                 </a>
             </div>

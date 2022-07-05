@@ -3,21 +3,21 @@
         <li class="pl-4">
             <a
                 title="{{ $page->siteName }}"
-                href="/blog"
+                href="/blog/"
                 class="nav-menu__item hover:text-blue-600 {{ $page->isActive('/blog') ? 'active text-blue-600' : '' }}"
             >Artículos</a>
         </li>
         <li class="pl-4">
             <a
                 title="Sobre mi: {{ $page->siteName }}"
-                href="/about"
+                href="/about/"
                 class="nav-menu__item hover:text-blue-600 {{ $page->isActive('/about') ? 'active text-blue-600' : '' }}"
             >Sobre mi</a>
         </li>
         <li class="pl-4">
             <a
                 title="Contacto: {{ $page->siteName }}"
-                href="/contact"
+                href="/contact/"
                 class="nav-menu__item hover:text-blue-600 {{ $page->isActive('/contact') ? 'active text-blue-600' : '' }}"
             >Contacto</a>
         </li>
