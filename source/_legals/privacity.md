@@ -1,6 +1,6 @@
 ---
 extends: _layouts.legal
-title: privacity
+title: Política de privacidad
 ---
 
 # Política de Privacidad

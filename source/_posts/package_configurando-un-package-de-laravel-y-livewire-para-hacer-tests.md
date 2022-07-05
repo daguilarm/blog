@@ -1,9 +1,9 @@
 ---
 extends: _layouts.post
 section: content
-title: Configurando un package de Laravel y Livewire para hacer tests.
+title: Configurando un package para hacer tests.
 date: 2021-04-23
-description: Por qué he cambiado mi proyecto a este sistema, y qué ventajas tiene frente al sistema tradicional de la ID
+description: Configurando un package de Laravel y Livewire para poder hacer test en él
 categories: [laravel, livewire, packages, tests]
 ---
 

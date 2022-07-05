@@ -1,6 +1,6 @@
 ---
 extends: _layouts.legal
-title: cookies
+title: Politica de cookies
 ---
 
 # Política de cookies

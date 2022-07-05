@@ -1,7 +1,7 @@
 ---
 extends: _layouts.post
 section: content
-title: Accediendo a componentes AlpineJS desde el exterior de estos, mientras modificamos sus atributos y propiedades
+title: Haciendo pruebas con la librería javascript AlpinJS
 date: 2020-11-02
 description: En este artículo se muestra como acceder a componentes AlpineJS desde fuera de ellos, a la vez que se es capaz de modificar sus propiedades desde fuera
 categories: [javascript, alpinejs]

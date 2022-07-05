@@ -1,6 +1,6 @@
 ---
 extends: _layouts.category
-title: Artículos sobre Frameworks. Estructuras predeterminadas para el desarrollo de software
+title:  Frameworks. Estructuras para el desarrollo de software
 description: Artículos sobre los frameworks de desarrollo de software. Es un marco de trabajo utilizado por desarrolladores para evitar escribir código repetido, seguro, siguiendo buenas prácticas y sobre todo, un código consistente.
 category: framworks
 ---

@@ -39,7 +39,7 @@ return [
             },
         ],
         'legals' => [
-            'path' => '/blog/legal/{title}'
+            'path' => '/blog/legal/{filename}'
         ]
     ],
 

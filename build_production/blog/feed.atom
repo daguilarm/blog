@@ -3,7 +3,7 @@
     <title>Blog de Damián Aguilar</title>
     <link href="https://daguilar.dev" />
     <link type="application/atom+xml" rel="self" href="https://daguilar.dev/blog/feed.atom" />
-    <updated>2022-07-05T16:12:04+00:00</updated>
+    <updated>2022-07-05T16:33:15+00:00</updated>
     <id>https://daguilar.dev/blog/feed.atom</id>
     <author>
         <name>Damián Aguilar</name>
@@ -11,7 +11,7 @@
                 <entry>
     <id>https://daguilar.dev/blog/programacion_5_consejos_para_ser_un_gran_programador</id>
     <link type="text/html" rel="alternate" href="https://daguilar.dev/blog/programacion_5_consejos_para_ser_un_gran_programador" />
-    <title>Las cinco claves para ser un gran programador. Principios SOLID.</title>
+    <title>Cinco claves para ser mejor programador. Principios SOLID.</title>
     <published>2022-06-25T00:00:00+00:00</published>
     <updated>2022-06-25T00:00:00+00:00</updated>
     <author>
@@ -542,7 +542,7 @@ array_is_list(['a', 1 =&gt; 'b', 'c']); // Solo hay una clave, en segunda posici
             <entry>
     <id>https://daguilar.dev/blog/programacion_programando_con_pyton_java_y_angular</id>
     <link type="text/html" rel="alternate" href="https://daguilar.dev/blog/programacion_programando_con_pyton_java_y_angular" />
-    <title>Saliendo de la zona de confort, y programando con Python, Java y Angular.</title>
+    <title>Programando con Python, Java y Angular.</title>
     <published>2022-05-22T00:00:00+00:00</published>
     <updated>2022-07-03T00:00:00+00:00</updated>
     <author>
@@ -865,7 +865,7 @@ $this-&gt;assertEquals($totalResults, 5);
             <entry>
     <id>https://daguilar.dev/blog/programacion_lenguajes-de-bajo-nivel-frente-a-los-lenguajes-de-alto-nivel</id>
     <link type="text/html" rel="alternate" href="https://daguilar.dev/blog/programacion_lenguajes-de-bajo-nivel-frente-a-los-lenguajes-de-alto-nivel" />
-    <title>Diferencias entre los lenguajes de programación de bajo nivel VS lenguajes de alto nivel</title>
+    <title>Lenguajes de programación de bajo nivel VS alto nivel</title>
     <published>2021-05-13T00:00:00+00:00</published>
     <updated>2021-05-13T00:00:00+00:00</updated>
     <author>
@@ -989,7 +989,7 @@ fibonacci(10);
             <entry>
     <id>https://daguilar.dev/blog/tests_identificando-los-principales-errores-con-laravel-dusk</id>
     <link type="text/html" rel="alternate" href="https://daguilar.dev/blog/tests_identificando-los-principales-errores-con-laravel-dusk" />
-    <title>Cómo solucionar los principales errores con Laravel Dusk y orchestral/testbench-dusk.</title>
+    <title>Principales errores con Laravel Dusk</title>
     <published>2021-05-09T00:00:00+00:00</published>
     <updated>2021-05-12T00:00:00+00:00</updated>
     <author>
@@ -1075,7 +1075,7 @@ protected function getPackageProviders($app)
             <entry>
     <id>https://daguilar.dev/blog/laravel_select-dependiente-multinivel-combobox-para-laravel</id>
     <link type="text/html" rel="alternate" href="https://daguilar.dev/blog/laravel_select-dependiente-multinivel-combobox-para-laravel" />
-    <title>Nuevo package para Laravel para selects dependientes multinivel (combobox)</title>
+    <title>Package de selects dependientes multinivel para Laravel</title>
     <published>2021-05-02T00:00:00+00:00</published>
     <updated>2021-05-02T00:00:00+00:00</updated>
     <author>
@@ -1150,7 +1150,7 @@ class ComboboxCars extends ComboboxLivewireComponent implements Combobox
             <entry>
     <id>https://daguilar.dev/blog/package_configurando-un-package-de-laravel-y-livewire-para-hacer-tests</id>
     <link type="text/html" rel="alternate" href="https://daguilar.dev/blog/package_configurando-un-package-de-laravel-y-livewire-para-hacer-tests" />
-    <title>Configurando un package de Laravel y Livewire para hacer tests.</title>
+    <title>Configurando un package para hacer tests.</title>
     <published>2021-04-23T00:00:00+00:00</published>
     <updated>2021-04-23T00:00:00+00:00</updated>
     <author>
@@ -1413,7 +1413,7 @@ class HttpKernel extends Kernel
             <entry>
     <id>https://daguilar.dev/blog/laravel_nuevo-package-para-laravel-para-la-gestion-de-tablas-de-datos</id>
     <link type="text/html" rel="alternate" href="https://daguilar.dev/blog/laravel_nuevo-package-para-laravel-para-la-gestion-de-tablas-de-datos" />
-    <title>Nuevo package para Laravel, para la gestión de Tablas de Datos</title>
+    <title>Package para Laravel, para la gestión de Tablas de Datos</title>
     <published>2021-04-17T00:00:00+00:00</published>
     <updated>2021-04-17T00:00:00+00:00</updated>
     <author>
@@ -1474,7 +1474,7 @@ Esta idea loca, se debía a dos situaciones diferentes: por......</summary>
             <entry>
     <id>https://daguilar.dev/blog/php_simplificando-condicionales-en-php-parte-2-refactoring</id>
     <link type="text/html" rel="alternate" href="https://daguilar.dev/blog/php_simplificando-condicionales-en-php-parte-2-refactoring" />
-    <title>Simplificando condicionales con PHP (parte II) - Refactoring conditionals</title>
+    <title>Refactorizando condicionales con PHP</title>
     <published>2021-04-11T00:00:00+00:00</published>
     <updated>2021-04-11T00:00:00+00:00</updated>
     <author>
@@ -1576,7 +1576,7 @@ if ($session !== null) {
             <entry>
     <id>https://daguilar.dev/blog/php_simplificando-condicionales-en-php-parte-1-refactoring</id>
     <link type="text/html" rel="alternate" href="https://daguilar.dev/blog/php_simplificando-condicionales-en-php-parte-1-refactoring" />
-    <title>Simplificando condicionales con PHP (parte I) - Refactoring conditionals</title>
+    <title>Simplificando condicionales con PHP</title>
     <published>2021-03-24T00:00:00+00:00</published>
     <updated>2021-03-24T00:00:00+00:00</updated>
     <author>
@@ -1891,7 +1891,7 @@ En los últimos seis meses, mi vida a......</summary>
             <entry>
     <id>https://daguilar.dev/blog/tests_simplificando-tests-utilizando-la-funcionalidad-pages-de-laravel-dusk</id>
     <link type="text/html" rel="alternate" href="https://daguilar.dev/blog/tests_simplificando-tests-utilizando-la-funcionalidad-pages-de-laravel-dusk" />
-    <title>Simplificando Test con la funcionalidad Pages de Laravel Dusk</title>
+    <title>Usando funcionalidad Pages de Laravel Dusk</title>
     <published>2020-11-08T00:00:00+00:00</published>
     <updated>2020-11-08T00:00:00+00:00</updated>
     <author>
@@ -2070,7 +2070,7 @@ public function test_can_create_a_post()
             <entry>
     <id>https://daguilar.dev/blog/alpinejs_accediendo-a-componentes-alpinejs-desde-el-exterior-y-modificando-parametros</id>
     <link type="text/html" rel="alternate" href="https://daguilar.dev/blog/alpinejs_accediendo-a-componentes-alpinejs-desde-el-exterior-y-modificando-parametros" />
-    <title>Accediendo a componentes AlpineJS desde el exterior de estos, mientras modificamos sus atributos y propiedades</title>
+    <title>Haciendo pruebas con la librería javascript AlpinJS</title>
     <published>2020-11-02T00:00:00+00:00</published>
     <updated>2020-11-02T00:00:00+00:00</updated>
     <author>
@@ -2181,7 +2181,7 @@ function component_2() {
             <entry>
     <id>https://daguilar.dev/blog/html_utilizar-un-elemento-datalist-como-si-fuera-un-select-con-la-ayuda-de-javascript</id>
     <link type="text/html" rel="alternate" href="https://daguilar.dev/blog/html_utilizar-un-elemento-datalist-como-si-fuera-un-select-con-la-ayuda-de-javascript" />
-    <title>Utilizar un elemento datalist como si fuera un elemento select con la ayuda de JavaScript</title>
+    <title>Usar elemento datalist como select mediante JavaScript</title>
     <published>2020-10-26T00:00:00+00:00</published>
     <updated>2020-10-26T00:00:00+00:00</updated>
     <author>
@@ -2560,7 +2560,7 @@ $this-&gt;browse(function ($browser) {
             <entry>
     <id>https://daguilar.dev/blog/database_utilizando-el-formato-de-fechas-europeo-en-los-modelos-de-laravel-con-custom-cast</id>
     <link type="text/html" rel="alternate" href="https://daguilar.dev/blog/database_utilizando-el-formato-de-fechas-europeo-en-los-modelos-de-laravel-con-custom-cast" />
-    <title>Utilizando el formato de fechas europeo en los Modelos de Laravel</title>
+    <title>Utilizando el formato de fechas europeo en Laravel</title>
     <published>2020-10-21T00:00:00+00:00</published>
     <updated>2021-05-10T00:00:00+00:00</updated>
     <author>

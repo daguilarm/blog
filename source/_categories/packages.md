@@ -1,6 +1,6 @@
 ---
 extends: _layouts.category
-title: Artículos sobre packages, progamas que suelen distribuirse conjuntamente, complementándose entre ellos y buscando una finalidad común
+title: Packages, componentes de software trabajando juntos
 description: Artículos sobre paquetes de software, una colección de archivos empequetados conjuntamente y listos para su distribución y utización.
 category: packages
 ---

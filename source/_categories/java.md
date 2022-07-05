@@ -1,6 +1,6 @@
 ---
 extends: _layouts.category
-title: Artículos sobre Java y sus entornos de desarrollo, como Spring, Spring boot, hibernate, struts, grails, etc.
+title: Java y sus frameworks spring, hibernate,...
 description: Artículos sobre Java, el lenguaje de programación y plataforma informática desarrollada por Sun Microsystems. Java es un lenguaje multiplataforma y orientado a objetos
 category: java
 ---

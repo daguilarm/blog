@@ -1,6 +1,6 @@
 ---
 extends: _layouts.category
-title: Artículos sobre testing en programación informática, metodologías y realización de pruebas.
+title: Testing, TTD y realización de pruebas.
 description: Artículos sobre testing, TDD (Desarrollo Guiado por Pruebas), PhpUnit, Laravel Dusk,... una disciplina de la ingeniería del software que busca garantizar que se cumplen los requesitos esperados de un sistema.
 category: tests
 ---

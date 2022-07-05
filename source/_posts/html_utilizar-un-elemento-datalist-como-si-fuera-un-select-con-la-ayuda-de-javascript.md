@@ -1,7 +1,7 @@
 ---
 extends: _layouts.post
 section: content
-title: Utilizar un elemento datalist como si fuera un elemento select con la ayuda de JavaScript
+title: Usar elemento datalist como select mediante JavaScript
 date: 2020-10-26
 description: Convertir un elemento datalist (y su sistema de búsqueda) en un elemento select avanzado 
 categories: [html, javascript]

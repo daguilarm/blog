@@ -1,9 +1,9 @@
 ---
 extends: _layouts.post
 section: content
-title: Simplificando Test con la funcionalidad Pages de Laravel Dusk
+title: Usando funcionalidad Pages de Laravel Dusk
 date: 2020-11-08
-description: Laravel Dusk permite la creación de clases tipo Page, para simplificar y automatizar procesos durante la realización de test
+description: Laravel Dusk permite la creación de clases tipo Page, para simplificar y automatizar procesos durante la realización de test de navegador
 categories: [laravel, php, tests]
 ---
 

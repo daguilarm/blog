@@ -1,6 +1,6 @@
 ---
 extends: _layouts.legal
-title: legal
+title: Aviso legal y cumplimiento legal
 ---
 
 

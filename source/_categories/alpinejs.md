@@ -1,6 +1,6 @@
 ---
 extends: _layouts.category
-title: Artículos AlpineJS el framework javascript minimalista desarrollado por Caleb Porzio
+title: AlpineJS el framework javascript minimalista de Caleb Porzio
 description: Artículos sobre el framework de javascript AlpineJS, una librería ligera para crear aplicaciones de forma reactiva y declarativa en base a componentes e inspirado por VueJS y TailwindCSS.
 category: alpinejs
 ---

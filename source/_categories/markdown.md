@@ -1,6 +1,6 @@
 ---
 extends: _layouts.category
-title: Artículos Markdown el lenguaje de marcado ligero desarrollado por John Gruber y Aaron Swartz 
+title: Markdown el lenguaje para optimizar la web
 description: Artículos sobre el formato para texto markdown, creado por Gruber y Swartz, para optimizar los textos utilizados en la web. Origináriamente fue utilizado en el lenguaje de programación Perl, pero actualmente lo utilizan muchos lenguajes.
 category: markdown
 ---

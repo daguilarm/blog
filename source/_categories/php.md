@@ -1,6 +1,6 @@
 ---
 extends: _layouts.category
-title: Articulos sobre PHP, el lenguaje de programación general especialmente enfocado en el desarrollo web.
+title: PHP, el lenguaje de programación para el desarrollo web.
 description: Artículos relacionados con php. Php es un lenguaje de programación de alto nivel, interpretado y desarrollado en 1994 por Rasmus Lerdorf.
 category: php
 ---

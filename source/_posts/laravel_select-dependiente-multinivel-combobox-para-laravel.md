@@ -1,7 +1,7 @@
 ---
 extends: _layouts.post
 section: content
-title: Nuevo package para Laravel para selects dependientes multinivel (combobox)
+title: Package de selects dependientes multinivel para Laravel
 date: 2021-05-02
 description: Package para la gestión de selects dependientes multinivel para Laravel utilizando Livewire y TailwindCSS. 
 categories: [laravel, Livewire, packages, packagist, php]

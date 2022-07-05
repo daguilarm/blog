@@ -1,7 +1,7 @@
 ---
 extends: _layouts.post
 section: content
-title: Diferencias entre los lenguajes de programación de bajo nivel VS lenguajes de alto nivel
+title: Lenguajes de programación de bajo nivel VS alto nivel
 date: 2021-05-13
 description: En este artículo se muestran las diferencias principales entre los lenguajes de programación de alto nivel, frente a los lenguajes de programación de bajo nivel o código máquina
 categories: [programacion, php, python, javascript]

@@ -1,7 +1,7 @@
 ---
 extends: _layouts.post
 section: content
-title: Cómo solucionar los principales errores con Laravel Dusk y orchestral/testbench-dusk.
+title: Principales errores con Laravel Dusk
 date: 2021-05-09
 update: 2021-05-12
 description: Algunos ejemplos prácticos del como solucionar los más recurrentes errores con Laravel Dusk y orchestral/testbench-dusk.

@@ -1,6 +1,6 @@
 ---
 extends: _layouts.category
-title: Artículos sobre packagist, el repositorio por defecto de Composer para gestionar los paquetes PHP
+title: Packagist, el repositorio de Composer para PHP
 description: Artículos sobre packagist, el repositorio de paquetes PHP utilizado por el gestor de dependencias Composer.
 category: packagist
 ---

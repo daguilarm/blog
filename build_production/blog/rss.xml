@@ -9,7 +9,7 @@
         <lastBuildDate>Sat, 25 Jun 2022 00:00:00 +0000</lastBuildDate>
 
                     <item>
-                <title><![CDATA[Las cinco claves para ser un gran programador. Principios SOLID.]]></title>
+                <title><![CDATA[Cinco claves para ser mejor programador. Principios SOLID.]]></title>
                 <link>https://daguilar.dev/blog/programacion_5_consejos_para_ser_un_gran_programador</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/programacion_5_consejos_para_ser_un_gran_programador</guid>
                 <description><![CDATA[Principales consejos para ser un gran programador. Todo ello aplicando los principios SOLID, consiguiendo código más eficaz, sencillo de mantener y fácil de ampliar.]]></description>
@@ -529,7 +529,7 @@ array_is_list(['a', 1 =&gt; 'b', 'c']); // Solo hay una clave, en segunda posici
 
                             </item>
                     <item>
-                <title><![CDATA[Saliendo de la zona de confort, y programando con Python, Java y Angular.]]></title>
+                <title><![CDATA[Programando con Python, Java y Angular.]]></title>
                 <link>https://daguilar.dev/blog/programacion_programando_con_pyton_java_y_angular</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/programacion_programando_con_pyton_java_y_angular</guid>
                 <description><![CDATA[Me siento cómodo trabajando con PHP y Laravel, ahora es el momento de enfrentarse a Java, Python y Angular. Mi experiencia empezando con estos lenguajes de programación.]]></description>
@@ -849,7 +849,7 @@ $this-&gt;assertEquals($totalResults, 5);
                         height="150" />
                             </item>
                     <item>
-                <title><![CDATA[Diferencias entre los lenguajes de programación de bajo nivel VS lenguajes de alto nivel]]></title>
+                <title><![CDATA[Lenguajes de programación de bajo nivel VS alto nivel]]></title>
                 <link>https://daguilar.dev/blog/programacion_lenguajes-de-bajo-nivel-frente-a-los-lenguajes-de-alto-nivel</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/programacion_lenguajes-de-bajo-nivel-frente-a-los-lenguajes-de-alto-nivel</guid>
                 <description><![CDATA[En este artículo se muestran las diferencias principales entre los lenguajes de programación de alto nivel, frente a los lenguajes de programación de bajo nivel o código máquina]]></description>
@@ -976,7 +976,7 @@ fibonacci(10);
                         height="150" />
                             </item>
                     <item>
-                <title><![CDATA[Cómo solucionar los principales errores con Laravel Dusk y orchestral/testbench-dusk.]]></title>
+                <title><![CDATA[Principales errores con Laravel Dusk]]></title>
                 <link>https://daguilar.dev/blog/tests_identificando-los-principales-errores-con-laravel-dusk</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/tests_identificando-los-principales-errores-con-laravel-dusk</guid>
                 <description><![CDATA[Algunos ejemplos prácticos del como solucionar los más recurrentes errores con Laravel Dusk y orchestral/testbench-dusk.]]></description>
@@ -1063,7 +1063,7 @@ protected function getPackageProviders($app)
                         height="150" />
                             </item>
                     <item>
-                <title><![CDATA[Nuevo package para Laravel para selects dependientes multinivel (combobox)]]></title>
+                <title><![CDATA[Package de selects dependientes multinivel para Laravel]]></title>
                 <link>https://daguilar.dev/blog/laravel_select-dependiente-multinivel-combobox-para-laravel</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/laravel_select-dependiente-multinivel-combobox-para-laravel</guid>
                 <description><![CDATA[Package para la gestión de selects dependientes multinivel para Laravel utilizando Livewire y TailwindCSS.]]></description>
@@ -1135,10 +1135,10 @@ class ComboboxCars extends ComboboxLivewireComponent implements Combobox
 
                             </item>
                     <item>
-                <title><![CDATA[Configurando un package de Laravel y Livewire para hacer tests.]]></title>
+                <title><![CDATA[Configurando un package para hacer tests.]]></title>
                 <link>https://daguilar.dev/blog/package_configurando-un-package-de-laravel-y-livewire-para-hacer-tests</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/package_configurando-un-package-de-laravel-y-livewire-para-hacer-tests</guid>
-                <description><![CDATA[Por qué he cambiado mi proyecto a este sistema, y qué ventajas tiene frente al sistema tradicional de la ID]]></description>
+                <description><![CDATA[Configurando un package de Laravel y Livewire para poder hacer test en él]]></description>
                 <content:encoded><![CDATA[<p>Me he visto por primera vez ante la situación de tener que testear un <em>package</em> para <strong>Laravel</strong> que además estaba basado en <strong>Livewire</strong>. No ha sido fácil, y me ha llevado algo de tiempo tenerlo todo preparado, sobre todo porque no hay mucha información al respecto.</p>
 
 <p>Lo primero ha sido crear el archivo <code>TestCase.php</code> en la carpeta <code>./tests</code>. Dejo el archivo completo (que es del package <a href="https://github.com/daguilarm/belich-tables" class="link-out">Belich Tables</a>):</p>
@@ -1395,7 +1395,7 @@ class HttpKernel extends Kernel
 
                             </item>
                     <item>
-                <title><![CDATA[Nuevo package para Laravel, para la gestión de Tablas de Datos]]></title>
+                <title><![CDATA[Package para Laravel, para la gestión de Tablas de Datos]]></title>
                 <link>https://daguilar.dev/blog/laravel_nuevo-package-para-laravel-para-la-gestion-de-tablas-de-datos</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/laravel_nuevo-package-para-laravel-para-la-gestion-de-tablas-de-datos</guid>
                 <description><![CDATA[Package para la gestión de Tablas de Datos usando Laravel, Livewire, AlpinJS y TailwindCSS.]]></description>
@@ -1451,7 +1451,7 @@ class HttpKernel extends Kernel
 
                             </item>
                     <item>
-                <title><![CDATA[Simplificando condicionales con PHP (parte II) - Refactoring conditionals]]></title>
+                <title><![CDATA[Refactorizando condicionales con PHP]]></title>
                 <link>https://daguilar.dev/blog/php_simplificando-condicionales-en-php-parte-2-refactoring</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/php_simplificando-condicionales-en-php-parte-2-refactoring</guid>
                 <description><![CDATA[Refactoring condicionales con PHP. Simplificando condicionales y bucles con PHP]]></description>
@@ -1548,7 +1548,7 @@ if ($session !== null) {
 
                             </item>
                     <item>
-                <title><![CDATA[Simplificando condicionales con PHP (parte I) - Refactoring conditionals]]></title>
+                <title><![CDATA[Simplificando condicionales con PHP]]></title>
                 <link>https://daguilar.dev/blog/php_simplificando-condicionales-en-php-parte-1-refactoring</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/php_simplificando-condicionales-en-php-parte-1-refactoring</guid>
                 <description><![CDATA[Refactoring condicionales con PHP. Simplificando condicionales y bucles con PHP]]></description>
@@ -1850,10 +1850,10 @@ class MinifyHtml
 
                             </item>
                     <item>
-                <title><![CDATA[Simplificando Test con la funcionalidad Pages de Laravel Dusk]]></title>
+                <title><![CDATA[Usando funcionalidad Pages de Laravel Dusk]]></title>
                 <link>https://daguilar.dev/blog/tests_simplificando-tests-utilizando-la-funcionalidad-pages-de-laravel-dusk</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/tests_simplificando-tests-utilizando-la-funcionalidad-pages-de-laravel-dusk</guid>
-                <description><![CDATA[Laravel Dusk permite la creación de clases tipo Page, para simplificar y automatizar procesos durante la realización de test]]></description>
+                <description><![CDATA[Laravel Dusk permite la creación de clases tipo Page, para simplificar y automatizar procesos durante la realización de test de navegador]]></description>
                 <content:encoded><![CDATA[<p>Últimamente estoy haciendo muchos <code>tests</code> con <code>Laravel Dusk</code>, y he encontrado en la opción de generar <code>Pages</code> una forma de simplificarlos, y además, de una forma muy considerable.</p>
 
 <p>La idea es no repetir código y crear métodos personalizados. En mi caso sigo una estructura de código claramente basada en <code>CRUD</code>, es decir: Crear, Editar, Eliminar,... por lo que todo mi código es (en general) muy parecido, y por tanto, las pruebas de <code>test</code> suelen ser muy similares. Como siempre, hay excepciones, pero una parte importante del código funciona siguiendo este patrón.</p>
@@ -2024,7 +2024,7 @@ public function test_can_create_a_post()
 
                             </item>
                     <item>
-                <title><![CDATA[Accediendo a componentes AlpineJS desde el exterior de estos, mientras modificamos sus atributos y propiedades]]></title>
+                <title><![CDATA[Haciendo pruebas con la librería javascript AlpinJS]]></title>
                 <link>https://daguilar.dev/blog/alpinejs_accediendo-a-componentes-alpinejs-desde-el-exterior-y-modificando-parametros</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/alpinejs_accediendo-a-componentes-alpinejs-desde-el-exterior-y-modificando-parametros</guid>
                 <description><![CDATA[En este artículo se muestra como acceder a componentes AlpineJS desde fuera de ellos, a la vez que se es capaz de modificar sus propiedades desde fuera]]></description>
@@ -2120,7 +2120,7 @@ function component_2() {
 
                             </item>
                     <item>
-                <title><![CDATA[Utilizar un elemento datalist como si fuera un elemento select con la ayuda de JavaScript]]></title>
+                <title><![CDATA[Usar elemento datalist como select mediante JavaScript]]></title>
                 <link>https://daguilar.dev/blog/html_utilizar-un-elemento-datalist-como-si-fuera-un-select-con-la-ayuda-de-javascript</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/html_utilizar-un-elemento-datalist-como-si-fuera-un-select-con-la-ayuda-de-javascript</guid>
                 <description><![CDATA[Convertir un elemento datalist (y su sistema de búsqueda) en un elemento select avanzado]]></description>
@@ -2485,7 +2485,7 @@ $this-&gt;browse(function ($browser) {
 
                             </item>
                     <item>
-                <title><![CDATA[Utilizando el formato de fechas europeo en los Modelos de Laravel]]></title>
+                <title><![CDATA[Utilizando el formato de fechas europeo en Laravel]]></title>
                 <link>https://daguilar.dev/blog/database_utilizando-el-formato-de-fechas-europeo-en-los-modelos-de-laravel-con-custom-cast</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/database_utilizando-el-formato-de-fechas-europeo-en-los-modelos-de-laravel-con-custom-cast</guid>
                 <description><![CDATA[Creación de un <Custom Cast> en el Modelo para la gestión del formato de fechas en Laravel de forma automática.]]></description>

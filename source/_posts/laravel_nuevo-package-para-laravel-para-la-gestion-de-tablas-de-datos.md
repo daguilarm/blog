@@ -1,7 +1,7 @@
 ---
 extends: _layouts.post
 section: content
-title: Nuevo package para Laravel, para la gestión de Tablas de Datos
+title: Package para Laravel, para la gestión de Tablas de Datos
 date: 2021-04-17
 description: Package para la gestión de Tablas de Datos usando Laravel, Livewire, AlpinJS y TailwindCSS.
 categories: [alpinejs, laravel, Livewire, packages, packagist, php]
