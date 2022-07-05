@@ -2,8 +2,10 @@
 
 @section('body')
 
-    <h1>Últimos artículos y guías sobre programación, diseño web, marketing y SEO.</h1>
-    <h2>Principalmente utilizando las tecnologías PHP, Laravel, Javascript, VueJS, AlpineJS y Angular.</h2>
+    <h1 class="mt-8 text-2xl font-extrabold text-blue-700">Últimos artículos y guías sobre programación, diseño web, marketing y SEO.</h1>
+    <h2 class="-mt-1 mb-8 p-2 text-xl text-gray-600 italic border-l-4 bg-neutral-100 text-neutral-600 border-neutral-500">
+        En este blog nos gustan principalemente hablar sobre las siguientes tecnologías: PHP, Laravel, Javascript, VueJS, AlpineJS y Angular.
+    </h2>
 
     @foreach ($posts->where('featured', true) as $featuredPost)
         <div class="w-full mb-6">
