@@ -70,8 +70,6 @@
         {{-- GDPR --}}
         <script type="text/javascript" src="../../assets/gdpr/gdpr.js"></script>
         <script type="text/javascript" src="../../assets/gdpr/es.js"></script>
-
-        {{-- Banners --}}
         <script>
             document.addEventListener('gdprCookiesEnabled', function (e) {
                 if(e.detail.marketing) { //checks if marketing cookies are enabled
