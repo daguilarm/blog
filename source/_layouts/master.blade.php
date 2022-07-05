@@ -1,7 +1,7 @@
 <?php
     $title = $page->title
         ? $page->title
-        : sprintf('%s. Php, Javascript, Laravel y diseño web.', $page->siteName);
+        : 'Programación y diseño web: PHP, Laravel y javascript';
 
     $og_image = $page->cover_image
         ? 'https://daguilar.dev/assets/img/og/'.$page->cover_image

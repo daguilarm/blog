@@ -1,5 +1,6 @@
 ---
 pagination:
+    title: Artículos sobre programación y desarrollo web
     collection: posts
     perPage: 20
 ---
