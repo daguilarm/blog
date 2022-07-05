@@ -3,7 +3,7 @@ extends: _layouts.legal
 title: cookies
 ---
 
-**Política de cookies**
+# Política de cookies
 
 La presente política de cookies tiene por finalidad informarle de manera clara y precisa sobre las cookies que se utilizan en la web www.daguilar.dev (en adelante PLATAFORMA).
 

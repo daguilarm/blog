@@ -1,6 +1,10 @@
 @extends('_layouts.master')
 
 @section('body')
+
+    <h1>Últimos artículos y guías sobre programación, diseño web, marketing y SEO.</h1>
+    <h2>Principalmente utilizando las tecnologías PHP, Laravel, Javascript, VueJS, AlpineJS y Angular.</h2>
+
     @foreach ($posts->where('featured', true) as $featuredPost)
         <div class="w-full mb-6">
             @if ($featuredPost->cover_image)

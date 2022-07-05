@@ -64,7 +64,12 @@
         <script>
             document.addEventListener('gdprCookiesEnabled', function (e) {
                 if(e.detail.marketing) { //checks if marketing cookies are enabled
-                    document.getElementById('banner').innerHTML='<iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?o=30&p=48&l=ur1&category=primeday&banner=0CJQFH890BEJ2EREPQR2&f=ifr&linkID=0dee11051e921f2ae16f919c6515de3b&t=ofertiacom-21&tracking_id=ofertiacom-21" width="728" height="90" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>';
+                    var divForBanner = document.getElementsByClassName('marketing-banner');
+                    var bannerHtml = '<iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?o=30&p=48&l=ur1&category=primeday&banner=0CJQFH890BEJ2EREPQR2&f=ifr&linkID=0dee11051e921f2ae16f919c6515de3b&t=ofertiacom-21&tracking_id=ofertiacom-21" width="728" height="90" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>';
+                    
+                    for (var i = 0; i < divForBanner.length; i++) {
+                        divForBanner[i].innerHTML = bannerHtml;
+                    }
                 }
             });
         </script>
@@ -173,8 +178,8 @@
 
         <main role="main" class="flex-auto w-full container mx-auto py-16 px-6 z-20">
 
-            <div id="banner" class="flex justify-center w-full"></div>
-                <p><strong>Política de cookies</strong></p>
+            <div class="marketing-banner flex justify-center w-full"></div>
+                <h1>Política de cookies</h1>
 
 <p>La presente política de cookies tiene por finalidad informarle de manera clara y precisa sobre las cookies que se utilizan en la web www.daguilar.dev (en adelante PLATAFORMA).</p>
 
@@ -253,8 +258,7 @@ Además, también puede gestionar el almacén de cookies en su navegador a trav�
 <li>Your online choices: www.youronlinechoices.com/es/</li>
 </ul>
 
-            
-        </main>
+            <div class="marketing-banner flex justify-center w-full"></div>        </main>
 
         <footer class="w-full flex items-center h-24 bg-white sm:bg-gray-600 sm:text-gray-100 text-center text-sm mt-12 py-4" role="contentinfo">
             <div class="flex-1">

@@ -4,7 +4,7 @@ title: legal
 ---
 
 
-**Aviso Legal**
+# Aviso Legal
 
 En cumplimiento del artículo 10 de la Ley 34 / 2002, de 11 de julio, de Servicios de la Sociedad de la Información y Comercio Electrónico, el titular de la página web expone sus datos identificativos.
 

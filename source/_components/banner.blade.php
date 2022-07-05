@@ -1,1 +1,1 @@
-<div id="banner" class="flex justify-center w-full"></div>
+<div class="marketing-banner flex justify-center w-full"></div>

@@ -3,7 +3,7 @@ extends: _layouts.legal
 title: privacity
 ---
 
-**Política de Privacidad**
+# Política de Privacidad
 
 Este web es propiedad de Damián Antonio Aguilar Morales (en adelante el TITULAR), con NIF 23003805X y domicilio en C/ Ruperto Chapi 27, San Javier (Murcia) - 30730 - España. Siendo titular de la web *www.daguilar.dev* (en adelante PLATAFORMA) y pudiendo ser contactado mediante la dirección de email *damian.aguilarm@gmail.com* (en adelante EMAIL).
 
