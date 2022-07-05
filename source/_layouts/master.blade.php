@@ -1,6 +1,6 @@
 <?php
     $title = $page->title
-        ? sprintf('%s. %s', $page->title, $page->siteName)
+        ? $page->title
         : sprintf('%s. Php, Javascript, Laravel y diseño web.', $page->siteName);
 
     $og_image = $page->cover_image
