@@ -13,6 +13,16 @@
     [headers.values]
     X-Content-Type-Options = "nosniff"
 
+[[headers]]
+    for = "/*"
+    [headers.values]
+    X-Frame-Options = "DENY"
+
+[[headers]]
+    for = "/*"
+    [headers.values]
+    X-XSS-Protection = "1; mode=block"
+
 [build]
 command = "npm run production"
 publish = "build_production"
