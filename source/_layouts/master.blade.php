@@ -16,6 +16,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="{{ $page->meta_description ?? $page->description ?? $page->siteDescription }}">
         <meta name="msvalidate.01" content="7EBAF0830896AD1D4A27E93C37552EDA" />
+        <meta http-equiv="expires" content="86400"/>
         {{-- OG --}}
         <meta property="og:title" content="{{ $page->title }}" />
         <meta property="og:type" content="article" />
