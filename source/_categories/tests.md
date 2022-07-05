@@ -1,7 +1,8 @@
 ---
 extends: _layouts.category
-title: Artículos sobre TDD y Tests
-description: Artículos sobre TDD (Desarrollo Guiado por Pruebas), Tests, PhpUnit, Laravel Dusk,...
+title: Artículos sobre testing en programación informática, metodologías y realización de pruebas.
+description: Artículos sobre testing, TDD (Desarrollo Guiado por Pruebas), PhpUnit, Laravel Dusk,... una disciplina de la ingeniería del software que busca garantizar que se cumplen los requesitos esperados de un sistema.
+category: tests
 ---
 
-Artículos sobre Tests y Desarrollo Guiado por Pruebas de software (Test-driven development: TDD).
+Artículos sobre testing, Desarrollo Guiado por Pruebas de software (Test-driven development: TDD), al igual que las diferentes librerias y herramientas para la realización de pruebas en código.

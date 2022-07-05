@@ -1,7 +1,8 @@
 ---
 extends: _layouts.category
-title: Artículos Laravel
-description: Artículos sobre el framework Laravel
+title: Artículos sobre Laravel el framework basado en PHP, código abierto y creado por Taylor Otwell en 2011
+description: Artículos sobre el framework Laravel, desarrollado en PHP y con gran influencia de frameworks como Ruby on Rails, Sinatra o ASP.NET, y basado en la arquitectura Modelo Vista Controlador (MVC)
+category: laravel
 ---
 
 Artículos relacionados con el framework <a href="https://www.laravel.com/" target="_blank">Laravel</a>, desarrollado por <a href="https://twitter.com/taylorotwell" target="_blank">Taylor Otwell</a>

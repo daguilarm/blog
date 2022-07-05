@@ -1,7 +1,8 @@
 ---
 extends: _layouts.category
-title: Articulos php
-description: Artículos relacionados con php. Php es un lenguaje de programación de alto nivel, con una sintaxis parecida a Java
+title: Articulos sobre PHP, el lenguaje de programación general especialmente enfocado en el desarrollo web.
+description: Artículos relacionados con php. Php es un lenguaje de programación de alto nivel, interpretado y desarrollado en 1994 por Rasmus Lerdorf.
+category: php
 ---
 
-Artículos y reflexiones sobre el lenguaje de programación de alto nivel <a href="https://www.php.net/" target="_blank">php</a>.
+Artículos, reflexiones y novedades sobre <a href="https://www.php.net/" target="_blank">PHP</a>, el lenguaje de programación de alto nivel, orientado a objetos y basado en *software* libre. Uno de mis favoritos.

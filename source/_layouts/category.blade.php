@@ -1,5 +1,9 @@
 @extends('_layouts.master')
 
+@push('metatags')
+    <link rel="canonical" href="https://daguilar.dev/blog/categories/{{ $page->category }}/">
+@endpush
+
 @section('body')
     <h1 class="text-blue-800 text-3xl md:text-4xl lg:text-5xl">{{ $page->title }}</h1>
 
