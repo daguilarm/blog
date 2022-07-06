@@ -2,6 +2,11 @@ body {
     font-size: 17px;
 }
 
+body,
+html {
+    font-family: Verdana, sans-serif;
+}
+
 a {
     @apply .font-semibold;
     @apply .no-underline;
