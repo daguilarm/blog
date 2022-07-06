@@ -62,7 +62,6 @@
         <link rel="manifest" href="{{ $page->baseUrl }}/assets/img/favicon/manifest.json">
         <link rel="dns-prefetch" href="//fonts.googleapis.com">
         <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i,800,800i" rel="stylesheet">
         <link rel="stylesheet" href="{{ mix('css/main.css', 'assets/build') }}">
         {{-- <link rel="canonical" href="https://daguilar.dev"> --}}
         {{-- Custom css --}}
