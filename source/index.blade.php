@@ -17,7 +17,7 @@ description: Blog sobre programación de Damián Aguilar, donde se habla sobre t
         <div class="flex flex-col md:flex-row w-full">
             @foreach ($row as $post)
                 <div class="flex w-full md:w-1/2 md:mx-6 ">
-                    @include('_components.post-preview-inline', ['minHeight' => true])
+                    @include('_components.post-preview-inline')
                 </div>
             @endforeach
         </div>

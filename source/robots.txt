@@ -5,3 +5,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://daguilar.dev/blog/rss.xml
+Sitemap: https://daguilar.dev/sitemap.xml

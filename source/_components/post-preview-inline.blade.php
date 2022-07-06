@@ -1,4 +1,4 @@
-<div class="flex flex-col w-full bg-white rounded-xl shadow-xl p-4 my-6 {{ $minHeight === true ? 'h-80' : '' }}">
+<div class="flex flex-col w-full bg-white rounded-xl shadow-xl p-4 my-6">
     <p class="text-gray-600 font-medium my-2">
         {{ $post->getDate()->format('d/m/Y') }}
     </p>
