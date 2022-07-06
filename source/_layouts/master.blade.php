@@ -63,6 +63,7 @@
         <link rel="dns-prefetch" href="//fonts.googleapis.com">
         <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
         <link rel="stylesheet" href="{{ mix('css/main.css', 'assets/build') }}">
+        <link rel="stylesheet" href="{{ mix('css/fonts.css', 'assets/build') }}">
         {{-- <link rel="canonical" href="https://daguilar.dev"> --}}
         {{-- Custom css --}}
         @stack('custom-css')
