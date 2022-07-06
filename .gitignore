@@ -10,6 +10,7 @@
 .phpunit.result.cache
 .php_cs.cache
 .idea
+.idraw
 info.text
 source/assets/img/masters/
 source/_post_desarrollo
