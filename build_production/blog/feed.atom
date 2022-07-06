@@ -3,12 +3,377 @@
     <title>Blog de Damián Aguilar</title>
     <link href="https://daguilar.dev" />
     <link type="application/atom+xml" rel="self" href="https://daguilar.dev/blog/feed.atom" />
-    <updated>2022-07-06T13:43:19+00:00</updated>
+    <updated>2022-07-06T15:03:46+00:00</updated>
     <id>https://daguilar.dev/blog/feed.atom</id>
     <author>
         <name>Damián Aguilar</name>
     </author>
                 <entry>
+    <id>https://daguilar.dev/blog/seo_como-aumentar-las-visitas-de-tu-pagina-web-guia-definitiva</id>
+    <link type="text/html" rel="alternate" href="https://daguilar.dev/blog/seo_como-aumentar-las-visitas-de-tu-pagina-web-guia-definitiva" />
+    <title>Guía definitiva para aumentar las visitas de tu página web</title>
+    <published>2022-07-05T00:00:00+00:00</published>
+    <updated>2022-07-05T00:00:00+00:00</updated>
+    <author>
+        <name>Damián Aguilar</name>
+    </author>
+    <summary type="html">¿Tienes un blog o una web que no consiguen tráfico suficiente? Las visitas no aumentan cada vez que miras las estadísticas. No te preocupes, es nomal, al principio todos los webs son así: sin visitas. En este artículo voy a explicarte las mejores......</summary>
+    <content type="html"><![CDATA[
+        <p><strong>¿Tienes un blog o una web que no consiguen tráfico suficiente?</strong> Las visitas no aumentan cada vez que miras las estadísticas. No te preocupes, es nomal, al principio todos los webs son así: <strong>sin visitas</strong>. En este artículo voy a explicarte <strong>las mejores formas de cambiar esta situación, y conseguir aumentar las visitas</strong> de tu web o blog.</p>
+
+<p>Quizas lo primero es aclarar que no soy ningún experto en <strong>Marketing</strong> ni <strong>SEO</strong>, pero si que es cierto que llevo muchos años en esto, y que me he tomado la molestía de perder mucho tiempo leyendo y recopilando información sobre el tema. Básicamente lo que voy a plasmar aquí es <strong>un resumen de las mejores técnicas o decisiones que se pueden tomar a la hora de promocionar tu página web o blog</strong>.</p>
+
+<p>Algunas de estas técnicas las he aprendido a lo largo de mi vida a través de la experiencia, pero otras las he aprendido de gente que sabe del tema, por lo tanto, <strong>al final del post podrás encontrar una pequeña bibliografía con todas las fuentes que he consultado</strong>.</p>
+
+<p>También quiero resaltar que este artículo es una especie de experimento personal en el que voy a intentar aplicar todos los consejos que se plasman aquí. También es importante recordar, que hay que tener en cuenta que <strong>el posicionamiento en buscadores es un proceso lento</strong> y que puede llevar bastante tiempo, por lo tanto, hay que ser paciente y perseverar.</p>
+
+<blockquote>
+  <p>El posicionamiento en buscadores, es un compendio de técnicas y herramientas enfocadas en mejorar la posición de un sitio web respecto a los resultados de los buscadores.</p>
+</blockquote>
+
+<h2>1) Principios básicos.</h2>
+
+<p>La gran mayoría de las webs sobre <strong>SEO</strong> y <strong>Marketing online</strong>, coinciden en que hay <strong>dos aspectos clave para conseguir aumentar el trafico de tu web o blog</strong>. Realmente son aspectos que se dan por sentado, y que toda web que aspire a conseguir un buen posicionamiento debe de tener. Es decir, <strong>es algo previo a las técnicas y métodos para conseguir visitas o mejorar nuestro posicionamiento</strong>. Toda web debe implementar de los siguientes principios antes de empezar con el posicionamiento en motores de búsqueda:</p>
+
+<ul>
+<li>Un contenido de calidad.</li>
+<li>Experiencia de usuario decente.</li>
+</ul>
+
+<h3>1.1) Crear contenido de calidad</h3>
+
+<p>Internet está lleno de contenidos muy variados, y eso implica que <strong>cada vez es más facil encontrar contenidos gran calidad</strong>, por lo que si el tuyo no está a la altura del resto rápidamente dejará de ser interesante y eso lo volverá irrelevante. <strong>Nuestro objetivo es el contrario: ser relevantes.</strong></p>
+
+<p>Existen varias claves a tener en cuenta a la hora de generar contenido de calidad:</p>
+
+<ul>
+<li>Algunos web consideran que <strong>es importante que nuestros artículos o contenido tenga una extensión importante</strong>, en otras palabras, deben de ser largos. También es cierto que otros afirman que esto era antes, y que actualmente ya no es tan importante,... Personalmente creo que si que es importante que el contenido sea extenso.</li>
+<li>El contenido del web <strong>debe de ser novedoso o estar de actualidad</strong>, o por lo menos, tener un enfoque diferente al resto (a nuestra competencia).</li>
+<li>Intenta actualizar los contenidos de tu web o blog con frecuencia. Parece ser que a <strong>Google</strong> le gusta las webs que generan <strong>contenidos frecuentes</strong>.</li>
+<li>El contenido debe de ser claro y directo, buscando una <strong>narración simple y didáctica, y por supuesto, con una buena estructura</strong>. Es importante revisar varias veces el contenido para asegurarse que sigue estos principios.</li>
+<li>Tal vez tu web de empresa no sea el lugar adecuado para generar contenidos de calidad, en este caso, <strong>lo normal es crear un blog corporativo</strong> que genere estos contenidos, eso si, siempre vinculado a la web de la empresa.</li>
+</ul>
+
+<p>A modo de resumen, generar contenido de calidad <strong>consiste en generar un texto mucho mejor que el que podríamos encontrar en nuestra competencia</strong>. Se que no es fácil, pero tampoco es imposible.</p>
+
+<h3>1.2) Experiencia de usuario.</h3>
+
+<blockquote>
+  <p><em>¿Qué es la experiencia de usuario?</em> La user experience (UX), podemos resumirla en lo fácil o complejo que es moverse por una página web, y que principalmente se basa en:</p>
+</blockquote>
+
+<ul>
+<li>¿Cómo está estructurado el blog o web?. Ordenar el contenido es importante.</li>
+<li>¿Cómo de sencilla o compleja es la navegación por ella?. <strong>Lo ideal sería que un visitante nuevo fuera capaz de moverse por todo el web sin demasiados problemas</strong>.</li>
+<li>El diseño: ¿Es un diseño moderno?, o tal vez ¿es atractivo?. <strong>La primera impresión de un web es importante</strong>, por lo tanto hay que cuidar el logotipo, el diseño y la imagen que desprende nuestro web en general.</li>
+<li>Cuidar la tipografía y los colores. A veces nos encontramos con colores de letra o fondos, que hace casi imposible entender que estamos viendo... ojo con esto.</li>
+<li>¿Es el web responsive?. <strong>Es importante que el web se pueda visualizar correctamente desde cualquier dispositivo</strong>.</li>
+<li><strong>La velocidad de carga del web</strong>. Otro aspecto muy importante y que puede hacernos perder visitantes. <strong>Es importante disponer de un web que cargue rápido</strong>, ya que la velocidad del web va a influir tanto en la experiencia de usuario como en el posicionamiento web. El propio <strong>Google</strong> se ha tomado la molestia de desarrollar su propia herramienta <a href="https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?hl=es" class="link-out">Lighthouse</a> para que mejoremos la velocidad de carga de nuestro proyecto, esto ya es opinión personal, pero estoy convencido que <strong>la velocidad de carga de un web es un factor que Google tiene en cuenta para el posicionamiento</strong>.</li>
+</ul>
+
+<h2>2 Formas de conseguir tráfico web.</h2>
+
+<p>Esto ya es como la jungla, <strong>hay miles de opiniones y propuestas para aumentar el tráfico de nuestro web</strong>. Voy a centrarme en las más sensatas, y las que más se repiten entre los expertos en la materia, y por supuesto, en base a mi propia experiencia:</p>
+
+<h3>2.1 Buscadores</h3>
+
+<p>Los primero que me parece lógico decir, es que he descartado todo aquello relacionado con empresas, blogs, etc que ofrecian servicios de alta en buscadores y directorios... como digo, no soy un experto, pero esto parecen técnicas del siglo pasado, por lo que directamente lo he obviado.</p>
+
+<p><strong>Google es la principal fuente de tráfico web del mundo</strong>, por lo que si tu web le gusta al buscador vas a tener muchas visitas. Es cierto que existen otros buscadores, pero para que vamos a engañarnos... creo que básicamente todo se reduce a <strong>Google</strong> y tal vez a <strong>Bing</strong>.</p>
+
+<p>Antes de empezar debemos configurar el archivo <code>robots.txt</code>. Este archivo va a indicar a los buscadores las partes del web deben rastrear e indexar y las partes que no. A continuación, un ejemplo básico del contenido del archivo <code>robots.txt</code>:</p>
+
+<pre><code class="language-bash">User-agent: *
+Allow: /
+
+Sitemap: https://daguilar.dev/blog/rss.xml
+Sitemap: https://daguilar.dev/sitemap.xml
+</code></pre>
+
+<p>Indicamos que indexe todo el contenido (sin excepciones), y le indicamos la ubicación del archivo <code>sitemap</code>, si es que lo tenemos (que ya te digo yo que tienes que tenerlo). Como puedes ver, en mi caso he añadido dos <code>sitemap</code>... en principio puedes añadir tantos como tengas en tu web.</p>
+
+<h4>2.1.1 ¿Cómo dar de alta nuestra web o blog en buscadores?</h4>
+
+<p><strong>La forma de dar de alta tu web en google</strong>, es mediante <a href="https://search.google.com/search-console" class="link-out">Search Console</a>. Antes se podía añadir las webs de forma directa desde un formulario, pero eso ya es cosa del pasado.</p>
+
+<p>Con el buscador <strong>Bing</strong> tenemos la misma situación <a href="https://www.bing.com/webmasters/about" class="link-out">Alta en Bing</a>.</p>
+
+<p>Si queremos añadir nuestro web a <strong>Yahoo Search</strong>, debemos utilizar la aplicación de alta de <strong>Bing</strong>.</p>
+
+<p>Otros buscadores como <a href="https://duckduckgo.com/" class="link-out">DuckDuckGo</a> realizan el proceso de indexación de forma autónoma utilizando otras fuentes. <strong>En resumen, basta con añadir las webs a Google y a Bing.</strong></p>
+
+<h3>2.2 SEO (Search Engine Optimization)</h3>
+
+<blockquote>
+  <p>El SEO son un conjunto de técnicas enfocadas a mejorar la posición y la visibilidad de una página web respecto a los motores de búsqueda.</p>
+</blockquote>
+
+<p>Los motores de búsqueda (como <strong>Google</strong>) indexan el contenido de internet, lo clasifican y lo catalogan. Despues de esto, y con la ayuda de los algoritmos que ha desarrollado cada buscador, se ordenarán los resultados y se mostrarán al usuario que ha realizado la búsqueda.</p>
+
+<p>La idea, por tanto, <strong>es conseguir entender el funcionamiento de estos algoritmos, y que aspectos o condiciones de un web, son las que hacen que suban o bajen en los resultados.</strong> El problema es que los algoritmo son secretos, y la única forma de conseguir información de como funcionan, es mediante la experiencia, de aquí que existan demasiadas teorias sobre como posicionar una página web.</p>
+
+<p>Existen dos tipos de posicionamiento <strong>SEO</strong>: el <strong>SEO on-page</strong> y el <strong>SEO off-page</strong>.</p>
+
+<h4>2.2.1 SEO on-page</h4>
+
+<blockquote>
+  <p>El SEO on-page son el conjunto de técnicas enfocadas en adaptar el contenido de la página web, conforme a las expectativas de un buscador. Es decir, son las técnicas SEO que se realizan en la propia página.</p>
+</blockquote>
+
+<p>Aqui es donde uno puede llegar a perderse con la cantidad de consejos sobre <strong>cómo optimizar la página web para buscadores</strong>. He intentado hacer una buena selección, y creo que hay consenso:</p>
+
+<h5>Titulo</h5>
+
+<p>Es importante que el web tenga una etiqueta <code>&lt;title&gt;</code>. Y sobre todo, <strong>el título debe de ser claro, directo y que explique de que va nuestra página web</strong>. Otra cosa en la que parecen estar deacuerdo las diversas fuentes, es que es importante que no sea excesivamente largo (entre 50 y 70 caracteres) e intentar añadir alguna palabra clave al principio del mismo.</p>
+
+<p><strong>El título, también tiene que ser atractivo y captar la atención del visitante</strong>, y por supuesto, cada página debe de tener un título propio y descriptivo, no vale ponerle a todas las páginas el mismo título.</p>
+
+<pre><code>```html
+&lt;title&gt;El blog de programación de Damián Aguilar&lt;/title&gt;
+```
+</code></pre>
+
+<blockquote>
+  <p>Recuerda: es un error ponerle a todas las páginas el mismo título.</p>
+</blockquote>
+
+<h5>MetaTags</h5>
+
+<p>Los buscadores <strong>buscan en las metaetiquetas contenido para entender mejor de que va la web</strong>, y también información de como actuar en determinadas situaciones: que partes del web indexar, que partes no, si el contenido es apto para dispositivos móviles, si hay contenido para adultos, etc.</p>
+
+<p>En la web <a href="https://developers.google.com/search/docs/advanced/crawling/special-tags?hl=es" class="link-out">https://developers.google.com/search/docs/advanced/crawling/special-tags?hl=es</a> puedes encontrar la lista completa de las metaetiquetas que <strong>Google</strong> es capaz de comprender.</p>
+
+<ul>
+<li><p><strong>Descripción</strong>: Parece ser que no es importante para el posicionamiento, pero <strong>Google</strong> la utiliza a la hora de mostrar los resultados, por lo que es importante añadirla. Lo normal es que no exceda de los 250 caracteres, aunque parece que se puede llegar hasta los 300. <strong>Es importante tener en cuenta que en los resultados de búsqueda, el título y la descripción, es lo que va a llamar la atención del visitante potencial</strong>, por lo que hay que esforzarse un poco en hacerlo bien.</p>
+
+<pre><code class="language-html">&lt;meta name="description" content="Descripcion..."&gt;
+</code></pre></li>
+<li><p><strong>Palabras clave</strong>: Pues muchos sitios te dicen que son importantes, pero el propio <strong>Google</strong> (en el enlace anterior en el que habla de las meta-tags) ni las menciona.</p></li>
+<li><p><strong>Viewport</strong>: Se utiliza para dar soporte a dispositivos móviles. <strong>Google</strong> la utiliza para saber si el web es <em>responsive</em>.</p>
+
+<pre><code class="language-html">&lt;meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"&gt;
+</code></pre></li>
+<li><p><strong>Validación de buscadores</strong>: Los propios buscadores utilizan metaetiquetas para verificar la autoría de un web. Es la técnica que utilizan para demostrar que el web es tuyo. <strong>Google</strong> y <strong>Bing</strong> tienen las suyas:</p>
+
+<pre><code class="language-html">&lt;!-- Bing --&gt;
+&lt;meta name="msvalidate.01" content="7EBAF0830896AD1D4A27E93C37552EDA" /&gt;
+
+&lt;!-- Google --&gt;
+&lt;meta name="google-site-verification" content="+nxGUDJ4QpAZ5l9Bsjdi102tLVC21AIh5d1Nl23908vVuFHs34="/&gt;
+</code></pre></li>
+</ul>
+
+<p>Desde las aplicaciones de alta de cada buscador, podemos realizar la gestión.</p>
+
+<h5> URL amigables</h5>
+
+<p><strong>Las URLs de nuestra página web deben de ser amigables</strong>, y tienen que estar compuestas por palabras clave separadas por guiones. El objetivo es que estas URL sean entendibles de forma sencilla, tanto por los buscadores como por los usuarios del web.</p>
+
+<p>Esto sería un ejemplo de URL no amigable:</p>
+
+<blockquote>
+  <p>https:///www.daguilar.dev/?post=2934</p>
+</blockquote>
+
+<p>Un ejemplo de URL amigable:</p>
+
+<blockquote>
+  <p>https:///www.daguilar.dev/posts/aprender-programacion-php</p>
+</blockquote>
+
+<p>Este tipo de URL son semánticas y aportan beneficios tanto al usuario (a través de la experiencia de usuario) como al posicionamiento web, mediante el SEO.</p>
+
+<blockquote>
+  <p>Lo recomendable es usar guiones para separar las palabras, y nunca guiones bajos u otro símbolo.</p>
+</blockquote>
+
+<p>Yo mismo rompo este consejo en este blog: utilizo guiones bajos en el título... pero es por una cuestión técnica, y no tengo más remedio que hacerlo.</p>
+
+<h5>Etiquetas de encabezado</h5>
+
+<p>Es importante utilizar una correcta estructura mediante etiquetas: <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>,...Esta estructuración tiene dos finalidades: ayudar al lector a seguir mejor el texto y la más importante desde el punto de vista <strong>SEO</strong>, posicionar adecuadamente la web.</p>
+
+<p><strong>Estas etiquetas suelen captar la atención de los buscadores</strong>, ya que suelen ser la primera parte que suelen capturar, y a partir de ella, suelen hacerse una idea sobre el contenido del web.</p>
+
+<p>La etiqueta <code>&lt;h1&gt;</code> debe resumir el contenido de la página web de forma similar a como hacía la etiqueta <code>&lt;title&gt;</code>, pero lo ideal es que sea diferente. También <strong>es importante que cada página sólo tenga una etiqueta <code>&lt;h1&gt;</code></strong>, o podrían penalizarnos.</p>
+
+<blockquote>
+  <p>Es muy importante añadir las palabras clave que definan nuestro contenido en la etiqueta <code>&lt;h1&gt;</code>.</p>
+</blockquote>
+
+<p>Es lógico pensar que la etiqueta <code>&lt;h1&gt;</code> debe de aparecer antes que el resto de etiquetas, por lo tanto, es primordial que aparezca al principio del documento (a modo de título). Otro aspecto importante es que el título sea corto para que las palabras clave resalten más entre el texto.</p>
+
+<blockquote>
+  <p>Es importante no utilizar imágenes como titulares, tal y como hacen algunas webs.</p>
+</blockquote>
+
+<p>Lo siguiente sería ir añadiendo etiquetas desde <code>&lt;h2&gt;</code> hasta <code>&lt;h6&gt;</code> (siempre que sea necesario). Es aquí donde vamos a ir <strong>indicando a los buscadores las diferentes subsecciones de nuestro web, generando así una gerarquía de contenidos</strong>.</p>
+
+<p>A diferencia de la etiqueta <code>&lt;h1&gt;</code> el resto de etiquetas si que pueden repetirse (tantas veces como sea necesario).</p>
+
+<p>En estas etiquetas es <strong>importante ir añadiendo palabras clave que tengan relación con el texto que vamos a desarrollar</strong>. No olvidemos que estos encabezados son como títulos que anuncian el contenido que vamos a desarrollar a continuación, deben de describir el texto que estamos a punto de encontrarnos.</p>
+
+<p>Parece haber bastante consenso en que <strong>las etiquetas que realmente pueden influir en el posicionamiento son: <code>&lt;h1&gt;</code> y <code>&lt;h2&gt;</code></strong>, y que el resto tienen un peso menor, en cualquier caso, yo personalmente sigo utilizándolas para dar cierta estructura a los contenido, ademas, tengo el convencimiento de que siempre aportarán algo.</p>
+
+<h5>Contenido del web</h5>
+
+<p>Es muy importante que las primeras 10 o 15 palabras de tu web describan con claridad el contenido que el usuario se va a encontrar, porque parece claro que <strong>estas primeras palabras van a ser las que nos consigan visitas</strong>. Es una cuestión de atención, si el usuario no es capatado desde el principio no vas a conseguir que se quede en el web y siga consumiendo tus contenidos.</p>
+
+<p>Existe cierto convencimiento de que <strong>el texto normal de la página web es uno de los factores principales para promocionar un web</strong>, ya que es lo que aporta la calidad del contenido que al principio se comentaba, a parte de esto, <strong>un buen contenido siempre va a atraer enlaces naturales</strong>, que van a mejorar el posicionamiento (hablaremos de esto más adelante).</p>
+
+<p><strong>Si utilizamos imágenes, es recomendado utilizar el atributo <code>alt</code> para añadir información sobre ella</strong>, e intenta que esta información sea relevante. También es importante que el tamaño de la imagen y el formato, sean los adecuados (recordemos que la velocidad de un web es importante).</p>
+
+<p><strong>No hay que olvidar, que también existe un posicionamiento para imágenes</strong>, y que a partir de la búsqueda de una imagen se puede terminar llegando a una página web, por lo que es importante cuidar este aspecto a la hora de definir el texto que acompaña a la imagen.</p>
+
+<p>Utiliza enlaces internos dentro de tu propio web utilizando palabras clave de forma que podamos vincular artículos entre sí, además de añadir semántica a los enlaces mediante palabras clave (sin obsesionarse, ya que igual no funciona demasiado bien...).</p>
+
+<p>Otra técnica bastante comentada, es la de <strong>enlazar a contenidos de calidad desde tu web</strong>, eso sí, siempre y cuando sean relevantes respeccto tu contenido propio, por ejemplo, si estás hablando de posicionamiento web, podrías destacar o recomendar un web que te parece interesante.</p>
+
+<h5>Palabras clave</h5>
+
+<p>Ya vimos que las palabras clave en las metaetiquetas ya no son relevantes, pero si que lo son en el contenido del web y en los enlaces a nuestro contenido, por tanto, es importante pararse un poco en este punto.</p>
+
+<p><strong>Las palabras clave se han utilizado tradicionalmente como elementos de una búsqueda</strong>, es decir, se generaba el siguiente proceso:</p>
+
+<ol>
+<li>El usuario introduce en el buscador un texto.</li>
+<li>El motor del buscador obtiene palabras clave del texto introducido en el formulario.</li>
+<li>Busca resultados en función de las palabras clave.</li>
+<li>Ordena los resultados en función de un algoritmo.</li>
+</ol>
+
+<p>El problema es que actualmente <strong>ya no se utilizan las palabras claves por si mismas</strong>, sino que se ha introducido el concepto de <em>"intención de búsqueda"</em>. **¿Qué es la <em>intención de búsqueda</em>?
+**</p>
+
+<blockquote>
+  <p>Las palabras clave de una búsqueda ya no son un factor tan importante, el verdadero valor se encuentra en lo que el usuario ha querido buscar y su contexto, y no las palabras en sí.</p>
+</blockquote>
+
+<p>Por ejemplo, <strong>Google</strong> ahora es capaz de entender que <em>"hacer deporte frecuentemente"</em> o <em>"salir a correr a diario"</em> es lo mismo, ambas busquedas reflejan una situación similar. Esto puede llevar a situaciones complejas en las que un mismo web compite entre sí usando palabras clave diferentes, pero que significan los mismo.</p>
+
+<p>Si hacemos esto (dos páginas del blog compitiendo entre sí con dos palabras clave que significan lo mismo), ambas páginas perderán el posicionamiento y estaremos cayendo en <strong>canibalización de palabras clave en el SEO</strong>, otro concepto interesante:</p>
+
+<blockquote>
+  <p>La canibalización de palabras clave sucede cuando varias páginas de un mismo sitio web, compiten por la misma intención de búsqueda.</p>
+</blockquote>
+
+<p>Para planificar las palabras clave de nuestro web, lo normal es utilizar un planificador de palabras clave o una herramienta SEO:</p>
+
+<ul>
+<li><a href="https://ads.google.com/intl/es_es/home/tools/keyword-planner/" class="link-out">https://ads.google.com/intl/es_es/home/tools/keyword-planner/</a></li>
+<li><a href="https://trends.google.com/trends/?geo=ES" class="link-out">https://trends.google.com/trends/?geo=ES</a></li>
+<li><a href="https://answerthepublic.com/" class="link-out">https://answerthepublic.com/</a></li>
+<li><a href="https://www.keywordtooldominator.com/" class="link-out">https://www.keywordtooldominator.com/</a></li>
+</ul>
+
+<p>Y por supuesto, <strong>es mejor centrarse en palabras con menor volumen de visitas</strong>, pero que su <strong>intención de búsqueda</strong> sea similar a las palabras clave de mayor volumen en las búsquedas.</p>
+
+<p>Y como siempre volvemos a lo mismo, intenta que las palabras clave que integran tu contenido sean más específicas (y por tanto menos genéricas) y que marquen la diferencia con tus competidores.</p>
+
+<h4>2.2.1 SEO off-page</h4>
+
+<blockquote>
+  <p>El SEO off-page, son todas las técnicas para el posicionamiento en buscadores que se ejecutan fuera de nuestra web</p>
+</blockquote>
+
+<p>Por ejemplo:</p>
+
+<pre><code>- Email marketing.
+- Gestión de redes sociales.
+- Guest blogging
+- Obtención de enlaces externos (backlinks).
+</code></pre>
+
+<p>Estas técnicas están enfocadas a aumentar la autoridad de tu sitio, es decir, la autoridad que <strong>Google</strong> otorga a los sitios en base a diversos factores.</p>
+
+<blockquote>
+  <p><strong>La atoridad de dominio</strong>, esta es la importancia que da <strong>Google</strong> a tu dominio en relación al resto de dominios de internet.</p>
+</blockquote>
+
+<h5>2.2.1.1 Email marketing</h5>
+
+<blockquote>
+  <p>El email marketing</p>
+</blockquote>
+
+<p><strong>La utilización de boletines por correo electrónico es una buena técnica para conseguir aumentar el tráfico</strong>. El boletín debe de tener un diseño atractivo, contener información interesante, y sobre todo, que llame la atención del destinatario.</p>
+
+<p>Existen numerosas plantillas con formato para hacer esto (muchas de ellas optimizadas para SEO): ¡usalas!, no reinventes la rueda. Adaptalas a tus necesidades y empieza tu propio boletín de noticias. Importante: <strong>intenta que el contenido de tu boletín interactue con tu página web</strong>.</p>
+
+<p>Ofrece contenidos extra para suscriptores, por ejemplo, <strong>ofrece un ebook sobre un tema interesante al suscribirte al boletín</strong>.</p>
+
+<p><strong>Recuerda que tus suscriptores han aceptado recibir un boletín informativo por tu parte, lo que significa que ya está interesado en tus contenidos... no los pierdas.</strong></p>
+
+<h5>2.2.1.2 Gestión de redes sociales y foros</h5>
+
+<p><strong>Se activo en redes sociales, y comparte contenido interesante en ellas</strong>. Por ejemplo, es recomendable compartir contenido novedoso sobre el sector en el que te mueves. Por ejemplo, en mi caso suelo estar compartiendo información sobre las nuevas versiones y novedades de <strong>PHP</strong> y <strong>Laravel</strong>...</p>
+
+<p><strong>No olvides Youtube</strong>, es una plataforma con millones de usuarios y donde puedes interactuar con muchísima gente. Si tienes posibilidad de crear contenido para esta red social, hazlo.</p>
+
+<p><strong>Los foros son también un lugar importante para interactuar con usuarios</strong>, busca categorias afines a tu negocio e interacciona y comparte información en ellos. Por supuesto, cada vez que hagas esto comparte en redes sociales que has participado en tal foro, etc.</p>
+
+<h5>2.2.1.3 Guest blogging</h5>
+
+<p>Una buena forma de conseguir enlaces hacia tu sitio, <strong>es participar en otros blogs como invitado</strong>. Busca blogs de temática similar y haz una propuesta de colaboración, y sobre todo, prepara un gran artículo. Es importante que sea de calidad y que los visitantes del blog vean que si te siguen van a obtener contenidos de calidad.</p>
+
+<p><strong>Lo ideal sería encontrar blogs con una buena autoridad y hablar de contenidos novedosos</strong>, y sobre todo, no tengas miedo en contactar con otros blogs. Lo peor que pueden decirte es que no, y en este caso, tampoco pasa nada... lo vuelves a intentar con otro. Eso si, estable contacto con otros blogs de forma educada y amigable, y no seas insistente. Si te dicen que no, aceptalo y no dejalo estar.</p>
+
+<h5>2.2.1.4 ¿Cómo conseguir backlinks?</h5>
+
+<blockquote>
+  <p>Un backlink es un enlace hacia tu sitio web, desde un sitio externo, es decir, las referencias hacia tu web desde otras webs.</p>
+</blockquote>
+
+<p>Es importante que estos enlaces hacia tu sitio sean de webs con contenido similar, y a ser posible, con una buena autoridad. Vamos a ser sinceros, conseguir que un web relevante te enlace no es nada fácil, pero hay varias formas de conseguirlo:</p>
+
+<ul>
+<li>Cuando tienes contenidos originales y de calidad, suelen aparecer backlinks naturales hacia tu web.</li>
+<li>Puedes colocar enlaces desde los perfiles de tus redes sociales hacia tu web. Estos enlaces no siempre son válidos.</li>
+<li>Igualmente puedes hacer lo mismo desde foros. El resultado es el mismo, algunos enlaces serán válidos y otros no... o incluso ninguno válido.</li>
+<li>Directorios de calidad... supongo que en función de cada temática, será posible encontrar algo decente. Personalmente no soy muy optimista.</li>
+<li>Agregadores de noticias o sociales. Existen diversos agregadores de noticias, como por ejemplo <a href="https://www.meneame.net/" class="link-out">https://www.meneame.net/</a>. Pueden llegar a ser útliles. Ten cuidado con hacer spam, no les gusta que solo envies contenido tuyo...</li>
+<li>Si observas algún error en alguna web de temática similar a la tuya o que han plagiado su contenido, no dudes en contactar con su dueño para informarle del problema. Quizas sea generoso y hable de tu web.</li>
+<li>Mira los backlinks de tu competencia... igual puedes ver como consiguiero ellos el enlace.</li>
+</ul>
+
+<blockquote>
+  <p>Referring domain: cuando un web añade un backlink hacia tu sitio, ese web es considerado un dominio de referencia, independientemente del número de enlaces que apunten hacia tu web (podemos tener un referring domain con cinco backlinks).</p>
+</blockquote>
+
+<h2>2.3 Mira que hacen tus competidores.</h2>
+
+<p>A veces observando que hacen los demás puedes mejorar lo que haces tu. Aprende de ellos.</p>
+
+<p>Como punto y final, recomiendo leer todo lo que escriben en <a href="https://www.ciudadano2cero.com" class="link-out">Ciudadano 2.0</a>, que me ha parecido increible la cantidad de información que ofrecen y lo bien que lo cuentan.</p>
+
+<p><strong>Recopilación de fuentes que he usado para documentarme:</strong></p>
+
+<ul>
+<li><a href="https://www.maunamedia.com/contenido-de-calidad-seo/" class="link-out">https://www.maunamedia.com/contenido-de-calidad-seo/</a></li>
+<li><a href="https://www.ciudadano2cero.com/como-aumentar-visitas-pagina-web/" class="link-out">https://www.ciudadano2cero.com/como-aumentar-visitas-pagina-web/</a></li>
+<li><a href="https://www.oberlo.es/blog/como-aumentar-trafico-web" class="link-out">https://www.oberlo.es/blog/como-aumentar-trafico-web</a></li>
+<li><a href="https://www.javiercarmonabenitez.es/contenido-de-calidad-que-posiciona/" class="link-out">https://www.javiercarmonabenitez.es/contenido-de-calidad-que-posiciona/</a></li>
+<li><a href="https://arturogarcia.com/aumentar-visitas-web/" class="link-out">https://arturogarcia.com/aumentar-visitas-web/</a></li>
+<li><a href="https://blog.seoadsformula.com/aumentar-las-visitas-web-rapido-gratis-seo-fb-ads/" class="link-out">https://blog.seoadsformula.com/aumentar-las-visitas-web-rapido-gratis-seo-fb-ads/</a></li>
+<li><a href="https://es.semrush.com/blog/checklist-para-seo/" class="link-out">https://es.semrush.com/blog/checklist-para-seo/</a></li>
+<li><a href="https://domains.google/intl/es_es/learn/how-to-get-people-to-visit-your-website/" class="link-out">https://domains.google/intl/es_es/learn/how-to-get-people-to-visit-your-website/</a></li>
+<li><a href="https://rubenmanez.com/aumentar-trafico-web-visitas/" class="link-out">https://rubenmanez.com/aumentar-trafico-web-visitas/</a></li>
+<li><a href="https://www.ttandem.com/blog/5-claves-para-conseguir-una-experiencia-de-usuario-positiva-en-tu-sitio-web/" class="link-out">https://www.ttandem.com/blog/5-claves-para-conseguir-una-experiencia-de-usuario-positiva-en-tu-sitio-web/</a></li>
+<li><a href="https://aulacm.com/aumentar-trafico-web-visitas/" class="link-out">https://aulacm.com/aumentar-trafico-web-visitas/</a></li>
+<li><a href="https://developers.google.com/search/docs/advanced/crawling/overview" class="link-out">https://developers.google.com/search/docs/advanced/crawling/overview</a></li>
+<li><a href="https://kinsta.com/es/blog/envio-sitio-web-motores-busqueda/" class="link-out">https://kinsta.com/es/blog/envio-sitio-web-motores-busqueda/</a></li>
+<li><a href="https://es.godaddy.com/blog/que-es-posicionamiento-seo/" class="link-out">https://es.godaddy.com/blog/que-es-posicionamiento-seo/</a></li>
+<li><a href="https://miposicionamientoweb.es/guia-seo-para-principiantes" class="link-out">https://miposicionamientoweb.es/guia-seo-para-principiantes</a></li>
+<li><a href="https://developers.google.com/search/docs/advanced/crawling/special-tags?hl=es" class="link-out">https://developers.google.com/search/docs/advanced/crawling/special-tags?hl=es</a></li>
+<li><a href="https://www.doblemente.com/que-meta-tags-debo-colocar-para-posicionar-mi-web/" class="link-out">https://www.doblemente.com/que-meta-tags-debo-colocar-para-posicionar-mi-web/</a></li>
+<li><a href="https://www.seoalcuadrado.es/seo-h1-h2-y-h3-etiquetas-de-encabezado/" class="link-out">https://www.seoalcuadrado.es/seo-h1-h2-y-h3-etiquetas-de-encabezado/</a></li>
+<li><a href="https://www.impress-group.com/como-utilizar-correctamente-las-etiquetas-de-encabezado-de-html/" class="link-out">https://www.impress-group.com/como-utilizar-correctamente-las-etiquetas-de-encabezado-de-html/</a></li>
+<li><a href="https://www.rdstation.com/es/blog/url-amigable/" class="link-out">https://www.rdstation.com/es/blog/url-amigable/</a></li>
+<li><a href="https://es.semrush.com/blog/seo-para-imagenes/" class="link-out">https://es.semrush.com/blog/seo-para-imagenes/</a></li>
+</ul>
+    ]]></content>
+</entry>
+            <entry>
     <id>https://daguilar.dev/blog/programacion_5_consejos_para_ser_un_gran_programador</id>
     <link type="text/html" rel="alternate" href="https://daguilar.dev/blog/programacion_5_consejos_para_ser_un_gran_programador" />
     <title>Cinco claves para ser mejor programador. Principios SOLID.</title>
