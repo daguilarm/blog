@@ -4,8 +4,8 @@
         : 'Programación y diseño web: PHP, Laravel y javascript';
 
     $og_image = $page->cover_image
-        ? 'https://daguilar.dev/assets/img/og/'.$page->cover_image
-        : 'https://daguilar.dev/assets/img/og-image.jpg';
+        ? $page->baseUrl . '/assets/img/og/'.$page->cover_image
+        : $page->baseUrl . '/assets/img/og-image.jpg';
 ?>
 <!DOCTYPE html>
 <html lang="es">

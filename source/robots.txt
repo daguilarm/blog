@@ -1,8 +1,38 @@
-User-agent: Googlebot
-Disallow: /nogooglebot/
+User-agent: MSIECrawler
+Disallow: /
+User-agent: WebCopier
+Disallow: /
+User-agent: WebReaper
+Disallow: /
+User-agent: HTTrack
+Disallow: /
+User-agent: Baiduspider
+Disallow: /
+User-agent: GurujiBot
+Disallow: /
+User-agent: hl_ftien_spider
+Disallow: /
+User-agent: libwww
+Disallow: /
+User-agent: sogou spider
+Disallow: /
+User-agent: Yeti
+Disallow: /
+User-agent: YodaoBot
+Disallow: /
+
+User-agent: Googlebot-Image
+Disallow: /*.gif$
+
+User-Agent: Googlebot
+Allow: /*.css$
+Allow: /*.js$
 
 User-agent: *
 Allow: /
+Disallow: /blog/legal/cookies/
+Disallow: /blog/legal/legal/
+Disallow: /blog/legal/privacity/
 
 Sitemap: https://daguilar.dev/blog/rss.xml
 Sitemap: https://daguilar.dev/sitemap.xml
