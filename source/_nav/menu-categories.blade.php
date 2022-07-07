@@ -1,5 +1,5 @@
 @php
-    $nav_cat_bg = "bg-blue-600";
+    $nav_cat_bg = "bg-black";
     $nav_cat_bg_hover = "hover:bg-white";
     $nav_cat_text = "text-blue-100";
     $nav_cat_text_hover = "hover:text-blue-700";
