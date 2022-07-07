@@ -36,7 +36,7 @@
         <meta name="twitter:description" content="{{ $page->description ?? $page->description ?? $page->siteDescription }}">
         <meta name="twitter:creator" content="@daguilarm">
         <meta name="twitter:domain" content="https://daguilar.dev">
-        <meta name="twitter:image" content="{{ $page->baseUrl }}/assets/img/twitter.jpg">
+        <meta name="twitter:image" content="{{ $page->baseUrl }}/assets/img/twitter.jpg?refresh={{ rand(1, 1000000000) }}">
         <meta name="twitter:image:alt" content="{{ $page->title }}">
         {{-- Meta tags --}}
         <meta name="msapplication-TileColor" content="#ffffff">

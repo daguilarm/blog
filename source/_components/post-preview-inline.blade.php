@@ -1,5 +1,5 @@
 <div class="flex flex-col w-full bg-white rounded-xl shadow-xl p-4 my-6 {{ $post->pin ? 'border-2 border-blue-400' : 'border border-gray-300' }}">
-    <div class="flex justify-between">
+    <div class="flex {{ $post->pin ? 'justify-between' : 'justify-end' }}">
         @if(!$post->pin)
             <div class="text-gray-600 font-medium my-2">
                 {{ $post->getDate()->format('d/m/Y') }}
