@@ -37,7 +37,7 @@
         <meta name="twitter:creator" content="@daguilarm">
         <meta name="twitter:image:src" content="{{ $page->baseUrl }}">
         <meta name="twitter:domain" content="https://daguilar.dev">
-        <meta name="twitter:image" content="{{ $page->getUrl() }}/assets/img/twitter.jpg">
+        <meta name="twitter:image" content="{{ $page->baseUrl }}/assets/img/twitter.jpg">
         <meta name="twitter:image:alt" content="{{ $page->title }}">
         {{-- Meta tags --}}
         <meta name="msapplication-TileColor" content="#ffffff">

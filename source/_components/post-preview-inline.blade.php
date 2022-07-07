@@ -1,8 +1,10 @@
 <div class="flex flex-col w-full bg-white rounded-xl shadow-xl p-4 my-6 {{ $post->pin ? 'border-2 border-blue-400' : 'border border-gray-300' }}">
     <div class="flex justify-between">
-        <div class="text-gray-600 font-medium my-2">
-            {{ $post->getDate()->format('d/m/Y') }}
-        </div>
+        @if(!$post->pin)
+            <div class="text-gray-600 font-medium my-2">
+                {{ $post->getDate()->format('d/m/Y') }}
+            </div>
+        @endif
         @if($post->pin)
             <div>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="fill-current text-blue-500" style="transform: rotate(30deg);">
