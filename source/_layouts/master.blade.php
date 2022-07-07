@@ -32,6 +32,13 @@
         <meta name="twitter:card" content="summary">
         <meta name="twitter:site" content="@daguilarm">
         <meta name="twitter:creator" content="@daguilarm">
+        <meta name="twitter:title" content="{{ $title }}">
+        <meta name="twitter:description" content="{{ $page->description ?? $page->description ?? $page->siteDescription }}">
+        <meta name="twitter:creator" content="@daguilarm">
+        <meta name="twitter:image:src" content="{{ $page->baseUrl }}">
+        <meta name="twitter:domain" content="https://daguilar.dev">
+        <meta name="twitter:image" content="{{ $page->getUrl() }}/assets/img/twitter.jpg">
+        <meta name="twitter:image:alt" content="{{ $page->title }}">
         {{-- Meta tags --}}
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
