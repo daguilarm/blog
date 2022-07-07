@@ -29,13 +29,12 @@
         <meta property="og:image" content="{{ $og_image }}" />
         <meta property="og:image:alt" content="{{ $page->title }}" />
         {{-- Twitter OG --}}
-        <meta name="twitter:card" content="summary">
+        <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:site" content="@daguilarm">
         <meta name="twitter:creator" content="@daguilarm">
         <meta name="twitter:title" content="{{ $title }}">
         <meta name="twitter:description" content="{{ $page->description ?? $page->description ?? $page->siteDescription }}">
         <meta name="twitter:creator" content="@daguilarm">
-        <meta name="twitter:image:src" content="{{ $page->baseUrl }}">
         <meta name="twitter:domain" content="https://daguilar.dev">
         <meta name="twitter:image" content="{{ $page->baseUrl }}/assets/img/twitter.jpg">
         <meta name="twitter:image:alt" content="{{ $page->title }}">
