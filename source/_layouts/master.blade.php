@@ -5,7 +5,7 @@
 
     $og_image = $page->cover_image
         ? 'https://daguilar.dev/assets/img/og/'.$page->cover_image
-        : 'https://daguilar.dev/assets/img/og-image.jpg';
+        : 'https://daguilar.dev/assets/img/damian-aguilar.jpg';
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -21,7 +21,7 @@
         <meta property="og:title" content="{{ $page->title }}" />
         <meta property="og:type" content="article" />
         <meta property="og:url" content="{{ $page->getUrl() }}"/>
-        <meta property="og:description" content="{{ $page->description }}" />
+        <meta property="og:description" content="{{ $page->description ?? $page->description ?? $page->siteDescription }}" />
         <meta property="og:locale" content="es_ES">
         <meta property="og:site_name" content="{{ $page->siteName }}">
         <meta property="og:image:width" content="1200" />
@@ -32,7 +32,7 @@
         <meta name="twitter:site" content="@daguilarm">
         <meta name="twitter:creator" content="@daguilarm">
         <meta name="twitter:title" content="{{ $title }}">
-        <meta name="twitter:description" content="{{ $page->meta_description ?? $page->description ?? $page->siteDescription }}">
+        <meta name="twitter:description" content="{{ $page->description ?? $page->description ?? $page->siteDescription }}">
         <meta name="twitter:url" content="{{ $page->getUrl() }}">
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:image" content="{{ $og_image }}">
