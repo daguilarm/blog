@@ -13,7 +13,7 @@
 
 @section('body')
 
-    <div class=" bg-white rounded-xl shadow-xl p-9 my-10">
+    <article class=" bg-white rounded-xl shadow-xl p-9 my-10 border border-gray-300">
         <h1 class="leading-none mb-6 text-blue-800 text-3xl md:text-4xl lg:text-5xl">{{ $page->title }}</h1>
 
         <p class="flex justify-start text-gray-600 text-xl md:mt-0">
@@ -53,6 +53,6 @@
                 @endif
             </div>
         </nav> --}}
-    </div>
+    </article>
     
 @endsection

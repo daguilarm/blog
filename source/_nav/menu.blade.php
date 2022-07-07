@@ -1,4 +1,4 @@
-<nav class="hidden lg:flex items-center justify-end text-lg z-20">
+<nav aria-label="navigation" class="hidden lg:flex items-center justify-end text-lg z-20">
     <a title="{{ $page->siteName }}" href="/blog/"
         class="ml-6 text-white hover:text-blue-700 hover:bg-blue-100 hover:shadow rounded py-1 px-3 {{ $page->isActive('/blog') ? 'active' : '' }}">
         Artículos
