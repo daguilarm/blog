@@ -1,10 +1,11 @@
 ---
 extends: _layouts.post
 section: content
-title: Cinco claves para ser mejor programador. Principios SOLID.
+title: Cinco claves para ser mejor programador. Principios SOLID
 date: 2022-06-25
 description: Principales consejos para ser un gran programador. Todo ello aplicando los principios SOLID, consiguiendo código más eficaz, sencillo de mantener y fácil de ampliar.
 categories: [programacion, php, laravel]
+pin: true
 ---
 
 Una de las principales herramientas para hacer código de mayor calidad, más fácil de mantener, y sobre todo, que te permita crecer como programador, es la de **implementar en nuestro código los principios SOLID**:

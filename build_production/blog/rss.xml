@@ -371,7 +371,7 @@ Sitemap: https://daguilar.dev/sitemap.xml
 
                             </item>
                     <item>
-                <title><![CDATA[Cinco claves para ser mejor programador. Principios SOLID.]]></title>
+                <title><![CDATA[Cinco claves para ser mejor programador. Principios SOLID]]></title>
                 <link>https://daguilar.dev/blog/programacion_5_consejos_para_ser_un_gran_programador</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/programacion_5_consejos_para_ser_un_gran_programador</guid>
                 <description><![CDATA[Principales consejos para ser un gran programador. Todo ello aplicando los principios SOLID, consiguiendo código más eficaz, sencillo de mantener y fácil de ampliar.]]></description>

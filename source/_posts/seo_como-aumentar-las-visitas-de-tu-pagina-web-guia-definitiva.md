@@ -5,6 +5,7 @@ title: Guía definitiva para aumentar las visitas de tu página web
 date: 2022-07-05
 description: En este artículo se muestra una guía definitiva para conseguir visitas de forma rápida y sencilla para tu página web, blog o negocio.
 categories: [seo, marketing]
+pin: true
 ---
 
 **¿Tienes un blog o una web que no consiguen tráfico suficiente?** Las visitas no aumentan cada vez que miras las estadísticas. No te preocupes, es nomal, al principio todos los webs son así: **sin visitas**. En este artículo voy a explicarte **las mejores formas de cambiar esta situación, y conseguir aumentar las visitas** de tu web o blog.

@@ -13,7 +13,19 @@ description: Blog sobre programación de Damián Aguilar, donde se habla sobre t
         En este blog nos gustan principalemente hablar sobre: PHP, Laravel, Javascript, VueJS, AlpineJS y Angular.
     </h2>
 
-    @foreach ($posts->where('featured', false)->take(20)->chunk(2) as $row)
+    {{-- Pin post --}}
+    @foreach ($posts->where('featured', false)->where('pin', true)->take(2)->chunk(2) as $row)
+        <div class="flex flex-col md:flex-row w-full">
+            @foreach ($row as $post)
+                <article class="flex w-full md:w-1/2 md:mx-6">
+                    @include('_components.post-preview-inline', ['pin' => true])
+                </article>
+            @endforeach
+        </div>
+    @endforeach
+
+    {{-- Regular post order by date --}}
+    @foreach ($posts->where('featured', false)->where('pin', false)->take(20)->chunk(2) as $row)
         <div class="flex flex-col md:flex-row w-full">
             @foreach ($row as $post)
                 <div class="flex w-full md:w-1/2 md:mx-6 ">
