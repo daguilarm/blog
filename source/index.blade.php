@@ -6,11 +6,11 @@ description: Blog sobre programación de Damián Aguilar, donde se habla sobre t
 
 @section('body')
 
-    <h1 class="mt-8 text-2xl font-extrabold text-blue-700">
-        Últimos artículos sobre programación, diseño web, marketing y SEO.
+    <h1 class="mt-8 text-4xl font-extrabold text-gray-700">
+        Últimos artículos sobre programación, diseño web, marketing y SEO
     </h1>
-    <h2 class="-mt-1 mb-8 p-2 text-xl text-gray-600 italic border-l-4 bg-neutral-100 text-neutral-600 border-neutral-500">
-        En este blog nos gustan principalemente hablar sobre: PHP, Laravel, Javascript, VueJS, AlpineJS y Angular.
+    <h2 class="-mt-1 mb-8 p-2 text-xl shadow text-blue-700 italic border-l-8 bg-gray-200 border-blue-700 pl-6 py-4">
+        En este blog nos gustan principalemente hablar sobre: PHP, Laravel, Javascript, VueJS, AlpineJS y Angular
     </h2>
 
     {{-- Pin post --}}
