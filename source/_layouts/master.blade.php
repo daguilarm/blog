@@ -29,13 +29,15 @@
         <meta property="og:image" content="{{ $og_image }}" />
         <meta property="og:image:alt" content="{{ $page->title }}" />
         {{-- Twitter OG --}}
+        <meta name="twitter:card" content="summary">
         <meta name="twitter:site" content="@daguilarm">
-        <meta name="twitter:creator" content="@daguilarm">
         <meta name="twitter:title" content="{{ $title }}">
         <meta name="twitter:description" content="{{ $page->description ?? $page->description ?? $page->siteDescription }}">
+        <meta name="twitter:creator" content="@daguilarm">
+        <meta name="twitter:image:src" content="{{ $og_image }}">
+        <meta name="twitter:domain" content="daguilar.dev">
         <meta name="twitter:url" content="{{ $page->getUrl() }}">
         <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:image" content="{{ $og_image }}">
         {{-- Meta tags --}}
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
