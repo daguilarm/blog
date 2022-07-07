@@ -29,7 +29,7 @@
         <meta property="og:image" content="{{ $og_image }}" />
         <meta property="og:image:alt" content="{{ $page->title }}" />
         {{-- Twitter OG --}}
-        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:card" content="summary">
         <meta name="twitter:site" content="@daguilarm">
         <meta name="twitter:creator" content="@daguilarm">
         {{-- Meta tags --}}
