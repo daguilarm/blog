@@ -5,7 +5,7 @@
 
     $og_image = $page->cover_image
         ? 'https://daguilar.dev/assets/img/og/'.$page->cover_image
-        : 'https://daguilar.dev/assets/img/damian-aguilar.jpg';
+        : 'https://daguilar.dev/assets/img/og-image.jpg';
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -21,7 +21,7 @@
         <meta property="og:title" content="{{ $page->title }}" />
         <meta property="og:type" content="article" />
         <meta property="og:url" content="{{ $page->getUrl() }}"/>
-        <meta property="og:description" content="{{ $page->description ?? $page->description ?? $page->siteDescription }}" />
+        <meta property="og:description" content="{{ $page->description }}" />
         <meta property="og:locale" content="es_ES">
         <meta property="og:site_name" content="{{ $page->siteName }}">
         <meta property="og:image:width" content="1200" />
@@ -29,15 +29,14 @@
         <meta property="og:image" content="{{ $og_image }}" />
         <meta property="og:image:alt" content="{{ $page->title }}" />
         {{-- Twitter OG --}}
-        <meta name="twitter:card" content="summary">
+        <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:site" content="@daguilarm">
         <meta name="twitter:title" content="{{ $title }}">
         <meta name="twitter:description" content="{{ $page->description ?? $page->description ?? $page->siteDescription }}">
         <meta name="twitter:creator" content="@daguilarm">
         <meta name="twitter:image:src" content="{{ $og_image }}">
-        <meta name="twitter:domain" content="daguilar.dev">
+        <meta name="twitter:domain" content="https://daguilar.dev">
         <meta name="twitter:url" content="{{ $page->getUrl() }}">
-        <meta name="twitter:card" content="summary_large_image">
         {{-- Meta tags --}}
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
