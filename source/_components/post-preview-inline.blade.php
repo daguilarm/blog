@@ -22,7 +22,7 @@
         >{{ $post->title }}</a>
     </h2>
 
-    <p class="mb-4 mt-0">{!! $post->getExcerpt(200) !!}</p>
+    <p class="mb-4 mt-0">{!! $post->getExcerpt(300) !!}</p>
 
     <a
         href="{{ $post->getUrl() }}/"
