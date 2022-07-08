@@ -10,7 +10,7 @@ description: Blog sobre programación de Damián Aguilar, donde se habla sobre t
         Últimos artículos sobre programación, diseño web, marketing y SEO
     </h1>
     <h2 class="-mt-1 mb-8 p-2 text-xl shadow text-blue-700 italic border-l-8 bg-gray-200 border-blue-700 pl-6 py-4">
-        En este blog nos gustan principalemente hablar sobre: PHP, Laravel, Javascript, VueJS, AlpineJS y Angular
+        En este blog nos gusta principalemente hablar sobre: PHP, Laravel, Javascript, VueJS, AlpineJS y Angular
     </h2>
 
     {{-- Pin post --}}
