@@ -201,3 +201,5 @@ function detectServerConfig(host) {
 Como apunte final, si en vez de [TailwindCss](https://tailwindcss.com/){.link-out} usas [Bootstrap](https://getbootstrap.com/){.link-out}, aquí tienes una guía de migración:
 
 - [https://creagia.com/blog/using-laravel-vite-with-bootstrap-and-sass](https://creagia.com/blog/using-laravel-vite-with-bootstrap-and-sass){.link-out}
+
+En general es todo una gran mejora, pero sobre todo me ha gustado el plugin de [Freek Van der Herten](https://freek.dev/2277-using-laravel-vite-to-automatically-refresh-your-browser-when-changing-a-blade-file){.link-out} para actualizar en tiempo real los cambios en los archivos `.blade.php`, es espectacular ir modificando el código en una pantalla y ver el resultado en tiempo real en la otra. Una maravilla.

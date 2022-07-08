@@ -205,6 +205,8 @@ function detectServerConfig(host) {
 <ul>
 <li><a href="https://creagia.com/blog/using-laravel-vite-with-bootstrap-and-sass" class="link-out">https://creagia.com/blog/using-laravel-vite-with-bootstrap-and-sass</a></li>
 </ul>
+
+<p>En general es todo una gran mejora, pero sobre todo me ha gustado el plugin de <a href="https://freek.dev/2277-using-laravel-vite-to-automatically-refresh-your-browser-when-changing-a-blade-file" class="link-out">Freek Van der Herten</a> para actualizar en tiempo real los cambios en los archivos <code>.blade.php</code>, es espectacular ir modificando el código en una pantalla y ver el resultado en tiempo real en la otra. Una maravilla.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
                 <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
