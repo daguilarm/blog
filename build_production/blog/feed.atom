@@ -3,7 +3,7 @@
     <title>Blog de Damián Aguilar</title>
     <link href="https://daguilar.dev" />
     <link type="application/atom+xml" rel="self" href="https://daguilar.dev/blog/feed.atom" />
-    <updated>2022-07-08T16:42:40+00:00</updated>
+    <updated>2022-07-08T16:52:07+00:00</updated>
     <id>https://daguilar.dev/blog/feed.atom</id>
     <author>
         <name>Damián Aguilar</name>
@@ -136,9 +136,9 @@ function detectServerConfig(host) {
 
 <p>Tengo que admitir que no estaba al tanto de esta situación, y que he tenido que buscar en Google la solución, y resulta que uno de los mas famosos programadores de <strong>Laravel</strong>, había posteado la solución en su blog.</p>
 
-<p>La gente de <a href="https://laravelshift.com/convert-laravel-mix-to-vite" class="link-out">Laravelshift.com</a> ha creado <strong>un convertidor gratuito</strong> para pasar un proyecto de <strong>Laravel Mix(Webpack)</strong> a <strong>Vite</strong>.</p>
+<p>Si no quieres perder mucho tiempo con esto, la gente de <a href="https://laravelshift.com/convert-laravel-mix-to-vite" class="link-out">Laravelshift.com</a> ha creado <strong>un convertidor gratuito</strong> para pasar un proyecto de <strong>Laravel Mix(Webpack)</strong> a <strong>Vite</strong>.</p>
 
-<p>En otro post diferente <a href="https://freek.dev/2277-using-laravel-vite-to-automatically-refresh-your-browser-when-changing-a-blade-file" class="link-out">Freek Van der Herten</a> propone un método para que las plantillas de <strong>Blade</strong> se refresquen automáticamente cuando se actulicen, del mismo modo que sucede con los <em>assets</em>.</p>
+<p><strong>Laravel Vite también te permite añadir funcionalidades nuevas</strong>. En otro post diferente <a href="https://freek.dev/2277-using-laravel-vite-to-automatically-refresh-your-browser-when-changing-a-blade-file" class="link-out">Freek Van der Herten</a> propone un método para que las plantillas de <strong>Blade</strong> se refresquen automáticamente cuando se actualicen, del mismo modo que sucede con los <em>assets</em>.</p>
 
 <p>Propone añadir el siguiente <em>plugin</em>:</p>
 
@@ -209,7 +209,7 @@ function detectServerConfig(host) {
 }
 </code></pre>
 
-<p>Si en vez de <a href="https://tailwindcss.com/" class="link-out">TailwindCss</a> usas (Bootstrap)[https://getbootstrap.com/]{.link-out}, aquí tienes una guía de migración:</p>
+<p>Como apunte final, si en vez de <a href="https://tailwindcss.com/" class="link-out">TailwindCss</a> usas (Bootstrap)[https://getbootstrap.com/]{.link-out}, aquí tienes una guía de migración:</p>
 
 <ul>
 <li><a href="https://creagia.com/blog/using-laravel-vite-with-bootstrap-and-sass" class="link-out">https://creagia.com/blog/using-laravel-vite-with-bootstrap-and-sass</a></li>

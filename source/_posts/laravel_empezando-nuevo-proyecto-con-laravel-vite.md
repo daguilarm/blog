@@ -123,9 +123,9 @@ function detectServerConfig(host) {
 
 Tengo que admitir que no estaba al tanto de esta situación, y que he tenido que buscar en Google la solución, y resulta que uno de los mas famosos programadores de **Laravel**, había posteado la solución en su blog. 
 
-La gente de [Laravelshift.com](https://laravelshift.com/convert-laravel-mix-to-vite){.link-out} ha creado **un convertidor gratuito** para pasar un proyecto de **Laravel Mix(Webpack)** a **Vite**.
+Si no quieres perder mucho tiempo con esto, la gente de [Laravelshift.com](https://laravelshift.com/convert-laravel-mix-to-vite){.link-out} ha creado **un convertidor gratuito** para pasar un proyecto de **Laravel Mix(Webpack)** a **Vite**.
 
-En otro post diferente [Freek Van der Herten](https://freek.dev/2277-using-laravel-vite-to-automatically-refresh-your-browser-when-changing-a-blade-file){.link-out} propone un método para que las plantillas de **Blade** se refresquen automáticamente cuando se actulicen, del mismo modo que sucede con los *assets*.
+**Laravel Vite también te permite añadir funcionalidades nuevas**. En otro post diferente [Freek Van der Herten](https://freek.dev/2277-using-laravel-vite-to-automatically-refresh-your-browser-when-changing-a-blade-file){.link-out} propone un método para que las plantillas de **Blade** se refresquen automáticamente cuando se actualicen, del mismo modo que sucede con los *assets*.
 
 Propone añadir el siguiente *plugin*:
 
@@ -198,6 +198,6 @@ function detectServerConfig(host) {
 }
 ```
 
-Si en vez de [TailwindCss](https://tailwindcss.com/){.link-out} usas (Bootstrap)[https://getbootstrap.com/]{.link-out}, aquí tienes una guía de migración:
+Como apunte final, si en vez de [TailwindCss](https://tailwindcss.com/){.link-out} usas (Bootstrap)[https://getbootstrap.com/]{.link-out}, aquí tienes una guía de migración:
 
 - [https://creagia.com/blog/using-laravel-vite-with-bootstrap-and-sass](https://creagia.com/blog/using-laravel-vite-with-bootstrap-and-sass){.link-out}

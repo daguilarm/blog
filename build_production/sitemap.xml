@@ -2,407 +2,407 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
  <url>
   <loc>https://daguilar.dev</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/cookies</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/2</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/projects</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/servers_alojando-sitios-estaticos-en-netlify</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/livewire_buscador-con-laravel-livewire-y-alpinejs</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/test_validando-resultados-con-laravel-dusk-sin-consultar-la-base-de-datos</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/php_actualizando-a-php-74-desde-mac</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/html_algunas-ideas-sobre-diseno-responsable</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/laravel_select-dependiente-multinivel-combobox-para-laravel</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/frameworks_migrando-el-blog-a-jigsaw</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/programacion_programando_con_pyton_java_y_angular</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/laravel_empezando-nuevo-proyecto-con-laravel-vite</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/laravel_novedades-en-laravel-9</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/laravel_crear-un-package-para-laravel</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/alpinejs_accediendo-a-componentes-alpinejs-desde-el-exterior-y-modificando-parametros</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/tests_trucos-consejos-y-situaciones-extranas-con-laravel-dusk</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/html_componentes-avanzados-de-una-plantilla-html5</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/laravel_packages-imprescindibles-para-laravel</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/programacion_5_consejos_para_ser_un_gran_programador</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/javascript_librerias-javascript-creacion-de-mapas-con-leafletjs</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/javascript_mis-problemas-con-javascript</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/tests_simplificando-tests-utilizando-la-funcionalidad-pages-de-laravel-dusk</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/programacion_lenguajes-de-bajo-nivel-frente-a-los-lenguajes-de-alto-nivel</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/personal_vuelta-al-trabajo</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/livewire_cargar-componentes-de-forma-condicional-con-livewire-y-alpinejs</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/laravel_patrones-de-diseno-y-uso-de-pipelines-con-laravel</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/tests_identificando-los-principales-errores-con-laravel-dusk</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/databases_multiples-conexiones-a-bases-de-datos-con-laravel</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/servers_sistemas-de-gestion-de-servidores</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/package_configurando-un-package-de-laravel-y-livewire-para-hacer-tests</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/php_simplificando-condicionales-en-php-parte-2-refactoring</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/javascript_creando-enlaces-externos-con-javascript-de-forma-dinamica</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/database_utilizando-el-formato-de-fechas-europeo-en-los-modelos-de-laravel-con-custom-cast</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/tests_macros-personalizados-para-laravel-dusk</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/php_novedades_de_php_81</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/laravel_nuevo-package-para-laravel-para-la-gestion-de-tablas-de-datos</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/laravel_configurar-helpers-en-laravel</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/php_simplificando-condicionales-en-php-parte-1-refactoring</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/html_utilizar-un-elemento-datalist-como-si-fuera-un-select-con-la-ayuda-de-javascript</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/seo_como-aumentar-las-visitas-de-tu-pagina-web-guia-definitiva</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/packages_configurar-github-webhooks-para-packagist</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/tools_nueva-fuente-de-texto-jetBrains-mono</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/admin/config.yml</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/feed.atom</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/rss.xml</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/about</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/legal/privacity</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/legal/legal</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/legal/cookies</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/admin</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/robots.txt</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/contact</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/categories/markdown</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/categories/frameworks</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/categories/alpinejs</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/categories/python</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/categories/eloquent</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/categories/personal</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/categories/vite</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/categories/github</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/categories/patrones</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/categories/php</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/categories/javascript</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/categories/programacion</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/categories/laravel</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/categories/tests</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/categories/marketing</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/categories/angular</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/categories/packagist</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/categories/seo</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/categories/java</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/categories/packages</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/categories/livewire</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/categories/blade</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/categories/composer</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/categories/html</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/categories/servidores</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/categories/tools</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
  <url>
   <loc>https://daguilar.dev/blog/categories/database</loc>
-  <lastmod>2022-07-08T16:42:41+00:00</lastmod>
+  <lastmod>2022-07-08T16:52:07+00:00</lastmod>
   <changefreq>daily</changefreq>
  </url>
 </urlset>
