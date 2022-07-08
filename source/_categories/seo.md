@@ -1,6 +1,6 @@
 ---
 extends: _layouts.category
-title: Artículos sobre SEO (Search Engine Optimization), posicionamiento en buscadores y optimización en motores de búsqueda
+title: SEO, posicionamiento en buscadores y motores de búsqueda
 description: Artículos sobre SEO - Acciones y técnicas enfocadas para mejorar el posicionamiento de un sitio web, en los diferentes motores de búsqueda como Google, Bing, etc
 category: seo
 ---

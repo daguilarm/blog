@@ -1,7 +1,7 @@
 ---
 extends: _layouts.post
 section: content
-title: Cargar componentes de forma dinámica y condicional con Laravel Livewire y AlpineJS - Fracasos y éxitos
+title: Componentes dinámicos y condicionales con Livewire y AlpineJS
 date: 2020-10-18
 description: Código para cargar componentes de Laravel Livewire de forma dinámica mediante AlpineJS, y todo ello, de forma condicional con window.Livewire.rescan()
 categories: [laravel, livewire, alpinejs]
