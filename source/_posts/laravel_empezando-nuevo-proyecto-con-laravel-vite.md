@@ -11,7 +11,7 @@ Hoy he empezado dos proyectos nuevos... la verdad es que a veces pienso que teng
 
 **Webpack** ha sido el gestor del *font-end* de **Laravel** desde hace años a través de **Laravel Mix**. Ahora ha sido sustituido por **Vite**, una alternativa más rápida y eficiente, desarrollada con un enfoque más moderno.
 
-> **Evan You**, creador VueJS es el desarrollador de [Vite](https://vitejs.dev/){.link-out}.
+?> **Evan You**, creador VueJS es el desarrollador de [Vite](https://vitejs.dev/){.link-out}.
 
 **Laravel en su versión 9.19.0 ha integrado de forma nativa Vite**. Ya lo he probado, y tengo que admitir que efectivamente compila a una velocidad asombrosa, realmente es muy eficaz. Este cambio va a suponer dejar de lado **WebPack** y cambiar un poco la filosofía de funcionamiento del **framework**.
 
