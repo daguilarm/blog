@@ -3,7 +3,8 @@ extends: _layouts.post
 section: content
 title: Packages imprescindibles para Laravel
 date: 2020-01-15
-description: Lista de Packages básicos para el Framework php Laravel
+update: 2020-07-08
+description: Recopilación de Packages básicos para ser utilizados en el Framework basado en PHP Laravel. Esta lista de packages se va a ir aumentando y actualizando conforme surjan nuevas opciones. Los packages son utilizadades de código PHP que sirven para reutilizar el código generado por otro programador, y no estar inventando la rueda continuamente.
 categories: [packages, laravel, php]
 ---
 
@@ -34,6 +35,12 @@ La idea de esta entrada del blog, es un listado con los *packages* que suelo uti
 + Github: [https://github.com/barryvdh/laravel-debugbar](https://github.com/barryvdh/laravel-debugbar){.link-out}
 + Documentación: [https://github.com/barryvdh/laravel-debugbar/blob/master/readme.md](https://github.com/barryvdh/laravel-debugbar/blob/master/readme.md){.link-out}
 + Descripción: Herramienta de desarrollo para depurar nuestro código.
+
+### Laravel IDE Helper Generator
+
++ Github: [https://github.com/barryvdh/laravel-ide-helper](https://github.com/barryvdh/laravel-ide-helper){.link-out}
++ Documentación: [https://github.com/barryvdh/laravel-ide-helper/blob/master/README.md](https://github.com/barryvdh/laravel-ide-helper/blob/master/README.md){.link-out}
++ Descripción: Genera ayudas a tu IDE para mejorar la autocompletación de código. Una maravilla sobre todo si usas PhpStorm o VScode.
 
 ### Laravel Backup
 

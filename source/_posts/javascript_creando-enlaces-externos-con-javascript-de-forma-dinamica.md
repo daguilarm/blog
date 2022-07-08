@@ -3,7 +3,7 @@ extends: _layouts.post
 section: content
 title: Creando enlaces externos con Javascript de forma dinámica
 date: 2019-12-07
-description: Enlaces externos con vanilla javascript, de forma dinámica y markdown como formato de texto
+description: Generando enlaces externos utilizando vanilla javascript y markdown. Utilizaremos las propiedades de identificación de componentes de lenguaje Markdown para generar los enlaces externos mediante javascript.
 categories: [javascript, markdown]
 ---
 
