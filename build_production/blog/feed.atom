@@ -3,7 +3,7 @@
     <title>Blog de Damián Aguilar</title>
     <link href="https://daguilar.dev" />
     <link type="application/atom+xml" rel="self" href="https://daguilar.dev/blog/feed.atom" />
-    <updated>2022-07-08T17:41:54+00:00</updated>
+    <updated>2022-07-08T17:43:42+00:00</updated>
     <id>https://daguilar.dev/blog/feed.atom</id>
     <author>
         <name>Damián Aguilar</name>
@@ -25,7 +25,9 @@ Webpack ha sido el gestor......</summary>
 
 <p><strong>Webpack</strong> ha sido el gestor del <em>font-end</em> de <strong>Laravel</strong> desde hace años a través de <strong>Laravel Mix</strong>. Ahora ha sido sustituido por <strong>Vite</strong>, una alternativa más rápida y eficiente, desarrollada con un enfoque más moderno.</p>
 
-<p>?> <strong>Evan You</strong>, creador VueJS es el desarrollador de <a href="https://vitejs.dev/" class="link-out">Vite</a>.</p>
+<blockquote>
+  <p><strong>Evan You</strong>, creador VueJS es el desarrollador de <a href="https://vitejs.dev/" class="link-out">Vite</a>.</p>
+</blockquote>
 
 <p><strong>Laravel en su versión 9.19.0 ha integrado de forma nativa Vite</strong>. Ya lo he probado, y tengo que admitir que efectivamente compila a una velocidad asombrosa, realmente es muy eficaz. Este cambio va a suponer dejar de lado <strong>WebPack</strong> y cambiar un poco la filosofía de funcionamiento del <strong>framework</strong>.</p>
 
