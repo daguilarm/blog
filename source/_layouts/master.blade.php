@@ -66,10 +66,6 @@
         {{-- <link rel="canonical" href="https://daguilar.dev"> --}}
         {{-- Custom css --}}
         @stack('custom-css')
-
-        {{-- GDPR --}}
-        <script async type="text/javascript" src="../../assets/gdpr/gdpr.js"></script>
-        <script async type="text/javascript" src="../../assets/gdpr/es.js"></script>
     </head>
 
     <body class="flex flex-col justify-between min-h-screen bg-gray-100 text-gray-800 leading-normal">
@@ -132,10 +128,13 @@
         </footer>
 
         <script src="{{ mix('js/main.js', 'assets/build') }}"></script>
+        
+        {{-- GDPR --}}
+        <script type="text/javascript" src="../../assets/gdpr/gdpr.js"></script>
+        <script type="text/javascript" src="../../assets/gdpr/es.js"></script>
 
         @stack('scripts')
         <script>
-
             gdprCookieNotice({
                     locale: 'es', // si lo cambias debes tener un archivo como el de arriba es.js
                     timeout: 1500, // tiempo de espera
