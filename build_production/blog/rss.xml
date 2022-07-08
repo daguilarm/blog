@@ -3,7 +3,7 @@
     <channel>
         <title>Blog de Damián Aguilar</title>
         <link>https://daguilar.dev</link>
-        <description><![CDATA[Blog sobre programación de Damián Aguilar: php, javascript, vuejs, phyton, java... y mucho más.]]></description>
+        <description><![CDATA[Blog sobre programación de Damián Aguilar, en el vas a encontrar artículos y recursos sobre: php, javascript, vuejs, phyton, java, livewire, alpinejs, laravel, seo... y mucho más. Además, encontrarás noticias sobre desarrollo web, lenguajes de programación, software y marketing]]></description>
         <atom:link href="https://daguilar.dev/blog/rss.xml" rel="self" type="application/rss+xml" />
         <language>es</language>
         <lastBuildDate>Sun, 10 Jul 2022 00:00:00 +0000</lastBuildDate>
@@ -3791,7 +3791,7 @@ class NavbarInputSearch extends Component
                 <title><![CDATA[Algunas ideas sobre diseño responsable (responsive design)]]></title>
                 <link>https://daguilar.dev/blog/html_algunas-ideas-sobre-diseno-responsable</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/html_algunas-ideas-sobre-diseno-responsable</guid>
-                <description><![CDATA[Diseño de una web adaptable a los diferentes dispositivos]]></description>
+                <description><![CDATA[Diseño de una web responsable y adaptable a los diferentes dispositivos, pantallas de ordenador, tablets, móviles,... Una pequeña guía con conceptos básicos de HTML5 y CSS, y como optimizarlos para conseguir el mejor proyecto web posible.]]></description>
                 <content:encoded><![CDATA[<p>Cuando se empieza un proyecto hay siempre que tener en cuenta dos aspectos: la usabilidad y el diseño responsable adaptado a todos los dispositivos. Esto en general es lo correcto, pero también puede llegar a convertirse en una pesadilla, sobre todo con el diseño responsable.</p>
 
 <p>Desde mi punto de vista, y seguramente estoy equivocado, creo que la mejor estrategia para afrontar un desarrollo web es centrando el proyecto en dos componentes diferenciados, por un lado el diseño de una app para teléfono móvil y por el otro, el diseño de una web responsable que se adapte al resto de dispositivos.</p>
@@ -3901,7 +3901,7 @@ class NavbarInputSearch extends Component
                 <title><![CDATA[Macros personalizados para Laravel Dusk]]></title>
                 <link>https://daguilar.dev/blog/tests_macros-personalizados-para-laravel-dusk</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/tests_macros-personalizados-para-laravel-dusk</guid>
-                <description><![CDATA[Listado de macros para Laravel dusk que pueden ser de utilidad.]]></description>
+                <description><![CDATA[Recopilación de los más destacados Macros para Laravel dusk, para conseguir realizar Test de navegador en Laravel de forma más sencilla y automatizada, utilizando la potencia de los Macros de Laravel.]]></description>
                 <content:encoded><![CDATA[<p>A día de hoy, es imposible realizar un desarrollo (en cualquier lenguaje de programación), sin realizar pruebas. En Laravel disponemos de varias herramientas para realizar nuestras pruebas:</p>
 
 <ul>
@@ -4133,7 +4133,7 @@ public function test_select_field()
                 <title><![CDATA[Crear un package para Laravel]]></title>
                 <link>https://daguilar.dev/blog/laravel_crear-un-package-para-laravel</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/laravel_crear-un-package-para-laravel</guid>
-                <description><![CDATA[Creación de un package para Laravel desde cero.]]></description>
+                <description><![CDATA[Creación de un package para Laravel desde cero. Configuración del proyecto, gestión de assets y plantillas, controladores, rutas, migraciones y comandos de consola. Un recorrido por todas las opciones de desarrollo de packages con Laravel.]]></description>
                 <content:encoded><![CDATA[<p>Una buena forma de ordenar y reutilizar nuestro código de <strong>Laravel</strong>, es mediante el uso de <em>packages</em>. En este artículo, vamos a centrarnos en la creación y desarrollo de <em>packages</em> propios, pero si estás interesado en <em>packages</em> de terceros, aquí tienes una lista con los imprescindibles (por lo menos para mi...):</p>
 
 <ul>
@@ -4957,7 +4957,7 @@ return app(Pipeline::class)
                 <title><![CDATA[Creando una plantilla HTML5 avanzada]]></title>
                 <link>https://daguilar.dev/blog/html_componentes-avanzados-de-una-plantilla-html5</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/html_componentes-avanzados-de-una-plantilla-html5</guid>
-                <description><![CDATA[Diseño y componentes avanzados para una plantilla HTML]]></description>
+                <description><![CDATA[Diseño y componentes avanzados para una plantilla HTML5 completa. Todas las metaetiquetas necesarias para buscadores y redes sociales. Configuración óptima de archivos CSS y Javascript, y gestión de assets desde DNS.]]></description>
                 <content:encoded><![CDATA[<p>Una plantilla básica de <strong>HTML5</strong> tendría el siguiente aspecto:</p>
 
 <pre><code class="language-html">&lt;!DOCTYPE html&gt;
@@ -5371,7 +5371,7 @@ ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', '
                 <title><![CDATA[Múltiples conexiones a bases de datos con Laravel]]></title>
                 <link>https://daguilar.dev/blog/databases_multiples-conexiones-a-bases-de-datos-con-laravel</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/databases_multiples-conexiones-a-bases-de-datos-con-laravel</guid>
-                <description><![CDATA[Conexiones múltiples a bases de datos utilizando Laravel 6.0]]></description>
+                <description><![CDATA[Conexiones múltiples a bases de datos utilizando Laravel 6.0, permitiendo conectar a diferentes bases de datos. Veremos todo el proceso, desde la configuración del archivo de configuración de la conexión, la gestión de los modelos y el tratamiento que hacen de los datos los Controladores.]]></description>
                 <content:encoded><![CDATA[<p><strong>Laravel</strong> permite realizar múltiples conexiones a bases de datos, independientemente del tipo de base de datos que sea (siempre que esté soportada por Laravel).</p>
 
 <p>Lo primero que tenemos que hacer, es definir estas conexiones. Para hacer esto, debemos ir a nuestro archivo de configuración:</p>
@@ -5643,7 +5643,7 @@ class UserController extends Controller
                 <title><![CDATA[Actualizando a php 7.4 desde Mac]]></title>
                 <link>https://daguilar.dev/blog/php_actualizando-a-php-74-desde-mac</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/php_actualizando-a-php-74-desde-mac</guid>
-                <description><![CDATA[Actualizando un Mac a php 7.4. Problemas y retos.]]></description>
+                <description><![CDATA[Actualizando un Mac a PHP 7.4 desde versiones anteriores, para utilizar las nuevas características del lenguaje de programación. Actualización mediante el gestor de librerías para Mac Brew y de forma automática utilizando Laravel Valet.]]></description>
                 <content:encoded><![CDATA[<p>Ha salido la nueva versión de php: la <strong>versión 7.4</strong> con grandes novedades. Destacando las <em>arrow functions</em> que llevaban siendo (desde hace tiempo), una reivindicación por parte de la comunidad php:</p>
 
 <pre><code class="language-php">&lt;?php
@@ -5707,7 +5707,7 @@ $nums = array_map(fn($n) =&gt; $n * $factor, [1, 2, 3, 4]);
                 <title><![CDATA[Configurar helpers en Laravel]]></title>
                 <link>https://daguilar.dev/blog/laravel_configurar-helpers-en-laravel</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/laravel_configurar-helpers-en-laravel</guid>
-                <description><![CDATA[Helpers en Laravel con composer y service providers.]]></description>
+                <description><![CDATA[Configuración de un archivo helpers.php en Laravel utilizando los dos sistemas disponibles para implementarlos, por un lado mediante el gestor de librerias PHP Composer, y por otro lado, mediante la utilización de los Service Providers de Laravel.]]></description>
                 <content:encoded><![CDATA[<p>En ocasiones, podemos necesitar acceder a funciones (<em>helpers</em>), desde cualquier parte de nuestro código.</p>
 
 <p><strong>Laravel</strong> no dispone de esta funcionalidad por defecto, pero existen varias formas de configurar nuestra aplicación, para solucionar esto.</p>
@@ -5792,7 +5792,7 @@ if (! function_exists('userId')) {
                 <title><![CDATA[Migrando el blog a Jigsaw]]></title>
                 <link>https://daguilar.dev/blog/frameworks_migrando-el-blog-a-jigsaw</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/frameworks_migrando-el-blog-a-jigsaw</guid>
-                <description><![CDATA[Actualizando el blog a Jigsaw, el framework para desarrollo de sitios estáticos]]></description>
+                <description><![CDATA[Después de mucho tiempo utilizando blogs dinámicos con conexión a bases de datos, he actualizando el blog a Jigsaw, el framework ligero y basado en Laravel para desarrollo de sitios estáticos. Desarrolla tu blog mediante plantillas de Laravel Blade y archivos Markdown.]]></description>
                 <content:encoded><![CDATA[<p>En 2015, empecé mi primer blog sobre programación. Fue en otro dominio, y con un <strong>CMS</strong>, que en aquel momento, me parecía una buena opción: <a href="https://anchorcms.com/" class="link-out">AnchorCMS</a>. No tardé mucho en cansarme de sus limitaciones, y empecé a modificarlo, y modificarlo, y terminó siendo algo totalmente distinto, y durante algún tiempo funcionó.</p>
 
 <p>Fue entonces cuando descubrí <a href="https://laravel.com" class="link-out">Laravel</a>, y decidí crear mi propio CMS. Durante los años, llegué a realizar dos desarrollos diferentes del blog, y al final, terminé por cansarme.</p>

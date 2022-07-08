@@ -3,7 +3,7 @@ extends: _layouts.post
 section: content
 title: Algunas ideas sobre diseño responsable (responsive design)
 date: 2020-10-08
-description: Diseño de una web adaptable a los diferentes dispositivos
+description: Diseño de una web responsable y adaptable a los diferentes dispositivos, pantallas de ordenador, tablets, móviles,... Una pequeña guía con conceptos básicos de HTML5 y CSS, y como optimizarlos para conseguir el mejor proyecto web posible.
 categories: [html]
 ---
 

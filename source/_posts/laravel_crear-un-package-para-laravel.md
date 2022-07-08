@@ -3,7 +3,7 @@ extends: _layouts.post
 section: content
 title: Crear un package para Laravel
 date: 2020-01-20
-description: Creación de un package para Laravel desde cero.
+description: Creación de un package para Laravel desde cero. Configuración del proyecto, gestión de assets y plantillas, controladores, rutas, migraciones y comandos de consola. Un recorrido por todas las opciones de desarrollo de packages con Laravel.
 categories: [laravel, packages, php, frameworks]
 ---
 

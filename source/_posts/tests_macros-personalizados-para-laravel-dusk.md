@@ -3,7 +3,7 @@ extends: _layouts.post
 section: content
 title: Macros personalizados para Laravel Dusk
 date: 2020-02-03
-description: Listado de macros para Laravel dusk que pueden ser de utilidad.
+description: Recopilación de los más destacados Macros para Laravel dusk, para conseguir realizar Test de navegador en Laravel de forma más sencilla y automatizada, utilizando la potencia de los Macros de Laravel.
 categories: [laravel, php, tests]
 ---
 

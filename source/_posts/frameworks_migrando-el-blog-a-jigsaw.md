@@ -3,7 +3,7 @@ extends: _layouts.post
 section: content
 title: Migrando el blog a Jigsaw
 date: 2019-11-07
-description: Actualizando el blog a Jigsaw, el framework para desarrollo de sitios estáticos 
+description: Después de mucho tiempo utilizando blogs dinámicos con conexión a bases de datos, he actualizando el blog a Jigsaw, el framework ligero y basado en Laravel para desarrollo de sitios estáticos. Desarrolla tu blog mediante plantillas de Laravel Blade y archivos Markdown.
 categories: [blade, frameworks, php]
 ---
 

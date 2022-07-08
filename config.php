@@ -4,7 +4,7 @@ return [
     'baseUrl' => 'https://daguilar.dev',
     'production' => false,
     'siteName' => 'Blog de Damián Aguilar',
-    'siteDescription' => 'Blog sobre programación de Damián Aguilar: php, javascript, vuejs, phyton, java... y mucho más.',
+    'siteDescription' => 'Blog sobre programación de Damián Aguilar, en el vas a encontrar artículos y recursos sobre: php, javascript, vuejs, phyton, java, livewire, alpinejs, laravel, seo... y mucho más. Además, encontrarás noticias sobre desarrollo web, lenguajes de programación, software y marketing',
     'siteAuthor' => 'Damián Aguilar',
     'siteLanguage' => 'es',
 

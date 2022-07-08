@@ -3,7 +3,7 @@ extends: _layouts.post
 section: content
 title: Configurar helpers en Laravel
 date: 2019-11-15
-description: Helpers en Laravel con composer y service providers.
+description: Configuración de un archivo helpers.php en Laravel utilizando los dos sistemas disponibles para implementarlos, por un lado mediante el gestor de librerias PHP Composer, y por otro lado, mediante la utilización de los Service Providers de Laravel.
 categories: [composer, laravel, php, frameworks]
 ---
 

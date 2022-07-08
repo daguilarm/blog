@@ -3,7 +3,7 @@ extends: _layouts.post
 section: content
 title: Múltiples conexiones a bases de datos con Laravel
 date: 2019-12-14
-description: Conexiones múltiples a bases de datos utilizando Laravel 6.0
+description: Conexiones múltiples a bases de datos utilizando Laravel 6.0, permitiendo conectar a diferentes bases de datos. Veremos todo el proceso, desde la configuración del archivo de configuración de la conexión, la gestión de los modelos y el tratamiento que hacen de los datos los Controladores.
 categories: [eloquent,servidores,laravel]
 ---
 

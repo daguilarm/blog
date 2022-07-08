@@ -3,7 +3,7 @@ extends: _layouts.post
 section: content
 title: Actualizando a php 7.4 desde Mac
 date: 2019-12-03
-description: Actualizando un Mac a php 7.4. Problemas y retos.
+description: Actualizando un Mac a PHP 7.4 desde versiones anteriores, para utilizar las nuevas características del lenguaje de programación. Actualización mediante el gestor de librerías para Mac Brew y de forma automática utilizando Laravel Valet.
 cover_image: /assets/img/posts/php74.jpg
 categories: [php]
 ---
