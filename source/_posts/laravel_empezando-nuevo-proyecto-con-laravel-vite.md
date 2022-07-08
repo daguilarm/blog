@@ -198,6 +198,6 @@ function detectServerConfig(host) {
 }
 ```
 
-Como apunte final, si en vez de [TailwindCss](https://tailwindcss.com/){.link-out} usas (Bootstrap)[https://getbootstrap.com/]{.link-out}, aquí tienes una guía de migración:
+Como apunte final, si en vez de [TailwindCss](https://tailwindcss.com/){.link-out} usas [Bootstrap](https://getbootstrap.com/){.link-out}, aquí tienes una guía de migración:
 
 - [https://creagia.com/blog/using-laravel-vite-with-bootstrap-and-sass](https://creagia.com/blog/using-laravel-vite-with-bootstrap-and-sass){.link-out}

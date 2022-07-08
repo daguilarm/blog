@@ -200,7 +200,7 @@ function detectServerConfig(host) {
 }
 </code></pre>
 
-<p>Como apunte final, si en vez de <a href="https://tailwindcss.com/" class="link-out">TailwindCss</a> usas (Bootstrap)[https://getbootstrap.com/]{.link-out}, aquí tienes una guía de migración:</p>
+<p>Como apunte final, si en vez de <a href="https://tailwindcss.com/" class="link-out">TailwindCss</a> usas <a href="https://getbootstrap.com/" class="link-out">Bootstrap</a>, aquí tienes una guía de migración:</p>
 
 <ul>
 <li><a href="https://creagia.com/blog/using-laravel-vite-with-bootstrap-and-sass" class="link-out">https://creagia.com/blog/using-laravel-vite-with-bootstrap-and-sass</a></li>
