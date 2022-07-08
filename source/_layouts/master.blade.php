@@ -63,13 +63,12 @@
         <link rel="icon" type="image/png" sizes="16x16" href="{{ $page->baseUrl }}/assets/img/favicon/favicon-16x16.png">
         <link rel="manifest" href="{{ $page->baseUrl }}/assets/img/favicon/manifest.json">
         <link rel="stylesheet" href="{{ mix('css/main.css', 'assets/build') }}">
-        {{-- <link rel="canonical" href="https://daguilar.dev"> --}}
+
         {{-- Custom css --}}
         @stack('custom-css')
 
         {{-- GDPR --}}
         <script type="text/javascript" src="../../assets/gdpr/gdpr.js"></script>
-        <script type="text/javascript" src="../../assets/gdpr/es.js"></script>
         <script>
             document.addEventListener('gdprCookiesEnabled', function (e) {
                 if(e.detail.marketing) { //checks if marketing cookies are enabled
