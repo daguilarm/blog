@@ -7,11 +7,13 @@ description: Laravel vite ha llegado para sustituir a Webpack, el sistema de ges
 categories: [laravel, vite]
 ---
 
+Hoy he empezado dos proyectos nuevos... la verdad es que a veces pienso que tengo que ir con mas calma. El caso es que he utilizado **la última versión de *Laravel*, e incluye la nueva librería Vite, en sustitución de WebPack**.
+
 **Webpack** ha sido el gestor del *font-end* de **Laravel** desde hace años a través de **Laravel Mix**. Ahora ha sido sustituido por **Vite**, una alternativa más rápida y eficiente, desarrollada con un enfoque más moderno.
 
 > **Evan You**, creador VueJS es el desarrollador de [Vite](https://vitejs.dev/){.link-out}.
 
-**Laravel en su versión 9.19.0 ha integrado de forma nativa Vite**. Ya lo he probado, y tengo que admitir que efectivamente compila a una velocidad asombrosa, realmente es muy eficaz. Esto ha supuesto dejar de lado **WebPack** y cambiar un poco la filosofía de funcionamiento del sistema.
+**Laravel en su versión 9.19.0 ha integrado de forma nativa Vite**. Ya lo he probado, y tengo que admitir que efectivamente compila a una velocidad asombrosa, realmente es muy eficaz. Este cambio va a suponer dejar de lado **WebPack** y cambiar un poco la filosofía de funcionamiento del **framework**.
 
 **Lo primero que me he encontrado ha sido un error en el certificado generado por Laravel Valet**. Personalmente utilizo **Valet** en mis proyectos, y en cuanto he ejecutado en el terminal `valet secure miProyecto`, y he ido la url `https://miproyecto.test` me han saltado varios errores con el certificado que ha generado **Valet**.
 
