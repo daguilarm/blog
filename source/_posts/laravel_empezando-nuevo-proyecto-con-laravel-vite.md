@@ -33,7 +33,7 @@ export default defineConfig({
 });
 ```
 
-Desde la documentación oficial de Laravel proponen una solución para los errores del certificado generado por Valet:
+Desde la documentación oficial de **Laravel** proponen una solución para los errores del certificado generado por **Valet**:
 
 ```javascript
 import { defineConfig } from 'vite';
@@ -53,7 +53,7 @@ export default defineConfig({
 });
 ```
 
-Pero realmente no es una buena solución, ya que te salta un aviso de que no tienes certificado y que tienes que aceptar la advertencia de seguridad. [Freek Van der Herten](https://freek.dev/2276-making-vite-and-valet-play-nice-together){.link-out} en su blog propone una solución mas elegante:
+Pero en la práctica no es una buena solución, ya que te salta un aviso de que no tienes certificado de seguridad y que tienes que aceptar el aviso del navegador de que estás accediendo a una web sin certificado. [Freek Van der Herten](https://freek.dev/2276-making-vite-and-valet-play-nice-together){.link-out} en su blog propone una solución mas elegante y sencilla:
 
 ```php
 function detectServerConfig(host) {
@@ -79,7 +79,7 @@ function detectServerConfig(host) {
 }
 ```
 
-Un método que verifica los certificados generados por Valet, es decir, hace el trabajo sucio por ti. El resultado final que he puesto en mi proyecto ha sido:
+Es un método que verifica la existencia de los certificados generados por **Valet**, es decir, hace el trabajo sucio por ti, y el código final que he puesto en mi proyecto ha sido el siguiente:
 
 ```php
 import fs from 'fs';
@@ -123,13 +123,13 @@ function detectServerConfig(host) {
 }
 ```
 
-Tengo que admitir que no estaba al tanto de esta situación, y que he tenido que buscar en Google la solución, y resulta que uno de los mas famosos programadores de **Laravel**, había posteado la solución en su blog. 
+Tengo que admitir que no estaba al tanto de esta situación, **y que he tenido que buscar en Google la solución**, y resulta que uno de los mas famosos programadores y divulgadores de **Laravel**, había posteado la solución al proglema en su blog. 
 
-Si no quieres perder mucho tiempo con esto, la gente de [Laravelshift.com](https://laravelshift.com/convert-laravel-mix-to-vite){.link-out} ha creado **un convertidor gratuito** para pasar un proyecto de **Laravel Mix(Webpack)** a **Vite**.
+Por otro lado, si no quieres perder mucho tiempo con esto, la gente de [Laravelshift.com](https://laravelshift.com/convert-laravel-mix-to-vite){.link-out} ha creado **un convertidor gratuito** para pasar un proyecto de **Laravel Mix(Webpack)** a **Vite**.
 
-**Laravel Vite también te permite añadir funcionalidades nuevas**. En otro post diferente [Freek Van der Herten](https://freek.dev/2277-using-laravel-vite-to-automatically-refresh-your-browser-when-changing-a-blade-file){.link-out} propone un método para que las plantillas de **Blade** se refresquen automáticamente cuando se actualicen, del mismo modo que sucede con los *assets*.
+**Laravel Vite también permite añadir funcionalidades nuevas**. En otro post diferente [Freek Van der Herten](https://freek.dev/2277-using-laravel-vite-to-automatically-refresh-your-browser-when-changing-a-blade-file){.link-out} propone un método para que las plantillas de **Blade** se refresquen automáticamente cuando se actualicen el código. Lo mismo que sucede con los *assets* cuando se actualiza algo y estas en modo `npm run watch`.
 
-Propone añadir el siguiente *plugin*:
+Para hacer esto, propone añadir el siguiente *plugin* al código:
 
 ```php
 {
@@ -145,7 +145,7 @@ Propone añadir el siguiente *plugin*:
 }
 ```
 
-Ahora el archivo queda así:
+Ahora el archivo que he creado para mis proyectos, queda así:
 
 ```php
 import fs from 'fs';
@@ -200,7 +200,7 @@ function detectServerConfig(host) {
 }
 ```
 
-Como apunte final, si en vez de [TailwindCss](https://tailwindcss.com/){.link-out} usas [Bootstrap](https://getbootstrap.com/){.link-out}, aquí tienes una guía de migración:
+Como apunte final, si en vez de utilizar [TailwindCss](https://tailwindcss.com/){.link-out} en tu proyecto, usas [Bootstrap](https://getbootstrap.com/){.link-out}, aquí tienes una guía de migración (en inglés):
 
 - [https://creagia.com/blog/using-laravel-vite-with-bootstrap-and-sass](https://creagia.com/blog/using-laravel-vite-with-bootstrap-and-sass){.link-out}
 

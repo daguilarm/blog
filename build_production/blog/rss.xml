@@ -40,7 +40,7 @@ export default defineConfig({
 });
 </code></pre>
 
-<p>Desde la documentación oficial de Laravel proponen una solución para los errores del certificado generado por Valet:</p>
+<p>Desde la documentación oficial de <strong>Laravel</strong> proponen una solución para los errores del certificado generado por <strong>Valet</strong>:</p>
 
 <pre><code class="language-javascript">import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
@@ -59,7 +59,7 @@ export default defineConfig({
 });
 </code></pre>
 
-<p>Pero realmente no es una buena solución, ya que te salta un aviso de que no tienes certificado y que tienes que aceptar la advertencia de seguridad. <a href="https://freek.dev/2276-making-vite-and-valet-play-nice-together" class="link-out">Freek Van der Herten</a> en su blog propone una solución mas elegante:</p>
+<p>Pero en la práctica no es una buena solución, ya que te salta un aviso de que no tienes certificado de seguridad y que tienes que aceptar el aviso del navegador de que estás accediendo a una web sin certificado. <a href="https://freek.dev/2276-making-vite-and-valet-play-nice-together" class="link-out">Freek Van der Herten</a> en su blog propone una solución mas elegante y sencilla:</p>
 
 <pre><code class="language-php">function detectServerConfig(host) {
     let keyPath = resolve(homedir(), `.config/valet/Certificates/${host}.key`)
@@ -84,7 +84,7 @@ export default defineConfig({
 }
 </code></pre>
 
-<p>Un método que verifica los certificados generados por Valet, es decir, hace el trabajo sucio por ti. El resultado final que he puesto en mi proyecto ha sido:</p>
+<p>Es un método que verifica la existencia de los certificados generados por <strong>Valet</strong>, es decir, hace el trabajo sucio por ti, y el código final que he puesto en mi proyecto ha sido el siguiente:</p>
 
 <pre><code class="language-php">import fs from 'fs';
 import laravel from 'laravel-vite-plugin'
@@ -127,13 +127,13 @@ function detectServerConfig(host) {
 }
 </code></pre>
 
-<p>Tengo que admitir que no estaba al tanto de esta situación, y que he tenido que buscar en Google la solución, y resulta que uno de los mas famosos programadores de <strong>Laravel</strong>, había posteado la solución en su blog.</p>
+<p>Tengo que admitir que no estaba al tanto de esta situación, <strong>y que he tenido que buscar en Google la solución</strong>, y resulta que uno de los mas famosos programadores y divulgadores de <strong>Laravel</strong>, había posteado la solución al proglema en su blog.</p>
 
-<p>Si no quieres perder mucho tiempo con esto, la gente de <a href="https://laravelshift.com/convert-laravel-mix-to-vite" class="link-out">Laravelshift.com</a> ha creado <strong>un convertidor gratuito</strong> para pasar un proyecto de <strong>Laravel Mix(Webpack)</strong> a <strong>Vite</strong>.</p>
+<p>Por otro lado, si no quieres perder mucho tiempo con esto, la gente de <a href="https://laravelshift.com/convert-laravel-mix-to-vite" class="link-out">Laravelshift.com</a> ha creado <strong>un convertidor gratuito</strong> para pasar un proyecto de <strong>Laravel Mix(Webpack)</strong> a <strong>Vite</strong>.</p>
 
-<p><strong>Laravel Vite también te permite añadir funcionalidades nuevas</strong>. En otro post diferente <a href="https://freek.dev/2277-using-laravel-vite-to-automatically-refresh-your-browser-when-changing-a-blade-file" class="link-out">Freek Van der Herten</a> propone un método para que las plantillas de <strong>Blade</strong> se refresquen automáticamente cuando se actualicen, del mismo modo que sucede con los <em>assets</em>.</p>
+<p><strong>Laravel Vite también permite añadir funcionalidades nuevas</strong>. En otro post diferente <a href="https://freek.dev/2277-using-laravel-vite-to-automatically-refresh-your-browser-when-changing-a-blade-file" class="link-out">Freek Van der Herten</a> propone un método para que las plantillas de <strong>Blade</strong> se refresquen automáticamente cuando se actualicen el código. Lo mismo que sucede con los <em>assets</em> cuando se actualiza algo y estas en modo <code>npm run watch</code>.</p>
 
-<p>Propone añadir el siguiente <em>plugin</em>:</p>
+<p>Para hacer esto, propone añadir el siguiente <em>plugin</em> al código:</p>
 
 <pre><code class="language-php">{
     name: 'blade',
@@ -148,7 +148,7 @@ function detectServerConfig(host) {
 }
 </code></pre>
 
-<p>Ahora el archivo queda así:</p>
+<p>Ahora el archivo que he creado para mis proyectos, queda así:</p>
 
 <pre><code class="language-php">import fs from 'fs';
 import laravel from 'laravel-vite-plugin'
@@ -202,7 +202,7 @@ function detectServerConfig(host) {
 }
 </code></pre>
 
-<p>Como apunte final, si en vez de <a href="https://tailwindcss.com/" class="link-out">TailwindCss</a> usas <a href="https://getbootstrap.com/" class="link-out">Bootstrap</a>, aquí tienes una guía de migración:</p>
+<p>Como apunte final, si en vez de utilizar <a href="https://tailwindcss.com/" class="link-out">TailwindCss</a> en tu proyecto, usas <a href="https://getbootstrap.com/" class="link-out">Bootstrap</a>, aquí tienes una guía de migración (en inglés):</p>
 
 <ul>
 <li><a href="https://creagia.com/blog/using-laravel-vite-with-bootstrap-and-sass" class="link-out">https://creagia.com/blog/using-laravel-vite-with-bootstrap-and-sass</a></li>
