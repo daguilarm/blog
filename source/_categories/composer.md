@@ -5,4 +5,6 @@ description: Artículos sobre el sistema de dependencias Composer. Composer es u
 category: composer
 ---
 
-Artículos relacionados con el sistema de gestión de dependencias <a href="https://getcomposer.org/" target="_blank">Composer</a>
+Artículos relacionados con el sistema de gestión de dependencias de PHP: <a href="https://getcomposer.org/" target="_blank">Composer</a>
+
+> Composer es un sistema de gestión de paquetes PHP desarrollado por Nils Adermann y Jordi Boggiano en 2012. Composer se ha convertido en una herramienta imprescindible para el desarrollo de proyectos PHP.

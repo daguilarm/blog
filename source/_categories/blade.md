@@ -6,3 +6,5 @@ category: blade
 ---
 
 Artículos sobre **Blade**, el motor de plantillas por defecto de **Laravel**,  desarrollado por <a href="https://twitter.com/taylorotwell" target="_blank">Taylor Otwell</a>
+
+> **Blade es un motor de plantillas utilizado por Laravel**, dispone de una gran versatilidad y permite el desarrollo de componentes independientes y reutilizables (DRY). Su funcionamiento es sencillo y muy intuitivo, permitiendo una amplia gama de operaciones nativas, como: bucles, condicionales, inclusiones, etc.

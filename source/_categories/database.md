@@ -5,4 +5,4 @@ description: Artículos sobre bases de datos, principalmente bases de datos rela
 category: database
 ---
 
-Artículos sobre Modelos y Bases de Datos.
+Artículos sobre Bases de Datos (relacionales o no relacionales), software de gestión de bases de datos y ORMs utilizados por los diferentes frameworks.
