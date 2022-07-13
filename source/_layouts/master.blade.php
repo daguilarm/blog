@@ -47,7 +47,7 @@
         @stack('metatags')
         {{-- Links --}}
         <link rel="home" href="{{ $page->baseUrl }}">
-        <link rel="alternate" type="application/rss+xml" title="{{ $page->siteName }}" href="{{ $page->baseUrl.'/rss.xml' }}" />
+        <link rel="alternate" type="application/rss+xml" title="{{ $page->title }}" href="{{ $page->baseUrl.'/rss.xml' }}" />
         <link rel="apple-touch-icon" sizes="57x57" href="{{ $page->baseUrl }}/assets/img/favicon/apple-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="60x60" href="{{ $page->baseUrl }}/assets/img/favicon/apple-icon-60x60.png">
         <link rel="apple-touch-icon" sizes="72x72" href="{{ $page->baseUrl }}/assets/img/favicon/apple-icon-72x72.png">
