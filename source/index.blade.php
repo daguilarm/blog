@@ -3,7 +3,7 @@ extends: _layouts.master
 title: El blog de programación de Damián Aguilar
 description: Blog sobre programación de Damián Aguilar, donde se habla sobre todo de PHP, javascript, vuejs, livewire, phyton, java... y mucho más.
 ---
-@section('tags')
+@section('metatags')
     <link rel="canonical" href="https://daguilar.dev/">
 @endsection
 
