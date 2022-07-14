@@ -21,7 +21,7 @@
             <a href="https://twitter.com/daguilarm" target="_black" class="mx-2"><img src="/assets/img/twitter.png" alt="twitter" class="opacity-75 hover:opacity-100 h-8 w-8 bg-white rounded-full"></a>
             <span>- Creado el {{ date('d/m/Y', $page->date) }}</span>
             @if($page->updated)
-                <span class="text-orange-500 ml-2"> y Actualizado: {{ date('d/m/Y', $page->updated) }}</span>
+                <span class="text-orange-600 ml-2"> y Actualizado el {{ date('d/m/Y', $page->updated) }}</span>
             @endif
         </p>
 
