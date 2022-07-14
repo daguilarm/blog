@@ -8,7 +8,7 @@ use TightenCo\Jigsaw\Jigsaw;
 
 class GenerateSitemap
 {
-    protected $exclude = [
+    protected $exclusions = [
         '/assets/*',
         '*/favicon.ico',
         '*/404*'
@@ -26,7 +26,7 @@ class GenerateSitemap
 
         $sitemap = new Sitemap($jigsaw->getDestinationPath() . '/sitemap.xml');
 
-        collect($jigsaw->getPages())->reject(function ($path) {
+        collect($jigsaw->getOutputPaths())->reject(function ($path) {
    
             // exclude collection..
             // collection path always set to /{collection name}/name
