@@ -849,7 +849,7 @@ class Gaviota extends AveVoladora
 }
 </code></pre>
 
-<p>El método <code>volar()</code>, están rompiendo el principio actual, ya que está obligando a la clase <code>Perro()</code> a tener un método que no usa o necesita. La solución es separar las <code>interfaces</code>:</p>
+<p>El método <code>volar()</code>, están rompiendo el principio actual, ya que está obligando a la clase <code>Perro()</code> a tener un método que no usa o necesita. <em>En la misma linea que en el Principio de Sustitución de Liskov</em>... La solución es separar las <code>interfaces</code>:</p>
 
 <pre><code class="language-php">interface ComportamientoTerrestre
 {

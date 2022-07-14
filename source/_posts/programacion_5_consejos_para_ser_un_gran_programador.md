@@ -284,7 +284,7 @@ class Perro implements Comportamiento
 }
 ```
 
-El método `volar()`, están rompiendo el principio actual, ya que está obligando a la clase `Perro()` a tener un método que no usa o necesita. La solución es separar las `interfaces`:
+El método `volar()`, están rompiendo el principio actual, ya que está obligando a la clase `Perro()` a tener un método que no usa o necesita. *En la misma linea que en el Principio de Sustitución de Liskov*... La solución es separar las `interfaces`:
 
 ```php 
 interface ComportamientoTerrestre

@@ -27,7 +27,7 @@
         <meta name="twitter:description" content="Principales consejos para ser un gran programador. Todo ello aplicando los principios SOLID, consiguiendo código más eficaz, sencillo de mantener y fácil de ampliar.">
         <meta name="twitter:creator" content="@daguilarm">
         <meta name="twitter:domain" content="https://daguilar.dev">
-        <meta name="twitter:image" content="https://daguilar.dev/assets/img/twitter.jpg?refresh=302375171">
+        <meta name="twitter:image" content="https://daguilar.dev/assets/img/twitter.jpg?refresh=695431347">
         <meta name="twitter:image:alt" content="Cinco claves para ser mejor programador. Principios SOLID">
         
         <meta name="msapplication-TileColor" content="#ffffff">
@@ -517,7 +517,7 @@ class Gaviota extends AveVoladora
 }
 </code></pre>
 
-<p>El método <code>volar()</code>, están rompiendo el principio actual, ya que está obligando a la clase <code>Perro()</code> a tener un método que no usa o necesita. La solución es separar las <code>interfaces</code>:</p>
+<p>El método <code>volar()</code>, están rompiendo el principio actual, ya que está obligando a la clase <code>Perro()</code> a tener un método que no usa o necesita. <em>En la misma linea que en el Principio de Sustitución de Liskov</em>... La solución es separar las <code>interfaces</code>:</p>
 
 <pre><code class="language-php">interface ComportamientoTerrestre
 {

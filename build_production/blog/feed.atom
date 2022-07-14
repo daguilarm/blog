@@ -3,7 +3,7 @@
     <title>Blog de Damián Aguilar</title>
     <link href="https://daguilar.dev" />
     <link type="application/atom+xml" rel="self" href="https://daguilar.dev/blog/feed.atom" />
-    <updated>2022-07-14T11:04:28+00:00</updated>
+    <updated>2022-07-14T11:06:44+00:00</updated>
     <id>https://daguilar.dev/blog/feed.atom</id>
     <author>
         <name>Damián Aguilar</name>
@@ -865,7 +865,7 @@ class Gaviota extends AveVoladora
 }
 </code></pre>
 
-<p>El método <code>volar()</code>, están rompiendo el principio actual, ya que está obligando a la clase <code>Perro()</code> a tener un método que no usa o necesita. La solución es separar las <code>interfaces</code>:</p>
+<p>El método <code>volar()</code>, están rompiendo el principio actual, ya que está obligando a la clase <code>Perro()</code> a tener un método que no usa o necesita. <em>En la misma linea que en el Principio de Sustitución de Liskov</em>... La solución es separar las <code>interfaces</code>:</p>
 
 <pre><code class="language-php">interface ComportamientoTerrestre
 {
