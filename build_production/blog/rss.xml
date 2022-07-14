@@ -787,10 +787,10 @@ Class Gallina extends Ave
 }
 </code></pre>
 
-<p><strong>Cuando nos encontramos con una clase hija que tiene métodos que tenemos que dejar en blanco, nos encontramos ante un inclumplimiento del principio</strong>, ya que la clase hija es incapaz de volar, y por tanto, no puede usarse en lugar de la padre y mantener los mismos comportamientos: una gallina no vuela... <strong>No significa que la clase no funcione, simplemente que no tiene sentido</strong>, y que lo más recomendable es reescribir el código para que tenga más sentido.</p>
+<p><strong>Cuando nos encontramos con una clase hija que tiene métodos que tenemos que dejar en blanco, nos encontramos ante un inclumplimiento del principio</strong>, ya que la clase hija es incapaz de volar, y por tanto, no puede usarse en lugar de la clase padre... recordemos que una gallina no vuela. <strong>Esto No significa que la clase no funcione, simplemente que no tiene sentido</strong>, y que lo más recomendable es reescribir el código para que tenga más sentido.</p>
 
 <blockquote>
-  <p>Lo más probable es que, si los tests que haces para la clase hija no valen para la clase hija, no se esté cumpliendo el Principio de Sustitución de Liskov.</p>
+  <p>Lo más probable es que, si los tests que haces para la clase hija no valen para la clase padre, no se esté cumpliendo el Principio de Sustitución de Liskov.</p>
 </blockquote>
 
 <p>Existen diversas formas de solucionar el problema de nuestra clase, la mas sencilla es añadir una clase intermedia:</p>
