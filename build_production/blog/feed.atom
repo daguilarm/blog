@@ -3,7 +3,7 @@
     <title>Blog de Damián Aguilar</title>
     <link href="https://daguilar.dev" />
     <link type="application/atom+xml" rel="self" href="https://daguilar.dev/blog/feed.atom" />
-    <updated>2022-07-14T11:09:31+00:00</updated>
+    <updated>2022-07-14T11:15:40+00:00</updated>
     <id>https://daguilar.dev/blog/feed.atom</id>
     <author>
         <name>Damián Aguilar</name>
@@ -2643,7 +2643,7 @@ public function test_can_create_a_post()
             <entry>
     <id>https://daguilar.dev/blog/alpinejs_accediendo-a-componentes-alpinejs-desde-el-exterior-y-modificando-parametros</id>
     <link type="text/html" rel="alternate" href="https://daguilar.dev/blog/alpinejs_accediendo-a-componentes-alpinejs-desde-el-exterior-y-modificando-parametros" />
-    <title>Haciendo pruebas con la librería javascript AlpinJS</title>
+    <title>Haciendo pruebas con la librería javascript AlpineJS</title>
     <published>2020-11-02T00:00:00+00:00</published>
     <updated>2020-11-02T00:00:00+00:00</updated>
     <author>

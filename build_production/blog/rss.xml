@@ -2590,7 +2590,7 @@ public function test_can_create_a_post()
 
                             </item>
                                 <item>
-                <title><![CDATA[Haciendo pruebas con la librería javascript AlpinJS]]></title>
+                <title><![CDATA[Haciendo pruebas con la librería javascript AlpineJS]]></title>
                 <link>https://daguilar.dev/blog/alpinejs_accediendo-a-componentes-alpinejs-desde-el-exterior-y-modificando-parametros</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/alpinejs_accediendo-a-componentes-alpinejs-desde-el-exterior-y-modificando-parametros</guid>
                 <description><![CDATA[En este artículo se muestra como acceder a componentes AlpineJS desde fuera de ellos, a la vez que se es capaz de modificar sus propiedades desde fuera]]></description>
@@ -2682,7 +2682,7 @@ function component_2() {
 <p>En cualquier caso, parece que la próxima versión de <code>AlpineJS</code> (versión 3), incluirá esta característica. Esperemos que sea así.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Mon, 02 Nov 2020 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 14 Jul 2022 00:00:00 +0000</pubDate>
 
                             </item>
                                 <item>

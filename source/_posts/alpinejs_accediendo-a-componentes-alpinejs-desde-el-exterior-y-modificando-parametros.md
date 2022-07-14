@@ -1,8 +1,9 @@
 ---
 extends: _layouts.post
 section: content
-title: Haciendo pruebas con la librería javascript AlpinJS
+title: Haciendo pruebas con la librería javascript AlpineJS
 date: 2020-11-02
+updated: 2022-07-14
 description: En este artículo se muestra como acceder a componentes AlpineJS desde fuera de ellos, a la vez que se es capaz de modificar sus propiedades desde fuera
 categories: [javascript, alpinejs]
 ---
