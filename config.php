@@ -37,10 +37,8 @@ return [
                     return $post->categories ? in_array($page->getFilename(), $post->categories, true) : false;
                 });
             },
+            'sort' => '-title',
         ],
-        'legals' => [
-            'path' => '/blog/legal/{filename}'
-        ]
     ],
 
     // helpers

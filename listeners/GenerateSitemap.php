@@ -2,6 +2,7 @@
 
 namespace App\Listeners;
 
+use Illuminate\Support\Str;
 use samdark\sitemap\Sitemap;
 use TightenCo\Jigsaw\Jigsaw;
 
@@ -25,18 +26,31 @@ class GenerateSitemap
 
         $sitemap = new Sitemap($jigsaw->getDestinationPath() . '/sitemap.xml');
 
-        collect($jigsaw->getOutputPaths())
-            ->reject(function ($path) {
-                return $this->isExcluded($path);
-            })->each(function ($path) use ($baseUrl, $sitemap) {
-                $sitemap->addItem(rtrim($baseUrl, '/') . $path, time(), Sitemap::DAILY);
-        });
+        collect($jigsaw->getPages())->reject(function ($path) {
+   
+            // exclude collection..
+            // collection path always set to /{collection name}/name
+            return count(explode("/", trim($path, '/'))) > 1 || Str::is($this->exclusions, $path);
+         
+         })->each(function ($path) use ($baseUrl, $jigsaw, $sitemap) {
+         
+            // get the source path
+             $sourcePath = empty(trim($path, '/')) 
+                   ? $jigsaw->getSourcePath() . $path . "/index.blade.php" 
+               : $jigsaw->getSourcePath() . $path . ".blade.php";
+         
+            // i'm on Windows
+             $sourcePath = str_replace('\\', '/', $sourcePath);
+         
+            // use php filemtime
+             $sitemap->addItem(rtrim($baseUrl, '/') . $path, filemtime($sourcePath), Sitemap::DAILY);
+         });
 
         $sitemap->write();
     }
 
     public function isExcluded($path)
     {
-        return \Illuminate\Support\Str::is($this->exclude, $path);
+        return Str::is($this->exclude, $path);
     }
 }

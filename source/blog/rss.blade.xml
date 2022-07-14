@@ -8,7 +8,13 @@
         <language>{{ $page->siteLanguage }}</language>
         <lastBuildDate>{{ $posts->first()->getDate()->format(DateTime::RSS) }}</lastBuildDate>
 
+        <!-- Posts -->
         @foreach($posts as $post)
+            @if($loop->first)
+                @php 
+                    $lastBuildDate = $post->getLastModification()->format(DateTime::RSS);
+                @endphp
+            @endif
             <item>
                 <title><![CDATA[{!! $post->title !!}]]></title>
                 <link>{{ $post->getUrl() }}</link>
@@ -28,5 +34,19 @@
                 @endif
             </item>
         @endforeach
+
+        <!-- Categories -->
+        @foreach($categories as $category)
+            <item>
+                <title><![CDATA[{!! $category->title !!}]]></title>
+                <link>{{ $page->baseUrl . '/blog/categories/' . $category->getFilename() }}/</link>
+                <guid isPermaLink="true">{{ $page->baseUrl . '/blog/categories/' . $category->getFilename() }}/</guid>
+                <description><![CDATA[{!! $category->description !!}]]></description>
+                <content:encoded><![CDATA[{!! $category->getContent() !!}]]></content:encoded>
+                <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">{{ $page->siteAuthor }}</dc:creator>
+                <pubDate>{{ $lastBuildDate }}</pubDate>
+            </item>
+        @endforeach
+
     </channel>
 </rss>

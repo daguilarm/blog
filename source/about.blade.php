@@ -1,5 +1,5 @@
 ---
-title: Acerca de Damián Aguilar
+title: Acerca del programador e ingeniero agrícola Damián Aguilar
 description: Información, formación, contacto y trayectoria profesional del doctor en ingeniería agrícola y programador fullstack Damián Aguilar
 ---
 @extends('_layouts.master')

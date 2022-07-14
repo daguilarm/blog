@@ -8,7 +8,8 @@
         <language>es</language>
         <lastBuildDate>Sun, 10 Jul 2022 00:00:00 +0000</lastBuildDate>
 
-                    <item>
+        <!-- Posts -->
+                                                            <item>
                 <title><![CDATA[Nuevos proyectos Laravel con Vite, la alternativa a Webpack]]></title>
                 <link>https://daguilar.dev/blog/laravel_empezando-nuevo-proyecto-con-laravel-vite</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/laravel_empezando-nuevo-proyecto-con-laravel-vite</guid>
@@ -214,7 +215,7 @@ function detectServerConfig(host) {
                 <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
 
                             </item>
-                    <item>
+                                <item>
                 <title><![CDATA[Guía definitiva para aumentar las visitas de tu página web]]></title>
                 <link>https://daguilar.dev/blog/seo_como-aumentar-las-visitas-de-tu-pagina-web-guia-definitiva</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/seo_como-aumentar-las-visitas-de-tu-pagina-web-guia-definitiva</guid>
@@ -576,7 +577,7 @@ Sitemap: https://daguilar.dev/sitemap.xml
                 <pubDate>Tue, 05 Jul 2022 00:00:00 +0000</pubDate>
 
                             </item>
-                    <item>
+                                <item>
                 <title><![CDATA[Cinco claves para ser mejor programador. Principios SOLID]]></title>
                 <link>https://daguilar.dev/blog/programacion_5_consejos_para_ser_un_gran_programador</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/programacion_5_consejos_para_ser_un_gran_programador</guid>
@@ -993,7 +994,7 @@ $operation-&gt;pagar();
                 <pubDate>Sat, 25 Jun 2022 00:00:00 +0000</pubDate>
 
                             </item>
-                    <item>
+                                <item>
                 <title><![CDATA[Novedades de PHP 8.1]]></title>
                 <link>https://daguilar.dev/blog/php_novedades_de_php_81</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/php_novedades_de_php_81</guid>
@@ -1096,7 +1097,7 @@ array_is_list(['a', 1 =&gt; 'b', 'c']); // Solo hay una clave, en segunda posici
                 <pubDate>Sun, 03 Jul 2022 00:00:00 +0000</pubDate>
 
                             </item>
-                    <item>
+                                <item>
                 <title><![CDATA[Programando con Python, Java y Angular.]]></title>
                 <link>https://daguilar.dev/blog/programacion_programando_con_pyton_java_y_angular</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/programacion_programando_con_pyton_java_y_angular</guid>
@@ -1129,7 +1130,7 @@ array_is_list(['a', 1 =&gt; 'b', 'c']); // Solo hay una clave, en segunda posici
                 <pubDate>Sun, 03 Jul 2022 00:00:00 +0000</pubDate>
 
                             </item>
-                    <item>
+                                <item>
                 <title><![CDATA[Novedades en Laravel 9]]></title>
                 <link>https://daguilar.dev/blog/laravel_novedades-en-laravel-9</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/laravel_novedades-en-laravel-9</guid>
@@ -1372,7 +1373,7 @@ public function boot()
                 <pubDate>Tue, 05 Jul 2022 00:00:00 +0000</pubDate>
 
                             </item>
-                    <item>
+                                <item>
                 <title><![CDATA[Verificar resultados con Laravel Dusk y el navegador]]></title>
                 <link>https://daguilar.dev/blog/test_validando-resultados-con-laravel-dusk-sin-consultar-la-base-de-datos</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/test_validando-resultados-con-laravel-dusk-sin-consultar-la-base-de-datos</guid>
@@ -1416,7 +1417,7 @@ $this-&gt;assertEquals($totalResults, 5);
                         width="150"
                         height="150" />
                             </item>
-                    <item>
+                                <item>
                 <title><![CDATA[Lenguajes de programación de bajo nivel VS alto nivel]]></title>
                 <link>https://daguilar.dev/blog/programacion_lenguajes-de-bajo-nivel-frente-a-los-lenguajes-de-alto-nivel</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/programacion_lenguajes-de-bajo-nivel-frente-a-los-lenguajes-de-alto-nivel</guid>
@@ -1543,7 +1544,7 @@ fibonacci(10);
                         width="150"
                         height="150" />
                             </item>
-                    <item>
+                                <item>
                 <title><![CDATA[Principales errores con Laravel Dusk]]></title>
                 <link>https://daguilar.dev/blog/tests_identificando-los-principales-errores-con-laravel-dusk</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/tests_identificando-los-principales-errores-con-laravel-dusk</guid>
@@ -1630,7 +1631,7 @@ protected function getPackageProviders($app)
                         width="150"
                         height="150" />
                             </item>
-                    <item>
+                                <item>
                 <title><![CDATA[Package de selects dependientes multinivel para Laravel]]></title>
                 <link>https://daguilar.dev/blog/laravel_select-dependiente-multinivel-combobox-para-laravel</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/laravel_select-dependiente-multinivel-combobox-para-laravel</guid>
@@ -1702,7 +1703,7 @@ class ComboboxCars extends ComboboxLivewireComponent implements Combobox
                 <pubDate>Sun, 02 May 2021 00:00:00 +0000</pubDate>
 
                             </item>
-                    <item>
+                                <item>
                 <title><![CDATA[Configurando un package para hacer tests.]]></title>
                 <link>https://daguilar.dev/blog/package_configurando-un-package-de-laravel-y-livewire-para-hacer-tests</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/package_configurando-un-package-de-laravel-y-livewire-para-hacer-tests</guid>
@@ -1962,7 +1963,7 @@ class HttpKernel extends Kernel
                 <pubDate>Fri, 23 Apr 2021 00:00:00 +0000</pubDate>
 
                             </item>
-                    <item>
+                                <item>
                 <title><![CDATA[Package para Laravel, para la gestión de Tablas de Datos]]></title>
                 <link>https://daguilar.dev/blog/laravel_nuevo-package-para-laravel-para-la-gestion-de-tablas-de-datos</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/laravel_nuevo-package-para-laravel-para-la-gestion-de-tablas-de-datos</guid>
@@ -2018,7 +2019,7 @@ class HttpKernel extends Kernel
                 <pubDate>Sat, 17 Apr 2021 00:00:00 +0000</pubDate>
 
                             </item>
-                    <item>
+                                <item>
                 <title><![CDATA[Refactorizando condicionales con PHP]]></title>
                 <link>https://daguilar.dev/blog/php_simplificando-condicionales-en-php-parte-2-refactoring</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/php_simplificando-condicionales-en-php-parte-2-refactoring</guid>
@@ -2115,7 +2116,7 @@ if ($session !== null) {
                 <pubDate>Sun, 11 Apr 2021 00:00:00 +0000</pubDate>
 
                             </item>
-                    <item>
+                                <item>
                 <title><![CDATA[Simplificando condicionales con PHP]]></title>
                 <link>https://daguilar.dev/blog/php_simplificando-condicionales-en-php-parte-1-refactoring</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/php_simplificando-condicionales-en-php-parte-1-refactoring</guid>
@@ -2373,7 +2374,7 @@ class MinifyHtml
                 <pubDate>Wed, 24 Mar 2021 00:00:00 +0000</pubDate>
 
                             </item>
-                    <item>
+                                <item>
                 <title><![CDATA[Vuelta al trabajo, terminé la Tesis Doctoral]]></title>
                 <link>https://daguilar.dev/blog/personal_vuelta-al-trabajo</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/personal_vuelta-al-trabajo</guid>
@@ -2394,7 +2395,7 @@ class MinifyHtml
                 <pubDate>Mon, 22 Feb 2021 00:00:00 +0000</pubDate>
 
                             </item>
-                    <item>
+                                <item>
                 <title><![CDATA[Mis problemas con JavaScript]]></title>
                 <link>https://daguilar.dev/blog/javascript_mis-problemas-con-javascript</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/javascript_mis-problemas-con-javascript</guid>
@@ -2419,7 +2420,7 @@ class MinifyHtml
                 <pubDate>Tue, 05 Jul 2022 00:00:00 +0000</pubDate>
 
                             </item>
-                    <item>
+                                <item>
                 <title><![CDATA[Usando funcionalidad Pages de Laravel Dusk]]></title>
                 <link>https://daguilar.dev/blog/tests_simplificando-tests-utilizando-la-funcionalidad-pages-de-laravel-dusk</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/tests_simplificando-tests-utilizando-la-funcionalidad-pages-de-laravel-dusk</guid>
@@ -2593,7 +2594,7 @@ public function test_can_create_a_post()
                 <pubDate>Sun, 08 Nov 2020 00:00:00 +0000</pubDate>
 
                             </item>
-                    <item>
+                                <item>
                 <title><![CDATA[Haciendo pruebas con la librería javascript AlpinJS]]></title>
                 <link>https://daguilar.dev/blog/alpinejs_accediendo-a-componentes-alpinejs-desde-el-exterior-y-modificando-parametros</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/alpinejs_accediendo-a-componentes-alpinejs-desde-el-exterior-y-modificando-parametros</guid>
@@ -2689,7 +2690,7 @@ function component_2() {
                 <pubDate>Mon, 02 Nov 2020 00:00:00 +0000</pubDate>
 
                             </item>
-                    <item>
+                                <item>
                 <title><![CDATA[Usar elemento datalist como select mediante JavaScript]]></title>
                 <link>https://daguilar.dev/blog/html_utilizar-un-elemento-datalist-como-si-fuera-un-select-con-la-ayuda-de-javascript</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/html_utilizar-un-elemento-datalist-como-si-fuera-un-select-con-la-ayuda-de-javascript</guid>
@@ -2902,7 +2903,7 @@ function component_2() {
                 <pubDate>Tue, 05 Jul 2022 00:00:00 +0000</pubDate>
 
                             </item>
-                    <item>
+                                <item>
                 <title><![CDATA[Trucos, consejos y sitaciones extrañas con Laravel Dusk]]></title>
                 <link>https://daguilar.dev/blog/tests_trucos-consejos-y-situaciones-extranas-con-laravel-dusk</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/tests_trucos-consejos-y-situaciones-extranas-con-laravel-dusk</guid>
@@ -3054,7 +3055,7 @@ $this-&gt;browse(function ($browser) {
                 <pubDate>Sun, 25 Oct 2020 00:00:00 +0000</pubDate>
 
                             </item>
-                    <item>
+                                <item>
                 <title><![CDATA[Utilizando el formato de fechas europeo en Laravel]]></title>
                 <link>https://daguilar.dev/blog/database_utilizando-el-formato-de-fechas-europeo-en-los-modelos-de-laravel-con-custom-cast</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/database_utilizando-el-formato-de-fechas-europeo-en-los-modelos-de-laravel-con-custom-cast</guid>
@@ -3179,7 +3180,7 @@ protected $casts = [
                         width="150"
                         height="150" />
                             </item>
-                    <item>
+                                <item>
                 <title><![CDATA[Librerías JavaScript - creación de mapas con LeafletJS]]></title>
                 <link>https://daguilar.dev/blog/javascript_librerias-javascript-creacion-de-mapas-con-leafletjs</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/javascript_librerias-javascript-creacion-de-mapas-con-leafletjs</guid>
@@ -3349,7 +3350,7 @@ function reloadMap() {
                 <pubDate>Tue, 20 Oct 2020 00:00:00 +0000</pubDate>
 
                             </item>
-                    <item>
+                                <item>
                 <title><![CDATA[Componentes dinámicos y condicionales con Livewire y AlpineJS]]></title>
                 <link>https://daguilar.dev/blog/livewire_cargar-componentes-de-forma-condicional-con-livewire-y-alpinejs</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/livewire_cargar-componentes-de-forma-condicional-con-livewire-y-alpinejs</guid>
@@ -3583,7 +3584,7 @@ class Tabs extends Component
                 <pubDate>Sun, 18 Oct 2020 00:00:00 +0000</pubDate>
 
                             </item>
-                    <item>
+                                <item>
                 <title><![CDATA[Buscador con Laravel Livewire y AlpineJS]]></title>
                 <link>https://daguilar.dev/blog/livewire_buscador-con-laravel-livewire-y-alpinejs</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/livewire_buscador-con-laravel-livewire-y-alpinejs</guid>
@@ -3787,7 +3788,7 @@ class NavbarInputSearch extends Component
                 <pubDate>Thu, 15 Oct 2020 00:00:00 +0000</pubDate>
 
                             </item>
-                    <item>
+                                <item>
                 <title><![CDATA[Algunas ideas sobre diseño responsable (responsive design)]]></title>
                 <link>https://daguilar.dev/blog/html_algunas-ideas-sobre-diseno-responsable</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/html_algunas-ideas-sobre-diseno-responsable</guid>
@@ -3897,7 +3898,7 @@ class NavbarInputSearch extends Component
                 <pubDate>Thu, 08 Oct 2020 00:00:00 +0000</pubDate>
 
                             </item>
-                    <item>
+                                <item>
                 <title><![CDATA[Macros personalizados para Laravel Dusk]]></title>
                 <link>https://daguilar.dev/blog/tests_macros-personalizados-para-laravel-dusk</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/tests_macros-personalizados-para-laravel-dusk</guid>
@@ -4094,7 +4095,7 @@ public function test_select_field()
                 <pubDate>Mon, 03 Feb 2020 00:00:00 +0000</pubDate>
 
                             </item>
-                    <item>
+                                <item>
                 <title><![CDATA[Nueva fuente de texto JetBrains Mono]]></title>
                 <link>https://daguilar.dev/blog/tools_nueva-fuente-de-texto-jetBrains-mono</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/tools_nueva-fuente-de-texto-jetBrains-mono</guid>
@@ -4129,7 +4130,7 @@ public function test_select_field()
                 <pubDate>Sat, 25 Jan 2020 00:00:00 +0000</pubDate>
 
                             </item>
-                    <item>
+                                <item>
                 <title><![CDATA[Crear un package para Laravel]]></title>
                 <link>https://daguilar.dev/blog/laravel_crear-un-package-para-laravel</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/laravel_crear-un-package-para-laravel</guid>
@@ -4512,7 +4513,7 @@ protected function registerConsole(): void
                 <pubDate>Mon, 20 Jan 2020 00:00:00 +0000</pubDate>
 
                             </item>
-                    <item>
+                                <item>
                 <title><![CDATA[Packages imprescindibles para Laravel]]></title>
                 <link>https://daguilar.dev/blog/laravel_packages-imprescindibles-para-laravel</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/laravel_packages-imprescindibles-para-laravel</guid>
@@ -4604,7 +4605,7 @@ protected function registerConsole(): void
                 <pubDate>Wed, 08 Jul 2020 00:00:00 +0000</pubDate>
 
                             </item>
-                    <item>
+                                <item>
                 <title><![CDATA[Patrones de diseño y uso de Pipelines con Laravel]]></title>
                 <link>https://daguilar.dev/blog/laravel_patrones-de-diseno-y-uso-de-pipelines-con-laravel</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/laravel_patrones-de-diseno-y-uso-de-pipelines-con-laravel</guid>
@@ -4747,7 +4748,7 @@ return app(Pipeline::class)
                 <pubDate>Fri, 03 Jan 2020 00:00:00 +0000</pubDate>
 
                             </item>
-                    <item>
+                                <item>
                 <title><![CDATA[Sistemas de gestión de servidores]]></title>
                 <link>https://daguilar.dev/blog/servers_sistemas-de-gestion-de-servidores</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/servers_sistemas-de-gestion-de-servidores</guid>
@@ -4961,7 +4962,7 @@ return app(Pipeline::class)
                 <pubDate>Sat, 21 Dec 2019 00:00:00 +0000</pubDate>
 
                             </item>
-                    <item>
+                                <item>
                 <title><![CDATA[Creando una plantilla HTML5 avanzada]]></title>
                 <link>https://daguilar.dev/blog/html_componentes-avanzados-de-una-plantilla-html5</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/html_componentes-avanzados-de-una-plantilla-html5</guid>
@@ -5332,7 +5333,7 @@ ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', '
                         width="150"
                         height="150" />
                             </item>
-                    <item>
+                                <item>
                 <title><![CDATA[Configurar Github webhooks con Packagist]]></title>
                 <link>https://daguilar.dev/blog/packages_configurar-github-webhooks-para-packagist</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/packages_configurar-github-webhooks-para-packagist</guid>
@@ -5375,7 +5376,7 @@ ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', '
                         width="150"
                         height="150" />
                             </item>
-                    <item>
+                                <item>
                 <title><![CDATA[Múltiples conexiones a bases de datos con Laravel]]></title>
                 <link>https://daguilar.dev/blog/databases_multiples-conexiones-a-bases-de-datos-con-laravel</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/databases_multiples-conexiones-a-bases-de-datos-con-laravel</guid>
@@ -5581,7 +5582,7 @@ class UserController extends Controller
                 <pubDate>Sat, 14 Dec 2019 00:00:00 +0000</pubDate>
 
                             </item>
-                    <item>
+                                <item>
                 <title><![CDATA[Alojando sitios estáticos en Netlify]]></title>
                 <link>https://daguilar.dev/blog/servers_alojando-sitios-estaticos-en-netlify</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/servers_alojando-sitios-estaticos-en-netlify</guid>
@@ -5607,7 +5608,7 @@ class UserController extends Controller
                 <pubDate>Sun, 08 Dec 2019 00:00:00 +0000</pubDate>
 
                             </item>
-                    <item>
+                                <item>
                 <title><![CDATA[Creando enlaces externos con Javascript de forma dinámica]]></title>
                 <link>https://daguilar.dev/blog/javascript_creando-enlaces-externos-con-javascript-de-forma-dinamica</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/javascript_creando-enlaces-externos-con-javascript-de-forma-dinamica</guid>
@@ -5647,7 +5648,7 @@ class UserController extends Controller
                 <pubDate>Sat, 07 Dec 2019 00:00:00 +0000</pubDate>
 
                             </item>
-                    <item>
+                                <item>
                 <title><![CDATA[Actualizando a php 7.4 desde Mac]]></title>
                 <link>https://daguilar.dev/blog/php_actualizando-a-php-74-desde-mac</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/php_actualizando-a-php-74-desde-mac</guid>
@@ -5711,7 +5712,7 @@ $nums = array_map(fn($n) =&gt; $n * $factor, [1, 2, 3, 4]);
                         width="150"
                         height="150" />
                             </item>
-                    <item>
+                                <item>
                 <title><![CDATA[Configurar helpers en Laravel]]></title>
                 <link>https://daguilar.dev/blog/laravel_configurar-helpers-en-laravel</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/laravel_configurar-helpers-en-laravel</guid>
@@ -5796,7 +5797,7 @@ if (! function_exists('userId')) {
                 <pubDate>Fri, 15 Nov 2019 00:00:00 +0000</pubDate>
 
                             </item>
-                    <item>
+                                <item>
                 <title><![CDATA[Migrando el blog a Jigsaw]]></title>
                 <link>https://daguilar.dev/blog/frameworks_migrando-el-blog-a-jigsaw</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/frameworks_migrando-el-blog-a-jigsaw</guid>
@@ -5840,5 +5841,310 @@ if (! function_exists('userId')) {
                 <pubDate>Thu, 07 Nov 2019 00:00:00 +0000</pubDate>
 
                             </item>
-            </channel>
+        
+        <!-- Categories -->
+                    <item>
+                <title><![CDATA[Vite es una la herramienta de compilación para el frontend como alternativa a WebPack]]></title>
+                <link>https://daguilar.dev/blog/categories/vite/</link>
+                <guid isPermaLink="true">https://daguilar.dev/blog/categories/vite/</guid>
+                <description><![CDATA[Laravel Vite ha llegado para sustituir a Laravel Mix, la librería para la gestión del front-end por defecto de Laravel. Ahora con Vite, la gestión de los archivos es rapidísima y ofrece nuevas funcionalidades y mejoras.]]></description>
+                <content:encoded><![CDATA[<p>Evan You el creador de <a href="https://vuejs.org/" target="_blank">VueJS</a> ha desarrollado esta nueva herramienta para la compilación de assets en el frontend, que surge como una alternativa más rápida y moderna que WebPack.</p>
+]]></content:encoded>
+                <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
+                <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+            </item>
+                    <item>
+                <title><![CDATA[Testing, TTD y realización de pruebas.]]></title>
+                <link>https://daguilar.dev/blog/categories/tests/</link>
+                <guid isPermaLink="true">https://daguilar.dev/blog/categories/tests/</guid>
+                <description><![CDATA[Artículos sobre testing, TDD (Desarrollo Guiado por Pruebas), PhpUnit, Laravel Dusk,... una disciplina de la ingeniería del software que busca garantizar que se cumplen los requesitos esperados de un sistema.]]></description>
+                <content:encoded><![CDATA[<p>Artículos sobre testing, Desarrollo Guiado por Pruebas de software (Test-driven development: TDD), al igual que las diferentes librerias y herramientas para la realización de pruebas en código.</p>
+]]></content:encoded>
+                <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
+                <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+            </item>
+                    <item>
+                <title><![CDATA[SEO, posicionamiento en buscadores y motores de búsqueda]]></title>
+                <link>https://daguilar.dev/blog/categories/seo/</link>
+                <guid isPermaLink="true">https://daguilar.dev/blog/categories/seo/</guid>
+                <description><![CDATA[Artículos sobre SEO - Acciones y técnicas enfocadas para mejorar el posicionamiento de un sitio web, en los diferentes motores de búsqueda como Google, Bing, etc]]></description>
+                <content:encoded><![CDATA[<p>Artículos relacionados con <strong>SEO (Search Engine Optimization)</strong>, buscando optimizar el contenido del web para aumentar la visibilidad en los diferentes motores de búsqueda y <strong>mejorar la posición del web en las SERPs</strong>.</p>
+
+<blockquote>
+  <p>El término SEO incluye un conjunto de técnicas encaminadas a la mejora en la posición y visibilidad de una página web en relación a los diferentes motores de búsqueda.</p>
+</blockquote>
+]]></content:encoded>
+                <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
+                <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+            </item>
+                    <item>
+                <title><![CDATA[Python, el lenguaje interpretado de alto nivel de moda]]></title>
+                <link>https://daguilar.dev/blog/categories/python/</link>
+                <guid isPermaLink="true">https://daguilar.dev/blog/categories/python/</guid>
+                <description><![CDATA[Artículos relacionados con phyton. Lenguaje fuertemente tipado, interpretado, de alto nivel, con una sintaxis moderna y utilizado por las principales empresas tecnológicas del mundo]]></description>
+                <content:encoded><![CDATA[<p>Artículos sobre <a href="https://www.python.org/" target="_blank">Python</a>, el lenguaje de programación de alto nivel, orientado a objetos, interpretado y con una legibilidad de código increible. Uno de mis favoritos.</p>
+]]></content:encoded>
+                <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
+                <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+            </item>
+                    <item>
+                <title><![CDATA[Programación general y lenguajes de programación]]></title>
+                <link>https://daguilar.dev/blog/categories/programacion/</link>
+                <guid isPermaLink="true">https://daguilar.dev/blog/categories/programacion/</guid>
+                <description><![CDATA[Artículos sobre programación en general. Comparativas de lenguajes, rendimientos y opiniones sobre los diferentes lenguajes de programación.]]></description>
+                <content:encoded><![CDATA[<p>Artículos sobre los diferentes lenguajes de programación, curiosidades, origenes, comparativas entre ellos...</p>
+]]></content:encoded>
+                <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
+                <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+            </item>
+                    <item>
+                <title><![CDATA[PHP, el lenguaje de programación para el desarrollo web.]]></title>
+                <link>https://daguilar.dev/blog/categories/php/</link>
+                <guid isPermaLink="true">https://daguilar.dev/blog/categories/php/</guid>
+                <description><![CDATA[Artículos relacionados con php. Php es un lenguaje de programación de alto nivel, interpretado y desarrollado en 1994 por Rasmus Lerdorf.]]></description>
+                <content:encoded><![CDATA[<p>Artículos, reflexiones y novedades sobre <a href="https://www.php.net/" target="_blank">PHP</a>, el lenguaje de programación de alto nivel, orientado a objetos y basado en <em>software</em> libre.</p>
+
+<blockquote>
+  <p>PHP (acrónimo recursivo de PHP: Hypertext Preprocessor) es un lenguaje de programación desarrollado por Rasmus Lerdorf en 1995, y que está enfocado al desarrollo web. Destaca por su pequeña curva de aprendizaje, las continuas actualizaciones y mejoras, y sobre todo, por la gran comunidad de desarrolladores que se ha creado en torno a este lenguaje de programación orientado a objetos.</p>
+</blockquote>
+]]></content:encoded>
+                <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
+                <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+            </item>
+                    <item>
+                <title><![CDATA[Packagist, el repositorio de Composer para PHP]]></title>
+                <link>https://daguilar.dev/blog/categories/packagist/</link>
+                <guid isPermaLink="true">https://daguilar.dev/blog/categories/packagist/</guid>
+                <description><![CDATA[Artículos sobre packagist, el repositorio de paquetes PHP utilizado por el gestor de dependencias Composer.]]></description>
+                <content:encoded><![CDATA[<p>Artículos sobre <a href="https://packagist.org/" class="link-out">Packagist</a>, el repositorio de paquetes PHP utilizado por Composer.</p>
+]]></content:encoded>
+                <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
+                <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+            </item>
+                    <item>
+                <title><![CDATA[Packages, componentes de software trabajando juntos]]></title>
+                <link>https://daguilar.dev/blog/categories/packages/</link>
+                <guid isPermaLink="true">https://daguilar.dev/blog/categories/packages/</guid>
+                <description><![CDATA[Artículos sobre paquetes de software, una colección de archivos empequetados conjuntamente y listos para su distribución y utización.]]></description>
+                <content:encoded><![CDATA[<p>Artículos sobre gestión y creación de <strong>Packages</strong>. Componentes de <em>software</em>, independientes e intercambiables, que ofrecen una funcionalidad concreta y/o conjunta, y que están listos para su distribución y utilización.</p>
+]]></content:encoded>
+                <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
+                <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+            </item>
+                    <item>
+                <title><![CDATA[Mis artículos mas personales como programador]]></title>
+                <link>https://daguilar.dev/blog/categories/personal/</link>
+                <guid isPermaLink="true">https://daguilar.dev/blog/categories/personal/</guid>
+                <description><![CDATA[Artículos sobre situaciones cotidianas, estados de anímo o simplemente, un lugar donde decir lo primero que me pasa por la cabeza...]]></description>
+                <content:encoded><![CDATA[<p>Los artículos mas personales, sobre mi día a día... pequeño diario de un programador fullstack.</p>
+]]></content:encoded>
+                <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
+                <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+            </item>
+                    <item>
+                <title><![CDATA[Markdown el lenguaje para optimizar la web]]></title>
+                <link>https://daguilar.dev/blog/categories/markdown/</link>
+                <guid isPermaLink="true">https://daguilar.dev/blog/categories/markdown/</guid>
+                <description><![CDATA[Artículos sobre el formato para texto markdown, creado por Gruber y Swartz, para optimizar los textos utilizados en la web. Origináriamente fue utilizado en el lenguaje de programación Perl, pero actualmente lo utilizan muchos lenguajes.]]></description>
+                <content:encoded><![CDATA[<p>Artículos sobre <strong>Markdown</strong>, el lenguaje de marcado ligero creado por <em>John Gruber</em> y <strong>Aaron Swartz</strong> basado en numerosas convenciones utilizadas para marcar mensajes de correo electrónico utilizando para ello texto plano.</p>
+]]></content:encoded>
+                <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
+                <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+            </item>
+                    <item>
+                <title><![CDATA[Laravel Livewire el framework de desarrollo de aplicaciones]]></title>
+                <link>https://daguilar.dev/blog/categories/livewire/</link>
+                <guid isPermaLink="true">https://daguilar.dev/blog/categories/livewire/</guid>
+                <description><![CDATA[Artículos sobre el package Laravel Livewire, que permiten realizar comportamiento dinámicos sin utilizar javascript, realizado toda la programación desde el backend.]]></description>
+                <content:encoded><![CDATA[<p>Artículos sobre <a href="https://laravel-livewire.com/" target="_blank">Laravel Livewire</a> el <em>framework</em> de desarrollo de componentes para <strong>Laravel</strong>, desarrollado por <a href="https://calebporzio.com/" target="_blank">Caleb Porzio</a></p>
+
+<blockquote>
+  <p><strong>Laravel Livewire premite crear componentes para Laravel</strong> que son capaces de comunicar el Controlador y la Vista de forma directa, <strong>sin la necesidad de la utilización de Javascript</strong> para añadir el comportamiento dinámico característico del lenguaje de programación. Livewire permite llevar al <em>back-end</em> numerosos procesos que tradicionalmente se han hecho en el <em>front-end</em>.</p>
+</blockquote>
+]]></content:encoded>
+                <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
+                <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+            </item>
+                    <item>
+                <title><![CDATA[Laravel el framework PHP mas utilizado]]></title>
+                <link>https://daguilar.dev/blog/categories/laravel/</link>
+                <guid isPermaLink="true">https://daguilar.dev/blog/categories/laravel/</guid>
+                <description><![CDATA[Artículos sobre el framework Laravel, desarrollado en PHP y con gran influencia de frameworks como Ruby on Rails, Sinatra o ASP.NET, y basado en la arquitectura Modelo Vista Controlador (MVC)]]></description>
+                <content:encoded><![CDATA[<p>Artículos, consejos y tutoriales sobre el <em>framework</em> <a href="https://www.laravel.com/" target="_blank">Laravel</a>, desarrollado por <a href="https://twitter.com/taylorotwell" target="_blank">Taylor Otwell</a></p>
+
+<blockquote>
+  <p><strong>Laravel es un framework de código abierto desarrollado por Taylor Otwell en 2011</strong>, enfocado en el desarrollo de aplicaciones mediante <strong>PHP</strong> y desarrollando el patrón de diseño <em>MVC</em> hasta su evolución actual. <strong>Laravel</strong> es uno de los <em>frameworks</em> de desarrollo más utilizados del mundo.</p>
+</blockquote>
+]]></content:encoded>
+                <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
+                <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+            </item>
+                    <item>
+                <title><![CDATA[Javascript el lenguaje de programación del momento]]></title>
+                <link>https://daguilar.dev/blog/categories/javascript/</link>
+                <guid isPermaLink="true">https://daguilar.dev/blog/categories/javascript/</guid>
+                <description><![CDATA[Artículos sobre javascript y vanilla js, el lenguaje de programación interpretado, dialecto del estándar ECMAScript. Se define como orientado a objetos, ​ basado en prototipos, imperativo, débilmente tipado y dinámico.]]></description>
+                <content:encoded><![CDATA[<p>Artículos sobre <strong>Javascript</strong>, el un lenguaje de programación interpretado, dialecto del estándar <strong>ECMAScript</strong>, y que actualmente se ha convertido en uno de los lenguajes de programación mas utilizado del mundo por parte de los programadores.</p>
+
+<blockquote>
+  <p><strong>Javascript es un lenguaje de programación orientado a objetos desarrollado por Netscape Communications en 1995</strong>. Una de sus principales características es que funciona en los navegadores web de forma nativa (lenguaje interpretado), aportando interactividad y dinamismo al desarrollo de páginas web y aplicaciones (desde el punto de vista del usuario). Actualmete <strong>Javascript</strong> también puede utilizarse desde el lado del servidor gracias a la incursión de NodeJS, pudiendo realizar desarrollos completos tanto de <em>front-end</em> como de <em>back-end</em>.</p>
+</blockquote>
+]]></content:encoded>
+                <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
+                <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+            </item>
+                    <item>
+                <title><![CDATA[Java y sus frameworks spring, hibernate,...]]></title>
+                <link>https://daguilar.dev/blog/categories/java/</link>
+                <guid isPermaLink="true">https://daguilar.dev/blog/categories/java/</guid>
+                <description><![CDATA[Artículos sobre Java, el lenguaje de programación y plataforma informática desarrollada por Sun Microsystems. Java es un lenguaje multiplataforma y orientado a objetos]]></description>
+                <content:encoded><![CDATA[<p>Artículos sobre <strong>Java</strong> el lenguaje multiplataforma y orientado a objetos, y todo su entorno de desarrollo: Spring, Spring boot, hibernate,...</p>
+]]></content:encoded>
+                <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
+                <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+            </item>
+                    <item>
+                <title><![CDATA[Frameworks. Estructuras para el desarrollo de software]]></title>
+                <link>https://daguilar.dev/blog/categories/frameworks/</link>
+                <guid isPermaLink="true">https://daguilar.dev/blog/categories/frameworks/</guid>
+                <description><![CDATA[Artículos sobre los frameworks de desarrollo de software. Es un marco de trabajo utilizado por desarrolladores para evitar escribir código repetido, seguro, siguiendo buenas prácticas y sobre todo, un código consistente.]]></description>
+                <content:encoded><![CDATA[<p>Artículos sobre <strong>Frameworks</strong> de desarrollo. Por lo general, módulos de software, que puede servir de base para desarrollo de software más complejo.</p>
+]]></content:encoded>
+                <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
+                <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+            </item>
+                    <item>
+                <title><![CDATA[El lenguaje de etiquetas HTML]]></title>
+                <link>https://daguilar.dev/blog/categories/html/</link>
+                <guid isPermaLink="true">https://daguilar.dev/blog/categories/html/</guid>
+                <description><![CDATA[Artículos sobre HTML (HyperText Markup Language), el pilar sobre el que se construyen las páginas web, definiendo la estructura del contenido web y aportándole significado, utilizando para ello una estructura de etiquetas.]]></description>
+                <content:encoded><![CDATA[<p>Artículos sobre <strong>HTML</strong> (HyperText Markup Language). El estándar que sirve de referencia para la elaboración de páginas web.</p>
+]]></content:encoded>
+                <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
+                <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+            </item>
+                    <item>
+                <title><![CDATA[Artículos sobre servidores, su gestión, su mantenimiento y su configuración, ya sean seridores físicos o virtuales.]]></title>
+                <link>https://daguilar.dev/blog/categories/servidores/</link>
+                <guid isPermaLink="true">https://daguilar.dev/blog/categories/servidores/</guid>
+                <description><![CDATA[Artículos sobre servidores, un conjunto de computadoras que reciben peticiones de un cliente y son capaces de devolver una respuesta. Almacenando, distribuyendo y suministrando datos.]]></description>
+                <content:encoded><![CDATA[<p>Artículos sobre servidores, su gestión, configuración, mantenimiento, software de gestión y cualquier otra operación que pueda realizarse tanto en servidores físicos como virtuales o en la nube.</p>
+]]></content:encoded>
+                <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
+                <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+            </item>
+                    <item>
+                <title><![CDATA[Artículos sobre Marketing. Conjunto de técnicas encaminadas a mejorar la comercialización o visualización de un producto]]></title>
+                <link>https://daguilar.dev/blog/categories/marketing/</link>
+                <guid isPermaLink="true">https://daguilar.dev/blog/categories/marketing/</guid>
+                <description><![CDATA[Artículos sobre Marketing online. Técnicas para aumentar la visibilidad online de páginas web, aumentar el negocio, conseguir clientes, aumentar los ingresos generados online y aumentar el valor de un producto.]]></description>
+                <content:encoded><![CDATA[<p>Artículos relacionados con Marketing online, utilizando técnicas para mejorar el posicionamiento de nuestro negocio en internet, utilizando tecnologías y medios digitales.</p>
+]]></content:encoded>
+                <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
+                <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+            </item>
+                    <item>
+                <title><![CDATA[Artículos sobre github, el portal de Microsoft para desarrolladores de código]]></title>
+                <link>https://daguilar.dev/blog/categories/github/</link>
+                <guid isPermaLink="true">https://daguilar.dev/blog/categories/github/</guid>
+                <description><![CDATA[Artículos sobre Gihub, repositorios, tests y su gestión. Github es una plataforma propiedad de Microsoft con funciones colaborativas y enfocadas al desarrollo de código.]]></description>
+                <content:encoded><![CDATA[<p>Artículos sobre <strong>Github</strong> (plataforma de desarrollo colaborativo) y gestión de repositorios propiedad de Microsoft.</p>
+]]></content:encoded>
+                <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
+                <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+            </item>
+                    <item>
+                <title><![CDATA[Artículos sobre equipo, aplicaciones, software y herramientas utilizadas en programación.]]></title>
+                <link>https://daguilar.dev/blog/categories/tools/</link>
+                <guid isPermaLink="true">https://daguilar.dev/blog/categories/tools/</guid>
+                <description><![CDATA[Artículos sobre las herramientas y el equipo utilizado por los programadores, así como todo el software y librerias utilizado para optimizar el trabajo.]]></description>
+                <content:encoded><![CDATA[<p>Artículos sobre equipo, software, tecnología y herramientas utilizado por programadores.</p>
+]]></content:encoded>
+                <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
+                <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+            </item>
+                    <item>
+                <title><![CDATA[Artículos sobre Eloquent el ORM de Laravel para bases de datos]]></title>
+                <link>https://daguilar.dev/blog/categories/eloquent/</link>
+                <guid isPermaLink="true">https://daguilar.dev/blog/categories/eloquent/</guid>
+                <description><![CDATA[Artículos sobre Eloquent el sistema para la gestión de peticiones y consultas a la base de datos desarrollado por el framework Laravel]]></description>
+                <content:encoded><![CDATA[<p>Artículos relacionados con <a href="https://laravel.com/docs/6.x/eloquent" target="_blank">Laravel Eloquent</a>, desarrollado por <a href="https://twitter.com/taylorotwell" target="_blank">Taylor Otwell</a></p>
+]]></content:encoded>
+                <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
+                <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+            </item>
+                    <item>
+                <title><![CDATA[Artículos sobre Composer el gestor de dependencias para PHP]]></title>
+                <link>https://daguilar.dev/blog/categories/composer/</link>
+                <guid isPermaLink="true">https://daguilar.dev/blog/categories/composer/</guid>
+                <description><![CDATA[Artículos sobre el sistema de dependencias Composer. Composer es un sistema para la gestión de paquetes programados en PHP y que permite manejar las dependencias y librerías que sean necesarias a partir de repositorios.]]></description>
+                <content:encoded><![CDATA[<p>Artículos relacionados con el sistema de gestión de dependencias de PHP: <a href="https://getcomposer.org/" target="_blank">Composer</a></p>
+
+<blockquote>
+  <p>Composer es un sistema de gestión de paquetes PHP desarrollado por Nils Adermann y Jordi Boggiano en 2012. Composer se ha convertido en una herramienta imprescindible para el desarrollo de proyectos PHP.</p>
+</blockquote>
+]]></content:encoded>
+                <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
+                <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+            </item>
+                    <item>
+                <title><![CDATA[Artículos sobre Blade el sistema de plantillas del framework Laravel]]></title>
+                <link>https://daguilar.dev/blog/categories/blade/</link>
+                <guid isPermaLink="true">https://daguilar.dev/blog/categories/blade/</guid>
+                <description><![CDATA[Blade el sistema de plantillas desarrollado por el framework Laravel, que a su vez está basado en PHP. Todas las plantillas Blade se compilan en PHP plano y se guardan en cache de forma automática hasta que son modificadas.]]></description>
+                <content:encoded><![CDATA[<p>Artículos sobre <strong>Blade</strong>, el motor de plantillas por defecto de <strong>Laravel</strong>,  desarrollado por <a href="https://twitter.com/taylorotwell" target="_blank">Taylor Otwell</a></p>
+
+<blockquote>
+  <p><strong>Blade es un motor de plantillas utilizado por Laravel</strong>, dispone de una gran versatilidad y permite el desarrollo de componentes independientes y reutilizables (DRY). Su funcionamiento es sencillo y muy intuitivo, permitiendo una amplia gama de operaciones nativas, como: bucles, condicionales, inclusiones, etc.</p>
+</blockquote>
+]]></content:encoded>
+                <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
+                <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+            </item>
+                    <item>
+                <title><![CDATA[Artículos Bases de Datos, gestores de bases de datos y ORM]]></title>
+                <link>https://daguilar.dev/blog/categories/database/</link>
+                <guid isPermaLink="true">https://daguilar.dev/blog/categories/database/</guid>
+                <description><![CDATA[Artículos sobre bases de datos, principalmente bases de datos relaciones y basadas en SQL, programas para la gestión de bases de datos, y los diferentes ORM (Object Relational Mappings) disponibles.]]></description>
+                <content:encoded><![CDATA[<p>Artículos sobre Bases de Datos (relacionales o no relacionales), software de gestión de bases de datos y ORMs utilizados por los diferentes frameworks.</p>
+]]></content:encoded>
+                <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
+                <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+            </item>
+                    <item>
+                <title><![CDATA[Articulos sobre patrones de diseño en programación, soluciones habituales a problemas comunes]]></title>
+                <link>https://daguilar.dev/blog/categories/patrones/</link>
+                <guid isPermaLink="true">https://daguilar.dev/blog/categories/patrones/</guid>
+                <description><![CDATA[Artículos sobre patrones de diseño y estructuras de datos, los patrones de diseño suelen ser una solución a problemas de diseño de software]]></description>
+                <content:encoded><![CDATA[<p>Artículos sobre los diferentes patrones de diseño en programación, y como estructurar eficientemente nuestro código en base a ellos.</p>
+]]></content:encoded>
+                <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
+                <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+            </item>
+                    <item>
+                <title><![CDATA[Angular el framework javascript de código abierto de Google.]]></title>
+                <link>https://daguilar.dev/blog/categories/angular/</link>
+                <guid isPermaLink="true">https://daguilar.dev/blog/categories/angular/</guid>
+                <description><![CDATA[Artículos sobre el framework Angular, desarrollado por google y desarrollado en TypeScript y que permite no solo interaccionar con el navegador, sino también con el servidor pudiendo desarrollar proyectos completos con él.]]></description>
+                <content:encoded><![CDATA[<p>Artículos relacionados con el framework desarrollado en TypeScript: Angular. De código abierto y mantenido por google.</p>
+]]></content:encoded>
+                <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
+                <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+            </item>
+                    <item>
+                <title><![CDATA[AlpineJS el framework javascript minimalista de Caleb Porzio]]></title>
+                <link>https://daguilar.dev/blog/categories/alpinejs/</link>
+                <guid isPermaLink="true">https://daguilar.dev/blog/categories/alpinejs/</guid>
+                <description><![CDATA[Artículos sobre el framework de javascript AlpineJS, una librería ligera para crear aplicaciones de forma reactiva y declarativa en base a componentes e inspirado por VueJS y TailwindCSS.]]></description>
+                <content:encoded><![CDATA[<p>Artículos sobre el <em>framework</em> <a href="https://github.com/alpinejs/alpine" target="_blank">AlpineJS</a>, desarrollado por <a href="https://calebporzio.com/" target="_blank">Caleb Porzio</a></p>
+
+<blockquote>
+  <p><strong>AlpineJS es una libería Javascript desarrollada por Caleb Porzi</strong>, que ofrece propiedades reactivas y declarativas (como VueJS o React), pero con un tamaño enormemente reducido respecto a sus competidores. <strong>Se ha posicionado como uno de los frameworks Javascript preferidos por los desarrolladores de Laravel</strong>.</p>
+</blockquote>
+]]></content:encoded>
+                <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
+                <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+            </item>
+        
+    </channel>
 </rss>
