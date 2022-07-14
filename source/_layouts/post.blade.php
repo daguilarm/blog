@@ -16,14 +16,14 @@
     <article class=" bg-white rounded-xl shadow-xl p-9 my-10 border border-gray-300">
         <h1 class="leading-none mb-6 text-blue-800 text-3xl md:text-4xl lg:text-5xl">{{ $page->title }}</h1>
 
-        <p class="flex justify-start text-gray-600 text-xl md:mt-0">
-            <span>Autor: {{ $page->author }}</span>
+        <div class="flex justify-start text-gray-600 text-xl md:mt-0 mb-4">
+            <div>Autor: {{ $page->author }}</div>
             <a href="https://twitter.com/daguilarm" target="_black" class="mx-2"><img src="/assets/img/twitter.png" alt="twitter" class="opacity-75 hover:opacity-100 h-8 w-8 bg-white rounded-full"></a>
-            <span>- Creado el {{ date('d/m/Y', $page->date) }}</span>
+            <div>- Creado el {{ date('d/m/Y', $page->date) }}</div>
             @if($page->updated)
-                <span class="text-orange-600 ml-2"> y Actualizado el {{ date('d/m/Y', $page->updated) }}</span>
+                <div class="text-orange-600 ml-2">y Actualizado el {{ date('d/m/Y', $page->updated) }}</div>
             @endif
-        </p>
+        </div>
 
         @if ($page->categories)
             @foreach ($page->categories as $i => $category)

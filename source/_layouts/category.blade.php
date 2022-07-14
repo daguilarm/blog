@@ -12,9 +12,9 @@
     </div>
 
     @foreach ($page->posts($posts) as $post)
-        @include('_components.post-preview-inline')
+        @include('_components.post-preview-inline', ['pin' => false])
 
-        @if ($loop->iteration == 50)
+        @if ($loop->iteration == 25)
             @break
         @endif
     @endforeach
