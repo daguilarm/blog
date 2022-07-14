@@ -3,7 +3,7 @@ extends: _layouts.post
 section: content
 title: Programando con Python, Java y Angular.
 date: 2022-05-22
-update: 2022-07-03
+updated: 2022-07-03
 description: Me siento cómodo trabajando con PHP y Laravel, ahora es el momento de enfrentarse a Java, Python y Angular. Mi experiencia empezando con estos lenguajes de programación.
 categories: [programacion, php, python, angular, java]
 ---

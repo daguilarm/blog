@@ -3,7 +3,7 @@ extends: _layouts.post
 section: content
 title: Creando una plantilla HTML5 avanzada
 date: 2019-12-20
-update: 2021-05-13
+updated: 2021-05-13
 description: Diseño y componentes avanzados para una plantilla HTML5 completa. Todas las metaetiquetas necesarias para buscadores y redes sociales. Configuración óptima de archivos CSS y Javascript, y gestión de assets desde DNS.
 categories: [html]
 cover_image: html5-template.jpg

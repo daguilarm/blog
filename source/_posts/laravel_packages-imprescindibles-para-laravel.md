@@ -3,7 +3,7 @@ extends: _layouts.post
 section: content
 title: Packages imprescindibles para Laravel
 date: 2020-01-15
-update: 2020-07-08
+updated: 2020-07-08
 description: Recopilación de Packages básicos para ser utilizados en el Framework basado en PHP Laravel. Esta lista de packages se va a ir aumentando y actualizando conforme surjan nuevas opciones. Los packages son utilizadades de código PHP que sirven para reutilizar el código generado por otro programador, y no estar inventando la rueda continuamente.
 categories: [packages, laravel, php]
 ---

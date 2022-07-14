@@ -3,7 +3,7 @@ extends: _layouts.post
 section: content
 title: Novedades de PHP 8.1
 date: 2022-06-11
-update: 2022-07-03
+updated: 2022-07-03
 description: Actualizando a PHP 8.1. Con todas las novedades y mejoras del mejor lenguaje de programación del momento.
 categories: [php]
 ---

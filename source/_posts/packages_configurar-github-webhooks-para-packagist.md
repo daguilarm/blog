@@ -3,7 +3,7 @@ extends: _layouts.post
 section: content
 title: Configurar Github webhooks con Packagist
 date: 2019-12-16
-update: 2021-05-12
+updated: 2021-05-12
 description: Configurar los webhooks de Github para que se sincronicen con Packagist
 categories: [packages, github, packagist]
 cover_image: github-webhooks-config.jpg

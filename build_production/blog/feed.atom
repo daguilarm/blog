@@ -3,7 +3,7 @@
     <title>Blog de Damián Aguilar</title>
     <link href="https://daguilar.dev" />
     <link type="application/atom+xml" rel="self" href="https://daguilar.dev/blog/feed.atom" />
-    <updated>2022-07-14T06:35:20+00:00</updated>
+    <updated>2022-07-14T06:42:32+00:00</updated>
     <id>https://daguilar.dev/blog/feed.atom</id>
     <author>
         <name>Damián Aguilar</name>
@@ -1012,7 +1012,7 @@ $operation-&gt;pagar();
     <link type="text/html" rel="alternate" href="https://daguilar.dev/blog/php_novedades_de_php_81" />
     <title>Novedades de PHP 8.1</title>
     <published>2022-06-11T00:00:00+00:00</published>
-    <updated>2022-07-03T00:00:00+00:00</updated>
+    <updated>2022-06-11T00:00:00+00:00</updated>
     <author>
         <name>Damián Aguilar</name>
     </author>
@@ -1120,7 +1120,7 @@ array_is_list(['a', 1 =&gt; 'b', 'c']); // Solo hay una clave, en segunda posici
     <link type="text/html" rel="alternate" href="https://daguilar.dev/blog/programacion_programando_con_pyton_java_y_angular" />
     <title>Programando con Python, Java y Angular.</title>
     <published>2022-05-22T00:00:00+00:00</published>
-    <updated>2022-07-03T00:00:00+00:00</updated>
+    <updated>2022-05-22T00:00:00+00:00</updated>
     <author>
         <name>Damián Aguilar</name>
     </author>
@@ -1567,7 +1567,7 @@ fibonacci(10);
     <link type="text/html" rel="alternate" href="https://daguilar.dev/blog/tests_identificando-los-principales-errores-con-laravel-dusk" />
     <title>Principales errores con Laravel Dusk</title>
     <published>2021-05-09T00:00:00+00:00</published>
-    <updated>2021-05-12T00:00:00+00:00</updated>
+    <updated>2021-05-09T00:00:00+00:00</updated>
     <author>
         <name>Damián Aguilar</name>
     </author>
@@ -3140,7 +3140,7 @@ $this-&gt;browse(function ($browser) {
     <link type="text/html" rel="alternate" href="https://daguilar.dev/blog/database_utilizando-el-formato-de-fechas-europeo-en-los-modelos-de-laravel-con-custom-cast" />
     <title>Utilizando el formato de fechas europeo en Laravel</title>
     <published>2020-10-21T00:00:00+00:00</published>
-    <updated>2021-05-10T00:00:00+00:00</updated>
+    <updated>2020-10-21T00:00:00+00:00</updated>
     <author>
         <name>Damián Aguilar</name>
     </author>
@@ -4634,7 +4634,7 @@ protected function registerConsole(): void
     <link type="text/html" rel="alternate" href="https://daguilar.dev/blog/laravel_packages-imprescindibles-para-laravel" />
     <title>Packages imprescindibles para Laravel</title>
     <published>2020-01-15T00:00:00+00:00</published>
-    <updated>2020-07-08T00:00:00+00:00</updated>
+    <updated>2020-01-15T00:00:00+00:00</updated>
     <author>
         <name>Damián Aguilar</name>
     </author>
@@ -5112,7 +5112,7 @@ ServerPilot
     <link type="text/html" rel="alternate" href="https://daguilar.dev/blog/html_componentes-avanzados-de-una-plantilla-html5" />
     <title>Creando una plantilla HTML5 avanzada</title>
     <published>2019-12-20T00:00:00+00:00</published>
-    <updated>2021-05-13T00:00:00+00:00</updated>
+    <updated>2019-12-20T00:00:00+00:00</updated>
     <author>
         <name>Damián Aguilar</name>
     </author>
@@ -5490,7 +5490,7 @@ ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', '
     <link type="text/html" rel="alternate" href="https://daguilar.dev/blog/packages_configurar-github-webhooks-para-packagist" />
     <title>Configurar Github webhooks con Packagist</title>
     <published>2019-12-16T00:00:00+00:00</published>
-    <updated>2021-05-12T00:00:00+00:00</updated>
+    <updated>2019-12-16T00:00:00+00:00</updated>
     <author>
         <name>Damián Aguilar</name>
     </author>
