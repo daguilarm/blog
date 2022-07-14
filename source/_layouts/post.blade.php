@@ -17,11 +17,11 @@
         <h1 class="leading-none mb-6 text-blue-800 text-3xl md:text-4xl lg:text-5xl">{{ $page->title }}</h1>
 
         <p class="flex justify-start text-gray-600 text-xl md:mt-0">
-            <div>{{ $page->author }}</div>
+            <span>{{ $page->author }}</span>
             <a href="https://twitter.com/daguilarm" target="_black" class="mx-2"><img src="/assets/img/twitter.png" alt="twitter" class="opacity-75 hover:opacity-100 h-8 w-8 bg-white rounded-full"></a>
-            <div> - {{ date('d/m/Y', $page->date) }}</div>
+            <span> - {{ date('d/m/Y', $page->date) }}</span>
             @if($page->updated)
-                <div class="text-orange-500"> - Actualizada: {{ date('d/m/Y', $page->updated) }}</div>
+                <span class="text-orange-500"> - Actualizada: {{ date('d/m/Y', $page->updated) }}</span>
             @endif
         </p>
 
