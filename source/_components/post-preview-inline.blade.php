@@ -5,7 +5,7 @@
                 Creado el {{ $post->getDate()->format('d/m/Y') }}
             </div>
             @if($post->updated)
-                <span class="text-orange-500 ml-2"> y Actualizado: {{ date('d/m/Y', $post->updated) }}</span>
+                <div class="text-orange-500 ml-2"> y Actualizado: {{ date('d/m/Y', $post->updated) }}</div>
             @endif
         @endif
         @if($post->pin)
