@@ -27,7 +27,7 @@
         <meta name="twitter:description" content="Principales consejos para ser un gran programador. Todo ello aplicando los principios SOLID, consiguiendo código más eficaz, sencillo de mantener y fácil de ampliar.">
         <meta name="twitter:creator" content="@daguilarm">
         <meta name="twitter:domain" content="https://daguilar.dev">
-        <meta name="twitter:image" content="https://daguilar.dev/assets/img/twitter.jpg?refresh=153815480">
+        <meta name="twitter:image" content="https://daguilar.dev/assets/img/twitter.jpg?refresh=304049475">
         <meta name="twitter:image:alt" content="Cinco claves para ser mejor programador. Principios SOLID">
         
         <meta name="msapplication-TileColor" content="#ffffff">
@@ -425,75 +425,70 @@ class Cuadrado implements Operaciones {
 
 <h2>3) <strong>Liskov Substitution Principle</strong>.</h2>
 
+<p><strong>Es sin lugar a dudas el principio SOLID más complicado de entender</strong>, por esto, tengo que admitir que he vuelto a escribir este apartado porque no me gustaba como había quedado la explicación.</p>
+
 <p>El principio, dice algo así: <em>"Let q(x) be a property provable about objects x of type T. Then q(y) should be provable for objects y of type S, where S is a subtype of T"</em>, que básicamente viene a decir: <em>"Cada clase que hereda de otra puede usarse como su padre sin necesidad de conocer las diferencias entre ellas"</em> <a href="https://es.wikipedia.org/wiki/Principio_de_sustituci%C3%B3n_de_Liskov" class="link-out">wikipedia</a>. Este principio fue propuesto por <a href="https://es.wikipedia.org/wiki/Barbara_Liskov" class="link-out">Barbara Liskov</a></p>
 
-<p>Volvamos al ejemplo de antes, la clase para calcular el area, y le añadimos un método nuevo:</p>
+<p>En resumen dice que si creamos una clase y a su vez creamos clases hijas a partir de esta, las hijas, deberían de ser capaces de sustituir completamente a la clase padre, y que el código funcione exactamente igual que con la clase padre. <strong>La idea es que al ampliar las funcionalidades de una clase hija, está no esté modificando el comportamiento de la clase padre</strong>.</p>
 
-<pre><code class="language-php">class CalculoDelArea
+<p>Veamos un ejemplo que lo incumple:</p>
+
+<pre><code class="language-php">Class Ave
 {
-    protected $figuras;
-
-    public function __construct($figuras = array()) {
-        $this-&gt;figuras = $figuras;
-    }
-
-    public function sum() {
-        $area = [];
-
-        foreach($this-&gt;figuras as $figura) {
-            $area[] = $figura-&gt;area();
-        }
-
-        return array_sum($area);
-    }
-
-    public function output()
+    public function come()
     {
-        return 'La suma total es: ' . $this-&gt;sum();
+        return 'comiendo...';
     }
-</code></pre>
 
-<p>Ahora añadimos una nueva clase para calcular el volumen, y para ello vamos a extender la case del <code>CalculoDelArea</code>:</p>
+    public function vuela()
+    {
+        return 'volando';
+    }
+}
 
-<pre><code class="language-php">class CalculoDelVolumen extends CalculoDelArea
+Class Gallina extends Ave
 {
-    public function __construct($shapes = array())
+    public function vuela()
     {
-        parent::__construct($shapes);
-    }
-
-    public function sum()
-    {
-        // Calculoa el volumen... da igual como lo haga
-        return $volumen;
+        return '';
     }
 }
 </code></pre>
 
-<p>Ahora imaginemos que creamos una clase para impimir el resultado:</p>
+<p><strong>Cuando nos encontramos con una clase hija que tiene métodos que tenemos que dejar en blanco, nos encontramos ante un inclumplimiento del principio</strong>, ya que la clase hija es incapaz de volar, y por tanto, no puede usarse en lugar de la padre y mantener los mismos comportamientos: una gallina no vuela... <strong>No significa que la clase no funcione, simplemente que no tiene sentido</strong>, y que lo más recomendable es reescribir el código para que tenga más sentido.</p>
 
-<pre><code class="language-php">class Resultado {
+<blockquote>
+  <p>Lo más probable es que, si los tests que haces para la clase hija no valen para la clase hija, no se esté cumpliendo el Principio de Sustitución de Liskov.</p>
+</blockquote>
 
-    protected $operacion;
+<p>Existen diversas formas de solucionar el problema de nuestra clase, la mas sencilla es añadir una clase intermedia:</p>
 
-    // Si cumpliesemo el principio de sustitución de Liskov, daría igual si en vez de CalculoDelVolumen, usamos CalculoDelArea
-    public function __construct(CalculoDelVolumen $operacion)
+<pre><code class="language-php">Class Ave
+{
+    public function come()
     {
-        $this-&gt;operacion = $operacion;
+        return 'comiendo...';
     }
+}
 
-    public function toJson()
+class AveVoladora extends Ave
+{
+    public function vuela()
     {
-        $data = array (
-          'sum' =&gt; $this-&gt;operacion-&gt;sum()
-        );
-
-        return json_encode($data);
+        return 'volando';
     }
+}
+
+Class Gallina extends Ave
+{
+}
+
+class Gaviota extends AveVoladora
+{   
 }
 </code></pre>
 
-<p><strong>El principio de sustitución de Liskov</strong>, dice que si lo hemos hecho bien, daría igual que usásemos la clase <code>CalculoDelArea</code> o su clase hija <code>CalculoDelVolumen</code>, es decir, cualquier clase hija debería poder ser sustituida por la clase padre. Si se producen errores, entonces no se cumple el <strong>principio de sustitución de Liskov</strong>.</p>
+<p>No se si es el mejor ejemplo, pero espero que se entienda bien.</p>
 
 <h2>4) <strong>Interface segretation principle</strong>.</h2>
 

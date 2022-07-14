@@ -190,78 +190,70 @@ class CalculoDelArea {
 
 ## 3) **Liskov Substitution Principle**. 
 
+**Es sin lugar a dudas el principio SOLID más complicado de entender**, por esto, tengo que admitir que he vuelto a escribir este apartado porque no me gustaba como había quedado la explicación.
+
 El principio, dice algo así: *"Let q(x) be a property provable about objects x of type T. Then q(y) should be provable for objects y of type S, where S is a subtype of T"*, que básicamente viene a decir: *"Cada clase que hereda de otra puede usarse como su padre sin necesidad de conocer las diferencias entre ellas"* [wikipedia](https://es.wikipedia.org/wiki/Principio_de_sustituci%C3%B3n_de_Liskov){.link-out}. Este principio fue propuesto por [Barbara Liskov](https://es.wikipedia.org/wiki/Barbara_Liskov){.link-out}
 
-Volvamos al ejemplo de antes, la clase para calcular el area, y le añadimos un método nuevo:
+En resumen dice que si creamos una clase y a su vez creamos clases hijas a partir de esta, las hijas, deberían de ser capaces de sustituir completamente a la clase padre, y que el código funcione exactamente igual que con la clase padre. **La idea es que al ampliar las funcionalidades de una clase hija, está no esté modificando el comportamiento de la clase padre**.
+
+Veamos un ejemplo que lo incumple:
 
 ```php 
-class CalculoDelArea
+Class Ave
 {
-    protected $figuras;
-    
-    public function __construct($figuras = array()) {
-        $this->figuras = $figuras;
-    }
-    
-    public function sum() {
-        $area = [];
-        
-        foreach($this->figuras as $figura) {
-            $area[] = $figura->area();
-        }
-    
-        return array_sum($area);
-    }
-
-    public function output()
+    public function come()
     {
-        return 'La suma total es: ' . $this->sum();
+        return 'comiendo...';
     }
-```
 
-Ahora añadimos una nueva clase para calcular el volumen, y para ello vamos a extender la case del `CalculoDelArea`:
+    public function vuela()
+    {
+        return 'volando';
+    }
+}
 
-```php 
-class CalculoDelVolumen extends CalculoDelArea
+Class Gallina extends Ave
 {
-    public function __construct($shapes = array())
+    public function vuela()
     {
-        parent::__construct($shapes);
-    }
-
-    public function sum()
-    {
-        // Calculoa el volumen... da igual como lo haga
-        return $volumen;
+        return '';
     }
 }
 ```
 
-Ahora imaginemos que creamos una clase para impimir el resultado:
+**Cuando nos encontramos con una clase hija que tiene métodos que tenemos que dejar en blanco, nos encontramos ante un inclumplimiento del principio**, ya que la clase hija es incapaz de volar, y por tanto, no puede usarse en lugar de la padre y mantener los mismos comportamientos: una gallina no vuela... **No significa que la clase no funcione, simplemente que no tiene sentido**, y que lo más recomendable es reescribir el código para que tenga más sentido.
+
+> Lo más probable es que, si los tests que haces para la clase hija no valen para la clase hija, no se esté cumpliendo el Principio de Sustitución de Liskov.
+
+Existen diversas formas de solucionar el problema de nuestra clase, la mas sencilla es añadir una clase intermedia:
 
 ```php 
-class Resultado {
-
-    protected $operacion;
-
-    // Si cumpliesemo el principio de sustitución de Liskov, daría igual si en vez de CalculoDelVolumen, usamos CalculoDelArea
-    public function __construct(CalculoDelVolumen $operacion)
+Class Ave
+{
+    public function come()
     {
-        $this->operacion = $operacion;
+        return 'comiendo...';
     }
+}
 
-    public function toJson()
+class AveVoladora extends Ave
+{
+    public function vuela()
     {
-        $data = array (
-          'sum' => $this->operacion->sum()
-        );
-
-        return json_encode($data);
+        return 'volando';
     }
+}
+
+Class Gallina extends Ave
+{
+}
+
+class Gaviota extends AveVoladora
+{   
 }
 ```
 
-**El principio de sustitución de Liskov**, dice que si lo hemos hecho bien, daría igual que usásemos la clase `CalculoDelArea` o su clase hija `CalculoDelVolumen`, es decir, cualquier clase hija debería poder ser sustituida por la clase padre. Si se producen errores, entonces no se cumple el **principio de sustitución de Liskov**.
+No se si es el mejor ejemplo, pero espero que se entienda bien.
 
 ## 4) **Interface segretation principle**. 
 
