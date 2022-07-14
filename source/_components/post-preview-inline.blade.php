@@ -2,8 +2,11 @@
     <div class="flex {{ $post->pin ? 'justify-end' : 'justify-start' }}">
         @if(!$post->pin)
             <div class="text-gray-600 font-medium my-2">
-                {{ $post->getDate()->format('d/m/Y') }}
+                Creador el {{ $post->getDate()->format('d/m/Y') }}
             </div>
+            @if($page->updated)
+                <span class="text-orange-500 ml-2"> y Actualizado: {{ date('d/m/Y', $page->updated) }}</span>
+            @endif
         @endif
         @if($post->pin)
             <div>

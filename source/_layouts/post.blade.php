@@ -19,9 +19,9 @@
         <p class="flex justify-start text-gray-600 text-xl md:mt-0">
             <span>Autor: {{ $page->author }}</span>
             <a href="https://twitter.com/daguilarm" target="_black" class="mx-2"><img src="/assets/img/twitter.png" alt="twitter" class="opacity-75 hover:opacity-100 h-8 w-8 bg-white rounded-full"></a>
-            <span>- Creada el {{ date('d/m/Y', $page->date) }}</span>
+            <span>- Creado el {{ date('d/m/Y', $page->date) }}</span>
             @if($page->updated)
-                <span class="text-orange-500 ml-2"> y Actualizada: {{ date('d/m/Y', $page->updated) }}</span>
+                <span class="text-orange-500 ml-2"> y Actualizado: {{ date('d/m/Y', $page->updated) }}</span>
             @endif
         </p>
 
