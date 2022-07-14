@@ -3,6 +3,7 @@ extends: _layouts.post
 section: content
 title: Cinco claves para ser mejor programador. Principios SOLID
 date: 2022-06-25
+updated: 2022-07-14
 description: Principales consejos para ser un gran programador. Todo ello aplicando los principios SOLID, consiguiendo código más eficaz, sencillo de mantener y fácil de ampliar.
 categories: [programacion, php, laravel]
 pin: true
@@ -189,9 +190,9 @@ class CalculoDelArea {
 
 ## 3) **Liskov Substitution Principle**. 
 
-El principio, dice algo así: *"Let q(x) be a property provable about objects x of type T. Then q(y) should be provable for objects y of type S, where S is a subtype of T"*, que básicamente viene a decir: *"Cada clase que hereda de otra puede usarse como su padre sin necesidad de conocer las diferencias entre ellas"* [wikipedia](https://es.wikipedia.org/wiki/Principio_de_sustituci%C3%B3n_de_Liskov){.link-out}. Básicamente, podemos decir que al extender una clase padre desde un hijo, nos sobran métodos, o hay métodos que no funcionan con nuestra clase hija. Este principio fue propuesto por [Barbara Liskov](https://es.wikipedia.org/wiki/Barbara_Liskov){.link-out}
+El principio, dice algo así: *"Let q(x) be a property provable about objects x of type T. Then q(y) should be provable for objects y of type S, where S is a subtype of T"*, que básicamente viene a decir: *"Cada clase que hereda de otra puede usarse como su padre sin necesidad de conocer las diferencias entre ellas"* [wikipedia](https://es.wikipedia.org/wiki/Principio_de_sustituci%C3%B3n_de_Liskov){.link-out}. Este principio fue propuesto por [Barbara Liskov](https://es.wikipedia.org/wiki/Barbara_Liskov){.link-out}
 
-Volvamos al ejemplo de antes: la clase para calcular el area, y le añadimos un método nuevo:
+Volvamos al ejemplo de antes, la clase para calcular el area, y le añadimos un método nuevo:
 
 ```php 
 class CalculoDelArea

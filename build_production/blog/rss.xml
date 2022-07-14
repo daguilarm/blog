@@ -757,9 +757,9 @@ class Cuadrado implements Operaciones {
 
 <h2>3) <strong>Liskov Substitution Principle</strong>.</h2>
 
-<p>El principio, dice algo así: <em>"Let q(x) be a property provable about objects x of type T. Then q(y) should be provable for objects y of type S, where S is a subtype of T"</em>, que básicamente viene a decir: <em>"Cada clase que hereda de otra puede usarse como su padre sin necesidad de conocer las diferencias entre ellas"</em> <a href="https://es.wikipedia.org/wiki/Principio_de_sustituci%C3%B3n_de_Liskov" class="link-out">wikipedia</a>. Básicamente, podemos decir que al extender una clase padre desde un hijo, nos sobran métodos, o hay métodos que no funcionan con nuestra clase hija. Este principio fue propuesto por <a href="https://es.wikipedia.org/wiki/Barbara_Liskov" class="link-out">Barbara Liskov</a></p>
+<p>El principio, dice algo así: <em>"Let q(x) be a property provable about objects x of type T. Then q(y) should be provable for objects y of type S, where S is a subtype of T"</em>, que básicamente viene a decir: <em>"Cada clase que hereda de otra puede usarse como su padre sin necesidad de conocer las diferencias entre ellas"</em> <a href="https://es.wikipedia.org/wiki/Principio_de_sustituci%C3%B3n_de_Liskov" class="link-out">wikipedia</a>. Este principio fue propuesto por <a href="https://es.wikipedia.org/wiki/Barbara_Liskov" class="link-out">Barbara Liskov</a></p>
 
-<p>Volvamos al ejemplo de antes: la clase para calcular el area, y le añadimos un método nuevo:</p>
+<p>Volvamos al ejemplo de antes, la clase para calcular el area, y le añadimos un método nuevo:</p>
 
 <pre><code class="language-php">class CalculoDelArea
 {
@@ -991,7 +991,7 @@ $operation-&gt;pagar();
 <p>Implementando todo esto en tu código vas a conseguir proyectos más optimizados, sencillos de mantener y facil de ampliar. Y tal y como he comentado antes, serás <strong>un mejor programador</strong>.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sat, 25 Jun 2022 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 14 Jul 2022 00:00:00 +0000</pubDate>
 
                             </item>
                                 <item>
