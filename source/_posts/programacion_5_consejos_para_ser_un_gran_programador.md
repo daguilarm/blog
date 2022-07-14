@@ -428,4 +428,4 @@ $operacion = new Pago(
 $operation->pagar();
 ```
 
-Implementando todo esto en tu código vas a conseguir proyectos más optimizados, sencillos de mantener y facil de ampliar. Y tal y como he comentado antes, serás **un mejor programador**.
+Implementando todo esto en tu código vas a conseguir proyectos más optimizados, sencillos de mantener y facil de ampliar. Y tal y como he comentado antes, serás **un mejor programador**. También es cierto que **no hay que obsesionarse con los principios SOLID**, lo ideal es tenerlos en mente e intentar seguirlos. La realidad es que no siempre se puede (por temas de tiempo, clientes,...), pero al menos hay que intentarlo.
