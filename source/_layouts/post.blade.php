@@ -20,6 +20,9 @@
             <span>{{ $page->author }}</span>
             <a href="https://twitter.com/daguilarm" target="_black" class="mx-2"><img src="/assets/img/twitter.png" alt="twitter" class="opacity-75 hover:opacity-100 h-8 w-8 bg-white rounded-full"></a>
             <span> - {{ date('d/m/Y', $page->date) }}</span>
+            @if($page->update || $page->updated)
+                <span> - Actualizada: {{ date('d/m/Y', $page->update || $page->updated) }}</span>
+            @endif
         </p>
 
         @if ($page->categories)

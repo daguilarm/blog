@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:media="http://search.yahoo.com/mrss/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>Blog de Damián Aguilar</title>
         <link>https://daguilar.dev</link>
@@ -1093,7 +1093,7 @@ array_is_list(['a', 1 =&gt; 'b', 'c']); // Solo hay una clave, en segunda posici
 </ul>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sat, 11 Jun 2022 00:00:00 +0000</pubDate>
+                <pubDate>Sun, 03 Jul 2022 00:00:00 +0000</pubDate>
 
                             </item>
                     <item>
@@ -1126,7 +1126,7 @@ array_is_list(['a', 1 =&gt; 'b', 'c']); // Solo hay una clave, en segunda posici
 <p>Como punto final, decir que la experiencia de haber trabajado en una empresa importate del sector, ha sido en general muy positiva, y me he llevado muchas enseñanzas importantes, sobre todo, en cuanto a trabajo en equipo, y lo complejo que es a veces gestionar un proyecto. Por ejemplo, en uno de los proyectos que trabajé, mi equipo sólo trabajaba con <strong>Angular</strong> (si, yo trabajando toda la vida en <em>back-end</em>, termine en <em>front-end</em>), y no teníamos acceso al <em>back-end</em>, por lo que a veces era casi más complicado intentar adivinar como funcionaba un sistema que añadir la funcionalidad que había pedido el cliente... En fin, cosas que pasan cuando se divide el trabajo en equipos.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sun, 22 May 2022 00:00:00 +0000</pubDate>
+                <pubDate>Sun, 03 Jul 2022 00:00:00 +0000</pubDate>
 
                             </item>
                     <item>
@@ -1369,7 +1369,7 @@ public function boot()
 <p>Y mucho más, simplemente puedes consultar esta la guia oficial de <a href="https://laravel.com/docs/9.x/releases" class="link-out">Laravel</a></p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
+                <pubDate>Tue, 05 Jul 2022 00:00:00 +0000</pubDate>
 
                             </item>
                     <item>
@@ -1621,7 +1621,7 @@ protected function getPackageProviders($app)
 </ul>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sun, 09 May 2021 00:00:00 +0000</pubDate>
+                <pubDate>Wed, 12 May 2021 00:00:00 +0000</pubDate>
 
                                 <media:content
                         medium="image"
@@ -2416,7 +2416,7 @@ class MinifyHtml
 <p>En definitiva, la intención de este <em>post</em> no es otra que la de exponer mi fracaso al intentar aprender un lenguaje de programación empezando por el final... <strong>el camino correcto es siempre empezar por lo básico y después ir a lo específico</strong>, o si quereis arriesgaros, vais a cometer los mismos errores que yo.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Mon, 09 Nov 2020 00:00:00 +0000</pubDate>
+                <pubDate>Tue, 05 Jul 2022 00:00:00 +0000</pubDate>
 
                             </item>
                     <item>
@@ -2899,7 +2899,7 @@ function component_2() {
 <p>Lo que hace es contar los resultados a mostrar y en función de estos, muestra el resultado como si fuera un <code>select</code> o un <code>datalist</code>.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Mon, 26 Oct 2020 00:00:00 +0000</pubDate>
+                <pubDate>Tue, 05 Jul 2022 00:00:00 +0000</pubDate>
 
                             </item>
                     <item>
@@ -3170,7 +3170,7 @@ protected $casts = [
 <p>Espero que sea útil.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Wed, 21 Oct 2020 00:00:00 +0000</pubDate>
+                <pubDate>Mon, 10 May 2021 00:00:00 +0000</pubDate>
 
                                 <media:content
                         medium="image"
@@ -4601,7 +4601,7 @@ protected function registerConsole(): void
 </ul>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
+                <pubDate>Wed, 08 Jul 2020 00:00:00 +0000</pubDate>
 
                             </item>
                     <item>
@@ -5323,7 +5323,7 @@ ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', '
 </ul>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Fri, 20 Dec 2019 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 13 May 2021 00:00:00 +0000</pubDate>
 
                                 <media:content
                         medium="image"
@@ -5366,7 +5366,7 @@ ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', '
 <p>Guardamos los datos, y listo. Ahora solo tenemos que hacer un cambio en nuestro repositorio y esperar unos minutos a que <strong>Github</strong>, envie la notificación a <strong>Packagist</strong>.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Mon, 16 Dec 2019 00:00:00 +0000</pubDate>
+                <pubDate>Wed, 12 May 2021 00:00:00 +0000</pubDate>
 
                                 <media:content
                         medium="image"

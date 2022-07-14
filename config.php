@@ -47,6 +47,12 @@ return [
     'getDate' => function ($page) {
         return Datetime::createFromFormat('U', $page->date);
     },
+    'getUpdated' => function ($page) {
+        return Datetime::createFromFormat('U', $page->update ?? $page->updated) ?? null;
+    },
+    'getLastModification' => function ($page) {
+        return Datetime::createFromFormat('U', $page->update ?? $page->updated ?? $page->date);
+    },
     'getExcerpt' => function ($page, $length = 255) {
         $content = $page->excerpt ?? $page->getContent();
         $cleaned = strip_tags(
