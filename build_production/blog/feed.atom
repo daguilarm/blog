@@ -3,7 +3,7 @@
     <title>Blog de Damián Aguilar</title>
     <link href="https://daguilar.dev" />
     <link type="application/atom+xml" rel="self" href="https://daguilar.dev/blog/feed.atom" />
-    <updated>2022-07-22T06:57:35+00:00</updated>
+    <updated>2022-07-22T10:00:20+00:00</updated>
     <id>https://daguilar.dev/blog/feed.atom</id>
     <author>
         <name>Damián Aguilar</name>
@@ -80,7 +80,15 @@ jobs:
           skip_fetch: true
 </code></pre>
 
-<p>Y en cuanto hagas un <code>commit</code> a <strong>Github</strong>, se ejecutará la acción, <strong>Laravel Pint</strong> corregirá el código y creará un PR en tu repositorio. Muy útil para cuando trabajas en equipo, no tanto cuando estás tu solo. Personalmente, prefiero ejecutar <strong>Laravel Pint</strong> a voluntad en vez de automatizarlo.</p>
+<p>El proceso es el siguiente:</p>
+
+<ol>
+<li>En cuanto hagas un <code>commit</code> a <strong>Github</strong>, se subirá el código al repositorio y se ejecutará la acción.</li>
+<li><strong>Laravel Pint</strong> corregirá los errores de estilo y creará un PR en tu repositorio con los cambios.</li>
+<li>Haz un <code>pull</code> y actualiza tu repositorio local unos segundos después.</li>
+</ol>
+
+<p>Muy útil para cuando trabajas en equipo. A nivel personal, prefiero ejecutar <strong>Laravel Pint</strong> a voluntad en vez de automatizarlo.</p>
     ]]></content>
 </entry>
             <entry>

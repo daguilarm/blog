@@ -66,4 +66,10 @@ jobs:
           skip_fetch: true
 ```
 
-Y en cuanto hagas un `commit` a **Github**, se ejecutará la acción, **Laravel Pint** corregirá el código y creará un PR en tu repositorio. Muy útil para cuando trabajas en equipo, no tanto cuando estás tu solo. Personalmente, prefiero ejecutar **Laravel Pint** a voluntad en vez de automatizarlo.
+El proceso es el siguiente:
+
+1. En cuanto hagas un `commit` a **Github**, se subirá el código al repositorio y se ejecutará la acción.
+2. **Laravel Pint** corregirá los errores de estilo y creará un PR en tu repositorio con los cambios. 
+3. Haz un `pull` y actualiza tu repositorio local unos segundos después.
+
+Muy útil para cuando trabajas en equipo. A nivel personal, prefiero ejecutar **Laravel Pint** a voluntad en vez de automatizarlo.
