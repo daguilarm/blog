@@ -49,8 +49,7 @@
 
 <p>Y dentro de la carpeta, añadir un archivo <code>.yml</code>, por ejemplo: <code>pint.yml</code>, donde debemos añadir el siguiente código:</p>
 
-<p>´´´bash
-name: Laravel Pint
+<pre><code class="language-bash">name: Laravel Pint
 on:
   workflow_dispatch:
   push:
@@ -72,7 +71,7 @@ jobs:
         with:
           commit_message: Laravel Pint
           skip_fetch: true
-´´´</p>
+</code></pre>
 
 <p>Y en cuanto hagas un <code>commit</code> a <strong>Github</strong>, se ejecutará la acción, Laravel Pint corregirá el código y creará un PR en tu repositorio. Muy útil para cuando trabajas en equipo, no tanto cuando estás tu solo.</p>
 ]]></content:encoded>
