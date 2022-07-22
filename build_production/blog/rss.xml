@@ -34,7 +34,7 @@
 <pre><code class="language-bash">./vendor/bin/pint
 </code></pre>
 
-<p>En la documentación oficial de Laravel, vas a encontrar muchas más funcionalidades: <a href="https://laravel.com/docs/9.x/pint" class="link-out">https://laravel.com/docs/9.x/pint</a></p>
+<p>En la documentación oficial de <strong>Laravel</strong>, vas a encontrar muchas más funcionalidades: <a href="https://laravel.com/docs/9.x/pint" class="link-out">https://laravel.com/docs/9.x/pint</a></p>
 
 <p>Revisando un poco por internet, me encontré el otro día un artículo en el que se hablaba de cómo configurar <strong>Laravel Pint</strong> como una <strong>Github Action</strong>. Concretamente, este es el artículo:</p>
 
@@ -73,7 +73,7 @@ jobs:
           skip_fetch: true
 </code></pre>
 
-<p>Y en cuanto hagas un <code>commit</code> a <strong>Github</strong>, se ejecutará la acción, Laravel Pint corregirá el código y creará un PR en tu repositorio. Muy útil para cuando trabajas en equipo, no tanto cuando estás tu solo.</p>
+<p>Y en cuanto hagas un <code>commit</code> a <strong>Github</strong>, se ejecutará la acción, <strong>Laravel Pint</strong> corregirá el código y creará un PR en tu repositorio. Muy útil para cuando trabajas en equipo, no tanto cuando estás tu solo. Personalmente, prefiero ejecutar <strong>Laravel Pint</strong> a voluntad en vez de automatizarlo.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
                 <pubDate>Thu, 21 Jul 2022 00:00:00 +0000</pubDate>

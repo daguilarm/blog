@@ -27,7 +27,7 @@ Una vez instalado, solo tenemos que ejecutarlo en el terminal:
 ./vendor/bin/pint
 ```
 
-En la documentación oficial de Laravel, vas a encontrar muchas más funcionalidades: [https://laravel.com/docs/9.x/pint](https://laravel.com/docs/9.x/pint){.link-out}
+En la documentación oficial de **Laravel**, vas a encontrar muchas más funcionalidades: [https://laravel.com/docs/9.x/pint](https://laravel.com/docs/9.x/pint){.link-out}
 
 Revisando un poco por internet, me encontré el otro día un artículo en el que se hablaba de cómo configurar **Laravel Pint** como una **Github Action**. Concretamente, este es el artículo:
 
@@ -66,4 +66,4 @@ jobs:
           skip_fetch: true
 ```
 
-Y en cuanto hagas un `commit` a **Github**, se ejecutará la acción, Laravel Pint corregirá el código y creará un PR en tu repositorio. Muy útil para cuando trabajas en equipo, no tanto cuando estás tu solo.
+Y en cuanto hagas un `commit` a **Github**, se ejecutará la acción, **Laravel Pint** corregirá el código y creará un PR en tu repositorio. Muy útil para cuando trabajas en equipo, no tanto cuando estás tu solo. Personalmente, prefiero ejecutar **Laravel Pint** a voluntad en vez de automatizarlo.
