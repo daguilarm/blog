@@ -6,10 +6,81 @@
         <description><![CDATA[Blog sobre programación de Damián Aguilar, en el vas a encontrar artículos y recursos sobre: php, javascript, vuejs, phyton, java, livewire, alpinejs, laravel, seo... y mucho más. Además, encontrarás noticias sobre desarrollo web, lenguajes de programación, software y marketing]]></description>
         <atom:link href="https://daguilar.dev/blog/rss.xml" rel="self" type="application/rss+xml" />
         <language>es</language>
-        <lastBuildDate>Sun, 10 Jul 2022 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Thu, 21 Jul 2022 00:00:00 +0000</lastBuildDate>
 
         <!-- Posts -->
                                                             <item>
+                <title><![CDATA[Laravel Pint, el corrector de estilo para PHP]]></title>
+                <link>https://daguilar.dev/blog/laravel_nuevo-laravel-pint</link>
+                <guid isPermaLink="true">https://daguilar.dev/blog/laravel_nuevo-laravel-pint</guid>
+                <description><![CDATA[Laravel Pint ha sido desarrollado por Nuno Maduro sobre PHP-CS-Fixer para conseguir un corrector de estilo para PHP, gestionado mediante Artisan. Laravel Pint es un corrector de estilo minimalista y que no necesita configuración.]]></description>
+                <content:encoded><![CDATA[<p>El equipo de desarrollo de <strong>Laravel</strong>, con <a href="https://nunomaduro.com/" class="link-out">Nuno Maduro</a> a la cabeza, ha lanzado <a href="https://github.com/laravel/pint" class="link-out">Laravel Pint</a>. Un corrector de estilo para PHP basado en <a href="https://github.com/FriendsOfPHP/PHP-CS-Fixer" class="link-out">PHP-CS-Fixer</a>.</p>
+
+<p><strong>PHP-CS-Fixer</strong> es un corrector de estilo para <strong>PHP</strong> que sigue los estandars definidos en PSR1, PSR2,... estos estándars puedes encontrarlos en [PHP-FIG]{https://www.php-fig.org/psr/}{.link-out} donde se establecen normas de estilo para programar en PHP, por ejemplo:</p>
+
+<ul>
+<li>Los nombres de los métodos deben de escribirse usando <code>camelcase</code>.</li>
+<li>Los archivos PHP deben de usar sólo las etiquetas <code>&lt;?php</code> o <code>&lt;?=</code>.</li>
+<li>...</li>
+</ul>
+
+<p><strong>Laravel Pint</strong> se encarga de lidiar con todo esto. Su funcionamiento es sencillo, recorrer todos los archivos de nuestro código en busca de incumplimientos de los estándares, y los soluciona directamente en el archivo. Lo primero que tenemos que hacer para utilizar <strong>Laravel Pint</strong>, es instalarlo. Para ello usaremos <strong>Composer</strong>:</p>
+
+<pre><code class="language-bash">composer require laravel/pint --dev
+</code></pre>
+
+<p>Una vez instalado, solo tenemos que ejecutarlo en el terminal:</p>
+
+<pre><code class="language-bash">./vendor/bin/pint
+</code></pre>
+
+<p>En la documentación oficial de Laravel, vas a encontrar muchas más funcionalidades: <a href="https://laravel.com/docs/9.x/pint" class="link-out">https://laravel.com/docs/9.x/pint</a></p>
+
+<p>Revisando un poco por internet, me encontré el otro día un artículo en el que se hablaba de cómo configurar <strong>Laravel Pint</strong> como una <strong>Github Action</strong>. Concretamente, este es el artículo:</p>
+
+<ul>
+<li><a href="https://laravelmagazine.com/blog/run-laravel-pint-as-part-of-your-ci-pipeline-with-github-actions" class="link-out">https://laravelmagazine.com/blog/run-laravel-pint-as-part-of-your-ci-pipeline-with-github-actions</a></li>
+</ul>
+
+<p>Básicamente, te explica que tienes que crear una carpeta en la base de tu directorio para añadir las <strong>Github Actions</strong>:</p>
+
+<pre><code class="language-bash">.github/workflows
+</code></pre>
+
+<p>Y dentro de la carpeta, añadir un archivo <code>.yml</code>, por ejemplo: <code>pint.yml</code>, donde debemos añadir el siguiente código:</p>
+
+<p>´´´bash
+name: Laravel Pint
+on:
+  workflow_dispatch:
+  push:
+    branches-ignore:
+      - 'dependabot/npm_and_yarm/*'
+jobs:
+  phplint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+      - name: "laravel-pint"
+        uses: aglipanci/laravel-pint-action@0.1.0
+        with:
+          preset: laravel
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Laravel Pint
+          skip_fetch: true
+´´´</p>
+
+<p>Y en cuanto hagas un <code>commit</code> a <strong>Github</strong>, se ejecutará la acción, Laravel Pint corregirá el código y creará un PR en tu repositorio. Muy útil para cuando trabajas en equipo, no tanto cuando estás tu solo.</p>
+]]></content:encoded>
+                <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
+                <pubDate>Thu, 21 Jul 2022 00:00:00 +0000</pubDate>
+
+                            </item>
+                                <item>
                 <title><![CDATA[Nuevos proyectos Laravel con Vite, la alternativa a Webpack]]></title>
                 <link>https://daguilar.dev/blog/laravel_empezando-nuevo-proyecto-con-laravel-vite</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/laravel_empezando-nuevo-proyecto-con-laravel-vite</guid>
@@ -5846,7 +5917,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Evan You el creador de <a href="https://vuejs.org/" target="_blank">VueJS</a> ha desarrollado esta nueva herramienta para la compilación de assets en el frontend, que surge como una alternativa más rápida y moderna que WebPack.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 21 Jul 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Testing, TTD y realización de pruebas.]]></title>
@@ -5856,7 +5927,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre testing, Desarrollo Guiado por Pruebas de software (Test-driven development: TDD), al igual que las diferentes librerias y herramientas para la realización de pruebas en código.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 21 Jul 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[SEO, posicionamiento en buscadores y motores de búsqueda]]></title>
@@ -5870,7 +5941,7 @@ if (! function_exists('userId')) {
 </blockquote>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 21 Jul 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Python, el lenguaje interpretado de alto nivel de moda]]></title>
@@ -5880,7 +5951,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre <a href="https://www.python.org/" target="_blank">Python</a>, el lenguaje de programación de alto nivel, orientado a objetos, interpretado y con una legibilidad de código increible. Uno de mis favoritos.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 21 Jul 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Programación general y lenguajes de programación]]></title>
@@ -5890,7 +5961,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre los diferentes lenguajes de programación, curiosidades, origenes, comparativas entre ellos...</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 21 Jul 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[PHP, el lenguaje de programación para el desarrollo web.]]></title>
@@ -5904,7 +5975,7 @@ if (! function_exists('userId')) {
 </blockquote>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 21 Jul 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Packagist, el repositorio de Composer para PHP]]></title>
@@ -5914,7 +5985,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre <a href="https://packagist.org/" class="link-out">Packagist</a>, el repositorio de paquetes PHP utilizado por Composer.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 21 Jul 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Packages, componentes de software trabajando juntos]]></title>
@@ -5924,7 +5995,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre gestión y creación de <strong>Packages</strong>. Componentes de <em>software</em>, independientes e intercambiables, que ofrecen una funcionalidad concreta y/o conjunta, y que están listos para su distribución y utilización.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 21 Jul 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Mis artículos mas personales como programador]]></title>
@@ -5934,7 +6005,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Los artículos mas personales, sobre mi día a día... pequeño diario de un programador fullstack.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 21 Jul 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Markdown el lenguaje para optimizar la web]]></title>
@@ -5944,7 +6015,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre <strong>Markdown</strong>, el lenguaje de marcado ligero creado por <em>John Gruber</em> y <strong>Aaron Swartz</strong> basado en numerosas convenciones utilizadas para marcar mensajes de correo electrónico utilizando para ello texto plano.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 21 Jul 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Laravel Livewire el framework de desarrollo de aplicaciones]]></title>
@@ -5958,7 +6029,7 @@ if (! function_exists('userId')) {
 </blockquote>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 21 Jul 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Laravel el framework PHP mas utilizado]]></title>
@@ -5972,7 +6043,7 @@ if (! function_exists('userId')) {
 </blockquote>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 21 Jul 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Javascript el lenguaje de programación del momento]]></title>
@@ -5986,7 +6057,7 @@ if (! function_exists('userId')) {
 </blockquote>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 21 Jul 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Java y sus frameworks spring, hibernate,...]]></title>
@@ -5996,7 +6067,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre <strong>Java</strong> el lenguaje multiplataforma y orientado a objetos, y todo su entorno de desarrollo: Spring, Spring boot, hibernate,...</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 21 Jul 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Frameworks. Estructuras para el desarrollo de software]]></title>
@@ -6006,7 +6077,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre <strong>Frameworks</strong> de desarrollo. Por lo general, módulos de software, que puede servir de base para desarrollo de software más complejo.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 21 Jul 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[El lenguaje de etiquetas HTML]]></title>
@@ -6016,7 +6087,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre <strong>HTML</strong> (HyperText Markup Language). El estándar que sirve de referencia para la elaboración de páginas web.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 21 Jul 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Artículos sobre servidores, su gestión, su mantenimiento y su configuración, ya sean seridores físicos o virtuales.]]></title>
@@ -6026,7 +6097,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre servidores, su gestión, configuración, mantenimiento, software de gestión y cualquier otra operación que pueda realizarse tanto en servidores físicos como virtuales o en la nube.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 21 Jul 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Artículos sobre Marketing. Conjunto de técnicas encaminadas a mejorar la comercialización o visualización de un producto]]></title>
@@ -6036,7 +6107,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos relacionados con Marketing online, utilizando técnicas para mejorar el posicionamiento de nuestro negocio en internet, utilizando tecnologías y medios digitales.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 21 Jul 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Artículos sobre github, el portal de Microsoft para desarrolladores de código]]></title>
@@ -6046,7 +6117,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre <strong>Github</strong> (plataforma de desarrollo colaborativo) y gestión de repositorios propiedad de Microsoft.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 21 Jul 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Artículos sobre equipo, aplicaciones, software y herramientas utilizadas en programación.]]></title>
@@ -6056,7 +6127,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre equipo, software, tecnología y herramientas utilizado por programadores.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 21 Jul 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Artículos sobre Eloquent el ORM de Laravel para bases de datos]]></title>
@@ -6066,7 +6137,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos relacionados con <a href="https://laravel.com/docs/6.x/eloquent" target="_blank">Laravel Eloquent</a>, desarrollado por <a href="https://twitter.com/taylorotwell" target="_blank">Taylor Otwell</a></p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 21 Jul 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Artículos sobre Composer el gestor de dependencias para PHP]]></title>
@@ -6080,7 +6151,7 @@ if (! function_exists('userId')) {
 </blockquote>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 21 Jul 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Artículos sobre Blade el sistema de plantillas del framework Laravel]]></title>
@@ -6094,7 +6165,7 @@ if (! function_exists('userId')) {
 </blockquote>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 21 Jul 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Artículos Bases de Datos, gestores de bases de datos y ORM]]></title>
@@ -6104,7 +6175,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre Bases de Datos (relacionales o no relacionales), software de gestión de bases de datos y ORMs utilizados por los diferentes frameworks.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 21 Jul 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Articulos sobre patrones de diseño en programación, soluciones habituales a problemas comunes]]></title>
@@ -6114,7 +6185,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre los diferentes patrones de diseño en programación, y como estructurar eficientemente nuestro código en base a ellos.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 21 Jul 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Angular el framework javascript de código abierto de Google.]]></title>
@@ -6124,7 +6195,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos relacionados con el framework desarrollado en TypeScript: Angular. De código abierto y mantenido por google.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 21 Jul 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[AlpineJS el framework javascript minimalista de Caleb Porzio]]></title>
@@ -6138,7 +6209,7 @@ if (! function_exists('userId')) {
 </blockquote>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 21 Jul 2022 00:00:00 +0000</pubDate>
             </item>
         
     </channel>

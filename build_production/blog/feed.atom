@@ -3,12 +3,88 @@
     <title>Blog de Damián Aguilar</title>
     <link href="https://daguilar.dev" />
     <link type="application/atom+xml" rel="self" href="https://daguilar.dev/blog/feed.atom" />
-    <updated>2022-07-14T11:15:40+00:00</updated>
+    <updated>2022-07-22T06:47:53+00:00</updated>
     <id>https://daguilar.dev/blog/feed.atom</id>
     <author>
         <name>Damián Aguilar</name>
     </author>
                 <entry>
+    <id>https://daguilar.dev/blog/laravel_nuevo-laravel-pint</id>
+    <link type="text/html" rel="alternate" href="https://daguilar.dev/blog/laravel_nuevo-laravel-pint" />
+    <title>Laravel Pint, el corrector de estilo para PHP</title>
+    <published>2022-07-21T00:00:00+00:00</published>
+    <updated>2022-07-21T00:00:00+00:00</updated>
+    <author>
+        <name>Damián Aguilar</name>
+    </author>
+    <summary type="html">El equipo de desarrollo de Laravel, con Nuno Maduro a la cabeza, ha lanzado Laravel Pint. Un corrector de estilo para PHP basado en PHP-CS-Fixer.
+
+PHP-CS-Fixer es un corrector de estilo para PHP que sigue los estandars definidos en PSR1, PSR2,... estos......</summary>
+    <content type="html"><![CDATA[
+        <p>El equipo de desarrollo de <strong>Laravel</strong>, con <a href="https://nunomaduro.com/" class="link-out">Nuno Maduro</a> a la cabeza, ha lanzado <a href="https://github.com/laravel/pint" class="link-out">Laravel Pint</a>. Un corrector de estilo para PHP basado en <a href="https://github.com/FriendsOfPHP/PHP-CS-Fixer" class="link-out">PHP-CS-Fixer</a>.</p>
+
+<p><strong>PHP-CS-Fixer</strong> es un corrector de estilo para <strong>PHP</strong> que sigue los estandars definidos en PSR1, PSR2,... estos estándars puedes encontrarlos en [PHP-FIG]{https://www.php-fig.org/psr/}{.link-out} donde se establecen normas de estilo para programar en PHP, por ejemplo:</p>
+
+<ul>
+<li>Los nombres de los métodos deben de escribirse usando <code>camelcase</code>.</li>
+<li>Los archivos PHP deben de usar sólo las etiquetas <code>&lt;?php</code> o <code>&lt;?=</code>.</li>
+<li>...</li>
+</ul>
+
+<p><strong>Laravel Pint</strong> se encarga de lidiar con todo esto. Su funcionamiento es sencillo, recorrer todos los archivos de nuestro código en busca de incumplimientos de los estándares, y los soluciona directamente en el archivo. Lo primero que tenemos que hacer para utilizar <strong>Laravel Pint</strong>, es instalarlo. Para ello usaremos <strong>Composer</strong>:</p>
+
+<pre><code class="language-bash">composer require laravel/pint --dev
+</code></pre>
+
+<p>Una vez instalado, solo tenemos que ejecutarlo en el terminal:</p>
+
+<pre><code class="language-bash">./vendor/bin/pint
+</code></pre>
+
+<p>En la documentación oficial de Laravel, vas a encontrar muchas más funcionalidades: <a href="https://laravel.com/docs/9.x/pint" class="link-out">https://laravel.com/docs/9.x/pint</a></p>
+
+<p>Revisando un poco por internet, me encontré el otro día un artículo en el que se hablaba de cómo configurar <strong>Laravel Pint</strong> como una <strong>Github Action</strong>. Concretamente, este es el artículo:</p>
+
+<ul>
+<li><a href="https://laravelmagazine.com/blog/run-laravel-pint-as-part-of-your-ci-pipeline-with-github-actions" class="link-out">https://laravelmagazine.com/blog/run-laravel-pint-as-part-of-your-ci-pipeline-with-github-actions</a></li>
+</ul>
+
+<p>Básicamente, te explica que tienes que crear una carpeta en la base de tu directorio para añadir las <strong>Github Actions</strong>:</p>
+
+<pre><code class="language-bash">.github/workflows
+</code></pre>
+
+<p>Y dentro de la carpeta, añadir un archivo <code>.yml</code>, por ejemplo: <code>pint.yml</code>, donde debemos añadir el siguiente código:</p>
+
+<p>´´´bash
+name: Laravel Pint
+on:
+  workflow_dispatch:
+  push:
+    branches-ignore:
+      - 'dependabot/npm_and_yarm/*'
+jobs:
+  phplint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+      - name: "laravel-pint"
+        uses: aglipanci/laravel-pint-action@0.1.0
+        with:
+          preset: laravel
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Laravel Pint
+          skip_fetch: true
+´´´</p>
+
+<p>Y en cuanto hagas un <code>commit</code> a <strong>Github</strong>, se ejecutará la acción, Laravel Pint corregirá el código y creará un PR en tu repositorio. Muy útil para cuando trabajas en equipo, no tanto cuando estás tu solo.</p>
+    ]]></content>
+</entry>
+            <entry>
     <id>https://daguilar.dev/blog/laravel_empezando-nuevo-proyecto-con-laravel-vite</id>
     <link type="text/html" rel="alternate" href="https://daguilar.dev/blog/laravel_empezando-nuevo-proyecto-con-laravel-vite" />
     <title>Nuevos proyectos Laravel con Vite, la alternativa a Webpack</title>
