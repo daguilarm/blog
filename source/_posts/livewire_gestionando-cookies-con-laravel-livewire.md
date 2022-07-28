@@ -76,14 +76,14 @@ y nuestro componente Blade:
             class="{{ $css }} text-white bg-orange-400 hover:bg-orange-700"
             wire:click="storeCookie('{{ $uuid }}')"
         >
-            <x-heroicon-s-save class="hidden xl:inline-block w-4 h-4 mr-1 opacity-70"></x-heroicon-s-save> Aceptar cookies
+            <x-heroicon-s-save class="hidden xl:inline-block w-4 h-4 mr-1 opacity-70"></x-heroicon-s-save> Guardar
         </button>
     @else
         <button
             type="button"
             class="text-white bg-gray-400 cursor-default {{ $css }}"
         >
-            <x-heroicon-s-bookmark class="hidden xl:inline-block w-4 h-4 mr-1 opacity-70"></x-heroicon-s-bookmark> Aceptadas
+            <x-heroicon-s-bookmark class="hidden xl:inline-block w-4 h-4 mr-1 opacity-70"></x-heroicon-s-bookmark> Guardado
         </button>
     @endif
 </div>
@@ -93,7 +93,7 @@ Al hacer *click*, se va a guardar el valor en la *cookie*, pero el botón no va 
 
 - [https://github.com/livewire/livewire/discussions/1787](https://github.com/livewire/livewire/discussions/1787){.link-out}
 
-Lo que proponen es hacerlo de forma indirecta, es decir, no comprobar la *cookie* y si el valor actual del elemento que vamos a añadir a la *cookie*. Parece un lio pero no lo es:
+Lo que proponen es hacerlo de forma indirecta, es decir, no comprobar si el valor existe en la *cookie*, y en vez de eso, utilizar una propiedad nueva que guarde el valor del identificador del *post*. Parece un lio pero no lo es:
 
 ```php 
 <?php
@@ -200,17 +200,17 @@ Y por fin hemos conseguimos actualizar el valor de la propiedad `$cookie` en tie
             class="{{ $css }} text-white bg-orange-400 hover:bg-orange-700"
             wire:click="storeCookie('{{ $uuid }}')"
         >
-            <x-heroicon-s-save class="hidden xl:inline-block w-4 h-4 mr-1 opacity-70"></x-heroicon-s-save> Aceptar cookies
+            <x-heroicon-s-save class="hidden xl:inline-block w-4 h-4 mr-1 opacity-70"></x-heroicon-s-save> Guardar
         </button>
     @else
         <button
             type="button"
             class="text-white bg-gray-400 cursor-default {{ $css }}"
         >
-            <x-heroicon-s-bookmark class="hidden xl:inline-block w-4 h-4 mr-1 opacity-70"></x-heroicon-s-bookmark> Aceptadas
+            <x-heroicon-s-bookmark class="hidden xl:inline-block w-4 h-4 mr-1 opacity-70"></x-heroicon-s-bookmark> Guardado
         </button>
     @endif
 </div>
 ```
 
-Ahora si que funciona, y conseguimos la reatividad en tiempo real que pretendíamos desde el principio.
+Ahora si que funciona, y conseguimos la reatividad en tiempo real que pretendíamos desde el principio, dando un pequeño rodeo..., pero lo importante al final es que funciona, y parece ser que es la forma correcta de hacer estas cosas con **Livewire**.

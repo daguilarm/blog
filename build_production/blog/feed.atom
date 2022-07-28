@@ -3,7 +3,7 @@
     <title>Blog de Damián Aguilar</title>
     <link href="https://daguilar.dev" />
     <link type="application/atom+xml" rel="self" href="https://daguilar.dev/blog/feed.atom" />
-    <updated>2022-07-28T06:54:28+00:00</updated>
+    <updated>2022-07-28T07:00:03+00:00</updated>
     <id>https://daguilar.dev/blog/feed.atom</id>
     <author>
         <name>Damián Aguilar</name>
@@ -88,14 +88,14 @@ class Cookie extends Component
             class="{{ $css }} text-white bg-orange-400 hover:bg-orange-700"
             wire:click="storeCookie('{{ $uuid }}')"
         &gt;
-            &lt;x-heroicon-s-save class="hidden xl:inline-block w-4 h-4 mr-1 opacity-70"&gt;&lt;/x-heroicon-s-save&gt; Aceptar cookies
+            &lt;x-heroicon-s-save class="hidden xl:inline-block w-4 h-4 mr-1 opacity-70"&gt;&lt;/x-heroicon-s-save&gt; Guardar
         &lt;/button&gt;
     @else
         &lt;button
             type="button"
             class="text-white bg-gray-400 cursor-default {{ $css }}"
         &gt;
-            &lt;x-heroicon-s-bookmark class="hidden xl:inline-block w-4 h-4 mr-1 opacity-70"&gt;&lt;/x-heroicon-s-bookmark&gt; Aceptadas
+            &lt;x-heroicon-s-bookmark class="hidden xl:inline-block w-4 h-4 mr-1 opacity-70"&gt;&lt;/x-heroicon-s-bookmark&gt; Guardado
         &lt;/button&gt;
     @endif
 &lt;/div&gt;
@@ -107,7 +107,7 @@ class Cookie extends Component
 <li><a href="https://github.com/livewire/livewire/discussions/1787" class="link-out">https://github.com/livewire/livewire/discussions/1787</a></li>
 </ul>
 
-<p>Lo que proponen es hacerlo de forma indirecta, es decir, no comprobar la <em>cookie</em> y si el valor actual del elemento que vamos a añadir a la <em>cookie</em>. Parece un lio pero no lo es:</p>
+<p>Lo que proponen es hacerlo de forma indirecta, es decir, no comprobar si el valor existe en la <em>cookie</em>, y en vez de eso, utilizar una propiedad nueva que guarde el valor del identificador del <em>post</em>. Parece un lio pero no lo es:</p>
 
 <pre><code class="language-php">&lt;?php
 
@@ -210,20 +210,20 @@ class Cookie extends Component
             class="{{ $css }} text-white bg-orange-400 hover:bg-orange-700"
             wire:click="storeCookie('{{ $uuid }}')"
         &gt;
-            &lt;x-heroicon-s-save class="hidden xl:inline-block w-4 h-4 mr-1 opacity-70"&gt;&lt;/x-heroicon-s-save&gt; Aceptar cookies
+            &lt;x-heroicon-s-save class="hidden xl:inline-block w-4 h-4 mr-1 opacity-70"&gt;&lt;/x-heroicon-s-save&gt; Guardar
         &lt;/button&gt;
     @else
         &lt;button
             type="button"
             class="text-white bg-gray-400 cursor-default {{ $css }}"
         &gt;
-            &lt;x-heroicon-s-bookmark class="hidden xl:inline-block w-4 h-4 mr-1 opacity-70"&gt;&lt;/x-heroicon-s-bookmark&gt; Aceptadas
+            &lt;x-heroicon-s-bookmark class="hidden xl:inline-block w-4 h-4 mr-1 opacity-70"&gt;&lt;/x-heroicon-s-bookmark&gt; Guardado
         &lt;/button&gt;
     @endif
 &lt;/div&gt;
 </code></pre>
 
-<p>Ahora si que funciona, y conseguimos la reatividad en tiempo real que pretendíamos desde el principio.</p>
+<p>Ahora si que funciona, y conseguimos la reatividad en tiempo real que pretendíamos desde el principio, dando un pequeño rodeo..., pero lo importante al final es que funciona, y parece ser que es la forma correcta de hacer estas cosas con <strong>Livewire</strong>.</p>
     ]]></content>
 </entry>
             <entry>
