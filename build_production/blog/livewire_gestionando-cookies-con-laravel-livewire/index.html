@@ -27,7 +27,7 @@
         <meta name="twitter:description" content="Gestionando cookies mediante Laravel Livewire en tiempo real. Laravel livewire no permite enviar una cookie mediante Queue:cookie() y recibir respuesta en el mismo Request. Un problema si queremos un resultado en tiempo real. Veamos un ejemplo real de gestión de cookies con Laravel Livewire y cómo solucionarlo.">
         <meta name="twitter:creator" content="@daguilarm">
         <meta name="twitter:domain" content="https://daguilar.dev">
-        <meta name="twitter:image" content="https://daguilar.dev/assets/img/twitter.jpg?refresh=140441634">
+        <meta name="twitter:image" content="https://daguilar.dev/assets/img/twitter.jpg?refresh=653358471">
         <meta name="twitter:image:alt" content="Gestionando cookies con Laravel Livewire">
         
         <meta name="msapplication-TileColor" content="#ffffff">
@@ -253,7 +253,11 @@
 
 <p>El problema surge cuando utilizas <code>Cookie:queue()</code> y esperas recibir una respuesta del proceso. Por lo visto desde la versión 2.0 de <strong>Laravel Livewire</strong> son necesarios dos <code>Request</code> para obtener un resultado, es decir, en el primero hacemos la llamada y guardamos la cookie y en el segundo la leemos.</p>
 
-<p><strong>Veamos un ejemplo para entenderlo mejor</strong>. Imagina que quieres crear una <em>cookie</em> para guardar un <em>posts</em> en tu <em>blog</em>, y para ello (y para simplificarlo), vamos a usar un botón, que cuando pulsemos añada a la <em>cookie</em> el identificador de nuestro <em>post</em>. Lo que queremos ahora es que si la <em>cookie</em> se ha generado correctamente, el color del botón cambie, y como estamos usando <strong>Livewire</strong>, queremos que se haga en tiempo real. Planteemos el componente:</p>
+<p><strong>Veamos un ejemplo para entenderlo mejor</strong>. Imagina que quieres crear una <em>cookie</em> para guardar un <em>posts</em> en tu <em>blog</em> o lo que sea, en favoritos, es decir, añadir el recurso actual a favoritos. Para ello (y para simplificarlo), vamos a usar un botón, que cuando pulsemos añada a la <em>cookie</em> el identificador de nuestro <em>post</em> o cualquier otro identificador que utilices.</p>
+
+<p>Lo que queremos ahora, es que si la <em>cookie</em> se ha generado correctamente el color del botón cambie, y como estamos usando <strong>Livewire</strong>, queremos que se haga en tiempo real.</p>
+
+<p>Empecesmos planteando el componente:</p>
 
 <pre><code class="language-php">&lt;?php
 
@@ -329,7 +333,7 @@ class Cookie extends Component
 &lt;/div&gt;
 </code></pre>
 
-<p>Al hacer <em>click</em>, se va a guardar el valor en la <em>cookie</em>, pero el botón no va a cambiar de color... Esto es debido a que el proceso no se completa en un mismo <code>Request</code>. Buscando en internet, me encontré con la respuesta en el repositorio de <strong>Livewire</strong>:</p>
+<p>En el componente <strong>Blade</strong>, lo que hacemos es verificar si el identificador se encuentra añadido a la <em>cookie</em>. Y al hacer <em>click</em> en el botón, se va a guardar el valor del elemento (id, uuid,...) en la <em>cookie</em>, pero la realidad que vamos a observar es que el botón no va a cambiar de color... Esto es debido a que el proceso no se completa en un mismo <code>Request</code>. Buscando en internet, me encontré con la respuesta en el repositorio de <strong>Livewire</strong>:</p>
 
 <ul>
 <li><a href="https://github.com/livewire/livewire/discussions/1787" class="link-out">https://github.com/livewire/livewire/discussions/1787</a></li>
@@ -400,16 +404,18 @@ class Cookie extends Component
 }
 </code></pre>
 
-<p>Lo que hemos hecho, ha sido añadir a la propiedad <code>$cookie</code> el valor de la <em>cookie</em> actual. Veamos primero los cambios al inicializar el componente:</p>
+<p>Lo que hemos hecho, ha sido añadir a la propiedad <code>$cookie</code> el valor del identificador actual del elemento (en este caso el UUID). Veamos primero los cambios al inicializar el componente:</p>
 
 <pre><code class="language-php">public function mount($uuid)
 {
     $this-&gt;uuid = $uuid;
-    $this-&gt;cookie = $this-&gt;currentCookie(); // Actualizamos la cookie 
+
+    // Actualizamos la propiedad cookie con el identificador actual
+    $this-&gt;cookie = $this-&gt;currentCookie(); 
 }
 </code></pre>
 
-<p>Para ello usamos el método <code>currentCookie()</code>. Lo siguiente será actualizar el valor de la propiedad <code>$cookie</code> cuando actualicemos la <em>cookie</em>:</p>
+<p>Para ello usamos el método <code>currentCookie()</code>. Lo siguiente será actualizar el valor de la propiedad <code>$cookie</code> cuando actualicemos la <em>cookie</em> con el nuevo valor:</p>
 
 <pre><code class="language-php">public function storeCookie(string $uuid): void
 {
@@ -451,7 +457,7 @@ class Cookie extends Component
 &lt;/div&gt;
 </code></pre>
 
-<p>Ahora si que funciona, y conseguimos la reatividad en tiempo real que pretendíamos desde el principio, dando un pequeño rodeo..., pero lo importante al final es que funciona, y parece ser que es la forma correcta de hacer estas cosas con <strong>Livewire</strong>.</p>
+<p><strong>Ahora si que funciona, y conseguimos la reatividad en tiempo real que pretendíamos desde el principio</strong>, aunque dando un pequeño rodeo..., pero lo importante al final es que funciona y parece ser que es la forma correcta de hacer estas cosas con <strong>Livewire</strong>.</p>
         </div>
 
         

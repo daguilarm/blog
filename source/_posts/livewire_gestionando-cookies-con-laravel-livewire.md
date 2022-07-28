@@ -11,7 +11,11 @@ Enfrentándome a un caso real, he descubierto que no es posible actualizar *cook
 
 El problema surge cuando utilizas `Cookie:queue()` y esperas recibir una respuesta del proceso. Por lo visto desde la versión 2.0 de **Laravel Livewire** son necesarios dos `Request` para obtener un resultado, es decir, en el primero hacemos la llamada y guardamos la cookie y en el segundo la leemos. 
 
-**Veamos un ejemplo para entenderlo mejor**. Imagina que quieres crear una *cookie* para guardar un *posts* en tu *blog*, y para ello (y para simplificarlo), vamos a usar un botón, que cuando pulsemos añada a la *cookie* el identificador de nuestro *post*. Lo que queremos ahora es que si la *cookie* se ha generado correctamente, el color del botón cambie, y como estamos usando **Livewire**, queremos que se haga en tiempo real. Planteemos el componente:
+**Veamos un ejemplo para entenderlo mejor**. Imagina que quieres crear una *cookie* para guardar un *posts* en tu *blog* o lo que sea, en favoritos, es decir, añadir el recurso actual a favoritos. Para ello (y para simplificarlo), vamos a usar un botón, que cuando pulsemos añada a la *cookie* el identificador de nuestro *post* o cualquier otro identificador que utilices. 
+
+Lo que queremos ahora, es que si la *cookie* se ha generado correctamente el color del botón cambie, y como estamos usando **Livewire**, queremos que se haga en tiempo real. 
+
+Empecesmos planteando el componente:
 
 ```php 
 <?php
@@ -89,7 +93,7 @@ y nuestro componente Blade:
 </div>
 ```
 
-Al hacer *click*, se va a guardar el valor en la *cookie*, pero el botón no va a cambiar de color... Esto es debido a que el proceso no se completa en un mismo `Request`. Buscando en internet, me encontré con la respuesta en el repositorio de **Livewire**:
+En el componente **Blade**, lo que hacemos es verificar si el identificador se encuentra añadido a la *cookie*. Y al hacer *click* en el botón, se va a guardar el valor del elemento (id, uuid,...) en la *cookie*, pero la realidad que vamos a observar es que el botón no va a cambiar de color... Esto es debido a que el proceso no se completa en un mismo `Request`. Buscando en internet, me encontré con la respuesta en el repositorio de **Livewire**:
 
 - [https://github.com/livewire/livewire/discussions/1787](https://github.com/livewire/livewire/discussions/1787){.link-out}
 
@@ -159,17 +163,19 @@ class Cookie extends Component
 }
 ```
 
-Lo que hemos hecho, ha sido añadir a la propiedad `$cookie` el valor de la *cookie* actual. Veamos primero los cambios al inicializar el componente:
+Lo que hemos hecho, ha sido añadir a la propiedad `$cookie` el valor del identificador actual del elemento (en este caso el UUID). Veamos primero los cambios al inicializar el componente:
 
 ```php 
 public function mount($uuid)
 {
     $this->uuid = $uuid;
-    $this->cookie = $this->currentCookie(); // Actualizamos la cookie 
+
+    // Actualizamos la propiedad cookie con el identificador actual
+    $this->cookie = $this->currentCookie(); 
 }
 ```
 
-Para ello usamos el método `currentCookie()`. Lo siguiente será actualizar el valor de la propiedad `$cookie` cuando actualicemos la *cookie*:
+Para ello usamos el método `currentCookie()`. Lo siguiente será actualizar el valor de la propiedad `$cookie` cuando actualicemos la *cookie* con el nuevo valor:
 
 ```php 
 public function storeCookie(string $uuid): void
@@ -213,4 +219,4 @@ Y por fin hemos conseguimos actualizar el valor de la propiedad `$cookie` en tie
 </div>
 ```
 
-Ahora si que funciona, y conseguimos la reatividad en tiempo real que pretendíamos desde el principio, dando un pequeño rodeo..., pero lo importante al final es que funciona, y parece ser que es la forma correcta de hacer estas cosas con **Livewire**.
+**Ahora si que funciona, y conseguimos la reatividad en tiempo real que pretendíamos desde el principio**, aunque dando un pequeño rodeo..., pero lo importante al final es que funciona y parece ser que es la forma correcta de hacer estas cosas con **Livewire**.
