@@ -70,7 +70,7 @@ class Cookie extends Component
 }
 ```
 
-y nuestro componente Blade:
+y nuestro componente **Blade**, ubicado en `resources/views/livewire/cookie.blade.php`:
 
 ```html 
 <div>
@@ -93,7 +93,9 @@ y nuestro componente Blade:
 </div>
 ```
 
-En el componente **Blade**, lo que hacemos es verificar si el identificador se encuentra añadido a la *cookie*. Y al hacer *click* en el botón, se va a guardar el valor del elemento (id, uuid,...) en la *cookie*, pero la realidad que vamos a observar es que el botón no va a cambiar de color... Esto es debido a que el proceso no se completa en un mismo `Request`. Buscando en internet, me encontré con la respuesta en el repositorio de **Livewire**:
+En el componente **Blade**, lo que hacemos es verificar si el identificador se encuentra añadido a la *cookie*. Y al hacer *click* en el botón, se va a guardar el valor del elemento (id, uuid,...) en la *cookie*, pero la realidad que vamos a observar es que el botón no va a cambiar de color... Esto es debido a que el proceso no se completa en un mismo `Request`. 
+
+Buscando en internet, me encontré con la respuesta en el repositorio **Github** de **Livewire**:
 
 - [https://github.com/livewire/livewire/discussions/1787](https://github.com/livewire/livewire/discussions/1787){.link-out}
 
