@@ -9,7 +9,7 @@ categories: [php, laravel, livewire]
 
 Enfrentándome a un caso real, he descubierto que no es posible actualizar *cookies* en tiempo real con **Laravel Livewire**, al menos, no de forma directa. Lo bueno es que hay una solución.
 
-El problema surge cuando utilizas `Cookie:queue()` y esperas recibir una respuesta del proceso. Por lo visto desde la versión 2.0 de **Laravel Livewire** es necesario dos `Request` para obtener un resultado, es decir, en el primero hacemos la llamada y guardamos la cookie y en el segundo la leemos. 
+El problema surge cuando utilizas `Cookie:queue()` y esperas recibir una respuesta del proceso. Por lo visto desde la versión 2.0 de **Laravel Livewire** son necesarios dos `Request` para obtener un resultado, es decir, en el primero hacemos la llamada y guardamos la cookie y en el segundo la leemos. 
 
 **Veamos un ejemplo para entenderlo mejor**. Imagina que quieres crear una *cookie* para guardar un *posts* en tu *blog*, y para ello (y para simplificarlo), vamos a usar un botón, que cuando pulsemos añada a la *cookie* el identificador de nuestro *post*. Lo que queremos ahora es que si la *cookie* se ha generado correctamente, el color del botón cambie, y como estamos usando **Livewire**, queremos que se haga en tiempo real. Planteemos el componente:
 
