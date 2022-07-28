@@ -3,12 +3,230 @@
     <title>Blog de Damián Aguilar</title>
     <link href="https://daguilar.dev" />
     <link type="application/atom+xml" rel="self" href="https://daguilar.dev/blog/feed.atom" />
-    <updated>2022-07-22T10:00:20+00:00</updated>
+    <updated>2022-07-28T06:54:28+00:00</updated>
     <id>https://daguilar.dev/blog/feed.atom</id>
     <author>
         <name>Damián Aguilar</name>
     </author>
                 <entry>
+    <id>https://daguilar.dev/blog/livewire_gestionando-cookies-con-laravel-livewire</id>
+    <link type="text/html" rel="alternate" href="https://daguilar.dev/blog/livewire_gestionando-cookies-con-laravel-livewire" />
+    <title>Gestionando cookies con Laravel Livewire</title>
+    <published>2022-07-28T00:00:00+00:00</published>
+    <updated>2022-07-28T00:00:00+00:00</updated>
+    <author>
+        <name>Damián Aguilar</name>
+    </author>
+    <summary type="html">Enfrentándome a un caso real, he descubierto que no es posible actualizar cookies en tiempo real con Laravel Livewire, al menos, no de forma directa. Lo bueno es que hay una solución.
+
+El problema surge cuando utilizas &lt;code&gt;Cookie:queue()&lt;/code&gt; y......</summary>
+    <content type="html"><![CDATA[
+        <p>Enfrentándome a un caso real, he descubierto que no es posible actualizar <em>cookies</em> en tiempo real con <strong>Laravel Livewire</strong>, al menos, no de forma directa. Lo bueno es que hay una solución.</p>
+
+<p>El problema surge cuando utilizas <code>Cookie:queue()</code> y esperas recibir una respuesta del proceso. Por lo visto desde la versión 2.0 de <strong>Laravel Livewire</strong> es necesario dos <code>Request</code> para obtener un resultado, es decir, en el primero hacemos la llamada y guardamos la cookie y en el segundo la leemos.</p>
+
+<p><strong>Veamos un ejemplo para entenderlo mejor</strong>. Imagina que quieres crear una <em>cookie</em> para guardar un <em>posts</em> en tu <em>blog</em>, y para ello (y para simplificarlo), vamos a usar un botón, que cuando pulsemos añada a la <em>cookie</em> el identificador de nuestro <em>post</em>. Lo que queremos ahora es que si la <em>cookie</em> se ha generado correctamente, el color del botón cambie, y como estamos usando <strong>Livewire</strong>, queremos que se haga en tiempo real. Planteemos el componente:</p>
+
+<pre><code class="language-php">&lt;?php
+
+namespace App\Http\Livewire;
+
+use Livewire\Component;
+use Illuminate\Support\Facades\Cookie;
+
+class Cookie extends Component
+{
+    public $uuid;
+
+    public $cookie;
+
+    private int $lifetime = 60 * 24 * 30;
+
+    public function mount($uuid)
+    {
+        $this-&gt;uuid = $uuid;
+        $this-&gt;cookie = $this-&gt;getCookie();
+    }
+
+    public function render()
+    {
+        return view('livewire.cookie');
+    }
+
+    public function storeCookie(string $uuid): void
+    {
+        // Leemos la cookie
+        $cookie = $this-&gt;getCookie();
+
+        // Añadimos el nuevo valor
+        array_push($cookie, $uuid);
+
+        // Guardamos la cookie
+        Cookie::queue(
+            'project-cookie',
+            json_encode($cookie),
+            $this-&gt;lifetime
+        );
+    }
+
+    // Pasamos la cookie a formato array para poder trabajar con ella. Recuerda que se guarda como string.
+    private function getCookie(): array
+    {
+        $cookie = Cookie::get('project-cookie') ?? json_encode([]);
+
+        return json_decode($cookie);
+    }
+}
+</code></pre>
+
+<p>y nuestro componente Blade:</p>
+
+<pre><code class="language-html">&lt;div&gt;
+    @if (in_array($uuid, $cookie))
+        &lt;button
+            type="button"
+            class="{{ $css }} text-white bg-orange-400 hover:bg-orange-700"
+            wire:click="storeCookie('{{ $uuid }}')"
+        &gt;
+            &lt;x-heroicon-s-save class="hidden xl:inline-block w-4 h-4 mr-1 opacity-70"&gt;&lt;/x-heroicon-s-save&gt; Aceptar cookies
+        &lt;/button&gt;
+    @else
+        &lt;button
+            type="button"
+            class="text-white bg-gray-400 cursor-default {{ $css }}"
+        &gt;
+            &lt;x-heroicon-s-bookmark class="hidden xl:inline-block w-4 h-4 mr-1 opacity-70"&gt;&lt;/x-heroicon-s-bookmark&gt; Aceptadas
+        &lt;/button&gt;
+    @endif
+&lt;/div&gt;
+</code></pre>
+
+<p>Al hacer <em>click</em>, se va a guardar el valor en la <em>cookie</em>, pero el botón no va a cambiar de color... Esto es debido a que el proceso no se completa en un mismo <code>Request</code>. Buscando en internet, me encontré con la respuesta en el repositorio de <strong>Livewire</strong>:</p>
+
+<ul>
+<li><a href="https://github.com/livewire/livewire/discussions/1787" class="link-out">https://github.com/livewire/livewire/discussions/1787</a></li>
+</ul>
+
+<p>Lo que proponen es hacerlo de forma indirecta, es decir, no comprobar la <em>cookie</em> y si el valor actual del elemento que vamos a añadir a la <em>cookie</em>. Parece un lio pero no lo es:</p>
+
+<pre><code class="language-php">&lt;?php
+
+namespace App\Http\Livewire;
+
+use Livewire\Component;
+use Illuminate\Support\Facades\Cookie;
+
+class Cookie extends Component
+{
+    public $uuid;
+
+    public $cookie;
+
+    private int $lifetime = 60 * 24 * 30;
+
+    public function mount($uuid)
+    {
+        $this-&gt;uuid = $uuid;
+        $this-&gt;cookie = $this-&gt;currentCookie();
+    }
+
+    public function render()
+    {
+        return view('livewire.cookie');
+    }
+
+    public function storeCookie(string $uuid): void
+    {
+        // Leemos la cookie
+        $cookie = $this-&gt;getCookie();
+
+        // Añadimos el nuevo valor
+        array_push($cookie, $uuid);
+
+        // Guardamos la cookie
+        Cookie::queue(
+            'project-cookie',
+            json_encode($cookie),
+            $this-&gt;lifetime
+        );
+
+        // Actualizamos la cookie 
+        $this-&gt;cookie = $uuid;
+    }
+
+    // Pasamos la cookie a formato array para poder trabajar con ella. Recuerda que se guarda como string.
+    private function getCookie(): array
+    {
+        $cookie = Cookie::get('project-cookie') ?? json_encode([]);
+
+        return json_decode($cookie);
+    }
+
+    // Buscamos la cookie actual en nuestra cookie
+    private function currentCookie(): string
+    {
+        return in_array($this-&gt;uuid, $cookie)
+            ? $this-&gt;uuid
+            : 'empty-cookie';
+    }
+}
+</code></pre>
+
+<p>Lo que hemos hecho, ha sido añadir a la propiedad <code>$cookie</code> el valor de la <em>cookie</em> actual. Veamos primero los cambios al inicializar el componente:</p>
+
+<pre><code class="language-php">public function mount($uuid)
+{
+    $this-&gt;uuid = $uuid;
+    $this-&gt;cookie = $this-&gt;currentCookie(); // Actualizamos la cookie 
+}
+</code></pre>
+
+<p>Para ello usamos el método <code>currentCookie()</code>. Lo siguiente será actualizar el valor de la propiedad <code>$cookie</code> cuando actualicemos la <em>cookie</em>:</p>
+
+<pre><code class="language-php">public function storeCookie(string $uuid): void
+{
+    // Leemos la cookie
+    $cookie = $this-&gt;getCookie();
+
+    array_push($cookie, $uuid);
+
+    // Guardamos la cookie
+    Cookie::queue(
+        'project-cookie',
+        json_encode($cookie),
+        $this-&gt;lifetime
+    );
+
+    $this-&gt;cookie = $uuid; //Actualizamos la propiedad $cookie 
+}
+</code></pre>
+
+<p>Y por fin hemos conseguimos actualizar el valor de la propiedad <code>$cookie</code> en tiempo real (que al final es lo que queríamos). El siguiente paso será el adapatar la lógica de nuestro archivo <strong>Blade</strong> a las nuevas circustancias:</p>
+
+<pre><code class="language-html">&lt;div&gt;
+    @if ($uuid !== $cookie)
+        &lt;button
+            type="button"
+            class="{{ $css }} text-white bg-orange-400 hover:bg-orange-700"
+            wire:click="storeCookie('{{ $uuid }}')"
+        &gt;
+            &lt;x-heroicon-s-save class="hidden xl:inline-block w-4 h-4 mr-1 opacity-70"&gt;&lt;/x-heroicon-s-save&gt; Aceptar cookies
+        &lt;/button&gt;
+    @else
+        &lt;button
+            type="button"
+            class="text-white bg-gray-400 cursor-default {{ $css }}"
+        &gt;
+            &lt;x-heroicon-s-bookmark class="hidden xl:inline-block w-4 h-4 mr-1 opacity-70"&gt;&lt;/x-heroicon-s-bookmark&gt; Aceptadas
+        &lt;/button&gt;
+    @endif
+&lt;/div&gt;
+</code></pre>
+
+<p>Ahora si que funciona, y conseguimos la reatividad en tiempo real que pretendíamos desde el principio.</p>
+    ]]></content>
+</entry>
+            <entry>
     <id>https://daguilar.dev/blog/laravel_nuevo-laravel-pint</id>
     <link type="text/html" rel="alternate" href="https://daguilar.dev/blog/laravel_nuevo-laravel-pint" />
     <title>Laravel Pint, el corrector de estilo para PHP</title>

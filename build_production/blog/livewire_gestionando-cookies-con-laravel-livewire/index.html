@@ -2,43 +2,48 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8">
-        <title>Java y sus frameworks spring, hibernate,...</title>
+        <title>Gestionando cookies con Laravel Livewire</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="Artículos sobre Java, el lenguaje de programación y plataforma informática desarrollada por Sun Microsystems. Java es un lenguaje multiplataforma y orientado a objetos">
+        <meta name="description" content="Gestionando cookies mediante Laravel Livewire en tiempo real. Laravel livewire no permite enviar una cookie mediante Queue:cookie() y recibir respuesta en el mismo Request. Un problema si queremos un resultado en tiempo real. Veamos un ejemplo real de gestión de cookies con Laravel Livewire y cómo solucionarlo.">
         <meta name="msvalidate.01" content="7EBAF0830896AD1D4A27E93C37552EDA" />
         <meta http-equiv="expires" content="86400"/>
         
-        <meta property="og:title" content="Java y sus frameworks spring, hibernate,..." />
+        <meta property="og:title" content="Gestionando cookies con Laravel Livewire" />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://daguilar.dev/blog/categories/java"/>
-        <meta property="og:description" content="Artículos sobre Java, el lenguaje de programación y plataforma informática desarrollada por Sun Microsystems. Java es un lenguaje multiplataforma y orientado a objetos" />
+        <meta property="og:url" content="https://daguilar.dev/blog/livewire_gestionando-cookies-con-laravel-livewire"/>
+        <meta property="og:description" content="Gestionando cookies mediante Laravel Livewire en tiempo real. Laravel livewire no permite enviar una cookie mediante Queue:cookie() y recibir respuesta en el mismo Request. Un problema si queremos un resultado en tiempo real. Veamos un ejemplo real de gestión de cookies con Laravel Livewire y cómo solucionarlo." />
         <meta property="og:locale" content="es_ES">
         <meta property="og:site_name" content="Blog de Damián Aguilar">
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image" content="https://daguilar.dev/assets/img/og-image.jpg" />
-        <meta property="og:image:alt" content="Java y sus frameworks spring, hibernate,..." />
+        <meta property="og:image:alt" content="Gestionando cookies con Laravel Livewire" />
         
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:site" content="@daguilarm">
         <meta name="twitter:creator" content="@daguilarm">
-        <meta name="twitter:title" content="Java y sus frameworks spring, hibernate,...">
-        <meta name="twitter:description" content="Artículos sobre Java, el lenguaje de programación y plataforma informática desarrollada por Sun Microsystems. Java es un lenguaje multiplataforma y orientado a objetos">
+        <meta name="twitter:title" content="Gestionando cookies con Laravel Livewire">
+        <meta name="twitter:description" content="Gestionando cookies mediante Laravel Livewire en tiempo real. Laravel livewire no permite enviar una cookie mediante Queue:cookie() y recibir respuesta en el mismo Request. Un problema si queremos un resultado en tiempo real. Veamos un ejemplo real de gestión de cookies con Laravel Livewire y cómo solucionarlo.">
         <meta name="twitter:creator" content="@daguilarm">
         <meta name="twitter:domain" content="https://daguilar.dev">
-        <meta name="twitter:image" content="https://daguilar.dev/assets/img/twitter.jpg?refresh=101138800">
-        <meta name="twitter:image:alt" content="Java y sus frameworks spring, hibernate,...">
+        <meta name="twitter:image" content="https://daguilar.dev/assets/img/twitter.jpg?refresh=306550353">
+        <meta name="twitter:image:alt" content="Gestionando cookies con Laravel Livewire">
         
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
         
-            <link rel="canonical" href="https://daguilar.dev/blog/categories/java/">
+                                <meta property="article:tag" content="php">
+                    <meta property="article:tag" content="laravel">
+                    <meta property="article:tag" content="livewire">
+                <meta property="article:published_time" content="2022-07-28T00:00:00+00:00">
+    <meta property="article:updated_time" content="2022-07-28T00:00:00+00:00">
+    
         
         <link rel="home" href="https://daguilar.dev">
-        <link rel="alternate" type="application/rss+xml" title="Java y sus frameworks spring, hibernate,..." href="https://daguilar.dev/rss.xml" />
+        <link rel="alternate" type="application/rss+xml" title="Gestionando cookies con Laravel Livewire" href="https://daguilar.dev/rss.xml" />
         <link rel="apple-touch-icon" sizes="57x57" href="https://daguilar.dev/assets/img/favicon/apple-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="60x60" href="https://daguilar.dev/assets/img/favicon/apple-icon-60x60.png">
         <link rel="apple-touch-icon" sizes="72x72" href="https://daguilar.dev/assets/img/favicon/apple-icon-72x72.png">
@@ -217,38 +222,242 @@
         <main role="main" class="flex-auto w-full container mx-auto py-16 px-6 z-20">
 
             <div class="marketing-banner flex justify-center w-full"></div>
-                <h1 class="text-blue-800 text-2xl md:text-4xl lg:text-5xl">Java y sus frameworks spring, hibernate,...</h1>
-
-    <div class="text-2xl mb-2 py-4 italic">
-        <p>Artículos sobre <strong>Java</strong> el lenguaje multiplataforma y orientado a objetos, y todo su entorno de desarrollo: Spring, Spring boot, hibernate,...</p>
-    </div>
-
-            <div class="flex flex-col w-full bg-white rounded-xl shadow-xl p-4 my-6 border border-gray-300">
-    <div class="flex justify-start mb-4">
-                    <div class="text-gray-600 font-medium">
-                Creado el 22/05/2022
-            </div>
-                            <div class="text-orange-600 ml-2"> y Actualizado el 03/07/2022</div>
-                                </div>
-
-    <h2 class="text-3xl mt-0">
-        <a
-            href="https://daguilar.dev/blog/programacion_programando_con_pyton_java_y_angular/"
-            title="Read more - Programando con Python, Java y Angular."
-            class="text-gray-700 font-extrabold"
-        >Programando con Python, Java y Angular.</a>
-    </h2>
-
-    <p class="mb-4 mt-0">Toda mi carrera como programador, la he basado en el desarrollo con PHP, centrándome en los últimos años en el desarrollo con Laravel. En este artículo voy a hablar de como ha sido la experiencia de salirse de la zona de confort y enfrentarse a nuevos retos, con nuevos lenguajes de...</p>
-
-    <a
-        href="https://daguilar.dev/blog/programacion_programando_con_pyton_java_y_angular/"
-        title="Read more - Programando con Python, Java y Angular."
-        class="uppercase font-semibold tracking-wide mb-2 sm:text-orange-600"
-    >Leer mas...</a>
-</div>
-
             
+    <article class=" bg-white rounded-xl shadow-xl p-9 my-10 border border-gray-300">
+        <h1 class="leading-none mb-6 text-blue-800 text-3xl md:text-4xl lg:text-5xl">Gestionando cookies con Laravel Livewire</h1>
+
+        <div class="flex justify-start text-gray-600 text-xl md:mt-0 mb-4">
+            <div>Autor: Damián Aguilar</div>
+            <a href="https://twitter.com/daguilarm" target="_black" class="mx-2"><img src="/assets/img/twitter.png" alt="twitter" class="opacity-75 hover:opacity-100 h-8 w-8 bg-white rounded-full"></a>
+            <div>- Creado el 28/07/2022</div>
+                    </div>
+
+                                    <a
+                    href="/blog/categories/php/"
+                    title="View posts in php"
+                    class="inline-block bg-blue-200 hover:bg-blue-400 leading-loose tracking-wide text-blue-600 hover:text-white uppercase text-xs font-semibold rounded mr-4 px-3 pt-px"
+                >php</a>
+                            <a
+                    href="/blog/categories/laravel/"
+                    title="View posts in laravel"
+                    class="inline-block bg-blue-200 hover:bg-blue-400 leading-loose tracking-wide text-blue-600 hover:text-white uppercase text-xs font-semibold rounded mr-4 px-3 pt-px"
+                >laravel</a>
+                            <a
+                    href="/blog/categories/livewire/"
+                    title="View posts in livewire"
+                    class="inline-block bg-blue-200 hover:bg-blue-400 leading-loose tracking-wide text-blue-600 hover:text-white uppercase text-xs font-semibold rounded mr-4 px-3 pt-px"
+                >livewire</a>
+                    
+        <div v-pre>
+            <p>Enfrentándome a un caso real, he descubierto que no es posible actualizar <em>cookies</em> en tiempo real con <strong>Laravel Livewire</strong>, al menos, no de forma directa. Lo bueno es que hay una solución.</p>
+
+<p>El problema surge cuando utilizas <code>Cookie:queue()</code> y esperas recibir una respuesta del proceso. Por lo visto desde la versión 2.0 de <strong>Laravel Livewire</strong> es necesario dos <code>Request</code> para obtener un resultado, es decir, en el primero hacemos la llamada y guardamos la cookie y en el segundo la leemos.</p>
+
+<p><strong>Veamos un ejemplo para entenderlo mejor</strong>. Imagina que quieres crear una <em>cookie</em> para guardar un <em>posts</em> en tu <em>blog</em>, y para ello (y para simplificarlo), vamos a usar un botón, que cuando pulsemos añada a la <em>cookie</em> el identificador de nuestro <em>post</em>. Lo que queremos ahora es que si la <em>cookie</em> se ha generado correctamente, el color del botón cambie, y como estamos usando <strong>Livewire</strong>, queremos que se haga en tiempo real. Planteemos el componente:</p>
+
+<pre><code class="language-php">&lt;?php
+
+namespace App\Http\Livewire;
+
+use Livewire\Component;
+use Illuminate\Support\Facades\Cookie;
+
+class Cookie extends Component
+{
+    public $uuid;
+
+    public $cookie;
+
+    private int $lifetime = 60 * 24 * 30;
+
+    public function mount($uuid)
+    {
+        $this-&gt;uuid = $uuid;
+        $this-&gt;cookie = $this-&gt;getCookie();
+    }
+
+    public function render()
+    {
+        return view('livewire.cookie');
+    }
+
+    public function storeCookie(string $uuid): void
+    {
+        // Leemos la cookie
+        $cookie = $this-&gt;getCookie();
+
+        // Añadimos el nuevo valor
+        array_push($cookie, $uuid);
+
+        // Guardamos la cookie
+        Cookie::queue(
+            'project-cookie',
+            json_encode($cookie),
+            $this-&gt;lifetime
+        );
+    }
+
+    // Pasamos la cookie a formato array para poder trabajar con ella. Recuerda que se guarda como string.
+    private function getCookie(): array
+    {
+        $cookie = Cookie::get('project-cookie') ?? json_encode([]);
+
+        return json_decode($cookie);
+    }
+}
+</code></pre>
+
+<p>y nuestro componente Blade:</p>
+
+<pre><code class="language-html">&lt;div&gt;
+    @if (in_array($uuid, $cookie))
+        &lt;button
+            type="button"
+            class="{{ $css }} text-white bg-orange-400 hover:bg-orange-700"
+            wire:click="storeCookie('{{ $uuid }}')"
+        &gt;
+            &lt;x-heroicon-s-save class="hidden xl:inline-block w-4 h-4 mr-1 opacity-70"&gt;&lt;/x-heroicon-s-save&gt; Aceptar cookies
+        &lt;/button&gt;
+    @else
+        &lt;button
+            type="button"
+            class="text-white bg-gray-400 cursor-default {{ $css }}"
+        &gt;
+            &lt;x-heroicon-s-bookmark class="hidden xl:inline-block w-4 h-4 mr-1 opacity-70"&gt;&lt;/x-heroicon-s-bookmark&gt; Aceptadas
+        &lt;/button&gt;
+    @endif
+&lt;/div&gt;
+</code></pre>
+
+<p>Al hacer <em>click</em>, se va a guardar el valor en la <em>cookie</em>, pero el botón no va a cambiar de color... Esto es debido a que el proceso no se completa en un mismo <code>Request</code>. Buscando en internet, me encontré con la respuesta en el repositorio de <strong>Livewire</strong>:</p>
+
+<ul>
+<li><a href="https://github.com/livewire/livewire/discussions/1787" class="link-out">https://github.com/livewire/livewire/discussions/1787</a></li>
+</ul>
+
+<p>Lo que proponen es hacerlo de forma indirecta, es decir, no comprobar la <em>cookie</em> y si el valor actual del elemento que vamos a añadir a la <em>cookie</em>. Parece un lio pero no lo es:</p>
+
+<pre><code class="language-php">&lt;?php
+
+namespace App\Http\Livewire;
+
+use Livewire\Component;
+use Illuminate\Support\Facades\Cookie;
+
+class Cookie extends Component
+{
+    public $uuid;
+
+    public $cookie;
+
+    private int $lifetime = 60 * 24 * 30;
+
+    public function mount($uuid)
+    {
+        $this-&gt;uuid = $uuid;
+        $this-&gt;cookie = $this-&gt;currentCookie();
+    }
+
+    public function render()
+    {
+        return view('livewire.cookie');
+    }
+
+    public function storeCookie(string $uuid): void
+    {
+        // Leemos la cookie
+        $cookie = $this-&gt;getCookie();
+
+        // Añadimos el nuevo valor
+        array_push($cookie, $uuid);
+
+        // Guardamos la cookie
+        Cookie::queue(
+            'project-cookie',
+            json_encode($cookie),
+            $this-&gt;lifetime
+        );
+
+        // Actualizamos la cookie 
+        $this-&gt;cookie = $uuid;
+    }
+
+    // Pasamos la cookie a formato array para poder trabajar con ella. Recuerda que se guarda como string.
+    private function getCookie(): array
+    {
+        $cookie = Cookie::get('project-cookie') ?? json_encode([]);
+
+        return json_decode($cookie);
+    }
+
+    // Buscamos la cookie actual en nuestra cookie
+    private function currentCookie(): string
+    {
+        return in_array($this-&gt;uuid, $cookie)
+            ? $this-&gt;uuid
+            : 'empty-cookie';
+    }
+}
+</code></pre>
+
+<p>Lo que hemos hecho, ha sido añadir a la propiedad <code>$cookie</code> el valor de la <em>cookie</em> actual. Veamos primero los cambios al inicializar el componente:</p>
+
+<pre><code class="language-php">public function mount($uuid)
+{
+    $this-&gt;uuid = $uuid;
+    $this-&gt;cookie = $this-&gt;currentCookie(); // Actualizamos la cookie 
+}
+</code></pre>
+
+<p>Para ello usamos el método <code>currentCookie()</code>. Lo siguiente será actualizar el valor de la propiedad <code>$cookie</code> cuando actualicemos la <em>cookie</em>:</p>
+
+<pre><code class="language-php">public function storeCookie(string $uuid): void
+{
+    // Leemos la cookie
+    $cookie = $this-&gt;getCookie();
+
+    array_push($cookie, $uuid);
+
+    // Guardamos la cookie
+    Cookie::queue(
+        'project-cookie',
+        json_encode($cookie),
+        $this-&gt;lifetime
+    );
+
+    $this-&gt;cookie = $uuid; //Actualizamos la propiedad $cookie 
+}
+</code></pre>
+
+<p>Y por fin hemos conseguimos actualizar el valor de la propiedad <code>$cookie</code> en tiempo real (que al final es lo que queríamos). El siguiente paso será el adapatar la lógica de nuestro archivo <strong>Blade</strong> a las nuevas circustancias:</p>
+
+<pre><code class="language-html">&lt;div&gt;
+    @if ($uuid !== $cookie)
+        &lt;button
+            type="button"
+            class="{{ $css }} text-white bg-orange-400 hover:bg-orange-700"
+            wire:click="storeCookie('{{ $uuid }}')"
+        &gt;
+            &lt;x-heroicon-s-save class="hidden xl:inline-block w-4 h-4 mr-1 opacity-70"&gt;&lt;/x-heroicon-s-save&gt; Aceptar cookies
+        &lt;/button&gt;
+    @else
+        &lt;button
+            type="button"
+            class="text-white bg-gray-400 cursor-default {{ $css }}"
+        &gt;
+            &lt;x-heroicon-s-bookmark class="hidden xl:inline-block w-4 h-4 mr-1 opacity-70"&gt;&lt;/x-heroicon-s-bookmark&gt; Aceptadas
+        &lt;/button&gt;
+    @endif
+&lt;/div&gt;
+</code></pre>
+
+<p>Ahora si que funciona, y conseguimos la reatividad en tiempo real que pretendíamos desde el principio.</p>
+        </div>
+
+        
+    </article>
+    
+
             <div class="marketing-banner flex justify-center w-full"></div>        </main>
 
         
