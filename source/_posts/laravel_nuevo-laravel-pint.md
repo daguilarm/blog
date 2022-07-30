@@ -3,6 +3,7 @@ extends: _layouts.post
 section: content
 title: Laravel Pint, el corrector de estilo para PHP
 date: 2022-07-21
+updated: 2022-07-30
 description: Laravel Pint ha sido desarrollado por Nuno Maduro sobre PHP-CS-Fixer para conseguir un corrector de estilo para PHP, gestionado mediante Artisan. Laravel Pint es un corrector de estilo minimalista y que no necesita configuración.
 categories: [laravel, php, frameworks]
 ---
@@ -73,3 +74,7 @@ El proceso es el siguiente:
 3. Haz un `pull` y actualiza tu repositorio local unos segundos después.
 
 Muy útil para cuando trabajas en equipo. A nivel personal, prefiero ejecutar **Laravel Pint** a voluntad en vez de automatizarlo.
+
+También tienes otra opción, si utilizas **VS Code**. Puedes añadir una tarea, de forma que cada vez que pulses una combinación de teclas, se ejecute **Pint**, y limpie tu código. Puedes encontrar más información aquí de cómo hacerlo:
+
+- [https://codebysamgan.com/how-to-add-laravel-pint-to-vs-code-formatter](https://codebysamgan.com/how-to-add-laravel-pint-to-vs-code-formatter){.link-out}

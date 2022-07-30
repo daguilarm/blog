@@ -303,9 +303,15 @@ jobs:
 </ol>
 
 <p>Muy útil para cuando trabajas en equipo. A nivel personal, prefiero ejecutar <strong>Laravel Pint</strong> a voluntad en vez de automatizarlo.</p>
+
+<p>También tienes otra opción, si utilizas <strong>VS Code</strong>. Puedes añadir una tarea, de forma que cada vez que pulses una combinación de teclas, se ejecute <strong>Pint</strong>, y limpie tu código. Puedes encontrar más información aquí de cómo hacerlo:</p>
+
+<ul>
+<li><a href="https://codebysamgan.com/how-to-add-laravel-pint-to-vs-code-formatter" class="link-out">https://codebysamgan.com/how-to-add-laravel-pint-to-vs-code-formatter</a></li>
+</ul>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Thu, 21 Jul 2022 00:00:00 +0000</pubDate>
+                <pubDate>Sat, 30 Jul 2022 00:00:00 +0000</pubDate>
 
                             </item>
                                 <item>

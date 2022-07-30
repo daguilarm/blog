@@ -3,7 +3,7 @@
     <title>Blog de Damián Aguilar</title>
     <link href="https://daguilar.dev" />
     <link type="application/atom+xml" rel="self" href="https://daguilar.dev/blog/feed.atom" />
-    <updated>2022-07-28T13:29:46+00:00</updated>
+    <updated>2022-07-30T06:45:58+00:00</updated>
     <id>https://daguilar.dev/blog/feed.atom</id>
     <author>
         <name>Damián Aguilar</name>
@@ -315,6 +315,12 @@ jobs:
 </ol>
 
 <p>Muy útil para cuando trabajas en equipo. A nivel personal, prefiero ejecutar <strong>Laravel Pint</strong> a voluntad en vez de automatizarlo.</p>
+
+<p>También tienes otra opción, si utilizas <strong>VS Code</strong>. Puedes añadir una tarea, de forma que cada vez que pulses una combinación de teclas, se ejecute <strong>Pint</strong>, y limpie tu código. Puedes encontrar más información aquí de cómo hacerlo:</p>
+
+<ul>
+<li><a href="https://codebysamgan.com/how-to-add-laravel-pint-to-vs-code-formatter" class="link-out">https://codebysamgan.com/how-to-add-laravel-pint-to-vs-code-formatter</a></li>
+</ul>
     ]]></content>
 </entry>
             <entry>
