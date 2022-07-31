@@ -6,10 +6,405 @@
         <description><![CDATA[Blog sobre programación de Damián Aguilar, en el vas a encontrar artículos y recursos sobre: php, javascript, vuejs, phyton, java, livewire, alpinejs, laravel, seo... y mucho más. Además, encontrarás noticias sobre desarrollo web, lenguajes de programación, software y marketing]]></description>
         <atom:link href="https://daguilar.dev/blog/rss.xml" rel="self" type="application/rss+xml" />
         <language>es</language>
-        <lastBuildDate>Thu, 28 Jul 2022 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Tue, 02 Aug 2022 00:00:00 +0000</lastBuildDate>
 
         <!-- Posts -->
                                                             <item>
+                <title><![CDATA[Refactoriza y simplica tus Controladores con Laravel]]></title>
+                <link>https://daguilar.dev/blog/laravel_simplifica-refactoriza-controladores-con-laravel</link>
+                <guid isPermaLink="true">https://daguilar.dev/blog/laravel_simplifica-refactoriza-controladores-con-laravel</guid>
+                <description><![CDATA[Optimiza, refactoriza y simplifica los Controladores de Laravel. Mantener unos Controladores simples y minimalistas optimizan Laravel y eliminan componentes innecesarios.]]></description>
+                <content:encoded><![CDATA[<p>Los <em>Controladores</em> en <strong>Laravel</strong>, gestionan las peticiones <code>HTTP</code> y sirven para gestionar la relación entre el <em>Modelo</em> y la <em>Vista</em>. Todo lo demás que incluyamos en el <em>Controlador</em>, está de más. Por ejemplo, las llamadas a la base de datos no deberían estar aquí, sino en el <em>Modelo</em> o la validación de datos enviados desde un formulario. <strong>La realidad, es que los <em>Controladores</em> están llenos de código que realizan estas funciones, mientras que lo lógico sería que no las hicieran</strong>.</p>
+
+<p>En este artículo, voy a explicar como optimizo los Controladores de mis proyectos, y para ello, vamos a empezar por algo sencillo. Pongamos el caso de un <em>Controlador</em> simple, que no tiene un sistema <strong>CRUD</strong> (acrónimo en inglés para crear, leer, actualizar y borrar), y únicamente tiene una acción <code>index</code>:</p>
+
+<pre><code class="language-php">namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
+class MyController extends Controller
+{
+    /**
+     * Display a listing of the resources.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $users = User::whereRole('user')-&gt;take(20)-&gt;get();
+
+        return view('index', compact('users'));
+    }
+}
+</code></pre>
+
+<p>Lo primero que hay que hacer, es quitar todo lo innecesario. En este caso, no es necesario que herede de <code>Controller</code>. <strong>Esta herencia nos va a dar acceso a validación, autorización y los jobs</strong>. No es el caso:</p>
+
+<pre><code class="language-php">namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class MyController
+{
+    /**
+     * Display a listing of the resources.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $users = User::whereRole('user')-&gt;take(20)-&gt;get();
+
+        return view('index', compact('users'));
+    }
+}
+</code></pre>
+
+<p>Al tener un sólo método, podemos usar <code>__invoke</code>, y podemos quitar los comentarios:</p>
+
+<pre><code class="language-php">namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Illuminate\View\View;
+
+class MiControlador
+{
+    public function __invoke(): View
+    {
+        $users = User::whereRole('user')-&gt;take(20)-&gt;get();
+
+        return view('index', compact('users'));
+    }
+}
+</code></pre>
+
+<p>Y esto nos va a permitir simplificar la ruta del <em>Controllador</em>:</p>
+
+<pre><code class="language-php">// Antes
+Route::get('/home', [MiControlador::class, 'index']);
+
+// Después 
+Route::get('/home', MiControlador::class);
+</code></pre>
+
+<p>También debemos eliminar la llamada a la base de datos del <em>Controlador</em> y pasarla directamente al <em>Modelo</em>. Todo ello mediante un <code>scope</code>:</p>
+
+<pre><code class="language-php">// Modelo - User
+public function scopeRole($query) {
+    $query
+        -&gt;where('role', 'user')
+        -&gt;take(20)
+        -&gt;get();
+}
+</code></pre>
+
+<p>Todo junto en el <em>Controlador</em>, quedaría algo así:</p>
+
+<pre><code class="language-php">namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Illuminate\View\View;
+
+class MiControlador
+{
+    public function __invoke(): View
+    {
+        return view('index')
+            -&gt;withUsers(User::role());
+    }
+}
+</code></pre>
+
+<p>Mucho más simple, directo y sobre todo, legible. Ahora tenemos un <em>Controlador</em> que realiza exclusivamente su función, <a href="https://daguilar.dev/blog/programacion_5_consejos_para_ser_un_gran_programador/">cumpliendo con los principios SOLID</a>.</p>
+
+<p>Veamos ahora un caso más complejo. Ahora el <strong>Controlador</strong> es un sistema <strong>CRUD</strong>. Veamos cómo quedaría un <em>Controlador</em> sin refactorizar:</p>
+
+<pre><code class="language-php">namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
+class MiControlador extends Controller
+{
+    /**
+     * Display a listing of the resources.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $users = User::whereRole('user')-&gt;take(20)-&gt;get();
+
+        return view('index', compact('users'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        return view('create');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request    $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $data = $request-&gt;all();
+
+        $validator = $request-&gt;validate([
+            'name' =&gt; ['required', 'max:255'],
+            'email' =&gt; ['required', 'email'],
+        ]);
+
+        if ($validator-&gt;fails()) {
+            return redirect('post/create')
+                -&gt;withErrors($validator)
+                -&gt;withInput();
+        }
+
+        $create = User::create($data);
+
+        return Redirect::route('store');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int                         $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $user = User::findOrFail($id);
+
+        return view('show', compact('user'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int                         $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        // Igual que antes...
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request    $request
+     * @param  int                         $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        // Igual que antes...
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int                         $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        // Igual que antes...
+    }
+}
+</code></pre>
+
+<p>En este caso tampoco vamos a heredar <code>Controller</code>. En cualquier caso, si necesitásemos algún componente de la herencia sería más sencillo añadir la dependencia que vayamos a usar, en vez de heredar todo de una forma innecesaria. Vamos a empezar aplicando los mismos principios de antes para el método <code>index()</code> (sólo voy a usar las acciones <code>index</code> y <code>store</code> por no repetirme):</p>
+
+<pre><code class="language-php">namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Illuminate\View\View;
+
+class MiControlador
+{
+    public function index(): View
+    {
+        return view('index')
+            -&gt;withUsers(User::role());
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request    $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $data = $request-&gt;all();
+
+        $validator = $request-&gt;validate([
+            'name' =&gt; ['required', 'max:255'],
+            'email' =&gt; ['required', 'email'],
+        ]);
+
+        if ($validator-&gt;fails()) {
+            return redirect('post/create')
+                -&gt;withErrors($validator)
+                -&gt;withInput();
+        }
+
+        $create = User::create($data);
+
+        return Redirect::route('store');
+    }
+}
+</code></pre>
+
+<p>En este caso no podemos usar <code>__invoke</code>, pero tampoco es tan importante. Ahora vamos retirar toda la validación, añadiendo un <code>FormRequest</code> y eliminando los comentarios:</p>
+
+<pre><code class="language-php">namespace App\Http\Controllers;
+
+use App\Http\Requests\UserRequest;
+use Illuminate\Http\Request;
+use Illuminate\View\View;
+
+class MiControlador
+{
+    public function index(): View
+    {
+        return view('index')
+            -&gt;withUsers(User::role());
+    }
+
+    public function store(UserRequest $request): Redirect
+    {
+        User::create($request-&gt;all());
+
+        return Redirect::route('store');
+    }
+}
+</code></pre>
+
+<p>El <code>FormRequest</code> quedaría así:</p>
+
+<pre><code class="language-php">namespace App\Http\Requests;
+
+use Illuminate\Foundation\Http\FormRequest;
+
+class UserRequest extends FormRequest
+{
+    /**
+     * Determine if the user is authorized to make this request.
+     *
+     * @return bool
+     */
+    public function authorize()
+    {
+        return false;
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array&lt;string, mixed&gt;
+     */
+    public function rules()
+    {
+        return [
+            'name' =&gt; ['required', 'max:255'],
+            'email' =&gt; ['required', 'email'],
+        ]
+    }
+}
+</code></pre>
+
+<p>Creo que se simplifica mucho todo el código, y eliminamos toda la lógica que no debería ir en el <em>Controlador</em>. Otras veces, en las que me encuentro mucha lógica en el <em>Controlador</em>, y me refiero a lógica que si debe de ir aquí, opto por extraer esta lógica a una clase externa o a un <code>trait</code>, aunque por lo generar si el código no voy a reutilizarlo suelo optar por una clase.</p>
+
+<p>Un ejemplo muy simple pero que puede servir para explicar lo que pretendo:</p>
+
+<pre><code class="language-php">namespace App\Http\Controllers;
+
+use App\Http\Requests\UserRequest;
+use Illuminate\Http\Request;
+use Illuminate\View\View;
+
+class MiControlador
+{
+    public function index(): View
+    {
+        return view('index')
+            -&gt;withUsers(User::role());
+    }
+
+    public function store(UserRequest $request): Redirect
+    {
+        $user = User::create($request-&gt;all());
+
+        if($request-&gt;id === 1) {
+            return Redirect::route('store.caso_1');
+        }
+
+        return Redirect::route('store');
+    }
+}
+</code></pre>
+
+<p>En este caso tan simple, voy a extraer el método directamente en el <em>Controlador</em>:</p>
+
+<pre><code class="language-php">namespace App\Http\Controllers;
+
+use App\Http\Requests\UserRequest;
+use Illuminate\Http\Request;
+use Illuminate\View\View;
+
+class MiControlador
+{
+    public function index(): View
+    {
+        return view('index')
+            -&gt;withUsers(User::role());
+    }
+
+    public function store(UserRequest $request): Redirect
+    {
+        $user = User::create($request-&gt;all());
+
+        return $this-&gt;redirection($request-&gt;id);
+    }
+
+    private function redirection(int $id): Redirect 
+    {
+        return $id === 1
+            ? Redirect::route('store.caso_1')
+            : Redirect::route('store');
+    }
+}
+</code></pre>
+
+<p>Creo que más o menos se capta la idea.</p>
+
+<blockquote>
+  <p>Fuentes:</p>
+  
+  <ul>
+  <li><a href="https://styde.net/controladores-en-laravel/" class="link-out">https://styde.net/controladores-en-laravel/</a></li>
+  <li><a href="https://freek.dev/1324-simplifying-controllers" class="link-out">https://freek.dev/1324-simplifying-controllers</a></li>
+  <li><a href="https://www.laraveltip.com/guia-definitiva-de-principios-solid-explicados-con-laravel/" class="link-out">https://www.laraveltip.com/guia-definitiva-de-principios-solid-explicados-con-laravel/</a></li>
+  </ul>
+</blockquote>
+]]></content:encoded>
+                <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
+                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
+
+                            </item>
+                                <item>
                 <title><![CDATA[Gestionando cookies con Laravel Livewire]]></title>
                 <link>https://daguilar.dev/blog/livewire_gestionando-cookies-con-laravel-livewire</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/livewire_gestionando-cookies-con-laravel-livewire</guid>
@@ -517,7 +912,7 @@ function detectServerConfig(host) {
 <p>En general es todo una gran mejora, pero sobre todo me ha gustado el plugin de <a href="https://freek.dev/2277-using-laravel-vite-to-automatically-refresh-your-browser-when-changing-a-blade-file" class="link-out">Freek Van der Herten</a> para actualizar en tiempo real los cambios en los archivos <code>.blade.php</code>, es espectacular ir modificando el código en una pantalla y ver el resultado en tiempo real en la otra. Una maravilla.</p>
 
 <blockquote>
-  <p><strong>ACTUALIZACIÓN</strong>: Laravel Vite ahora es capaz de refrescar de forma nativa las modificaciones en blade, según comenta en:</p>
+  <p><strong>ACTUALIZACIÓN</strong>: <strong>Laravel Vite</strong> ahora es capaz de refrescar de forma nativa las modificaciones en <strong>Blade</strong>, según se comenta en:</p>
   
   <ul>
   <li><a href="https://laravel-news.com/laravel-blade-hot-refresh-with-vite" class="link-out">https://laravel-news.com/laravel-blade-hot-refresh-with-vite</a></li>
@@ -2421,7 +2816,7 @@ if ($session !== null) {
 <p>Un saludo y espero que sea de utilidad.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sun, 11 Apr 2021 00:00:00 +0000</pubDate>
+                <pubDate>Sun, 31 Jul 2022 00:00:00 +0000</pubDate>
 
                             </item>
                                 <item>
@@ -2679,7 +3074,7 @@ class MinifyHtml
 <p>Un saludo y espero que sirva de algo.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Wed, 24 Mar 2021 00:00:00 +0000</pubDate>
+                <pubDate>Sun, 31 Jul 2022 00:00:00 +0000</pubDate>
 
                             </item>
                                 <item>
@@ -6159,7 +6554,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Evan You el creador de <a href="https://vuejs.org/" target="_blank">VueJS</a> ha desarrollado esta nueva herramienta para la compilación de assets en el frontend, que surge como una alternativa más rápida y moderna que WebPack.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate>
+                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Testing, TTD y realización de pruebas.]]></title>
@@ -6169,7 +6564,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre testing, Desarrollo Guiado por Pruebas de software (Test-driven development: TDD), al igual que las diferentes librerias y herramientas para la realización de pruebas en código.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate>
+                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[SEO, posicionamiento en buscadores y motores de búsqueda]]></title>
@@ -6183,7 +6578,17 @@ if (! function_exists('userId')) {
 </blockquote>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate>
+                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
+            </item>
+                    <item>
+                <title><![CDATA[Refactorizando, optimizando y simplificando código]]></title>
+                <link>https://daguilar.dev/blog/categories/refactoring/</link>
+                <guid isPermaLink="true">https://daguilar.dev/blog/categories/refactoring/</guid>
+                <description><![CDATA[Cumplir con los principios SOLID, simplificar el código, refactorizar y optimizar son principios que todo programador debe seguir. Cuando más legible sea tu código, menos errores encontrarás en él.]]></description>
+                <content:encoded><![CDATA[<p>Refactorizar código es un <strong>procedimiento para reestructurar el código fuente</strong>, optimizando su estructura y su rendimiento, <strong>sin modificar el compartamiento del mismo</strong>.</p>
+]]></content:encoded>
+                <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
+                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Python, el lenguaje interpretado de alto nivel de moda]]></title>
@@ -6193,7 +6598,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre <a href="https://www.python.org/" target="_blank">Python</a>, el lenguaje de programación de alto nivel, orientado a objetos, interpretado y con una legibilidad de código increible. Uno de mis favoritos.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate>
+                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Programación general y lenguajes de programación]]></title>
@@ -6203,7 +6608,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre los diferentes lenguajes de programación, curiosidades, origenes, comparativas entre ellos...</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate>
+                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[PHP, el lenguaje de programación para el desarrollo web.]]></title>
@@ -6217,7 +6622,7 @@ if (! function_exists('userId')) {
 </blockquote>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate>
+                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Packagist, el repositorio de Composer para PHP]]></title>
@@ -6227,7 +6632,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre <a href="https://packagist.org/" class="link-out">Packagist</a>, el repositorio de paquetes PHP utilizado por Composer.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate>
+                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Packages, componentes de software trabajando juntos]]></title>
@@ -6237,7 +6642,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre gestión y creación de <strong>Packages</strong>. Componentes de <em>software</em>, independientes e intercambiables, que ofrecen una funcionalidad concreta y/o conjunta, y que están listos para su distribución y utilización.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate>
+                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Mis artículos mas personales como programador]]></title>
@@ -6247,7 +6652,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Los artículos mas personales, sobre mi día a día... pequeño diario de un programador fullstack.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate>
+                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Markdown el lenguaje para optimizar la web]]></title>
@@ -6257,7 +6662,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre <strong>Markdown</strong>, el lenguaje de marcado ligero creado por <em>John Gruber</em> y <strong>Aaron Swartz</strong> basado en numerosas convenciones utilizadas para marcar mensajes de correo electrónico utilizando para ello texto plano.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate>
+                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Laravel Livewire el framework de desarrollo de aplicaciones]]></title>
@@ -6271,7 +6676,7 @@ if (! function_exists('userId')) {
 </blockquote>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate>
+                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Laravel el framework PHP mas utilizado]]></title>
@@ -6285,7 +6690,7 @@ if (! function_exists('userId')) {
 </blockquote>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate>
+                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Javascript el lenguaje de programación del momento]]></title>
@@ -6299,7 +6704,7 @@ if (! function_exists('userId')) {
 </blockquote>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate>
+                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Java y sus frameworks spring, hibernate,...]]></title>
@@ -6309,7 +6714,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre <strong>Java</strong> el lenguaje multiplataforma y orientado a objetos, y todo su entorno de desarrollo: Spring, Spring boot, hibernate,...</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate>
+                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Frameworks. Estructuras para el desarrollo de software]]></title>
@@ -6319,7 +6724,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre <strong>Frameworks</strong> de desarrollo. Por lo general, módulos de software, que puede servir de base para desarrollo de software más complejo.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate>
+                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[El lenguaje de etiquetas HTML]]></title>
@@ -6329,7 +6734,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre <strong>HTML</strong> (HyperText Markup Language). El estándar que sirve de referencia para la elaboración de páginas web.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate>
+                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Artículos sobre servidores, su gestión, su mantenimiento y su configuración, ya sean seridores físicos o virtuales.]]></title>
@@ -6339,7 +6744,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre servidores, su gestión, configuración, mantenimiento, software de gestión y cualquier otra operación que pueda realizarse tanto en servidores físicos como virtuales o en la nube.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate>
+                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Artículos sobre Marketing. Conjunto de técnicas encaminadas a mejorar la comercialización o visualización de un producto]]></title>
@@ -6349,7 +6754,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos relacionados con Marketing online, utilizando técnicas para mejorar el posicionamiento de nuestro negocio en internet, utilizando tecnologías y medios digitales.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate>
+                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Artículos sobre github, el portal de Microsoft para desarrolladores de código]]></title>
@@ -6359,7 +6764,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre <strong>Github</strong> (plataforma de desarrollo colaborativo) y gestión de repositorios propiedad de Microsoft.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate>
+                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Artículos sobre equipo, aplicaciones, software y herramientas utilizadas en programación.]]></title>
@@ -6369,7 +6774,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre equipo, software, tecnología y herramientas utilizado por programadores.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate>
+                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Artículos sobre Eloquent el ORM de Laravel para bases de datos]]></title>
@@ -6379,7 +6784,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos relacionados con <a href="https://laravel.com/docs/6.x/eloquent" target="_blank">Laravel Eloquent</a>, desarrollado por <a href="https://twitter.com/taylorotwell" target="_blank">Taylor Otwell</a></p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate>
+                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Artículos sobre Composer el gestor de dependencias para PHP]]></title>
@@ -6393,7 +6798,7 @@ if (! function_exists('userId')) {
 </blockquote>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate>
+                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Artículos sobre Blade el sistema de plantillas del framework Laravel]]></title>
@@ -6407,7 +6812,7 @@ if (! function_exists('userId')) {
 </blockquote>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate>
+                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Artículos Bases de Datos, gestores de bases de datos y ORM]]></title>
@@ -6417,7 +6822,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre Bases de Datos (relacionales o no relacionales), software de gestión de bases de datos y ORMs utilizados por los diferentes frameworks.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate>
+                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Articulos sobre patrones de diseño en programación, soluciones habituales a problemas comunes]]></title>
@@ -6427,7 +6832,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre los diferentes patrones de diseño en programación, y como estructurar eficientemente nuestro código en base a ellos.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate>
+                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Angular el framework javascript de código abierto de Google.]]></title>
@@ -6437,7 +6842,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos relacionados con el framework desarrollado en TypeScript: Angular. De código abierto y mantenido por google.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate>
+                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[AlpineJS el framework javascript minimalista de Caleb Porzio]]></title>
@@ -6451,7 +6856,7 @@ if (! function_exists('userId')) {
 </blockquote>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate>
+                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
             </item>
         
     </channel>

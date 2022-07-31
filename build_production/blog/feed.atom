@@ -3,12 +3,410 @@
     <title>Blog de Damián Aguilar</title>
     <link href="https://daguilar.dev" />
     <link type="application/atom+xml" rel="self" href="https://daguilar.dev/blog/feed.atom" />
-    <updated>2022-07-31T12:52:07+00:00</updated>
+    <updated>2022-07-31T13:43:31+00:00</updated>
     <id>https://daguilar.dev/blog/feed.atom</id>
     <author>
         <name>Damián Aguilar</name>
     </author>
                 <entry>
+    <id>https://daguilar.dev/blog/laravel_simplifica-refactoriza-controladores-con-laravel</id>
+    <link type="text/html" rel="alternate" href="https://daguilar.dev/blog/laravel_simplifica-refactoriza-controladores-con-laravel" />
+    <title>Refactoriza y simplica tus Controladores con Laravel</title>
+    <published>2022-08-02T00:00:00+00:00</published>
+    <updated>2022-08-02T00:00:00+00:00</updated>
+    <author>
+        <name>Damián Aguilar</name>
+    </author>
+    <summary type="html">Los Controladores en Laravel, gestionan las peticiones &lt;code&gt;HTTP&lt;/code&gt; y sirven para gestionar la relación entre el Modelo y la Vista. Todo lo demás que incluyamos en el Controlador, está de más. Por ejemplo, las llamadas a la base de datos no......</summary>
+    <content type="html"><![CDATA[
+        <p>Los <em>Controladores</em> en <strong>Laravel</strong>, gestionan las peticiones <code>HTTP</code> y sirven para gestionar la relación entre el <em>Modelo</em> y la <em>Vista</em>. Todo lo demás que incluyamos en el <em>Controlador</em>, está de más. Por ejemplo, las llamadas a la base de datos no deberían estar aquí, sino en el <em>Modelo</em> o la validación de datos enviados desde un formulario. <strong>La realidad, es que los <em>Controladores</em> están llenos de código que realizan estas funciones, mientras que lo lógico sería que no las hicieran</strong>.</p>
+
+<p>En este artículo, voy a explicar como optimizo los Controladores de mis proyectos, y para ello, vamos a empezar por algo sencillo. Pongamos el caso de un <em>Controlador</em> simple, que no tiene un sistema <strong>CRUD</strong> (acrónimo en inglés para crear, leer, actualizar y borrar), y únicamente tiene una acción <code>index</code>:</p>
+
+<pre><code class="language-php">namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
+class MyController extends Controller
+{
+    /**
+     * Display a listing of the resources.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $users = User::whereRole('user')-&gt;take(20)-&gt;get();
+
+        return view('index', compact('users'));
+    }
+}
+</code></pre>
+
+<p>Lo primero que hay que hacer, es quitar todo lo innecesario. En este caso, no es necesario que herede de <code>Controller</code>. <strong>Esta herencia nos va a dar acceso a validación, autorización y los jobs</strong>. No es el caso:</p>
+
+<pre><code class="language-php">namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class MyController
+{
+    /**
+     * Display a listing of the resources.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $users = User::whereRole('user')-&gt;take(20)-&gt;get();
+
+        return view('index', compact('users'));
+    }
+}
+</code></pre>
+
+<p>Al tener un sólo método, podemos usar <code>__invoke</code>, y podemos quitar los comentarios:</p>
+
+<pre><code class="language-php">namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Illuminate\View\View;
+
+class MiControlador
+{
+    public function __invoke(): View
+    {
+        $users = User::whereRole('user')-&gt;take(20)-&gt;get();
+
+        return view('index', compact('users'));
+    }
+}
+</code></pre>
+
+<p>Y esto nos va a permitir simplificar la ruta del <em>Controllador</em>:</p>
+
+<pre><code class="language-php">// Antes
+Route::get('/home', [MiControlador::class, 'index']);
+
+// Después 
+Route::get('/home', MiControlador::class);
+</code></pre>
+
+<p>También debemos eliminar la llamada a la base de datos del <em>Controlador</em> y pasarla directamente al <em>Modelo</em>. Todo ello mediante un <code>scope</code>:</p>
+
+<pre><code class="language-php">// Modelo - User
+public function scopeRole($query) {
+    $query
+        -&gt;where('role', 'user')
+        -&gt;take(20)
+        -&gt;get();
+}
+</code></pre>
+
+<p>Todo junto en el <em>Controlador</em>, quedaría algo así:</p>
+
+<pre><code class="language-php">namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Illuminate\View\View;
+
+class MiControlador
+{
+    public function __invoke(): View
+    {
+        return view('index')
+            -&gt;withUsers(User::role());
+    }
+}
+</code></pre>
+
+<p>Mucho más simple, directo y sobre todo, legible. Ahora tenemos un <em>Controlador</em> que realiza exclusivamente su función, <a href="https://daguilar.dev/blog/programacion_5_consejos_para_ser_un_gran_programador/">cumpliendo con los principios SOLID</a>.</p>
+
+<p>Veamos ahora un caso más complejo. Ahora el <strong>Controlador</strong> es un sistema <strong>CRUD</strong>. Veamos cómo quedaría un <em>Controlador</em> sin refactorizar:</p>
+
+<pre><code class="language-php">namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
+class MiControlador extends Controller
+{
+    /**
+     * Display a listing of the resources.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $users = User::whereRole('user')-&gt;take(20)-&gt;get();
+
+        return view('index', compact('users'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        return view('create');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request    $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $data = $request-&gt;all();
+
+        $validator = $request-&gt;validate([
+            'name' =&gt; ['required', 'max:255'],
+            'email' =&gt; ['required', 'email'],
+        ]);
+
+        if ($validator-&gt;fails()) {
+            return redirect('post/create')
+                -&gt;withErrors($validator)
+                -&gt;withInput();
+        }
+
+        $create = User::create($data);
+
+        return Redirect::route('store');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int                         $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $user = User::findOrFail($id);
+
+        return view('show', compact('user'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int                         $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        // Igual que antes...
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request    $request
+     * @param  int                         $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        // Igual que antes...
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int                         $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        // Igual que antes...
+    }
+}
+</code></pre>
+
+<p>En este caso tampoco vamos a heredar <code>Controller</code>. En cualquier caso, si necesitásemos algún componente de la herencia sería más sencillo añadir la dependencia que vayamos a usar, en vez de heredar todo de una forma innecesaria. Vamos a empezar aplicando los mismos principios de antes para el método <code>index()</code> (sólo voy a usar las acciones <code>index</code> y <code>store</code> por no repetirme):</p>
+
+<pre><code class="language-php">namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Illuminate\View\View;
+
+class MiControlador
+{
+    public function index(): View
+    {
+        return view('index')
+            -&gt;withUsers(User::role());
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request    $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $data = $request-&gt;all();
+
+        $validator = $request-&gt;validate([
+            'name' =&gt; ['required', 'max:255'],
+            'email' =&gt; ['required', 'email'],
+        ]);
+
+        if ($validator-&gt;fails()) {
+            return redirect('post/create')
+                -&gt;withErrors($validator)
+                -&gt;withInput();
+        }
+
+        $create = User::create($data);
+
+        return Redirect::route('store');
+    }
+}
+</code></pre>
+
+<p>En este caso no podemos usar <code>__invoke</code>, pero tampoco es tan importante. Ahora vamos retirar toda la validación, añadiendo un <code>FormRequest</code> y eliminando los comentarios:</p>
+
+<pre><code class="language-php">namespace App\Http\Controllers;
+
+use App\Http\Requests\UserRequest;
+use Illuminate\Http\Request;
+use Illuminate\View\View;
+
+class MiControlador
+{
+    public function index(): View
+    {
+        return view('index')
+            -&gt;withUsers(User::role());
+    }
+
+    public function store(UserRequest $request): Redirect
+    {
+        User::create($request-&gt;all());
+
+        return Redirect::route('store');
+    }
+}
+</code></pre>
+
+<p>El <code>FormRequest</code> quedaría así:</p>
+
+<pre><code class="language-php">namespace App\Http\Requests;
+
+use Illuminate\Foundation\Http\FormRequest;
+
+class UserRequest extends FormRequest
+{
+    /**
+     * Determine if the user is authorized to make this request.
+     *
+     * @return bool
+     */
+    public function authorize()
+    {
+        return false;
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array&lt;string, mixed&gt;
+     */
+    public function rules()
+    {
+        return [
+            'name' =&gt; ['required', 'max:255'],
+            'email' =&gt; ['required', 'email'],
+        ]
+    }
+}
+</code></pre>
+
+<p>Creo que se simplifica mucho todo el código, y eliminamos toda la lógica que no debería ir en el <em>Controlador</em>. Otras veces, en las que me encuentro mucha lógica en el <em>Controlador</em>, y me refiero a lógica que si debe de ir aquí, opto por extraer esta lógica a una clase externa o a un <code>trait</code>, aunque por lo generar si el código no voy a reutilizarlo suelo optar por una clase.</p>
+
+<p>Un ejemplo muy simple pero que puede servir para explicar lo que pretendo:</p>
+
+<pre><code class="language-php">namespace App\Http\Controllers;
+
+use App\Http\Requests\UserRequest;
+use Illuminate\Http\Request;
+use Illuminate\View\View;
+
+class MiControlador
+{
+    public function index(): View
+    {
+        return view('index')
+            -&gt;withUsers(User::role());
+    }
+
+    public function store(UserRequest $request): Redirect
+    {
+        $user = User::create($request-&gt;all());
+
+        if($request-&gt;id === 1) {
+            return Redirect::route('store.caso_1');
+        }
+
+        return Redirect::route('store');
+    }
+}
+</code></pre>
+
+<p>En este caso tan simple, voy a extraer el método directamente en el <em>Controlador</em>:</p>
+
+<pre><code class="language-php">namespace App\Http\Controllers;
+
+use App\Http\Requests\UserRequest;
+use Illuminate\Http\Request;
+use Illuminate\View\View;
+
+class MiControlador
+{
+    public function index(): View
+    {
+        return view('index')
+            -&gt;withUsers(User::role());
+    }
+
+    public function store(UserRequest $request): Redirect
+    {
+        $user = User::create($request-&gt;all());
+
+        return $this-&gt;redirection($request-&gt;id);
+    }
+
+    private function redirection(int $id): Redirect 
+    {
+        return $id === 1
+            ? Redirect::route('store.caso_1')
+            : Redirect::route('store');
+    }
+}
+</code></pre>
+
+<p>Creo que más o menos se capta la idea.</p>
+
+<blockquote>
+  <p>Fuentes:</p>
+  
+  <ul>
+  <li><a href="https://styde.net/controladores-en-laravel/" class="link-out">https://styde.net/controladores-en-laravel/</a></li>
+  <li><a href="https://freek.dev/1324-simplifying-controllers" class="link-out">https://freek.dev/1324-simplifying-controllers</a></li>
+  <li><a href="https://www.laraveltip.com/guia-definitiva-de-principios-solid-explicados-con-laravel/" class="link-out">https://www.laraveltip.com/guia-definitiva-de-principios-solid-explicados-con-laravel/</a></li>
+  </ul>
+</blockquote>
+    ]]></content>
+</entry>
+            <entry>
     <id>https://daguilar.dev/blog/livewire_gestionando-cookies-con-laravel-livewire</id>
     <link type="text/html" rel="alternate" href="https://daguilar.dev/blog/livewire_gestionando-cookies-con-laravel-livewire" />
     <title>Gestionando cookies con Laravel Livewire</title>
@@ -534,7 +932,7 @@ function detectServerConfig(host) {
 <p>En general es todo una gran mejora, pero sobre todo me ha gustado el plugin de <a href="https://freek.dev/2277-using-laravel-vite-to-automatically-refresh-your-browser-when-changing-a-blade-file" class="link-out">Freek Van der Herten</a> para actualizar en tiempo real los cambios en los archivos <code>.blade.php</code>, es espectacular ir modificando el código en una pantalla y ver el resultado en tiempo real en la otra. Una maravilla.</p>
 
 <blockquote>
-  <p><strong>ACTUALIZACIÓN</strong>: Laravel Vite ahora es capaz de refrescar de forma nativa las modificaciones en blade, según comenta en:</p>
+  <p><strong>ACTUALIZACIÓN</strong>: <strong>Laravel Vite</strong> ahora es capaz de refrescar de forma nativa las modificaciones en <strong>Blade</strong>, según se comenta en:</p>
   
   <ul>
   <li><a href="https://laravel-news.com/laravel-blade-hot-refresh-with-vite" class="link-out">https://laravel-news.com/laravel-blade-hot-refresh-with-vite</a></li>

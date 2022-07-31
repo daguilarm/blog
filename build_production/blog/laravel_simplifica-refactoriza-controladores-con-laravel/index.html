@@ -2,47 +2,48 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8">
-        <title>Creando enlaces externos con Javascript de forma dinámica</title>
+        <title>Refactoriza y simplica tus Controladores con Laravel</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="Generando enlaces externos utilizando vanilla javascript y markdown. Utilizaremos las propiedades de identificación de componentes de lenguaje Markdown para generar los enlaces externos mediante javascript.">
+        <meta name="description" content="Optimiza, refactoriza y simplifica los Controladores de Laravel. Mantener unos Controladores simples y minimalistas optimizan Laravel y eliminan componentes innecesarios.">
         <meta name="msvalidate.01" content="7EBAF0830896AD1D4A27E93C37552EDA" />
         <meta http-equiv="expires" content="86400"/>
         
-        <meta property="og:title" content="Creando enlaces externos con Javascript de forma dinámica" />
+        <meta property="og:title" content="Refactoriza y simplica tus Controladores con Laravel" />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://daguilar.dev/blog/javascript_creando-enlaces-externos-con-javascript-de-forma-dinamica"/>
-        <meta property="og:description" content="Generando enlaces externos utilizando vanilla javascript y markdown. Utilizaremos las propiedades de identificación de componentes de lenguaje Markdown para generar los enlaces externos mediante javascript." />
+        <meta property="og:url" content="https://daguilar.dev/blog/laravel_simplifica-refactoriza-controladores-con-laravel"/>
+        <meta property="og:description" content="Optimiza, refactoriza y simplifica los Controladores de Laravel. Mantener unos Controladores simples y minimalistas optimizan Laravel y eliminan componentes innecesarios." />
         <meta property="og:locale" content="es_ES">
         <meta property="og:site_name" content="Blog de Damián Aguilar">
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image" content="https://daguilar.dev/assets/img/og-image.jpg" />
-        <meta property="og:image:alt" content="Creando enlaces externos con Javascript de forma dinámica" />
+        <meta property="og:image:alt" content="Refactoriza y simplica tus Controladores con Laravel" />
         
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:site" content="@daguilarm">
         <meta name="twitter:creator" content="@daguilarm">
-        <meta name="twitter:title" content="Creando enlaces externos con Javascript de forma dinámica">
-        <meta name="twitter:description" content="Generando enlaces externos utilizando vanilla javascript y markdown. Utilizaremos las propiedades de identificación de componentes de lenguaje Markdown para generar los enlaces externos mediante javascript.">
+        <meta name="twitter:title" content="Refactoriza y simplica tus Controladores con Laravel">
+        <meta name="twitter:description" content="Optimiza, refactoriza y simplifica los Controladores de Laravel. Mantener unos Controladores simples y minimalistas optimizan Laravel y eliminan componentes innecesarios.">
         <meta name="twitter:creator" content="@daguilarm">
         <meta name="twitter:domain" content="https://daguilar.dev">
-        <meta name="twitter:image" content="https://daguilar.dev/assets/img/twitter.jpg?refresh=892397048">
-        <meta name="twitter:image:alt" content="Creando enlaces externos con Javascript de forma dinámica">
+        <meta name="twitter:image" content="https://daguilar.dev/assets/img/twitter.jpg?refresh=553293706">
+        <meta name="twitter:image:alt" content="Refactoriza y simplica tus Controladores con Laravel">
         
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
         
-                                <meta property="article:tag" content="javascript">
-                    <meta property="article:tag" content="markdown">
-                <meta property="article:published_time" content="2019-12-07T00:00:00+00:00">
-    <meta property="article:updated_time" content="2019-12-07T00:00:00+00:00">
+                                <meta property="article:tag" content="php">
+                    <meta property="article:tag" content="laravel">
+                    <meta property="article:tag" content="refactoring">
+                <meta property="article:published_time" content="2022-08-02T00:00:00+00:00">
+    <meta property="article:updated_time" content="2022-08-02T00:00:00+00:00">
     
         
         <link rel="home" href="https://daguilar.dev">
-        <link rel="alternate" type="application/rss+xml" title="Creando enlaces externos con Javascript de forma dinámica" href="https://daguilar.dev/rss.xml" />
+        <link rel="alternate" type="application/rss+xml" title="Refactoriza y simplica tus Controladores con Laravel" href="https://daguilar.dev/rss.xml" />
         <link rel="apple-touch-icon" sizes="57x57" href="https://daguilar.dev/assets/img/favicon/apple-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="60x60" href="https://daguilar.dev/assets/img/favicon/apple-icon-60x60.png">
         <link rel="apple-touch-icon" sizes="72x72" href="https://daguilar.dev/assets/img/favicon/apple-icon-72x72.png">
@@ -223,56 +224,416 @@
             <div class="marketing-banner flex justify-center w-full"></div>
             
     <article class=" bg-white rounded-xl shadow-xl p-9 my-10 border border-gray-300">
-        <h1 class="leading-none mb-6 text-blue-800 text-3xl md:text-4xl lg:text-5xl">Creando enlaces externos con Javascript de forma dinámica</h1>
+        <h1 class="leading-none mb-6 text-blue-800 text-3xl md:text-4xl lg:text-5xl">Refactoriza y simplica tus Controladores con Laravel</h1>
 
         <div class="flex justify-start text-gray-600 text-xl md:mt-0 mb-4">
             <div>Autor: Damián Aguilar</div>
             <a href="https://twitter.com/daguilarm" target="_black" class="mx-2"><img src="/assets/img/twitter.png" alt="twitter" class="opacity-75 hover:opacity-100 h-8 w-8 bg-white rounded-full"></a>
-            <div>- Creado el 07/12/2019</div>
+            <div>- Creado el 02/08/2022</div>
                     </div>
 
                                     <a
-                    href="/blog/categories/javascript/"
-                    title="View posts in javascript"
+                    href="/blog/categories/php/"
+                    title="View posts in php"
                     class="inline-block bg-blue-200 hover:bg-blue-400 leading-loose tracking-wide text-blue-600 hover:text-white uppercase text-xs font-semibold rounded mr-4 px-3 pt-px"
-                >javascript</a>
+                >php</a>
                             <a
-                    href="/blog/categories/markdown/"
-                    title="View posts in markdown"
+                    href="/blog/categories/laravel/"
+                    title="View posts in laravel"
                     class="inline-block bg-blue-200 hover:bg-blue-400 leading-loose tracking-wide text-blue-600 hover:text-white uppercase text-xs font-semibold rounded mr-4 px-3 pt-px"
-                >markdown</a>
+                >laravel</a>
+                            <a
+                    href="/blog/categories/refactoring/"
+                    title="View posts in refactoring"
+                    class="inline-block bg-blue-200 hover:bg-blue-400 leading-loose tracking-wide text-blue-600 hover:text-white uppercase text-xs font-semibold rounded mr-4 px-3 pt-px"
+                >refactoring</a>
                     
         <div v-pre>
-            <p>En ocasiones, nos encontramos en la situación en la que necesitamos generar enlaces externos de forma dinámica. Por ejemplo, pensemos en un código <code>markdown</code>, en el que queremos que nuestro enlace tenga el attributo <code>target</code>, con el valor <em>_blank</em>.</p>
+            <p>Los <em>Controladores</em> en <strong>Laravel</strong>, gestionan las peticiones <code>HTTP</code> y sirven para gestionar la relación entre el <em>Modelo</em> y la <em>Vista</em>. Todo lo demás que incluyamos en el <em>Controlador</em>, está de más. Por ejemplo, las llamadas a la base de datos no deberían estar aquí, sino en el <em>Modelo</em> o la validación de datos enviados desde un formulario. <strong>La realidad, es que los <em>Controladores</em> están llenos de código que realizan estas funciones, mientras que lo lógico sería que no las hicieran</strong>.</p>
 
-<p>La forma más sencilla de hacerlo, es añadiendo a nuestro enlace una clase <code>css</code>(siempre que tengamos la versión extendida de <code>markdown</code>):</p>
+<p>En este artículo, voy a explicar como optimizo los Controladores de mis proyectos, y para ello, vamos a empezar por algo sencillo. Pongamos el caso de un <em>Controlador</em> simple, que no tiene un sistema <strong>CRUD</strong> (acrónimo en inglés para crear, leer, actualizar y borrar), y únicamente tiene una acción <code>index</code>:</p>
 
-<pre><code class="language-html">[Laravel](https://laravel.com/){.link-out}
+<pre><code class="language-php">namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
+class MyController extends Controller
+{
+    /**
+     * Display a listing of the resources.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $users = User::whereRole('user')-&gt;take(20)-&gt;get();
+
+        return view('index', compact('users'));
+    }
+}
 </code></pre>
 
-<p>Con <code>markdown</code>, podemos añadir attributos con los corchetes:</p>
+<p>Lo primero que hay que hacer, es quitar todo lo innecesario. En este caso, no es necesario que herede de <code>Controller</code>. <strong>Esta herencia nos va a dar acceso a validación, autorización y los jobs</strong>. No es el caso:</p>
 
-<pre><code class="language-html">[Laravel](https://laravel.com/){#myID .link-out}
+<pre><code class="language-php">namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class MyController
+{
+    /**
+     * Display a listing of the resources.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $users = User::whereRole('user')-&gt;take(20)-&gt;get();
+
+        return view('index', compact('users'));
+    }
+}
 </code></pre>
 
-<p>Que se renderizará en:</p>
+<p>Al tener un sólo método, podemos usar <code>__invoke</code>, y podemos quitar los comentarios:</p>
 
-<pre><code class="language-html">&lt;a href="https://laravel.com/" id="myID" class="link-out"&gt;Laravel&lt;/a&gt;
+<pre><code class="language-php">namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Illuminate\View\View;
+
+class MiControlador
+{
+    public function __invoke(): View
+    {
+        $users = User::whereRole('user')-&gt;take(20)-&gt;get();
+
+        return view('index', compact('users'));
+    }
+}
 </code></pre>
 
-<p>Ahora, solo tenemos que añadir un poco de código <code>javascript</code> en nuestra página:</p>
+<p>Y esto nos va a permitir simplificar la ruta del <em>Controllador</em>:</p>
 
-<pre><code class="language-javascript">&lt;script&gt;
-    document.addEventListener('DOMContentLoaded', function() {
-        var linksTargetBlank = document.querySelectorAll('.link-out');
-        for (var i = 0; i &lt; linksTargetBlank.length; i++) {
-            linksTargetBlank[i].target = "_blank";
+<pre><code class="language-php">// Antes
+Route::get('/home', [MiControlador::class, 'index']);
+
+// Después 
+Route::get('/home', MiControlador::class);
+</code></pre>
+
+<p>También debemos eliminar la llamada a la base de datos del <em>Controlador</em> y pasarla directamente al <em>Modelo</em>. Todo ello mediante un <code>scope</code>:</p>
+
+<pre><code class="language-php">// Modelo - User
+public function scopeRole($query) {
+    $query
+        -&gt;where('role', 'user')
+        -&gt;take(20)
+        -&gt;get();
+}
+</code></pre>
+
+<p>Todo junto en el <em>Controlador</em>, quedaría algo así:</p>
+
+<pre><code class="language-php">namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Illuminate\View\View;
+
+class MiControlador
+{
+    public function __invoke(): View
+    {
+        return view('index')
+            -&gt;withUsers(User::role());
+    }
+}
+</code></pre>
+
+<p>Mucho más simple, directo y sobre todo, legible. Ahora tenemos un <em>Controlador</em> que realiza exclusivamente su función, <a href="https://daguilar.dev/blog/programacion_5_consejos_para_ser_un_gran_programador/">cumpliendo con los principios SOLID</a>.</p>
+
+<p>Veamos ahora un caso más complejo. Ahora el <strong>Controlador</strong> es un sistema <strong>CRUD</strong>. Veamos cómo quedaría un <em>Controlador</em> sin refactorizar:</p>
+
+<pre><code class="language-php">namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
+class MiControlador extends Controller
+{
+    /**
+     * Display a listing of the resources.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $users = User::whereRole('user')-&gt;take(20)-&gt;get();
+
+        return view('index', compact('users'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        return view('create');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request    $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $data = $request-&gt;all();
+
+        $validator = $request-&gt;validate([
+            'name' =&gt; ['required', 'max:255'],
+            'email' =&gt; ['required', 'email'],
+        ]);
+
+        if ($validator-&gt;fails()) {
+            return redirect('post/create')
+                -&gt;withErrors($validator)
+                -&gt;withInput();
         }
-    }, false);
-&lt;/script&gt;
+
+        $create = User::create($data);
+
+        return Redirect::route('store');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int                         $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $user = User::findOrFail($id);
+
+        return view('show', compact('user'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int                         $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        // Igual que antes...
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request    $request
+     * @param  int                         $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        // Igual que antes...
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int                         $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        // Igual que antes...
+    }
+}
 </code></pre>
 
-<p>Automáticamente, una vez que se cargue la página, añadirá el atritudo <code>target</code> con el valor <em>_blank</em>, a todos los enlaces con la clase <em>.link-out</em>.</p>
+<p>En este caso tampoco vamos a heredar <code>Controller</code>. En cualquier caso, si necesitásemos algún componente de la herencia sería más sencillo añadir la dependencia que vayamos a usar, en vez de heredar todo de una forma innecesaria. Vamos a empezar aplicando los mismos principios de antes para el método <code>index()</code> (sólo voy a usar las acciones <code>index</code> y <code>store</code> por no repetirme):</p>
+
+<pre><code class="language-php">namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Illuminate\View\View;
+
+class MiControlador
+{
+    public function index(): View
+    {
+        return view('index')
+            -&gt;withUsers(User::role());
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request    $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $data = $request-&gt;all();
+
+        $validator = $request-&gt;validate([
+            'name' =&gt; ['required', 'max:255'],
+            'email' =&gt; ['required', 'email'],
+        ]);
+
+        if ($validator-&gt;fails()) {
+            return redirect('post/create')
+                -&gt;withErrors($validator)
+                -&gt;withInput();
+        }
+
+        $create = User::create($data);
+
+        return Redirect::route('store');
+    }
+}
+</code></pre>
+
+<p>En este caso no podemos usar <code>__invoke</code>, pero tampoco es tan importante. Ahora vamos retirar toda la validación, añadiendo un <code>FormRequest</code> y eliminando los comentarios:</p>
+
+<pre><code class="language-php">namespace App\Http\Controllers;
+
+use App\Http\Requests\UserRequest;
+use Illuminate\Http\Request;
+use Illuminate\View\View;
+
+class MiControlador
+{
+    public function index(): View
+    {
+        return view('index')
+            -&gt;withUsers(User::role());
+    }
+
+    public function store(UserRequest $request): Redirect
+    {
+        User::create($request-&gt;all());
+
+        return Redirect::route('store');
+    }
+}
+</code></pre>
+
+<p>El <code>FormRequest</code> quedaría así:</p>
+
+<pre><code class="language-php">namespace App\Http\Requests;
+
+use Illuminate\Foundation\Http\FormRequest;
+
+class UserRequest extends FormRequest
+{
+    /**
+     * Determine if the user is authorized to make this request.
+     *
+     * @return bool
+     */
+    public function authorize()
+    {
+        return false;
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array&lt;string, mixed&gt;
+     */
+    public function rules()
+    {
+        return [
+            'name' =&gt; ['required', 'max:255'],
+            'email' =&gt; ['required', 'email'],
+        ]
+    }
+}
+</code></pre>
+
+<p>Creo que se simplifica mucho todo el código, y eliminamos toda la lógica que no debería ir en el <em>Controlador</em>. Otras veces, en las que me encuentro mucha lógica en el <em>Controlador</em>, y me refiero a lógica que si debe de ir aquí, opto por extraer esta lógica a una clase externa o a un <code>trait</code>, aunque por lo generar si el código no voy a reutilizarlo suelo optar por una clase.</p>
+
+<p>Un ejemplo muy simple pero que puede servir para explicar lo que pretendo:</p>
+
+<pre><code class="language-php">namespace App\Http\Controllers;
+
+use App\Http\Requests\UserRequest;
+use Illuminate\Http\Request;
+use Illuminate\View\View;
+
+class MiControlador
+{
+    public function index(): View
+    {
+        return view('index')
+            -&gt;withUsers(User::role());
+    }
+
+    public function store(UserRequest $request): Redirect
+    {
+        $user = User::create($request-&gt;all());
+
+        if($request-&gt;id === 1) {
+            return Redirect::route('store.caso_1');
+        }
+
+        return Redirect::route('store');
+    }
+}
+</code></pre>
+
+<p>En este caso tan simple, voy a extraer el método directamente en el <em>Controlador</em>:</p>
+
+<pre><code class="language-php">namespace App\Http\Controllers;
+
+use App\Http\Requests\UserRequest;
+use Illuminate\Http\Request;
+use Illuminate\View\View;
+
+class MiControlador
+{
+    public function index(): View
+    {
+        return view('index')
+            -&gt;withUsers(User::role());
+    }
+
+    public function store(UserRequest $request): Redirect
+    {
+        $user = User::create($request-&gt;all());
+
+        return $this-&gt;redirection($request-&gt;id);
+    }
+
+    private function redirection(int $id): Redirect 
+    {
+        return $id === 1
+            ? Redirect::route('store.caso_1')
+            : Redirect::route('store');
+    }
+}
+</code></pre>
+
+<p>Creo que más o menos se capta la idea.</p>
+
+<blockquote>
+  <p>Fuentes:</p>
+  
+  <ul>
+  <li><a href="https://styde.net/controladores-en-laravel/" class="link-out">https://styde.net/controladores-en-laravel/</a></li>
+  <li><a href="https://freek.dev/1324-simplifying-controllers" class="link-out">https://freek.dev/1324-simplifying-controllers</a></li>
+  <li><a href="https://www.laraveltip.com/guia-definitiva-de-principios-solid-explicados-con-laravel/" class="link-out">https://www.laraveltip.com/guia-definitiva-de-principios-solid-explicados-con-laravel/</a></li>
+  </ul>
+</blockquote>
         </div>
 
         

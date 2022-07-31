@@ -3,8 +3,9 @@ extends: _layouts.post
 section: content
 title: Refactorizando condicionales con PHP
 date: 2021-04-11
+updated: 2022-07-31
 description: Refactoring condicionales con PHP. Simplificando condicionales y bucles con PHP, buscando un código más legible, procesional y claro
-categories: [php]
+categories: [php, refactoring]
 ---
 
     En este artículo, se van a ver diversas técnicas de reducción de condicionales y simplificación de código, para versiones de **php8**.

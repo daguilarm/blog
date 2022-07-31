@@ -207,6 +207,6 @@ Como apunte final, si en vez de utilizar [TailwindCss](https://tailwindcss.com/)
 
 En general es todo una gran mejora, pero sobre todo me ha gustado el plugin de [Freek Van der Herten](https://freek.dev/2277-using-laravel-vite-to-automatically-refresh-your-browser-when-changing-a-blade-file){.link-out} para actualizar en tiempo real los cambios en los archivos `.blade.php`, es espectacular ir modificando el código en una pantalla y ver el resultado en tiempo real en la otra. Una maravilla.
 
-> **ACTUALIZACIÓN**: Laravel Vite ahora es capaz de refrescar de forma nativa las modificaciones en blade, según comenta en:
+> **ACTUALIZACIÓN**: **Laravel Vite** ahora es capaz de refrescar de forma nativa las modificaciones en **Blade**, según se comenta en:
 >
 > - [https://laravel-news.com/laravel-blade-hot-refresh-with-vite](https://laravel-news.com/laravel-blade-hot-refresh-with-vite){.link-out}
