@@ -79,7 +79,7 @@ class MiControlador
 }
 </code></pre>
 
-<p>Y esto nos va a permitir simplificar la ruta del <em>Controllador</em>:</p>
+<p>Y esto nos va a permitir simplificar la ruta del <em>Controlador</em>:</p>
 
 <pre><code class="language-php">// Antes
 Route::get('/home', [MiControlador::class, 'index']);

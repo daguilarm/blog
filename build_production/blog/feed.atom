@@ -3,7 +3,7 @@
     <title>Blog de Damián Aguilar</title>
     <link href="https://daguilar.dev" />
     <link type="application/atom+xml" rel="self" href="https://daguilar.dev/blog/feed.atom" />
-    <updated>2022-07-31T13:43:31+00:00</updated>
+    <updated>2022-07-31T13:46:09+00:00</updated>
     <id>https://daguilar.dev/blog/feed.atom</id>
     <author>
         <name>Damián Aguilar</name>
@@ -84,7 +84,7 @@ class MiControlador
 }
 </code></pre>
 
-<p>Y esto nos va a permitir simplificar la ruta del <em>Controllador</em>:</p>
+<p>Y esto nos va a permitir simplificar la ruta del <em>Controlador</em>:</p>
 
 <pre><code class="language-php">// Antes
 Route::get('/home', [MiControlador::class, 'index']);

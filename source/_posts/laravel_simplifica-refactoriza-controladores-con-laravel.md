@@ -74,7 +74,7 @@ class MiControlador
 }
 ```
 
-Y esto nos va a permitir simplificar la ruta del *Controllador*:
+Y esto nos va a permitir simplificar la ruta del *Controlador*:
 
 ```php 
 // Antes
