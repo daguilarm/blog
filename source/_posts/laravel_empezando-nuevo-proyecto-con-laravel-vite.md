@@ -3,6 +3,7 @@ extends: _layouts.post
 section: content
 title: Nuevos proyectos Laravel con Vite, la alternativa a Webpack
 date: 2022-07-10
+updated: 2022-07-31
 description: Laravel vite ha llegado para sustituir a Webpack, el sistema de gestión de assets para el front-end. Laravel vite es más rápido y moderno que su predecesor Webpack. Evan You el creador de VueJS ha desarrollado esta nueva herramienta que puede llegar a ser 100 veces más rápida que Webpack.
 categories: [laravel, vite]
 ---
@@ -205,3 +206,7 @@ Como apunte final, si en vez de utilizar [TailwindCss](https://tailwindcss.com/)
 - [https://creagia.com/blog/using-laravel-vite-with-bootstrap-and-sass](https://creagia.com/blog/using-laravel-vite-with-bootstrap-and-sass){.link-out}
 
 En general es todo una gran mejora, pero sobre todo me ha gustado el plugin de [Freek Van der Herten](https://freek.dev/2277-using-laravel-vite-to-automatically-refresh-your-browser-when-changing-a-blade-file){.link-out} para actualizar en tiempo real los cambios en los archivos `.blade.php`, es espectacular ir modificando el código en una pantalla y ver el resultado en tiempo real en la otra. Una maravilla.
+
+ACTUALIZACIÒN: Laravel Vite ahora es capaz de refrescar de forma nativa las modificaciones en blade, según comenta en:
+
+- [https://laravel-news.com/laravel-blade-hot-refresh-with-vite](https://laravel-news.com/laravel-blade-hot-refresh-with-vite){.link-out}
