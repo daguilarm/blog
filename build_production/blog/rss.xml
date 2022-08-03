@@ -6,10 +6,122 @@
         <description><![CDATA[Blog sobre programación de Damián Aguilar, en el vas a encontrar artículos y recursos sobre: php, javascript, vuejs, phyton, java, livewire, alpinejs, laravel, seo... y mucho más. Además, encontrarás noticias sobre desarrollo web, lenguajes de programación, software y marketing]]></description>
         <atom:link href="https://daguilar.dev/blog/rss.xml" rel="self" type="application/rss+xml" />
         <language>es</language>
-        <lastBuildDate>Tue, 02 Aug 2022 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Wed, 03 Aug 2022 00:00:00 +0000</lastBuildDate>
 
         <!-- Posts -->
                                                             <item>
+                <title><![CDATA[Paginando Colecciones con Laravel y optimizando consultas SQL]]></title>
+                <link>https://daguilar.dev/blog/laravel_paginando-collections-con-laravel</link>
+                <guid isPermaLink="true">https://daguilar.dev/blog/laravel_paginando-collections-con-laravel</guid>
+                <description><![CDATA[Optimizando consultas SQL a la base de datos, utizando para ello paginación de Collections. A partir de una Colección de Laravel vamos a realizar una paginación.]]></description>
+                <content:encoded><![CDATA[<p>Estos días me he encontrado con un caso real, en el que hacía dos consultas a la base de datos cuando realmente sólo quería hacer una. A veces lo que uno quiere y lo que puede conseguir no son compatibles, pero en este caso, si que ha sido posible.</p>
+
+<p>Planteo el problema. Imagina que tienes un blog en el que tienes dos tablas en la base de datos:</p>
+
+<ul>
+<li><strong>Posts</strong>: donde están se guardan los <em>posts</em> y que tienen un campo relacional con la siguiente tabla.</li>
+<li><strong>Categories</strong>: donde están las categorias donde se ubican los <em>posts</em>.</li>
+</ul>
+
+<p>Ahora yo quiero hacer los siguiente. Quiero mostrar sólo las categorias que tienen <em>posts</em> y obviamente, los <em>posts</em>. Todo bien hasta que quieres que los <em>posts</em> aparezcan con paginación... la cosa se complica ya que la consulta a los <em>posts</em> estará paginada y por tanto mostrará solo las categorias que aparezcan en los resultados de la paginación actual. Yo lo que quiero son todas las categorias que tengan <em>posts</em>.</p>
+
+<p>Mi primer planteamiento es hacer la consulta principal:</p>
+
+<pre><code class="language-php">$posts = Post::query()
+    -&gt;with('categories:id,name')
+    -&gt;orderBy('created_at', 'desc');
+</code></pre>
+
+<p>Ahora realizo dos consultas a partir de esta:</p>
+
+<pre><code class="language-php">// Obtengo las categorias
+$categories = $posts
+    -&gt;plunk('categories')
+    -&gt;unique();
+
+// Obtengo los posts paginados
+$listOfposts = $posts-&gt;paginate(15);
+</code></pre>
+
+<p>Ahora tengo la lista de categorias que tienen <em>posts</em> y la lista de <em>posts</em> con paginación. En total 2 consultas a la base de datos... pero yo quiero sólo una. Entonces planteo la siguiente opción:</p>
+
+<pre><code class="language-php">// Obtengo las categorias pero como Collection en vez de Builder como hacía antes
+$posts = Post::query()
+    -&gt;with('categories:id,name')
+    -&gt;orderBy('created_at', 'desc')
+    -&gt;get();
+
+$categories = $posts
+    -&gt;plunk('categories')
+    -&gt;unique();
+
+$listOfposts = $posts-&gt;paginate(15);
+</code></pre>
+
+<p>Obviamente, <code>paginate()</code> no es un método de colección (<em>Collection</em>) válido, por lo que no funciona. Pero en teoría, esta sería la forma de hacerlo con una sola consulta. Mi siguiente paso es ver si me dejan paginar una colección a lo bruto:</p>
+
+<pre><code class="language-php">public function pagination(Collection $data)
+{
+    $items = $data-&gt;forPage($currentPage, $perPage);
+    $totalResults = $data-&gt;count();
+    $perPage = 15;
+    $currentPage = request('page') ?: (Paginator::resolveCurrentPage() ?: 1);
+
+    return new LengthAwarePaginator(
+        $items,
+        $totalResults,
+        $perPage,
+        $currentPage,
+        // Esta parte la copie de lo que hace por defecto el paginador de Laravel haciendo un dd()
+        [
+            'path' =&gt; url()-&gt;current(),
+            'pageName' =&gt; 'page',
+        ]
+    );
+}
+</code></pre>
+
+<p>Y ahora pruebo todo junto:</p>
+
+<pre><code class="language-php">$posts = Post::query()
+    -&gt;with('categories:id,name')
+    -&gt;orderBy('created_at', 'desc')
+    -&gt;get();
+
+$categories = $posts
+    -&gt;plunk('categories')
+    -&gt;unique();
+
+$listOfposts = $this-&gt;pagination($posts);
+
+public function pagination(Collection $data)
+{
+    $items = $data-&gt;forPage($currentPage, $perPage);
+    $totalResults = $data-&gt;count();
+    $perPage = 15;
+    $currentPage = request('page') ?: (Paginator::resolveCurrentPage() ?: 1);
+
+    return new LengthAwarePaginator(
+        $items,
+        $totalResults,
+        $perPage,
+        $currentPage,
+        // Esta parte la copie de lo que hace por defecto el paginador de Laravel haciendo un dd()
+        [
+            'path' =&gt; url()-&gt;current(),
+            'pageName' =&gt; 'page',
+        ]
+    );
+}
+</code></pre>
+
+<p>Y misteriosamente ha funcionado... ahora solo hago una consulta a la base de datos.</p>
+]]></content:encoded>
+                <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
+                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
+
+                            </item>
+                                <item>
                 <title><![CDATA[Refactoriza y simplica tus Controladores con Laravel]]></title>
                 <link>https://daguilar.dev/blog/laravel_simplifica-refactoriza-controladores-con-laravel</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/laravel_simplifica-refactoriza-controladores-con-laravel</guid>
@@ -6554,7 +6666,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Evan You el creador de <a href="https://vuejs.org/" target="_blank">VueJS</a> ha desarrollado esta nueva herramienta para la compilación de assets en el frontend, que surge como una alternativa más rápida y moderna que WebPack.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Testing, TTD y realización de pruebas.]]></title>
@@ -6564,7 +6676,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre testing, Desarrollo Guiado por Pruebas de software (Test-driven development: TDD), al igual que las diferentes librerias y herramientas para la realización de pruebas en código.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[SEO, posicionamiento en buscadores y motores de búsqueda]]></title>
@@ -6578,7 +6690,7 @@ if (! function_exists('userId')) {
 </blockquote>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Refactorizando, optimizando y simplificando código]]></title>
@@ -6588,7 +6700,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Refactorizar código es un <strong>procedimiento para reestructurar el código fuente</strong>, optimizando su estructura y su rendimiento, <strong>sin modificar el compartamiento del mismo</strong>.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Python, el lenguaje interpretado de alto nivel de moda]]></title>
@@ -6598,7 +6710,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre <a href="https://www.python.org/" target="_blank">Python</a>, el lenguaje de programación de alto nivel, orientado a objetos, interpretado y con una legibilidad de código increible. Uno de mis favoritos.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Programación general y lenguajes de programación]]></title>
@@ -6608,7 +6720,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre los diferentes lenguajes de programación, curiosidades, origenes, comparativas entre ellos...</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[PHP, el lenguaje de programación para el desarrollo web.]]></title>
@@ -6622,7 +6734,7 @@ if (! function_exists('userId')) {
 </blockquote>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Packagist, el repositorio de Composer para PHP]]></title>
@@ -6632,7 +6744,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre <a href="https://packagist.org/" class="link-out">Packagist</a>, el repositorio de paquetes PHP utilizado por Composer.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Packages, componentes de software trabajando juntos]]></title>
@@ -6642,7 +6754,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre gestión y creación de <strong>Packages</strong>. Componentes de <em>software</em>, independientes e intercambiables, que ofrecen una funcionalidad concreta y/o conjunta, y que están listos para su distribución y utilización.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Mis artículos mas personales como programador]]></title>
@@ -6652,7 +6764,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Los artículos mas personales, sobre mi día a día... pequeño diario de un programador fullstack.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Markdown el lenguaje para optimizar la web]]></title>
@@ -6662,7 +6774,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre <strong>Markdown</strong>, el lenguaje de marcado ligero creado por <em>John Gruber</em> y <strong>Aaron Swartz</strong> basado en numerosas convenciones utilizadas para marcar mensajes de correo electrónico utilizando para ello texto plano.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Laravel Livewire el framework de desarrollo de aplicaciones]]></title>
@@ -6676,7 +6788,7 @@ if (! function_exists('userId')) {
 </blockquote>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Laravel el framework PHP mas utilizado]]></title>
@@ -6690,7 +6802,7 @@ if (! function_exists('userId')) {
 </blockquote>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Javascript el lenguaje de programación del momento]]></title>
@@ -6704,7 +6816,7 @@ if (! function_exists('userId')) {
 </blockquote>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Java y sus frameworks spring, hibernate,...]]></title>
@@ -6714,7 +6826,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre <strong>Java</strong> el lenguaje multiplataforma y orientado a objetos, y todo su entorno de desarrollo: Spring, Spring boot, hibernate,...</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Frameworks. Estructuras para el desarrollo de software]]></title>
@@ -6724,7 +6836,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre <strong>Frameworks</strong> de desarrollo. Por lo general, módulos de software, que puede servir de base para desarrollo de software más complejo.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[El lenguaje de etiquetas HTML]]></title>
@@ -6734,7 +6846,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre <strong>HTML</strong> (HyperText Markup Language). El estándar que sirve de referencia para la elaboración de páginas web.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Artículos sobre servidores, su gestión, su mantenimiento y su configuración, ya sean seridores físicos o virtuales.]]></title>
@@ -6744,7 +6856,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre servidores, su gestión, configuración, mantenimiento, software de gestión y cualquier otra operación que pueda realizarse tanto en servidores físicos como virtuales o en la nube.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Artículos sobre Marketing. Conjunto de técnicas encaminadas a mejorar la comercialización o visualización de un producto]]></title>
@@ -6754,7 +6866,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos relacionados con Marketing online, utilizando técnicas para mejorar el posicionamiento de nuestro negocio en internet, utilizando tecnologías y medios digitales.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Artículos sobre github, el portal de Microsoft para desarrolladores de código]]></title>
@@ -6764,7 +6876,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre <strong>Github</strong> (plataforma de desarrollo colaborativo) y gestión de repositorios propiedad de Microsoft.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Artículos sobre equipo, aplicaciones, software y herramientas utilizadas en programación.]]></title>
@@ -6774,7 +6886,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre equipo, software, tecnología y herramientas utilizado por programadores.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Artículos sobre Eloquent el ORM de Laravel para bases de datos]]></title>
@@ -6784,7 +6896,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos relacionados con <a href="https://laravel.com/docs/6.x/eloquent" target="_blank">Laravel Eloquent</a>, desarrollado por <a href="https://twitter.com/taylorotwell" target="_blank">Taylor Otwell</a></p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Artículos sobre Composer el gestor de dependencias para PHP]]></title>
@@ -6798,7 +6910,7 @@ if (! function_exists('userId')) {
 </blockquote>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Artículos sobre Blade el sistema de plantillas del framework Laravel]]></title>
@@ -6812,7 +6924,7 @@ if (! function_exists('userId')) {
 </blockquote>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Artículos Bases de Datos, gestores de bases de datos y ORM]]></title>
@@ -6822,7 +6934,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre Bases de Datos (relacionales o no relacionales), software de gestión de bases de datos y ORMs utilizados por los diferentes frameworks.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Articulos sobre patrones de diseño en programación, soluciones habituales a problemas comunes]]></title>
@@ -6832,7 +6944,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre los diferentes patrones de diseño en programación, y como estructurar eficientemente nuestro código en base a ellos.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Angular el framework javascript de código abierto de Google.]]></title>
@@ -6842,7 +6954,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos relacionados con el framework desarrollado en TypeScript: Angular. De código abierto y mantenido por google.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[AlpineJS el framework javascript minimalista de Caleb Porzio]]></title>
@@ -6856,7 +6968,7 @@ if (! function_exists('userId')) {
 </blockquote>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
             </item>
         
     </channel>

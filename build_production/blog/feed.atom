@@ -3,12 +3,127 @@
     <title>Blog de Damián Aguilar</title>
     <link href="https://daguilar.dev" />
     <link type="application/atom+xml" rel="self" href="https://daguilar.dev/blog/feed.atom" />
-    <updated>2022-07-31T13:46:09+00:00</updated>
+    <updated>2022-08-03T07:04:41+00:00</updated>
     <id>https://daguilar.dev/blog/feed.atom</id>
     <author>
         <name>Damián Aguilar</name>
     </author>
                 <entry>
+    <id>https://daguilar.dev/blog/laravel_paginando-collections-con-laravel</id>
+    <link type="text/html" rel="alternate" href="https://daguilar.dev/blog/laravel_paginando-collections-con-laravel" />
+    <title>Paginando Colecciones con Laravel y optimizando consultas SQL</title>
+    <published>2022-08-03T00:00:00+00:00</published>
+    <updated>2022-08-03T00:00:00+00:00</updated>
+    <author>
+        <name>Damián Aguilar</name>
+    </author>
+    <summary type="html">Estos días me he encontrado con un caso real, en el que hacía dos consultas a la base de datos cuando realmente sólo quería hacer una. A veces lo que uno quiere y lo que puede conseguir no son compatibles, pero en este caso, si que ha sido posible.......</summary>
+    <content type="html"><![CDATA[
+        <p>Estos días me he encontrado con un caso real, en el que hacía dos consultas a la base de datos cuando realmente sólo quería hacer una. A veces lo que uno quiere y lo que puede conseguir no son compatibles, pero en este caso, si que ha sido posible.</p>
+
+<p>Planteo el problema. Imagina que tienes un blog en el que tienes dos tablas en la base de datos:</p>
+
+<ul>
+<li><strong>Posts</strong>: donde están se guardan los <em>posts</em> y que tienen un campo relacional con la siguiente tabla.</li>
+<li><strong>Categories</strong>: donde están las categorias donde se ubican los <em>posts</em>.</li>
+</ul>
+
+<p>Ahora yo quiero hacer los siguiente. Quiero mostrar sólo las categorias que tienen <em>posts</em> y obviamente, los <em>posts</em>. Todo bien hasta que quieres que los <em>posts</em> aparezcan con paginación... la cosa se complica ya que la consulta a los <em>posts</em> estará paginada y por tanto mostrará solo las categorias que aparezcan en los resultados de la paginación actual. Yo lo que quiero son todas las categorias que tengan <em>posts</em>.</p>
+
+<p>Mi primer planteamiento es hacer la consulta principal:</p>
+
+<pre><code class="language-php">$posts = Post::query()
+    -&gt;with('categories:id,name')
+    -&gt;orderBy('created_at', 'desc');
+</code></pre>
+
+<p>Ahora realizo dos consultas a partir de esta:</p>
+
+<pre><code class="language-php">// Obtengo las categorias
+$categories = $posts
+    -&gt;plunk('categories')
+    -&gt;unique();
+
+// Obtengo los posts paginados
+$listOfposts = $posts-&gt;paginate(15);
+</code></pre>
+
+<p>Ahora tengo la lista de categorias que tienen <em>posts</em> y la lista de <em>posts</em> con paginación. En total 2 consultas a la base de datos... pero yo quiero sólo una. Entonces planteo la siguiente opción:</p>
+
+<pre><code class="language-php">// Obtengo las categorias pero como Collection en vez de Builder como hacía antes
+$posts = Post::query()
+    -&gt;with('categories:id,name')
+    -&gt;orderBy('created_at', 'desc')
+    -&gt;get();
+
+$categories = $posts
+    -&gt;plunk('categories')
+    -&gt;unique();
+
+$listOfposts = $posts-&gt;paginate(15);
+</code></pre>
+
+<p>Obviamente, <code>paginate()</code> no es un método de colección (<em>Collection</em>) válido, por lo que no funciona. Pero en teoría, esta sería la forma de hacerlo con una sola consulta. Mi siguiente paso es ver si me dejan paginar una colección a lo bruto:</p>
+
+<pre><code class="language-php">public function pagination(Collection $data)
+{
+    $items = $data-&gt;forPage($currentPage, $perPage);
+    $totalResults = $data-&gt;count();
+    $perPage = 15;
+    $currentPage = request('page') ?: (Paginator::resolveCurrentPage() ?: 1);
+
+    return new LengthAwarePaginator(
+        $items,
+        $totalResults,
+        $perPage,
+        $currentPage,
+        // Esta parte la copie de lo que hace por defecto el paginador de Laravel haciendo un dd()
+        [
+            'path' =&gt; url()-&gt;current(),
+            'pageName' =&gt; 'page',
+        ]
+    );
+}
+</code></pre>
+
+<p>Y ahora pruebo todo junto:</p>
+
+<pre><code class="language-php">$posts = Post::query()
+    -&gt;with('categories:id,name')
+    -&gt;orderBy('created_at', 'desc')
+    -&gt;get();
+
+$categories = $posts
+    -&gt;plunk('categories')
+    -&gt;unique();
+
+$listOfposts = $this-&gt;pagination($posts);
+
+public function pagination(Collection $data)
+{
+    $items = $data-&gt;forPage($currentPage, $perPage);
+    $totalResults = $data-&gt;count();
+    $perPage = 15;
+    $currentPage = request('page') ?: (Paginator::resolveCurrentPage() ?: 1);
+
+    return new LengthAwarePaginator(
+        $items,
+        $totalResults,
+        $perPage,
+        $currentPage,
+        // Esta parte la copie de lo que hace por defecto el paginador de Laravel haciendo un dd()
+        [
+            'path' =&gt; url()-&gt;current(),
+            'pageName' =&gt; 'page',
+        ]
+    );
+}
+</code></pre>
+
+<p>Y misteriosamente ha funcionado... ahora solo hago una consulta a la base de datos.</p>
+    ]]></content>
+</entry>
+            <entry>
     <id>https://daguilar.dev/blog/laravel_simplifica-refactoriza-controladores-con-laravel</id>
     <link type="text/html" rel="alternate" href="https://daguilar.dev/blog/laravel_simplifica-refactoriza-controladores-con-laravel" />
     <title>Refactoriza y simplica tus Controladores con Laravel</title>
