@@ -41,7 +41,7 @@ En el caso de que las *cookies* sean instaladas desde un equipo o dominio gestio
 Para más información sobre *cookies*:
 
 - [Agencia Española de Protección de Datos](https://www.aepd.es/){.link-out}
-- [Guía de uso de cookies de la AEPD](http://www.interior.gob.es/documents/10180/13073/Guia_Cookies.pdf/7c72c988-1e55-42b5-aeee-f7c46a319903){.link-out}
+- [Guía de uso de cookies de la AEPD](https://www.aepd.es/es/documento/guia-cookies.pdf){.link-out}
 
 **Cookies utilizadas en la web**
 
