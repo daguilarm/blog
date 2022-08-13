@@ -3,12 +3,75 @@
     <title>Blog de Damián Aguilar</title>
     <link href="https://daguilar.dev" />
     <link type="application/atom+xml" rel="self" href="https://daguilar.dev/blog/feed.atom" />
-    <updated>2022-08-13T15:33:08+00:00</updated>
+    <updated>2022-08-13T15:39:47+00:00</updated>
     <id>https://daguilar.dev/blog/feed.atom</id>
     <author>
         <name>Damián Aguilar</name>
     </author>
                 <entry>
+    <id>https://daguilar.dev/blog/servidores_condigurar-dominio-en-digitalocean</id>
+    <link type="text/html" rel="alternate" href="https://daguilar.dev/blog/servidores_condigurar-dominio-en-digitalocean" />
+    <title>Configurar dominios en un hosting de Digitalocean</title>
+    <published>2022-08-13T00:00:00+00:00</published>
+    <updated>2022-08-13T00:00:00+00:00</updated>
+    <author>
+        <name>Damián Aguilar</name>
+    </author>
+    <summary type="html">Digitalocean, Linode, Amazon AWS, Hetzner y Vultr son algunos de los proveedores de servidores en la nube más utilizados. Estos sistemas virtualizados, te proporcionan toda la infraestructura necesaria para desplegar tu proyecto dandote acceso a bases......</summary>
+    <content type="html"><![CDATA[
+        <p><a href="https://m.do.co/c/507d909fac29" class="link-out">Digitalocean</a>, Linode, Amazon AWS, Hetzner y Vultr son algunos de los proveedores de servidores en la nube más utilizados. Estos sistemas virtualizados, te proporcionan toda la infraestructura necesaria para desplegar tu proyecto dandote acceso a bases de datos, discos duros, hardware, etc... En resumen, estos servicios se denominan IaaS (Infraestructura como servicio) y te ofrecen una versatilidad enorme a la hora de configurar tu proyecto, pudiendo aumentar memoria, capacidad de disco duro, o balancear la carga del servidor según las necesidades puntuales de tu proyecto.</p>
+
+<p>Estos son uno de los motivos que me han llevado a utilizar <a href="https://m.do.co/c/507d909fac29" class="link-out">Digitalocean</a> como proveedor en la nube para mis proyectos (salvo este blog, que está alojado en <a href="https://www.netlify.com/" class="link-out">Netlify</a>, servicio espectacular para sitios estáticos sin bases de datos).</p>
+
+<p>Uno de los principales motivos ha sido el que para gestionar los servidores de mis proyectos utilizo <a href="https://forge.laravel.com/" class="link-out">Laravel Forge</a> y entre los servidores que soporta está <a href="https://m.do.co/c/507d909fac29" class="link-out">Digitalocean</a>.</p>
+
+<p>El otro motivo, es que <a href="https://m.do.co/c/507d909fac29" class="link-out">te regalan 100$ para empezar a usar sus servidores</a>... nada mal, y también es cierto que hay muchos tutoriales sobre esta plataforma, que al final, te animan a utilizarla.</p>
+
+<h2>Configurar el dominio con las DNS de Digitalocean</h2>
+
+<p>Lo primero es ir a nuestro proveedor de dominios y en la sección de DNS añadir las de <a href="https://m.do.co/c/507d909fac29" class="link-out">Digitalocean</a>:</p>
+
+<ul>
+<li>NS1.DIGITALOCEAN.COM</li>
+<li>NS2.DIGITALOCEAN.COM</li>
+<li>NS3.DIGITALOCEAN.COM</li>
+</ul>
+
+<p>Guardamos, y ahora tendremos que esperar entre 12h y 48h a que se propaguen las DNS por todo internet... lo normal es que tarden menos de 24 horas, pero a veces se complica, y lo digo por experiencia. Mi último proyecto ha tardado casi 48 horas en estar disponible.</p>
+
+<h2>Ir al panel de administración de Digitalocean</h2>
+
+<p>Lo primero que tienes que hacer es ir a tu servidor (Droplets) e ir a la sección de dominios. Una vez allí, le das a crear uno nuevo, y entonces ya podemos configurar las DNS.</p>
+
+<p><img src="../../../assets/img/posts/dns/new-domain.png" alt="Nuevo dominio" class="thumbnail" /></p>
+
+<p>Primero hay que añadir un registro de tipo A, para ello en el campo <code>HOSTNAME</code>, añadimos <code>@</code> y en el campo <code>WILL DIRECT TO</code> seleccionamos en el desplegable el servidor en el que queremos añadir el dominio. Y ahora pulsamos en <code>Create Record</code>.</p>
+
+<p><img src="../../../assets/img/posts/dns/a-record.png" alt="DNS Records A" class="thumbnail" /></p>
+
+<p>Lo siguiente será crear un registro tipo <code>CNAME</code>. En el campo <code>HOSTNAME</code> añadimos <code>www</code> y en el campo <code>IS AN ALIAS OF</code> añadimo <code>@</code>. Y ahora pulsamos en <code>Create Record</code>.</p>
+
+<p><img src="../../../assets/img/posts/dns/cname-record.png" alt="DNS Records A" class="thumbnail" /></p>
+
+<p>Ahora tenemos que añadir otro registro <code>CNAME</code>, esta vez para añadir la opción de <em>wildcard</em>, para ello, en el campo <code>HOSTNAME</code> añadimos <code>*</code> y en el campo <code>IS AN ALIAS OF</code> añadimo <code>@</code>. Y volvemos a pulsar en <code>Create Record</code>.</p>
+
+<p><img src="../../../assets/img/posts/dns/wildcard-record.png" alt="DNS Records Wildcard" class="thumbnail" /></p>
+
+<p>Y por último, nos quedaría una configuración como esta:</p>
+
+<p><img src="../../../assets/img/posts/dns/final.png" alt="DNS Configuración final" class="thumbnail" /></p>
+
+<h4>Fuentes:</h4>
+
+<ul>
+<li><a href="https://www.redhat.com/es/topics/cloud-computing/what-are-cloud-providers" class="link-out">https://www.redhat.com/es/topics/cloud-computing/what-are-cloud-providers</a></li>
+<li><a href="https://www.ambit-bst.com/blog/definici%C3%B3n-de-iaas-paas-y-saas-en-qu%C3%A9-se-diferencian" class="link-out">https://www.ambit-bst.com/blog/definici%C3%B3n-de-iaas-paas-y-saas-en-qu%C3%A9-se-diferencian</a></li>
+<li><a href="https://serverpilot.io/docs/how-to-configure-dns-on-digitalocean/" class="link-out">https://serverpilot.io/docs/how-to-configure-dns-on-digitalocean/</a></li>
+<li><a href="https://stackoverflow.com/questions/55808188/how-to-setup-dns-configuration-with-netlify-and-digital-ocean-combined" class="link-out">https://stackoverflow.com/questions/55808188/how-to-setup-dns-configuration-with-netlify-and-digital-ocean-combined</a></li>
+</ul>
+    ]]></content>
+</entry>
+            <entry>
     <id>https://daguilar.dev/blog/laravel_paginando-collections-con-laravel</id>
     <link type="text/html" rel="alternate" href="https://daguilar.dev/blog/laravel_paginando-collections-con-laravel" />
     <title>Paginando Colecciones con Laravel y optimizando consultas SQL</title>
@@ -5720,8 +5783,8 @@ return app(Pipeline::class)
     ]]></content>
 </entry>
             <entry>
-    <id>https://daguilar.dev/blog/servers_sistemas-de-gestion-de-servidores</id>
-    <link type="text/html" rel="alternate" href="https://daguilar.dev/blog/servers_sistemas-de-gestion-de-servidores" />
+    <id>https://daguilar.dev/blog/servidores_sistemas-de-gestion-de-servidores</id>
+    <link type="text/html" rel="alternate" href="https://daguilar.dev/blog/servidores_sistemas-de-gestion-de-servidores" />
     <title>Sistemas de gestión de servidores</title>
     <published>2019-12-21T00:00:00+00:00</published>
     <updated>2019-12-21T00:00:00+00:00</updated>
@@ -5754,7 +5817,7 @@ ServerPilot
 
 <ul>
 <li><a href="https://forge.laravel.com/" class="link-out">Laravel forge</a></li>
-<li><a href="https://moss.sh/?ref=e9dcfd00d548" class="link-out">Moss</a></li>
+<li><a href="https://moss.sh/" class="link-out">Moss</a></li>
 <li><a href="https://runcloud.io/" class="link-out">Runcloud</a></li>
 <li><a href="https://serverpilot.io/" class="link-out">ServerPilot</a></li>
 </ul>
@@ -6586,8 +6649,8 @@ class UserController extends Controller
     ]]></content>
 </entry>
             <entry>
-    <id>https://daguilar.dev/blog/servers_alojando-sitios-estaticos-en-netlify</id>
-    <link type="text/html" rel="alternate" href="https://daguilar.dev/blog/servers_alojando-sitios-estaticos-en-netlify" />
+    <id>https://daguilar.dev/blog/servidores_alojando-sitios-estaticos-en-netlify</id>
+    <link type="text/html" rel="alternate" href="https://daguilar.dev/blog/servidores_alojando-sitios-estaticos-en-netlify" />
     <title>Alojando sitios estáticos en Netlify</title>
     <published>2019-12-08T00:00:00+00:00</published>
     <updated>2019-12-08T00:00:00+00:00</updated>

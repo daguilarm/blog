@@ -6,10 +6,70 @@
         <description><![CDATA[Blog sobre programación de Damián Aguilar, en el vas a encontrar artículos y recursos sobre: php, javascript, vuejs, phyton, java, livewire, alpinejs, laravel, seo... y mucho más. Además, encontrarás noticias sobre desarrollo web, lenguajes de programación, software y marketing]]></description>
         <atom:link href="https://daguilar.dev/blog/rss.xml" rel="self" type="application/rss+xml" />
         <language>es</language>
-        <lastBuildDate>Wed, 03 Aug 2022 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Sat, 13 Aug 2022 00:00:00 +0000</lastBuildDate>
 
         <!-- Posts -->
                                                             <item>
+                <title><![CDATA[Configurar dominios en un hosting de Digitalocean]]></title>
+                <link>https://daguilar.dev/blog/servidores_condigurar-dominio-en-digitalocean</link>
+                <guid isPermaLink="true">https://daguilar.dev/blog/servidores_condigurar-dominio-en-digitalocean</guid>
+                <description><![CDATA[Configurar las DNS de un dominio comprado en Google Domains en el proveedor de alojamiento web Digitalocean. Configuración de los diferentes DNS que hay que crear y distribuir.]]></description>
+                <content:encoded><![CDATA[<p><a href="https://m.do.co/c/507d909fac29" class="link-out">Digitalocean</a>, Linode, Amazon AWS, Hetzner y Vultr son algunos de los proveedores de servidores en la nube más utilizados. Estos sistemas virtualizados, te proporcionan toda la infraestructura necesaria para desplegar tu proyecto dandote acceso a bases de datos, discos duros, hardware, etc... En resumen, estos servicios se denominan IaaS (Infraestructura como servicio) y te ofrecen una versatilidad enorme a la hora de configurar tu proyecto, pudiendo aumentar memoria, capacidad de disco duro, o balancear la carga del servidor según las necesidades puntuales de tu proyecto.</p>
+
+<p>Estos son uno de los motivos que me han llevado a utilizar <a href="https://m.do.co/c/507d909fac29" class="link-out">Digitalocean</a> como proveedor en la nube para mis proyectos (salvo este blog, que está alojado en <a href="https://www.netlify.com/" class="link-out">Netlify</a>, servicio espectacular para sitios estáticos sin bases de datos).</p>
+
+<p>Uno de los principales motivos ha sido el que para gestionar los servidores de mis proyectos utilizo <a href="https://forge.laravel.com/" class="link-out">Laravel Forge</a> y entre los servidores que soporta está <a href="https://m.do.co/c/507d909fac29" class="link-out">Digitalocean</a>.</p>
+
+<p>El otro motivo, es que <a href="https://m.do.co/c/507d909fac29" class="link-out">te regalan 100$ para empezar a usar sus servidores</a>... nada mal, y también es cierto que hay muchos tutoriales sobre esta plataforma, que al final, te animan a utilizarla.</p>
+
+<h2>Configurar el dominio con las DNS de Digitalocean</h2>
+
+<p>Lo primero es ir a nuestro proveedor de dominios y en la sección de DNS añadir las de <a href="https://m.do.co/c/507d909fac29" class="link-out">Digitalocean</a>:</p>
+
+<ul>
+<li>NS1.DIGITALOCEAN.COM</li>
+<li>NS2.DIGITALOCEAN.COM</li>
+<li>NS3.DIGITALOCEAN.COM</li>
+</ul>
+
+<p>Guardamos, y ahora tendremos que esperar entre 12h y 48h a que se propaguen las DNS por todo internet... lo normal es que tarden menos de 24 horas, pero a veces se complica, y lo digo por experiencia. Mi último proyecto ha tardado casi 48 horas en estar disponible.</p>
+
+<h2>Ir al panel de administración de Digitalocean</h2>
+
+<p>Lo primero que tienes que hacer es ir a tu servidor (Droplets) e ir a la sección de dominios. Una vez allí, le das a crear uno nuevo, y entonces ya podemos configurar las DNS.</p>
+
+<p><img src="../../../assets/img/posts/dns/new-domain.png" alt="Nuevo dominio" class="thumbnail" /></p>
+
+<p>Primero hay que añadir un registro de tipo A, para ello en el campo <code>HOSTNAME</code>, añadimos <code>@</code> y en el campo <code>WILL DIRECT TO</code> seleccionamos en el desplegable el servidor en el que queremos añadir el dominio. Y ahora pulsamos en <code>Create Record</code>.</p>
+
+<p><img src="../../../assets/img/posts/dns/a-record.png" alt="DNS Records A" class="thumbnail" /></p>
+
+<p>Lo siguiente será crear un registro tipo <code>CNAME</code>. En el campo <code>HOSTNAME</code> añadimos <code>www</code> y en el campo <code>IS AN ALIAS OF</code> añadimo <code>@</code>. Y ahora pulsamos en <code>Create Record</code>.</p>
+
+<p><img src="../../../assets/img/posts/dns/cname-record.png" alt="DNS Records A" class="thumbnail" /></p>
+
+<p>Ahora tenemos que añadir otro registro <code>CNAME</code>, esta vez para añadir la opción de <em>wildcard</em>, para ello, en el campo <code>HOSTNAME</code> añadimos <code>*</code> y en el campo <code>IS AN ALIAS OF</code> añadimo <code>@</code>. Y volvemos a pulsar en <code>Create Record</code>.</p>
+
+<p><img src="../../../assets/img/posts/dns/wildcard-record.png" alt="DNS Records Wildcard" class="thumbnail" /></p>
+
+<p>Y por último, nos quedaría una configuración como esta:</p>
+
+<p><img src="../../../assets/img/posts/dns/final.png" alt="DNS Configuración final" class="thumbnail" /></p>
+
+<h4>Fuentes:</h4>
+
+<ul>
+<li><a href="https://www.redhat.com/es/topics/cloud-computing/what-are-cloud-providers" class="link-out">https://www.redhat.com/es/topics/cloud-computing/what-are-cloud-providers</a></li>
+<li><a href="https://www.ambit-bst.com/blog/definici%C3%B3n-de-iaas-paas-y-saas-en-qu%C3%A9-se-diferencian" class="link-out">https://www.ambit-bst.com/blog/definici%C3%B3n-de-iaas-paas-y-saas-en-qu%C3%A9-se-diferencian</a></li>
+<li><a href="https://serverpilot.io/docs/how-to-configure-dns-on-digitalocean/" class="link-out">https://serverpilot.io/docs/how-to-configure-dns-on-digitalocean/</a></li>
+<li><a href="https://stackoverflow.com/questions/55808188/how-to-setup-dns-configuration-with-netlify-and-digital-ocean-combined" class="link-out">https://stackoverflow.com/questions/55808188/how-to-setup-dns-configuration-with-netlify-and-digital-ocean-combined</a></li>
+</ul>
+]]></content:encoded>
+                <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
+                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
+
+                            </item>
+                                <item>
                 <title><![CDATA[Paginando Colecciones con Laravel y optimizando consultas SQL]]></title>
                 <link>https://daguilar.dev/blog/laravel_paginando-collections-con-laravel</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/laravel_paginando-collections-con-laravel</guid>
@@ -5581,8 +5641,8 @@ return app(Pipeline::class)
                             </item>
                                 <item>
                 <title><![CDATA[Sistemas de gestión de servidores]]></title>
-                <link>https://daguilar.dev/blog/servers_sistemas-de-gestion-de-servidores</link>
-                <guid isPermaLink="true">https://daguilar.dev/blog/servers_sistemas-de-gestion-de-servidores</guid>
+                <link>https://daguilar.dev/blog/servidores_sistemas-de-gestion-de-servidores</link>
+                <guid isPermaLink="true">https://daguilar.dev/blog/servidores_sistemas-de-gestion-de-servidores</guid>
                 <description><![CDATA[Listado de los principales sistemas de gestión de servidores.]]></description>
                 <content:encoded><![CDATA[<p>El objectivo de este artículo es el de mantener una lista (actualizada) de los principales sistemas de gestión de servidores.</p>
 
@@ -5590,7 +5650,7 @@ return app(Pipeline::class)
 
 <ul>
 <li><a href="https://forge.laravel.com/" class="link-out">Laravel forge</a></li>
-<li><a href="https://moss.sh/?ref=e9dcfd00d548" class="link-out">Moss</a></li>
+<li><a href="https://moss.sh/" class="link-out">Moss</a></li>
 <li><a href="https://runcloud.io/" class="link-out">Runcloud</a></li>
 <li><a href="https://serverpilot.io/" class="link-out">ServerPilot</a></li>
 </ul>
@@ -6415,8 +6475,8 @@ class UserController extends Controller
                             </item>
                                 <item>
                 <title><![CDATA[Alojando sitios estáticos en Netlify]]></title>
-                <link>https://daguilar.dev/blog/servers_alojando-sitios-estaticos-en-netlify</link>
-                <guid isPermaLink="true">https://daguilar.dev/blog/servers_alojando-sitios-estaticos-en-netlify</guid>
+                <link>https://daguilar.dev/blog/servidores_alojando-sitios-estaticos-en-netlify</link>
+                <guid isPermaLink="true">https://daguilar.dev/blog/servidores_alojando-sitios-estaticos-en-netlify</guid>
                 <description><![CDATA[Alojamiento gratuito para sitios estáticos en Netlify]]></description>
                 <content:encoded><![CDATA[<p><a href="https://www.netlify.com/" class="link-out">Netlify</a>, es una plataforma que va más allá de ser un simple servicio de alojamiento estático para sitios web. Nos permite vincular nuestro repositorio (por ejemplo, de Github o Gitlab), de forma que nos permite una integración continua.</p>
 
@@ -6682,7 +6742,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Evan You el creador de <a href="https://vuejs.org/" target="_blank">VueJS</a> ha desarrollado esta nueva herramienta para la compilación de assets en el frontend, que surge como una alternativa más rápida y moderna que WebPack.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Testing, TTD y realización de pruebas.]]></title>
@@ -6692,7 +6752,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre testing, Desarrollo Guiado por Pruebas de software (Test-driven development: TDD), al igual que las diferentes librerias y herramientas para la realización de pruebas en código.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[SEO, posicionamiento en buscadores y motores de búsqueda]]></title>
@@ -6706,7 +6766,7 @@ if (! function_exists('userId')) {
 </blockquote>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Refactorizando, optimizando y simplificando código]]></title>
@@ -6716,7 +6776,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Refactorizar código es un <strong>procedimiento para reestructurar el código fuente</strong>, optimizando su estructura y su rendimiento, <strong>sin modificar el compartamiento del mismo</strong>.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Python, el lenguaje interpretado de alto nivel de moda]]></title>
@@ -6726,7 +6786,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre <a href="https://www.python.org/" target="_blank">Python</a>, el lenguaje de programación de alto nivel, orientado a objetos, interpretado y con una legibilidad de código increible. Uno de mis favoritos.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Programación general y lenguajes de programación]]></title>
@@ -6736,7 +6796,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre los diferentes lenguajes de programación, curiosidades, origenes, comparativas entre ellos...</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[PHP, el lenguaje de programación para el desarrollo web.]]></title>
@@ -6750,7 +6810,7 @@ if (! function_exists('userId')) {
 </blockquote>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Packagist, el repositorio de Composer para PHP]]></title>
@@ -6760,7 +6820,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre <a href="https://packagist.org/" class="link-out">Packagist</a>, el repositorio de paquetes PHP utilizado por Composer.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Packages, componentes de software trabajando juntos]]></title>
@@ -6770,7 +6830,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre gestión y creación de <strong>Packages</strong>. Componentes de <em>software</em>, independientes e intercambiables, que ofrecen una funcionalidad concreta y/o conjunta, y que están listos para su distribución y utilización.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Mis artículos mas personales como programador]]></title>
@@ -6780,7 +6840,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Los artículos mas personales, sobre mi día a día... pequeño diario de un programador fullstack.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Markdown el lenguaje para optimizar la web]]></title>
@@ -6790,7 +6850,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre <strong>Markdown</strong>, el lenguaje de marcado ligero creado por <em>John Gruber</em> y <strong>Aaron Swartz</strong> basado en numerosas convenciones utilizadas para marcar mensajes de correo electrónico utilizando para ello texto plano.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Laravel Livewire el framework de desarrollo de aplicaciones]]></title>
@@ -6804,7 +6864,7 @@ if (! function_exists('userId')) {
 </blockquote>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Laravel el framework PHP mas utilizado]]></title>
@@ -6818,7 +6878,7 @@ if (! function_exists('userId')) {
 </blockquote>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Javascript el lenguaje de programación del momento]]></title>
@@ -6832,7 +6892,7 @@ if (! function_exists('userId')) {
 </blockquote>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Java y sus frameworks spring, hibernate,...]]></title>
@@ -6842,7 +6902,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre <strong>Java</strong> el lenguaje multiplataforma y orientado a objetos, y todo su entorno de desarrollo: Spring, Spring boot, hibernate,...</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Frameworks. Estructuras para el desarrollo de software]]></title>
@@ -6852,7 +6912,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre <strong>Frameworks</strong> de desarrollo. Por lo general, módulos de software, que puede servir de base para desarrollo de software más complejo.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[El lenguaje de etiquetas HTML]]></title>
@@ -6862,7 +6922,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre <strong>HTML</strong> (HyperText Markup Language). El estándar que sirve de referencia para la elaboración de páginas web.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Artículos sobre servidores, su gestión, su mantenimiento y su configuración, ya sean seridores físicos o virtuales.]]></title>
@@ -6872,7 +6932,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre servidores, su gestión, configuración, mantenimiento, software de gestión y cualquier otra operación que pueda realizarse tanto en servidores físicos como virtuales o en la nube.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Artículos sobre Marketing. Conjunto de técnicas encaminadas a mejorar la comercialización o visualización de un producto]]></title>
@@ -6882,7 +6942,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos relacionados con Marketing online, utilizando técnicas para mejorar el posicionamiento de nuestro negocio en internet, utilizando tecnologías y medios digitales.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Artículos sobre github, el portal de Microsoft para desarrolladores de código]]></title>
@@ -6892,7 +6952,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre <strong>Github</strong> (plataforma de desarrollo colaborativo) y gestión de repositorios propiedad de Microsoft.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Artículos sobre equipo, aplicaciones, software y herramientas utilizadas en programación.]]></title>
@@ -6902,7 +6962,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre equipo, software, tecnología y herramientas utilizado por programadores.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Artículos sobre Eloquent el ORM de Laravel para bases de datos]]></title>
@@ -6912,7 +6972,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos relacionados con <a href="https://laravel.com/docs/6.x/eloquent" target="_blank">Laravel Eloquent</a>, desarrollado por <a href="https://twitter.com/taylorotwell" target="_blank">Taylor Otwell</a></p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Artículos sobre Composer el gestor de dependencias para PHP]]></title>
@@ -6926,7 +6986,7 @@ if (! function_exists('userId')) {
 </blockquote>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Artículos sobre Blade el sistema de plantillas del framework Laravel]]></title>
@@ -6940,7 +7000,7 @@ if (! function_exists('userId')) {
 </blockquote>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Artículos Bases de Datos, gestores de bases de datos y ORM]]></title>
@@ -6950,7 +7010,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre Bases de Datos (relacionales o no relacionales), software de gestión de bases de datos y ORMs utilizados por los diferentes frameworks.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Articulos sobre patrones de diseño en programación, soluciones habituales a problemas comunes]]></title>
@@ -6960,7 +7020,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre los diferentes patrones de diseño en programación, y como estructurar eficientemente nuestro código en base a ellos.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Angular el framework javascript de código abierto de Google.]]></title>
@@ -6970,7 +7030,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos relacionados con el framework desarrollado en TypeScript: Angular. De código abierto y mantenido por google.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[AlpineJS el framework javascript minimalista de Caleb Porzio]]></title>
@@ -6984,7 +7044,7 @@ if (! function_exists('userId')) {
 </blockquote>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
             </item>
         
     </channel>
