@@ -52,5 +52,10 @@
                 Composer
             </a>
         </li>
+        <li class="mx-2">
+            <a title="Artículos sobre Servidores" href="{{ $page->baseUrl }}/blog/categories/servers/" class="{{ $nav_cat_bg }} {{ $nav_cat_bg_hover }} {{ $nav_cat_text }} {{ $nav_cat_text_hover }} rounded text-xs py-1 px-3">
+                Servidores
+            </a>
+        </li>
     </ul>
 </div>
