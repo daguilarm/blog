@@ -13,7 +13,7 @@ Estos son uno de los motivos que me han llevado a utilizar [Digitalocean](https:
 
 Uno de los principales motivos ha sido el que para gestionar los servidores de mis proyectos utilizo [Laravel Forge](https://forge.laravel.com/){.link-out} y entre los servidores que soporta está [Digitalocean](https://m.do.co/c/507d909fac29){.link-out}.
 
-El otro motivo, es que [te regalan 100$ para empezar a usar sus servidores](https://m.do.co/c/507d909fac29){.link-out}... nada mal, y también es cierto que hay muchos tutoriales sobre esta plataforma, que al final, te animan a utilizarla.
+> El otro motivo, es que [te regalan 100$ para empezar a usar sus servidores](https://m.do.co/c/507d909fac29){.link-out}... nada mal, y también > es cierto que hay muchos tutoriales sobre esta plataforma, que al final, te animan a utilizarla.
 
 ## Configurar el dominio con las DNS de Digitalocean 
 
