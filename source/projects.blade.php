@@ -8,7 +8,26 @@ description: Listado de proyectos desarrollados por el programador e ingeniero D
     <h1 class="text-blue-800 text-3xl md:text-4xl lg:text-5xl">Proyectos</h1>
     <h2 class="text-xl font-normal">Actualmente estoy desarrollando las siguientes proyectos:</h2>
     <section id="belich1" class="mt-8 p-6 border-b border-blue-400">
-        <h3 class="text-xl">a) Laravel Livewire multi select (combobox).</h3>
+        <h3 class="text-xl">a) Empleatis.com - Metabuscador de empleo.</h3>
+        <p>
+            Un metabuscador de empleo desarrollado con Laravel, Livewire y Alpinejs. Busca las ofertas laborales entre los mejores buscadores de empleo de internet.
+        </p>
+        <p>
+            Tiene las siguientes características:
+        </p>
+        <div class="sm:flex">
+            <ul class="w-full sm:flex-1">
+                <li>Busqueda de ofertas en los principales portales de empleo.</li>
+                <li>Todos los días se actualizan las bases de datos desde las diferentes fuentes.</li>
+                <li>Una vez obtenidos los datos, se clasifican las diferentes ofertas de empleo por categorias.</li>
+                <li>Mediante un algoritmo de puntuación (Jrank) se ordenan las ofertas laborales en función de 17 parámetros.</li>
+                <li>Desarrollando con PHP, Laravel, Livewire y AlpineJS.</li>
+            </ul>
+        </div>
+        <div class="w-full mt-12 sm:mt-0">
+            <p><strong>Página web:</strong> <a href="https://empleatis.com">https://empleatis.com</a></p>
+        </div>
+        <h3 class="text-xl">b) Laravel Livewire multi select (combobox).</h3>
         <p>
             Es un componente dinámico de Laravel Livewire para gestionar campos <code>select</code> dependientes entre ellos.
         </p>
@@ -37,7 +56,7 @@ description: Listado de proyectos desarrollados por el programador e ingeniero D
         </div>
     </section>
     <section id="belich2" class="mt-8 p-6 border-b border-blue-400">
-        <h3 class="text-xl">b) Belich Tables.</h3>
+        <h3 class="text-xl">c) Belich Tables.</h3>
         <p>
             Es un componente dinámico de Laravel Livewire para tablas de datos. Es como el famoso datatables basado en Jquery, pero utilizando Livewire, AlpineJS y TailwindCSS.
         </p>

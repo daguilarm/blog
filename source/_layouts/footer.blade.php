@@ -15,6 +15,9 @@
         </a> -
         <a href="https://daguilar.dev/blog/legal/privacity/" class="sm:text-gray-100 hover:text-gray-300">
             Aviso de privacidad
+        </a> - 
+        <a href="https://empleatis.com" class="sm:text-gray-100 hover:text-gray-300">
+            Buscador de empleo
         </a>
     </div>
 </footer>
