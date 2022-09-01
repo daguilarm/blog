@@ -2,42 +2,48 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8">
-        <title>Proyectos en los que estoy trabajando actualmente</title>
+        <title>Primero pasos con PEST el Framework de pruebas de PHP</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="Listado de proyectos desarrollados por el programador e ingeniero Damián Aguilar. Actualmente estoy trabajando en todos estos proyectos.">
+        <meta name="description" content="Tutorial sobre la configuración y desarrollo de pruebas con el Framework PEST. Con este Framework de pruebas o tests, podremos simplificar el código de pruebas. El Framework ha sido desarrollado por Nuno Maduro, un referente en la comunidad Laravel.">
         <meta name="msvalidate.01" content="7EBAF0830896AD1D4A27E93C37552EDA" />
         <meta http-equiv="expires" content="86400"/>
         
-        <meta property="og:title" content="Proyectos en los que estoy trabajando actualmente" />
+        <meta property="og:title" content="Primero pasos con PEST el Framework de pruebas de PHP" />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://daguilar.dev/projects"/>
-        <meta property="og:description" content="Listado de proyectos desarrollados por el programador e ingeniero Damián Aguilar. Actualmente estoy trabajando en todos estos proyectos." />
+        <meta property="og:url" content="https://daguilar.dev/blog/tests_empezando-con-pest-el-banco-de-pruebas-de-php"/>
+        <meta property="og:description" content="Tutorial sobre la configuración y desarrollo de pruebas con el Framework PEST. Con este Framework de pruebas o tests, podremos simplificar el código de pruebas. El Framework ha sido desarrollado por Nuno Maduro, un referente en la comunidad Laravel." />
         <meta property="og:locale" content="es_ES">
         <meta property="og:site_name" content="Blog de Damián Aguilar">
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image" content="https://daguilar.dev/assets/img/og-image.jpg" />
-        <meta property="og:image:alt" content="Proyectos en los que estoy trabajando actualmente" />
+        <meta property="og:image:alt" content="Primero pasos con PEST el Framework de pruebas de PHP" />
         
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:site" content="@daguilarm">
         <meta name="twitter:creator" content="@daguilarm">
-        <meta name="twitter:title" content="Proyectos en los que estoy trabajando actualmente">
-        <meta name="twitter:description" content="Listado de proyectos desarrollados por el programador e ingeniero Damián Aguilar. Actualmente estoy trabajando en todos estos proyectos.">
+        <meta name="twitter:title" content="Primero pasos con PEST el Framework de pruebas de PHP">
+        <meta name="twitter:description" content="Tutorial sobre la configuración y desarrollo de pruebas con el Framework PEST. Con este Framework de pruebas o tests, podremos simplificar el código de pruebas. El Framework ha sido desarrollado por Nuno Maduro, un referente en la comunidad Laravel.">
         <meta name="twitter:creator" content="@daguilarm">
         <meta name="twitter:domain" content="https://daguilar.dev">
-        <meta name="twitter:image" content="https://daguilar.dev/assets/img/twitter.jpg?refresh=332438672">
-        <meta name="twitter:image:alt" content="Proyectos en los que estoy trabajando actualmente">
+        <meta name="twitter:image" content="https://daguilar.dev/assets/img/twitter.jpg?refresh=817196622">
+        <meta name="twitter:image:alt" content="Primero pasos con PEST el Framework de pruebas de PHP">
         
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
         
-                
+                                <meta property="article:tag" content="php">
+                    <meta property="article:tag" content="laravel">
+                    <meta property="article:tag" content="tests">
+                <meta property="article:published_time" content="2022-09-01T00:00:00+00:00">
+    <meta property="article:updated_time" content="2022-09-01T00:00:00+00:00">
+    
+        
         <link rel="home" href="https://daguilar.dev">
-        <link rel="alternate" type="application/rss+xml" title="Proyectos en los que estoy trabajando actualmente" href="https://daguilar.dev/rss.xml" />
+        <link rel="alternate" type="application/rss+xml" title="Primero pasos con PEST el Framework de pruebas de PHP" href="https://daguilar.dev/rss.xml" />
         <link rel="apple-touch-icon" sizes="57x57" href="https://daguilar.dev/assets/img/favicon/apple-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="60x60" href="https://daguilar.dev/assets/img/favicon/apple-icon-60x60.png">
         <link rel="apple-touch-icon" sizes="72x72" href="https://daguilar.dev/assets/img/favicon/apple-icon-72x72.png">
@@ -162,7 +168,7 @@
     </a>
 
     <a title="Proyectos: Blog de Damián Aguilar" href="/projects/"
-        class="ml-6 text-white hover:text-blue-700 hover:bg-blue-100 hover:shadow rounded py-1 px-3 active">
+        class="ml-6 text-white hover:text-blue-700 hover:bg-blue-100 hover:shadow rounded py-1 px-3 ">
         Proyectos
     </a>
 
@@ -221,90 +227,272 @@
         <main role="main" class="flex-auto w-full container mx-auto py-16 px-6 z-20">
 
             <div class="marketing-banner flex justify-center w-full"></div>
-                <h1 class="text-blue-800 text-3xl md:text-4xl lg:text-5xl">Proyectos</h1>
-    <h2 class="text-xl font-normal">Actualmente estoy desarrollando las siguientes proyectos:</h2>
-    <section id="belich1" class="mt-8 p-6 border-b border-blue-400">
-        <h3 class="text-xl">a) Empleatis.com - Metabuscador de empleo.</h3>
-        <p>
-            Un metabuscador de empleo desarrollado con Laravel, Livewire y Alpinejs. Busca las ofertas laborales entre los mejores buscadores de empleo de internet.
-        </p>
-        <p>
-            Tiene las siguientes características:
-        </p>
-        <div class="sm:flex">
-            <ul class="w-full sm:flex-1">
-                <li>Busqueda de ofertas en los principales portales de empleo.</li>
-                <li>Todos los días se actualizan las bases de datos desde las diferentes fuentes.</li>
-                <li>Una vez obtenidos los datos, se clasifican las diferentes ofertas de empleo por categorias.</li>
-                <li>Mediante un algoritmo de puntuación (Jrank) se ordenan las ofertas laborales en función de 17 parámetros.</li>
-                <li>Desarrollando con PHP, Laravel, Livewire y AlpineJS.</li>
-            </ul>
+            
+    <article class=" bg-white rounded-xl shadow-xl p-9 my-10 border border-gray-300">
+        <h1 class="leading-none mb-6 text-blue-800 text-3xl md:text-4xl lg:text-5xl">Primero pasos con PEST el Framework de pruebas de PHP</h1>
+
+        <div class="flex justify-start text-gray-600 text-xl md:mt-0 mb-4">
+            <div>Autor: Damián Aguilar</div>
+            <a href="https://twitter.com/daguilarm" target="_black" class="mx-2"><img src="/assets/img/twitter.png" alt="twitter" class="opacity-75 hover:opacity-100 h-8 w-8 bg-white rounded-full"></a>
+            <div>- Creado el 01/09/2022</div>
+                    </div>
+
+                                    <a
+                    href="/blog/categories/php/"
+                    title="View posts in php"
+                    class="inline-block bg-blue-200 hover:bg-blue-400 leading-loose tracking-wide text-blue-600 hover:text-white uppercase text-xs font-semibold rounded mr-4 px-3 pt-px"
+                >php</a>
+                            <a
+                    href="/blog/categories/laravel/"
+                    title="View posts in laravel"
+                    class="inline-block bg-blue-200 hover:bg-blue-400 leading-loose tracking-wide text-blue-600 hover:text-white uppercase text-xs font-semibold rounded mr-4 px-3 pt-px"
+                >laravel</a>
+                            <a
+                    href="/blog/categories/tests/"
+                    title="View posts in tests"
+                    class="inline-block bg-blue-200 hover:bg-blue-400 leading-loose tracking-wide text-blue-600 hover:text-white uppercase text-xs font-semibold rounded mr-4 px-3 pt-px"
+                >tests</a>
+                    
+        <div v-pre>
+            <p>En este artículo voy a poner dos ejemplos de uso de <strong>PEST</strong> con <strong>Laravel</strong>. Para ello, voy a utilizar un ejemplo para test Unitario y otro para <strong>Laravel Dusk</strong> (test de navegador).</p>
+
+<h2>Instalación y configuración del Framework PEST</h2>
+
+<p>Lo primero va a ser instalarlo. Para ello:</p>
+
+<pre><code class="language-bash">composer require pestphp/pest --dev --with-all-dependencies
+</code></pre>
+
+<p>Y como estamos en <strong>Laravel</strong>, pues el plugin para utilizarlo:</p>
+
+<pre><code class="language-bash">composer require pestphp/pest-plugin-laravel --dev
+</code></pre>
+
+<p>Y ahora hacemos la instalación:</p>
+
+<pre><code class="language-bash">php artisan pest:install
+</code></pre>
+
+<p>Lo primero es configurar el archivo <code>Tests\Pest.php</code> que se ha creado en la instalación:</p>
+
+<pre><code class="language-php">uses(TestCase::class)-&gt;in('Feature', 'Unit');
+uses(DuskTestCase::class)-&gt;in('Browser');
+</code></pre>
+
+<p>Con esto, le estamos diciendo a <strong>PEST</strong> los archivos de configuración que debe utilizar en función del test que vamos a realizar. <strong>PEST no utiliza clases, así que de alguna forma debemos decirle que tipo de configuración debe usar en función del tipo de prueba.</strong> Esta es una de las ventajas de utilizar <strong>PEST</strong>, te ahorras todo el código de las clases.</p>
+
+<h2>Test Unitarios con el Framework de pruebas PEST</h2>
+
+<p>Ahora creamos el archivo <code>Tests\Unit\PruebaTest.php</code> y dentro vamos a hacer una prueba básica con <strong>PEST</strong>:</p>
+
+<pre><code class="language-php">&lt;?php 
+
+test('Puedo ver la página principal', function () {
+    // Response
+    $response = $this-&gt;get(route('home'));
+    // Assert
+    $response-&gt;assertOk();
+});
+</code></pre>
+
+<p>Si te fijas, no hay clases, ni <code>namespaces</code>, ni nada... solo una función. Podemos hacer algo más elaborado, como añadir elementos a la base de datos:</p>
+
+<pre><code class="language-php">&lt;?php 
+
+use App\Models\User;
+
+test('Puedo crear un usuario', function () {
+    $usuario = User::factory()-&gt;create([
+        'name' =&gt; 'Damián',
+        'email' =&gt; 'ejemplo@email.com',
+        'address' =&gt; null,
+    ]);
+
+    expect($usuario)
+        -&gt;name-&gt;toBe('Damián')
+        -&gt;address-&gt;toBeNull();
+});
+</code></pre>
+
+<p>Podemos añadir funcionalidades nuevas:</p>
+
+<pre><code class="language-php">&lt;?php 
+
+use App\Models\User;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+
+uses(RefreshDatabase::class);
+
+beforeEach(function() {
+    $this-&gt;user = User::factory()-&gt;create([
+        'name' =&gt; 'Damián',
+        'email' =&gt; 'ejemplo@email.com',
+        'address' =&gt; null,
+    ]);
+});
+
+test('Puedo ver el listado de usuarios', function () {
+    test() // Helper para no usar $this-&gt;
+        -&gt;actingAs($this-&gt;user)
+        -&gt;visit('/dashboard/users')
+        -&gt;assertSee('Damián');
+});
+</code></pre>
+
+<p>Veamos las cosas nuevas que hemos añadido:</p>
+
+<pre><code class="language-php">uses(RefreshDatabase::class);
+</code></pre>
+
+<p>Nos permite incorporar la clase para que la base de datos se refresque en cada test. Podemos usar <code>uses()</code> para añadir cualquier dependencia que necesitemos.</p>
+
+<pre><code class="language-php">beforeEach(function() {});
+</code></pre>
+
+<p>Nos permite realizar operaciones antes de cada test, por lo tanto es un equivalente al método <code>setUp()</code>. Existen otros métodos que podemos utilizar, el listado completo es:</p>
+
+<ul>
+<li><code>beforeAll()</code>: Se ejecuta antes de todos los test. Se ejecutará sólo una vez.</li>
+<li><code>beforeEach()</code>: Se ejecuta antes de cada test. Se ejecutará tantas veces como test tengamos.</li>
+<li><code>afterEach()</code>: Se ejecuta después de cada test. Se ejecutará tantas veces como test tengamos.</li>
+<li><code>afterAll()</code>: Se ejecuta al finalizar los tests. Se ejecutará sólo una vez.</li>
+</ul>
+
+<h2>Test de navegador con el Framework de pruebas PEST y Laravel Dusk</h2>
+
+<p>Veamos un ejemplo usando sólo <strong>Laravel Dusk</strong>:</p>
+
+<pre><code class="language-php">&lt;?php
+
+namespace Tests\Browser;
+
+use App\Models\User;
+use Tests\DuskTestCase;
+use Laravel\Dusk\Browser;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
+
+class CrudTest extends DuskTestCase
+{
+    use DatabaseMigrations;
+
+    private User $admin;
+
+    private User $user;
+
+    public function setUp() :void
+    {
+        parent::setUp();
+
+        $this-&gt;admin = User::factory()-&gt;create([
+            'id' =&gt; '8c9d4152-c85c-423e-81f4-521ffde5e908',
+            'name' =&gt; 'Elvis Presley',
+            'email' =&gt; 'elvis@presley.com',
+            'role' =&gt; 0
+        ]);
+        $this-&gt;user = User::factory()-&gt;create([
+            'id' =&gt; '8c9d4152-c85c-423e-81f4-521ffde5e909',
+            'name' =&gt; 'Michael Jackson',
+            'email' =&gt; 'michael@jackson.com',
+            'role' =&gt; 3
+        ]);
+    }
+
+    /**
+     * Admin can see users
+     *
+     * @return void
+     */
+    public function test_admin_can_see_users()
+    {
+        $this-&gt;browse(function (Browser $browser) {
+            $browser
+                -&gt;loginAs($this-&gt;admin)
+                -&gt;visit(route('dashboard.users.index'))
+                -&gt;assertSee('Usuarios')
+                -&gt;assertSee('Listado')
+                -&gt;assertSee('Elvis Presley')
+                -&gt;assertSee('elvis@presley.com');
+        });
+    }
+
+    /**
+     * Users cannot see other users
+     *
+     * @return void
+     */
+    public function test_user_can_not_see_users()
+    {
+        $this-&gt;browse(function (Browser $browser) {
+            $browser
+                -&gt;loginAs($this-&gt;user)
+                -&gt;visit(route('dashboard.users.index'))
+                -&gt;assertDontSee('Usuarios')
+                -&gt;assertDontSee('Listado')
+                -&gt;assertDontSee('Elvis Presley')
+                -&gt;assertDontSee('elvis@presley.com');
+        });
+    }
+}
+</code></pre>
+
+<p>En el ejemplo hemos creado dos usuarios, uno con rol de administrador y el otro de usuario. La página sólo puede ser accedida por un administrador.</p>
+
+<p>Ahora, veamos el mismo ejemplo con <strong>PEST</strong>:</p>
+
+<pre><code class="language-php">&lt;?php
+
+use App\Models\User;
+use Laravel\Dusk\Browser;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
+
+uses(DatabaseMigrations::class);
+
+beforeEach(function() {
+    $this-&gt;admin = User::factory()-&gt;create([
+        'id' =&gt; '8c9d4152-c85c-423e-81f4-521ffde5e908',
+        'name' =&gt; 'Elvis Presley',
+        'email' =&gt; 'elvis@presley.com',
+        'role' =&gt; 0
+    ]);
+    $this-&gt;user = User::factory()-&gt;create([
+        'id' =&gt; '8c9d4152-c85c-423e-81f4-521ffde5e909',
+        'name' =&gt; 'Michael Jackson',
+        'email' =&gt; 'michael@jackson.com',
+        'role' =&gt; 3
+    ]);
+});
+
+test('Admin can see users', function () {
+    $this-&gt;browse(function (Browser $browser) {
+        $browser
+            -&gt;loginAs($this-&gt;admin)
+            -&gt;visit(route('dashboard.users.index'))
+            -&gt;assertSee('Usuarios')
+            -&gt;assertSee('Listado')
+            -&gt;assertSee('Elvis Presley')
+            -&gt;assertSee('elvis@presley.com');
+    });
+});
+
+test('User cannot see users', function () {
+    $this-&gt;browse(function (Browser $browser) {
+        $browser
+            -&gt;loginAs($this-&gt;user)
+            -&gt;visit(route('dashboard.users.index'))
+            -&gt;assertDontSee('Usuarios')
+            -&gt;assertDontSee('Listado')
+            -&gt;assertDontSee('Elvis Presley')
+            -&gt;assertDontSee('elvis@presley.com');
+    });
+});
+</code></pre>
+
+<p>Al final es todo cuestión de preferencias. Yo me quedo con <strong>PEST</strong>.</p>
         </div>
-        <div class="w-full mt-12 sm:mt-0">
-            <p><strong>Página web:</strong> <a href="https://empleatis.com">https://empleatis.com</a></p>
-        </div>
-        <h3 class="text-xl">b) Laravel Livewire multi select (combobox).</h3>
-        <p>
-            Es un componente dinámico de Laravel Livewire para gestionar campos <code>select</code> dependientes entre ellos.
-        </p>
-        <p>
-            Tiene las siguientes características:
-        </p>
-        <div class="sm:flex">
-            <ul class="w-full sm:flex-1">
-                <li>Infinitos niveles de dependencia entre los elementos.</li>
-                <li>Componentes totalmente configurables.</li>
-                <li>Estilos css, totalmente configurables.</li>
-                <li>Sin necesidad de modificar código del <i>package</i>.</li>
-                <li>Funciona con Laravel Livewire y TailwindCSS</li>
-                <li>Y mucho mas...</li>
-            </ul>
-            <div class="mt-12 w-full sm:flex-1 sm:mt-8">
-                <img src="/assets/img/projects/liveware-combobox.gif"
-                    alt="Laravel Livewire combobox - selects dependientes"
-                    class="rounded shadow-lg"
-                >
-            </div>
-        </div>
-        <div class="w-full mt-12 sm:mt-0">
-            <p><strong>Proyecto y documentación en Github:</strong> <a href="https://github.com/daguilarm/livewire-combobox">https://github.com/daguilarm/livewire-combobox</a></p>
-            <p><strong>Artículo:</strong> <a href="https://daguilar.dev/blog/laravel_select-dependiente-multinivel-combobox-para-laravel/">Artículo sobre Laravel Livewire Combobox</a></p>
-        </div>
-    </section>
-    <section id="belich2" class="mt-8 p-6 border-b border-blue-400">
-        <h3 class="text-xl">c) Belich Tables.</h3>
-        <p>
-            Es un componente dinámico de Laravel Livewire para tablas de datos. Es como el famoso datatables basado en Jquery, pero utilizando Livewire, AlpineJS y TailwindCSS.
-        </p>
-        <p>
-            El package está inspirado en el desarrollado por <a href="https://github.com/rappasoft/laravel-livewire-tables" target="_blank">rappasoft</a>, al que se le han añadido bastantes mejoras:
-        </p>
-        <div class="sm:flex">
-            <ul class="w-full sm:flex-1">
-                <li>Practicamente todo el código ha sido refactorizado y replanteado desde 0.</li>
-                <li>Filtros personalizados para cada columna.</li>
-                <li>Añadir nuevos recursos a la base de datos.</li>
-                <li>Botones de acciones.</li>
-                <li>Paginación de resultados.</li>
-                <li>Selección de columnas mediante checkboxes.</li>
-                <li>Mensajes y modals preconfigurados.</li>
-                <li>Totalmente reconfigurado para TailwindCSS</li>
-                <li>Completa customización del package.</li>
-                <li>Y mucho mas...</li>
-            </ul>
-            <div class="mt-12 w-full sm:flex-1 sm:mt-8">
-                <img src="/assets/img/projects/belich-tables.png"
-                    alt="Laravel Livewire para tablas de datos"
-                    class="rounded shadow-lg"
-                >
-            </div>
-        </div>
-        <div class="w-full mt-12 sm:mt-0">
-            <p><strong>Proyecto en Github:</strong> <a href="https://github.com/daguilarm/belich-tables">https://github.com/daguilarm/belich-tables</a></p>
-            <p><strong>Documentación:</strong> <a href="https://daguilarm.github.io/belich-tables">https://daguilarm.github.io/belich-tables</a></p>
-            <p><strong>Artículo:</strong> <a href="https://daguilar.dev/blog/laravel_nuevo-package-para-laravel-para-la-gestion-de-tablas-de-datos/">Artículo sobre Belich Tables</a></p>
-        </div>
-    </section>
+
+        
+    </article>
+    
 
             <div class="marketing-banner flex justify-center w-full"></div>        </main>
 

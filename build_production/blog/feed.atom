@@ -3,12 +3,267 @@
     <title>Blog de Damián Aguilar</title>
     <link href="https://daguilar.dev" />
     <link type="application/atom+xml" rel="self" href="https://daguilar.dev/blog/feed.atom" />
-    <updated>2022-09-01T07:28:43+00:00</updated>
+    <updated>2022-09-01T07:34:59+00:00</updated>
     <id>https://daguilar.dev/blog/feed.atom</id>
     <author>
         <name>Damián Aguilar</name>
     </author>
                 <entry>
+    <id>https://daguilar.dev/blog/tests_empezando-con-pest-el-banco-de-pruebas-de-php</id>
+    <link type="text/html" rel="alternate" href="https://daguilar.dev/blog/tests_empezando-con-pest-el-banco-de-pruebas-de-php" />
+    <title>Primero pasos con PEST el Framework de pruebas de PHP</title>
+    <published>2022-09-01T00:00:00+00:00</published>
+    <updated>2022-09-01T00:00:00+00:00</updated>
+    <author>
+        <name>Damián Aguilar</name>
+    </author>
+    <summary type="html">En este artículo voy a poner dos ejemplos de uso de PEST con Laravel. Para ello, voy a utilizar un ejemplo para test Unitario y otro para Laravel Dusk (test de navegador).
+
+
+
+Lo primero va a ser instalarlo. Para ello:
+
+
+
+Y como estamos en Laravel, pues......</summary>
+    <content type="html"><![CDATA[
+        <p>En este artículo voy a poner dos ejemplos de uso de <strong>PEST</strong> con <strong>Laravel</strong>. Para ello, voy a utilizar un ejemplo para test Unitario y otro para <strong>Laravel Dusk</strong> (test de navegador).</p>
+
+<h2>Instalación y configuración del Framework PEST</h2>
+
+<p>Lo primero va a ser instalarlo. Para ello:</p>
+
+<pre><code class="language-bash">composer require pestphp/pest --dev --with-all-dependencies
+</code></pre>
+
+<p>Y como estamos en <strong>Laravel</strong>, pues el plugin para utilizarlo:</p>
+
+<pre><code class="language-bash">composer require pestphp/pest-plugin-laravel --dev
+</code></pre>
+
+<p>Y ahora hacemos la instalación:</p>
+
+<pre><code class="language-bash">php artisan pest:install
+</code></pre>
+
+<p>Lo primero es configurar el archivo <code>Tests\Pest.php</code> que se ha creado en la instalación:</p>
+
+<pre><code class="language-php">uses(TestCase::class)-&gt;in('Feature', 'Unit');
+uses(DuskTestCase::class)-&gt;in('Browser');
+</code></pre>
+
+<p>Con esto, le estamos diciendo a <strong>PEST</strong> los archivos de configuración que debe utilizar en función del test que vamos a realizar. <strong>PEST no utiliza clases, así que de alguna forma debemos decirle que tipo de configuración debe usar en función del tipo de prueba.</strong> Esta es una de las ventajas de utilizar <strong>PEST</strong>, te ahorras todo el código de las clases.</p>
+
+<h2>Test Unitarios con el Framework de pruebas PEST</h2>
+
+<p>Ahora creamos el archivo <code>Tests\Unit\PruebaTest.php</code> y dentro vamos a hacer una prueba básica con <strong>PEST</strong>:</p>
+
+<pre><code class="language-php">&lt;?php 
+
+test('Puedo ver la página principal', function () {
+    // Response
+    $response = $this-&gt;get(route('home'));
+    // Assert
+    $response-&gt;assertOk();
+});
+</code></pre>
+
+<p>Si te fijas, no hay clases, ni <code>namespaces</code>, ni nada... solo una función. Podemos hacer algo más elaborado, como añadir elementos a la base de datos:</p>
+
+<pre><code class="language-php">&lt;?php 
+
+use App\Models\User;
+
+test('Puedo crear un usuario', function () {
+    $usuario = User::factory()-&gt;create([
+        'name' =&gt; 'Damián',
+        'email' =&gt; 'ejemplo@email.com',
+        'address' =&gt; null,
+    ]);
+
+    expect($usuario)
+        -&gt;name-&gt;toBe('Damián')
+        -&gt;address-&gt;toBeNull();
+});
+</code></pre>
+
+<p>Podemos añadir funcionalidades nuevas:</p>
+
+<pre><code class="language-php">&lt;?php 
+
+use App\Models\User;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+
+uses(RefreshDatabase::class);
+
+beforeEach(function() {
+    $this-&gt;user = User::factory()-&gt;create([
+        'name' =&gt; 'Damián',
+        'email' =&gt; 'ejemplo@email.com',
+        'address' =&gt; null,
+    ]);
+});
+
+test('Puedo ver el listado de usuarios', function () {
+    test() // Helper para no usar $this-&gt;
+        -&gt;actingAs($this-&gt;user)
+        -&gt;visit('/dashboard/users')
+        -&gt;assertSee('Damián');
+});
+</code></pre>
+
+<p>Veamos las cosas nuevas que hemos añadido:</p>
+
+<pre><code class="language-php">uses(RefreshDatabase::class);
+</code></pre>
+
+<p>Nos permite incorporar la clase para que la base de datos se refresque en cada test. Podemos usar <code>uses()</code> para añadir cualquier dependencia que necesitemos.</p>
+
+<pre><code class="language-php">beforeEach(function() {});
+</code></pre>
+
+<p>Nos permite realizar operaciones antes de cada test, por lo tanto es un equivalente al método <code>setUp()</code>. Existen otros métodos que podemos utilizar, el listado completo es:</p>
+
+<ul>
+<li><code>beforeAll()</code>: Se ejecuta antes de todos los test. Se ejecutará sólo una vez.</li>
+<li><code>beforeEach()</code>: Se ejecuta antes de cada test. Se ejecutará tantas veces como test tengamos.</li>
+<li><code>afterEach()</code>: Se ejecuta después de cada test. Se ejecutará tantas veces como test tengamos.</li>
+<li><code>afterAll()</code>: Se ejecuta al finalizar los tests. Se ejecutará sólo una vez.</li>
+</ul>
+
+<h2>Test de navegador con el Framework de pruebas PEST y Laravel Dusk</h2>
+
+<p>Veamos un ejemplo usando sólo <strong>Laravel Dusk</strong>:</p>
+
+<pre><code class="language-php">&lt;?php
+
+namespace Tests\Browser;
+
+use App\Models\User;
+use Tests\DuskTestCase;
+use Laravel\Dusk\Browser;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
+
+class CrudTest extends DuskTestCase
+{
+    use DatabaseMigrations;
+
+    private User $admin;
+
+    private User $user;
+
+    public function setUp() :void
+    {
+        parent::setUp();
+
+        $this-&gt;admin = User::factory()-&gt;create([
+            'id' =&gt; '8c9d4152-c85c-423e-81f4-521ffde5e908',
+            'name' =&gt; 'Elvis Presley',
+            'email' =&gt; 'elvis@presley.com',
+            'role' =&gt; 0
+        ]);
+        $this-&gt;user = User::factory()-&gt;create([
+            'id' =&gt; '8c9d4152-c85c-423e-81f4-521ffde5e909',
+            'name' =&gt; 'Michael Jackson',
+            'email' =&gt; 'michael@jackson.com',
+            'role' =&gt; 3
+        ]);
+    }
+
+    /**
+     * Admin can see users
+     *
+     * @return void
+     */
+    public function test_admin_can_see_users()
+    {
+        $this-&gt;browse(function (Browser $browser) {
+            $browser
+                -&gt;loginAs($this-&gt;admin)
+                -&gt;visit(route('dashboard.users.index'))
+                -&gt;assertSee('Usuarios')
+                -&gt;assertSee('Listado')
+                -&gt;assertSee('Elvis Presley')
+                -&gt;assertSee('elvis@presley.com');
+        });
+    }
+
+    /**
+     * Users cannot see other users
+     *
+     * @return void
+     */
+    public function test_user_can_not_see_users()
+    {
+        $this-&gt;browse(function (Browser $browser) {
+            $browser
+                -&gt;loginAs($this-&gt;user)
+                -&gt;visit(route('dashboard.users.index'))
+                -&gt;assertDontSee('Usuarios')
+                -&gt;assertDontSee('Listado')
+                -&gt;assertDontSee('Elvis Presley')
+                -&gt;assertDontSee('elvis@presley.com');
+        });
+    }
+}
+</code></pre>
+
+<p>En el ejemplo hemos creado dos usuarios, uno con rol de administrador y el otro de usuario. La página sólo puede ser accedida por un administrador.</p>
+
+<p>Ahora, veamos el mismo ejemplo con <strong>PEST</strong>:</p>
+
+<pre><code class="language-php">&lt;?php
+
+use App\Models\User;
+use Laravel\Dusk\Browser;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
+
+uses(DatabaseMigrations::class);
+
+beforeEach(function() {
+    $this-&gt;admin = User::factory()-&gt;create([
+        'id' =&gt; '8c9d4152-c85c-423e-81f4-521ffde5e908',
+        'name' =&gt; 'Elvis Presley',
+        'email' =&gt; 'elvis@presley.com',
+        'role' =&gt; 0
+    ]);
+    $this-&gt;user = User::factory()-&gt;create([
+        'id' =&gt; '8c9d4152-c85c-423e-81f4-521ffde5e909',
+        'name' =&gt; 'Michael Jackson',
+        'email' =&gt; 'michael@jackson.com',
+        'role' =&gt; 3
+    ]);
+});
+
+test('Admin can see users', function () {
+    $this-&gt;browse(function (Browser $browser) {
+        $browser
+            -&gt;loginAs($this-&gt;admin)
+            -&gt;visit(route('dashboard.users.index'))
+            -&gt;assertSee('Usuarios')
+            -&gt;assertSee('Listado')
+            -&gt;assertSee('Elvis Presley')
+            -&gt;assertSee('elvis@presley.com');
+    });
+});
+
+test('User cannot see users', function () {
+    $this-&gt;browse(function (Browser $browser) {
+        $browser
+            -&gt;loginAs($this-&gt;user)
+            -&gt;visit(route('dashboard.users.index'))
+            -&gt;assertDontSee('Usuarios')
+            -&gt;assertDontSee('Listado')
+            -&gt;assertDontSee('Elvis Presley')
+            -&gt;assertDontSee('elvis@presley.com');
+    });
+});
+</code></pre>
+
+<p>Al final es todo cuestión de preferencias. Yo me quedo con <strong>PEST</strong>.</p>
+    ]]></content>
+</entry>
+            <entry>
     <id>https://daguilar.dev/blog/servidores_condigurar-dominio-en-digitalocean</id>
     <link type="text/html" rel="alternate" href="https://daguilar.dev/blog/servidores_condigurar-dominio-en-digitalocean" />
     <title>Configurar dominios en un hosting de Digitalocean</title>

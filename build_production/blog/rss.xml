@@ -6,10 +6,254 @@
         <description><![CDATA[Blog sobre programación de Damián Aguilar, en el vas a encontrar artículos y recursos sobre: php, javascript, vuejs, phyton, java, livewire, alpinejs, laravel, seo... y mucho más. Además, encontrarás noticias sobre desarrollo web, lenguajes de programación, software y marketing]]></description>
         <atom:link href="https://daguilar.dev/blog/rss.xml" rel="self" type="application/rss+xml" />
         <language>es</language>
-        <lastBuildDate>Sat, 13 Aug 2022 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Thu, 01 Sep 2022 00:00:00 +0000</lastBuildDate>
 
         <!-- Posts -->
                                                             <item>
+                <title><![CDATA[Primero pasos con PEST el Framework de pruebas de PHP]]></title>
+                <link>https://daguilar.dev/blog/tests_empezando-con-pest-el-banco-de-pruebas-de-php</link>
+                <guid isPermaLink="true">https://daguilar.dev/blog/tests_empezando-con-pest-el-banco-de-pruebas-de-php</guid>
+                <description><![CDATA[Tutorial sobre la configuración y desarrollo de pruebas con el Framework PEST. Con este Framework de pruebas o tests, podremos simplificar el código de pruebas. El Framework ha sido desarrollado por Nuno Maduro, un referente en la comunidad Laravel.]]></description>
+                <content:encoded><![CDATA[<p>En este artículo voy a poner dos ejemplos de uso de <strong>PEST</strong> con <strong>Laravel</strong>. Para ello, voy a utilizar un ejemplo para test Unitario y otro para <strong>Laravel Dusk</strong> (test de navegador).</p>
+
+<h2>Instalación y configuración del Framework PEST</h2>
+
+<p>Lo primero va a ser instalarlo. Para ello:</p>
+
+<pre><code class="language-bash">composer require pestphp/pest --dev --with-all-dependencies
+</code></pre>
+
+<p>Y como estamos en <strong>Laravel</strong>, pues el plugin para utilizarlo:</p>
+
+<pre><code class="language-bash">composer require pestphp/pest-plugin-laravel --dev
+</code></pre>
+
+<p>Y ahora hacemos la instalación:</p>
+
+<pre><code class="language-bash">php artisan pest:install
+</code></pre>
+
+<p>Lo primero es configurar el archivo <code>Tests\Pest.php</code> que se ha creado en la instalación:</p>
+
+<pre><code class="language-php">uses(TestCase::class)-&gt;in('Feature', 'Unit');
+uses(DuskTestCase::class)-&gt;in('Browser');
+</code></pre>
+
+<p>Con esto, le estamos diciendo a <strong>PEST</strong> los archivos de configuración que debe utilizar en función del test que vamos a realizar. <strong>PEST no utiliza clases, así que de alguna forma debemos decirle que tipo de configuración debe usar en función del tipo de prueba.</strong> Esta es una de las ventajas de utilizar <strong>PEST</strong>, te ahorras todo el código de las clases.</p>
+
+<h2>Test Unitarios con el Framework de pruebas PEST</h2>
+
+<p>Ahora creamos el archivo <code>Tests\Unit\PruebaTest.php</code> y dentro vamos a hacer una prueba básica con <strong>PEST</strong>:</p>
+
+<pre><code class="language-php">&lt;?php 
+
+test('Puedo ver la página principal', function () {
+    // Response
+    $response = $this-&gt;get(route('home'));
+    // Assert
+    $response-&gt;assertOk();
+});
+</code></pre>
+
+<p>Si te fijas, no hay clases, ni <code>namespaces</code>, ni nada... solo una función. Podemos hacer algo más elaborado, como añadir elementos a la base de datos:</p>
+
+<pre><code class="language-php">&lt;?php 
+
+use App\Models\User;
+
+test('Puedo crear un usuario', function () {
+    $usuario = User::factory()-&gt;create([
+        'name' =&gt; 'Damián',
+        'email' =&gt; 'ejemplo@email.com',
+        'address' =&gt; null,
+    ]);
+
+    expect($usuario)
+        -&gt;name-&gt;toBe('Damián')
+        -&gt;address-&gt;toBeNull();
+});
+</code></pre>
+
+<p>Podemos añadir funcionalidades nuevas:</p>
+
+<pre><code class="language-php">&lt;?php 
+
+use App\Models\User;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+
+uses(RefreshDatabase::class);
+
+beforeEach(function() {
+    $this-&gt;user = User::factory()-&gt;create([
+        'name' =&gt; 'Damián',
+        'email' =&gt; 'ejemplo@email.com',
+        'address' =&gt; null,
+    ]);
+});
+
+test('Puedo ver el listado de usuarios', function () {
+    test() // Helper para no usar $this-&gt;
+        -&gt;actingAs($this-&gt;user)
+        -&gt;visit('/dashboard/users')
+        -&gt;assertSee('Damián');
+});
+</code></pre>
+
+<p>Veamos las cosas nuevas que hemos añadido:</p>
+
+<pre><code class="language-php">uses(RefreshDatabase::class);
+</code></pre>
+
+<p>Nos permite incorporar la clase para que la base de datos se refresque en cada test. Podemos usar <code>uses()</code> para añadir cualquier dependencia que necesitemos.</p>
+
+<pre><code class="language-php">beforeEach(function() {});
+</code></pre>
+
+<p>Nos permite realizar operaciones antes de cada test, por lo tanto es un equivalente al método <code>setUp()</code>. Existen otros métodos que podemos utilizar, el listado completo es:</p>
+
+<ul>
+<li><code>beforeAll()</code>: Se ejecuta antes de todos los test. Se ejecutará sólo una vez.</li>
+<li><code>beforeEach()</code>: Se ejecuta antes de cada test. Se ejecutará tantas veces como test tengamos.</li>
+<li><code>afterEach()</code>: Se ejecuta después de cada test. Se ejecutará tantas veces como test tengamos.</li>
+<li><code>afterAll()</code>: Se ejecuta al finalizar los tests. Se ejecutará sólo una vez.</li>
+</ul>
+
+<h2>Test de navegador con el Framework de pruebas PEST y Laravel Dusk</h2>
+
+<p>Veamos un ejemplo usando sólo <strong>Laravel Dusk</strong>:</p>
+
+<pre><code class="language-php">&lt;?php
+
+namespace Tests\Browser;
+
+use App\Models\User;
+use Tests\DuskTestCase;
+use Laravel\Dusk\Browser;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
+
+class CrudTest extends DuskTestCase
+{
+    use DatabaseMigrations;
+
+    private User $admin;
+
+    private User $user;
+
+    public function setUp() :void
+    {
+        parent::setUp();
+
+        $this-&gt;admin = User::factory()-&gt;create([
+            'id' =&gt; '8c9d4152-c85c-423e-81f4-521ffde5e908',
+            'name' =&gt; 'Elvis Presley',
+            'email' =&gt; 'elvis@presley.com',
+            'role' =&gt; 0
+        ]);
+        $this-&gt;user = User::factory()-&gt;create([
+            'id' =&gt; '8c9d4152-c85c-423e-81f4-521ffde5e909',
+            'name' =&gt; 'Michael Jackson',
+            'email' =&gt; 'michael@jackson.com',
+            'role' =&gt; 3
+        ]);
+    }
+
+    /**
+     * Admin can see users
+     *
+     * @return void
+     */
+    public function test_admin_can_see_users()
+    {
+        $this-&gt;browse(function (Browser $browser) {
+            $browser
+                -&gt;loginAs($this-&gt;admin)
+                -&gt;visit(route('dashboard.users.index'))
+                -&gt;assertSee('Usuarios')
+                -&gt;assertSee('Listado')
+                -&gt;assertSee('Elvis Presley')
+                -&gt;assertSee('elvis@presley.com');
+        });
+    }
+
+    /**
+     * Users cannot see other users
+     *
+     * @return void
+     */
+    public function test_user_can_not_see_users()
+    {
+        $this-&gt;browse(function (Browser $browser) {
+            $browser
+                -&gt;loginAs($this-&gt;user)
+                -&gt;visit(route('dashboard.users.index'))
+                -&gt;assertDontSee('Usuarios')
+                -&gt;assertDontSee('Listado')
+                -&gt;assertDontSee('Elvis Presley')
+                -&gt;assertDontSee('elvis@presley.com');
+        });
+    }
+}
+</code></pre>
+
+<p>En el ejemplo hemos creado dos usuarios, uno con rol de administrador y el otro de usuario. La página sólo puede ser accedida por un administrador.</p>
+
+<p>Ahora, veamos el mismo ejemplo con <strong>PEST</strong>:</p>
+
+<pre><code class="language-php">&lt;?php
+
+use App\Models\User;
+use Laravel\Dusk\Browser;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
+
+uses(DatabaseMigrations::class);
+
+beforeEach(function() {
+    $this-&gt;admin = User::factory()-&gt;create([
+        'id' =&gt; '8c9d4152-c85c-423e-81f4-521ffde5e908',
+        'name' =&gt; 'Elvis Presley',
+        'email' =&gt; 'elvis@presley.com',
+        'role' =&gt; 0
+    ]);
+    $this-&gt;user = User::factory()-&gt;create([
+        'id' =&gt; '8c9d4152-c85c-423e-81f4-521ffde5e909',
+        'name' =&gt; 'Michael Jackson',
+        'email' =&gt; 'michael@jackson.com',
+        'role' =&gt; 3
+    ]);
+});
+
+test('Admin can see users', function () {
+    $this-&gt;browse(function (Browser $browser) {
+        $browser
+            -&gt;loginAs($this-&gt;admin)
+            -&gt;visit(route('dashboard.users.index'))
+            -&gt;assertSee('Usuarios')
+            -&gt;assertSee('Listado')
+            -&gt;assertSee('Elvis Presley')
+            -&gt;assertSee('elvis@presley.com');
+    });
+});
+
+test('User cannot see users', function () {
+    $this-&gt;browse(function (Browser $browser) {
+        $browser
+            -&gt;loginAs($this-&gt;user)
+            -&gt;visit(route('dashboard.users.index'))
+            -&gt;assertDontSee('Usuarios')
+            -&gt;assertDontSee('Listado')
+            -&gt;assertDontSee('Elvis Presley')
+            -&gt;assertDontSee('elvis@presley.com');
+    });
+});
+</code></pre>
+
+<p>Al final es todo cuestión de preferencias. Yo me quedo con <strong>PEST</strong>.</p>
+]]></content:encoded>
+                <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
+                <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
+
+                            </item>
+                                <item>
                 <title><![CDATA[Configurar dominios en un hosting de Digitalocean]]></title>
                 <link>https://daguilar.dev/blog/servidores_condigurar-dominio-en-digitalocean</link>
                 <guid isPermaLink="true">https://daguilar.dev/blog/servidores_condigurar-dominio-en-digitalocean</guid>
@@ -6744,7 +6988,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Evan You el creador de <a href="https://vuejs.org/" target="_blank">VueJS</a> ha desarrollado esta nueva herramienta para la compilación de assets en el frontend, que surge como una alternativa más rápida y moderna que WebPack.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Testing, TTD y realización de pruebas.]]></title>
@@ -6754,7 +6998,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre testing, Desarrollo Guiado por Pruebas de software (Test-driven development: TDD), al igual que las diferentes librerias y herramientas para la realización de pruebas en código.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[SEO, posicionamiento en buscadores y motores de búsqueda]]></title>
@@ -6768,7 +7012,7 @@ if (! function_exists('userId')) {
 </blockquote>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Refactorizando, optimizando y simplificando código]]></title>
@@ -6778,7 +7022,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Refactorizar código es un <strong>procedimiento para reestructurar el código fuente</strong>, optimizando su estructura y su rendimiento, <strong>sin modificar el compartamiento del mismo</strong>.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Python, el lenguaje interpretado de alto nivel de moda]]></title>
@@ -6788,7 +7032,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre <a href="https://www.python.org/" target="_blank">Python</a>, el lenguaje de programación de alto nivel, orientado a objetos, interpretado y con una legibilidad de código increible. Uno de mis favoritos.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Programación general y lenguajes de programación]]></title>
@@ -6798,7 +7042,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre los diferentes lenguajes de programación, curiosidades, origenes, comparativas entre ellos...</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[PHP, el lenguaje de programación para el desarrollo web.]]></title>
@@ -6812,7 +7056,7 @@ if (! function_exists('userId')) {
 </blockquote>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Packagist, el repositorio de Composer para PHP]]></title>
@@ -6822,7 +7066,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre <a href="https://packagist.org/" class="link-out">Packagist</a>, el repositorio de paquetes PHP utilizado por Composer.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Packages, componentes de software trabajando juntos]]></title>
@@ -6832,7 +7076,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre gestión y creación de <strong>Packages</strong>. Componentes de <em>software</em>, independientes e intercambiables, que ofrecen una funcionalidad concreta y/o conjunta, y que están listos para su distribución y utilización.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Mis artículos mas personales como programador]]></title>
@@ -6842,7 +7086,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Los artículos mas personales, sobre mi día a día... pequeño diario de un programador fullstack.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Markdown el lenguaje para optimizar la web]]></title>
@@ -6852,7 +7096,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre <strong>Markdown</strong>, el lenguaje de marcado ligero creado por <em>John Gruber</em> y <strong>Aaron Swartz</strong> basado en numerosas convenciones utilizadas para marcar mensajes de correo electrónico utilizando para ello texto plano.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Laravel Livewire el framework de desarrollo de aplicaciones]]></title>
@@ -6866,7 +7110,7 @@ if (! function_exists('userId')) {
 </blockquote>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Laravel el framework PHP mas utilizado]]></title>
@@ -6880,7 +7124,7 @@ if (! function_exists('userId')) {
 </blockquote>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Javascript el lenguaje de programación del momento]]></title>
@@ -6894,7 +7138,7 @@ if (! function_exists('userId')) {
 </blockquote>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Java y sus frameworks spring, hibernate,...]]></title>
@@ -6904,7 +7148,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre <strong>Java</strong> el lenguaje multiplataforma y orientado a objetos, y todo su entorno de desarrollo: Spring, Spring boot, hibernate,...</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Frameworks. Estructuras para el desarrollo de software]]></title>
@@ -6914,7 +7158,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre <strong>Frameworks</strong> de desarrollo. Por lo general, módulos de software, que puede servir de base para desarrollo de software más complejo.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[El lenguaje de etiquetas HTML]]></title>
@@ -6924,7 +7168,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre <strong>HTML</strong> (HyperText Markup Language). El estándar que sirve de referencia para la elaboración de páginas web.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Artículos sobre servidores, su gestión, su mantenimiento y su configuración, ya sean seridores físicos o virtuales.]]></title>
@@ -6934,7 +7178,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre servidores, su gestión, configuración, mantenimiento, software de gestión y cualquier otra operación que pueda realizarse tanto en servidores físicos como virtuales o en la nube.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Artículos sobre Marketing. Conjunto de técnicas encaminadas a mejorar la comercialización o visualización de un producto]]></title>
@@ -6944,7 +7188,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos relacionados con Marketing online, utilizando técnicas para mejorar el posicionamiento de nuestro negocio en internet, utilizando tecnologías y medios digitales.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Artículos sobre github, el portal de Microsoft para desarrolladores de código]]></title>
@@ -6954,7 +7198,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre <strong>Github</strong> (plataforma de desarrollo colaborativo) y gestión de repositorios propiedad de Microsoft.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Artículos sobre equipo, aplicaciones, software y herramientas utilizadas en programación.]]></title>
@@ -6964,7 +7208,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre equipo, software, tecnología y herramientas utilizado por programadores.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Artículos sobre Eloquent el ORM de Laravel para bases de datos]]></title>
@@ -6974,7 +7218,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos relacionados con <a href="https://laravel.com/docs/6.x/eloquent" target="_blank">Laravel Eloquent</a>, desarrollado por <a href="https://twitter.com/taylorotwell" target="_blank">Taylor Otwell</a></p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Artículos sobre Composer el gestor de dependencias para PHP]]></title>
@@ -6988,7 +7232,7 @@ if (! function_exists('userId')) {
 </blockquote>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Artículos sobre Blade el sistema de plantillas del framework Laravel]]></title>
@@ -7002,7 +7246,7 @@ if (! function_exists('userId')) {
 </blockquote>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Artículos Bases de Datos, gestores de bases de datos y ORM]]></title>
@@ -7012,7 +7256,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre Bases de Datos (relacionales o no relacionales), software de gestión de bases de datos y ORMs utilizados por los diferentes frameworks.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Articulos sobre patrones de diseño en programación, soluciones habituales a problemas comunes]]></title>
@@ -7022,7 +7266,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos sobre los diferentes patrones de diseño en programación, y como estructurar eficientemente nuestro código en base a ellos.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[Angular el framework javascript de código abierto de Google.]]></title>
@@ -7032,7 +7276,7 @@ if (! function_exists('userId')) {
                 <content:encoded><![CDATA[<p>Artículos relacionados con el framework desarrollado en TypeScript: Angular. De código abierto y mantenido por google.</p>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
             </item>
                     <item>
                 <title><![CDATA[AlpineJS el framework javascript minimalista de Caleb Porzio]]></title>
@@ -7046,7 +7290,7 @@ if (! function_exists('userId')) {
 </blockquote>
 ]]></content:encoded>
                 <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Damián Aguilar</dc:creator>
-                <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
+                <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
             </item>
         
     </channel>
